@@ -1,0 +1,1101 @@
+﻿<Type Name="OpenXmlPackage" FullName="DocumentFormat.OpenXml.Packaging.OpenXmlPackage">
+  <TypeSignature Language="C#" Value="public abstract class OpenXmlPackage : DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit OpenXmlPackage extends DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackage" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class OpenXmlPackage&#xA;Inherits OpenXmlPartContainer&#xA;Implements IDisposable" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Packaging.OpenXmlPartContainer</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+            Represents a base class for strong typed Open XML document classes.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OpenXmlPackage ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+            Initializes a new instance of the OpenXmlPackage class. 
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPart&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T AddPart&lt;T&gt; (T part) where T : DocumentFormat.OpenXml.Packaging.OpenXmlPart;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T AddPart&lt;(class DocumentFormat.OpenXml.Packaging.OpenXmlPart) T&gt;(!!T part) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.AddPart``1(``0)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function AddPart(Of T As OpenXmlPart) (part As T) As T" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>DocumentFormat.OpenXml.Packaging.OpenXmlPart</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="part" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">A class that is derived from the OpenXmlPart class.</typeparam>
+        <param name="part">The part to add to the document.</param>
+        <summary>
+            Adds the specified part to the document.
+            Use the returned part to operate on the part added to the document.
+            </summary>
+        <returns>The added part in the document. Differs from the part that was passed as an argument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the part is not allowed to be added.</exception>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">Thrown when the part type already exists and multiple instances of the part type is not allowed.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSave">
+      <MemberSignature Language="C#" Value="public bool AutoSave { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSave" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.AutoSave" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AutoSave As Boolean" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a flag that indicates whether the parts should be saved when disposed. 
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Function Clone () As OpenXmlPackage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Creates an editable clone of this OpenXml package, opened on a
+            <see cref="T:System.IO.MemoryStream" /> with expandable capacity and using
+            default OpenSettings.
+            </summary>
+        <returns>The cloned OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.IO.Packaging.Package)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified instance of Package.</param>
+        <summary>
+            Creates a clone of this OpenXml package, opened on the specified instance
+            of Package. The clone will be opened with the same OpenSettings as this
+            OpenXml package.
+            </summary>
+        <returns>The cloned OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The IO stream on which to open the OpenXml package.</param>
+        <summary>
+            Creates a clone of this OpenXml package, opened on the given stream.
+            The cloned OpenXml package is opened with the same settings, i.e.,
+            FileOpenAccess and OpenSettings, as this OpenXml package.
+            </summary>
+        <returns>The cloned OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Clone (path As String) As OpenXmlPackage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target document.</param>
+        <summary>
+            Creates a clone of this OpenXml package opened from the given file
+            (which will be created by cloning this OpenXml package).
+            The cloned OpenXml package is opened with the same settings, i.e.,
+            FileOpenAccess and OpenSettings, as this OpenXml package.
+            </summary>
+        <returns>The cloned document.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (System.IO.Packaging.Package package, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(class System.IO.Packaging.Package package, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.IO.Packaging.Package,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified instance of Package.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>
+            Creates a clone of this OpenXml package, opened on the specified instance
+            of Package.
+            </summary>
+        <returns>The cloned OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (System.IO.Stream stream, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(class System.IO.Stream stream, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.IO.Stream,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The IO stream on which to open the OpenXml package.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>
+            Creates a clone of this OpenXml package, opened on the given stream.
+            The cloned OpenXml package is opened with the same OpenSettings as
+            this OpenXml package.
+            </summary>
+        <returns>The cloned OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (string path, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(string path, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Clone (path As String, isEditable As Boolean) As OpenXmlPackage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target document.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>
+            Creates a clone of this OpenXml package opened from the given file
+            (which will be created by cloning this OpenXml package).
+            The cloned OpenXml package is opened with the same OpenSettings as
+            this OpenXml package.
+            </summary>
+        <returns>The cloned document.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (System.IO.Stream stream, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(class System.IO.Stream stream, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.IO.Stream,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The IO stream on which to open the OpenXml package.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>
+            Creates a clone of this OpenXml package, opened on the given stream.
+            </summary>
+        <returns>The cloned OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone (string path, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage Clone(string path, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Clone(System.String,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target document.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>
+            Creates a clone of this OpenXml package opened from the given file (which
+            will be created by cloning this OpenXml package).
+            </summary>
+        <returns>The cloned document.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Saves and closes the OpenXml package and all underlying part streams.  
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressionOption">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.CompressionOption CompressionOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Packaging.CompressionOption CompressionOption" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.CompressionOption" />
+      <MemberSignature Language="VB.NET" Value="Public Property CompressionOption As CompressionOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.CompressionOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets the compression level for the content of the new part. 
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClone">
+      <MemberSignature Language="C#" Value="protected abstract DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone (System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone(class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.CreateClone(System.IO.Packaging.Package)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified instance of Package.</param>
+        <summary>
+            Creates a new instance of OpenXmlPackage on the specified instance
+            of Package.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClone">
+      <MemberSignature Language="C#" Value="protected abstract DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.CreateClone(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The stream on which the concrete OpenXml package will be created.</param>
+        <summary>
+            Creates a new OpenXmlPackage on the given stream.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClone">
+      <MemberSignature Language="C#" Value="protected abstract DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.CreateClone(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected MustOverride Function CreateClone (path As String) As OpenXmlPackage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target OpenXml package.</param>
+        <summary>
+            Creates a new OpenXml package on the given file.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMediaDataPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.MediaDataPart CreateMediaDataPart (DocumentFormat.OpenXml.Packaging.MediaDataPartType mediaDataPartType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.MediaDataPart CreateMediaDataPart(valuetype DocumentFormat.OpenXml.Packaging.MediaDataPartType mediaDataPartType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.CreateMediaDataPart(DocumentFormat.OpenXml.Packaging.MediaDataPartType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.MediaDataPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mediaDataPartType" Type="DocumentFormat.OpenXml.Packaging.MediaDataPartType" />
+      </Parameters>
+      <Docs>
+        <param name="mediaDataPartType">The content type of the new <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part.</param>
+        <summary>
+            Creates a new <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part in the document package.
+            </summary>
+        <returns>The added <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMediaDataPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.MediaDataPart CreateMediaDataPart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.MediaDataPart CreateMediaDataPart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.CreateMediaDataPart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateMediaDataPart (contentType As String) As MediaDataPart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.MediaDataPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">The content type of the new <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part.</param>
+        <summary>
+            Creates a new <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part in the document package.
+            </summary>
+        <returns>The added <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="contentType" /> is a null reference.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMediaDataPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.MediaDataPart CreateMediaDataPart (string contentType, string extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.MediaDataPart CreateMediaDataPart(string contentType, string extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.CreateMediaDataPart(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateMediaDataPart (contentType As String, extension As String) As MediaDataPart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.MediaDataPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="extension" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">The content type of the new <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part.</param>
+        <param name="extension">The part name extension (.dat, etc.) of the new <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part.</param>
+        <summary>
+            Creates a new <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part in the document package.
+            </summary>
+        <returns>The added <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" /> part.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="extension" /> is a null reference.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DataPart&gt; DataParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.DataPart&gt; DataParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.DataParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DataParts As IEnumerable(Of DataPart)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DataPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Enumerates all the <see cref="T:DocumentFormat.OpenXml.Packaging.DataPart" /> parts in the document package.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeletePart">
+      <MemberSignature Language="C#" Value="public bool DeletePart (DocumentFormat.OpenXml.Packaging.DataPart dataPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool DeletePart(class DocumentFormat.OpenXml.Packaging.DataPart dataPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.DeletePart(DocumentFormat.OpenXml.Packaging.DataPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataPart" Type="DocumentFormat.OpenXml.Packaging.DataPart" />
+      </Parameters>
+      <Docs>
+        <param name="dataPart">The <see cref="T:DocumentFormat.OpenXml.Packaging.DataPart" /> to be deleted.</param>
+        <summary>
+            Deletes the specified <see cref="T:DocumentFormat.OpenXml.Packaging.DataPart" /> from the document package.
+            </summary>
+        <returns>Returns true if the part is successfully removed; otherwise returns false. This method also returns false if the part was not found or the parameter is null.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">Thrown when <paramref name="dataPart" /> is referenced by another part in the document package.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeletePartsRecursivelyOfType&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void DeletePartsRecursivelyOfType&lt;T&gt; () where T : DocumentFormat.OpenXml.Packaging.OpenXmlPart;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeletePartsRecursivelyOfType&lt;(class DocumentFormat.OpenXml.Packaging.OpenXmlPart) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.DeletePartsRecursivelyOfType``1" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DeletePartsRecursivelyOfType(Of T As OpenXmlPart) ()" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>DocumentFormat.OpenXml.Packaging.OpenXmlPart</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">To be added.</typeparam>
+        <summary>
+            Deletes all the parts with the specified part type from the package recursively.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Flushes and saves the content, closes the document, and releases all resources. 
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">Specify true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        <summary>
+            Flushes and saves the content, closes the document, and releases all resources. 
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileOpenAccess">
+      <MemberSignature Language="C#" Value="public System.IO.FileAccess FileOpenAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.FileAccess FileOpenAccess" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.FileOpenAccess" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FileOpenAccess As FileAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the FileAccess setting for the document. 
+            The current I/O access settings are: Read, Write, or ReadWrite. 
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcDocumentCore">
+      <MemberSignature Language="C#" Value="protected static System.IO.Packaging.Package FromFlatOpcDocumentCore (System.Xml.Linq.XDocument document, System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.IO.Packaging.Package FromFlatOpcDocumentCore(class System.Xml.Linq.XDocument document, class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.FromFlatOpcDocumentCore(System.Xml.Linq.XDocument,System.IO.Packaging.Package)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.Package</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.Linq.XDocument" />
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="document">The document in Flat OPC format.</param>
+        <param name="package">The <see cref="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Package" /> in which to store the OpenXml package.</param>
+        <summary>
+            Converts an <see cref="T:System.Xml.Linq.XDocument" /> in Flat OPC format to an OpenXml package
+            stored in a <see cref="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Package" />.
+            </summary>
+        <returns>The <see cref="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Package" /> containing the OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcDocumentCore">
+      <MemberSignature Language="C#" Value="protected static System.IO.Stream FromFlatOpcDocumentCore (System.Xml.Linq.XDocument document, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.IO.Stream FromFlatOpcDocumentCore(class System.Xml.Linq.XDocument document, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.FromFlatOpcDocumentCore(System.Xml.Linq.XDocument,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.Linq.XDocument" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="document">The document in Flat OPC format.</param>
+        <param name="stream">The <see cref="T:System.IO.Stream" /> on which to store the OpenXml package.</param>
+        <summary>
+            Converts an <see cref="T:System.Xml.Linq.XDocument" /> in Flat OPC format to an OpenXml package
+            stored on a <see cref="T:System.IO.Stream" />.
+            </summary>
+        <returns>The <see cref="T:System.IO.Stream" /> containing the OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcDocumentCore">
+      <MemberSignature Language="C#" Value="protected static string FromFlatOpcDocumentCore (System.Xml.Linq.XDocument document, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromFlatOpcDocumentCore(class System.Xml.Linq.XDocument document, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.FromFlatOpcDocumentCore(System.Xml.Linq.XDocument,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Function FromFlatOpcDocumentCore (document As XDocument, path As String) As String" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.Linq.XDocument" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="document">The document in Flat OPC format.</param>
+        <param name="path">The path and file name of the file in which to store the OpenXml package.</param>
+        <summary>
+            Converts an <see cref="T:System.Xml.Linq.XDocument" /> in Flat OPC format to an OpenXml package
+            stored in a file.
+            </summary>
+        <returns>The path and file name of the file containing the OpenXml package.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkupCompatibilityProcessSettings">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings MarkupCompatibilityProcessSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings MarkupCompatibilityProcessSettings" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.MarkupCompatibilityProcessSettings" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MarkupCompatibilityProcessSettings As MarkupCompatibilityProcessSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.MarkupCompatibilityProcessSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the markup compatibility settings applied at loading time.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCharactersInPart">
+      <MemberSignature Language="C#" Value="public long MaxCharactersInPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxCharactersInPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.MaxCharactersInPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MaxCharactersInPart As Long" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets or sets a value that indicates the maximum allowable number of characters in an Open XML part. A zero (0) value indicates that there are no limits on the size of the part. A non-zero value specifies the maximum size, in characters.
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+            This property allows you to mitigate denial of service attacks where the attacker submits a package with an extremely large Open XML part. By limiting the size of a part, you can detect the attack and recover reliably.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenClone">
+      <MemberSignature Language="C#" Value="protected abstract DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone (System.IO.Stream stream, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone(class System.IO.Stream stream, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenClone(System.IO.Stream,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The stream on which the cloned OpenXml package will be opened.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>
+            Opens the cloned OpenXml package on the given stream.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenClone">
+      <MemberSignature Language="C#" Value="protected abstract DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone (string path, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone(string path, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenClone(System.String,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target OpenXml package.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>
+            Opens the cloned OpenXml package on the given file.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Package">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.Package Package { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.Package Package" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Package" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Package As Package" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.Package</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the package of the document.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PackageProperties">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageProperties PackageProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.PackageProperties PackageProperties" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.PackageProperties" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PackageProperties As PackageProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets the core package properties of the Open XML document.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartExtensionProvider">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.PartExtensionProvider PartExtensionProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.PartExtensionProvider PartExtensionProvider" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.PartExtensionProvider" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PartExtensionProvider As PartExtensionProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.PartExtensionProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Gets a PartExtensionProvider part which provides a mapping from ContentType to part extension.
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Save" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save ()" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Saves the contents of all parts and relationships that are contained
+            in the OpenXml package, if FileOpenAccess is ReadWrite.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAs">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.OpenXmlPackage SaveAs (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage SaveAs(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.SaveAs(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function SaveAs (path As String) As OpenXmlPackage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target document.</param>
+        <summary>
+            Saves the contents of all parts and relationships that are contained
+            in the OpenXml package to the specified file. Opens the saved document
+            using the same settings that were used to open this OpenXml package.
+            </summary>
+        <returns>The cloned OpenXml package</returns>
+        <remarks>
+            Calling SaveAs(string) is exactly equivalent to calling Clone(string).
+            This method is essentially provided for convenience.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowIfObjectDisposed">
+      <MemberSignature Language="C#" Value="protected override void ThrowIfObjectDisposed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ThrowIfObjectDisposed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.ThrowIfObjectDisposed" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub ThrowIfObjectDisposed ()" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Thrown if an object is disposed.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToFlatOpcDocument">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.Linq.XDocument ToFlatOpcDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Linq.XDocument ToFlatOpcDocument() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.ToFlatOpcDocument" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ToFlatOpcDocument () As XDocument" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XDocument</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Converts an OpenXml package in OPC format to an <see cref="T:System.Xml.Linq.XDocument" />
+            in Flat OPC format.
+            </summary>
+        <returns>The OpenXml package in Flat OPC format.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToFlatOpcDocument">
+      <MemberSignature Language="C#" Value="protected System.Xml.Linq.XDocument ToFlatOpcDocument (System.Xml.Linq.XProcessingInstruction instruction);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Xml.Linq.XDocument ToFlatOpcDocument(class System.Xml.Linq.XProcessingInstruction instruction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.ToFlatOpcDocument(System.Xml.Linq.XProcessingInstruction)" />
+      <MemberSignature Language="VB.NET" Value="Protected Function ToFlatOpcDocument (instruction As XProcessingInstruction) As XDocument" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instruction" Type="System.Xml.Linq.XProcessingInstruction" />
+      </Parameters>
+      <Docs>
+        <param name="instruction">The processing instruction.</param>
+        <summary>
+            Converts an OpenXml package in OPC format to an <see cref="T:System.Xml.Linq.XDocument" />
+            in Flat OPC format.
+            </summary>
+        <returns>The OpenXml package in Flat OPC format.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToFlatOpcString">
+      <MemberSignature Language="C#" Value="public string ToFlatOpcString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToFlatOpcString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.ToFlatOpcString" />
+      <MemberSignature Language="VB.NET" Value="Public Function ToFlatOpcString () As String" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Converts an OpenXml package in OPC format to string in Flat OPC format.
+            </summary>
+        <returns>The OpenXml package in Flat OPC format.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate (DocumentFormat.OpenXml.Packaging.OpenXmlPackageValidationSettings validationSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Validate(class DocumentFormat.OpenXml.Packaging.OpenXmlPackageValidationSettings validationSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Validate(DocumentFormat.OpenXml.Packaging.OpenXmlPackageValidationSettings)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Validate (validationSettings As OpenXmlPackageValidationSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This functionality is obsolete and will be removed from future version release. Please see OpenXmlValidator class for supported validation functionality.", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validationSettings" Type="DocumentFormat.OpenXml.Packaging.OpenXmlPackageValidationSettings" />
+      </Parameters>
+      <Docs>
+        <param name="validationSettings">The OpenXmlPackageValidationSettings for validation events.</param>
+        <summary>
+            Validates the package. This method does not validate the XML content in each part.
+            </summary>
+        <remarks>If validationSettings is null or no EventHandler is set, the default behavior is to throw an OpenXmlPackageException on the validation error. </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
