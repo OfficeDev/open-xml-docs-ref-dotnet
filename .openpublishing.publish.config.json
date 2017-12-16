@@ -22,10 +22,12 @@
       "customized_template_paths": [
         "_dependentPackages/memberpage.plugins/content"
       ],
+      
       "customized_tasks": {
         "docset_prebuild": [
           "_dependentPackages/ECMA2Yaml/tools/Run.ps1",
           "_dependentPackages/CommonPlugins/tools/SplitTOC.ps1",
+          "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1",
           "_dependentPackages/CommonPlugins/tools/DiffFolder.ps1"
         ],
         "docset_postbuild": [
@@ -45,6 +47,12 @@
         "docs/api"
       ]
     }
+  ],
+  "JoinTOCPlugin": [
+   {
+     "ReferenceTOC": "api/toc.yml",
+     "ConceptualTOCUrl": "/office/dev/open-xml/toc.json"
+   }
   ],
   "notification_subscribers": [],
   "branches_to_filter": [],
