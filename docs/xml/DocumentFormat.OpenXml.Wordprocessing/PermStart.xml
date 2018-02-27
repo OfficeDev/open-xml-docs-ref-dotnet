@@ -1,4 +1,4 @@
-﻿<Type Name="PermStart" FullName="DocumentFormat.OpenXml.Wordprocessing.PermStart">
+<Type Name="PermStart" FullName="DocumentFormat.OpenXml.Wordprocessing.PermStart">
   <TypeSignature Language="C#" Value="public class PermStart : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PermStart extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PermStart" />
@@ -18,11 +18,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the PermStart Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:permStart.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the PermStart Class. When the object is serialized out as xml, its qualified name is w:permStart.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `permStart (Range Permission Start)`  
+  
+ This element specifies the start of a range permission within a WordprocessingML document. This start marker is matched with the appropriately paired end marker by matching the value of the id attribute from the associated permEnd element.  
+  
+ If no permEnd element exists subsequent to this element in document order with a matching id attribute value, then the document is non-conformant.  
+  
+ If a range permission begins and ends within a single table, it is possible for that permission to cover discontiguous parts of that table which are logically related (e.g. a single column in a table). This type of placement for a range permission is accomplished (and described in detail) on the colFirst and colLast attributes on this element.  
+  
+ [*Example*: Consider a document with a range permission which spans half of paragraph one, and part of paragraph two. The following WordprocessingML illustrates an example of content which fufills this constraint:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t xml:space="preserve">This is sentence one.</w:t>  
+  </w:r>  
+  <w:permStart w:id="0" w:edGrp="everyone"/>  
+  <w:r>  
+    <w:t>This is sentence two.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t xml:space="preserve">This </w:t>  
+  </w:r>  
+  <w:permEnd w:id="0"/>  
+  <w:r>  
+    <w:t>is sentence three.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The permStart element specifies the start of the region for the range permission. This element is then linked to the permEnd element which also has an id attribute value of *0*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bdo (§17.3.2.3); body (§17.2.2); comment (§17.13.4.2); customXml (§17.5.1.6); customXml (§17.5.1.4); customXml (§17.5.1.5); customXml (§17.5.1.3); deg (§22.1.2.26); del (§17.13.5.14); den (§22.1.2.28); dir (§17.3.2.8); docPartBody (§17.12.6); e (§22.1.2.32); endnote (§17.11.2); fldSimple (§17.16.19); fName (§22.1.2.37); footnote (§17.11.10); ftr (§17.10.3); hdr (§17.10.4); hyperlink (§17.16.22); ins (§17.13.5.18); lim (§22.1.2.52); moveFrom (§17.13.5.22); moveTo (§17.13.5.25); num (§22.1.2.75); oMath (§22.1.2.77); p (§17.3.1.22); rt (§17.3.3.24); rubyBase (§17.3.3.27); sdtContent (§17.5.2.34); sdtContent (§17.5.2.33); sdtContent (§17.5.2.35); sdtContent (§17.5.2.36); smartTag (§17.5.1.9); sub (§22.1.2.112); sup (§22.1.2.114); tbl (§17.4.38); tc (§17.4.66); tr (§17.4.79)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_PermStart) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PermStart class.
-            </summary>
+        <summary>Initializes a new instance of the PermStart class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +104,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +130,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> colFirst.</para>
-          <para>Represents the following attribute in the schema: w:colFirst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>colFirst.Represents the following attribute in the schema: w:colFirst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -119,11 +157,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> colLast.</para>
-          <para>Represents the following attribute in the schema: w:colLast </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>colLast.Represents the following attribute in the schema: w:colLast</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -149,11 +184,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Annotation Displaced By Custom XML Markup.</para>
-          <para>Represents the following attribute in the schema: w:displacedByCustomXml </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Annotation Displaced By Custom XML Markup.Represents the following attribute in the schema: w:displacedByCustomXml</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -179,11 +211,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ed.</para>
-          <para>Represents the following attribute in the schema: w:ed </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ed.Represents the following attribute in the schema: w:ed</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -209,11 +238,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> edGrp.</para>
-          <para>Represents the following attribute in the schema: w:edGrp </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>edGrp.Represents the following attribute in the schema: w:edGrp</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -239,11 +265,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Annotation ID.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Annotation ID.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -264,10 +287,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

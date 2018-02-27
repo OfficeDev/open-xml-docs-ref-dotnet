@@ -1,4 +1,4 @@
-﻿<Type Name="ConditionalFormatValueObject" FullName="DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatValueObject">
+<Type Name="ConditionalFormatValueObject" FullName="DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatValueObject">
   <TypeSignature Language="C#" Value="public class ConditionalFormatValueObject : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConditionalFormatValueObject extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatValueObject" />
@@ -21,13 +21,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Conditional Format Value Object.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:cfvo.</para>
-    </summary>
+    <summary>Conditional Format Value Object. When the object is serialized out as xml, its qualified name is x:cfvo.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **cfvo (Conditional Format Value Object)**  
+  
+ Describes the values of the interpolation points in a gradient scale.  
+  
+ [*Example*:This example demonstrates a color scale conditional formatting rule, which defines a color for the minimum value in the range of cell values, a color for the midpoint value, and a color for the maximum value in the in the range of cell values. Information is given about how to define the midpoint. In this case, it is the 50 percent mark.  
+  
+```xml  
+<colorScale>  
+  <cfvo type="min" val="0"/>  
+  <cfvo type="percent" val="50"/>  
+  <cfvo type="max" val="0"/>  
+  <color rgb="FFFF0000"/>  
+  <color rgb="FFFFFF00"/>  
+  <color rgb="FF00B050"/>  
+</colorScale>  
+```  
+  
+ The first \<*cfvo>* element corresponds with the first *\<color>* definition, and so on.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|colorScale (§18.3.1.16); dataBar (§18.3.1.28); iconSet (§18.3.1.49)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|gte (Greater Than Or Equal)|For icon sets, determines whether this threshold value uses the greater than or equal to operator. '0' indicates 'greater than' is used instead of 'greater than or equal to'.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|type (Type)|The type of this conditional formatting value object. [*Example*: 'min' and 'max' would be used (in conjunction with *@val*) to express the lower and upper values to be used in a gradient. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_CfvoType* simple type (§18.18.13).|  
+|val (Value)|The value of this conditional formatting value object.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Cfvo) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ConditionalFormatValueObject class.
-            </summary>
+        <summary>Initializes a new instance of the ConditionalFormatValueObject class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +109,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConditionalFormatValueObject class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ConditionalFormatValueObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +129,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConditionalFormatValueObject class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ConditionalFormatValueObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +149,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ConditionalFormatValueObject class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ConditionalFormatValueObject class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +171,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,11 +192,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -192,11 +220,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Greater Than Or Equal.</para>
-          <para>Represents the following attribute in the schema: gte </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Greater Than Or Equal.Represents the following attribute in the schema: gte</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -215,10 +240,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -242,11 +265,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatValueObjectValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,11 +290,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

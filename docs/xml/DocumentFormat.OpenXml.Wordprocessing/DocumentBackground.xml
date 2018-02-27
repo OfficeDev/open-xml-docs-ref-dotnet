@@ -1,4 +1,4 @@
-﻿<Type Name="DocumentBackground" FullName="DocumentFormat.OpenXml.Wordprocessing.DocumentBackground">
+<Type Name="DocumentBackground" FullName="DocumentFormat.OpenXml.Wordprocessing.DocumentBackground">
   <TypeSignature Language="C#" Value="public class DocumentBackground : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocumentBackground extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DocumentBackground" />
@@ -21,13 +21,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Document Background.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:background.</para>
-    </summary>
+    <summary>Document Background. When the object is serialized out as xml, its qualified name is w:background.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocumentFormat.OpenXml.Vml.Background &lt;v:background&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `background (Document Background)`  
+  
+ This element specifies the background for every page of the document containing the background element. A document's *background* is the image or fill for the entire page surface, behind all other document content.  
+  
+ The drawing §17.3.3.9 child elements of the background element allows any DrawingML effect to be applied to the document's background.  
+  
+ For solid color fill backgrounds, however, the attributes on this element allow the use of any  or theme color value (the latter a reference to the document's themes part).  
+  
+ [*Example*: Consider a document which utilizes a gradient fill background moving between black and the accent3 theme color, as follows:  
+  
+ 23675903-9cf3-404d-950a-3fba95ccfa26  
+  
+ This background would require the following WordprocessingML markup:  
+  
+```xml  
+<w:background w:themeColor="accent3">  
+  <w:drawing>  
+    <wp:inline … >  
+      <a:graphic>  
+        <a:graphicData … >  
+          …        </a:graphicData>  
+      </a:graphic>  
+    </wp:inline>  
+  </w:drawing>  
+</w:background>  
+```  
+  
+ The resulting background consists of a single color fill of the *accent3* theme color from the themeColor attribute, layered under a *gradientCenter* fill. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|document (§17.2.3); glossaryDocument (§17.12.10)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|drawing (DrawingML Object)|§17.3.3.9|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Background) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DocumentBackground class.
-            </summary>
+        <summary>Initializes a new instance of the DocumentBackground class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +111,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DocumentBackground class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DocumentBackground class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +131,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DocumentBackground class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DocumentBackground class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +151,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DocumentBackground class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DocumentBackground class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,10 +170,7 @@
         <ReturnType>DocumentFormat.OpenXml.Vml.Background</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Background.</para>
-          <para> Represents the following element tag in the schema: v:background </para>
-        </summary>
+        <summary>Background. Represents the following element tag in the schema: v:background</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -164,11 +196,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -192,10 +222,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> color.</para>
-          <para>Represents the following attribute in the schema: w:color </para>
-        </summary>
+        <summary>color.Represents the following attribute in the schema: w:color</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -217,9 +244,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -244,10 +269,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> themeColor.</para>
-          <para>Represents the following attribute in the schema: w:themeColor </para>
-        </summary>
+        <summary>themeColor.Represents the following attribute in the schema: w:themeColor</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -274,10 +296,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> themeShade.</para>
-          <para>Represents the following attribute in the schema: w:themeShade </para>
-        </summary>
+        <summary>themeShade.Represents the following attribute in the schema: w:themeShade</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -304,10 +323,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> themeTint.</para>
-          <para>Represents the following attribute in the schema: w:themeTint </para>
-        </summary>
+        <summary>themeTint.Represents the following attribute in the schema: w:themeTint</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

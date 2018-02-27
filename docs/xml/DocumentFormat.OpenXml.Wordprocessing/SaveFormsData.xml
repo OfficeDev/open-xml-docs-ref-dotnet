@@ -1,4 +1,4 @@
-﻿<Type Name="SaveFormsData" FullName="DocumentFormat.OpenXml.Wordprocessing.SaveFormsData">
+<Type Name="SaveFormsData" FullName="DocumentFormat.OpenXml.Wordprocessing.SaveFormsData">
   <TypeSignature Language="C#" Value="public class SaveFormsData : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SaveFormsData extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SaveFormsData" />
@@ -18,11 +18,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Only Save Form Field Content.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:saveFormsData.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Only Save Form Field Content. When the object is serialized out as xml, its qualified name is w:saveFormsData.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `saveFormsData (Only Save Form Field Content)`  
+  
+ This element specifies that saving the contents of this document shall only save the contents of WordprocessingML form fields defined using the *FORMTEXT*, *FORMCHECKBOX*, and *FORMDROPDOWN* field codes in a comma-delimited text format which does not conform to /IEC 29500 (i.e. it is a one-way export from a WordprocessingML document).  
+  
+ [*Rationale*: This setting is typically used to allow duplication of paper forms in electronic WordprocessingML document form, allowing the resulting content to be extracted as a comma-delimited text file. *end rationale*]  
+  
+ If this element is omitted, then the contents of the entire document (not just form fields) should be saved according to the definition of WordprocessingML in /IEC 29500.  
+  
+ [*Example*: Consider a WordprocessingML document which has form fields in the top right and bottom left corners of the first page, as follows (with the text box form fields shaded in grey):  
+  
+ 78f14fa1-8313-45b5-b888-638284f0670e  
+  
+ If the only content which must be saved are the form fields' contents, this requirement is specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:saveFormsData w:val="true" />  
+```  
+  
+ The saveFormsData element's val attribute as a value of *true*, specifying that only form field data must be saved, resulting in output as follows in a text file:  
+  
+```xml  
+one,two  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SaveFormsData class.
-            </summary>
+        <summary>Initializes a new instance of the SaveFormsData class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

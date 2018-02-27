@@ -1,4 +1,4 @@
-﻿<Type Name="DocGrid" FullName="DocumentFormat.OpenXml.Wordprocessing.DocGrid">
+<Type Name="DocGrid" FullName="DocumentFormat.OpenXml.Wordprocessing.DocGrid">
   <TypeSignature Language="C#" Value="public class DocGrid : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocGrid extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DocGrid" />
@@ -18,11 +18,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the DocGrid Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:docGrid.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the DocGrid Class. When the object is serialized out as xml, its qualified name is w:docGrid.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `docGrid (Document Grid)`  
+  
+ This element specifies the settings for the document grid, which enables precise layout of full-width East Asian language characters within a document by specifying the desired number of characters per line and lines per page for all East Asian text content in this section.  
+  
+ [*Example*: Consider a document with the document grid defined to allow 20 characters per line, and 20 lines per page by snapping characters to the grid (type attribute of *snapTOCars*) as follows:  
+  
+ b5dd5b35-6b08-4647-80d9-538b91325e14  
+  
+ As shown, this document allows for only 20 East Asian characters per line by adjusting the inter-character spacing to ensure that there are only 20 characters per line. *end example*]  
+  
+ If Latin text is interspersed on this line, then it is placed across the number of grid units needed to fit the content, but all other grid positions are unaffected.  
+  
+ [*Example*: Consider the example above with the addition of the text "Latin text" in English, as follows:  
+  
+ f8e25243-e4fc-4d67-9eaf-8624879b1a4a  
+  
+ The Latin text spans two grid units, so it is placed in the center of those two units; no other grid positions are affected, so the text on the second line now spans two additional grid units. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sectPr (§17.6.17); sectPr (§17.6.18); sectPr (§17.6.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DocGrid) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DocGrid class.
-            </summary>
+        <summary>Initializes a new instance of the DocGrid class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,12 +91,34 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Document Grid Character Pitch.</para>
-          <para>Represents the following attribute in the schema: w:charSpace </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Document Grid Character Pitch.Represents the following attribute in the schema: w:charSpace</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number of characters to be allowed on the document grid for each line in this section.  
+  
+ This attribute's value shall be specified by multiplying the difference between the desired character pitch and the character pitch for that character in the font size of the Normal font by 4096.  
+  
+ This value shall then be used to add the character pitch for the specified point size to each character in the section This results in text in the Normal style having a specific number of characters per line.  
+  
+ Consider a section with a Normal font size of 11 points on which a 21-point pitch document grid has been defined.. The resulting WordprocessingML would be defined as follows:  
+  
+```  
+<w:docGrid w:charSpace="40960" …/>  
+```  
+  
+ The `charSpace` attribute specifies a value of `40960`, which means that the delta between the character pitch of each character in the grid and the Normal font is 10 points, resulting in a character pitch of 11 + 10 = 21 points for all characters in this section.  
+  
+ Individual runs of text can override the line pitch information specified for the document grid by specifying that the run text shall not snap to the document grid via the `snapToGrid` element.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -91,11 +141,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,12 +167,36 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Document Grid Line Pitch.</para>
-          <para>Represents the following attribute in the schema: w:linePitch </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Document Grid Line Pitch.Represents the following attribute in the schema: w:linePitch</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number of lines to be allowed on the document grid for the current page assuming all lines have equal line pitch applied to them. This line pitch shall not be added to any line which appears within a table cell unless the `adjustLineHeightInTable` element is present in the document's compatibility settings.  
+  
+ This attribute is specified in twentieths of a point, and defines the pitch for each line of text on this page such that the desired number of single spaced lines of text fits on the current page.  
+  
+ Consider a standard 8.5 x 11" page on which a 20-character wide, 20-line document grid has been defined. The resulting WordprocessingML would be defined as follows:  
+  
+```  
+<w:docGrid w:linePitch="684" …/>  
+```  
+  
+ The `linePitch` attribute specifies that 34.2 points is to the amount of pitch allowed for each line on this page in order to maintain the specific document grid.  
+  
+ Individual paragraphs can override the line pitch information specified for the document grid by either of the following:  
+  
+-   Specifying an exact line spacing value using the `lineRule` attribute of value `exact` on the `spacing` element  
+  
+-   Specifying that the paragraph text shall not snap to the document grid via the `snapToGrid` element  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -144,10 +216,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -171,12 +241,28 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DocGridValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Document Grid Type.</para>
-          <para>Represents the following attribute in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Document Grid Type.Represents the following attribute in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of the current document grid, which defines the grid behavior.  
+  
+ The grid can define a grid which snaps all East Asian characters to grid positions, but leaves Latin text with its default spacing; a grid which adds the specified character pitch to each character on each row; or a grid which affects only the line pitch for the current section.  
+  
+ Consider the document discussed above with the document grid defined to allow 20 characters per line, and 20 lines per page by snapping characters to the grid as follows:  
+  
+ e0361fbb-cda2-4849-adfe-35193d444dcf  
+  
+ This document has a type attribute of `snapToChars`, which specifies that the grid shall force East Asian characters to fit 20 to a line.  
+  
+ The possible values for this attribute are defined by the `ST_DocGrid` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

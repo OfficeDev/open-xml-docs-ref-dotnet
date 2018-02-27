@@ -1,4 +1,4 @@
-﻿<Type Name="ConditionalFormattingRule" FullName="DocumentFormat.OpenXml.Office2010.Excel.ConditionalFormattingRule">
+<Type Name="ConditionalFormattingRule" FullName="DocumentFormat.OpenXml.Office2010.Excel.ConditionalFormattingRule">
   <TypeSignature Language="C#" Value="public class ConditionalFormattingRule : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConditionalFormattingRule extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.ConditionalFormattingRule" />
@@ -39,14 +39,167 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ConditionalFormattingRule Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is x14:cfRule.</para>
-    </summary>
+    <summary>Defines the ConditionalFormattingRule Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:cfRule.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocumentFormat.OpenXml.Office.Excel.Formula &lt;xne:f&gt;</description></item><item><description>ColorScale &lt;x14:colorScale&gt;</description></item><item><description>DataBar &lt;x14:dataBar&gt;</description></item><item><description>IconSet &lt;x14:iconSet&gt;</description></item><item><description>DifferentialType &lt;x14:dxf&gt;</description></item><item><description>ExtensionList &lt;x14:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.6.27   CT_CfRule*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* CT_ConditionalFormatting  
+  
+ This complex type specifies a conditional formatting rule for a range.  
+  
+ *Child Elements:*  
+  
+ *xm:f:* f elements that specify the formulas in the conditional formatting rule. The formulas MUST adhere to the grammar specified in Formulas, with the following restrictions:  
+  
+ *The formula MUST NOT conform to the ref-infix-operator, book-prefix, local-cell-reference, array-constant, bang-reference, bang-name, sheet-range-reference, or structure-reference production rules.*  
+  
+ *The formula MUST NOT match the single-sheet-area production rule.*  
+  
+ The following table explains how to interpret the formulas.  
+  
+|||  
+|-|-|  
+|*Value of type*|*Interpretation of the formulas in f*|  
+|*cellIs*|*f elements that specify the formulas, numeric values, or cell references that specify the operands for the ST_ConditionalFormattingOperator ([ISO/IEC-29500-1] section 18.18.15) specified by operator. If operator is "between" or "notBetween", f MUST contain two formulas; otherwise, f MUST contain one formula.*|  
+|*expression*|*An f element that specifies a formula. When the formula returns zero, conditional formatting is not displayed. When the formula returns a nonzero value, conditional formatting is displayed.*|  
+|*colorScale, dataBar, iconSet*|*An f element that specifies a formula. When the formula returns zero, conditional formatting is not displayed. When the formula returns a nonzero value, or is not present, conditional formatting is displayed.*|  
+|*containsText, notContainsText, beginsWith,*<br /><br /> *endsWith,*<br /><br /> *containsBlanks, notContainsBlanks,*<br /><br /> *containsErrors,*<br /><br /> *notContainsErrors*|*An f element that specifies a formula that implements the operation specified by type. When the formula returns zero, conditional formatting is not displayed. When the formula returns a nonzero value, conditional formatting is displayed.*|  
+  
+ *colorScale:* A CT_ColorScale element that specifies a color scale.  
+  
+ *dataBar:* A CT_DataBar element that specifies a data bar.  
+  
+ *iconSet:* A CT_IconSet element that specifies an *icon set*.  
+  
+ *dxf:* A *CT_Dxf* ([ISO/IEC-29500-4] section A.2) element that specifies the differential formatting ([ISO/IEC-29500-1] section M.2.7.3.8) applied to the range. If *type* is "colorScale", "dataBar", or "iconSet", or the *priority* attribute does not exist, this element MUST NOT exist.  
+  
+ *extLst:* A *CT_ExtensionList* ([ISO/IEC-29500-4] section A.2) element that specifies future extensibility for this element.  
+  
+ *Attributes:*  
+  
+ *type:* An *ST_CfType* ([ISO/IEC-29500-1] section 18.18.12) attribute that specifies the way conditional formatting is displayed in the range.  
+  
+ If and only if *type* is "colorScale", a *colorScale* child element MUST exist in this element.  
+  
+ If and only if *type* is "dataBar", a *dataBar* child element MUST exist in this element.  
+  
+ If and only if *type* is "iconSet", an *iconSet* child element MUST exist in this element.  
+  
+ *priority:* An *int* ([XMLSCHEMA2] section 3.3.17) attribute that specifies the relative priority of this rule compared to the other rules in this sheet (1), or whether this CT_CfRule specifies extension information for a conditional formatting data bar rule as specified by the associated *CT_CfRule* ([ISO/IEC-29500-4] section A.2) element. MUST be greater than 0.  
+  
+ If *priority* exists, rules are applied in order from the smallest *priority* to the largest *priority* and it MUST NOT duplicate a *priority* value in any other CT_CfRule or *CT_CfRule* ([ISO/IEC-29500-4] section A.2) element that exists in the same worksheet part.  
+  
+ If *priority* does not exist, this CT_CfRule specifies extension information for a conditional formatting data bar rule, and the *dataBar* child element MUST exist and describe this additional information. The *id* attribute is used to identify the associated *CT_CfRule* ([ISO/IEC-29500-4] section A.2), and the *priority* attribute of this *CT_CfRule* ([ISO/IEC-29500-4] section A.2) specifies the relative priority of this rule. If neither the *priority* attribute nor the *id* attribute exists in this element, or if *id* exists but there exists no *CT_CfRule* ([ISO/IEC-29500-4] section A.2) element containing a matching *GUID*, this record and the succeeding *dataBar* child element MUST be ignored. If the *priority* attribute exists in this element, *id* MUST be ignored.  
+  
+ *stopIfTrue:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether evaluation of additional conditional formatting rules is skipped for a cell if this rule evaluates to "true" for that cell.  
+  
+ *aboveAverage:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the conditional formatting rule is applied to cells with values above or below the average value of other cells in the range as specified by the following table. This attribute MUST NOT exist if *type* is not equal to "aboveAverage".  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"true"*|*The conditional formatting rule is applied to cells with values above the average value of all cells in the range.*|  
+|*"false"*|*The conditional formatting rule is applied to cells with values below the average value of all cells in the range.*|  
+  
+ *percent:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the conditional formatting rule is applied to a percentage of cells as specified by the following table. This attribute MUST NOT exist if *type* is not equal to "top10".  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"true"*|*rank specifies the percentage of cells in the range to which conditional formatting is applied.*|  
+|*"false"*|*The conditional formatting rule is applied to the number of cells specified by rank.*|  
+  
+ *bottom:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies how the conditional formatting rule is applied as specified by the following table. This attribute MUST NOT exist if *type* is not equal to "top10".  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"true"*|*Conditional formatting is applied to cells whose value is in the bottom end of the range specified by percent and rank.*|  
+|*"false"*|*Conditional formatting is applied to cells whose value is in the top end of the range specified by percent and rank.*|  
+  
+ *operator:* An *ST_ConditionalFormattingOperator* ([ISO/IEC-29500-1] section 18.18.15) attribute that specifies the type of value comparison used for this conditional formatting rule. This attribute MUST NOT exist if *type* is not equal to "cellIs".  
+  
+ *text:* A *string* ([XMLSCHEMA2] section 3.2.1) attribute that specifies a text value used for this conditional formatting rule. This attribute MUST NOT exist if type is not equal to "beginsWith", "containsText", "endsWith", or "notContainsText".  
+  
+ *timePeriod:* An *ST_TimePeriod* ([ISO/IEC-29500-1] section 18.18.82) attribute that specifies the time period used for this conditional formatting rule. This attribute MUST NOT exist if *type* is not equal to "timePeriod".  
+  
+ *rank:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies how many cells are formatted by this conditional formatting rule. The value of *percent* specifies whether *rank* is a percentage or a quantity of cells. When *percent* is "true", *rank* MUST be greater than or equal to zero and less than or equal to 100. Otherwise, *rank* MUST be greater than or equal to 1 and less than or equal to 1,000. This attribute MUST NOT exist if *type* is not equal to "top10".  
+  
+ *stdDev:* An *int* ([XMLSCHEMA2] section 3.3.17) attribute that specifies the number of standard deviations above or below the average to format in the conditional formatting rule. This attribute MUST NOT exist if *type* is not equal to "aboveAverage" or if *equalAverage* is "true".  
+  
+ *equalAverage:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies, together with *aboveAverage*, how the conditional formatting rule is applied as specified by the following table. This attribute MUST NOT exist if *type* is not equal to "aboveAverage".  
+  
+||||  
+|-|-|-|  
+|*Value of equalAverage*|*Value of aboveAverage*|*Meaning*|  
+|*"true"*|*"true"*|*Conditional formatting is applied to cells whose value is equal to or above the average value of cells in the range.*|  
+|*"true"*|*"false"*|*Conditional formatting is applied to cells whose value is equal to or below the average value of cells in the range.*|  
+|*"false"*|*"true"*|*Conditional formatting is applied to cells whose value is above the average value of all cells in the range plus stdDev and multiplied by the standard deviation of all cells in the range.*|  
+|*"false"*|*"false"*|*Conditional formatting is applied to cells whose value is below the average value of all cells in the range minus stdDev and multiplied by the standard deviation of all cells in the range.*|  
+  
+ *activePresent:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that MUST be "true" if, and only if, a formula is present in *f* and *type* is "colorScale", "dataBar", or "iconSet".  
+  
+ *id:* An *ST_Guid* ([ISO/IEC-29500-1] section 22.9.2.4) attribute that identifies this conditional formatting rule. If the *priority* attribute does not exist, and this attribute exists, this attribute is used to match this CT_CfRule element to the corresponding *CT_CfRule* ([ISO/IEC-29500-4] section A.2) element. If neither the *priority* attribute nor this attribute exists, this CT_CfRule and its child CT_DataBar element MUST be ignored.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_CfRule">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element ref="xm:f" minOccurs="0" maxOccurs="3"/>*  
+  
+ *\<xsd:element name="colorScale" type="CT_ColorScale" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="dataBar" type="CT_DataBar" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="iconSet" type="CT_IconSet" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="dxf" type="x:CT_Dxf" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="extLst" type="x:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="type" type="x:ST_CfType" use="optional"/>*  
+  
+ *\<xsd:attribute name="priority" type="xsd:int" use="optional"/>*  
+  
+ *\<xsd:attribute name="stopIfTrue" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="aboveAverage" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="percent" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="bottom" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="operator" type="x:ST_ConditionalFormattingOperator" use="optional"/>*  
+  
+ *\<xsd:attribute name="text" type="xsd:string" use="optional"/>*  
+  
+ *\<xsd:attribute name="timePeriod" type="x:ST_TimePeriod" use="optional"/>*  
+  
+ *\<xsd:attribute name="rank" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\<xsd:attribute name="stdDev" type="xsd:int" use="optional"/>*  
+  
+ *\<xsd:attribute name="equalAverage" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="activePresent" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="id" type="x:ST_Guid" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -61,9 +214,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ConditionalFormattingRule class.
-            </summary>
+        <summary>Initializes a new instance of the ConditionalFormattingRule class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,9 +240,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConditionalFormattingRule class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ConditionalFormattingRule class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +260,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConditionalFormattingRule class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ConditionalFormattingRule class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -133,9 +280,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ConditionalFormattingRule class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ConditionalFormattingRule class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,10 +304,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> aboveAverage.</para>
-          <para>Represents the following attribute in the schema: aboveAverage </para>
-        </summary>
+        <summary>aboveAverage.Represents the following attribute in the schema: aboveAverage</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -187,10 +329,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> activePresent.</para>
-          <para>Represents the following attribute in the schema: activePresent </para>
-        </summary>
+        <summary>activePresent.Represents the following attribute in the schema: activePresent</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -215,10 +354,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> bottom.</para>
-          <para>Represents the following attribute in the schema: bottom </para>
-        </summary>
+        <summary>bottom.Represents the following attribute in the schema: bottom</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -241,11 +377,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -269,10 +403,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> equalAverage.</para>
-          <para>Represents the following attribute in the schema: equalAverage </para>
-        </summary>
+        <summary>equalAverage.Represents the following attribute in the schema: equalAverage</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -297,10 +428,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -320,9 +448,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -347,10 +473,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ConditionalFormattingOperatorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> operator.</para>
-          <para>Represents the following attribute in the schema: operator </para>
-        </summary>
+        <summary>operator.Represents the following attribute in the schema: operator</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -375,10 +498,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> percent.</para>
-          <para>Represents the following attribute in the schema: percent </para>
-        </summary>
+        <summary>percent.Represents the following attribute in the schema: percent</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -403,10 +523,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> priority.</para>
-          <para>Represents the following attribute in the schema: priority </para>
-        </summary>
+        <summary>priority.Represents the following attribute in the schema: priority</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -431,10 +548,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> rank.</para>
-          <para>Represents the following attribute in the schema: rank </para>
-        </summary>
+        <summary>rank.Represents the following attribute in the schema: rank</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -459,10 +573,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> stdDev.</para>
-          <para>Represents the following attribute in the schema: stdDev </para>
-        </summary>
+        <summary>stdDev.Represents the following attribute in the schema: stdDev</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -487,10 +598,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> stopIfTrue.</para>
-          <para>Represents the following attribute in the schema: stopIfTrue </para>
-        </summary>
+        <summary>stopIfTrue.Represents the following attribute in the schema: stopIfTrue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -515,10 +623,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> text.</para>
-          <para>Represents the following attribute in the schema: text </para>
-        </summary>
+        <summary>text.Represents the following attribute in the schema: text</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -543,10 +648,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.TimePeriodValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> timePeriod.</para>
-          <para>Represents the following attribute in the schema: timePeriod </para>
-        </summary>
+        <summary>timePeriod.Represents the following attribute in the schema: timePeriod</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -571,10 +673,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
+        <summary>type.Represents the following attribute in the schema: type</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

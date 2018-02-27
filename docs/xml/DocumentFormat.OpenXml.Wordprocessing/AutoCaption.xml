@@ -1,4 +1,4 @@
-﻿<Type Name="AutoCaption" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoCaption">
+<Type Name="AutoCaption" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoCaption">
   <TypeSignature Language="C#" Value="public class AutoCaption : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutoCaption extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AutoCaption" />
@@ -18,11 +18,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Single Automatic Captioning Setting.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:autoCaption.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Single Automatic Captioning Setting. When the object is serialized out as xml, its qualified name is w:autoCaption.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `autoCaption (Single Automatic Captioning Setting)`  
+  
+ This element specifies what type(s) of objects shall automatically labelled with captions (§17.15.1.17), and with which captions the specified objects shall be labelled as defined in the caption element (§17.15.1.16).  
+  
+ [*Example*: Consider the diagram below illustrating a two page WordprocessingML document that has leveraged WordprocessingML to automatically label WordprocessingML tables with a specified caption when tables are inserted into the given document.  
+  
+ f65cd64f-196b-49cf-afb5-90eb3de0ee55  
+  
+ fb348e60-c43c-4d91-91c9-b975b016b083  
+  
+ This type of automatic captioning is specified using the following WordprocessingML fragment:  
+  
+```xml  
+<w:captions>  
+  <w:caption w:name="Table" w:pos="below" w:chapNum="1" w:heading="2" w:numFmt="upperLetter" w:sep="8212" />  
+  <w:autoCaptions>  
+    <w:autoCaption w:name="wfwTable" w:caption="Table" />  
+  </w:autoCaptions>  
+</w:captions>  
+```  
+  
+ Here, the autoCaption element specifies through the name attribute being set equal to *wfwTable* that tables are automatically be labeled with the caption specified in the caption element whose name attribute is equal to *Table*, as the caption element's caption attribute has a value of *Table*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|autoCaptions (§17.15.1.8)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_AutoCaption) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +72,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AutoCaption class.
-            </summary>
+        <summary>Initializes a new instance of the AutoCaption class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,12 +96,33 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Caption Used for Automatic Captioning.</para>
-          <para>Represents the following attribute in the schema: w:caption </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Caption Used for Automatic Captioning.Represents the following attribute in the schema: w:caption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the caption defined in using the `caption` element which shall be used to automatically label a given type of object inserted into a WordprocessingML document. The caption settings are linked by matching the value of this attribute with the `name` attribute on the corresponding `caption` element.  
+  
+ Consider the following WordprocessingML:  
+  
+```  
+<w:captions>  
+  <w:caption w:name="table" w:pos="below" w:chapNum="1" w:heading="0" w:noLabel="1" w:numFmt="upperRoman" />  
+  <w:autoCaptions>  
+    <w:autoCaption w:name="Paint.Picture"      w:caption="table" />  
+  </w:autoCaptions>  
+</w:captions>  
+```  
+  
+ The `autoCaption` element specifies, through the `name` attribute being set equal to `wfwTable`, that tables will automatically be labeled with the caption whose name attribute is equal to `Table` (specified by the `caption` element's `name` attribute having a value of `Table`).  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -91,11 +145,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,10 +166,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,12 +191,28 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Identifier of Object to be Automatically Captioned.</para>
-          <para>Represents the following attribute in the schema: w:name </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Identifier of Object to be Automatically Captioned.Represents the following attribute in the schema: w:name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier which may be used to associate objects inserted into the document which are to be automatically labeled with a caption when inserted into the WordprocessingML document.  
+  
+ Consider the following WordprocessingML specifying that WordprocessingML tables should be labeled with the `custom` caption:  
+  
+```  
+<w:autoCaption w:name="wfwTables" w:caption="custom" />  
+```  
+  
+ The `name` attribute’s value of `wfwTables` specifies that WordprocessingML tables shall be labeled with the `custom` caption.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

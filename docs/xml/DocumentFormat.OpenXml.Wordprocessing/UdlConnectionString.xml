@@ -1,4 +1,4 @@
-﻿<Type Name="UdlConnectionString" FullName="DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString">
+<Type Name="UdlConnectionString" FullName="DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString">
   <TypeSignature Language="C#" Value="public class UdlConnectionString : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UdlConnectionString extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString" />
@@ -18,11 +18,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>UDL Connection String.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:udl.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>UDL Connection String. When the object is serialized out as xml, its qualified name is w:udl.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **udl (UDL Connection String)**  
+  
+ This element specifies the Universal Data Link (UDL) connection string used to reconnect to an external data source. The string within this element's val attribute shall contain the connection string that the hosting application shall pass to a external data source access application to enable the WordprocessingML document to be reconnected to the specified external data source.  
+  
+ If this string is omitted, then no UDL connection string shall be associated with the ODSO data for this mail merge.  
+  
+ This connection string is only used under the following conditions:  
+  
+-   The dataType element (§17.14.10) is set to *native*  
+  
+-   The current application is able to use the information contained in the odso element (§17.14.25) to access the data source  
+  
+ [*Guidance*: In this case, using the connection string in the udl element provides an equal or greater amount of information for the mail merge data source for clients which can consume it. *end guidance*]  
+  
+ [*Example*: Consider a merged WordprocessingML document that has been connected to an external data source for the purposes of a mail merge. The following WordprocessingML fragment represents the legacy connection string used to connect to the external data source when the merged WordprocessingML document is reopened:  
+  
+```xml  
+<w:udl w:val="Provider=Example;Password=Test;User ID=readonly;…" />  
+```  
+  
+ The udl element specifies that the string *Provider=Example;Password=Test;User ID=readonly;…* must be used to enable the given WordprocessingML document to be reconnected to the specified external data source. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|odso (§17.14.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UdlConnectionString class.
-            </summary>
+        <summary>Initializes a new instance of the UdlConnectionString class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +93,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

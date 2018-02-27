@@ -1,4 +1,4 @@
-﻿<Type Name="EndSync" FullName="DocumentFormat.OpenXml.Presentation.EndSync">
+<Type Name="EndSync" FullName="DocumentFormat.OpenXml.Presentation.EndSync">
   <TypeSignature Language="C#" Value="public class EndSync : DocumentFormat.OpenXml.Presentation.TimeListConditionalType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndSync extends DocumentFormat.OpenXml.Presentation.TimeListConditionalType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.EndSync" />
@@ -18,13 +18,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the EndSync Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:endSync.</para>
-    </summary>
+    <summary>Defines the EndSync Class. When the object is serialized out as xml, its qualified name is p:endSync.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TargetElement &lt;p:tgtEl&gt;</description></item><item><description>TimeNode &lt;p:tn&gt;</description></item><item><description>RuntimeNodeTrigger &lt;p:rtn&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **endSync (EndSync)**  
+  
+ This element is used to synchronizes the stopping of parallel elements in the timing tree. It is used on interactive timeline sequences to specify that the interactive sequence’s duration ends when all of the child timenodes have ended.  It is also used to make interactive sequences restart-able (so that the entire interactive sequence can be repeated if the trigger object is clicked on repeatedly).  
+  
+ [*Example*:  Consider a shape with a fill change animation. The \<endSync> element should be used as follows:  
+  
+```xml  
+<p:seq concurrent="1" nextAc="seek">  
+  <p:cTn>  
+    <p:stCondLst/>  
+    <p:endSync evt="end" delay="0">  
+      <p:rtn val="all"/>  
+    </p:endSync>  
+    <p:childTnLst/>  
+  </p:cTn>  
+  <p:nextCondLst/>  
+</p:seq>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cTn (§19.5.33)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|rtn (Runtime Node Trigger Choice)|§19.5.64|  
+|tgtEl (Target Element)|§19.5.81|  
+|tn (Time Node)|§19.5.86|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|delay (Trigger Delay)|This attribute describes the delay after an animation is triggered.<br /><br /> The possible values for this attribute are defined by the *ST_TLTime* simple type (§19.7.38).|  
+|evt (Trigger Event)|This attribute describes the event that triggers an animation.<br /><br /> The possible values for this attribute are defined by the *ST_TLTriggerEvent* simple type (§19.7.48).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLTimeCondition) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EndSync class.
-            </summary>
+        <summary>Initializes a new instance of the EndSync class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,9 +107,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EndSync class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the EndSync class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,9 +127,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EndSync class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the EndSync class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +147,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the EndSync class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the EndSync class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,11 +169,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,10 +190,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

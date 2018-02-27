@@ -1,4 +1,4 @@
-﻿<Type Name="PreviousParagraphProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties">
+<Type Name="PreviousParagraphProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties">
   <TypeSignature Language="C#" Value="public class PreviousParagraphProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PreviousParagraphProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties" />
@@ -111,13 +111,85 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Numbering Level Associated Paragraph Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:pPr.</para>
-    </summary>
+    <summary>Numbering Level Associated Paragraph Properties. When the object is serialized out as xml, its qualified name is w:pPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ParagraphStyleId &lt;w:pStyle&gt;</description></item><item><description>KeepNext &lt;w:keepNext&gt;</description></item><item><description>KeepLines &lt;w:keepLines&gt;</description></item><item><description>PageBreakBefore &lt;w:pageBreakBefore&gt;</description></item><item><description>FrameProperties &lt;w:framePr&gt;</description></item><item><description>WidowControl &lt;w:widowControl&gt;</description></item><item><description>NumberingProperties &lt;w:numPr&gt;</description></item><item><description>SuppressLineNumbers &lt;w:suppressLineNumbers&gt;</description></item><item><description>ParagraphBorders &lt;w:pBdr&gt;</description></item><item><description>Shading &lt;w:shd&gt;</description></item><item><description>Tabs &lt;w:tabs&gt;</description></item><item><description>SuppressAutoHyphens &lt;w:suppressAutoHyphens&gt;</description></item><item><description>Kinsoku &lt;w:kinsoku&gt;</description></item><item><description>WordWrap &lt;w:wordWrap&gt;</description></item><item><description>OverflowPunctuation &lt;w:overflowPunct&gt;</description></item><item><description>TopLinePunctuation &lt;w:topLinePunct&gt;</description></item><item><description>AutoSpaceDE &lt;w:autoSpaceDE&gt;</description></item><item><description>AutoSpaceDN &lt;w:autoSpaceDN&gt;</description></item><item><description>BiDi &lt;w:bidi&gt;</description></item><item><description>AdjustRightIndent &lt;w:adjustRightInd&gt;</description></item><item><description>SnapToGrid &lt;w:snapToGrid&gt;</description></item><item><description>SpacingBetweenLines &lt;w:spacing&gt;</description></item><item><description>Indentation &lt;w:ind&gt;</description></item><item><description>ContextualSpacing &lt;w:contextualSpacing&gt;</description></item><item><description>MirrorIndents &lt;w:mirrorIndents&gt;</description></item><item><description>SuppressOverlap &lt;w:suppressOverlap&gt;</description></item><item><description>Justification &lt;w:jc&gt;</description></item><item><description>TextDirection &lt;w:textDirection&gt;</description></item><item><description>TextAlignment &lt;w:textAlignment&gt;</description></item><item><description>TextBoxTightWrap &lt;w:textboxTightWrap&gt;</description></item><item><description>OutlineLevel &lt;w:outlineLvl&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **pPr (Numbering Level Associated Paragraph Properties)**  
+  
+ This element specifies the paragraph properties which shall be applied as part of a given numbering level within the parent numbering definition. These paragraph properties are applied to any numbered paragraph that references the given numbering definition and numbering level.  
+  
+ Paragraph properties specified on the numbered paragraph itself override the paragraph properties specified by pPr elements within a numbering lvl element (§17.9.6, §17.9.7).  
+  
+ [*Example:* Consider the WordprocessingML below which specifies numbering level paragraph properties:  
+  
+```xml  
+<w:abstractNum w:abstractNumId="1">  
+  …  
+  <w:lvl w:ilvl="0">  
+    …  
+    <w:pPr>  
+      <w:tabs>  
+        <w:tab w:val="num" w:pos="720" />  
+      </w:tabs>  
+      <w:ind w:left="720" w:hanging="360" />  
+    </w:pPr>  
+  </w:lvl>  
+</w:abstractNum>  
+```  
+  
+ Each of the paragraph properties specified inside the pPr element are applied to any numbered paragraph which inherits this numbering level definition as part of the numbering properties in the order defined by the style hierarchy. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lvl (§17.9.6); lvl (§17.9.7)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|adjustRightInd (Automatically Adjust Right Indent When Using Document Grid)|§17.3.1.1|  
+|autoSpaceDE (Automatically Adjust Spacing of Latin and East Asian Text)|§17.3.1.2|  
+|autoSpaceDN (Automatically Adjust Spacing of East Asian Text and Numbers)|§17.3.1.3|  
+|bidi (Right to Left Paragraph Layout)|§17.3.1.6|  
+|cnfStyle (Paragraph Conditional Formatting)|§17.3.1.8|  
+|contextualSpacing (Ignore Spacing Above and Below When Using Identical Styles)|§17.3.1.9|  
+|divId (Associated HTML div ID)|§17.3.1.10|  
+|framePr (Text Frame Properties)|§17.3.1.11|  
+|ind (Paragraph Indentation)|§17.3.1.12|  
+|jc (Paragraph Alignment)|§17.3.1.13|  
+|keepLines (Keep All Lines On One Page)|§17.3.1.14|  
+|keepNext (Keep Paragraph With Next Paragraph)|§17.3.1.15|  
+|kinsoku (Use East Asian Typography Rules for First and Last Character per Line)|§17.3.1.16|  
+|mirrorIndents (Use Left/Right Indents as Inside/Outside Indents)|§17.3.1.18|  
+|numPr (Numbering Definition Instance Reference)|§17.3.1.19|  
+|outlineLvl (Associated Outline Level)|§17.3.1.20|  
+|overflowPunct (Allow Punctuation to Extend Past Text Extents)|§17.3.1.21|  
+|pageBreakBefore (Start Paragraph on Next Page)|§17.3.1.23|  
+|pBdr (Paragraph Borders)|§17.3.1.24|  
+|pPrChange (Revision Information for Paragraph Properties)|§17.13.5.29|  
+|pStyle (Referenced Paragraph Style)|§17.3.1.27|  
+|shd (Paragraph Shading)|§17.3.1.31|  
+|snapToGrid (Use Document Grid Settings for Inter-Line Paragraph Spacing)|§17.3.1.32|  
+|spacing (Spacing Between Lines and Above/Below Paragraph)|§17.3.1.33|  
+|suppressAutoHyphens (Suppress Hyphenation for Paragraph)|§17.3.1.34|  
+|suppressLineNumbers (Suppress Line Numbers for Paragraph)|§17.3.1.35|  
+|suppressOverlap (Prevent Text Frames From Overlapping)|§17.3.1.36|  
+|tabs (Set of Custom Tab Stops)|§17.3.1.38|  
+|textAlignment (Vertical Character Alignment on Line)|§17.3.1.39|  
+|textboxTightWrap (Allow Surrounding Paragraphs to Tight Wrap to Text Box Contents)|§17.3.1.40|  
+|textDirection (Paragraph Text Flow Direction)|§17.3.1.41|  
+|topLinePunct (Compress Punctuation at Start of a Line)|§17.3.1.43|  
+|widowControl (Allow First/Last Line to Display on a Separate Page)|§17.3.1.44|  
+|wordWrap (Allow Line Breaking At Character Level)|§17.3.1.45|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PPrGeneral) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -132,9 +204,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PreviousParagraphProperties class.
-            </summary>
+        <summary>Initializes a new instance of the PreviousParagraphProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -160,9 +230,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PreviousParagraphProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PreviousParagraphProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -182,9 +250,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PreviousParagraphProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PreviousParagraphProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,9 +270,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PreviousParagraphProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PreviousParagraphProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,11 +289,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AdjustRightIndent.</para>
-          <para> Represents the following element tag in the schema: w:adjustRightInd </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>AdjustRightIndent. Represents the following element tag in the schema: w:adjustRightInd</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -251,11 +312,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AutoSpaceDE.</para>
-          <para> Represents the following element tag in the schema: w:autoSpaceDE </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>AutoSpaceDE. Represents the following element tag in the schema: w:autoSpaceDE</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -277,11 +335,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AutoSpaceDN.</para>
-          <para> Represents the following element tag in the schema: w:autoSpaceDN </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>AutoSpaceDN. Represents the following element tag in the schema: w:autoSpaceDN</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -303,11 +358,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BiDi</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> BiDi.</para>
-          <para> Represents the following element tag in the schema: w:bidi </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>BiDi. Represents the following element tag in the schema: w:bidi</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.BiDi" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -332,11 +384,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -355,11 +405,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ContextualSpacing.</para>
-          <para> Represents the following element tag in the schema: w:contextualSpacing </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ContextualSpacing. Represents the following element tag in the schema: w:contextualSpacing</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -381,11 +428,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.FrameProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FrameProperties.</para>
-          <para> Represents the following element tag in the schema: w:framePr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>FrameProperties. Represents the following element tag in the schema: w:framePr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.FrameProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -407,11 +451,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Indentation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Indentation.</para>
-          <para> Represents the following element tag in the schema: w:ind </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Indentation. Represents the following element tag in the schema: w:ind</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Indentation" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -433,11 +474,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Justification</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Justification.</para>
-          <para> Represents the following element tag in the schema: w:jc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Justification. Represents the following element tag in the schema: w:jc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Justification" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -459,11 +497,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.KeepLines</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> KeepLines.</para>
-          <para> Represents the following element tag in the schema: w:keepLines </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>KeepLines. Represents the following element tag in the schema: w:keepLines</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.KeepLines" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -485,11 +520,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.KeepNext</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> KeepNext.</para>
-          <para> Represents the following element tag in the schema: w:keepNext </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>KeepNext. Represents the following element tag in the schema: w:keepNext</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.KeepNext" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -511,11 +543,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Kinsoku</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Kinsoku.</para>
-          <para> Represents the following element tag in the schema: w:kinsoku </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Kinsoku. Represents the following element tag in the schema: w:kinsoku</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Kinsoku" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -537,10 +566,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -559,11 +586,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.MirrorIndents</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> MirrorIndents.</para>
-          <para> Represents the following element tag in the schema: w:mirrorIndents </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>MirrorIndents. Represents the following element tag in the schema: w:mirrorIndents</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.MirrorIndents" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -585,11 +609,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> NumberingProperties.</para>
-          <para> Represents the following element tag in the schema: w:numPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>NumberingProperties. Represents the following element tag in the schema: w:numPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.NumberingProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -611,11 +632,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.OutlineLevel</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OutlineLevel.</para>
-          <para> Represents the following element tag in the schema: w:outlineLvl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>OutlineLevel. Represents the following element tag in the schema: w:outlineLvl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.OutlineLevel" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -637,11 +655,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OverflowPunctuation.</para>
-          <para> Represents the following element tag in the schema: w:overflowPunct </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>OverflowPunctuation. Represents the following element tag in the schema: w:overflowPunct</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -663,11 +678,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PageBreakBefore.</para>
-          <para> Represents the following element tag in the schema: w:pageBreakBefore </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>PageBreakBefore. Represents the following element tag in the schema: w:pageBreakBefore</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -689,11 +701,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ParagraphBorders.</para>
-          <para> Represents the following element tag in the schema: w:pBdr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ParagraphBorders. Represents the following element tag in the schema: w:pBdr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -715,11 +724,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleId</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ParagraphStyleId.</para>
-          <para> Represents the following element tag in the schema: w:pStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ParagraphStyleId. Represents the following element tag in the schema: w:pStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleId" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -741,11 +747,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Shading</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shading.</para>
-          <para> Represents the following element tag in the schema: w:shd </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shading. Represents the following element tag in the schema: w:shd</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Shading" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -767,11 +770,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SnapToGrid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SnapToGrid.</para>
-          <para> Represents the following element tag in the schema: w:snapToGrid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SnapToGrid. Represents the following element tag in the schema: w:snapToGrid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.SnapToGrid" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -793,11 +793,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SpacingBetweenLines.</para>
-          <para> Represents the following element tag in the schema: w:spacing </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SpacingBetweenLines. Represents the following element tag in the schema: w:spacing</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -819,11 +816,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SuppressAutoHyphens.</para>
-          <para> Represents the following element tag in the schema: w:suppressAutoHyphens </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SuppressAutoHyphens. Represents the following element tag in the schema: w:suppressAutoHyphens</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -845,11 +839,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SuppressLineNumbers.</para>
-          <para> Represents the following element tag in the schema: w:suppressLineNumbers </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SuppressLineNumbers. Represents the following element tag in the schema: w:suppressLineNumbers</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -871,11 +862,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SuppressOverlap.</para>
-          <para> Represents the following element tag in the schema: w:suppressOverlap </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SuppressOverlap. Represents the following element tag in the schema: w:suppressOverlap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -897,11 +885,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Tabs</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Tabs.</para>
-          <para> Represents the following element tag in the schema: w:tabs </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Tabs. Represents the following element tag in the schema: w:tabs</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Tabs" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -923,11 +908,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TextAlignment</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextAlignment.</para>
-          <para> Represents the following element tag in the schema: w:textAlignment </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TextAlignment. Represents the following element tag in the schema: w:textAlignment</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TextAlignment" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -949,10 +931,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextBoxTightWrap.</para>
-          <para> Represents the following element tag in the schema: w:textboxTightWrap </para>
-        </summary>
+        <summary>TextBoxTightWrap. Represents the following element tag in the schema: w:textboxTightWrap</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -975,11 +954,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TextDirection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextDirection.</para>
-          <para> Represents the following element tag in the schema: w:textDirection </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TextDirection. Represents the following element tag in the schema: w:textDirection</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TextDirection" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -1001,11 +977,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TopLinePunctuation.</para>
-          <para> Represents the following element tag in the schema: w:topLinePunct </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TopLinePunctuation. Represents the following element tag in the schema: w:topLinePunct</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -1027,11 +1000,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.WidowControl</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WidowControl.</para>
-          <para> Represents the following element tag in the schema: w:widowControl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>WidowControl. Represents the following element tag in the schema: w:widowControl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.WidowControl" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -1053,11 +1023,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.WordWrap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WordWrap.</para>
-          <para> Represents the following element tag in the schema: w:wordWrap </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>WordWrap. Represents the following element tag in the schema: w:wordWrap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.WordWrap" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

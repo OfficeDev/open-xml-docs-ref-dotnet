@@ -1,4 +1,4 @@
-﻿<Type Name="FrameLayout" FullName="DocumentFormat.OpenXml.Wordprocessing.FrameLayout">
+<Type Name="FrameLayout" FullName="DocumentFormat.OpenXml.Wordprocessing.FrameLayout">
   <TypeSignature Language="C#" Value="public class FrameLayout : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FrameLayout extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FrameLayout" />
@@ -18,11 +18,62 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Frameset Layout.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:frameLayout.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Frameset Layout. When the object is serialized out as xml, its qualified name is w:frameLayout.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `frameLayout (Frameset Layout)`  
+  
+ This element specifies the order in which the frames (and nested framesets) in a frameset shall be displayed. When a frameset is created, it can only contain frames which are stacked in one direction:  
+  
+-   Vertically (one on top of another)  
+  
+-   Horizontally (one next to another)  
+  
+ This element specifies how the frames in this frameset are stacked, which shall also be used to interpret the sizes defined by the sz element (§17.15.2.40) for each frame. In order to determine the ordering of the constituent frames within this frameset, the ordering of the child frame and frameset elements shall be used.  
+  
+ If this element is omitted, then the frames in this frameset shall be stacked vertically on top of one another (a row frameset).  
+  
+ [*Example*: Consider a WordprocessingML document which serves as the frameset container for a frameset consisting of the following three frames:  
+  
+ 5af741fd-c5fa-432d-be11-98201b230746  
+  
+ The frameset properties for this document are specified by the following WordprocessingML within the web page settings:  
+  
+```xml  
+<w:frameset>  
+  …  
+  <w:frameLayout w:val="rows" />  
+  <w:frame>  
+    …  
+  </w:frame>  
+  <w:frameset>  
+    <w:frameLayout w:val="cols" />  
+    <w:frame>  
+      …  
+    </w:frame>  
+    <w:frame>  
+      …  
+    </w:frame>  
+  </w:frameset>  
+</w:frameset>  
+```  
+  
+ The frameLayout element specifies that the outer frameset is a consists of the single frame and the child frameset stacked vertically, and an inner nested frameset consisting of two frames stacked horizontally. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|frameset (§17.15.2.18); frameset (§17.15.2.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FrameLayout) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +88,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FrameLayout class.
-            </summary>
+        <summary>Initializes a new instance of the FrameLayout class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +110,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +131,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +156,31 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Frameset Layout Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Frameset Layout Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of layout which shall be used to display the contents of the frames and nested framesets within this frameset, as defined by the simple type referenced below.  
+  
+ Consider a frameset definition within a WordprocessingML document which defines the following frameset layout setting:  
+  
+```  
+<w:frame>  
+  <w:frameLayout w:val="cols" />  
+  …  
+</w:frame>  
+```  
+  
+ The `val` attribute value of `cols` specifies that the contents of this frameset shall be stacked horizontally (in columns).  
+  
+ The possible values for this attribute are defined by the `ST_FrameLayout` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

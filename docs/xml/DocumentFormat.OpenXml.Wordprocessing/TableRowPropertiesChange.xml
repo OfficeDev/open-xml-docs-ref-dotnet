@@ -1,4 +1,4 @@
-﻿<Type Name="TableRowPropertiesChange" FullName="DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange">
+<Type Name="TableRowPropertiesChange" FullName="DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange">
   <TypeSignature Language="C#" Value="public class TableRowPropertiesChange : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableRowPropertiesChange extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableRowPropertiesChange" />
@@ -21,13 +21,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Revision Information for Table Row Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:trPrChange.</para>
-    </summary>
+    <summary>Revision Information for Table Row Properties. When the object is serialized out as xml, its qualified name is w:trPrChange.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PreviousTableRowProperties &lt;w:trPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **trPrChange (Revision Information for Table Row Properties)**  
+  
+ This element specifies the details about a single revision to a set of table row properties in a WordprocessingML document.  
+  
+ This element stores this revision as follows:  
+  
+-   The child element of this element contains the complete set of table row properties which were applied to the parent table row before this revision  
+  
+-   The attributes of this element contain information about when this revision took place (i.e. when these properties became a 'former' set of table row properties).  
+  
+ [*Example*: Consider a table cell in a WordprocessingML document which has a change in the table row properties that is tracked as a revision. This revision would be specified using the following WordprocessingML markup:  
+  
+```xml  
+<w:trPr>  
+  <w:cantSplit/>  
+  <w:trPrChange w:id="8" w:author="" w:date="2006-06-01T13:39:00Z">  
+    <w:trPr/>  
+  </w:trPrChange>  
+</w:trPr>  
+```  
+  
+ The trPrChange element specifies that there was a revision to the table row properties at *2006-06-01* by , and the previous set of properties on the table row was the set specified in the child trPr element (in this case, the null set). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|trPr (Previous Table Row Properties)|§17.4.83|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrPrChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableRowPropertiesChange class.
-            </summary>
+        <summary>Initializes a new instance of the TableRowPropertiesChange class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +105,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableRowPropertiesChange class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TableRowPropertiesChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +125,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableRowPropertiesChange class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TableRowPropertiesChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +145,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TableRowPropertiesChange class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TableRowPropertiesChange class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,11 +169,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> author.</para>
-          <para>Represents the following attribute in the schema: w:author </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>author.Represents the following attribute in the schema: w:author</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -168,11 +194,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -196,11 +220,8 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> date.</para>
-          <para>Represents the following attribute in the schema: w:date </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>date.Represents the following attribute in the schema: w:date</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DateTimeValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -226,11 +247,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Annotation Identifier.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Annotation Identifier.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -251,10 +269,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -273,11 +289,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Table Row Properties.</para>
-          <para> Represents the following element tag in the schema: w:trPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Previous Table Row Properties. Represents the following element tag in the schema: w:trPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PreviousTableRowProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

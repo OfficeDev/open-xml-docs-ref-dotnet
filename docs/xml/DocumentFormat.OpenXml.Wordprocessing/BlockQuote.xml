@@ -1,4 +1,4 @@
-﻿<Type Name="BlockQuote" FullName="DocumentFormat.OpenXml.Wordprocessing.BlockQuote">
+<Type Name="BlockQuote" FullName="DocumentFormat.OpenXml.Wordprocessing.BlockQuote">
   <TypeSignature Language="C#" Value="public class BlockQuote : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BlockQuote extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BlockQuote" />
@@ -18,11 +18,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Data for HTML blockquote Element.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:blockQuote.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Data for HTML blockquote Element. When the object is serialized out as xml, its qualified name is w:blockQuote.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **blockQuote (Data for HTML blockquote Element)**  
+  
+ This element specifies that the current div element does not represent an HTML *div* element, but rather represents an HTML *blockquote* element. This element shall specify that this container shall be written out using the *blockquote* element if this document is subsequently saved as HTML.  
+  
+ If this element is omitted, then the current div element does not represent an HTML *blockquote* element. If both this element and the bodyDiv element (§17.15.2.3) are specified, then this element shall take precedence in all cases.  
+  
+ [*Example*: Consider a simple HTML document defined as follows:  
+  
+```xml  
+<html>  
+  <body style="margin-left:200px;margin-top:50px">  
+    <p>Paragraph one.</p>  
+    <blockquote style="border: 5px solid #00FFFF">  
+      <p>Paragraph in a blockquote.</p>  
+    </blockquote>  
+    <p>Paragraph two.</p>  
+  </body>  
+</html>  
+```  
+  
+ When this document is saved in the WordprocessingML format, the information stored on the *div*, *blockquote*, and *body* elements is stored in the web setting part as follows:  
+  
+```xml  
+<w:divs>  
+  <w:div w:id="1626542603">  
+    …    <w:divsChild>  
+      <w:div w:id="313534916">  
+        <w:blockQuote w:val="true" />  
+        …      </w:div>  
+    </w:divsChild>  
+  </w:div>  
+</w:divs>  
+```  
+  
+ The blockQuote element has a val attribute value of *true*, which specifies that the nested div element actually represents a nested HTML *blockquote* when this document is resaved as HTML. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|div (§17.15.2.6)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BlockQuote class.
-            </summary>
+        <summary>Initializes a new instance of the BlockQuote class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +107,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +128,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

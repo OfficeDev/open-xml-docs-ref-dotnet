@@ -1,4 +1,4 @@
-﻿<Type Name="MemberProperty" FullName="DocumentFormat.OpenXml.Spreadsheet.MemberProperty">
+<Type Name="MemberProperty" FullName="DocumentFormat.OpenXml.Spreadsheet.MemberProperty">
   <TypeSignature Language="C#" Value="public class MemberProperty : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MemberProperty extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.MemberProperty" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>OLAP Member Property.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:mp.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>OLAP Member Property. When the object is serialized out as xml, its qualified name is x:mp.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **mp (OLAP Member Property)**  
+  
+ Represents an OLAP member property.  
+  
+ *[Example:*  
+  
+```xml  
+<sh:mp field="7"/>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mps (§18.10.1.59)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|field (Field Index)|Specifies the index of the field with which this member property is associated.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|level (Level Index)|Specifies the index of the level to which this member property applies.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|name (OLAP Member Property Unique Name)|Specifies the unique name of the OLAP member property. The following attributes depend on the name attribute:<br /><br /> -   nameLen<br />-   pLen<br />-   pPos<br /><br /> These attributes consist of metadata about a member in an OLAP cube and are usually displayed in a tooltip or mechanism in the user interface.<br /><br /> [*Example*: If the value for name equals "[Store].[Store Name].[Store Manager]":<br /><br /> -   nameLen will equal 20. This would refer to “[Store].[Store Name]”<br />-   pPos will equal 22. This would refer to starting character of “Store Manager”<br />-   pLen will equal 13. This would to length of “Store Manager”<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|nameLen (Name Length)|Specifies the length of the unique name portion of name. [*Example*: If the value for name equals "[Store].[Store Name].[Store Manager]", nameLen will equal 20. This would refer to “[Store].[Store Name]”. *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|pLen (Property Name Length)|Specifies the length of the property name portion of name. [*Example*: If the value for name equals "[Store].[Store Name].[Store Manager]", pLen will equal 13. This would to length of “Store Manager”. *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|pPos (Property Name Character Index)|Specifies the index of the character where the property name portion begins in name. [*Example*:  If the value for name equals "[Store].[Store Name].[Store Manager]", pPos will equal 22. This would refer to starting character of “Store Manager”. *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|showAsCaption (Show As Caption)|Specifies a boolean value that indicates whether to show the property a member caption.<br /><br /> A value of *1* or *true* indicates member property value is shown in as a caption.<br /><br /> A value of *0* or *false* indicates member property value will not be shown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showCell (Show Cell)|Specifies a boolean value that indicates whether to show the member property value in a PivotTable cell.<br /><br /> A value of *1* or *true* indicates member property value is shown in a cell.<br /><br /> A value of *0* or *false* indicates member property value will not be shown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showTip (Show Tooltip)|Specifies a boolean value that indicates whether to show the member property value in a tooltip on the appropriate PivotTable view cells.<br /><br /> A value of *1* or *true* indicates member property value is shown in a tooltip.<br /><br /> A value of *0* or *false* indicates member property value will not be shown. This attribute depends on whether the application employs tooltips or similar mechanism in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_MemberProperty) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MemberProperty class.
-            </summary>
+        <summary>Initializes a new instance of the MemberProperty class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +121,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Index.</para>
-          <para>Represents the following attribute in the schema: field </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Index.Represents the following attribute in the schema: field</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +146,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Level Index.</para>
-          <para>Represents the following attribute in the schema: level </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Level Index.Represents the following attribute in the schema: level</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,10 +166,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -167,11 +191,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OLAP Member Property Unique Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>OLAP Member Property Unique Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,11 +216,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name Length.</para>
-          <para>Represents the following attribute in the schema: nameLen </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Name Length.Represents the following attribute in the schema: nameLen</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -223,11 +241,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Property Name Length.</para>
-          <para>Represents the following attribute in the schema: pLen </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Property Name Length.Represents the following attribute in the schema: pLen</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -251,11 +266,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Property Name Character Index.</para>
-          <para>Represents the following attribute in the schema: pPos </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Property Name Character Index.Represents the following attribute in the schema: pPos</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,11 +291,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show As Caption.</para>
-          <para>Represents the following attribute in the schema: showAsCaption </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show As Caption.Represents the following attribute in the schema: showAsCaption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -307,11 +316,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Cell.</para>
-          <para>Represents the following attribute in the schema: showCell </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Cell.Represents the following attribute in the schema: showCell</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -335,11 +341,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Tooltip.</para>
-          <para>Represents the following attribute in the schema: showTip </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Tooltip.Represents the following attribute in the schema: showTip</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

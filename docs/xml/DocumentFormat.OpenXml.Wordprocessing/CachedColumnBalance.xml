@@ -1,4 +1,4 @@
-﻿<Type Name="CachedColumnBalance" FullName="DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance">
+<Type Name="CachedColumnBalance" FullName="DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance">
   <TypeSignature Language="C#" Value="public class CachedColumnBalance : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CachedColumnBalance extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.CachedColumnBalance" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Use Cached Paragraph Information for Column Balancing.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:cachedColBalance.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Use Cached Paragraph Information for Column Balancing. When the object is serialized out as xml, its qualified name is w:cachedColBalance.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **cachedColBalance (Use Cached Paragraph Information for Column Balancing)**  
+  
+ This element specifies whether applications shall incorrectly calculate the height of a paragraph for the purposes of column balancing when rendering WordprocessingML documents. Specifically, this element specifies that when a paragraph's lines have differing heights, an application shall treat this paragraph as though it had only one line equaling the full paragraph height, regardless of the actual number of lines in the paragraph.  
+  
+ [*Guidance*: It is recommended that applications not intentionally replicate this behavior; it is maintained only for compatibility with existing documents from a legacy application. *end guidance*]  
+  
+ Typically, lines are correctly measured for their height when balancing columns as part of a WordprocessingML document. This element, when present with a val attribute value of *true* (or equivalent), specifies that applications shall perform the incorrect calculation in the conditions described above.  
+  
+ [*Example*: Consider a WordprocessingML document with two columns of text which shall be balanced.  
+  
+ If this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:cachedColBalance />  
+</w:compat>  
+```  
+  
+ Then applications should perform the calculation described above to balance the columns, as needed. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CachedColumnBalance class.
-            </summary>
+        <summary>Initializes a new instance of the CachedColumnBalance class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

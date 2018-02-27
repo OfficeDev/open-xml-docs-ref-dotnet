@@ -1,4 +1,4 @@
-﻿<Type Name="AdjustHandleXY" FullName="DocumentFormat.OpenXml.Drawing.AdjustHandleXY">
+<Type Name="AdjustHandleXY" FullName="DocumentFormat.OpenXml.Drawing.AdjustHandleXY">
   <TypeSignature Language="C#" Value="public class AdjustHandleXY : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdjustHandleXY extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.AdjustHandleXY" />
@@ -21,13 +21,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>XY Adjust Handle.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:ahXY.</para>
-    </summary>
+    <summary>XY Adjust Handle. When the object is serialized out as xml, its qualified name is a:ahXY.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Position &lt;a:pos&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **ahXY (XY Adjust Handle)**  
+  
+ This element specifies an XY-based adjust handle for a custom shape. The position of this adjust handle is specified by the corresponding pos child element. The allowed adjustment of this adjust handle are specified via it's min and max type attributes. Based on the adjustment of this adjust handle certain corresponding guides are updated to contain these values.  
+  
+|Parent Elements|  
+|---------------------|  
+|ahLst (§20.1.9.1)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pos (Shape Position Coordinate)|§20.1.9.17|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|gdRefX (Horizontal Adjustment Guide)|Specifies the name of the guide that is updated with the adjustment x position from this adjust handle.<br /><br /> The possible values for this attribute are defined by the *ST_GeomGuideName* simple type (§20.1.10.28).|  
+|gdRefY (Vertical Adjustment Guide)|Specifies the name of the guide that is updated with the adjustment y position from this adjust handle.<br /><br /> The possible values for this attribute are defined by the *ST_GeomGuideName* simple type (§20.1.10.28).|  
+|maxX (Maximum Horizontal Adjustment)|Specifies the maximum horizontal position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move in the x direction. That is the maxX and minX are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+|maxY (Maximum Vertical Adjustment)|Specifies the maximum vertical position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move in the y direction. That is the maxY and minY are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+|minX (Minimum Horizontal Adjustment)|Specifies the minimum horizontal position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move in the x direction. That is the maxX and minX are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+|minY (Minimum Vertical Adjustment)|Specifies the minimum vertical position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move in the y direction. That is the maxY and minY are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_XYAdjustHandle) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AdjustHandleXY class.
-            </summary>
+        <summary>Initializes a new instance of the AdjustHandleXY class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +95,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AdjustHandleXY class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the AdjustHandleXY class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +115,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AdjustHandleXY class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the AdjustHandleXY class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the AdjustHandleXY class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the AdjustHandleXY class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +157,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,10 +178,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -188,11 +203,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximum Horizontal Adjustment.</para>
-          <para>Represents the following attribute in the schema: maxX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximum Horizontal Adjustment.Represents the following attribute in the schema: maxX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -216,11 +228,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximum Vertical Adjustment.</para>
-          <para>Represents the following attribute in the schema: maxY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximum Vertical Adjustment.Represents the following attribute in the schema: maxY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -244,11 +253,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Horizontal Adjustment.</para>
-          <para>Represents the following attribute in the schema: minX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum Horizontal Adjustment.Represents the following attribute in the schema: minX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -272,11 +278,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Vertical Adjustment.</para>
-          <para>Represents the following attribute in the schema: minY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum Vertical Adjustment.Represents the following attribute in the schema: minY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -295,11 +298,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Position</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Position.</para>
-          <para> Represents the following element tag in the schema: a:pos </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Position. Represents the following element tag in the schema: a:pos</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Position" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -326,11 +326,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal Adjustment Guide.</para>
-          <para>Represents the following attribute in the schema: gdRefX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal Adjustment Guide.Represents the following attribute in the schema: gdRefX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -354,11 +351,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Adjustment Guide.</para>
-          <para>Represents the following attribute in the schema: gdRefY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertical Adjustment Guide.Represents the following attribute in the schema: gdRefY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

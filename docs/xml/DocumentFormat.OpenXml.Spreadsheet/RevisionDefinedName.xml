@@ -1,4 +1,4 @@
-﻿<Type Name="RevisionDefinedName" FullName="DocumentFormat.OpenXml.Spreadsheet.RevisionDefinedName">
+<Type Name="RevisionDefinedName" FullName="DocumentFormat.OpenXml.Spreadsheet.RevisionDefinedName">
   <TypeSignature Language="C#" Value="public class RevisionDefinedName : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RevisionDefinedName extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.RevisionDefinedName" />
@@ -27,13 +27,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Revision Defined Name.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:rdn.</para>
-    </summary>
+    <summary>Revision Defined Name. When the object is serialized out as xml, its qualified name is x:rdn.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Formula &lt;x:formula&gt;</description></item><item><description>OldFormula &lt;x:oldFormula&gt;</description></item><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **rdn (Revision Defined Name)**  
+  
+ This element represents a revision record of a defined name change.  
+  
+|Parent Elements|  
+|---------------------|  
+|revisions (§18.11.1.16)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|formula (Formula)|§18.3.1.43|  
+|oldFormula (Old Formula)|§18.11.1.7|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|comment (Name Comment)|A string representing a comment about the defined name.<br /><br /> This comment can be shown by the spreadsheet application in a names management UI so that users have more information about what the defined name is used for.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|customMenu (New Custom Menu)|A string representing the new custom menu text<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|customView (Custom View)|A Boolean flag indicating that this named range belongs to a custom view<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|description (Description)|A string representing the new description text for the defined name.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|function (Function)|A Boolean value indicating that the defined name refers to a function.  True if the defined name is a function, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|functionGroupId (Function Group Id)|Represents the new function group id.<br /><br /> Function group ids are used to help classify functions.  For instance, functions in the same group can be searched or selected easily from the spreadsheet applications UI.  For instance, filtering the list of all functions to allow the user to choose from functions used for financial data.<br /><br /> The following group ids should be used:<br /><br /> ID       Function group<br /><br /> 1          Financial<br /><br /> 2          Date and Time<br /><br /> 3          Math and Trig<br /><br /> 4          Statistical<br /><br /> 5          Lookup & Reference<br /><br /> 6          Database<br /><br /> 7          Text<br /><br /> 8          Logical<br /><br /> 9          Information<br /><br /> 10        Commands<br /><br /> 11        Customizing<br /><br /> 12        Macro Control<br /><br /> 13        /External<br /><br /> 14        User Defined<br /><br /> 15        Engineering<br /><br /> 14        Cube<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|help (New Help Topic)|A string representing the new help topic text.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|hidden (Named Range Hidden)|A Boolean value indicating whether the named range is now hidden.<br /><br /> Hidden refers to whether the defined name is of a 'hidden' type.  This applies to things like a custom filter on a cell, it has a name, but is hidden and so is not visible in any name management UI.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|localSheetId (Local Name Sheet Id)|An integer representing the id of the sheet to which this defined name belongs. This shall be used local defined names only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|name (Name)|A string representing the name for this defined name.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|oldComment (Old Name Comment)|A string representing the old comment about the defined name.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|oldCustomMenu (Old Custom Menu Text)|A string representing the old custom menu text<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|oldDescription (Old Description)|A string representing the  old description text<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|oldFunction (Old Function)|A Boolean flag indicating that the old name was a function<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|oldFunctionGroupId (Old Function Group Id)|Old function group ID.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|oldHelp (Old Help Topic)|A string representing the old help topic text<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|oldHidden (Old Hidden)|A Boolean flag indicating whether the named range was hidden<br /><br /> Hidden refers to whether the defined name is of a 'hidden' type.  This applies to things like a custom filter on a cell, it has a name, but is hidden and so is not visible in any name management UI.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|oldShortcutKey (Old Short Cut Key)|Old keyboard shortcut.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|oldStatusBar (Old Status Bar)|A string representing the old status bar text<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|ra (Revision Undo Rejected)|A Boolean flag which indicates that this revision was due to a previous undo (*ua*) revision being rejected.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|rId (Revision Id)|An integer representing the number of this revision.  This id shall apply to reviewable revision types only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|shortcutKey (Shortcut Key)|Represents the new keyboard shortcut.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|statusBar (Status Bar)|A string representing the new status bar text.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|ua (Revision From Rejection)|A Boolean flag indicating that this revision occurred because another revision was rejected and therefore undone.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_RevisionDefinedName) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +95,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RevisionDefinedName class.
-            </summary>
+        <summary>Initializes a new instance of the RevisionDefinedName class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +121,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RevisionDefinedName class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the RevisionDefinedName class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,9 +141,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RevisionDefinedName class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the RevisionDefinedName class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +161,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the RevisionDefinedName class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the RevisionDefinedName class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +183,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -172,11 +209,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name Comment.</para>
-          <para>Represents the following attribute in the schema: comment </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Name Comment.Represents the following attribute in the schema: comment</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,11 +234,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> New Custom Menu.</para>
-          <para>Represents the following attribute in the schema: customMenu </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>New Custom Menu.Represents the following attribute in the schema: customMenu</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -228,11 +259,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom View.</para>
-          <para>Represents the following attribute in the schema: customView </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom View.Represents the following attribute in the schema: customView</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -256,11 +284,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Description.</para>
-          <para>Represents the following attribute in the schema: description </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Description.Represents the following attribute in the schema: description</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,11 +304,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -305,11 +327,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Formula</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula.</para>
-          <para> Represents the following element tag in the schema: x:formula </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Formula. Represents the following element tag in the schema: x:formula</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Formula" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -336,11 +355,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Function.</para>
-          <para>Represents the following attribute in the schema: function </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Function.Represents the following attribute in the schema: function</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -364,11 +380,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Function Group Id.</para>
-          <para>Represents the following attribute in the schema: functionGroupId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Function Group Id.Represents the following attribute in the schema: functionGroupId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -392,11 +405,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> New Help Topic.</para>
-          <para>Represents the following attribute in the schema: help </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>New Help Topic.Represents the following attribute in the schema: help</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -420,11 +430,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Named Range Hidden.</para>
-          <para>Represents the following attribute in the schema: hidden </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Named Range Hidden.Represents the following attribute in the schema: hidden</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -443,10 +450,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -470,11 +475,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Local Name Sheet Id.</para>
-          <para>Represents the following attribute in the schema: localSheetId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Local Name Sheet Id.Represents the following attribute in the schema: localSheetId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -498,11 +500,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -526,11 +525,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Name Comment.</para>
-          <para>Represents the following attribute in the schema: oldComment </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Name Comment.Represents the following attribute in the schema: oldComment</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -554,11 +550,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Custom Menu Text.</para>
-          <para>Represents the following attribute in the schema: oldCustomMenu </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Custom Menu Text.Represents the following attribute in the schema: oldCustomMenu</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -582,11 +575,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Description.</para>
-          <para>Represents the following attribute in the schema: oldDescription </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Description.Represents the following attribute in the schema: oldDescription</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -605,11 +595,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.OldFormula</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Formula.</para>
-          <para> Represents the following element tag in the schema: x:oldFormula </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Formula. Represents the following element tag in the schema: x:oldFormula</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.OldFormula" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -636,11 +623,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Function.</para>
-          <para>Represents the following attribute in the schema: oldFunction </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Function.Represents the following attribute in the schema: oldFunction</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -664,11 +648,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Function Group Id.</para>
-          <para>Represents the following attribute in the schema: oldFunctionGroupId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Function Group Id.Represents the following attribute in the schema: oldFunctionGroupId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -692,11 +673,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Help Topic.</para>
-          <para>Represents the following attribute in the schema: oldHelp </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Help Topic.Represents the following attribute in the schema: oldHelp</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -720,11 +698,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Hidden.</para>
-          <para>Represents the following attribute in the schema: oldHidden </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Hidden.Represents the following attribute in the schema: oldHidden</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -748,11 +723,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Short Cut Key.</para>
-          <para>Represents the following attribute in the schema: oldShortcutKey </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Short Cut Key.Represents the following attribute in the schema: oldShortcutKey</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -776,11 +748,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Old Status Bar.</para>
-          <para>Represents the following attribute in the schema: oldStatusBar </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Old Status Bar.Represents the following attribute in the schema: oldStatusBar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -804,11 +773,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Revision Undo Rejected.</para>
-          <para>Represents the following attribute in the schema: ra </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Revision Undo Rejected.Represents the following attribute in the schema: ra</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -832,11 +798,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Revision Id.</para>
-          <para>Represents the following attribute in the schema: rId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Revision Id.Represents the following attribute in the schema: rId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -860,11 +823,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shortcut Key.</para>
-          <para>Represents the following attribute in the schema: shortcutKey </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shortcut Key.Represents the following attribute in the schema: shortcutKey</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -888,11 +848,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Status Bar.</para>
-          <para>Represents the following attribute in the schema: statusBar </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Status Bar.Represents the following attribute in the schema: statusBar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -916,11 +873,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Revision From Rejection.</para>
-          <para>Represents the following attribute in the schema: ua </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Revision From Rejection.Represents the following attribute in the schema: ua</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

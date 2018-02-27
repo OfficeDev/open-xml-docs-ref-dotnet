@@ -1,4 +1,4 @@
-﻿<Type Name="StartNumberingValue" FullName="DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue">
+<Type Name="StartNumberingValue" FullName="DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue">
   <TypeSignature Language="C#" Value="public class StartNumberingValue : DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StartNumberingValue extends DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue" />
@@ -18,11 +18,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Starting Value.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:start.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Starting Value. When the object is serialized out as xml, its qualified name is w:start.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **start (Starting Value)**  
+  
+ This element specifies the starting value for the numbering used by the parent numbering level within a given numbering level definition. This value is used when this level initially starts in a document, as well as whenever it is restarted via the properties set in the lvlRestart element (§17.9.11).  
+  
+ If this element is omitted, then the starting value shall be zero (*0*).  
+  
+ [*Example*: Consider the following WordprocessingML fragment for an abstract numbering definition:  
+  
+```xml  
+<w:abstractNum w:abstractNumId="1">  
+  …  
+  <w:lvl w:ilvl="0">  
+    <w:start w:val="2" />  
+    <w:numFmt w:val="upperLetter"/>   
+    …  
+  </w:lvl>  
+</w:abstractNum>  
+```  
+  
+ In this example, since upper case Western letters (*upperLetter*) are being used as numbering symbols for this numbering level, the first instance of a numbering paragraph associated with this abstract numbering definition and numbering level would have the numbering symbol *B*, the second letter in the number format.  
+  
+ Subsequent numbered paragraphs with this abstract numbering definition and at this level would have their numbering symbols incremented from *B* (the starting value for this numbering level). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lvl (§17.9.6); lvl (§17.9.7)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +72,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StartNumberingValue class.
-            </summary>
+        <summary>Initializes a new instance of the StartNumberingValue class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +94,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +115,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

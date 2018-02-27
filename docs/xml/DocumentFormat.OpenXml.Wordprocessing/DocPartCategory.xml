@@ -1,4 +1,4 @@
-﻿<Type Name="DocPartCategory" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartCategory">
+<Type Name="DocPartCategory" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartCategory">
   <TypeSignature Language="C#" Value="public class DocPartCategory : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocPartCategory extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DocPartCategory" />
@@ -18,11 +18,42 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Document Part Category Filter.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:docPartCategory.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Document Part Category Filter. When the object is serialized out as xml, its qualified name is w:docPartCategory.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **docPartCategory (Document Part Category Filter)**  
+  
+ This element specifies the category of document parts which shall be used as the filter when determining the possible choices of document parts which are displayed for insertion into the parent structured document tag. A document part *category* is a sub-classification within a given document part gallery which can be used to further categorize the parts in a given gallery. [*Example*: Gallery *custom1* might have categories of *Legal Clauses*, *Conformance Clauses*, etc. *end example*]. The category which shall be used as a filter is stored in this element's val attribute.  
+  
+ If this element is omitted, then the parent structured document tag shall display all document parts in the specified gallery regardless their specified category. If this element is present, but no document parts of the specified gallery and category combination are located by the application, then no document parts shall be displayed (i.e. the application shall not fall back to showing document parts in all categories in the specified gallery).  
+  
+ [*Example*: Consider the following properties for a structured document tag:  
+  
+```xml  
+<w:sdtPr>  
+  <w:docPartList>  
+    <w:docPartGallery w:val="custom1"/>  
+    <w:docPartCategory w:val="Legal Clauses"/>  
+  </w:docPartList>  
+</w:sdtPr>  
+```  
+  
+ This structured document tag specifies that it must present a selection of document parts for insertion via the docPartList element (§17.5.2.12) , and those document parts must only be the parts which are in the *custom1* gallery via the docPartType element (§17.5.2.11), and within that gallery, only the document parts which are in a category called *Legal Clauses* via this element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|docPartList (§17.5.2.12); docPartObj (§17.5.2.13)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DocPartCategory class.
-            </summary>
+        <summary>Initializes a new instance of the DocPartCategory class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +90,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +111,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

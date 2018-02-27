@@ -1,4 +1,4 @@
-﻿<Type Name="CellType" FullName="DocumentFormat.OpenXml.Spreadsheet.CellType">
+<Type Name="CellType" FullName="DocumentFormat.OpenXml.Spreadsheet.CellType">
   <TypeSignature Language="C#" Value="public abstract class CellType : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CellType extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CellType" />
@@ -30,12 +30,147 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-             Defines the CellType class.
-             </summary>
+    <summary>Defines the CellType class.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CellFormula &lt;x:f&gt;</description></item><item><description>CellValue &lt;x:v&gt;</description></item><item><description>InlineString &lt;x:is&gt;</description></item><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following table lists the possible child types:CellFormula \<x:f>CellValue \<x:v>InlineString \<x:is>ExtensionList \<x:extLst>  
+  
+   
+  
+## Examples  
+ The following example creates a spreadsheet document and adds the text "Microsoft" to the cell A2 by using the `CellType` class.  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace CellTypeEx  
+{    
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\Users\Public\Documents\CellTypeEx.xlsx";  
+  
+             // Create a spreadsheet document by supplying the fileName.  
+            SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.  
+                Create(fileName, SpreadsheetDocumentType.Workbook);  
+  
+            // Add a WorkbookPart to the document.  
+            WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();  
+            workbookpart.Workbook = new Workbook();  
+  
+            // Add a WorksheetPart to the WorkbookPart.  
+            WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();  
+            worksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+            // Add Sheets to the Workbook.  
+            Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild<Sheets>(new Sheets());  
+  
+            // Append a new worksheet and associate it with the workbook.  
+            Sheet sheet = new Sheet()  
+            {  
+                Id = spreadsheetDocument.WorkbookPart.  
+                    GetIdOfPart(worksheetPart),  
+                SheetId = 1,  
+                Name = "mySheet"  
+            };  
+  
+            sheets.Append(sheet);  
+            Worksheet worksheet = new Worksheet();  
+            SheetData sheetData = new SheetData();  
+  
+            Row row = new Row() { RowIndex = 2U, Spans = new ListValue<StringValue>() };   
+            CellType cT = new Cell() { CellReference = "A2", DataType = CellValues.String,   
+                CellValue = new CellValue("Microsoft") };  
+            Console.WriteLine(cT.InnerText);  
+  
+            row.Append(cT);  
+            sheetData.Append(row);  
+            worksheet.Append(sheetData);             
+            worksheetPart.Worksheet = worksheet;             
+            workbookpart.Workbook.Save();  
+  
+            // Close the document.  
+            spreadsheetDocument.Close();  
+  
+            System.Console.WriteLine("All done");  
+            System.Console.ReadKey();  
+  
+        }  
+     }  
+ }  
+  
+```  
+  
+```vb  
+Imports System  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+  
+Module Module1  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "C:\Users\Public\Documents\CellTypeEx.xlsx"  
+  
+        ' Create a spreadsheet document by supplying the fileName.  
+        Dim spreadsheetDocument As SpreadsheetDocument = spreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook)  
+  
+        ' Add a WorkbookPart to the document.  
+        Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart()  
+        workbookpart.Workbook = New Workbook()  
+  
+        ' Add a WorksheetPart to the WorkbookPart.  
+        Dim worksheetPart As WorksheetPart = workbookpart.AddNewPart(Of WorksheetPart)()  
+        worksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+        ' Add Sheets to the Workbook.  
+        Dim sheets As Sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())  
+  
+        ' Append a new worksheet and associate it with the workbook.  
+        Dim sheet As New Sheet() With { _  
+         .Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), _  
+         .SheetId = 1, _  
+         .Name = "mySheet" _  
+        }  
+  
+        sheets.Append(sheet)  
+        Dim worksheet As New Worksheet()  
+        Dim sheetData As New SheetData()  
+  
+        Dim row As New Row() With { _  
+         .RowIndex = 2UI, _  
+         .Spans = New ListValue(Of StringValue)() _  
+        }  
+        Dim cT As CellType = New Cell() With { _  
+         .CellReference = "A2", _  
+         .DataType = CellValues.[String], _  
+         .CellValue = New CellValue("Microsoft") _  
+        }  
+        Console.WriteLine(cT.InnerText)  
+  
+        row.Append(cT)  
+        sheetData.Append(row)  
+        worksheet.Append(sheetData)  
+        worksheetPart.Worksheet = worksheet  
+        workbookpart.Workbook.Save()  
+  
+        ' Close the document.  
+        spreadsheetDocument.Close()  
+  
+        System.Console.WriteLine("All done")  
+        System.Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,9 +185,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CellType class.
-            </summary>
+        <summary>Initializes a new instance of the CellType class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -78,9 +211,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CellType class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CellType class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -100,9 +231,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CellType class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CellType class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,9 +251,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CellType class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CellType class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,11 +270,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CellFormula</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula.</para>
-          <para> Represents the following element tag in the schema: x:f </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Formula. Represents the following element tag in the schema: x:f</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CellFormula" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -174,11 +298,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Metadata Index.</para>
-          <para>Represents the following attribute in the schema: cm </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Metadata Index.Represents the following attribute in the schema: cm</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,11 +323,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference.</para>
-          <para>Represents the following attribute in the schema: r </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference.Represents the following attribute in the schema: r</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,11 +343,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CellValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Value.</para>
-          <para> Represents the following element tag in the schema: x:v </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Value. Represents the following element tag in the schema: x:v</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CellValue" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -256,11 +371,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CellValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Data Type.</para>
-          <para>Represents the following attribute in the schema: t </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Data Type.Represents the following attribute in the schema: t</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,11 +391,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Future Feature Data Storage Area.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Future Feature Data Storage Area. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -305,11 +414,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.InlineString</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Rich Text Inline.</para>
-          <para> Represents the following element tag in the schema: x:is </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Rich Text Inline. Represents the following element tag in the schema: x:is</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.InlineString" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -336,11 +442,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Phonetic.</para>
-          <para>Represents the following attribute in the schema: ph </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Phonetic.Represents the following attribute in the schema: ph</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -364,11 +467,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Index.</para>
-          <para>Represents the following attribute in the schema: s </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Style Index.Represents the following attribute in the schema: s</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -392,11 +492,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value Metadata Index.</para>
-          <para>Represents the following attribute in the schema: vm </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Value Metadata Index.Represents the following attribute in the schema: vm</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

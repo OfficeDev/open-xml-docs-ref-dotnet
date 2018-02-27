@@ -1,4 +1,4 @@
-﻿<Type Name="Control" FullName="DocumentFormat.OpenXml.Wordprocessing.Control">
+<Type Name="Control" FullName="DocumentFormat.OpenXml.Wordprocessing.Control">
   <TypeSignature Language="C#" Value="public class Control : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Control extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Control" />
@@ -18,11 +18,67 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Control Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:control.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Control Class. When the object is serialized out as xml, its qualified name is w:control.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **control (Embedded Control)**  
+  
+ This element specifies that the parent embedded object is a representation of an embedded control. This element shall be used to associate the appropriate embedded control settings and properties when the document is displayed.  
+  
+ If the embedded control is not present, cannot be loaded due to application settings, or is not supported, then a suitable placeholder image shall be used to provide a representation of the presence of an embedded control at the appropriate location in the document.  
+  
+ [*Example*: Consider a run which consists of an embedded control. That run would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:object>  
+    …    <w:control r:id="rId99" w:shapeid="10" … />  
+  </w:object>  
+</w:r>  
+```  
+  
+ The control element indicates that the parent embedded object is an embedded control, whose settings and properties are stored on this element and the (optional) target of the relationship specified using the id attribute. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|object (§17.3.3.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Control) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **control (Floating Embedded Control)**  
+  
+ This element specifies that the parent VML object is a representation of an embedded control at the current location in the document. This element shall be used to associate the VML data with the appropriate embedded control settings and properties when the document is displayed.  
+  
+ If the embedded control is not present, cannot be loaded due to application settings, or is not supported, then the VML data shall be used to provide an image representation of the control at the appropriate location in the document.  
+  
+ [*Example*: Consider a run which consists of an embedded control. That run would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:pict>  
+    …    <w:control r:id="rId99" w:shapeid="shape01" … />  
+  </w:pict>  
+</w:r>  
+```  
+  
+ The control element indicates that the parent VML object contains the positioning and last known image representation of an embedded control, whose settings and properties are stored on this element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pict (§9.2.2.2); pict (§9.5.1)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Control) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +93,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Control class.
-            </summary>
+        <summary>Initializes a new instance of the Control class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +115,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +141,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Embedded Control Properties Relationship Reference.</para>
-          <para>Represents the following attribute in the schema: r:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Embedded Control Properties Relationship Reference.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
             </remark>
@@ -114,10 +163,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +188,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Unique Name for Embedded Control.</para>
-          <para>Represents the following attribute in the schema: w:name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Unique Name for Embedded Control.Represents the following attribute in the schema: w:name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -171,11 +215,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Associated VML Data Reference.</para>
-          <para>Represents the following attribute in the schema: w:shapeid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Associated VML Data Reference.Represents the following attribute in the schema: w:shapeid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

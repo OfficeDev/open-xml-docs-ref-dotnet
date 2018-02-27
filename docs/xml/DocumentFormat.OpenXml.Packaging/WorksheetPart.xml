@@ -1,4 +1,4 @@
-﻿<Type Name="WorksheetPart" FullName="DocumentFormat.OpenXml.Packaging.WorksheetPart">
+<Type Name="WorksheetPart" FullName="DocumentFormat.OpenXml.Packaging.WorksheetPart">
   <TypeSignature Language="C#" Value="public class WorksheetPart : DocumentFormat.OpenXml.Packaging.OpenXmlPart, DocumentFormat.OpenXml.Packaging.IFixedContentTypePart" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorksheetPart extends DocumentFormat.OpenXml.Packaging.OpenXmlPart implements class DocumentFormat.OpenXml.Packaging.IFixedContentTypePart" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Packaging.WorksheetPart" />
@@ -17,10 +17,114 @@
     </Interface>
   </Interfaces>
   <Docs>
-    <summary>
-            Defines the WorksheetPart.
-            </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the WorksheetPart.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ The following code example opens a zip file and creates a spreadsheet document into it.  
+  
+```csharp  
+using System;  
+using System.IO.Packaging;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace WorkSheetPartEx  
+{  
+    class Program  
+    {  
+        // Create a spreadsheet by Package.  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\users\public\documents\WorkSheetPartEx.zip";  
+  
+            // Open a package file.   
+            Package package = Package.Open(fileName);  
+  
+            // Create the spreadsheet document.  
+            SpreadsheetDocument spreadsheetDocument =   
+                SpreadsheetDocument.Create(package, SpreadsheetDocumentType.Template);  
+  
+            // Add a WorkbookPart.  
+            WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();  
+            workbookpart.Workbook = new Workbook();  
+  
+            // Add a WorksheetPart.  
+            WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();  
+            worksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+            // Add a sheets list.  
+            Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook  
+                .AppendChild<Sheets>(new Sheets());  
+  
+            // Append the new worksheet and associate it with the workbook.  
+            Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart  
+                .GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };  
+            sheets.Append(sheet);  
+  
+            // Close the spreadsheet and the package.  
+            spreadsheetDocument.Close();  
+            package.Close();  
+  
+            Console.WriteLine("The package has been created.\nPress a key.");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports System.IO.Packaging  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+  
+Module Module1  
+    ' Create a spreadsheet by Package.  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "C:\users\public\documents\WorkSheetPartEx.zip"  
+  
+        ' Open a package file.   
+        Dim package As Package = package.Open(fileName)  
+  
+        ' Create the spreadsheet document.  
+        Dim spreadsheetDocument As SpreadsheetDocument = spreadsheetDocument.Create(package, SpreadsheetDocumentType.Template)  
+  
+        ' Add a WorkbookPart.  
+        Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart()  
+        workbookpart.Workbook = New Workbook()  
+  
+        ' Add a WorksheetPart.  
+        Dim worksheetPart As WorksheetPart = workbookpart.AddNewPart(Of WorksheetPart)()  
+        worksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+        ' Add a sheets list.  
+        Dim sheets As Sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())  
+  
+        ' Append the new worksheet and associate it with the workbook.  
+        Dim sheet As New Sheet() With { _  
+         .Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), _  
+         .SheetId = 1, _  
+         .Name = "mySheet" _  
+        }  
+        sheets.Append(sheet)  
+  
+        ' Close the spreadsheet and the package.  
+        spreadsheetDocument.Close()  
+        package.Close()  
+  
+        Console.WriteLine("The package has been created." & vbLf & "Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -35,9 +139,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Construtor of WorksheetPart
-            </summary>
+        <summary>Construtor of WorksheetPart</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -60,9 +162,7 @@
       </Parameters>
       <Docs>
         <param name="partType">The part type of the CustomPropertyPart.</param>
-        <summary>
-            Adds a CustomPropertyPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a CustomPropertyPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -86,9 +186,7 @@
       </Parameters>
       <Docs>
         <param name="contentType">the content type of the CustomPropertyPart.</param>
-        <summary>
-            Adds a CustomPropertyPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a CustomPropertyPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -114,9 +212,7 @@
       <Docs>
         <param name="partType">The part type of the CustomPropertyPart.</param>
         <param name="id">The relationship id.</param>
-        <summary>
-            Adds a CustomPropertyPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a CustomPropertyPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -142,9 +238,7 @@
       <Docs>
         <param name="contentType">the content type of the CustomPropertyPart.</param>
         <param name="id">The relationship id.</param>
-        <summary>
-            Adds a CustomPropertyPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a CustomPropertyPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -168,9 +262,7 @@
       </Parameters>
       <Docs>
         <param name="partType">The part type of the EmbeddedControlPersistenceBinaryDataPart.</param>
-        <summary>
-            Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -194,9 +286,7 @@
       </Parameters>
       <Docs>
         <param name="contentType">the content type of the EmbeddedControlPersistenceBinaryDataPart.</param>
-        <summary>
-            Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -222,9 +312,7 @@
       <Docs>
         <param name="partType">The part type of the EmbeddedControlPersistenceBinaryDataPart.</param>
         <param name="id">The relationship id.</param>
-        <summary>
-            Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -250,9 +338,7 @@
       <Docs>
         <param name="contentType">the content type of the EmbeddedControlPersistenceBinaryDataPart.</param>
         <param name="id">The relationship id.</param>
-        <summary>
-            Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.
-            </summary>
+        <summary>Adds a EmbeddedControlPersistenceBinaryDataPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -275,10 +361,8 @@
         <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType" />
       </Parameters>
       <Docs>
-        <param name="partType">The part type of the EmbeddedControlPersistencePart.</param>
-        <summary>
-            Adds a EmbeddedControlPersistencePart to the WorksheetPart.
-            </summary>
+        <param name="partType">The part type of the EmbeddedControlPersistencePart</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -301,10 +385,8 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">the content type of the EmbeddedControlPersistencePart.</param>
-        <summary>
-            Adds a EmbeddedControlPersistencePart to the WorksheetPart.
-            </summary>
+        <param name="contentType">the content type of the EmbeddedControlPersistencePart</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -328,11 +410,9 @@
         <Parameter Name="id" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="partType">The part type of the EmbeddedControlPersistencePart.</param>
-        <param name="id">The relationship id.</param>
-        <summary>
-            Adds a EmbeddedControlPersistencePart to the WorksheetPart.
-            </summary>
+        <param name="partType">The part type of the EmbeddedControlPersistencePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -356,11 +436,9 @@
         <Parameter Name="id" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">the content type of the EmbeddedControlPersistencePart.</param>
-        <param name="id">The relationship id.</param>
-        <summary>
-            Adds a EmbeddedControlPersistencePart to the WorksheetPart.
-            </summary>
+        <param name="contentType">the content type of the EmbeddedControlPersistencePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -383,10 +461,8 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">The content type of the EmbeddedObjectPart.</param>
-        <summary>
-            Adds a EmbeddedObjectPart to the WorksheetPart.
-            </summary>
+        <param name="contentType">the content type of the EmbeddedObjectPart</param>
+        <summary>Adds a EmbeddedObjectPart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -409,10 +485,8 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">The content type of the EmbeddedPackagePart.</param>
-        <summary>
-            Adds a EmbeddedPackagePart to the WorksheetPart.
-            </summary>
+        <param name="contentType">the content type of the EmbeddedPackagePart</param>
+        <summary>Adds a EmbeddedPackagePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -435,10 +509,8 @@
         <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ImagePartType" />
       </Parameters>
       <Docs>
-        <param name="partType">The part type of the ImagePart.</param>
-        <summary>
-            Adds a ImagePart to the WorksheetPart.
-            </summary>
+        <param name="partType">The part type of the ImagePart</param>
+        <summary>Adds a ImagePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -461,10 +533,8 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">the content type of the ImagePart.</param>
-        <summary>
-            Adds a ImagePart to the WorksheetPart.
-            </summary>
+        <param name="contentType">the content type of the ImagePart</param>
+        <summary>Adds a ImagePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -488,11 +558,9 @@
         <Parameter Name="id" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="partType">The part type of the ImagePart.</param>
-        <param name="id">The relationship id.</param>
-        <summary>
-            Adds a ImagePart to the WorksheetPart.
-            </summary>
+        <param name="partType">The part type of the ImagePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a ImagePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -516,11 +584,9 @@
         <Parameter Name="id" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">the content type of the ImagePart.</param>
-        <param name="id">The relationship id.</param>
-        <summary>
-            Adds a ImagePart to the WorksheetPart.
-            </summary>
+        <param name="contentType">the content type of the ImagePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a ImagePart to the WorksheetPart.</summary>
         <returns>The newly added part.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -540,9 +606,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ContentType.
-            </summary>
+        <summary>Gets the ContentType.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -567,9 +631,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.ControlPropertiesPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ControlPropertiesParts of the WorksheetPart., only available in Office2010
-            </summary>
+        <summary>Gets the ControlPropertiesParts of the WorksheetPart., only available in Office2010</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -589,9 +651,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.CustomPropertyPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the CustomPropertyParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the CustomPropertyParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -611,9 +671,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.DrawingsPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the DrawingsPart of the WorksheetPart.
-            </summary>
+        <summary>Gets the DrawingsPart of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -633,9 +691,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistenceBinaryDataPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the EmbeddedControlPersistenceBinaryDataParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -655,9 +711,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the EmbeddedControlPersistenceParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the EmbeddedControlPersistenceParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -677,9 +731,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the EmbeddedObjectParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the EmbeddedObjectParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -699,9 +751,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the EmbeddedPackageParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the EmbeddedPackageParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -721,9 +771,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.ImagePart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ImageParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the ImageParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -743,9 +791,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.PivotTablePart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the PivotTableParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the PivotTableParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -765,9 +811,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.QueryTablePart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the QueryTableParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the QueryTableParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -787,9 +831,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the RelationshipType.
-            </summary>
+        <summary>Gets the RelationshipType.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -809,9 +851,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.SingleCellTablePart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SingleCellTablePart of the WorksheetPart.
-            </summary>
+        <summary>Gets the SingleCellTablePart of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -836,9 +876,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.SlicersPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SlicersParts of the WorksheetPart., only available in Office2010
-            </summary>
+        <summary>Gets the SlicersParts of the WorksheetPart., only available in Office2010</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -858,9 +896,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.SpreadsheetPrinterSettingsPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the SpreadsheetPrinterSettingsParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -880,9 +916,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.TableDefinitionPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the TableDefinitionParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the TableDefinitionParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -907,9 +941,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.TimeLinePart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the TimeLineParts of the WorksheetPart., only available in Office2013
-            </summary>
+        <summary>Gets the TimeLineParts of the WorksheetPart., only available in Office2013</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -929,9 +961,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.VmlDrawingPart&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the VmlDrawingParts of the WorksheetPart.
-            </summary>
+        <summary>Gets the VmlDrawingParts of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -951,9 +981,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Worksheet</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets/Sets the root element of this part.
-            </summary>
+        <summary>Gets/Sets the root element of this part.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -973,9 +1001,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WorksheetCommentsPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WorksheetCommentsPart of the WorksheetPart.
-            </summary>
+        <summary>Gets the WorksheetCommentsPart of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -995,9 +1021,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WorksheetSortMapPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WorksheetSortMapPart of the WorksheetPart.
-            </summary>
+        <summary>Gets the WorksheetSortMapPart of the WorksheetPart.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

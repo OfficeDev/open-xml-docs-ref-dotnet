@@ -1,4 +1,4 @@
-﻿<Type Name="Alignment" FullName="DocumentFormat.OpenXml.Math.Alignment">
+<Type Name="Alignment" FullName="DocumentFormat.OpenXml.Math.Alignment">
   <TypeSignature Language="C#" Value="public class Alignment : DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Alignment extends DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.Alignment" />
@@ -18,11 +18,107 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Align.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:aln.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Align. When the object is serialized out as xml, its qualified name is m:aln.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **aln (Alignment)**  
+  
+ This element specifies the alignment property on the box object. It is utilized only when the box is designated as an operator emulator. When*1* or *true*, this operator emulator serves as an alignment point; that is, designated alignment points in other equations can be aligned with it.  
+  
+ When the element is absent, the default is for the parent structure to not be an alignment point.  
+  
+ When the element is present and the val attribute is absent, the default value of the val attribute is *1* meaning that this property’s parent structure is an alignment point.  
+  
+ [*Example*: For example, the following equation uses the operator emulator as an alignment point:  .  
+  
+ Its XML representation is as follows:  
+  
+```xml  
+<m:oMath>  
+  <m:r>  
+    <m:t>a</m:t>  
+  </m:r>  
+  <m:box>  
+    <m:boxPr>  
+      <m:opEmu m:val="1"/>  
+      <m:aln m:val="1"/>  
+      <m:ctrlPr/>  
+    </m:boxPr>  
+    <m:e>  
+      <m:r>  
+        <m:t>==</m:t>  
+      </m:r>  
+    </m:e>  
+  </m:box>  
+  <m:r>  
+    <m:t>b</m:t>  
+  </m:r>  
+</m:oMath>  
+```  
+  
+ *end example*]  
+  
+ [*Example*:  
+  
+ Given the following equations:  
+  
+ Their associated XML represenation is as follows:  
+  
+```xml  
+<m:oMathPara>  
+  <m:oMath>  
+    <m:r>  
+      <m:t>a+b</m:t>  
+    </m:r>  
+    <m:r>  
+      <m:rPr>  
+        <m:aln/>  
+      </m:rPr>  
+      <m:t>-c=2</m:t>  
+    </m:r>  
+    <m:r>  
+      <m:rPr>  
+        <m:sty m:val="p"/>  
+      </m:rPr>  
+      <w:br/>  
+    </m:r>  
+  </m:oMath>  
+  <m:oMath>  
+    <m:r>  
+      <m:t>x</m:t>  
+    </m:r>  
+    <m:r>  
+      <m:rPr>  
+        <m:aln/>  
+      </m:rPr>  
+      <m:t>-y+z=3</m:t>  
+    </m:r>  
+  </m:oMath>  
+</m:oMathPara>  
+```  
+  
+ The subtraction symbols in each of the above equations have been identified as alignment points, so the equations are aligned at their subtraction symbols (because they are in the same Math paragraph).  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|boxPr (§22.1.2.14); rPr (§22.1.2.91)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (value)|Specifies a binary value for the property defined by the parent XML element.<br /><br /> A value of *1* or *true* specifies that the property shall be explicitly applied. This is the default value for this attribute, and is implied when the parent element is present.<br /><br /> A value of *0* or *false* specifies that the property shall be explicitly turned off. This is implied when the parent element is not present.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_OnOff) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +133,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Alignment class.
-            </summary>
+        <summary>Initializes a new instance of the Alignment class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +155,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +176,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

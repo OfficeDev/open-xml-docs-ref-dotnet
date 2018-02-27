@@ -1,4 +1,4 @@
-﻿<Type Name="ExtendedGuide" FullName="DocumentFormat.OpenXml.Office2013.PowerPoint.ExtendedGuide">
+<Type Name="ExtendedGuide" FullName="DocumentFormat.OpenXml.Office2013.PowerPoint.ExtendedGuide">
   <TypeSignature Language="C#" Value="public class ExtendedGuide : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExtendedGuide extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.PowerPoint.ExtendedGuide" />
@@ -27,14 +27,65 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ExtendedGuide Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is p15:guide.</para>
-    </summary>
+    <summary>Defines the ExtendedGuide Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is p15:guide.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ColorType &lt;p15:clr&gt;</description></item><item><description>ExtensionList &lt;p15:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.5.34   CT_ExtendedGuide*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/powerpoint/2012/main  
+  
+ *Referenced by:* CT_ExtendedGuideList  
+  
+ A complex type that specifies a guide within a presentation.\<16> Guides are lines used for arranging shapes and other content.  
+  
+ *Child Elements:*  
+  
+ *clr:* A *CT_Color* element ([ISO/IEC-29500-4] section A.4.1) that specifies the color of the guide.  
+  
+ *extLst:* A *CT_ExtensionList* element ([ISO/IEC-29500-4] section A.3) that specifies the extension list. All future extensions to the guide will be stored in the extension list.  
+  
+ *Attributes:*  
+  
+ *id:* An *xsd:unsignedInt* attribute ([XMLSCHEMA2] section 3.3.22) that specifies a unique identifier for the guide. The identifier MUST be unique within its parent CT_ExtendedGuideList (section 2.5.35).  
+  
+ *name:* An *xsd:string* attribute ([XMLSCHEMA2] section 3.2.1) that specifies the name of the guide.  
+  
+ *orient:* An *ST_Direction* attribute ([ISO/IEC-29500-4] section A.3) that specifies the orientation of the guide.  
+  
+ *pos:* An *ST_Coordinate32* attribute ([ISO/IEC-29500-4] section A.4.1) that specifies the position of the guide relative to the top or left side of the slide.  
+  
+ *userDrawn:* A *xsd:boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the guide was inserted by the user.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_ExtendedGuide">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="clr" type="a:CT_Color" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="extLst" type="p:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="id" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="name" type="xsd:string" use="optional" default=""/>*  
+  
+ *\<xsd:attribute name="orient" type="p:ST_Direction" use="optional" default="vert"/>*  
+  
+ *\<xsd:attribute name="pos" type="a:ST_Coordinate32" use="optional" default="0"/>*  
+  
+ *\<xsd:attribute name="userDrawn" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.2 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -49,9 +100,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ExtendedGuide class.
-            </summary>
+        <summary>Initializes a new instance of the ExtendedGuide class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,9 +126,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ExtendedGuide class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ExtendedGuide class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,9 +146,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ExtendedGuide class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ExtendedGuide class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -121,9 +166,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ExtendedGuide class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ExtendedGuide class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,11 +188,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,10 +209,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.PowerPoint.ColorType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ColorType.</para>
-          <para> Represents the following element tag in the schema: p15:clr </para>
-        </summary>
+        <summary>ColorType. Represents the following element tag in the schema: p15:clr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -194,10 +232,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.PowerPoint.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: p15:extLst </para>
-        </summary>
+        <summary>ExtensionList. Represents the following element tag in the schema: p15:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -225,10 +260,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -253,10 +285,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> userDrawn.</para>
-          <para>Represents the following attribute in the schema: userDrawn </para>
-        </summary>
+        <summary>userDrawn.Represents the following attribute in the schema: userDrawn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -276,9 +305,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -303,10 +330,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
+        <summary>name.Represents the following attribute in the schema: name</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -331,10 +355,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.DirectionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> orient.</para>
-          <para>Represents the following attribute in the schema: orient </para>
-        </summary>
+        <summary>orient.Represents the following attribute in the schema: orient</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -359,10 +380,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> pos.</para>
-          <para>Represents the following attribute in the schema: pos </para>
-        </summary>
+        <summary>pos.Represents the following attribute in the schema: pos</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

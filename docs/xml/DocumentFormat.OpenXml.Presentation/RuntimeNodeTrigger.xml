@@ -1,4 +1,4 @@
-﻿<Type Name="RuntimeNodeTrigger" FullName="DocumentFormat.OpenXml.Presentation.RuntimeNodeTrigger">
+<Type Name="RuntimeNodeTrigger" FullName="DocumentFormat.OpenXml.Presentation.RuntimeNodeTrigger">
   <TypeSignature Language="C#" Value="public class RuntimeNodeTrigger : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RuntimeNodeTrigger extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.RuntimeNodeTrigger" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Runtime Node Trigger Choice.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:rtn.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Runtime Node Trigger Choice. When the object is serialized out as xml, its qualified name is p:rtn.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **rtn (Runtime Node Trigger Choice)**  
+  
+ This element specifies the child time node that triggers a time condition. References a child time node or all child nodes. Order is based on the child's end time.  
+  
+ [*Example*:  Consider an animation which ends the synchronization of all parallel time nodes when all the child nodes have ended their animation. The \<rtn> element should be used as follows:  
+  
+```xml  
+<p:cTn>  
+  <p:stCondLst>  
+ … </p:stCondLst>  
+  <p:endSync evt="end" delay="0">  
+    <p:rtn val="all"/>  
+  </p:endSync>  
+  <p:childTnLst>  
+ … </p:childTnLst>  
+</p:cTn>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cond (§19.5.31); endSync (§19.5.39)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Value)|This attribute describes the value that triggers the runtime node.<br /><br /> The possible values for this attribute are defined by the *ST_TLTriggerRuntimeNode* simple type (§19.7.49).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLTriggerRuntimeNode) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RuntimeNodeTrigger class.
-            </summary>
+        <summary>Initializes a new instance of the RuntimeNodeTrigger class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +141,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.TriggerRuntimeNodeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute describes the value that will trigger the runtime node.  
+  
+ The possible values for this attribute are defined by the `ST_TLTriggerRuntimeNode` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

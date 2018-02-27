@@ -1,4 +1,4 @@
-﻿<Type Name="GroupBox" FullName="DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox">
+<Type Name="GroupBox" FullName="DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox">
   <TypeSignature Language="C#" Value="public class GroupBox : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GroupBox extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.CustomUI.GroupBox" />
@@ -54,14 +54,79 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the GroupBox Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is mso14:groupBox.</para>
-    </summary>
+    <summary>Defines the GroupBox Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is mso14:groupBox.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>BackstageGroupButton &lt;mso14:button&gt;</description></item><item><description>BackstageCheckBox &lt;mso14:checkBox&gt;</description></item><item><description>BackstageEditBox &lt;mso14:editBox&gt;</description></item><item><description>BackstageDropDown &lt;mso14:dropDown&gt;</description></item><item><description>RadioGroup &lt;mso14:radioGroup&gt;</description></item><item><description>BackstageComboBox &lt;mso14:comboBox&gt;</description></item><item><description>Hyperlink &lt;mso14:hyperlink&gt;</description></item><item><description>BackstageLabelControl &lt;mso14:labelControl&gt;</description></item><item><description>GroupBox &lt;mso14:groupBox&gt;</description></item><item><description>LayoutContainer &lt;mso14:layoutContainer&gt;</description></item><item><description>ImageControl &lt;mso14:imageControl&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.48   CT_GroupBox*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/2009/07/customui  
+  
+ *Referenced by:* CT_GroupControls, CT_GroupBox, CT_LayoutContainer  
+  
+ Specifies a grouping container that visually groups child controls together.  
+  
+ *Child Elements:*  
+  
+ *button:* A *CT_BackstageGroupButton* element, as specified in section 2.3.10.  
+  
+ *checkBox:* A *CT_BackstageCheckBox* element, as specified in section 2.3.3.  
+  
+ *editBox:* A *CT_BackstageEditBox* element, as specified in section 2.3.7.  
+  
+ *dropDown:* A *CT_BackstageDropDown* element, as specified in section 2.3.6.  
+  
+ *radioGroup:* A *CT_RadioGroup* element, as specified in section 2.3.63.  
+  
+ *comboBox:* A *CT_BackstageComboBox* element, as specified in section 2.3.5.  
+  
+ *hyperlink:* A *CT_Hyperlink* element, as specified in section 2.3.50.  
+  
+ *labelControl:* A *CT_BackstageLabelControl* element, as specified in section 2.3.13.  
+  
+ *groupBox:* A *CT_GroupBox* element, as specified in section 2.3.48.  
+  
+ *layoutContainer:* A *CT_LayoutContainer* element, as specified in section 2.3.54.  
+  
+ *imageControl:* A *CT_ImageControl* element, as specified in section 2.3.51.  
+  
+ *Attributes:*  
+  
+ *id:* An *ST_UniqueID* attribute, as specified in section 2.4.22, that specifies the identifier of a custom control. All custom controls MUST have unique identifiers. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
+  
+ *idQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control. This attribute is used to reference controls or containers created by other Custom UI documents. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
+  
+ *tag:* An *ST_String* attribute, as specified in section 2.4.19, that specifies an arbitrary *string* that provides additional information about this control during callback function calls. If this attribute is omitted, the value defaults to an empty string.  
+  
+ *expand:* An *ST_Expand* attribute, as specified in section 2.4.8, that specifies how this control expands within its container. If this attribute is omitted, the control does not expand.  
+  
+ *label:* An *ST_String* attribute that specifies a string that is displayed as the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
+  
+ *getLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_GroupBox">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:group ref="EG_GroupControls" minOccurs="0" maxOccurs="1000"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attributeGroup ref="AG_IDCustom"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Expand"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Label"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -76,9 +141,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GroupBox class.
-            </summary>
+        <summary>Initializes a new instance of the GroupBox class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +167,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GroupBox class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the GroupBox class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +187,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GroupBox class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the GroupBox class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -148,9 +207,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the GroupBox class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the GroupBox class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -172,11 +229,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,10 +255,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> expand.</para>
-          <para>Represents the following attribute in the schema: expand </para>
-        </summary>
+        <summary>expand.Represents the following attribute in the schema: expand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -228,10 +280,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getLabel.</para>
-          <para>Represents the following attribute in the schema: getLabel </para>
-        </summary>
+        <summary>getLabel.Represents the following attribute in the schema: getLabel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -256,10 +305,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -284,10 +330,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> label.</para>
-          <para>Represents the following attribute in the schema: label </para>
-        </summary>
+        <summary>label.Represents the following attribute in the schema: label</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -307,9 +350,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -334,10 +375,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> idQ.</para>
-          <para>Represents the following attribute in the schema: idQ </para>
-        </summary>
+        <summary>idQ.Represents the following attribute in the schema: idQ</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -362,10 +400,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> tag.</para>
-          <para>Represents the following attribute in the schema: tag </para>
-        </summary>
+        <summary>tag.Represents the following attribute in the schema: tag</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

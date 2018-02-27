@@ -1,4 +1,4 @@
-﻿<Type Name="ColorFilter" FullName="DocumentFormat.OpenXml.Spreadsheet.ColorFilter">
+<Type Name="ColorFilter" FullName="DocumentFormat.OpenXml.Spreadsheet.ColorFilter">
   <TypeSignature Language="C#" Value="public class ColorFilter : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColorFilter extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.ColorFilter" />
@@ -18,11 +18,42 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Color Filter Criteria.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:colorFilter.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Color Filter Criteria. When the object is serialized out as xml, its qualified name is x:colorFilter.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **colorFilter (Color Filter Criteria)**  
+  
+ This element specifies the color to filter by and whether to use the cell's fill or font color in the filter criteria. If the cell's font or fill color does not match the color specified in the criteria, the rows corresponding to those cells are hidden from view.  
+  
+ [*Example*:  
+  
+```xml  
+<filterColumn colId="1">  
+  <colorFilter dxfId="0" cellColor="0"/>  
+</filterColumn>  
+```  
+  
+ *end example]*  
+  
+|Parent Elements|  
+|---------------------|  
+|filterColumn (§18.3.2.7)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|cellColor (Filter By Cell Color)|Flag indicating whether or not to filter by the cell's fill color.  '1' indicates to filter by cell fill. '0' indicates to filter by the cell's font color.<br /><br /> For rich text in cells, if the color specified appears in the cell at all, it shall be included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dxfId (Differential Format Record Id)|Id of differential format record (dxf) in the Styles Part which expresses the color value to filter by.<br /><br /> The possible values for this attribute are defined by the *ST_DxfId* simple type (§18.18.25).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ColorFilter) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ColorFilter class.
-            </summary>
+        <summary>Initializes a new instance of the ColorFilter class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +92,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Filter By Cell Color.</para>
-          <para>Represents the following attribute in the schema: cellColor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Filter By Cell Color.Represents the following attribute in the schema: cellColor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +115,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +141,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Differential Format Record Id.</para>
-          <para>Represents the following attribute in the schema: dxfId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Differential Format Record Id.Represents the following attribute in the schema: dxfId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,10 +161,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

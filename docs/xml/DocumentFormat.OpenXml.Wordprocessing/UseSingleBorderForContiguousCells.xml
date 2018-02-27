@@ -1,4 +1,4 @@
-﻿<Type Name="UseSingleBorderForContiguousCells" FullName="DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells">
+<Type Name="UseSingleBorderForContiguousCells" FullName="DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells">
   <TypeSignature Language="C#" Value="public class UseSingleBorderForContiguousCells : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UseSingleBorderForContiguousCells extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UseSingleBorderForContiguousCells" />
@@ -18,11 +18,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Use Simplified Rules For Table Border Conflicts.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:useSingleBorderforContiguousCells.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Use Simplified Rules For Table Border Conflicts. When the object is serialized out as xml, its qualified name is w:useSingleBorderforContiguousCells.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `useSingleBorderforContiguousCells (Use Simplified Rules For Table Border Conflicts)`  
+  
+ This element specifies whether applications should use an alternate simplified algorithm when handling conflicts between adjacent table borders within a table.  
+  
+ Typically, the conflicts between two adjacent table borders are handled using the conflict resolution algorithm defined in Part 1, §17.4.39 of /IEC 29500. This element, when present with a val attribute value of *true* (or equivalent), specifies that rather than using that algorithm to determine the outcome of the conflict to two adjacent borders, that the following logic shall be used instead:  
+  
+-   Cell borders shall supersede table borders  
+  
+-   Cell borders to the right shall supersede cell borders to the left (i.e. the rightmost border wins in conflicts between vertical borders)  
+  
+-   Cell borders below shall supersede cell borders above (i.e. the bottommost border wins in conflicts between horizontal borders)  
+  
+ [*Example*: Consider a WordprocessingML document with cell and table borders defined as follows. In the image below, 0.1" of padding has been added between each cell temporarily to clearly illustrate the borders on each cell and on the table:  
+  
+ bfe76d39-bc60-4b80-917a-185de4c721ec  
+  
+ The default presentation would have the border conflicts resolved using the algorithm defined by /IEC 29500, resulting in the following table:  
+  
+ 87cf83cb-64a6-4315-a2a2-e3073fe9d3f5  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:useSingleBorderforContiguousCells />  
+</w:compat>  
+```  
+  
+ Then the simplified table algorithm above shall be used instead (bottom and right cell borders always win), resulting in the following output:  
+  
+ e2d7ef65-3795-46dc-ac42-199d3dc18dfc  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UseSingleBorderForContiguousCells class.
-            </summary>
+        <summary>Initializes a new instance of the UseSingleBorderForContiguousCells class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

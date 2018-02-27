@@ -1,4 +1,4 @@
-﻿<Type Name="LeftBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.LeftBorder">
+<Type Name="LeftBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.LeftBorder">
   <TypeSignature Language="C#" Value="public class LeftBorder : DocumentFormat.OpenXml.Wordprocessing.BorderType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LeftBorder extends DocumentFormat.OpenXml.Wordprocessing.BorderType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LeftBorder" />
@@ -18,11 +18,183 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Left Paragraph Border.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:left.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Left Paragraph Border. When the object is serialized out as xml, its qualified name is w:left.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `left (Left Paragraph Border)`  
+  
+ This element specifies the border which shall be displayed on the left side of the page around the specified paragraph. This shall not change based on the paragraph direction.  
+  
+ To determine if any two adjoining paragraphs should have a left border which spans the full line height or not, the left border shall be drawn between the top border or between border at the top (whichever would be rendered for the current paragraph), and the bottom border or between border at the bottom (whichever would be rendered for the current paragraph).  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then no left border shall be applied.  
+  
+ [*Example*: Consider the following two paragraphs' WordprocessingML definition:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>First paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Second paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+```  
+  
+ Since the paragraph border set is identical between the two paragraphs, the paragraphs are connected by a between border. These paragraphs therefore draw the left border between the top and between borders for the first paragraph, and the between and bottom borders for the second paragraph. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pBdr (§17.3.1.24)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `left (Left Border)`  
+  
+ This element specifies the presentation and display of the page border displayed at the left of each page in this section.  
+  
+ [*Example*: Consider a section in which all pages have a left border consisting of a repeated image of an umbrella, like this:  
+  
+ 2ff3649b-77e6-4c45-a4b8-5ba6cfac375c  
+  
+ This border would result in the following WordprocessingML:  
+  
+```xml  
+<w:sectPr>  
+  …  <w:pgBorders>  
+    <w:left w:val="seattle" …/>  
+  </w:pgBorders>  
+  …</w:sectPr>  
+```  
+  
+ Because the page only has a border at the left, only the left element is specified within the set of page borders. *end example*]  
+  
+ When a document has a left border that is relative to the page edges (using the offsetFrom attribute value of *page* on pgBorders), it shall span the left edge of the page at the location defined by its properties, stopping when:  
+  
+-   It intersects with the corresponding top or bottom page border (if one is specified).  
+  
+-   It reaches the edge of the page.  
+  
+ [*Example*: In the example above, no top or bottom border was specified in the WordprocessingML, so a consumer must draw the border from one edge of the page to the other. *end example*]  
+  
+ When a document has a left border that is relative to the text (using the offsetFrom attribute value of *text* on pgBorders), it shall span only the necessary width to satisfy the requirement of spanning the width of the text.  
+  
+ When a document has custom border art specified by the id attribute, it shall use the corresponding relationship part item as an image for the left border. If the corresponding relationship part item cannot be located, the consumer shall use the border specified by the value of the val attribute. If the corresponding value of the val attribute cannot be resolved, no left border is present when the page is displayed.  
+  
+|Parent Elements|  
+|---------------------|  
+|pgBorders (§17.6.10)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_PageBorder) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `left (Left Border for HTML div)`  
+  
+ This element specifies the border which shall be displayed at the left of the boundaries of the current HTML *div* object.  
+  
+ If this element is omitted, then this HTML *div* object shall not have a left border.  
+  
+ [*Example*: Consider a simple HTML document defined as follows:  
+  
+```xml  
+<html>  
+  <body>  
+    <div style=" border-left-style:solid; border-right-style:groove; border-right-width:1px; border-top-style:dashed; border-top-width:3px; border-bottom-style:outset; border-bottom-width:3px">  
+      <p>paragraph of text</p>  
+    </div>  
+  </body>  
+</html>  
+```  
+  
+ This HTML would therefore normally appear as follows (image scaled appropriately):  
+  
+ 9facf4b6-63e8-4596-83f6-8ca794c3cc66  
+  
+ Now, when this document is saved in the WordprocessingML format, the information stored on the *div* elements is stored in the web setting part as follows:  
+  
+```xml  
+<w:divs>  
+  <w:div w:id="1785730240">  
+     …    <w:divBdr>  
+      <w:top w:val="dashed" w:sz="18" w:space="7" w:color="auto" />  
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="auto" />  
+      <w:bottom w:val="outset" w:sz="18" w:color="auto" />  
+      <w:right w:val="threeDEngrave" w:sz="6" w:color="auto" />  
+    </w:divBdr>  
+  </w:div>  
+</w:divs>  
+```  
+  
+ The left element specifies border information about the left border for the single HTML *div* structure in the document; in this case, a 3 point bottom border of type *single*. The initial 4 pixel border was converted to 3 points using the following logic:  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|divBdr (§17.15.2.7)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `left (Table Cell Leading Edge Border)`  
+  
+ This element is semantically equivalent to start (Part 1, §17.4.34), specified above.  
+  
+ For tables which have the bidiVisual property (Part 1, §17.4.1) applied, this border is applied to the right edge of the cell.  
+  
+|Parent Elements|  
+|---------------------|  
+|tcBorders (Part 1, §17.4.67)|  
+  
+ This element’s content model is defined by the common border properties definition in Part 1, §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `left (Table Leading Edge Border)`  
+  
+ This element is semantically equivalent to start (Part 1, §17.4.37), specified above.  
+  
+ For tables which have the bidiVisual property (Part 1, §17.4.1) applied, this border is applied to the right edge of the table.  
+  
+|Parent Elements|  
+|---------------------|  
+|tblBorders (Part 1, §17.4.39); tblBorders (Part 1, §17.4.40)|  
+  
+ This element’s content model is defined by the common border properties definition in Part 1, §17.3.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +209,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LeftBorder class.
-            </summary>
+        <summary>Initializes a new instance of the LeftBorder class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +231,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +252,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

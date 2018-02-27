@@ -1,4 +1,4 @@
-﻿<Type Name="FieldData" FullName="DocumentFormat.OpenXml.Wordprocessing.FieldData">
+<Type Name="FieldData" FullName="DocumentFormat.OpenXml.Wordprocessing.FieldData">
   <TypeSignature Language="C#" Value="public class FieldData : DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FieldData extends DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FieldData" />
@@ -18,11 +18,72 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Custom Field Data.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:fldData.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Custom Field Data. When the object is serialized out as xml, its qualified name is w:fldData.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **fldData (Custom Field Data)**  
+  
+ This element specifies custom field data which shall be associated with the parent field. No information or semantics are applied to the contents of this data by /IEC 29500, and therefore this field can be used as desired to store additional application-defined data with the field. However, applications should not lose the contents of this custom data if they do not understand or utilize it (i.e. the information should continue to be saved with the file).  
+  
+ If this element is omitted, then no custom field data is stored with the parent field. If the type attribute of the current field character is not *start*, then his setting can be ignored.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for a complex field:  
+  
+```xml  
+<w:r>  
+  <w:fldChar w:fldCharType="start">  
+    <w:fldData xml:space="preserve">///3645ERKJHE</w:fldData>  
+  </w:fldChar>  
+</w:r>  
+<w:r>  
+  <w:instrText>PRIVATE</w:instrText>  
+</w:r>  
+<w:r>  
+  <w:fldChar w:fldCharType="separate" />  
+</w:r>  
+…  
+```  
+  
+ The fldData element contains custom data stored with this *PRIVATE* field (Part 1, §17.16.5.48), the contents of which are determined by a hosting application. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fldChar (Part 1, §17.16.18)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Text) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **fldData (Custom Field Data)**  
+  
+ This element specifies custom field data which shall be associated with the parent field. No information or semantics are applied to the contents of this data by /IEC 29500, and therefore this field can be used as desired to store additional application-defined data with the field. However, applications should not lose the contents of this custom data if they do not understand or utilize it (i.e. the information should continue to be saved with the file).  
+  
+ If this element is omitted, then no custom field data is stored with the parent field.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for a simple field:  
+  
+```xml  
+<w:fldSimple w:instr="PRIVATE">  
+  <w:fldData xml:space="preserve">///3645ERKJHE</w:fldData>  
+</w:fldSimple>  
+```  
+  
+ The fldData element contains custom data stored with this *PRIVATE* field (Part 1, §17.16.5.48), the contents of which are determined by a hosting application. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fldSimple (Part 1, §17.16.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Text) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FieldData class.
-            </summary>
+        <summary>Initializes a new instance of the FieldData class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -58,10 +117,8 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">Specifies the text content of the element.</param>
-        <summary>
-            Initializes a new instance of the FieldData class with the specified text content.
-            </summary>
+        <param name="text">Specifies text content of the element.</param>
+        <summary>Initializes a new instance of the FieldData class with the specified text content.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,11 +140,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,10 +161,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

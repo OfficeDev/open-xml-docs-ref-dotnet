@@ -1,4 +1,4 @@
-﻿<Type Name="FootnoteEndnoteReferenceType" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType">
+<Type Name="FootnoteEndnoteReferenceType" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType">
   <TypeSignature Language="C#" Value="public abstract class FootnoteEndnoteReferenceType : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit FootnoteEndnoteReferenceType extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType" />
@@ -18,9 +18,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-            Defines the FootnoteEndnoteReferenceType class.
-            </summary>
+    <summary>Defines the FootnoteEndnoteReferenceType class.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -36,9 +34,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FootnoteEndnoteReferenceType class.
-            </summary>
+        <summary>Initializes a new instance of the FootnoteEndnoteReferenceType class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -62,12 +58,42 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Suppress Footnote/Endnote Reference Mark.</para>
-          <para>Represents the following attribute in the schema: w:customMarkFollows </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Suppress Footnote/Endnote Reference Mark.Represents the following attribute in the schema: w:customMarkFollows</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that the current footnote or endnote shall not have an associated footnote or endnote reference mark, as appropriate.  
+  
+ This attribute shall be used to specify that a particular footnote or endnote shall not increment the numbering for its associated footnote/endnote numbering format, so that the use of a footnote with a custom footnote mark does not cause a missing value in the footnote/endnote values. The display of the mark is specified via the `footnoteRef`/`endnoteRef` elements, as appropriate.  
+  
+ If this attribute is omitted, then the footnote or endnote reference mark shall not be skipped when incrementing over this footnote or endnote.  
+  
+ Consider a footnote with an `id` value of `1` that uses a custom footnote mark:  
+  
+```  
+<w:footnotes>  
+  <w:footnote w:id="0">  
+    …  
+  </w:footnote>  
+  <w:footnote w:suppressRef="1" w:id="2">  
+    …  
+  </w:footnote>  
+  <w:footnote w:id="2">  
+    …  
+  </w:footnote>  
+</w:footnotes>  
+```  
+  
+ If the numbering format for footnotes in this document is `upperRoman`, then the first footnote shall be `I`, the second is suppressed, and the third is `II`, noticing that the second does not increment the numbering sequence.  
+  
+ The possible values for this attribute are defined by the `ST_OnOff` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -92,12 +118,40 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Footnote/Endnote ID Reference.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Footnote/Endnote ID Reference.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the footnote or endnote which is being referenced by the current footnote or endnote reference in the document.  
+  
+ If the resulting footnote or endnote ID is not present in the footnotes or endnote part (as appropriate), then this document shall be considered non-conformant.  
+  
+ Consider a paragraph with an endnote reference, represented by the following WordprocessingML:  
+  
+```  
+<w:p>  
+  <w:r>  
+    <w:t>This text is followed by an endnote</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:endnoteReference w:id="2" />  
+  </w:r>  
+  <w:r>  
+    <w:t>.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ This text references the endnote in the document's endnotes part which has an `id` value of `2`.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

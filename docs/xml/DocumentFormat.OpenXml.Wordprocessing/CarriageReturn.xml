@@ -1,4 +1,4 @@
-﻿<Type Name="CarriageReturn" FullName="DocumentFormat.OpenXml.Wordprocessing.CarriageReturn">
+<Type Name="CarriageReturn" FullName="DocumentFormat.OpenXml.Wordprocessing.CarriageReturn">
   <TypeSignature Language="C#" Value="public class CarriageReturn : DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CarriageReturn extends DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.CarriageReturn" />
@@ -18,11 +18,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Carriage Return.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:cr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Carriage Return. When the object is serialized out as xml, its qualified name is w:cr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **cr (Carriage Return)**  
+  
+ This element specifies that a carriage return shall be placed at the current location in the run content. A *carriage return* is the equivalent of Unicode character 000D, and is used to end the current line of text in WordprocessingML.  
+  
+ The behavior of a carriage return in run content shall be identical to a break character with null type and clear attributes, which shall end the current line and find the next available line on which to continue.  
+  
+ [*Example*: Consider the following sentence in a WordprocessingML document:  
+  
+```xml  
+This is another simple sentence.  
+```  
+  
+ Normally, just as shown above, this sentence would be displayed on a single line as it is not long enough to require line breaking (given the width of the current page). However, if a carriage return were inserted after the word *another*, as follows:  
+  
+```xml  
+<w:r>  
+  <w:t>This is another</w:t>  
+  <w:cr/>  
+  <w:t xml:space="preserve"> simple sentence.</w:t>  
+</w:r>  
+```  
+  
+ This would imply that this carriage return character must force a line break, and break the line after that word:  
+  
+```xml  
+This is another simple sentence.  
+```  
+  
+ The carriage return character forced the following text to be restarted on the next available line in the document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Empty) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CarriageReturn class.
-            </summary>
+        <summary>Initializes a new instance of the CarriageReturn class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +101,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +122,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

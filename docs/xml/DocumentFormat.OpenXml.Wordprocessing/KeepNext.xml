@@ -1,4 +1,4 @@
-﻿<Type Name="KeepNext" FullName="DocumentFormat.OpenXml.Wordprocessing.KeepNext">
+<Type Name="KeepNext" FullName="DocumentFormat.OpenXml.Wordprocessing.KeepNext">
   <TypeSignature Language="C#" Value="public class KeepNext : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeepNext extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.KeepNext" />
@@ -18,11 +18,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the KeepNext Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:keepNext.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the KeepNext Class. When the object is serialized out as xml, its qualified name is w:keepNext.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `keepNext (Keep Paragraph With Next Paragraph)`  
+  
+ This element specifies that when rendering this document in a paginated view, the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible.  
+  
+ This means that if the contents of the current paragraph would normally be completely rendered on a different page than the following paragraph (because only one of the two paragraphs would fit on the remaining space on the first page), then both paragraphs shall be rendered on a single page. This property can be chained between multiple paragraphs to ensure that all paragraphs are rendered on a single page without any intervening page boundaries. If this is not possible the entire set of paragraphs that are grouped together using this property would exceed a single page in any case, then the set of "keep with next" paragraphs shall start on a new page, with page breaks as needed afterwards.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied.  
+  
+ [*Example*: Consider the following document with three paragraphs:  
+  
+ 1a9db105-ae96-4048-b75c-209b330285cc  
+  
+ As shown above, the second paragraph and third paragraph are being rendered on two separate pages. However, a producer can specify that the second paragraph should not be displayed without any part of the third by setting the keepNext element as follows:  
+  
+```xml  
+<w:pPr>  
+  <w:keepNext/>  
+  …  
+</w:pPr>  
+```  
+  
+ This would ensure that the second paragraph is displayed on the same page as the third paragraph:  
+  
+ d3db6441-fbf0-4c61-a435-400bbc25d4c5  
+  
+ However, if the first paragraph was also set to keepNext, then this set of grouped paragraphs would exceed a page, therefore the set of paragraphs would be grouped and start on the first page, resulting in the second paragraph reappearing on page one:  
+  
+ 44d780c3-c3f5-4aa9-b508-88c3f8017819  
+  
+ Since the paragraphs cannot all be put on one page, they all start on page one and flow as needed. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +80,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the KeepNext class.
-            </summary>
+        <summary>Initializes a new instance of the KeepNext class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +123,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

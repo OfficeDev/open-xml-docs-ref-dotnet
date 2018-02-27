@@ -1,4 +1,4 @@
-﻿<Type Name="GutterOnRight" FullName="DocumentFormat.OpenXml.Wordprocessing.GutterOnRight">
+<Type Name="GutterOnRight" FullName="DocumentFormat.OpenXml.Wordprocessing.GutterOnRight">
   <TypeSignature Language="C#" Value="public class GutterOnRight : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GutterOnRight extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.GutterOnRight" />
@@ -18,11 +18,63 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the GutterOnRight Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:rtlGutter.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the GutterOnRight Class. When the object is serialized out as xml, its qualified name is w:rtlGutter.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **rtlGutter (Gutter on Right Side of Page)**  
+  
+ This element specifies that the page gutter shall be placed on the right side of the page for this section only. The *page gutter* defines the amount of extra space added to the specified margin, above any existing margin values. [*Note*: This setting is typically used when a document is being created for binding, in order to ensure that the resulting margins are present after the binding gutter is consumed by the printed matter binding. *end note*]  
+  
+ If the gutter is set to the side of the page by the omission of the gutterAtTop element (§17.15.1.50), then each section's gutter is placed at the left by default, unless that default is overridden by the rtlGutter element.  
+  
+ [*Example*: Consider a document with three sections, with gutter properties defined as follows:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:sectPr>  
+      <w:pgMar w:gutter="1440" …/>  
+      …    </w:sectPr>  
+  </w:pPr>  
+</w:p>  
+…  
+<w:p>  
+  <w:pPr>  
+    <w:sectPr>  
+      <w:pgMar w:gutter="1440" …/>  
+      <w:rtlGutter w:val="0" />  
+      …    </w:sectPr>  
+  </w:pPr>  
+</w:p>  
+…  
+<w:p>  
+  <w:pPr>  
+    <w:sectPr>  
+      <w:pgMar w:gutter="1440" …/>  
+      <w:rtlGutter />  
+      …    </w:sectPr>  
+  </w:pPr>  
+</w:p>  
+```  
+  
+ The first and second sections both place the gutter on the left side, the first by omission of the rtlGutter attribute, and the second by explicitly turning it off. The third section, however, moves the gutter to the right side via the use of the rtlGutter attribute. *end example*]  
+  
+ If the gutterAtTop element (§17.15.1.50) is specified and true, then each section's gutter is at the top and this setting is ignored.  
+  
+|Parent Elements|  
+|---------------------|  
+|sectPr (§17.6.17); sectPr (§17.6.18); sectPr (§17.6.19)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GutterOnRight class.
-            </summary>
+        <summary>Initializes a new instance of the GutterOnRight class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +111,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +132,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

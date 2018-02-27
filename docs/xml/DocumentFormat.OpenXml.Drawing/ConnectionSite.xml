@@ -1,4 +1,4 @@
-﻿<Type Name="ConnectionSite" FullName="DocumentFormat.OpenXml.Drawing.ConnectionSite">
+<Type Name="ConnectionSite" FullName="DocumentFormat.OpenXml.Drawing.ConnectionSite">
   <TypeSignature Language="C#" Value="public class ConnectionSite : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionSite extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.ConnectionSite" />
@@ -21,13 +21,78 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Shape Connection Site.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:cxn.</para>
-    </summary>
+    <summary>Shape Connection Site. When the object is serialized out as xml, its qualified name is a:cxn.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Position &lt;a:pos&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `cxn (Shape Connection Site)`  
+  
+ This element specifies the existence of a connection site on a custom shape. A connection site allows a cxnSp to be attached to this shape. This connection is maintained when the shape is repositioned within the document. It should be noted that this connection is placed within the shape bounding box using the transform coordinate system which is also called the shape coordinate system, as it encompasses the entire shape. The width and height for this coordinate system are specified within the ext transform element.  
+  
+ [*Note*: The transform coordinate system is different from a path coordinate system as it is per shape instead of per path within the shape. *end note*]  
+  
+ [*Example*: Consider the following custom geometry that has two connection sites specified. One connection is located at the bottom left of the shape and the other at the bottom right. The following DrawingML would describe such a custom geometry.  
+  
+ 513512cb-c599-4530-a558-b250b5c87c46  
+  
+```xml  
+<a:xfrm>  
+  <a:off x="3200400" y="1600200"/>  
+  <a:ext cx="1705233" cy="679622"/>  
+</a:xfrm>  
+<a:custGeom>  
+  <a:avLst/>  
+  <a:gdLst/>  
+  <a:ahLst/>  
+  <a:cxnLst>  
+    <a:cxn ang="0">  
+      <a:pos x="0" y="679622"/>  
+    </a:cxn>  
+    <a:cxn ang="0">  
+      <a:pos x="1705233" y="679622"/>  
+    </a:cxn>  
+  </a:cxnLst>  
+  <a:rect l="0" t="0" r="0" b="0"/>  
+  <a:pathLst>  
+    <a:path w="2" h="2">  
+      <a:moveTo>  
+        <a:pt x="0" y="2"/>  
+      </a:moveTo>  
+      <a:lnTo>  
+        <a:pt x="2" y="2"/>  
+      </a:lnTo>  
+      <a:lnTo>  
+        <a:pt x="1" y="0"/>  
+      </a:lnTo>  
+      <a:close/>  
+    </a:path>  
+  </a:pathLst>  
+</a:custGeom>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cxnLst (§20.1.9.10)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pos (Shape Position Coordinate)|§20.1.9.17|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|ang (Connection Site Angle)|Specifies the incoming connector angle. This angle is the angle around the connection site that an incoming connector tries to be routed to. This allows connectors to know where the shape is in relation to the connection site and route connectors so as to avoid any overlap with the shape.<br /><br /> [*Example*: Consider a simple square. In order to not have any connectors routed over the shape, the collowing angles would be specified for their respective connection sites.<br /><br /> 316d5474-5a95-43d8-93f6-a53f2ee2f655<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_AdjAngle* simple type (§20.1.10.1).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ConnectionSite) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +107,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ConnectionSite class.
-            </summary>
+        <summary>Initializes a new instance of the ConnectionSite class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +133,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConnectionSite class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ConnectionSite class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +153,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConnectionSite class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ConnectionSite class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +173,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ConnectionSite class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ConnectionSite class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,12 +197,24 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Connection Site Angle.</para>
-          <para>Represents the following attribute in the schema: ang </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Connection Site Angle.Represents the following attribute in the schema: ang</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the incoming connector angle. This angle is the angle around the connection site that an incoming connector will try to be routed to. This allows connectors to know where the shape is in relation to the connection site and route connectors so as to avoid any overlap with the shape.  
+  
+ Consider a simple square. In order to not have any connectors routed over the shape, the following angles would be specified for their respective connection sites.  
+  
+ bac7a022-d895-4373-adbe-048ec2e411aa  
+  
+ The possible values for this attribute are defined by the `ST_AdjAngle` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -166,11 +235,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -189,10 +256,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -211,11 +276,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Position</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Position.</para>
-          <para> Represents the following element tag in the schema: a:pos </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Position. Represents the following element tag in the schema: a:pos</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Position" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main

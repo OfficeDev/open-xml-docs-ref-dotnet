@@ -1,4 +1,4 @@
-﻿<Type Name="SpecVanish" FullName="DocumentFormat.OpenXml.Wordprocessing.SpecVanish">
+<Type Name="SpecVanish" FullName="DocumentFormat.OpenXml.Wordprocessing.SpecVanish">
   <TypeSignature Language="C#" Value="public class SpecVanish : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpecVanish extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SpecVanish" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the SpecVanish Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:specVanish.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the SpecVanish Class. When the object is serialized out as xml, its qualified name is w:specVanish.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **specVanish (Paragraph Mark Is Always Hidden)**  
+  
+ This element specifies that the given run shall always behave as if it is hidden, even when hidden text is being  displayed in the current document.  
+  
+ This property shall only be used to specify that a paragraph mark shall never be used to break the end of a paragraph for display, even if it is being shown on the document, as would be the case if a regularly hidden paragraph was not being displayed in the document. [*Note*: This property was typically used to ensure that a paragraph style can be applied to a part of a paragraph, and still appear as in the Table of Contents (which in previous word processors would ignore the use of the style if it were being used as a character style. *end note*] If this element is applied to any other run, it can be ignored.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the run properties for the paragraph mark shall not always be treated as if hidden.  
+  
+ [*Example*: Consider a paragraph mark which never be used to break the end of the paragraph in the document. This constraint is specified using the following WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:rPr>  
+    <w:specVanish />   
+  </w:rPr>  
+</w:pPr>  
+```  
+  
+ The presence of the specVanish element means that this paragraph mark must always be treated as hidden (must never be used to end the paragraph for display), but can be used to mark the end of use of a paragraph style. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SpecVanish class.
-            </summary>
+        <summary>Initializes a new instance of the SpecVanish class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

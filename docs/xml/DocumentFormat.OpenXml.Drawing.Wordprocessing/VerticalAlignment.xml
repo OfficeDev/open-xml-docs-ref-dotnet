@@ -1,4 +1,4 @@
-﻿<Type Name="VerticalAlignment" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment">
+<Type Name="VerticalAlignment" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment">
   <TypeSignature Language="C#" Value="public class VerticalAlignment : DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VerticalAlignment extends DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignment" />
@@ -18,11 +18,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Relative Vertical Alignment.</para>
-      <para> When the object is serialized out as xml, its qualified name is wp:align.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Relative Vertical Alignment. When the object is serialized out as xml, its qualified name is wp:align.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **align (Relative Vertical Alignment)**  
+  
+ This element specifies how a DrawingML object shall be vertically aligned relative to the vertical alignment base defined by the parent element. Once an alignment base is defined, this element shall determine how the DrawingML object shall be aligned relative to that location.  
+  
+ [*Example*: Consider a picture in a WordprocessingML document which has been aligned relative to the edge of the page - the left of the page horizontally, and the top of the page vertically. This alignment would be specified as follows:  
+  
+```xml  
+<wp:anchor … >  
+  <wp:positionV relativeFrom="page">  
+    <wp:align>top</wp:align>  
+  </wp:positionH>  
+  …</wp:anchor>  
+```  
+  
+ The align element with a value of *top* specifies that for the vertical positioning defined by the parent element (in this case, positioning relative to the *page*), the picture must be aligned to the top edge of the page. *end example*]  
+  
+ The possible values for this element are defined by the *ST_AlignV* simple type (§20.4.3.2).  
+  
+|Parent Elements|  
+|---------------------|  
+|positionV (§20.4.2.11)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (ST_AlignV) is located in §A.4.4. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the VerticalAlignment class.
-            </summary>
+        <summary>Initializes a new instance of the VerticalAlignment class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -58,10 +86,8 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">Specifies the text content of the element.</param>
-        <summary>
-            Initializes a new instance of the VerticalAlignment class with the specified text content.
-            </summary>
+        <param name="text">Specifies text content of the element.</param>
+        <summary>Initializes a new instance of the VerticalAlignment class with the specified text content.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,11 +109,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,10 +130,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

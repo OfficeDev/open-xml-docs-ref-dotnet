@@ -1,4 +1,4 @@
-﻿<Type Name="SlideLayout" FullName="DocumentFormat.OpenXml.Presentation.SlideLayout">
+<Type Name="SlideLayout" FullName="DocumentFormat.OpenXml.Presentation.SlideLayout">
   <TypeSignature Language="C#" Value="public class SlideLayout : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SlideLayout extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.SlideLayout" />
@@ -36,13 +36,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Slide Layout. The root element of SlideLayoutPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:sldLayout.</para>
-    </summary>
+    <summary>Slide Layout. The root element of SlideLayoutPart. When the object is serialized out as xml, its qualified name is p:sldLayout.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CommonSlideData &lt;p:cSld&gt;</description></item><item><description>ColorMapOverride &lt;p:clrMapOvr&gt;</description></item><item><description>Transition &lt;p:transition&gt;</description></item><item><description>Timing &lt;p:timing&gt;</description></item><item><description>HeaderFooter &lt;p:hf&gt;</description></item><item><description>SlideLayoutExtensionList &lt;p:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **sldLayout (Slide Layout)**  
+  
+ This element specifies an instance of a slide layout. The slide layout contains in essence a template slide design that can be applied to any existing slide. When applied to an existing slide all corresponding content should be mapped to the new slide layout.  
+  
+|Parent Elements|  
+|---------------------|  
+|Root element of PresentationML Slide Layout part|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|clrMapOvr (Color Scheme Map Override)|§19.3.1.7|  
+|cSld (Common Slide Data)|§19.3.1.16|  
+|extLst (Extension List with Modification Flag)|§19.3.1.20|  
+|hf (Header/Footer information for a slide master)|§19.3.1.25|  
+|timing (Slide Timing Information for a Slide Layout)|§19.3.1.48|  
+|transition (Slide Transition for a Slide Layout)|§19.3.1.50|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|matchingName (Matching Name)|Specifies a name to be used in place of the name attribute within the cSld element.  This is used for layout matching in response to layout changes and template applications.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|preserve (Preserve Slide Layout)|Specifies whether the corresponding slide layout is deleted when all the slides that follow that layout are deleted. If this attribute is not specified then a value of false should be assumed by the generating application. This would mean that the slide would in fact be deleted if no slides within the presentation were related to it.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showMasterPhAnim (Show Master Placeholder Animations)|Specifies whether or not to display animations on placeholders from the master slide.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showMasterSp (Show Master Shapes)|Specifies if shapes on the master slide should be shown on slides or not.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|type (Slide Layout Type)|Specifies the slide layout type that is used by this slide.<br /><br /> The possible values for this attribute are defined by the *ST_SlideLayoutType* simple type (§19.7.15).|  
+|userDrawn (Is User Drawn)|Specifies if the corresponding object has been drawn by the user and should thus not be deleted. This allows for the flagging of slides that contain user drawn data.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SlideLayout) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -57,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SlideLayout class.
-            </summary>
+        <summary>Initializes a new instance of the SlideLayout class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,9 +115,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SlideLayout class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the SlideLayout class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -107,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SlideLayout class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the SlideLayout class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,9 +155,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the SlideLayout class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the SlideLayout class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,11 +177,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,11 +198,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ColorMapOverride</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Color Scheme Map Override.</para>
-          <para> Represents the following element tag in the schema: p:clrMapOvr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Color Scheme Map Override. Represents the following element tag in the schema: p:clrMapOvr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ColorMapOverride" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -202,11 +221,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonSlideData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CommonSlideData.</para>
-          <para> Represents the following element tag in the schema: p:cSld </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CommonSlideData. Represents the following element tag in the schema: p:cSld</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CommonSlideData" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -228,11 +244,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.HeaderFooter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> HeaderFooter.</para>
-          <para> Represents the following element tag in the schema: p:hf </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>HeaderFooter. Represents the following element tag in the schema: p:hf</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.HeaderFooter" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -258,9 +271,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the SlideLayoutPart.
-            </summary>
+        <summary>Loads the DOM from the SlideLayoutPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,10 +290,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -306,11 +315,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> matchingName.</para>
-          <para>Represents the following attribute in the schema: matchingName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>matchingName.Represents the following attribute in the schema: matchingName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -334,11 +340,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> preserve.</para>
-          <para>Represents the following attribute in the schema: preserve </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>preserve.Represents the following attribute in the schema: preserve</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -361,9 +364,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the SlideLayoutPart.
-            </summary>
+        <summary>Saves the DOM into the SlideLayoutPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -387,11 +388,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Master Placeholder Animations.</para>
-          <para>Represents the following attribute in the schema: showMasterPhAnim </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Master Placeholder Animations.Represents the following attribute in the schema: showMasterPhAnim</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -415,11 +413,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Master Shapes.</para>
-          <para>Represents the following attribute in the schema: showMasterSp </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Master Shapes.Represents the following attribute in the schema: showMasterSp</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -438,10 +433,7 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.SlideLayoutExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SlideLayoutExtensionList.</para>
-          <para> Represents the following element tag in the schema: p:extLst </para>
-        </summary>
+        <summary>SlideLayoutExtensionList. Represents the following element tag in the schema: p:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -464,10 +456,8 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.SlideLayoutPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the SlideLayoutPart associated with this element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the SlideLayoutPart associated with this element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.SlideLayoutPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -486,11 +476,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.Timing</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Timing.</para>
-          <para> Represents the following element tag in the schema: p:timing </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Timing. Represents the following element tag in the schema: p:timing</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.Timing" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -512,11 +499,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.Transition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Transition.</para>
-          <para> Represents the following element tag in the schema: p:transition </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Transition. Represents the following element tag in the schema: p:transition</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.Transition" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -543,11 +527,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.SlideLayoutValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -571,11 +552,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> userDrawn.</para>
-          <para>Represents the following attribute in the schema: userDrawn </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>userDrawn.Represents the following attribute in the schema: userDrawn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

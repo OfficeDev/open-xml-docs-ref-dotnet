@@ -1,4 +1,4 @@
-﻿<Type Name="Destination" FullName="DocumentFormat.OpenXml.Wordprocessing.Destination">
+<Type Name="Destination" FullName="DocumentFormat.OpenXml.Wordprocessing.Destination">
   <TypeSignature Language="C#" Value="public class Destination : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Destination extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Destination" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Merged Document Destination.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:destination.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Merged Document Destination. When the object is serialized out as xml, its qualified name is w:destination.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **destination (Merged Document Destination)**  
+  
+ This element specifies what the result which shall be generated when a mail merge is carried out on a given WordprocessingML source document. In other words, this element is used to specify what is to be done with the merged documents that result from populating the fields within a given merged WordprocessingML document with data from the specified external data source.  
+  
+ If this element is omitted, then the default destination of merged documents shall be assumed to be of type *newDocument*.  
+  
+ [*Note*: The aspects of the mail merge outside of connecting to an external data source and populating the fields within a given merged document with external data from the specified external data source are not specified by /IEC 29500.  
+  
+ For example, if a given merged WordprocessingML document contains a destination element with its val attribute equal to *email*, the hosting application can surface a user interface specific to creating emails with the data resulting from populating fields within a given merged WordprocessingML document with external data from the specified external data source. WordprocessingML only provides a flag (via the destination element) to tell the hosting application to surface this user interface. *end note*]  
+  
+ [*Example*: Consider a WordprocessingML source document containing the following WordprocessingML:  
+  
+```xml  
+<w:mailMerge>  
+  <w:destination w:val="newDocument" />  
+  …</w:mailMerge>  
+```  
+  
+ The destination element's val attribute is set to *newDocument*, specifying that when the mail merge is carried out, the source document must be used to generate a specified number of new documents, which can be handled as appropriate. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_MailMergeDest) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Destination class.
-            </summary>
+        <summary>Initializes a new instance of the Destination class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +137,28 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Mail Merge Merged Document Type.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Mail Merge Merged Document Type.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of merged documents which shall be the result of carrying out a mail merge on a given source WordprocessingML document.  
+  
+ Consider the WordprocessingML mail merge data specified as follows:  
+  
+```  
+<w:destination w:val="email" />  
+```  
+  
+ This specifies that a given merged WordprocessingML document will be used by the hosting application to generate e-mails containing the static contents of the merged document as well as external data populated into mapped fields.  
+  
+ The possible values for this attribute are defined by the `ST_MailMergeDest` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotBreakWrappedTables" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables">
+<Type Name="DoNotBreakWrappedTables" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables">
   <TypeSignature Language="C#" Value="public class DoNotBreakWrappedTables : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotBreakWrappedTables extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotBreakWrappedTables" />
@@ -18,11 +18,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Allow Floating Tables To Break Across Pages.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotBreakWrappedTables.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Allow Floating Tables To Break Across Pages. When the object is serialized out as xml, its qualified name is w:doNotBreakWrappedTables.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `doNotBreakWrappedTables (Do Not Allow Floating Tables To Break Across Pages)`  
+  
+ This element specifies whether applications shall allow tables which have been set to floating using the tblpPr element (Part 1, §17.4.58) shall be allowed to break across multiple pages when needed.  
+  
+ Typically, a table whose contents cannot all be displayed on one page is broken as needed across multiple pages in order to preserve the location of the table (just as a paragraph of multiple lines is broken across pages as needed). This element, when present with a val attribute value of *true* (or equivalent), specifies that floating tables shall never be broken across pages, and shall instead be put on the first page by adjusting the starting position of the table as needed to fit on that single page.  
+  
+ [*Example*: Consider a WordprocessingML document with a floating table positioned at the bottom of a page , as follows:  
+  
+ 8d4becfc-9ec5-4526-bf0a-633690c157cc  
+  
+ The default presentation of this document results in that table being broken across two pages of content.  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotBreakWrappedTables />  
+</w:compat>  
+```  
+  
+ Then that table is not broken across the page boundary, so it must be moved further up on the first page to accommodate its entire size, resulting in the following output:  
+  
+ a731c8a8-8eff-48fc-8839-c9fcf2298f96  
+  
+ Notice that the table now flows into the page margins in order to keep it on one page. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotBreakWrappedTables class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotBreakWrappedTables class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

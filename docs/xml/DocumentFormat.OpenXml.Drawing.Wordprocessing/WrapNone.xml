@@ -1,4 +1,4 @@
-﻿<Type Name="WrapNone" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone">
+<Type Name="WrapNone" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone">
   <TypeSignature Language="C#" Value="public class WrapNone : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WrapNone extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapNone" />
@@ -18,11 +18,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>No Text Wrapping.</para>
-      <para> When the object is serialized out as xml, its qualified name is wp:wrapNone.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>No Text Wrapping. When the object is serialized out as xml, its qualified name is wp:wrapNone.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **wrapNone (No Text Wrapping)**  
+  
+ This element specifies that the parent DrawingML object shall not cause any text wrapping within the contents of the host WordprocessingML document based on its display location. In effect, this setting shall place the object in one of two locations:  
+  
+-   If the behindDoc attribute on the parent element is *true*, then the object shall be positioned behind the text as it is normally displayed.  
+  
+-   If the behindDoc attribute on the parent element is *false*, then the object shall be positioned in front of the text as it is normally displayed.  
+  
+ [*Example*: Consider a DrawingML picture which must be displayed in front of any text on the page. This object would be specified as follows:  
+  
+```xml  
+<wp:anchor relativeHeight="10" behindDoc="false">  
+  …  <wp:wrapNone/>  
+</wp:anchor>  
+```  
+  
+ The wrapNone element specifies that the DrawingML object must not cause any text wrapping, and since the behindDoc attribute is *false*, the object must be displayed in front of the text of the document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|anchor (§20.4.2.3)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_WrapNone) is located in §A.4.4. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WrapNone class.
-            </summary>
+        <summary>Initializes a new instance of the WrapNone class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +89,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

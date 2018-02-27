@@ -1,4 +1,4 @@
-﻿<Type Name="Timeline" FullName="DocumentFormat.OpenXml.Office2013.Excel.Timeline">
+<Type Name="Timeline" FullName="DocumentFormat.OpenXml.Office2013.Excel.Timeline">
   <TypeSignature Language="C#" Value="public class Timeline : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Timeline extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Excel.Timeline" />
@@ -24,14 +24,117 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Timeline Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is x15:timeline.</para>
-    </summary>
+    <summary>Defines the Timeline Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is x15:timeline.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ExtensionList &lt;x15:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.6.111   CT_Timeline*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ *Referenced by:* CT_Timelines  
+  
+ The *CT_Timeline* complex type specifies a *Timeline view* (section 2.3.5.2) in this worksheet.\<87>  
+  
+ *Child Elements:*  
+  
+ *extLst:* A *CT_ExtensionList* element, as specified in [ISO/IEC-29500-4] section A.2, that specifies future extensibility for this element.  
+  
+ *Attributes:*  
+  
+ *name:* An *ST_Xstring* attribute, as specified in [ISO/IEC-29500-1] section 22.9.2.19, that specifies the name of the *Timeline view*. This element MUST be a unique case-insensitive name within the scope of this workbook. The length of this attribute MUST be greater than or equal to one character and MUST be less than or equal to 32767 characters.  
+  
+ *cache:* An *ST_Xstring* attribute that specifies the name of the *Timeline cache* (section 2.3.5.1) that this *Timeline view* is associated with. There MUST be a *CT_TimelineCacheDefinition* element (section 2.6.112) within this workbook with the *name* attribute equal to the value of this attribute.  
+  
+ *caption:* An *ST_Xstring* attribute that specifies the caption of the *Timeline view*. If this string exists, the length MUST be greater than or equal to one character.  
+  
+ *showHeader:* A *Boolean* attribute, as specified in [XMLSCHEMA2] section 3.2.2, that specifies whether the header is displayed.  
+  
+ *showSelectionLabel:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the selection label is displayed.  
+  
+ *showTimeLevel:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the time level is displayed.  
+  
+ *showHorizontalScrollbar:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the horizontal scrollbar is displayed.  
+  
+ *level:* An *unsignedInt* attribute, as specified in [XMLSCHEMA2] section 3.3.22, that specifies the current time level of the *Timeline* (section 2.3.5). This element MUST be a value from the following table:  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*0*|*Year*|  
+|*1*|*Quarter*|  
+|*2*|*Month*|  
+|*3*|*Day*|  
+  
+ *selectionLevel:* An *unsignedInt* attribute that specifies the time level at which the current selection was made for the *Timeline*. This element MUST be a value from the following table:  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*0*|*Year*|  
+|*1*|*Quarter*|  
+|*2*|*Month*|  
+|*3*|*Day*|  
+  
+ *scrollPosition:* A *dateTime* attribute ([XMLSCHEMA2] section 3.2.7) that specifies the start date of the timespan scrolling position of the *Timeline*.  
+  
+ *style:* An *ST_Xstring* attribute ([ISO/IEC-29500-1] section 22.9.2.19) that specifies the *Timeline style* (section 2.3.5.4) of the *Timeline view*. If this field (1) exists, this string MUST match the *name* attribute of a *CT_TimelineStyle* element (section 2.6.107) within this workbook or MUST be equal to one of the built-in *Timeline style* names:  
+  
+||  
+|-|  
+|*Built-in Timeline style names*|  
+|*TimelineStyleLight1*|  
+|*TimelineStyleLight2*|  
+|*TimelineStyleLight3*|  
+|*TimelineStyleLight4*|  
+|*TimelineStyleLight5*|  
+|*TimelineStyleLight6*|  
+|*TimelineStyleDark1*|  
+|*TimelineStyleDark2*|  
+|*TimelineStyleDark3*|  
+|*TimelineStyleDark4*|  
+|*TimelineStyleDark5*|  
+|*TimelineStyleDark6*|  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_Timeline">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="extLst" type="x:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="name" type="x:ST_Xstring" use="required"/>*  
+  
+ *\<xsd:attribute name="cache" type="x:ST_Xstring" use="required"/>*  
+  
+ *\<xsd:attribute name="caption" type="x:ST_Xstring" use="optional"/>*  
+  
+ *\<xsd:attribute name="showHeader" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="showSelectionLabel" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="showTimeLevel" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="showHorizontalScrollbar" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="level" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="selectionLevel" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="scrollPosition" type="xsd:dateTime" use="optional"/>*  
+  
+ *\<xsd:attribute name="style" type="x:ST_Xstring" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -46,9 +149,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Timeline class.
-            </summary>
+        <summary>Initializes a new instance of the Timeline class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -74,9 +175,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Timeline class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Timeline class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +195,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Timeline class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Timeline class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -118,9 +215,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Timeline class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Timeline class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,10 +239,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> cache.</para>
-          <para>Represents the following attribute in the schema: cache </para>
-        </summary>
+        <summary>cache.Represents the following attribute in the schema: cache</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -172,10 +264,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> caption.</para>
-          <para>Represents the following attribute in the schema: caption </para>
-        </summary>
+        <summary>caption.Represents the following attribute in the schema: caption</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -198,11 +287,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,10 +308,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: x15:extLst </para>
-        </summary>
+        <summary>ExtensionList. Represents the following element tag in the schema: x15:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -252,10 +336,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> level.</para>
-          <para>Represents the following attribute in the schema: level </para>
-        </summary>
+        <summary>level.Represents the following attribute in the schema: level</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -275,9 +356,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -302,10 +381,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
+        <summary>name.Represents the following attribute in the schema: name</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -330,10 +406,7 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> scrollPosition.</para>
-          <para>Represents the following attribute in the schema: scrollPosition </para>
-        </summary>
+        <summary>scrollPosition.Represents the following attribute in the schema: scrollPosition</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -358,10 +431,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> selectionLevel.</para>
-          <para>Represents the following attribute in the schema: selectionLevel </para>
-        </summary>
+        <summary>selectionLevel.Represents the following attribute in the schema: selectionLevel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -386,10 +456,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> showHeader.</para>
-          <para>Represents the following attribute in the schema: showHeader </para>
-        </summary>
+        <summary>showHeader.Represents the following attribute in the schema: showHeader</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -414,10 +481,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> showHorizontalScrollbar.</para>
-          <para>Represents the following attribute in the schema: showHorizontalScrollbar </para>
-        </summary>
+        <summary>showHorizontalScrollbar.Represents the following attribute in the schema: showHorizontalScrollbar</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -442,10 +506,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> showSelectionLabel.</para>
-          <para>Represents the following attribute in the schema: showSelectionLabel </para>
-        </summary>
+        <summary>showSelectionLabel.Represents the following attribute in the schema: showSelectionLabel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -470,10 +531,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> showTimeLevel.</para>
-          <para>Represents the following attribute in the schema: showTimeLevel </para>
-        </summary>
+        <summary>showTimeLevel.Represents the following attribute in the schema: showTimeLevel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -498,10 +556,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> style.</para>
-          <para>Represents the following attribute in the schema: style </para>
-        </summary>
+        <summary>style.Represents the following attribute in the schema: style</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

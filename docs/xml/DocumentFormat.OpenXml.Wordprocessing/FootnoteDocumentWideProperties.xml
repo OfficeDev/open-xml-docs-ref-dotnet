@@ -1,4 +1,4 @@
-﻿<Type Name="FootnoteDocumentWideProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties">
+<Type Name="FootnoteDocumentWideProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties">
   <TypeSignature Language="C#" Value="public class FootnoteDocumentWideProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FootnoteDocumentWideProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FootnoteDocumentWideProperties" />
@@ -33,13 +33,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Document-Wide Footnote Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:footnotePr.</para>
-    </summary>
+    <summary>Document-Wide Footnote Properties. When the object is serialized out as xml, its qualified name is w:footnotePr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FootnotePosition &lt;w:pos&gt;</description></item><item><description>NumberingFormat &lt;w:numFmt&gt;</description></item><item><description>NumberingStart &lt;w:numStart&gt;</description></item><item><description>NumberingRestart &lt;w:numRestart&gt;</description></item><item><description>FootnoteSpecialReference &lt;w:footnote&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `footnotePr (Document-Wide Footnote Properties)`  
+  
+ This element specifies the footnote properties for this document. Each property is stored as a unique element within the footnotePr element.  
+  
+ These properties can be overridden for a specific section via the section-wide footnotePr element (§17.11.11).  
+  
+ [*Example*: Consider the following one page document, where the footnote appears beneath the text it references:  
+  
+ 0ebb0525-096f-4fc0-b347-4ad482d13020  
+  
+ Since the document consists of a single footnote, the footnote properties can be stored in either the section-wide or document-wide footnote properties. Assuming that they are stored in the latter, the footnote properties are represented by the following WordprocessingML:  
+  
+```xml  
+<w:settings>  
+  …  
+  <w:footnotePr>  
+    <w:pos w:val="beneathText" />  
+  </w:footnotePr>  
+  …  
+</w:settings>  
+```  
+  
+ The footnote properties specify that footnotes appear below the noted text *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|footnote (Special Footnote List)|§17.11.9|  
+|numFmt (Footnote Numbering Format)|§17.11.18|  
+|numRestart (Footnote and Endnote Numbering Restart Location)|§17.11.19|  
+|numStart (Footnote and Endnote Numbering Starting Value)|§17.11.20|  
+|pos (Footnote Placement)|§17.11.21|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_FtnDocProps) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FootnoteDocumentWideProperties class.
-            </summary>
+        <summary>Initializes a new instance of the FootnoteDocumentWideProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +122,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FootnoteDocumentWideProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the FootnoteDocumentWideProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +142,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FootnoteDocumentWideProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the FootnoteDocumentWideProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +162,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the FootnoteDocumentWideProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the FootnoteDocumentWideProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +184,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,10 +205,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.FootnotePosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Footnote Placement.</para>
-          <para> Represents the following element tag in the schema: w:pos </para>
-        </summary>
+        <summary>Footnote Placement. Represents the following element tag in the schema: w:pos</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -199,10 +228,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,10 +248,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingFormat</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Footnote Numbering Format.</para>
-          <para> Represents the following element tag in the schema: w:numFmt </para>
-        </summary>
+        <summary>Footnote Numbering Format. Represents the following element tag in the schema: w:numFmt</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -247,10 +271,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingRestart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Footnote and Endnote Numbering Restart Location.</para>
-          <para> Represents the following element tag in the schema: w:numRestart </para>
-        </summary>
+        <summary>Footnote and Endnote Numbering Restart Location. Represents the following element tag in the schema: w:numRestart</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -273,10 +294,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingStart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Footnote and Endnote Numbering Starting Value.</para>
-          <para> Represents the following element tag in the schema: w:numStart </para>
-        </summary>
+        <summary>Footnote and Endnote Numbering Starting Value. Represents the following element tag in the schema: w:numStart</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

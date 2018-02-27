@@ -1,4 +1,4 @@
-﻿<Type Name="DocPartGallery" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartGallery">
+<Type Name="DocPartGallery" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartGallery">
   <TypeSignature Language="C#" Value="public class DocPartGallery : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocPartGallery extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DocPartGallery" />
@@ -18,11 +18,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Document Part Gallery Filter.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:docPartGallery.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Document Part Gallery Filter. When the object is serialized out as xml, its qualified name is w:docPartGallery.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **docPartGallery (Document Part Gallery Filter)**  
+  
+ This element specifies the gallery of document parts which shall be used as the filter when determining the possible choices of document parts which are displayed for insertion into the parent structured document tag. A document part *gallery* is a classification of document parts, which might then be subdivided into categories. [*Example*: A gallery with a name of *custom1* might have categories of *Legal Clauses*, *Conformance Clauses*, etc. *end example*]. The gallery which shall be used is stored in this element's val attribute.  
+  
+ If this element is omitted, then the parent structured document tag shall display all document parts in its default gallery. If this element is present, but no document parts of the specified gallery are located by the application, then document parts in the default gallery hall be displayed (i.e. the application shall behave as if the value wasomitted).  
+  
+ [*Example*: Consider the following properties for a structured document tag:  
+  
+```xml  
+<w:sdtPr>  
+  <w:docPartList>  
+    <w:docPartGallery w:val="custom1"/>  
+  </w:docPartList>  
+</w:sdtPr>  
+```  
+  
+ This structured document tag specifies that it must present a selection of document parts for insertion via the docPartList element (§17.5.2.12), and those document parts must only be the parts which are in the *custom1* gallery via this element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|docPartList (§17.5.2.12); docPartObj (§17.5.2.13)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DocPartGallery class.
-            </summary>
+        <summary>Initializes a new instance of the DocPartGallery class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +89,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

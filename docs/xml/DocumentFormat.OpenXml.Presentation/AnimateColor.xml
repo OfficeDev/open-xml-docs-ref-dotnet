@@ -1,4 +1,4 @@
-﻿<Type Name="AnimateColor" FullName="DocumentFormat.OpenXml.Presentation.AnimateColor">
+<Type Name="AnimateColor" FullName="DocumentFormat.OpenXml.Presentation.AnimateColor">
   <TypeSignature Language="C#" Value="public class AnimateColor : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnimateColor extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.AnimateColor" />
@@ -30,13 +30,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Animate Color Behavior.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:animClr.</para>
-    </summary>
+    <summary>Animate Color Behavior. When the object is serialized out as xml, its qualified name is p:animClr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CommonBehavior &lt;p:cBhvr&gt;</description></item><item><description>ByColor &lt;p:by&gt;</description></item><item><description>FromColor &lt;p:from&gt;</description></item><item><description>ToColor &lt;p:to&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **animClr (Animate Color Behavior)**  
+  
+ This animation element is responsible for animating the color of an object.  
+  
+ [*Example*:  Consider trying to emphasize a shape by changing its fill color to scheme color accent2. The \<animClr> element should be used as follows:  
+  
+```xml  
+<p:animClr clrSpc="rgb">  
+  <p:cBhvr>  
+    <p:cTn id="1" dur="2000" fill="hold"/>  
+    <p:tgtEl>  
+      <p:spTgt spid="1"/>  
+    </p:tgtEl>  
+    <p:attrNameLst>  
+      <p:attrName>fillcolor</p:attrName>  
+    </p:attrNameLst>  
+  </p:cBhvr>  
+  <p:to>  
+    <a:schemeClr val="accent2"/>  
+  </p:to>  
+</p:animClr>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|childTnLst (§19.5.25); subTnLst (§19.5.78); tnLst (§19.5.87)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|by (By)|§19.5.20|  
+|cBhvr (Common Behavior)|§19.5.22|  
+|from (From)|§19.5.43|  
+|to (To)|§19.5.90|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|clrSpc (Color Space)|This attribute specifies the color space in which to interpolate the animation. Values for example can be HSL & .<br /><br /> <br /><br /> The values for from/to/by/etc. can still be specified in any supported color format without affecting the color space within which the animation happens.<br /><br /> <br /><br /> The  color space is best used for doing animations between two different colors since it doesn't require going through any other hues between the two colors specified. The HSL space is useful for animating through a rainbow of colors or for modifying just the saturation by 30% for example.<br /><br /> The possible values for this attribute are defined by the *ST_TLAnimateColorSpace* simple type (§19.7.23).|  
+|dir (Direction)|This attribute specifies which direction to cycle the hue around the color wheel. Values are clockwise or counter clockwise. Default is clockwise.<br /><br /> The possible values for this attribute are defined by the *ST_TLAnimateColorDirection* simple type (§19.7.22).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLAnimateColorBehavior) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -51,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AnimateColor class.
-            </summary>
+        <summary>Initializes a new instance of the AnimateColor class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +124,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AnimateColor class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the AnimateColor class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -101,9 +144,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AnimateColor class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the AnimateColor class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,9 +164,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the AnimateColor class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the AnimateColor class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +183,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ByColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> By.</para>
-          <para> Represents the following element tag in the schema: p:by </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>By. Represents the following element tag in the schema: p:by</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ByColor" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -173,11 +209,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,11 +235,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.AnimateColorSpaceValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Color Space.</para>
-          <para>Represents the following attribute in the schema: clrSpc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Color Space.Represents the following attribute in the schema: clrSpc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -224,11 +255,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonBehavior</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CommonBehavior.</para>
-          <para> Represents the following element tag in the schema: p:cBhvr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CommonBehavior. Represents the following element tag in the schema: p:cBhvr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CommonBehavior" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -255,11 +283,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.AnimateColorDirectionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Direction.</para>
-          <para>Represents the following attribute in the schema: dir </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Direction.Represents the following attribute in the schema: dir</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -278,11 +303,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.FromColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> From.</para>
-          <para> Represents the following element tag in the schema: p:from </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>From. Represents the following element tag in the schema: p:from</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.FromColor" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -304,10 +326,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -326,11 +346,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ToColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> To.</para>
-          <para> Represents the following element tag in the schema: p:to </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>To. Represents the following element tag in the schema: p:to</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ToColor" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

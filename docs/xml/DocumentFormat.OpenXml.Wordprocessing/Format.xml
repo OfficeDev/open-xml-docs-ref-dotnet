@@ -1,4 +1,4 @@
-﻿<Type Name="Format" FullName="DocumentFormat.OpenXml.Wordprocessing.Format">
+<Type Name="Format" FullName="DocumentFormat.OpenXml.Wordprocessing.Format">
   <TypeSignature Language="C#" Value="public class Format : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Format extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Format" />
@@ -18,11 +18,75 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Text Box Form Field Formatting.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:format.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Text Box Form Field Formatting. When the object is serialized out as xml, its qualified name is w:format.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **format (Text Box Form Field Formatting)**  
+  
+ This element specifies the field formatting which shall be applied to the contents of the parent form field whenever those contents are modified. The type of formatting which is applied to the field depends on the value of its type element (§17.16.34), as follows:  
+  
+-   When the type is equal to *currentDate*, *currentTime*, or *date*, a date formatting string using the syntax defined in §17.16.4.1  
+  
+-   When the type is equal to *calculated* or *number*, a number formatting string using the syntax defined in §17.16.4.2  
+  
+-   When the type is equal to regular, a text formatting string defined as follows:  
+  
+ Argument  
+  
+ Description  
+  
+```xml  
+Uppercase  
+```  
+  
+ All letters are uppercase. [*Example*: *Mary Smith* results in *MARY* . *end example*]  
+  
+```xml  
+Lowercase  
+```  
+  
+ All letters are lowercase. [*Example*: *Mary Smith* results in *mary smith*. *end example*]  
+  
+```xml  
+First capital  
+```  
+  
+ Capitalizes the first letter of the first word. [*Example*: *Mary Smith* results in *Mary smith*. *end example*]  
+  
+```xml  
+Title case  
+```  
+  
+ Capitalizes the first letter of each word. [*Example*: *Mary Smith* results in *Mary Smith*. *end example*]  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the properties of a text box form field:  
+  
+```xml  
+<w:ffData>  
+  <w:textInput>  
+    <w:type w:val="number" />  
+    <w:maxLength w:val="4" />  
+    <w:format w:val="0.00" />  
+  </w:textInput>  
+</w:ffData>  
+```  
+  
+ The format element specifies the field formatting which is applied to the input to the field (in this case, a grouping of number formatting picture items as the type element specifies a value of *number*). If a value of 8 was entered into this field, the formatted result would be *8.00*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|textInput (§17.16.33)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Format class.
-            </summary>
+        <summary>Initializes a new instance of the Format class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +123,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +144,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,10 +169,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

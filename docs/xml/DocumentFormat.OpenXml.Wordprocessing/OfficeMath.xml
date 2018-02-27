@@ -1,4 +1,4 @@
-﻿<Type Name="OfficeMath" FullName="DocumentFormat.OpenXml.Wordprocessing.OfficeMath">
+<Type Name="OfficeMath" FullName="DocumentFormat.OpenXml.Wordprocessing.OfficeMath">
   <TypeSignature Language="C#" Value="public class OfficeMath : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OfficeMath extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.OfficeMath" />
@@ -18,11 +18,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the OfficeMath Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:oMath.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the OfficeMath Class. When the object is serialized out as xml, its qualified name is w:oMath.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `oMath (Office Open XML Math)`  
+  
+ This element specifies that this run contains WordprocessingML which shall be handled as though it was Office Open XML Math.  
+  
+ [*Rationale*: Like other run properties can be applied to the glyph representing the paragraph mark, it is possible to create an Office Open XML Math equation on an empty paragraph as well. Since that paragraph mark must be defined by WordprocessingML, it is not possible to store the paragraph using the Office Open XML Math markup. Instead, this run property is stored on the paragraph mark's run properties to indicate that the paragraph mark is part of an Office Open XML Math equation. For example, the first paragraph below is stored as Office Open XML Math:  
+  
+ be4c8139-d2dd-4ac0-ad3b-6ea2635d7b0a  
+  
+ The paragraph must be a p (§17.3.1.22) element, but that would mean the data loss of the Math markup when saving as a WordprocessingML package. In order to prevent that data loss, this property stores the Math property as a run property. *end rationale*]  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then this run shall not be treated as Office Open XML Math.  
+  
+ This property can be applied to any run, but that should only introduce the semantic that the run is math in the user interface, and shall not change the appearance of the text.  
+  
+ [*Example*: Consider a paragraph in WordprocessingML where the paragraph mark glyph (the pilcrow mark - ¶) has been formatted as Math. Since this mark is not an actual run, it cannot be written out in the Office Open XML Math syntax, and must be written out as a property on the actual run as follows:  
+  
+```xml  
+<w:pPr>  
+  <w:rPr>  
+    <w:oMath />  
+  </w:rPr>  
+</w:pPr>  
+```  
+  
+ This property is therefore used to roundtrip the math setting on this paragraph mark character. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the OfficeMath class.
-            </summary>
+        <summary>Initializes a new instance of the OfficeMath class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

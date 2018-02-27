@@ -1,4 +1,4 @@
-﻿<Type Name="Break" FullName="DocumentFormat.OpenXml.Wordprocessing.Break">
+<Type Name="Break" FullName="DocumentFormat.OpenXml.Wordprocessing.Break">
   <TypeSignature Language="C#" Value="public class Break : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Break extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Break" />
@@ -18,11 +18,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Break.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:br.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Break. When the object is serialized out as xml, its qualified name is w:br.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **br (Break)**  
+  
+ This element specifies that a break shall be placed at the current location in the run content. A *break* is a special character which is used to override the normal line breaking that would be performed based on the normal layout of the document’s contents. [*Example*: Normal breaking for English would occur only after a breaking space or optional hyphen character. *end example*]  
+  
+ The behavior of this break character (the location where text shall be restarted after this break) shall be determined by its type and clear attribute values, described below.  
+  
+ [*Example*: Consider the following sentence in a WordprocessingML document:  
+  
+```xml  
+This is a simple sentence.  
+```  
+  
+ Normally, just as shown above, this sentence would be displayed on a single line as it is not long enough to require line breaking (given the width of the current page). However, if a text wrapping break character (a typical line break) were inserted after the word *is*, as follows:  
+  
+```xml  
+<w:r>  
+  <w:t>This is</w:t>  
+  <w:br/>  
+  <w:t xml:space="preserve"> a simple sentence.</w:t>  
+</w:r>  
+```  
+  
+ This would imply that this break must be treated as a simple line break, and break the line after that word:  
+  
+```xml  
+This is a simple sentence.  
+```  
+  
+ The break character forced the following text to be restarted on the next available line in the document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Br) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Break class.
-            </summary>
+        <summary>Initializes a new instance of the Break class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +103,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Restart Location For Text Wrapping Break.</para>
-          <para>Represents the following attribute in the schema: w:clear </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Restart Location For Text Wrapping Break.Represents the following attribute in the schema: w:clear</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -91,11 +128,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,10 +149,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +174,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.BreakValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Break Type.</para>
-          <para>Represents the following attribute in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Break Type.Represents the following attribute in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

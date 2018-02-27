@@ -1,4 +1,4 @@
-﻿<Type Name="StringType" FullName="DocumentFormat.OpenXml.Wordprocessing.StringType">
+<Type Name="StringType" FullName="DocumentFormat.OpenXml.Wordprocessing.StringType">
   <TypeSignature Language="C#" Value="public abstract class StringType : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StringType extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.StringType" />
@@ -18,9 +18,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-            Defines the StringType class.
-            </summary>
+    <summary>Defines the StringType class.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -36,9 +34,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StringType class.
-            </summary>
+        <summary>Initializes a new instance of the StringType class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -62,12 +58,43 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> String Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>String Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that its contents will contain a string.  
+  
+ The contents of this string are interpreted based on the context of the parent XML element.  
+  
+ Consider the following WordprocessingML fragment:  
+  
+```  
+<w:pPr>  
+  <w:pStyle w:val="heading1" />   
+</w:pPr>  
+```  
+  
+ The value of the `val` attribute is the ID of the associated paragraph style's `styleId`.  
+  
+ However, consider the following fragment:  
+  
+```  
+<w:sdtPr>  
+  <w:alias w:val="SDT Title Example" />  
+  ...  
+</w:sdtPr>  
+```  
+  
+ In this case, the decimal number in the `val` attribute is the caption of the parent structured document tag. In each case, the value is interpreted in the context of the parent element.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

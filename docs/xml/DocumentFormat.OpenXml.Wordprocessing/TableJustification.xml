@@ -1,4 +1,4 @@
-﻿<Type Name="TableJustification" FullName="DocumentFormat.OpenXml.Wordprocessing.TableJustification">
+<Type Name="TableJustification" FullName="DocumentFormat.OpenXml.Wordprocessing.TableJustification">
   <TypeSignature Language="C#" Value="public class TableJustification : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableJustification extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableJustification" />
@@ -18,11 +18,119 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TableJustification Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:jc.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TableJustification Class. When the object is serialized out as xml, its qualified name is w:jc.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **jc (Table Alignment Exception)**  
+  
+ This element specifies the alignment of the set of rows which are part of the current table properties exception list with respect to the text margins in the current section. When a table is placed in a WordprocessingML document that does not have the same width as the margins, this property is used to determine how the table is positioned with respect to those margins. The interpretation of property is reversed if the parent table is right to left using the bidiVisual element (§17.4.1).  
+  
+ If this property is omitted on a table, then the justification shall be determined by the default set of table properties on the parent table.  
+  
+ [*Example*: Consider the following WordprocessingML table, centered on the text margins with a subset of its rows justified to the left margin by a table property exception:  
+  
+ That exception would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblPrEx>  
+  <w:jc w:val="left"/>  
+</w:tblPrEx>  
+```  
+  
+ The jc element specifies that the rows which are part of the table properties exception table must be *left* aligned with respect to the text margins. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPrEx (§17.4.61); tblPrEx (§17.4.62)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_JcTable) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **jc (Table Row Alignment)**  
+  
+ This element specifies the alignment of a single row in the parent table with respect to the text margins in the current section. When a table is placed in a WordprocessingML document that does not have the same width as the margins, this property is used to determine how a specific row in that table is positioned with respect to those margins. The interpretation of property is reversed if the parent table is right to left using the bidiVisual element (§17.4.1).  
+  
+ If this property is omitted on a table, then the justification shall be determined by the default set of table properties on the parent table.  
+  
+ [*Example*: Consider the following WordprocessingML table, centered on the text margins with its second rows justified to the left margin by a table row level justification:  
+  
+ That row level setting would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:trPr>  
+  <w:jc w:val="left"/>  
+</w:trPr>  
+```  
+  
+ The jc element specifies that the rows which are part of the table properties exception table must be *left* aligned with respect to the text margins. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11); trPr (§17.4.83)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_JcTable) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **jc (Table Alignment)**  
+  
+ This element specifies the alignment of the current table with respect to the text margins in the current section. When a table is placed in a WordprocessingML document that does not have the same width as the margins, this property is used to determine how the table is positioned with respect to those margins. The interpretation of property is reversed if the parent table is right to left using the bidiVisual element (§17.4.1).  
+  
+ If this property is omitted on a table, then the justification shall be determined by the associated table style. If this property is not specified in the style hierarchy, then the table shall be left justified with zero indentation from the leading margin (the left margin in a left-to-right table or the right margin in a right-to-left table).  
+  
+ [*Example*: Consider the following WordprocessingML table, justified to the left margin by default:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R1C3  
+  
+ R2C1  
+  
+ R2C2  
+  
+ R2C3  
+  
+ This table does not fill the entire width of the text margins. If the table should be right justified to the margin, as follows:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R1C3  
+  
+ R2C1  
+  
+ R2C2  
+  
+ R2C3  
+  
+ That requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblPr>  
+  <w:jc w:val="right"/>  
+</w:tblPr>  
+```  
+  
+ The jc element specifies that the table must be *right* aligned with respect to the text margins. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPr (§17.4.60); tblPr (§17.4.59); tblPr (§17.7.6.4); tblPr (§17.7.6.3)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_JcTable) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +145,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableJustification class.
-            </summary>
+        <summary>Initializes a new instance of the TableJustification class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +167,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,9 +188,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -111,10 +213,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

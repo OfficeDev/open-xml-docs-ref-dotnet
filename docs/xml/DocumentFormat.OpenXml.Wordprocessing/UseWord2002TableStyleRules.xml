@@ -1,4 +1,4 @@
-﻿<Type Name="UseWord2002TableStyleRules" FullName="DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules">
+<Type Name="UseWord2002TableStyleRules" FullName="DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules">
   <TypeSignature Language="C#" Value="public class UseWord2002TableStyleRules : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UseWord2002TableStyleRules extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UseWord2002TableStyleRules" />
@@ -18,11 +18,80 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Emulate Word 2002 Table Style Rules.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:useWord2002TableStyleRules.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Emulate Word 2002 Table Style Rules. When the object is serialized out as xml, its qualified name is w:useWord2002TableStyleRules.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `9.7.3.54 useWord2002TableStyleRules (Incorrectly Display Top Border of Conditional Columns)`  
+  
+ This element specifies whether applications should incorrectly calculate the top border of conditional columns (as specified by a tblStylePr element (Part 1, §17.7.6.6) with a type attribute value of *firstCol*, *lastCol*, *band1Vert*, or *band2Vert*) under the following conditions:  
+  
+-   A conditional formatting has also been defined for the first row (a tblStylePr element with a type attribute of *firstRow*)  
+  
+-   That conditional formatting as been applied to the table using the tblLook element (Part 1, §17.4.56)  
+  
+ Typically, table styles are applied according to the logic defined in Part 1, §17.7.2. This element, when present with a val attribute value of *true* (or equivalent), specifies that the top border of those conditionally formatted columns should instead be displayed as the top border of the following row.  
+  
+ [*Example*: Consider a WordprocessingML document with table style that defines two conditional formats:  
+  
+ *The first column has a one point border*  
+  
+ *The first row has red shading*  
+  
+ That style would be defined as follows:  
+  
+```xml  
+<w:style w:type="table" w:customStyle="1" w:styleId="TableTest">  
+  <w:name w:val="CompatibilitySetting"/>  
+  <w:tblStylePr w:type="firstRow">  
+    <w:tcPr>  
+      <w:shd w:val="clear" w:color="auto" w:fill="FF0000"/>  
+    </w:tcPr>  
+  </w:tblStylePr>  
+  <w:tblStylePr w:type="firstCol">  
+    <w:tcPr>  
+      <w:tcBorders>  
+        <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+        <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+        <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+        <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+      </w:tcBorders>  
+    </w:tcPr>  
+  </w:tblStylePr>  
+</w:style>  
+```  
+  
+ If the first column and first row formatting is applied, the table would appear as follows:  
+  
+ dfe587d6-0f1a-415b-ad56-d1da4586f2b0  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:useWord2002TableStyleRules />  
+</w:compat>  
+```  
+  
+ Then the condition described by this element causes the top border defined by the conditional format for the first column to be displayed as the top border for the second column, resulting in the following output:  
+  
+ 7d3a8931-6306-4de9-9545-0679b51c75e5  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +106,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UseWord2002TableStyleRules class.
-            </summary>
+        <summary>Initializes a new instance of the UseWord2002TableStyleRules class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +128,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +149,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

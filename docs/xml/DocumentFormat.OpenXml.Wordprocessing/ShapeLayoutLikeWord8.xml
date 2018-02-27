@@ -1,4 +1,4 @@
-﻿<Type Name="ShapeLayoutLikeWord8" FullName="DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8">
+<Type Name="ShapeLayoutLikeWord8" FullName="DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8">
   <TypeSignature Language="C#" Value="public class ShapeLayoutLikeWord8 : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ShapeLayoutLikeWord8 extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ShapeLayoutLikeWord8" />
@@ -18,11 +18,94 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Emulate Word 97 Text Wrapping Around Floating Objects.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:shapeLayoutLikeWW8.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Emulate Word 97 Text Wrapping Around Floating Objects. When the object is serialized out as xml, its qualified name is w:shapeLayoutLikeWW8.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `shapeLayoutLikeWW8 (Ignore Text Wrapping around Objects at Bottom of Page)`  
+  
+ This element specifies that applications should ignore the line wrapping setting specified by a floating object, instead allowing text to be displayed beneath it under the specific set of conditions identified below.  
+  
+ Typically, text wrapping around a floating object is dictated by the presence of one of the following as a child element of the object’s anchor element (Part 1, §20.4.2.3):  
+  
+-   wrapNone (Part 1, §20.4.2.15) element, which specifies no text wrapping  
+  
+-   wrapSquare (Part 1, §20.4.2.17) element, which specifies square text wrapping  
+  
+-   wrapThrough (Part 1, §20.4.2.18) element, which specifies through text wrapping  
+  
+-   wrapTight (Part 1, §20.4.2.19) element, which specifies tight text wrapping  
+  
+-   wrapTopAndBottom (Part 1, §20.4.2.19) element, which specifies top and bottom text wrapping  
+  
+ This element, when present with a val attribute value of *true* (or equivalent), specifies that applications shall allow text to wrap beneath a floating object, ignoring the object’s true wrapping setting, when the following conditions are met:  
+  
+-   The floating object has any of the following elements present as a child of the object’s anchor element: wrapSquare, wrapTight, or wrapTopAndBottom.  
+  
+-   The floating object has a positionV element (Part 1, §20.4.2.11) with a relativeFrom attribute value of *line.*  
+  
+-   The floating object has a negative value for the child posOffset element (Part 1, §20.4.2.12) of the positionV element.  
+  
+-   The paragraph containing the anchor element would appear directly after the previous paragraph if the wrapping settings were ignored.  
+  
+-   The paragraph containing the anchor element would be pushed to the next page if the wrapping settings were respected.  
+  
+ [*Example*: Consider a WordprocessingML document containing a DrawingML object which meets the conditions outlined above:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t>Sample text. Sample text. Sample text. Sample text. Sample text. Sample text.</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:drawing>  
+      <wp:anchor … >  
+    <wp:positionV relativeFrom="line">  
+      <wp:posOffset>-428914</wp:posOffset>  
+    </wp:positionV>  
+    <wp:wrapTopAndBottom />  
+        …   
+      </wp:anchor>  
+</w:drawing>  
+  </w:r>  
+  <w:r>  
+    <w:t> Sample text. Sample text. Sample text. Sample text. Sample text. Sample text.</w:t>  
+  </w:r>  
+  …  
+</w:p>  
+```  
+  
+ When the wrapping settings are respected, the shape and its paragraph do not fit on the page, so they are moved to the next page (the paragraph containing the anchor has been highlighted for illustrative purposes):  
+  
+ 528f6054-5adf-4fdb-8099-b5b1f4c1c54d  
+  
+ If this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:shapeLayoutLikeWW8 />  
+</w:compat>  
+```  
+  
+ Then applications should ignore the wrapping setting and allow text to wrap below the object. This behaviour results in the following (again, the paragraph containing the anchor has been highlighted for illustrative purposes):  
+  
+ 6c8c2bd2-ddb5-4d0b-b105-0aa423faa6ad  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +120,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ShapeLayoutLikeWord8 class.
-            </summary>
+        <summary>Initializes a new instance of the ShapeLayoutLikeWord8 class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +142,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +163,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

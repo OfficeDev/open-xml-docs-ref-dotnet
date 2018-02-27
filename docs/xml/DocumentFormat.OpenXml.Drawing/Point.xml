@@ -1,4 +1,4 @@
-﻿<Type Name="Point" FullName="DocumentFormat.OpenXml.Drawing.Point">
+<Type Name="Point" FullName="DocumentFormat.OpenXml.Drawing.Point">
   <TypeSignature Language="C#" Value="public class Point : DocumentFormat.OpenXml.Drawing.AdjustPoint2DType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Point extends DocumentFormat.OpenXml.Drawing.AdjustPoint2DType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Point" />
@@ -18,11 +18,74 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Move end point.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:pt.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Move end point. When the object is serialized out as xml, its qualified name is a:pt.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `pt (Shape Path Point)`  
+  
+ This element specifies an x-y coordinate within the path coordinate space. This coordinate space is determined by the width and height attributes defined within the path element. A point is utilized by one of it's parent elements to specify the next point of interest in custom geometry shape. Depending on the parent element used the point can either have a line drawn to it or the cursor can simply be moved to this new location.  
+  
+ [*Note*: When specifying a point coordinate in path coordinate space it should be noted that the top left of the coordinate space is x=0, y=0 and the coordinate points for x grow to the right and for y grow down. This is illustrated in the diagram below.  
+  
+ be81e451-06c9-4d6a-887c-5a258e03eae8  
+  
+ *end note*]  
+  
+ Specifies a position coordinate within the shape bounding box. It should be noted that this coordinate is placed within the shape bounding box using the transform coordinate system which is also called the shape coordinate system, as it encompasses the entire shape. The width and height for this coordinate system are specified within the ext transform element.  
+  
+ [*Example*: To highlight the differences in the coordinate systems consider the drawing of the following triangle. Notice that the dimensions of the triangle are specified using the shape coordinate system with EMUs as the units via the ext transform element. Thus we see this shape is 1705233 EMUs wide by 679622 EMUs tall. However when looking at how the path for this shape is drawn we see that the x and y values fall between 0 and 2. This is because the path coordinate system has the arbitrary dimensions of 2 for the width and 2 for the height. Thus we see that a y coordinate of 2 within the path coordinate system specifies a y coordinate of 679622 within the shape coordinate system for this particular case.  
+  
+ e6770ed0-b7c4-4038-8259-1afc6a9426c1  
+  
+```xml  
+<a:xfrm>  
+  <a:off x="3200400" y="1600200"/>  
+  <a:ext cx="1705233" cy="679622"/>  
+</a:xfrm>  
+<a:custGeom>  
+  <a:avLst/>  
+    <a:gdLst/>  
+  <a:ahLst/>  
+  <a:cxnLst/>  
+  <a:rect l="0" t="0" r="0" b="0"/>  
+  <a:pathLst>  
+    <a:path w="2" h="2">  
+      <a:moveTo>  
+        <a:pt x="0" y="2"/>  
+      </a:moveTo>  
+      <a:lnTo>  
+        <a:pt x="2" y="2"/>  
+      </a:lnTo>  
+      <a:lnTo>  
+        <a:pt x="1" y="0"/>  
+      </a:lnTo>  
+      <a:close/>  
+    </a:path>  
+  </a:pathLst>  
+</a:custGeom>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cubicBezTo (§20.1.9.7); lnTo (§20.1.9.13); moveTo (§20.1.9.14); quadBezTo (§20.1.9.21)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|x (X-Coordinate)|Specifies the x coordinate for this position coordinate. The units for this coordinate space are defined by the width of the path coordinate system. This coordinate system is overlayed on top of the shape coordinate system thus occupying the entire shape bounding box. Because the units for within this coordinate space are determined by the path width and height an exact measurement unit cannot be specified here.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+|y (Y-Coordinate)|Specifies the y coordinate for this position coordinate. The units for this coordinate space are defined by the height of the path coordinate system. This coordinate system is overlayed on top of the shape coordinate system thus occupying the entire shape bounding box. Because the units for within this coordinate space are determined by the path width and height an exact measurement unit cannot be specified here.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_AdjPoint2D) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +100,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Point class.
-            </summary>
+        <summary>Initializes a new instance of the Point class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +122,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +143,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="PreviousTableCellProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties">
+<Type Name="PreviousTableCellProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties">
   <TypeSignature Language="C#" Value="public class PreviousTableCellProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PreviousTableCellProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PreviousTableCellProperties" />
@@ -66,13 +66,70 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Previous Table Cell Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tcPr.</para>
-    </summary>
+    <summary>Previous Table Cell Properties. When the object is serialized out as xml, its qualified name is w:tcPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ConditionalFormatStyle &lt;w:cnfStyle&gt;</description></item><item><description>TableCellWidth &lt;w:tcW&gt;</description></item><item><description>GridSpan &lt;w:gridSpan&gt;</description></item><item><description>HorizontalMerge &lt;w:hMerge&gt;</description></item><item><description>VerticalMerge &lt;w:vMerge&gt;</description></item><item><description>TableCellBorders &lt;w:tcBorders&gt;</description></item><item><description>Shading &lt;w:shd&gt;</description></item><item><description>NoWrap &lt;w:noWrap&gt;</description></item><item><description>TableCellMargin &lt;w:tcMar&gt;</description></item><item><description>TextDirection &lt;w:textDirection&gt;</description></item><item><description>TableCellFitText &lt;w:tcFitText&gt;</description></item><item><description>TableCellVerticalAlignment &lt;w:vAlign&gt;</description></item><item><description>HideMark &lt;w:hideMark&gt;</description></item><item><description>CellInsertion &lt;w:cellIns&gt;</description></item><item><description>CellDeletion &lt;w:cellDel&gt;</description></item><item><description>CellMerge &lt;w:cellMerge&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **tcPr (Previous Table Cell Properties)**  
+  
+ This element specifies a previous set of table cell properties, the modifications to which shall be attributed to a revision by a particular author and at a particular time. This element contains the table cell property settings which were previously in place before a specific set of revisions by one author. Each unique property is specified by a child element of this element. In any instance where there is a conflict between the table level, table-level exception, or row level properties with a corresponding table cell property, these properties shall overwrite the table or row wide properties.  
+  
+ [*Example*: Consider a basic two row by two column table as follows:  
+  
+ If the cell shading in the first cell is set to red with revision tracking enabled, as follows:  
+  
+ This revision is specified as follows in the associated WordprocessingML:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    <w:tcW w:w="4788" w:type="dxa"/>  
+    <w:shd w:val="clear" w:color="auto" w:fill="FF0000"/>  
+    <w:tcPrChange w:id="2" …>  
+      <w:tcPr>  
+        <w:tcW w:w="4788" w:type="dxa"/>  
+      </w:tcPr>  
+    </w:tcPrChange>  
+  </w:tcPr>  
+  <w:p/>  
+</w:tc>  
+```  
+  
+ The tcPr element beneath the tcPrChange element specifies the set of table cell properties which were in place before the current revision to the document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPrChange (§17.13.5.36)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cellDel (Table Cell Deletion)|§17.13.5.1|  
+|cellIns (Table Cell Insertion)|§17.13.5.2|  
+|cellMerge (Vertically Merged/Split Table Cells)|§17.13.5.3|  
+|cnfStyle (Table Cell Conditional Formatting)|§17.4.8|  
+|gridSpan (Grid Columns Spanned by Current Table Cell)|§17.4.17|  
+|headers (Header Cells Associated With Table Cell)|§17.4.19|  
+|hideMark (Ignore End Of Cell Marker In Row Height Calculation)|§17.4.21|  
+|hMerge (Horizontally Merged Cell)|§17.4.22|  
+|noWrap (Don't Wrap Cell Content)|§17.4.30|  
+|shd (Table Cell Shading)|§17.4.33|  
+|tcBorders (Table Cell Borders)|§17.4.67|  
+|tcFitText (Fit Text Within Cell)|§17.4.68|  
+|tcMar (Single Table Cell Margins)|§17.4.69|  
+|tcW (Preferred Table Cell Width)|§17.4.72|  
+|textDirection (Table Cell Text Flow Direction)|§17.4.73|  
+|vAlign (Table Cell Vertical Alignment)|§17.4.84|  
+|vMerge (Vertically Merged Cell)|§17.4.85|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TcPrInner) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -87,9 +144,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PreviousTableCellProperties class.
-            </summary>
+        <summary>Initializes a new instance of the PreviousTableCellProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -115,9 +170,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PreviousTableCellProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PreviousTableCellProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +190,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PreviousTableCellProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PreviousTableCellProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,9 +210,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PreviousTableCellProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PreviousTableCellProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -183,11 +232,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -206,10 +253,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ConditionalFormatStyle.</para>
-          <para> Represents the following element tag in the schema: w:cnfStyle </para>
-        </summary>
+        <summary>ConditionalFormatStyle. Represents the following element tag in the schema: w:cnfStyle</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -232,10 +276,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.GridSpan</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GridSpan.</para>
-          <para> Represents the following element tag in the schema: w:gridSpan </para>
-        </summary>
+        <summary>GridSpan. Represents the following element tag in the schema: w:gridSpan</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -258,10 +299,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.HideMark</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> HideMark.</para>
-          <para> Represents the following element tag in the schema: w:hideMark </para>
-        </summary>
+        <summary>HideMark. Represents the following element tag in the schema: w:hideMark</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -284,10 +322,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> HorizontalMerge.</para>
-          <para> Represents the following element tag in the schema: w:hMerge </para>
-        </summary>
+        <summary>HorizontalMerge. Represents the following element tag in the schema: w:hMerge</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -310,10 +345,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -332,10 +365,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NoWrap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> NoWrap.</para>
-          <para> Represents the following element tag in the schema: w:noWrap </para>
-        </summary>
+        <summary>NoWrap. Represents the following element tag in the schema: w:noWrap</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -358,10 +388,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Shading</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shading.</para>
-          <para> Represents the following element tag in the schema: w:shd </para>
-        </summary>
+        <summary>Shading. Represents the following element tag in the schema: w:shd</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -384,10 +411,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellBorders</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellBorders.</para>
-          <para> Represents the following element tag in the schema: w:tcBorders </para>
-        </summary>
+        <summary>TableCellBorders. Represents the following element tag in the schema: w:tcBorders</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -410,10 +434,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellFitText</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellFitText.</para>
-          <para> Represents the following element tag in the schema: w:tcFitText </para>
-        </summary>
+        <summary>TableCellFitText. Represents the following element tag in the schema: w:tcFitText</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -436,10 +457,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellMargin</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellMargin.</para>
-          <para> Represents the following element tag in the schema: w:tcMar </para>
-        </summary>
+        <summary>TableCellMargin. Represents the following element tag in the schema: w:tcMar</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -462,10 +480,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellVerticalAlignment.</para>
-          <para> Represents the following element tag in the schema: w:vAlign </para>
-        </summary>
+        <summary>TableCellVerticalAlignment. Represents the following element tag in the schema: w:vAlign</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -488,10 +503,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellWidth</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellWidth.</para>
-          <para> Represents the following element tag in the schema: w:tcW </para>
-        </summary>
+        <summary>TableCellWidth. Represents the following element tag in the schema: w:tcW</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -514,10 +526,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TextDirection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextDirection.</para>
-          <para> Represents the following element tag in the schema: w:textDirection </para>
-        </summary>
+        <summary>TextDirection. Represents the following element tag in the schema: w:textDirection</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -540,10 +549,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.VerticalMerge</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> VerticalMerge.</para>
-          <para> Represents the following element tag in the schema: w:vMerge </para>
-        </summary>
+        <summary>VerticalMerge. Represents the following element tag in the schema: w:vMerge</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

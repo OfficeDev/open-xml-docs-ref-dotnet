@@ -1,4 +1,4 @@
-﻿<Type Name="MetadataType" FullName="DocumentFormat.OpenXml.Spreadsheet.MetadataType">
+<Type Name="MetadataType" FullName="DocumentFormat.OpenXml.Spreadsheet.MetadataType">
   <TypeSignature Language="C#" Value="public class MetadataType : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetadataType extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.MetadataType" />
@@ -18,11 +18,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Metadata Type Information.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:metadataType.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Metadata Type Information. When the object is serialized out as xml, its qualified name is x:metadataType.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **metadataType (Metadata Type Information)**  
+  
+ This element represents information about metadata on cells - it defines a specific set of behaviors that the metadata shall adhere to when subject to other spreadsheet operations.  
+  
+ In general, many of these attributes represent operations that can be performed on a cell that allow the metadata to remain associated with the cell.  Operations that are set to 0 or false, will cause the metadata to be disassociated from the cell when that operation is performed.  
+  
+|Parent Elements|  
+|---------------------|  
+|metadataTypes (§18.9.11)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|adjust (Adjust Metadata)|A Boolean flag indicating that metadata corresponding to a particular cell needs to be notified when that cell's location is changed.<br /><br /> [*Note*: This is included in the file format for future extensibility.*end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|assign (Metadata Formula Assignment)|A Boolean flag indicating whether metadata is propagated by formula assignment operation.  True when metadata should be propagated by assignment, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|cellMeta (Cell Metadata)|A Boolean flag indicating whether metadata is cell metadata.  True when the metadata is cell metadata, false otherwise - in the false case it is considered to be value metadata.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearAll (Metadata Clear All)|A Boolean flag indicating whether metadata survives a "Clear: All" operation.  True if the metadata persists after a clear all, false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearComments (Metadata Clear Comments)|A Boolean flag indicating whether metadata remains after comments have been cleared from the cell.  True if the metadata persists after Clear:Comments, false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearContents (Metadata Clear Contents)|A Boolean flag indicating whether metadata remains after the contents of a cell are removed.  True if metadata persists after a "Clear: Contents" action, false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearFormats (Metadata Clear Formats)|A Boolean flag indicating whether metadata remains after formatting is removed from a cell.  True if metadata persists after a "Clear: Formats", false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|coerce (Metadata Coercion)|A Boolean flag indicating whether value metadata can be removed when this metadata data type is coerced to another data type.  True if the value metadata is removed upon coercion, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|copy (Metadata Copy)|A Boolean flag indicating whether metadata is copied with a cell.  True if the metadata is copied to other cells when this cell is copied, false otherwise.<br /><br /> This shall be set to *true* if the paste attributes for the *metadataType* are going to be used.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|delete (Metadata Cell Value Delete)|A Boolean flag indicating whether metadata survives deletion of a cell value.  True when the metadata persists after the deletion of a cell value, false otherwise.<br /><br /> This attribute is equivalent to the *clearContents* attribute.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|edit (Metadata Edit)|A Boolean flag indicating whether metadata survives the editing of the cell's value.  True if the metadata remains unchanged after the cell's value edit, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|ghostCol (Metadata Ghost Column)|A Boolean flag indicating whether metadata is copied to/from a ghost column.  True when the metadata is copied to/from a ghost column, false otherwise.<br /><br /> A ghost column is a single column that exists for the row header.  It is not displayed to the end user.  It is used to store default formatting for an entire row (i.e. the row gets the formatting for the corresponding cell in the ghost column).  For instance, when an entire row is selected and a cell color is applied, this is stored once for the cell in the ghost column instead of for each cell in the row.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|ghostRow (Metadata Ghost Row)|A Boolean flag indicating whether metadata is copied to/from a ghost row.  True when the metadata is copied to/from a ghost row, false otherwise.<br /><br /> A ghost row is a single row that exists for the column header.  It is not displayed to the end user.  It is used to store default formatting for an entire column (i.e. the column gets the formatting for the corresponding cell in the ghost row).  For instance, when an entire column is selected and a cell color is applied, this is stored once for the cell in the ghost row instead of for each cell in the column.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|merge (Metadata Merge)|A Boolean flag indicating whether metadata survives cell merge.  True if the metadata persists after a cell merge, false otherwise.<br /><br /> It is up to the spreadsheet application on how to deal with conflicts when two cells that each have metadata are merged.  The guidance here is to treat it the same as a 'regular' cell merge with the default behavior being that the data in the upper left cell wins.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|minSupportedVersion (Minimum Supported Version)|The earliest version of the spreadsheet application that supports this metadata type.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|name (Metadata Type Name)|Represents the name of this particular metadata type.  This name shall be unique amongst all other *metadataTypes*.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|pasteAll (Metadata Paste All)|A Boolean flag indicating whether metadata is populated to a new cell by "Paste: All".  True when the metadata is populated on a Paste:All, false otherwise.  Paste:All and regular paste should be implemented so that they are equivalent by the spreadsheet application.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteBorders (Metadata Paste Borders)|A Boolean flag indicating whether metadata is populated with Paste: Borders.  True when the metadata is populated when only borders are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: The spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteColWidths (Metadata Paste Column Widths)|A Boolean flag indicating whether metadata is populated by Paste: Column Widths.  True if the metadata is populated when only column widths are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteComments (Metadata Paste Comments)|A Boolean flag indicating whether metadata is populated by Paste: Comments.  True when metadata is populated when only comments are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteDataValidation (Metadata Paste Data Validation)|A Boolean flag indicating whether metadata is populated by Paste: Validation.  True when metadata is populated when only data validation is pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteFormats (Metadata Paste Formats)|A Boolean flag indicating whether metadata is populated by Paste Special: Formats.  True when metadata is populated when only formatting is pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteFormulas (Metadata Paste Formulas)|A Boolean flag indicating whether metadata is populated by Paste: Formulas.  True when the metadata is populated when only formulas are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteNumberFormats (Metadata Paste Number Formats)|A Boolean flag indicating whether metadata is populated with Paste: Number Formats.  True when metadata is populated when only number formatting is pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteValues (Metadata Paste Special Values)|A Boolean flag indicating whether metadata is populated by Paste: Values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|rowColShift (Metadata Insert Delete)|A Boolean flag indicating whether metadata survives shifting due to row/column insertion/deletion.  True if the metadata persists after the cell has been shifted, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|splitAll (Metadata Split All)|A Boolean flag indicating whether a merged cell split action has its metadata copied to all of the resulting cells.  True if the metadata is copied to all new cells resulting from a split, false otherwise.<br /><br /> If *splitFirst* is also set to *true*, *splitAll* wins - that is all the cells shall have the metadata copied to them.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|splitFirst (Meatadata Split First)|A Boolean flag indicating whether when a merged cell is split its metadata is copied to only the first resulting cell.  True when the metadata from a split cell is only copied to the first resulting cell, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_MetadataType) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +86,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MetadataType class.
-            </summary>
+        <summary>Initializes a new instance of the MetadataType class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +110,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Adjust Metadata.</para>
-          <para>Represents the following attribute in the schema: adjust </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Adjust Metadata.Represents the following attribute in the schema: adjust</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -91,11 +135,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Formula Assignment.</para>
-          <para>Represents the following attribute in the schema: assign </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Formula Assignment.Represents the following attribute in the schema: assign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,11 +160,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Metadata.</para>
-          <para>Represents the following attribute in the schema: cellMeta </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Metadata.Represents the following attribute in the schema: cellMeta</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,11 +185,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Clear All.</para>
-          <para>Represents the following attribute in the schema: clearAll </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Clear All.Represents the following attribute in the schema: clearAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,11 +210,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Clear Comments.</para>
-          <para>Represents the following attribute in the schema: clearComments </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Clear Comments.Represents the following attribute in the schema: clearComments</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,11 +235,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Clear Contents.</para>
-          <para>Represents the following attribute in the schema: clearContents </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Clear Contents.Represents the following attribute in the schema: clearContents</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -231,11 +260,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Clear Formats.</para>
-          <para>Represents the following attribute in the schema: clearFormats </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Clear Formats.Represents the following attribute in the schema: clearFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -257,11 +283,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -285,11 +309,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Coercion.</para>
-          <para>Represents the following attribute in the schema: coerce </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Coercion.Represents the following attribute in the schema: coerce</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -313,11 +334,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Copy.</para>
-          <para>Represents the following attribute in the schema: copy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Copy.Represents the following attribute in the schema: copy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -341,11 +359,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Cell Value Delete.</para>
-          <para>Represents the following attribute in the schema: delete </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Cell Value Delete.Represents the following attribute in the schema: delete</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -369,11 +384,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Edit.</para>
-          <para>Represents the following attribute in the schema: edit </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Edit.Represents the following attribute in the schema: edit</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -397,11 +409,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Ghost Column.</para>
-          <para>Represents the following attribute in the schema: ghostCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Ghost Column.Represents the following attribute in the schema: ghostCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -425,11 +434,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Ghost Row.</para>
-          <para>Represents the following attribute in the schema: ghostRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Ghost Row.Represents the following attribute in the schema: ghostRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -448,10 +454,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -475,11 +479,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Merge.</para>
-          <para>Represents the following attribute in the schema: merge </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Merge.Represents the following attribute in the schema: merge</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -503,11 +504,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Supported Version.</para>
-          <para>Represents the following attribute in the schema: minSupportedVersion </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum Supported Version.Represents the following attribute in the schema: minSupportedVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -531,11 +529,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Type Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Type Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -559,11 +554,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste All.</para>
-          <para>Represents the following attribute in the schema: pasteAll </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste All.Represents the following attribute in the schema: pasteAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -587,11 +579,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Borders.</para>
-          <para>Represents the following attribute in the schema: pasteBorders </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Borders.Represents the following attribute in the schema: pasteBorders</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -615,11 +604,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Column Widths.</para>
-          <para>Represents the following attribute in the schema: pasteColWidths </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Column Widths.Represents the following attribute in the schema: pasteColWidths</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -643,11 +629,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Comments.</para>
-          <para>Represents the following attribute in the schema: pasteComments </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Comments.Represents the following attribute in the schema: pasteComments</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -671,11 +654,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Data Validation.</para>
-          <para>Represents the following attribute in the schema: pasteDataValidation </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Data Validation.Represents the following attribute in the schema: pasteDataValidation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -699,11 +679,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Formats.</para>
-          <para>Represents the following attribute in the schema: pasteFormats </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Formats.Represents the following attribute in the schema: pasteFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -727,11 +704,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Formulas.</para>
-          <para>Represents the following attribute in the schema: pasteFormulas </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Formulas.Represents the following attribute in the schema: pasteFormulas</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -755,11 +729,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Number Formats.</para>
-          <para>Represents the following attribute in the schema: pasteNumberFormats </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Number Formats.Represents the following attribute in the schema: pasteNumberFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -783,11 +754,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Paste Special Values.</para>
-          <para>Represents the following attribute in the schema: pasteValues </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Paste Special Values.Represents the following attribute in the schema: pasteValues</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -811,11 +779,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Insert Delete.</para>
-          <para>Represents the following attribute in the schema: rowColShift </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Insert Delete.Represents the following attribute in the schema: rowColShift</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -839,11 +804,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Metadata Split All.</para>
-          <para>Represents the following attribute in the schema: splitAll </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Metadata Split All.Represents the following attribute in the schema: splitAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -867,11 +829,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Meatadata Split First.</para>
-          <para>Represents the following attribute in the schema: splitFirst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Meatadata Split First.Represents the following attribute in the schema: splitFirst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

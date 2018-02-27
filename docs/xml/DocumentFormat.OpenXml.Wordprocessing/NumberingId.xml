@@ -1,4 +1,4 @@
-﻿<Type Name="NumberingId" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingId">
+<Type Name="NumberingId" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingId">
   <TypeSignature Language="C#" Value="public class NumberingId : DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberingId extends DocumentFormat.OpenXml.Wordprocessing.NonNegativeDecimalNumberType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NumberingId" />
@@ -18,11 +18,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Numbering Definition Instance Reference.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:numId.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Numbering Definition Instance Reference. When the object is serialized out as xml, its qualified name is w:numId.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **numId (Numbering Definition Instance Reference)**  
+  
+ This element specifies the numbering definition instance which shall be used for the given parent numbered paragraph in the WordprocessingML document.  
+  
+ A value of *0* for the val attribute shall never be used to point to a numbering definition instance, and shall instead only be used to designate the removal of numbering properties at a particular level in the style hierarchy (typically via direct formatting).  
+  
+ [*Example*: Consider the WordprocessingML below for an example numbered paragraph:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:numPr>  
+      <w:ilvl w:val="0" />  
+      <w:numId w:val="5" />  
+    </w:numPr>  
+  </w:pPr>   
+  …  
+</w:p>  
+```  
+  
+ This paragraph references a numbering definition instance with a numId attribute of *5*, as follows:  
+  
+```xml  
+<w:num w:numId="5">  
+  <w:abstractNumId w:val="4" />  
+</w:num>  
+```  
+  
+ The numbering definition instance reference specifies the given numbering definition instance to be applied to the given paragraph, which itself inherits its properties from abstract numbering definition with abstractNumId of *4*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|numPr (§17.3.1.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NumberingId class.
-            </summary>
+        <summary>Initializes a new instance of the NumberingId class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +101,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +122,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

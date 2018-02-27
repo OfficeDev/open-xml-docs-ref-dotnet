@@ -1,4 +1,4 @@
-﻿<Type Name="ThemeFontLanguages" FullName="DocumentFormat.OpenXml.Wordprocessing.ThemeFontLanguages">
+<Type Name="ThemeFontLanguages" FullName="DocumentFormat.OpenXml.Wordprocessing.ThemeFontLanguages">
   <TypeSignature Language="C#" Value="public class ThemeFontLanguages : DocumentFormat.OpenXml.Wordprocessing.LanguageType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThemeFontLanguages extends DocumentFormat.OpenXml.Wordprocessing.LanguageType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ThemeFontLanguages" />
@@ -18,11 +18,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Theme Font Languages.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:themeFontLang.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Theme Font Languages. When the object is serialized out as xml, its qualified name is w:themeFontLang.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **themeFontLang (Theme Font Languages)**  
+  
+ This element specifies the language which shall be used to determine the appropriate theme fonts in the document's Theme part which map to the major/minor theme fonts. Specifically, the bidi attribute is used to determine the theme font applied to complex script text, the eastAsia attribute is used to determine the theme font applied to East Asian text, and the val attribute is used to determine the theme font applied to all other text.  
+  
+ These mappings are performed as follows:  
+  
+-   For *majorAscii*/*majorHAnsi*, locate the font element (§20.1.4.1.16) in the majorFont element (§20.1.4.1.24) in the theme part for the language specified by the val attribute  
+  
+-   For *majorBidi*, locate the font element in the majorFont element in the theme part for the language specified by the bidi attribute  
+  
+-   For *majorEastAsia*, locate the font element in the majorFont element in the theme part for the language specified by the eastAsia attribute  
+  
+-   For *minorAscii*/*minorHAnsi*, locate the font element in the minorFont element (§20.1.4.1.25) in the theme part for the language specified by the val attribute  
+  
+-   For *minorBidi*, locate the font element in the minorFont element in the theme part for the language specified by the bidi attribute  
+  
+-   For *minorEastAsia*, locate the font element in the minorFont element in the theme part for the language specified by the eastAsia attribute  
+  
+ If this element is omitted, then the default fonts for each region as specified by the latin, ea, and cs elements (§21.1.2.3.7; §21.1.2.3.3; §21.1.2.3.1) should be used.  
+  
+ [*Example*: Consider a document with the following WordprocessingML in its document settings:  
+  
+```xml  
+<w:themeFontLang w:val="ja-JP" />  
+```  
+  
+ The themeFontLang element's val attribute has a value of *ja-JP*, specifying that the theme fonts used for Latin text must be the theme fonts for Japanese. If the following content was present in the theme part:  
+  
+```xml  
+…<a:majorFont>  
+  …  <a:font script="Jpan" typeface="MS Mincho"/>  
+  …</a:majorFont>  
+…   
+```  
+  
+ Then this setting would specify that uses of the *majorAscii* and *majorHAnsi* theme font enumerations must be mapped to the *MS Mincho* font. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Language) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +86,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ThemeFontLanguages class.
-            </summary>
+        <summary>Initializes a new instance of the ThemeFontLanguages class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +108,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +129,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

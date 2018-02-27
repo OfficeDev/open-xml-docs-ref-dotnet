@@ -1,4 +1,4 @@
-﻿<Type Name="Headers" FullName="DocumentFormat.OpenXml.Spreadsheet.Headers">
+<Type Name="Headers" FullName="DocumentFormat.OpenXml.Spreadsheet.Headers">
   <TypeSignature Language="C#" Value="public class Headers : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Headers extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Headers" />
@@ -21,13 +21,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Revision Headers. The root element of WorkbookRevisionHeaderPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:headers.</para>
-    </summary>
+    <summary>Revision Headers. The root element of WorkbookRevisionHeaderPart. When the object is serialized out as xml, its qualified name is x:headers.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Header &lt;x:header&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **headers (Revision Headers)**  
+  
+ This element represents the list of revision headers.  
+  
+ This section contains many references to history, versions, and revisions, and it is helpful to clarify the relationships here.  In general, a series of changes (revisions) can be made to a spreadsheet. When a batch of those revisions is saved to disk, the version number of the spreadsheet is incremented.  The batch of changes is saved to the revision history, which is persisted on disk with the file in the form of different log files and headers.  
+  
+ There are some attributes that deal with history which might seem redundant (such as *diskRevisions*, and *history*, among others) - these are there for backwards compatibility with older versions of spreadsheet applications and do not need to be used for creating new files.  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|header (Header)|§18.11.1.1|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|diskRevisions (Disk Revisions)|A Boolean value indicating that this shared workbook file contains revisions.  *True* when the workbook does have revisions, *false* otherwise.<br /><br /> [*Note*: this attribute is used for backwards compatibility. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|exclusive (Exclusive Mode)|A Boolean value indicating that this shared workbook is in exclusive mode.<br /><br /> A workbook is in exclusive mode when a user has a lock on it for appending revisions to the file.<br /><br /> [*Note*: This is used for backwards compatibility with older spreadsheet applications. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|guid (Last Revision GUID)|The globally unique identifier of the last set of revisions.  This shall match the GUID for the most recent header.<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
+|history (History)|A Boolean value indicating that this shared workbook maintains a revision history.  True if a history is maintained, false otherwise.<br /><br /> [*Note*: This is used for backwards compatibility with older spreadsheet applications. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|keepChangeHistory (Keep Change History)|A Boolean value indicating whether the revision history should be kept for this shared workbook.  True if the history should be kept, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|lastGuid (Last GUID)|Unique identifier of the last set of revisions that was saved into the file.<br /><br /> The spreadsheet application can have certain modes, such as a timed save mode, where the application doesn't do a full save, but instead just appends the most recent revision records.  In cases like this, for a new user that opens such a file while it is being edited, the file that was loaded from disk only have the changes that were saved during a full save.  To get the current state of the file which includes edits by other users, the spreadsheet application would need to apply all the revisions from *lastGuid* to *guid*.<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
+|preserveHistory (Preserve History)|An integer representing the number of days the spreadsheet application shall keep the change history for this workbook.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|protected (Protected)|A Boolean value indicating whether the change tracking in this shared workbook can be removed.  True if the tracking can be removed, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|revisionId (Revision Id)|The current revision number of this shared workbook.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|shared (Shared Workbook)|A Boolean value indicating that this workbook is shared.  True when the workbook is shared, false otherwise.<br /><br /> [*Note*: This is used for backwards compatibility with older spreadsheet applications. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|trackRevisions (Track Revisions)|A Boolean value indicating that revisions are tracked in this shared workbook.  True when revisions are tracked, false otherwise.<br /><br /> [*Note*: This is used for backwards compatibility with older spreadsheet applications. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|version (Version)|An integer representing the current version of this shared workbook.  The integer should begin counting from 1 for the first version.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_RevisionHeaders) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Headers class.
-            </summary>
+        <summary>Initializes a new instance of the Headers class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +101,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Headers class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Headers class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +121,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Headers class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Headers class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +141,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Headers class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Headers class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +163,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,11 +189,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Disk Revisions.</para>
-          <para>Represents the following attribute in the schema: diskRevisions </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Disk Revisions.Represents the following attribute in the schema: diskRevisions</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,11 +214,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Exclusive Mode.</para>
-          <para>Represents the following attribute in the schema: exclusive </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Exclusive Mode.Represents the following attribute in the schema: exclusive</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -222,11 +239,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Last Revision GUID.</para>
-          <para>Represents the following attribute in the schema: guid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Last Revision GUID.Represents the following attribute in the schema: guid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -250,11 +264,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> History.</para>
-          <para>Represents the following attribute in the schema: history </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>History.Represents the following attribute in the schema: history</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -278,11 +289,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Keep Change History.</para>
-          <para>Represents the following attribute in the schema: keepChangeHistory </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Keep Change History.Represents the following attribute in the schema: keepChangeHistory</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -306,11 +314,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Last GUID.</para>
-          <para>Represents the following attribute in the schema: lastGuid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Last GUID.Represents the following attribute in the schema: lastGuid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -333,9 +338,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the WorkbookRevisionHeaderPart.
-            </summary>
+        <summary>Loads the DOM from the WorkbookRevisionHeaderPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -354,10 +357,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -381,11 +382,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Preserve History.</para>
-          <para>Represents the following attribute in the schema: preserveHistory </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Preserve History.Represents the following attribute in the schema: preserveHistory</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -409,11 +407,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Protected.</para>
-          <para>Represents the following attribute in the schema: protected </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Protected.Represents the following attribute in the schema: protected</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -437,11 +432,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Revision Id.</para>
-          <para>Represents the following attribute in the schema: revisionId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Revision Id.Represents the following attribute in the schema: revisionId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -464,9 +456,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the WorkbookRevisionHeaderPart.
-            </summary>
+        <summary>Saves the DOM into the WorkbookRevisionHeaderPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -490,11 +480,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shared Workbook.</para>
-          <para>Represents the following attribute in the schema: shared </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shared Workbook.Represents the following attribute in the schema: shared</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -518,11 +505,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Track Revisions.</para>
-          <para>Represents the following attribute in the schema: trackRevisions </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Track Revisions.Represents the following attribute in the schema: trackRevisions</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -546,11 +530,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Version.</para>
-          <para>Represents the following attribute in the schema: version </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Version.Represents the following attribute in the schema: version</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -569,10 +550,8 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WorkbookRevisionHeaderPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WorkbookRevisionHeaderPart associated with this element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the WorkbookRevisionHeaderPart associated with this element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.WorkbookRevisionHeaderPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

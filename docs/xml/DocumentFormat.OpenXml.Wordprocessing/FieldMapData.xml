@@ -1,4 +1,4 @@
-﻿<Type Name="FieldMapData" FullName="DocumentFormat.OpenXml.Wordprocessing.FieldMapData">
+<Type Name="FieldMapData" FullName="DocumentFormat.OpenXml.Wordprocessing.FieldMapData">
   <TypeSignature Language="C#" Value="public class FieldMapData : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FieldMapData extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FieldMapData" />
@@ -36,13 +36,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>External Data Source to Merge Field Mapping.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:fieldMapData.</para>
-    </summary>
+    <summary>External Data Source to Merge Field Mapping. When the object is serialized out as xml, its qualified name is w:fieldMapData.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>MailMergeFieldType &lt;w:type&gt;</description></item><item><description>Name &lt;w:name&gt;</description></item><item><description>MappedName &lt;w:mappedName&gt;</description></item><item><description>ColumnIndex &lt;w:column&gt;</description></item><item><description>LanguageId &lt;w:lid&gt;</description></item><item><description>DynamicAddress &lt;w:dynamicAddress&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **fieldMapData (External Data Source to Merge Field Mapping)**  
+  
+ This element specifies how a column specified in the external data source that has been connected to a WordprocessingML document shall be mapped to the pre-defined *MERGEFIELD* fields (§17.16.5.35) within the given merged document's contents. Each instance of a fieldMapData element contains the information needed to map one column in the external data source to a single type of pre-defined *MERGEFIELD* field for the purposes of the mail merge in the current document.  
+  
+ [*Example*: Consider a single merged document. The WordprocessingML below demonstrates the mapping of the *Country* column from the external data source to the predefined WordprocessingML *Country or Region* merge field when the merged document is populated with external data as part of a mail merge:  
+  
+```xml  
+<w:odso>  
+  …  <w:fieldMapData>  
+    <w:type w:val="dbColumn" />  
+    <w:name w:val="Country" />  
+    <w:mappedName w:val="Country or Region" />  
+    <w:column w:val="9" />  
+    …  </w:fieldMapData>  
+</w:odso>  
+```  
+  
+ The fieldMapData element specifies the mapping between the external data source and a single merge field as follows: the child elements specify that the tenth column in the data source, last titled *Country* in the specified external data source when the connection was last made is to be mapped to the predefined WordprocessingML merge field calling for *Country or Region* data.  
+  
+ With the fieldMapData element configured as such, an application can be used in conjunction with this WordprocessingML document to populate the document with data mapped from the specified external data source to fields within the merged document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|odso (§17.14.25)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|column (Index of Column Being Mapped)|§17.14.6|  
+|dynamicAddress (Use Country-Based Address Field Ordering)|§17.14.13|  
+|lid (Merge Field Name Language ID)|§17.14.17|  
+|mappedName (Predefined Merge Field Name)|§17.14.23|  
+|name (Data Source Name for Column)|§17.14.24|  
+|type (Merge Field Mapping)|§17.14.33|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_OdsoFieldMapData) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -57,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FieldMapData class.
-            </summary>
+        <summary>Initializes a new instance of the FieldMapData class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,9 +123,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FieldMapData class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the FieldMapData class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -107,9 +143,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FieldMapData class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the FieldMapData class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,9 +163,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the FieldMapData class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the FieldMapData class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,11 +185,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,11 +206,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ColumnIndex</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Index of Column Being Mapped.</para>
-          <para> Represents the following element tag in the schema: w:column </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Index of Column Being Mapped. Represents the following element tag in the schema: w:column</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.ColumnIndex" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -202,11 +229,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DynamicAddress</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Use Country/Region-Based Address Field Ordering.</para>
-          <para> Represents the following element tag in the schema: w:dynamicAddress </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Use Country/Region-Based Address Field Ordering. Represents the following element tag in the schema: w:dynamicAddress</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.DynamicAddress" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -228,11 +252,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LanguageId</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Merge Field Name Language ID.</para>
-          <para> Represents the following element tag in the schema: w:lid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Merge Field Name Language ID. Represents the following element tag in the schema: w:lid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LanguageId" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -254,10 +275,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -276,11 +295,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Merge Field Mapping.</para>
-          <para> Represents the following element tag in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Merge Field Mapping. Represents the following element tag in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.MailMergeFieldType" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -302,11 +318,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.MappedName</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Predefined Merge Field Name.</para>
-          <para> Represents the following element tag in the schema: w:mappedName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Predefined Merge Field Name. Represents the following element tag in the schema: w:mappedName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.MappedName" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -328,11 +341,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Name</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Source Name for Column.</para>
-          <para> Represents the following element tag in the schema: w:name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Source Name for Column. Represents the following element tag in the schema: w:name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Name" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

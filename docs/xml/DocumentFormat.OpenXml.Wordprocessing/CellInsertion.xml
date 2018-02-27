@@ -1,4 +1,4 @@
-﻿<Type Name="CellInsertion" FullName="DocumentFormat.OpenXml.Wordprocessing.CellInsertion">
+<Type Name="CellInsertion" FullName="DocumentFormat.OpenXml.Wordprocessing.CellInsertion">
   <TypeSignature Language="C#" Value="public class CellInsertion : DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CellInsertion extends DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.CellInsertion" />
@@ -18,11 +18,80 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Table Cell Insertion.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:cellIns.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Table Cell Insertion. When the object is serialized out as xml, its qualified name is w:cellIns.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `cellIns (Table Cell Insertion)`  
+  
+ This element specifies that the parent table cell shall be treated as though it was inserted into the document while revisions were being recorded.  
+  
+ [*Example*: Consider a document with a two row by two columns table as follows:  
+  
+ b1af7b2a-a64b-4685-8cdf-fa15cc9b4bef  
+  
+ If this table has two cells added by appending an additional column, and this is tracked as a revision, the resulting WordprocessingML would show each of these cells as inserted as follows:  
+  
+```xml  
+<w:tbl>  
+  …  <w:tr>  
+    <w:tc>  
+      <w:r>  
+        <w:t>One</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:r>  
+        <w:t>Two</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:cellIns w:id="0" … />  
+      </w:tcPr>  
+      <w:r>  
+        <w:t>New</w:t>  
+      </w:r>  
+    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:tc>  
+      <w:r>  
+        <w:t>Three</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:r>  
+        <w:t>Four</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:cellIns w:id="1" … />  
+      </w:tcPr>  
+      <w:r>  
+        <w:t>New</w:t>  
+      </w:r>  
+    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The cellIns elements in the table cell properties of the cells with text *New* specify that each of those cells have been inserted into the document. Their attributes (omitted) can optionally provide information about the insertion of these cells (author, date, etc.). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +106,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CellInsertion class.
-            </summary>
+        <summary>Initializes a new instance of the CellInsertion class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +128,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +149,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

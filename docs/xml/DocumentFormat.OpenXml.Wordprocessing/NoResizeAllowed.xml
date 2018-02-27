@@ -1,4 +1,4 @@
-﻿<Type Name="NoResizeAllowed" FullName="DocumentFormat.OpenXml.Wordprocessing.NoResizeAllowed">
+<Type Name="NoResizeAllowed" FullName="DocumentFormat.OpenXml.Wordprocessing.NoResizeAllowed">
   <TypeSignature Language="C#" Value="public class NoResizeAllowed : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NoResizeAllowed extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NoResizeAllowed" />
@@ -18,11 +18,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Frame Cannot Be Resized.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:noResizeAllowed.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Frame Cannot Be Resized. When the object is serialized out as xml, its qualified name is w:noResizeAllowed.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `noResizeAllowed (Frame Cannot Be Resized)`  
+  
+ This element specifies whether or not the size of the current frame shall be modifiable (i.e. whether the frame can be resized) when the contents of this document are saved as HTML and displayed in a web browser. When this element is set, the size of the frame shall be set to its current values. This property is analogous to the *noresize* attribute on the *frame* element in HTML.  
+  
+ If this element is omitted, the size of the frame shall be modifiable (the frame can be resized when it is displayed).  
+  
+ [*Example*: Consider a WordprocessingML document which serves as the frameset container for a frameset consisting of the following three frames:  
+  
+ c76ff381-07e6-4449-9c9c-a6d17b91052d  
+  
+ The frameset properties for this document are specified by the following WordprocessingML within the web page settings:  
+  
+```xml  
+<w:frameset>  
+  …  
+  <w:frameset>  
+    …    <w:frame>  
+      <w:name w:val="Frame 2" />  
+      <w:noResizeAllowed w:val="true" />  
+    </w:frame>  
+    …  
+  </w:frameset>  
+</w:frameset>  
+```  
+  
+ The noResizeAllowed element has a val attribute of *true*, which specifies that the size of the frame specified by *Frame 2* must not be modifiable (the two borders which intersect that frame cannot be resized). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|frame (§17.15.2.16)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +76,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NoResizeAllowed class.
-            </summary>
+        <summary>Initializes a new instance of the NoResizeAllowed class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

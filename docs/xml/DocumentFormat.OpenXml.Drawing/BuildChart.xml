@@ -1,4 +1,4 @@
-﻿<Type Name="BuildChart" FullName="DocumentFormat.OpenXml.Drawing.BuildChart">
+<Type Name="BuildChart" FullName="DocumentFormat.OpenXml.Drawing.BuildChart">
   <TypeSignature Language="C#" Value="public class BuildChart : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildChart extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.BuildChart" />
@@ -18,11 +18,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Build Chart.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:bldChart.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Build Chart. When the object is serialized out as xml, its qualified name is a:bldChart.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **bldChart (Build Chart)**  
+  
+ This element specifies how to build the animation for a diagram.  
+  
+ [*Example*: Consider the following example where a chart is specified to be animated by category rather than as one entity. Thus, the bldChart element should be used as follows:  
+  
+```xml  
+<p:bdldLst>  
+  <p:bldGraphic spid="4" grpId="0">  
+    <p:bldSub>  
+      <a:bldChart bld="category"/>  
+    </p:bldSub>  
+  </p:bldGraphic>  
+</p:bldLst>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bldSub (§19.5.17)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|animBg (Animate Background)|Specifies whether or not the chart background elements should be animated as well. [*Note*: An example of background elements are grid lines and the chart legend. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|bld (Build)|Specifies how the chart is built. The animation animates the sub-elements in the container in the particular order defined by this attribute.<br /><br /> The possible values for this attribute are defined by the *ST_AnimationChartBuildType* simple type (§20.1.10.5).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_AnimationChartBuildProperties) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +72,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BuildChart class.
-            </summary>
+        <summary>Initializes a new instance of the BuildChart class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +96,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Animate Background.</para>
-          <para>Represents the following attribute in the schema: animBg </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Animate Background.Represents the following attribute in the schema: animBg</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -91,12 +121,18 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Build.</para>
-          <para>Represents the following attribute in the schema: bld </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Build.Represents the following attribute in the schema: bld</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Specifies how the chart will be built. The animation will animate the sub-elements in the container in the particular order defined by this attribute.  
+  
+ The possible values for this attribute are defined by the `ST_AnimationChartBuildType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -117,11 +153,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,10 +174,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

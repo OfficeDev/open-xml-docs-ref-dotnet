@@ -1,4 +1,4 @@
-﻿<Type Name="SequenceTimeNode" FullName="DocumentFormat.OpenXml.Presentation.SequenceTimeNode">
+<Type Name="SequenceTimeNode" FullName="DocumentFormat.OpenXml.Presentation.SequenceTimeNode">
   <TypeSignature Language="C#" Value="public class SequenceTimeNode : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SequenceTimeNode extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.SequenceTimeNode" />
@@ -27,13 +27,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Sequence Time Node.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:seq.</para>
-    </summary>
+    <summary>Sequence Time Node. When the object is serialized out as xml, its qualified name is p:seq.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CommonTimeNode &lt;p:cTn&gt;</description></item><item><description>PreviousConditionList &lt;p:prevCondLst&gt;</description></item><item><description>NextConditionList &lt;p:nextCondLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `seq (Sequence Time Node)`  
+  
+ This element describes the Sequence time node and it can only be activated when the one before it finishes. Conceptually it can be though of as follows:  
+  
+ fc8a5b32-26dc-469b-9a54-69f42a02de1c  
+  
+ [*Example*:  For example, suppose we have a simple animation with a blind entrance.  
+  
+```xml  
+<p:timing>  
+  <p:tnLst>  
+    <p:par>  
+      <p:cTn id="1" dur="indefinite" restart="never" nodeType="tmRoot">  
+        <p:childTnLst>  
+          <p:seq concurrent="1" nextAc="seek">  
+            …  
+          </p:seq>  
+        </p:childTnLst>  
+      </p:cTn>  
+    </p:par>  
+  </p:tnLst>  
+</p:timing>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|childTnLst (§19.5.25); subTnLst (§19.5.78); tnLst (§19.5.87)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cTn (Common Time Node Properties)|§19.5.33|  
+|nextCondLst (Next Conditions List)|§19.5.51|  
+|prevCondLst (Previous Conditions List)|§19.5.55|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|concurrent (Concurrent)|This attribute specifies if concurrency is enabled or disabled. By default this attribute has a value of "disabled". When the value is set to "enabled", the previous element is left enabled when advancing to the next element in a sequence instead of being ended. This is only relevant for advancing via the next condition element being triggered. The only other way to advance to the next element would be to have the current element end, which implies it is no longer concurrent.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|nextAc (Next Action)|This attribute specifies what to do when going forward in sequence. By default this attribute has a value of "none". When this is set to seek it seeks the element to a natural end time (not necessarily the actual end time).<br /><br /> The natural end position is defined as the latest non-infinite end time of the children. If a child loops forever, the end of its first loop is used as its "end time" for the purposes of this calculation.<br /><br /> Some container elements can have infinite durations due to an infinite-duration child element. The engine needs to recurse down through all infinite duration containers to calculate their natural duration in case a child might have non-infinite duration within it that needs to be taken into account.<br /><br /> The possible values for this attribute are defined by the *ST_TLNextActionType* simple type (§19.7.34).|  
+|prevAc (Previous Action)|This attribute specifies what to do when going backwards in a sequence. By default it is set to "none" and nothing special is done. When the value is "skipTimed", the sequence continues to go backwards until it reaches a sequence element that was defined to begin only on the next condition element.<br /><br /> The possible values for this attribute are defined by the *ST_TLPreviousActionType* simple type (§19.7.37).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLTimeNodeSequence) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SequenceTimeNode class.
-            </summary>
+        <summary>Initializes a new instance of the SequenceTimeNode class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +122,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SequenceTimeNode class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the SequenceTimeNode class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,9 +142,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SequenceTimeNode class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the SequenceTimeNode class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +162,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the SequenceTimeNode class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the SequenceTimeNode class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +184,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -167,11 +205,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonTimeNode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Common TimeNode Properties.</para>
-          <para> Represents the following element tag in the schema: p:cTn </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Common TimeNode Properties. Represents the following element tag in the schema: p:cTn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CommonTimeNode" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -198,12 +233,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Concurrent.</para>
-          <para>Represents the following attribute in the schema: concurrent </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Concurrent.Represents the following attribute in the schema: concurrent</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies if concurrency is enabled or disabled. By default this attribute has a value of `disabled`. When the value is set to `enabled`, the previous element is left enabled when advancing to the next element in a sequence instead of being ended. This is only relevant for advancing via the next condition element being triggered. The only other way to advance to the next element would be to have the current element end, which implies it is no longer concurrent.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -221,10 +264,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -248,12 +289,24 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.NextActionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Next Action.</para>
-          <para>Represents the following attribute in the schema: nextAc </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Next Action.Represents the following attribute in the schema: nextAc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies what to do when going forward in sequence. By default this attribute has a value of `none`. When this is set to `seek` it will seek the element to a natural end time (not necessarily the actual end time).  
+  
+ The natural end position is defined as the latest non-infinite end time of the children. If a child loops forever, the end of its first loop is used as its "end time" for the purposes of this calculation.  
+  
+ Some container elements may have infinite durations due to an infinite-duration child element. The engine needs to recurse down through all infinite duration containers to calculate their natural duration in case a child might have non-infinite duration within it that needs to be taken into account.  
+  
+ The possible values for this attribute are defined by the `ST_TLNextActionType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="NextConditionList">
@@ -271,11 +324,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.NextConditionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Next Conditions List.</para>
-          <para> Represents the following element tag in the schema: p:nextCondLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Next Conditions List. Represents the following element tag in the schema: p:nextCondLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.NextConditionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -302,12 +352,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.PreviousActionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Action.</para>
-          <para>Represents the following attribute in the schema: prevAc </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Previous Action.Represents the following attribute in the schema: prevAc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies what to do when going backwards in a sequence. By default it is set to `none` and nothing special is done. When the value is `skipTimed`, the sequence will continue to go backwards until it reaches a sequence element that was defined to begin only on the next condition element.  
+  
+ The possible values for this attribute are defined by the `ST_TLPreviousActionType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="PreviousConditionList">
@@ -325,11 +383,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.PreviousConditionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Conditions List.</para>
-          <para> Represents the following element tag in the schema: p:prevCondLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Previous Conditions List. Represents the following element tag in the schema: p:prevCondLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.PreviousConditionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

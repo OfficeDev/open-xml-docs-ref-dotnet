@@ -1,4 +1,4 @@
-﻿<Type Name="StatusText" FullName="DocumentFormat.OpenXml.Wordprocessing.StatusText">
+<Type Name="StatusText" FullName="DocumentFormat.OpenXml.Wordprocessing.StatusText">
   <TypeSignature Language="C#" Value="public class StatusText : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StatusText extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.StatusText" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Associated Status Text.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:statusText.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Associated Status Text. When the object is serialized out as xml, its qualified name is w:statusText.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **statusText (Associated Status Text)**  
+  
+ This element specifies optional status text which shall be associated with the parent form field. The method or user interface by which this status text can be surfaced is not defined by /IEC 29500.  
+  
+ If this element is omitted, then no status text shall be associated with the current form field.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for a drop-down list form field:  
+  
+```xml  
+<w:fldSimple w:instr="FORMDROPDOWN">  
+  <w:ffData>  
+    <w:statusText w:type="text" w:val="Example status text." />  
+    <w:ddList>  
+      …    </w:ddList>  
+  </w:ffData>  
+</w:fldSimple>  
+```  
+  
+ The statusText element specifies the status text for the parent form field - in this case, literal text consisting of the string *Example status text.* *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|ffData (§17.16.17)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FFStatusText) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StatusText class.
-            </summary>
+        <summary>Initializes a new instance of the StatusText class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +137,32 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.InfoTextValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Status Text Type.</para>
-          <para>Represents the following attribute in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Status Text Type.Represents the following attribute in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of status text which is specified by this element, defined by the simple type below.  
+  
+ If this attribute is omitted, then its value shall be assumed to be `text`.  
+  
+ Consider the following WordprocessingML fragment for a form field:  
+  
+```  
+<w:ffData>  
+  <w:statusText w:type="text" w:val="Example status text." />  
+</w:ffData>  
+```  
+  
+ The `type` attribute has a value of `text`, which specifies that the text in the `val` attribute is the literal status text for this form field.  
+  
+ The possible values for this attribute are defined by the `ST_InfoTextType` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -141,12 +187,34 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Status Text Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Status Text Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the status text for the current form field. Based on the value of the `type` attribute, the contents of this field shall be interpreted as follows:  
+  
+-   When the `type` attribute value is `text`, it contains the literal status text for the form field.  
+  
+-   When the `type` attribute value is `autoText`, it contains the name of a glossary document entry which contains the status text for the form field.  
+  
+ Consider the following WordprocessingML fragment for a form field:  
+  
+```  
+<w:ffData>  
+  <w:statusText w:type="autoText" w:val="MyStatusText" />  
+</w:ffData>  
+```  
+  
+ The text in the `val` attribute is the name of a glossary document entry containing the status text for this form field, since the `type` attribute has a value of `autoText`.  
+  
+ The possible values for this attribute are defined by the `ST_FFStatusTextVal` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

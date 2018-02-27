@@ -1,4 +1,4 @@
-﻿<Type Name="KeepLines" FullName="DocumentFormat.OpenXml.Wordprocessing.KeepLines">
+<Type Name="KeepLines" FullName="DocumentFormat.OpenXml.Wordprocessing.KeepLines">
   <TypeSignature Language="C#" Value="public class KeepLines : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeepLines extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.KeepLines" />
@@ -18,11 +18,42 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the KeepLines Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:keepLines.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the KeepLines Class. When the object is serialized out as xml, its qualified name is w:keepLines.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **keepLines (Keep All Lines On One Page)**  
+  
+ This element specifies that when rendering this document in a page view, all lines of this paragraph are maintained on a single page whenever possible.  
+  
+ This means that if the contents of the current paragraph would normally span across two pages due to the placement of the paragraph's text, all lines in this paragraph shall be moved onto the next page to ensure they are displayed together. If this is not possible because all lines in the paragraph would exceed a single page in any case, then lines in this paragraph shall start on a new page, with page breaks as needed afterwards.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied.  
+  
+ [*Example*: Consider a WordprocessingML document in which a code fragment (such as the schema fragments in this document) are defined such that they should never be broken across a page boundary in order to improve readability. This constraint would be specified using the following paragraph properties in WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:keepLines />  
+  …  
+</w:pPr>  
+```  
+  
+ This setting ensures that the schema fragment is displayed on one page if possible. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the KeepLines class.
-            </summary>
+        <summary>Initializes a new instance of the KeepLines class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +90,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +111,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

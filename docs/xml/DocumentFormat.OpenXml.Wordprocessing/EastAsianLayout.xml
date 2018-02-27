@@ -1,4 +1,4 @@
-﻿<Type Name="EastAsianLayout" FullName="DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout">
+<Type Name="EastAsianLayout" FullName="DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout">
   <TypeSignature Language="C#" Value="public class EastAsianLayout : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EastAsianLayout extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout" />
@@ -18,11 +18,63 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the EastAsianLayout Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:eastAsianLayout.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the EastAsianLayout Class. When the object is serialized out as xml, its qualified name is w:eastAsianLayout.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `eastAsianLayout (East Asian Typography Settings)`  
+  
+ This element specifies any East Asian typography settings which shall be applied to the contents of the run.  
+  
+ The specific typography settings represented by this element include the *two lines in one* and *horizontal in vertical* text options.  
+  
+ The *two lines in one* setting specifies that the characters in this run should be written out on a single line in the document by creating two sub-lines within the regular line, and laying out this text equally between those sub lines.  
+  
+ [*Example*: Consider a paragraph with the text *two lines in one*, which must be displayed within a single logical line in the document. This constraint would be specified as follows in the WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:eastAsianLayout w:id="1" w:combine="on" />  
+  </w:rPr>  
+  <w:t>two lines in one</w:t>  
+</w:r>  
+```  
+  
+ The resulting text would be displayed on two sub lines within the other text on this line, like this:  
+  
+ 1c888fbd-c312-4613-9456-3431936775da  
+  
+ *end example*]  
+  
+ The *horizontal in vertical* setting specifies that characters in this run should be rendered with a 90 degree rotation to the left from all other contents of the line when displayed in the document, while keeping the text on the same line as all other text in the paragraph.  
+  
+ [*Example*: Consider a paragraph with the text *this word is vertical*, of which the word *vertical* must be displayed vertically within the document. This constraint would be specified as follows in the WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:eastAsianLayout w:id="2" w:vert="on" />  
+  </w:rPr>  
+  <w:t>vertical</w:t>  
+</w:r>  
+```  
+  
+ The resulting text would be displayed with a 90 degree rotation from the other text content. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_EastAsianLayout) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EastAsianLayout class.
-            </summary>
+        <summary>Initializes a new instance of the EastAsianLayout class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +111,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +137,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Two Lines in One.</para>
-          <para>Represents the following attribute in the schema: w:combine </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Two Lines in One.Represents the following attribute in the schema: w:combine</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -119,11 +164,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Display Brackets Around Two Lines in One.</para>
-          <para>Represents the following attribute in the schema: w:combineBrackets </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Display Brackets Around Two Lines in One.Represents the following attribute in the schema: w:combineBrackets</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -149,11 +191,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> East Asian Typography Run ID.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>East Asian Typography Run ID.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -174,10 +213,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,11 +238,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal in Vertical (Rotate Text).</para>
-          <para>Represents the following attribute in the schema: w:vert </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal in Vertical (Rotate Text).Represents the following attribute in the schema: w:vert</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -231,11 +265,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Compress Rotated Text to Line Height.</para>
-          <para>Represents the following attribute in the schema: w:vertCompress </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Compress Rotated Text to Line Height.Represents the following attribute in the schema: w:vertCompress</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

@@ -1,4 +1,4 @@
-﻿<Type Name="VerticalTextAlignmentOnPage" FullName="DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage">
+<Type Name="VerticalTextAlignmentOnPage" FullName="DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage">
   <TypeSignature Language="C#" Value="public class VerticalTextAlignmentOnPage : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VerticalTextAlignmentOnPage extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage" />
@@ -18,11 +18,70 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the VerticalTextAlignmentOnPage Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:vAlign.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the VerticalTextAlignmentOnPage Class. When the object is serialized out as xml, its qualified name is w:vAlign.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **vAlign (Table Cell Vertical Alignment)**  
+  
+ This element specifies the vertical alignment for text within the current table cell. The vertical alignment of this text is determined by the value of the val attribute.  
+  
+ [*Example*: Consider a table with a single cell with text vertically aligned to the bottom of the cell:  
+  
+ R1C1  
+  
+ This requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    <w:vAlign w:val="bottom" />  
+  </w:tcPr>  
+  <w:p>  
+    <w:r>  
+      <w:t>R1C1</w:t>  
+    </w:r>  
+  </w:p>  
+</w:tc>  
+```  
+  
+ The vAlign element specifies the vertical alignment of the cell contents, in the case, the *bottom* of the table cell. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_VerticalJc) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **vAlign (Vertical Text Alignment on Page)**  
+  
+ This element specifies the vertical alignment for text on pages in the current section, relative to the top and bottom margins in the main document story on each page.  
+  
+ [*Example*: Consider a section used as a title page on which text must be vertically centered. In order to center the text vertically on the page, the following WordprocessingML is used:  
+  
+```xml  
+<w:sectPr>  
+  …  <w:vAlign w:="center" />  
+</w:sectPr>  
+```  
+  
+ The vAlign value of *center* specifies that text must be laid out in the center of the top and bottom text margins for all pages in this section. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sectPr (§17.6.17); sectPr (§17.6.18); sectPr (§17.6.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_VerticalJc) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the VerticalTextAlignmentOnPage class.
-            </summary>
+        <summary>Initializes a new instance of the VerticalTextAlignmentOnPage class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +118,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +139,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +164,28 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Alignment Setting.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Vertical Alignment Setting.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the vertical alignment for text between the top and bottom margins of the parent container (page or table cell).  
+  
+ Consider a region where the text shall be vertically centered in the parent element. This would require a `val` value of `center`, in order to specify that all justification vertically shall be centered relative to the parent. For a section, this setting would be specified as follows:  
+  
+```  
+<w:vAlign w:val="center" />  
+```  
+  
+ The `val` attribute of `center` specifies that the content is centered relative to its container (in this case, the page).  
+  
+ The possible values for this attribute are defined by the `ST_VerticalJc` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

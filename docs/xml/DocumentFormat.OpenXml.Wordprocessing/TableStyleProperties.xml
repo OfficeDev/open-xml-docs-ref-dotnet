@@ -1,4 +1,4 @@
-﻿<Type Name="TableStyleProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties">
+<Type Name="TableStyleProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties">
   <TypeSignature Language="C#" Value="public class TableStyleProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableStyleProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableStyleProperties" />
@@ -33,13 +33,69 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Style Conditional Table Formatting Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblStylePr.</para>
-    </summary>
+    <summary>Style Conditional Table Formatting Properties. When the object is serialized out as xml, its qualified name is w:tblStylePr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>StyleParagraphProperties &lt;w:pPr&gt;</description></item><item><description>RunPropertiesBaseStyle &lt;w:rPr&gt;</description></item><item><description>TableStyleConditionalFormattingTableProperties &lt;w:tblPr&gt;</description></item><item><description>TableStyleConditionalFormattingTableRowProperties &lt;w:trPr&gt;</description></item><item><description>TableStyleConditionalFormattingTableCellProperties &lt;w:tcPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `tblStylePr (Style Conditional Table Formatting Properties)`  
+  
+ This element specifies a set of formatting properties which shall be conditionally applied to the parts of a table which match the requirement specified on the type attribute. These table conditional formats are applied to different regions of the table as follows:  
+  
+ 148eeebd-2621-4e6e-aa89-ff77dcdec8f7  
+  
+ All rows in the table can also have conditional formatting on an alternating row/column basis as well as follows:  
+  
+ f1219f24-0ac4-4c0f-ba91-09edb0fc4828  
+  
+ When specified, these conditional formats shall be applied in the following order (therefore subsequent formats override properties on previous formats):  
+  
+-   Whole table  
+  
+-   Banded columns, even column banding  
+  
+-   Banded rows, even row banding  
+  
+-   First row, last row  
+  
+-   First column, last column  
+  
+-   Top left, top right, bottom left, bottom right  
+  
+ [*Example*: Consider a table style which contains conditional formatting, defined as follows:  
+  
+```xml  
+<w:style w:type="table" w:styleId="exampleTableStyle">  
+  …  <w:tblStylePr w:type="firstRow">  
+    <w:tblPr>  
+      <w:tblCellSpacing w:w="29" w:type="dxa"/>  
+    </w:tblPr>  
+    …  </w:tblStylePr>  
+</w:style>  
+```  
+  
+ The tblStylePr element specifies a set of table properties which must be conditionally applied to all parts of the table which meet the criteria specified by the type attribute (in this case, all heading rows for the current table). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pPr (Table Style Conditional Formatting Paragraph Properties)|§17.7.6.1|  
+|rPr (Table Style Conditional Formatting Run Properties)|§17.7.6.2|  
+|tblPr (Table Style Conditional Formatting Table Properties)|§17.7.6.3|  
+|tcPr (Table Style Conditional Formatting Table Cell Properties)|§17.7.6.8|  
+|trPr (Table Style Conditional Formatting Table Row Properties)|§17.7.6.10|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblStylePr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +110,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableStyleProperties class.
-            </summary>
+        <summary>Initializes a new instance of the TableStyleProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +136,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableStyleProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TableStyleProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +156,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableStyleProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TableStyleProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +176,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TableStyleProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TableStyleProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +198,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,10 +219,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,10 +239,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.RunPropertiesBaseStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Style Conditional Formatting Run Properties.</para>
-          <para> Represents the following element tag in the schema: w:rPr </para>
-        </summary>
+        <summary>Table Style Conditional Formatting Run Properties. Represents the following element tag in the schema: w:rPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -221,10 +262,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Style Conditional Formatting Paragraph Properties.</para>
-          <para> Represents the following element tag in the schema: w:pPr </para>
-        </summary>
+        <summary>Table Style Conditional Formatting Paragraph Properties. Represents the following element tag in the schema: w:pPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -247,10 +285,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableCellProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Style Conditional Formatting Table Cell Properties.</para>
-          <para> Represents the following element tag in the schema: w:tcPr </para>
-        </summary>
+        <summary>Table Style Conditional Formatting Table Cell Properties. Represents the following element tag in the schema: w:tcPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -273,10 +308,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Style Conditional Formatting Table Properties.</para>
-          <para> Represents the following element tag in the schema: w:tblPr </para>
-        </summary>
+        <summary>Table Style Conditional Formatting Table Properties. Represents the following element tag in the schema: w:tblPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -299,10 +331,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Style Conditional Formatting Table Row Properties.</para>
-          <para> Represents the following element tag in the schema: w:trPr </para>
-        </summary>
+        <summary>Table Style Conditional Formatting Table Row Properties. Represents the following element tag in the schema: w:trPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -330,11 +359,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TableStyleOverrideValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Style Conditional Formatting Type.</para>
-          <para>Represents the following attribute in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Style Conditional Formatting Type.Represents the following attribute in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

@@ -1,4 +1,4 @@
-﻿<Type Name="Active" FullName="DocumentFormat.OpenXml.Wordprocessing.Active">
+<Type Name="Active" FullName="DocumentFormat.OpenXml.Wordprocessing.Active">
   <TypeSignature Language="C#" Value="public class Active : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Active extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Active" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Record Is Included in Mail Merge.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:active.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Record Is Included in Mail Merge. When the object is serialized out as xml, its qualified name is w:active.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **active (Record Is Included in Mail Merge)**  
+  
+ This element specifies whether a specific record from the specified external data source shall be imported into a merged WordprocessingML document when the mail merge defined for a source document is performed. If this element's val attribute is *false*, then the record specified by the parent element shall not used to create a merged document.  
+  
+ If this element is omitted for a given record, the data record associated with it shall be imported into a merged WordprocessingML document when the mail merge is performed.  
+  
+ [*Example*: Consider the following fragment from a source WordprocessingML document that is connected to an external data source containing two records, one of which is not imported into a merged WordprocessingML document when the conforming hosting application performs the data import.  
+  
+```xml  
+<w:recipients>  
+  <w:recipientData>  
+    <w:active w:val="false" />  
+    …    <w:uniqueTag>1126664175</w:uniqueTag>  
+  </w:recipientData>  
+  <w:recipientData>  
+    …    <w:uniqueTag>  
+1530576378</w:uniqueTag>  
+  </w:recipientData  
+>  
+</w:recipients>  
+```  
+  
+ In this XML fragment, the external data record who is identified by the uniqueTag element (§17.14.35) with a val attribute equal to *1126664175* is not imported into a merged document as the active element associated with it has a val attribute equal to *false*. Conversely, the external data record associated with the uniqueTag element with a val attribute equal to *1530576378* is imported into a merged document, as its active element has been omitted (implying the default value of *true*). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|recipientData (§17.14.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Active class.
-            </summary>
+        <summary>Initializes a new instance of the Active class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

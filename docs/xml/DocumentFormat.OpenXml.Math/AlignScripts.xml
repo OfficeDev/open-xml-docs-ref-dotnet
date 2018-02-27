@@ -1,4 +1,4 @@
-﻿<Type Name="AlignScripts" FullName="DocumentFormat.OpenXml.Math.AlignScripts">
+<Type Name="AlignScripts" FullName="DocumentFormat.OpenXml.Math.AlignScripts">
   <TypeSignature Language="C#" Value="public class AlignScripts : DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AlignScripts extends DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.AlignScripts" />
@@ -18,11 +18,70 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Align Scripts.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:alnScr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Align Scripts. When the object is serialized out as xml, its qualified name is m:alnScr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **alnScr (Align Scripts)**  
+  
+ This element specifies the alignment of scripts in the subscript/superscript function. When *1* or *true*, subscripts and superscripts are aligned to each other. When *0* or *false*, they are kerned to the shape of the base. If this element is omitted, scripts are not aligned. In other words, when the element is absent, the default is for the sub-superscript object to not align the superscript and subscript with each other.  
+  
+ When the element is present and the val attribute is absent, the default value of the val attribute is *1* meaning that this property is applied.  
+  
+ [*Example*: Example (OFF): ; Example (ON): .  
+  
+ The XML representation of the second example above is:  
+  
+```xml  
+<m:sSubSup>  
+  <m:sSubSupPr>  
+    <m:alnScrm:val="1"/>  
+  </m:sSubSupPr>  
+  <m:e>  
+    <m:r>  
+      <m:t>f</m:t>  
+    </m:r>  
+  </m:e>  
+  <m:sub>  
+    <m:r>  
+      <m:rPr>  
+        <m:scr m:val="roman"/>  
+        <m:sty m:val="p"/>  
+      </m:rPr>  
+      <m:t>2</m:t>  
+    </m:r>  
+  </m:sub>  
+  <m:sup>  
+    <m:r>  
+      <m:rPr>  
+        <m:scr m:val="roman"/>  
+        <m:sty m:val="p"/>  
+      </m:rPr>  
+      <m:t>3</m:t>  
+    </m:r>  
+  </m:sup>  
+</m:sSubSup>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sSubSupPr (§22.1.2.104)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (value)|Specifies a binary value for the property defined by the parent XML element.<br /><br /> A value of *1* or *true* specifies that the property shall be explicitly applied. This is the default value for this attribute, and is implied when the parent element is present.<br /><br /> A value of *0* or *false* specifies that the property shall be explicitly turned off. This is implied when the parent element is not present.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_OnOff) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AlignScripts class.
-            </summary>
+        <summary>Initializes a new instance of the AlignScripts class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +118,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +139,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="BulletSizePercentage" FullName="DocumentFormat.OpenXml.Drawing.BulletSizePercentage">
+<Type Name="BulletSizePercentage" FullName="DocumentFormat.OpenXml.Drawing.BulletSizePercentage">
   <TypeSignature Language="C#" Value="public class BulletSizePercentage : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BulletSizePercentage extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.BulletSizePercentage" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Bullet Size Percentage.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:buSzPct.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Bullet Size Percentage. When the object is serialized out as xml, its qualified name is a:buSzPct.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **buSzPct (Bullet Size Percentage)**  
+  
+ This element specifies the size in percentage of the surrounding text to be used on bullet characters within a given paragraph. The size is specified using a percentage where 1000 is equal to 1 percent of the font size and 100000 is equal to 100 percent font of the font size.  
+  
+ [*Example*: Consider the DrawingML shown below.  
+  
+```xml  
+<p:txBody>  
+  …  <a:p>  
+    <a:pPr …>  
+      <a:buSzPct val="111000"/>  
+    </a:pPr>  
+    …    <a:t>Bullet 1</a:t>  
+    …  </a:p  
+>  
+  …</p:txBody>  
+```  
+  
+ The size of the above bullet follows the text size in that it is always rendered at 111% the size of the text within the given text run. This is specified by val="111000", with a restriction on the values not being less than 25% or more than 400%. A value of 100000 is equal to 100%, similarly a value of 1000 is equal to 1%. This percentage size should only apply to the actual bullet character and not to the text within the bullet. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|defPPr (§21.1.2.2.2); lvl1pPr (§21.1.2.4.13); lvl2pPr (§21.1.2.4.14); lvl3pPr (§21.1.2.4.15); lvl4pPr (§21.1.2.4.16); lvl5pPr (§21.1.2.4.17); lvl6pPr (§21.1.2.4.18); lvl7pPr (§21.1.2.4.19); lvl8pPr (§21.1.2.4.20); lvl9pPr (§21.1.2.4.21); pPr (§21.1.2.2.7)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Value)|Specifies the percentage of the text size that this bullet should be. It is specified here in terms of 100% being equal to 100000 and 1% being specified in increments of 1000. This attribute should not be lower than 25%, or 25000 and not be higher than 400%, or 400000.<br /><br /> The possible values for this attribute are defined by the *ST_TextBulletSizePercent* simple type (§20.1.10.62).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextBulletSizePercent) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BulletSizePercentage class.
-            </summary>
+        <summary>Initializes a new instance of the BulletSizePercentage class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +141,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the percentage of the text size that this bullet should be. It is specified here in terms of 100% being equal to `100000` and 1% being specified in increments of `1000`. This attribute should not be lower than 25%, or `25000`, and not be higher than 400%, or `400000`.  
+  
+ The possible values for this attribute are defined by the `ST_TextBulletSizePercent` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

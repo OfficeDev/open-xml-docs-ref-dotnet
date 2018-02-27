@@ -1,4 +1,4 @@
-﻿<Type Name="PrintFormsData" FullName="DocumentFormat.OpenXml.Wordprocessing.PrintFormsData">
+<Type Name="PrintFormsData" FullName="DocumentFormat.OpenXml.Wordprocessing.PrintFormsData">
   <TypeSignature Language="C#" Value="public class PrintFormsData : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintFormsData extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PrintFormsData" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Only Print Form Field Content.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:printFormsData.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Only Print Form Field Content. When the object is serialized out as xml, its qualified name is w:printFormsData.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `printFormsData (Only Print Form Field Content)`  
+  
+ This element specifies that printing the contents of this document shall only print the contents of WordprocessingML form fields defined using the *FORMTEXT*, *FORMCHECKBOX*, and *FORMDROPDOWN* field codes in their current locations on the page - all other document contents shall be suppressed.  
+  
+ [*Rationale*: This setting is typically used to allow duplication of paper forms in electronic WordprocessingML document form, allowing the resulting online document to be printed into the correct locations on the existing paper form. *end rationale*]  
+  
+ If this element is omitted, then the contents of the entire document (not just form fields) should be printed according to the normal print settings.  
+  
+ [*Example*: Consider a WordprocessingML document which has form fields in the top right and bottom left corners of the first page, as follows (with the text box form fields shaded in grey):  
+  
+ be8baccf-86f0-4e82-922c-c5f369140902  
+  
+ If the only content which must be printed on the page are the form fields' contents, this requirement is specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:printFormsData w:val="true" />  
+```  
+  
+ The printFormsData element's val attribute as a value of *true*, specifying that only form field data shall be printed, resulting in output as follows when printed:  
+  
+ 65925a72-21e9-402f-920f-7e0475ea44b4  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PrintFormsData class.
-            </summary>
+        <summary>Initializes a new instance of the PrintFormsData class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

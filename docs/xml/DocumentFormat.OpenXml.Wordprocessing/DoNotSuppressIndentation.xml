@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotSuppressIndentation" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation">
+<Type Name="DoNotSuppressIndentation" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation">
   <TypeSignature Language="C#" Value="public class DoNotSuppressIndentation : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotSuppressIndentation extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressIndentation" />
@@ -18,11 +18,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Ignore Floating Objects When Calculating Paragraph Indentation.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotSuppressIndentation.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Ignore Floating Objects When Calculating Paragraph Indentation. When the object is serialized out as xml, its qualified name is w:doNotSuppressIndentation.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `doNotSuppressIndentation (Do Not Ignore Floating Objects When Calculating Paragraph Indentation)`  
+  
+ This element specifies whether applications should ignore the presence of floating objects when calculating the starting position of paragraphs which are wrapped around floating objects.  
+  
+ Typically, the presence of a floating object on the same line or lines as a paragraph shall only affect the text when the floating object occurs where that text would normally be presented. [*Example*: Text at a 1" indentation would only be displaced by a floating object that appears at that position and not one that appears from 0" to 0.5" on the same line. *end example*].  
+  
+ This element, when present with a val attribute value of *true* (or equivalent), specifies that floating objects shall always impact paragraphs on the same line in two ways:  
+  
+-   If the paragraph is not numbered, then it shall tightly wrap any floating object which precedes it on the same line, ignoring its own indentation settings. [*Example*: A paragraph with a 1" left indent shall tightly wrap a floating object which appears at only 0.25" on the same line. *end example*]  
+  
+-   If the paragraph is numbered using the numPr element (Part 1, §17.3.1.19), then it shall calculate and use its full indent relative to the edge of the floating object, not relative to the edge of the page. [*Example*: A numbered paragraph with a 1" left indent must appear 1.5" into the page if it is preceded by a floating object which appears at 0.5" on the same line. *end example*]  
+  
+ [*Example*: Consider a WordprocessingML document with a narrow floating object at 0.5" on the page, surrounded by both numbered and unnumbered paragraphs.  
+  
+ The default presentation would have no impact on the paragraphs based on that floating object, since the two do not intersect:  
+  
+ 7763e534-c7cb-49aa-b2a7-76f3ff243bd6  
+  
+ e8c7ee53-9599-41d3-a43c-ce7412d24f78  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotSuppressIndentation />  
+</w:compat>  
+```  
+  
+ Then the two alternate rules defined above would apply, resulting in the following output:  
+  
+ b8253d31-ef79-4502-a8ef-f12ebed8b46e  
+  
+ 191e2cbf-d836-4ac3-ba92-c0eca89b70fc  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotSuppressIndentation class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotSuppressIndentation class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +107,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +128,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

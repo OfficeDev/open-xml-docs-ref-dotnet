@@ -1,4 +1,4 @@
-﻿<Type Name="PixelsPerInch" FullName="DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch">
+<Type Name="PixelsPerInch" FullName="DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch">
   <TypeSignature Language="C#" Value="public class PixelsPerInch : DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PixelsPerInch extends DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PixelsPerInch" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the PixelsPerInch Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:pixelsPerInch.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the PixelsPerInch Class. When the object is serialized out as xml, its qualified name is w:pixelsPerInch.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **pixelsPerInch (Pixels per Inch for Graphics/Images)**  
+  
+ This element specifies the number of pixels per inch (or density) that is used for the display of pictures or table cells when a WordprocessingML document is saved as a web page. The size that is specified by this element affects the size of the pictures or table cells relative to the size of text in the document. The pixels per inch (ppi) measurement is relative to the screen resolution, and the resulting  physical dimensions of the resulting image or cell in pixels (which are used in web pages, but not for printed documents) are the result of the original dimensions (in inches) multiplied by the number of pixels per inch.  
+  
+ The range of values for this element is typically from 19 to 480 pixels per inch. The common settings for popular screen sizes are 72, 96, and 120 pixels per inch.  
+  
+ If this element is omitted, then a default size of 96 pixels per inch shall be used when determining the number of pixels for images and/or table cells within this document.  
+  
+ [*Note*: This setting is typically only specified if the target screen resolution for the web page is known, as defined by the targetScreenSz element (§17.15.2.42) to set the optimum screen size for the web page. *end note*]  
+  
+ [*Example*: Consider a WordprocessingML document which contains the following content within the web settings part:  
+  
+```xml  
+<w:webSettings>  
+  <w:pixelsPerInch w:val="200" />  
+</w:webSettings>  
+```  
+  
+ The pixelsPerInch element's val attribute has a value of *200*, which specifies that all inches to pixels conversions done when saving this web page must be done assuming a transformation of 200 pixels per inch. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|webSettings (§17.15.2.46)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PixelsPerInch class.
-            </summary>
+        <summary>Initializes a new instance of the PixelsPerInch class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="FootnoteReferenceMark" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteReferenceMark">
+<Type Name="FootnoteReferenceMark" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteReferenceMark">
   <TypeSignature Language="C#" Value="public class FootnoteReferenceMark : DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FootnoteReferenceMark extends DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FootnoteReferenceMark" />
@@ -18,11 +18,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Footnote Reference Mark.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:footnoteRef.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Footnote Reference Mark. When the object is serialized out as xml, its qualified name is w:footnoteRef.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `footnoteRef (Footnote Reference Mark)`  
+  
+ This element specifies the presence of a footnote reference mark. A *footnote reference mark* is a run of automatically numbered text which follows the numbering format set forth via the footnote numFmt element (§17.11.18).  
+  
+ If a footnote reference mark is specified within a run which is not part of a footnote, then that footnote reference mark can be ignored.  
+  
+ [*Example*: Consider the following document where some text is referenced by a footnote at the end of the page:  
+  
+ 63a08b25-84f7-405a-b858-cbfc71f1677b  
+  
+ The footnote reference mark is the decimal number within the actual footnote itself in the image above. The contents of the footnote (including the footnote reference mark) are represented by the following WordprocessingML:  
+  
+```xml  
+<w:footnote w:id="2">  
+  <w:p>  
+    <w:pPr>  
+      <w:pStyle w:val="FootnoteText" />  
+    </w:pPr>  
+    <w:r>  
+      <w:rPr>  
+        <w:rStyle w:val="FootnoteReference" />  
+      </w:rPr>  
+      <w:footnoteRef />  
+    </w:r>  
+    <w:r>  
+      <w:t>  
+Cool reference</w:t>  
+    </w:r>  
+  </w:p>  
+</w:footnote>  
+```  
+  
+ The resulting footnote contains the literal endnote content of *Cool reference*, preceding by an automatically numbered footnote reference mark. Since this is the first footnote in the document, that automatically numbered reference mark uses the first decimal number *1*. It is also important to note that the use of styles *FootnoteText* and *FootnoteReference* is not required, these can simply be added by a particular producer automatically to give the footnote contents are particular style (just like any other use of styles). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Empty) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FootnoteReferenceMark class.
-            </summary>
+        <summary>Initializes a new instance of the FootnoteReferenceMark class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

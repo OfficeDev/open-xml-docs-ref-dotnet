@@ -1,4 +1,4 @@
-﻿<Type Name="ConnectString" FullName="DocumentFormat.OpenXml.Wordprocessing.ConnectString">
+<Type Name="ConnectString" FullName="DocumentFormat.OpenXml.Wordprocessing.ConnectString">
   <TypeSignature Language="C#" Value="public class ConnectString : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectString extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ConnectString" />
@@ -18,11 +18,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Data Source Connection String.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:connectString.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Data Source Connection String. When the object is serialized out as xml, its qualified name is w:connectString.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **connectString (Data Source Connection String)**  
+  
+ This element specifies the connection string used to reconnect to an external data source. The string within this element's val attribute shall contain the connection string that the hosting application shall pass to a external data source access application to enable the WordprocessingML document to be reconnected to the specified external data source.  
+  
+ [*Note*: This string is generally comprised of a series of name/value pairs, delimited by semicolons, determined by the data source access application and the external data source that is accessed. *end note*]  
+  
+ If this string is omitted, then no legacy connection string shall be associated with this mail merge.  
+  
+ This connection string should be ignored under the following conditions:  
+  
+-   The udl element (§17.14.34) is present within the mail merge data  
+  
+-   The dataType element (§17.14.10) is set to *native*  
+  
+-   The current application is able to use the information contained in the odso element (§17.14.25) to access the data source  
+  
+ [*Guidance*: In this case, using the connection string in the udl element provides an equal or greater amount of connection information for the mail merge data source for clients which support it. *end guidance*]  
+  
+ [*Example*: Consider a merged WordprocessingML document that has been connected to an external data source for the purposes of a mail merge. The following WordprocessingML fragment represents the legacy connection string used to connect to the external data source when the merged WordprocessingML document is reopened:  
+  
+```xml  
+<w:connectString w:val="Provider=Example;Password=Test;User ID=readonly;…" />  
+```  
+  
+ The connectString element specifies that the string *Provider=Example;Password=Test;User ID=readonly;…* must be used to enable the given WordprocessingML document to be reconnected to the specified external data source. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ConnectString class.
-            </summary>
+        <summary>Initializes a new instance of the ConnectString class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

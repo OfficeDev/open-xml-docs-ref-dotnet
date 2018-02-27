@@ -1,4 +1,4 @@
-﻿<Type Name="EndnoteDocumentWideProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties">
+<Type Name="EndnoteDocumentWideProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties">
   <TypeSignature Language="C#" Value="public class EndnoteDocumentWideProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndnoteDocumentWideProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.EndnoteDocumentWideProperties" />
@@ -33,13 +33,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Document-Wide Endnote Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:endnotePr.</para>
-    </summary>
+    <summary>Document-Wide Endnote Properties. When the object is serialized out as xml, its qualified name is w:endnotePr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>EndnotePosition &lt;w:pos&gt;</description></item><item><description>NumberingFormat &lt;w:numFmt&gt;</description></item><item><description>NumberingStart &lt;w:numStart&gt;</description></item><item><description>NumberingRestart &lt;w:numRestart&gt;</description></item><item><description>EndnoteSpecialReference &lt;w:endnote&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `endnotePr (Document-Wide Endnote Properties)`  
+  
+ This element specifies the endnote properties for the current document. Each of these properties are stored as a child element within the endnotePr element.  
+  
+ These properties can be overridden for a specific section via the section-wide endnotePr element (§17.11.5).  
+  
+ [*Example*: Consider the following document with two sections, where the endnotes for each section appears at the end of that section and use lower case roman numerals:  
+  
+ dd357b9f-1dbc-4a52-bba4-4e2de68f7f8e  
+  
+ Since both sections are identical, the endnote properties are specified as document-wide level properties (this is not necessary but is most efficient) as follows:  
+  
+```xml  
+<w:settings>  
+  …    
+  <w:endnotePr>  
+    <w:numFmt w:val="lowerRoman" />  
+    <w:pos w:val="sectEnd"/>  
+  </w:endnotePr>  
+  …   
+</w:settings>  
+```  
+  
+ Note that the pos element could have been omitted since it is using its default value. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|endnote (Special Endnote List)|§17.11.3|  
+|numFmt (Endnote Numbering Format)|§17.11.17|  
+|numRestart (Footnote and Endnote Numbering Restart Location)|§17.11.19|  
+|numStart (Footnote and Endnote Numbering Starting Value)|§17.11.20|  
+|pos (Endnote Placement)|§17.11.22|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_EdnDocProps) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EndnoteDocumentWideProperties class.
-            </summary>
+        <summary>Initializes a new instance of the EndnoteDocumentWideProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +123,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EndnoteDocumentWideProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the EndnoteDocumentWideProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +143,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EndnoteDocumentWideProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the EndnoteDocumentWideProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +163,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the EndnoteDocumentWideProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the EndnoteDocumentWideProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +185,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,10 +206,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.EndnotePosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Endnote Placement.</para>
-          <para> Represents the following element tag in the schema: w:pos </para>
-        </summary>
+        <summary>Endnote Placement. Represents the following element tag in the schema: w:pos</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -199,10 +229,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,10 +249,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingFormat</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Endnote Numbering Format.</para>
-          <para> Represents the following element tag in the schema: w:numFmt </para>
-        </summary>
+        <summary>Endnote Numbering Format. Represents the following element tag in the schema: w:numFmt</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -247,10 +272,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingRestart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Footnote and Endnote Numbering Restart Location.</para>
-          <para> Represents the following element tag in the schema: w:numRestart </para>
-        </summary>
+        <summary>Footnote and Endnote Numbering Restart Location. Represents the following element tag in the schema: w:numRestart</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -273,10 +295,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingStart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Footnote and Endnote Numbering Starting Value.</para>
-          <para> Represents the following element tag in the schema: w:numStart </para>
-        </summary>
+        <summary>Footnote and Endnote Numbering Starting Value. Represents the following element tag in the schema: w:numStart</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

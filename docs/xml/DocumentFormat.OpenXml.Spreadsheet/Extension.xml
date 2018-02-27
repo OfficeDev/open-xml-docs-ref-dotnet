@@ -1,4 +1,4 @@
-﻿<Type Name="Extension" FullName="DocumentFormat.OpenXml.Spreadsheet.Extension">
+<Type Name="Extension" FullName="DocumentFormat.OpenXml.Spreadsheet.Extension">
   <TypeSignature Language="C#" Value="public class Extension : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Extension extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Extension" />
@@ -18,13 +18,62 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Extension.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:ext.</para>
-    </summary>
+    <summary>Extension. When the object is serialized out as xml, its qualified name is x:ext.</summary>
     <remarks>
-            The following table lists the possible child types:
-            <list type="bullet" /></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **ext (Extension)**  
+  
+ Each extension within an extension list shall be contained within an ext element. Extensions shall be versioned by namespace, using the uri attribute, and shall be allowed to appear in any order within the extension list. Any number of extensions shall be allowed within an extension list.  
+  
+ When extension lists are processed, a consumer might understand some extensions, and might not understand other extensions. The preservation model for extensions is that unprocessed extensions shall always be preserved (when consuming) and written out (when producing) in whole, as long as the underlying schema extended by the extension list remains. [*Example*: If a spreadsheetML sheet contains several extensions within an extension list, and through runtime processing that sheet is removed from the workbook, then the extensions associated with that sheet must not be written out when producing the resulting markup document. *end example*].  
+  
+ Markup namespaces within extensions shall not be required to be listed in the Ignorable Compatibility-Rule attribute, nor shall these namespaces be required to be listed in the PreserveElements and PreserveAttributes Compatibility-Rule attributes. [*Note*: See Part 3 for additional discussion on Application-Defined Extension Elements and processing rules. *end note*]  
+  
+ [*Example*:  
+  
+ In this example, there are two extensions written. The first extension describes a new structure that might have been defined by a fictitious second version of /IEC 29500. The second extension describes a structure that might be introduced by a private party, developed independently from /IEC 29500.  
+  
+```xml  
+<extLst>  
+  <ext uri='http://schemas.openxmlformats.org/spreadsheetml/versionTwoExtension'>  
+    <v2:newContent xmln:v2='http://schemas.openxmlformats.org/spreadsheetml/versionTwoExtension'>  
+      …  
+    </v2:newContent>  
+  </ext>  
+  <ext uri='http://www.extension.com/versionOneExtension'>  
+    <v2:moreContent xmlsn:v2='http://www.extension.com/versionOneExtension'>  
+      …  
+    </v2:moreContent>  
+  </ext>  
+</extList>  
+```  
+  
+ *end example*]  
+  
+ Each extension has an uri attribute, which serves as an identifier to indicate information about the extension.  [*Note*: For example, the uri might state the version of a markup specification to which the content conforms, or it might state the version of a producing application that wrote the content. *end note*] Upon encountering extensions, a processing consumer shall determine whether it knows how to process extensions using the value of the uri.  If the consumer knows how to process such an extension, the markup contained within that extension is processed. Otherwise, the extension content shall be preserved so long as the underlying structure being extended by the extLst has not been removed.  
+  
+|Parent Elements|  
+|---------------------|  
+|extLst (§18.2.10)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|Any element in any namespace|n/a|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|uri (URI)|A token to identify version and application information for this particular extension.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *token* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Extension) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +88,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Extension class.
-            </summary>
+        <summary>Initializes a new instance of the Extension class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,9 +114,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Extension class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Extension class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,9 +134,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Extension class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Extension class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +154,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Extension class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Extension class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,11 +176,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,10 +197,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -185,11 +222,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> URI.</para>
-          <para>Represents the following attribute in the schema: uri </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>URI.Represents the following attribute in the schema: uri</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

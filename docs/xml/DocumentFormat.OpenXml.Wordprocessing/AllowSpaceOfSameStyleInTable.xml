@@ -1,4 +1,4 @@
-﻿<Type Name="AllowSpaceOfSameStyleInTable" FullName="DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable">
+<Type Name="AllowSpaceOfSameStyleInTable" FullName="DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable">
   <TypeSignature Language="C#" Value="public class AllowSpaceOfSameStyleInTable : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AllowSpaceOfSameStyleInTable extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AllowSpaceOfSameStyleInTable" />
@@ -18,11 +18,58 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Allow Contextual Spacing of Paragraphs in Tables.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:allowSpaceOfSameStyleInTable.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Allow Contextual Spacing of Paragraphs in Tables. When the object is serialized out as xml, its qualified name is w:allowSpaceOfSameStyleInTable.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `allowSpaceOfSameStyleInTable (Allow Contextual Spacing of Paragraphs in Tables)`  
+  
+ This element specifies whether the suppression of additional space (contextual spacing) defined using the contextualSpacing element (Part 1, §17.3.1.9) shall be applied to paragraphs contained within tables.  
+  
+ Typically, the rules for the removal of additional paragraph spacing via the contextualSpacing element are applied to all paragraphs in a WordprocessingML document. This element, when present with a val attribute value of *true* (or equivalent), specifies that this setting shall always be ignored for paragraphs in table cells (and additional spacing shall be allowed).  
+  
+ [*Example*: Consider a WordprocessingML document with a default paragraph style with additional spacing after and contextual spacing set, as follows:  
+  
+```xml  
+<w:style w:name="Normal" w:default="1">  
+  …  <w:pPr>  
+    <w:spacing w:after="200" />  
+    <w:contextualSpacing />  
+  </w:pPr>  
+</w:style>  
+```  
+  
+ The default presentation would have the spacing suppressed between all paragraphs, since they are all of the default paragraph style defined above (contextual spacing applies):  
+  
+ 3c5fe74f-44a6-4ba3-bbdd-e37f61b29650  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:allowSpaceOfSameStyleInTable />  
+</w:compat>  
+```  
+  
+ Then the paragraphs in the table never have their spacing suppressed, resulting in the following output:  
+  
+ 557d91e9-b5f6-4e5b-9623-545e82ee7ef9  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +84,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AllowSpaceOfSameStyleInTable class.
-            </summary>
+        <summary>Initializes a new instance of the AllowSpaceOfSameStyleInTable class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +106,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +127,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

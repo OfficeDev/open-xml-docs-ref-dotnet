@@ -1,4 +1,4 @@
-﻿<Type Name="AccentChar" FullName="DocumentFormat.OpenXml.Math.AccentChar">
+<Type Name="AccentChar" FullName="DocumentFormat.OpenXml.Math.AccentChar">
   <TypeSignature Language="C#" Value="public class AccentChar : DocumentFormat.OpenXml.Math.CharType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccentChar extends DocumentFormat.OpenXml.Math.CharType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.AccentChar" />
@@ -18,11 +18,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Accent Character.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:chr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Accent Character. When the object is serialized out as xml, its qualified name is m:chr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **chr (Character)**  
+  
+ This element specifies the character to be attached to the base of an accent object, a group character object, or an n-ary operator object. When the parent element is accPr, the chr value should be within the range of (U+0300–U+036F) or (U+20D0–U+20EF). When the parent element is groupChrPr, the chr value should be a horizontal stretch character, such as U+2190 (LEFTWARD ARROW). When the parent element is naryPr, the chr value should be an n-ary operator such as U+222B (INTEGRAL).  
+  
+ When the element is present and the val attribute is absent, the default of the val attribute is empty which means the corresponding objects character is absent.  
+  
+ If this property is omitted for accPr, the default accent character is U+0302 (ACCENT, COMBINING CIRCUMFLEX). If this property is omitted for groupChrPr, the default character is U+23DF (BOTTOM CURLY BRACKET). If this property is omitted for naryPr, the default character is U+222B (INTEGRAL).  
+  
+ In other words, when the element is absent, the defaults are as follows:  
+  
+-   accent object – Unicode character U+0302 (ACCENT, COMBINING CIRCUMFLEX)  
+  
+-   group-character object – Unicode character U+23DF (BOTTOM CURLY BRACKET)  
+  
+-   n-ary operator object – Unicode character U+222B (INTEGRAL)  
+  
+ [*Example*: Examples of accent characters are the dot, hat, and arrow in the following cases: .  
+  
+ For example, the following XML represents the acc .  
+  
+```xml  
+<m:acc>   <m:accPr>  
+    <m:chr m:val="&#771;"/>  
+  </m:accPr>  
+  <m:e>  
+    <m:r>  
+      <m:t>a</m:t>  
+    </m:r>  
+  </m:e>  
+</m:acc>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|accPr (§22.1.2.2); groupChrPr (§22.1.2.42); naryPr (§22.1.2.72)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Char) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AccentChar class.
-            </summary>
+        <summary>Initializes a new instance of the AccentChar class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

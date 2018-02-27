@@ -1,4 +1,4 @@
-﻿<Type Name="SuppressBottomSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing">
+<Type Name="SuppressBottomSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing">
   <TypeSignature Language="C#" Value="public class SuppressBottomSpacing : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SuppressBottomSpacing extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SuppressBottomSpacing" />
@@ -18,11 +18,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Ignore Exact Line Height for Last Line on Page.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:suppressBottomSpacing.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Ignore Exact Line Height for Last Line on Page. When the object is serialized out as xml, its qualified name is w:suppressBottomSpacing.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `suppressBottomSpacing (Ignore Exact Line Height for Last Line on Page)`  
+  
+ This element specifies whether an exact line height specified using the spacing element (Part 1, §17.3.1.33) with a lineRule attribute value of *exact* shall be ignored for the last line on each page.  
+  
+ Typically, if an exact line height has been specified using the spacing element, then all lines within that paragraph have the necessary line spacing added to them in order to meet this constraint. This element, when present with a val attribute value of *true* (or equivalent), specifies that no additional spacing shall be added below the last line on each page as a result of these line spacing requirements - a line shall be placed on the bottom of the page if its characters fit on that page ignoring the necessary space after.  
+  
+ [*Example*: Consider a WordprocessingML document whose first paragraph has a line spacing setting requiring exactly 48 points of space per line:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:line="960" w:lineRule="exact" />  
+  </w:pPr>  
+  …</w:p>  
+```  
+  
+ The default presentation would have the necessary amount of space added between each line such that all lines in the paragraph are centered within 48 points of spacing:  
+  
+ 49d94639-f534-4cd0-a524-3eedae59212e  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:suppressBottomSpacing />  
+</w:compat>  
+```  
+  
+ Then that constraint must be lifted for the last line on the page (although all other lines are unaffected), resulting in the following output:  
+  
+ 8102bf87-72b9-403f-8bc2-078b7883c526  
+  
+ The first line from the following page was moved on the first page, as without being subjected to the line height constraint, it is possible to fit it at the bottom of the first page. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SuppressBottomSpacing class.
-            </summary>
+        <summary>Initializes a new instance of the SuppressBottomSpacing class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

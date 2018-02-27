@@ -1,4 +1,4 @@
-﻿<Type Name="FitText" FullName="DocumentFormat.OpenXml.Wordprocessing.FitText">
+<Type Name="FitText" FullName="DocumentFormat.OpenXml.Wordprocessing.FitText">
   <TypeSignature Language="C#" Value="public class FitText : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FitText extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FitText" />
@@ -18,11 +18,42 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the FitText Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:fitText.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the FitText Class. When the object is serialized out as xml, its qualified name is w:fitText.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **fitText (Manual Run Width)**  
+  
+ This element specifies that the contents of this run shall not be automatically displayed based on the width of its contents, rather its contents shall be resized to fit the width specified by the val attribute. This expansion/contraction shall be performed by equally increasing/decreasing the size of each character in this run's contents when displayed.  
+  
+ If this element is omitted, then the contents of this run shall be displayed based on the size of its contents.  
+  
+ [*Example*: Consider a document with a run which must be displayed in exactly one-half inch of space, regardless of its contents. This constraint would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:fitText w:id="50" w:val="720" />  
+  </w:rPr>  
+  <w:t>This text must be displayed in one-half of an inch.</w:t>  
+</w:r>  
+```  
+  
+ The resulting run contents must be displayed in exactly *720* twentieths of a point (one half of an inch) when displayed in a document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FitText) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FitText class.
-            </summary>
+        <summary>Initializes a new instance of the FitText class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +90,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,12 +116,52 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Fit Text Run ID.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Fit Text Run ID.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique ID which shall be used to link multiple contiguous runs containing `fitText` elements to each other to ensure that their contents are correctly merged into the specified width in the document.  
+  
+ This means that multiple runs which are broken apart due to differences in formatting can be identified as belonging to the same grouping in terms of `fitText` properties, although they are multiple runs of text in the WordprocessingML.  
+  
+ If the runs are not contiguous, then the `id` attribute is ignored, and the runs are not linked.  
+  
+ If this attribute is omitted, then this run has no id and shall not be linked with any other run in the parent paragraph.  
+  
+ Consider the following three runs in a document, which should be fit into exactly one inch at display time:  
+  
+```  
+<w:r>  
+  <w:rPr>  
+    <w:fitText w:id="99" w:val="1440" />   
+  </w:rPr>  
+  <w:t>fit this into</w:t>   
+</w:r>  
+<w:r>  
+  <w:rPr>  
+    <w:b/>   
+    <w:fitText w:id="99" w:val="1440" />   
+   </w:rPr>  
+  <w:t>one</w:t>   
+</w:r>  
+<w:r>  
+  <w:rPr>  
+    <w:fitText w:id="99" w:val="1440" />   
+   </w:rPr>  
+  <w:t>inch</w:t>   
+</w:r>  
+```  
+  
+ Although there are three runs of content, all three regions shall be combined into a single fit text region (e.g. they all fit into one inch, rather than one inch each) based on the identical value used in the `id` attribute for all three runs.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -114,10 +181,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,12 +206,33 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies the exact width of space which this run shall be fit into when displayed in the document.  
+  
+ Consider a document with a run which shall be displayed in exactly one-half inch of space, regardless of its contents. This constraint would be specified using the following WordprocessingML:  
+  
+```  
+<w:r>  
+  <w:rPr>  
+    <w:fitText w:id="50" w:val="720" />  
+  </w:rPr>  
+  <w:t>This text shall be displayed in one-half of an inch.</w:t>  
+</w:r>  
+```  
+  
+ The resulting run contents shall be displayed in exactly `720` twentieths of a point (one half of an inch) when displayed in a document.  
+  
+ The possible values for this attribute are defined by the `ST_TwipsMeasure` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

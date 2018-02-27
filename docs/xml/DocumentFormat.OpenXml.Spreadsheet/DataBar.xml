@@ -1,4 +1,4 @@
-﻿<Type Name="DataBar" FullName="DocumentFormat.OpenXml.Spreadsheet.DataBar">
+<Type Name="DataBar" FullName="DocumentFormat.OpenXml.Spreadsheet.DataBar">
   <TypeSignature Language="C#" Value="public class DataBar : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataBar extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.DataBar" />
@@ -24,13 +24,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Data Bar.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:dataBar.</para>
-    </summary>
+    <summary>Data Bar. When the object is serialized out as xml, its qualified name is x:dataBar.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ConditionalFormatValueObject &lt;x:cfvo&gt;</description></item><item><description>Color &lt;x:color&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **dataBar (Data Bar)**  
+  
+ Describes a data bar conditional formatting rule.  
+  
+ *[Example:*  
+  
+ In this example a data bar conditional format is expressed, which spreads across all cell values in the cell range, and whose color is blue.  
+  
+```xml  
+<dataBar>  
+  <cfvo type="min" val="0"/>  
+  <cfvo type="max" val="0"/>  
+  <color rgb="FF638EC6"/>  
+</dataBar>  
+```  
+  
+ *end example*]  
+  
+ The length of the data bar for any cell can be calculated as follows:  
+  
+ Data bar length = minLength + (cell value - minimum value in the range) / (maximum value in the range - minimum value in the range) * (maxLength - minLength),  
+  
+ where min and max length are a fixed percentage of the column width (by default, 10% and 90% respectively.)  
+  
+ The minimum difference in length (or increment amount) is 1 pixel.  
+  
+|Parent Elements|  
+|---------------------|  
+|cfRule (§18.3.1.10)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cfvo (Conditional Format Value Object)|§18.3.1.11|  
+|color (Data Bar Color)|§18.3.1.15|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|maxLength (Maximum Length)|The maximum length of the data bar, as a percentage of the cell width.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|minLength (Minimum Length)|The minimum length of the data bar, as a percentage of the cell width.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|showValue (Show Values)|Indicates whether to show the values of the cells on which this data bar is applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_DataBar) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +92,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DataBar class.
-            </summary>
+        <summary>Initializes a new instance of the DataBar class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +118,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataBar class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DataBar class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +138,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataBar class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DataBar class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +158,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DataBar class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DataBar class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +180,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -164,10 +201,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,11 +226,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximum Length.</para>
-          <para>Represents the following attribute in the schema: maxLength </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximum Length.Represents the following attribute in the schema: maxLength</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -219,11 +251,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Length.</para>
-          <para>Represents the following attribute in the schema: minLength </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum Length.Represents the following attribute in the schema: minLength</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -247,11 +276,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Values.</para>
-          <para>Represents the following attribute in the schema: showValue </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Values.Represents the following attribute in the schema: showValue</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

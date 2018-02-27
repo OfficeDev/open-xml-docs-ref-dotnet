@@ -1,4 +1,4 @@
-﻿<Type Name="ForEach" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.ForEach">
+<Type Name="ForEach" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.ForEach">
   <TypeSignature Language="C#" Value="public class ForEach : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ForEach extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Diagrams.ForEach" />
@@ -45,13 +45,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>For Each.</para>
-      <para> When the object is serialized out as xml, its qualified name is dgm:forEach.</para>
-    </summary>
+    <summary>For Each. When the object is serialized out as xml, its qualified name is dgm:forEach.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Algorithm &lt;dgm:alg&gt;</description></item><item><description>Shape &lt;dgm:shape&gt;</description></item><item><description>PresentationOf &lt;dgm:presOf&gt;</description></item><item><description>Constraints &lt;dgm:constrLst&gt;</description></item><item><description>RuleList &lt;dgm:ruleLst&gt;</description></item><item><description>ForEach &lt;dgm:forEach&gt;</description></item><item><description>LayoutNode &lt;dgm:layoutNode&gt;</description></item><item><description>Choose &lt;dgm:choose&gt;</description></item><item><description>ExtensionList &lt;dgm:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **forEach (For Each)**  
+  
+ A looping structure, similar to a *for* loop in a programming language, which defines what data model points use this layout node.  
+  
+ [*Example*:  Consider the following example of a forEach being used within a DrawingML diagram:  
+  
+```xml  
+<forEach name="Name5" ref="" axis="ch" ptType="node">  
+<layoutNode name="node1" styleLbl="" moveWith="">  
+<alg type="sp"/>  
+<shape xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:blip="">  
+<adjLst/>  
+</shape>  
+<constrLst/>  
+</layoutNode>  
+</forEach>  
+```  
+  
+ In this example, the forEach element creates a layout node, referenced by the name *node1*, for every associated data model point in the diagram.  In this particular instance the forEach creates the layout node for every child of the current point node.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|else (§21.4.2.12); forEach (§21.4.2.14); if (§21.4.2.15); layoutNode (§21.4.2.19)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|alg (Algorithm)|§21.4.2.3|  
+|choose (Choose Element)|§21.4.2.6|  
+|constrLst (Constraint List)|§21.4.2.9|  
+|extLst (Extension List)|§21.4.2.13|  
+|forEach (For Each)|§21.4.2.14|  
+|layoutNode (Layout Node)|§21.4.2.19|  
+|presOf (Presentation Of)|§21.4.2.21|  
+|ruleLst (Rule List)|§21.4.2.25|  
+|shape (Shape)|§21.4.2.27|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_ForEach) is located in §A.5.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -66,9 +108,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ForEach class.
-            </summary>
+        <summary>Initializes a new instance of the ForEach class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -94,9 +134,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ForEach class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ForEach class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,9 +154,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ForEach class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ForEach class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,9 +174,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ForEach class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ForEach class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -164,11 +198,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.AxisValues&gt;&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Axis.</para>
-          <para>Represents the following attribute in the schema: axis </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Axis.Represents the following attribute in the schema: axis</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -190,11 +221,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -218,11 +247,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.UInt32Value&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Count.</para>
-          <para>Represents the following attribute in the schema: cnt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Count.Represents the following attribute in the schema: cnt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -246,11 +272,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.BooleanValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hide Last Transition.</para>
-          <para>Represents the following attribute in the schema: hideLastTrans </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hide Last Transition.Represents the following attribute in the schema: hideLastTrans</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -269,10 +292,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -296,11 +317,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -324,11 +342,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues&gt;&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Point Type.</para>
-          <para>Represents the following attribute in the schema: ptType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Point Type.Represents the following attribute in the schema: ptType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -352,11 +367,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference.</para>
-          <para>Represents the following attribute in the schema: ref </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference.Represents the following attribute in the schema: ref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -380,11 +392,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.Int32Value&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Start.</para>
-          <para>Represents the following attribute in the schema: st </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Start.Represents the following attribute in the schema: st</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -408,12 +417,18 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.Int32Value&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Step.</para>
-          <para>Represents the following attribute in the schema: step </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Step.Represents the following attribute in the schema: step</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Specifies the step to use in a data set. A step with a value of `2` will return every other item in the set.  
+  
+ The possible values for this attribute are defined by the `ST_Ints` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

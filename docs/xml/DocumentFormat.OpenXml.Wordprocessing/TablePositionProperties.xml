@@ -1,4 +1,4 @@
-﻿<Type Name="TablePositionProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties">
+<Type Name="TablePositionProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties">
   <TypeSignature Language="C#" Value="public class TablePositionProperties : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TablePositionProperties extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties" />
@@ -18,11 +18,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TablePositionProperties Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblpPr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TablePositionProperties Class. When the object is serialized out as xml, its qualified name is w:tblpPr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **tblpPr (Floating Table Positioning)**  
+  
+ This element specifies information about the current table with regard to floating tables. *Floating tables* are tables in a document which are not part of the main text flow in the document, and are instead absolutely positioned with a specific size and position relative to non-frame content in the current document.  
+  
+ The first piece of information specified by the tblpPr element is that the current table is actually a floating table. This information is specified simply by the presence of the tblpPr element in table's properties. If the tblpPr element is omitted, the table shall not floating in the document.  
+  
+ The second piece of information is the positioning of the table, which is specified by the attribute values stored on the tblpPr element. In all absolute positioning cases, the positioning of the table is relative to its top-left corner position. For relative positioning (e.g. center), the positioning of the table is relative to its entire frame.  
+  
+ Note that the table still has a logical position in the file (its location within the block-level elements in the document). This logical location shall be used to calculate the position of the table relative to a paragraph, using the next regular (non-table, non-frame) paragraph in the document.  
+  
+ [*Example*: Consider a floating table which is positioned three inches from the edge of the page extents on both its top and left edges (i.e. the top-left corner occurs at 3" x 3"). This floating table would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblpPr w:leftFromText="144" w:rightFromText="144" w:topFromText="144" w:bottomFromText="144" w:vertAnchor="page" w:horzAnchor="page" w:tblpX="4320" w:tblpY="4320"/>  
+    …  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ The presence of the tblpPr element dictates that this table is a floating table, and its attributes specify that the floating table shall be anchored *4320* twentieths of a point () from the top and left edges of the current *page*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPr (§17.4.60); tblPr (§17.4.59); tblPr (§17.7.6.4); tblPr (§17.7.6.3)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblPPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TablePositionProperties class.
-            </summary>
+        <summary>Initializes a new instance of the TablePositionProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +95,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int16Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Distance From Bottom of Table to Text.</para>
-          <para>Represents the following attribute in the schema: w:bottomFromText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Distance From Bottom of Table to Text.Represents the following attribute in the schema: w:bottomFromText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -91,11 +120,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,11 +146,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Horizontal Anchor.</para>
-          <para>Represents the following attribute in the schema: w:horzAnchor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Horizontal Anchor.Represents the following attribute in the schema: w:horzAnchor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -149,11 +173,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int16Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Distance From Left of Table to Text.</para>
-          <para>Represents the following attribute in the schema: w:leftFromText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Distance From Left of Table to Text.Represents the following attribute in the schema: w:leftFromText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -174,10 +195,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,11 +220,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int16Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> (Distance From Right of Table to Text.</para>
-          <para>Represents the following attribute in the schema: w:rightFromText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>(Distance From Right of Table to Text.Represents the following attribute in the schema: w:rightFromText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -231,11 +247,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Absolute Horizontal Distance From Anchor.</para>
-          <para>Represents the following attribute in the schema: w:tblpX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Absolute Horizontal Distance From Anchor.Represents the following attribute in the schema: w:tblpX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -261,11 +274,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relative Horizontal Alignment From Anchor.</para>
-          <para>Represents the following attribute in the schema: w:tblpXSpec </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relative Horizontal Alignment From Anchor.Represents the following attribute in the schema: w:tblpXSpec</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -291,11 +301,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Absolute Vertical Distance From Anchor.</para>
-          <para>Represents the following attribute in the schema: w:tblpY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Absolute Vertical Distance From Anchor.Represents the following attribute in the schema: w:tblpY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -321,11 +328,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relative Vertical Alignment from Anchor.</para>
-          <para>Represents the following attribute in the schema: w:tblpYSpec </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relative Vertical Alignment from Anchor.Represents the following attribute in the schema: w:tblpYSpec</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -351,11 +355,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int16Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Distance From Top of Table to Text.</para>
-          <para>Represents the following attribute in the schema: w:topFromText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Distance From Top of Table to Text.Represents the following attribute in the schema: w:topFromText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -381,11 +382,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Vertical Anchor.</para>
-          <para>Represents the following attribute in the schema: w:vertAnchor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Vertical Anchor.Represents the following attribute in the schema: w:vertAnchor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

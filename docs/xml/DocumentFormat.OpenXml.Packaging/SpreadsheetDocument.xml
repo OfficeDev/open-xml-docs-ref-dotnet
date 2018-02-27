@@ -1,4 +1,4 @@
-﻿<Type Name="SpreadsheetDocument" FullName="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">
+<Type Name="SpreadsheetDocument" FullName="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">
   <TypeSignature Language="C#" Value="public class SpreadsheetDocument : DocumentFormat.OpenXml.Packaging.OpenXmlPackage" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpreadsheetDocument extends DocumentFormat.OpenXml.Packaging.OpenXmlPackage" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" />
@@ -13,10 +13,102 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            Defines SpreadsheetDocument - an OpenXmlPackage represents a Spreadsheet document.
-            </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines SpreadsheetDocument - an OpenXmlPackage represents a Spreadsheet document.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ The following example creates a basic Excel document, a workbook with one worksheet. After you run the code example, take a look at the created file, “SpreadsheetDocumentEx.xlsx,” and notice the worksheet named "mySheet.”  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace SpreadsheetDocumentEx  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"c:\Users\Public\Documents\SpreadsheetDocumentEx.xlsx";  
+  
+            // Create a spreadsheet document by supplying the file name.  
+            SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.  
+                Create(fileName, SpreadsheetDocumentType.Workbook);  
+  
+            // Add a WorkbookPart to the document.  
+            WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();  
+            workbookpart.Workbook = new Workbook();  
+  
+            // Add a WorksheetPart to the WorkbookPart.  
+            WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();  
+            worksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+            // Add Sheets to the Workbook.  
+            Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.  
+                AppendChild<Sheets>(new Sheets());  
+  
+            // Append a new worksheet and associate it with the workbook.  
+            Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.  
+                GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };  
+            sheets.Append(sheet);  
+  
+            // Close the document.  
+            spreadsheetDocument.Close();  
+  
+            Console.WriteLine("The spreadsheet document has been created.\nPress a key.");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+Module Module1  
+    Sub Main()  
+        ' Create a spreadsheet document by supplying the file name.  
+        Dim fileName As String = "c:\Users\Public\Documents\SpreadsheetDocumentEx.xlsx"  
+        Dim spreadsheetDocument As SpreadsheetDocument = _  
+      spreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook)  
+  
+        ' Add a WorkbookPart to the document.  
+        Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart  
+        workbookpart.Workbook = New Workbook  
+  
+        ' Add a WorksheetPart to the WorkbookPart.  
+        Dim worksheetPart As WorksheetPart = workbookpart.AddNewPart(Of WorksheetPart)()  
+        worksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+        ' Add Sheets to the Workbook.  
+        Dim sheets As Sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())  
+  
+        ' Append a new worksheet and associate it with the workbook.  
+        Dim sheet As Sheet = New Sheet  
+        sheet.Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart)  
+        sheet.SheetId = 1  
+        sheet.Name = "mySheet"  
+        sheets.Append(sheet)  
+        workbookpart.Workbook.Save()  
+  
+        ' Close the document.  
+        spreadsheetDocument.Close()  
+  
+        Console.WriteLine("The spreadsheet document has been created." +  
+                          ControlChars.Lf + "Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -31,9 +123,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Creates a SpreadsheetDocument.
-            </summary>
+        <summary>Creates a SpreadsheetDocument.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -53,9 +143,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Addd a CoreFilePropertiesPart to the SpreadsheetDocument.
-            </summary>
+        <summary>Addd a CoreFilePropertiesPart to the SpreadsheetDocument.</summary>
         <returns>The newly added CoreFilePropertiesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -76,9 +164,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Addd a CustomFilePropertiesPart to the SpreadsheetDocument.
-            </summary>
+        <summary>Addd a CustomFilePropertiesPart to the SpreadsheetDocument.</summary>
         <returns>The newly added CustomFilePropertiesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -99,9 +185,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Addd a DigitalSignatureOriginPart to the SpreadsheetDocument.
-            </summary>
+        <summary>Addd a DigitalSignatureOriginPart to the SpreadsheetDocument.</summary>
         <returns>The newly added DigitalSignatureOriginPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -122,9 +206,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Addd a ExtendedFilePropertiesPart to the SpreadsheetDocument.
-            </summary>
+        <summary>Addd a ExtendedFilePropertiesPart to the SpreadsheetDocument.</summary>
         <returns>The newly added ExtendedFilePropertiesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -158,11 +240,16 @@
         <typeparam name="T">The class of the part.</typeparam>
         <param name="contentType">The content type of the part. Must match the defined content type if the part is fixed content type.</param>
         <param name="id">The relationship id. The id will be automaticly generated if this param is null.</param>
-        <summary>
-            Adds a new part of type <typeparamref name="T" />.
-            </summary>
+        <summary>Adds a new part of type <paramref name="T" />.</summary>
         <returns>The added part.</returns>
-        <remarks>Mainly used for adding not-fixed content type part - ImagePart, etc.</remarks>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Mainly used for adding not-fixed content type part - ImagePart, VideoPart, AudioPart, etc  
+  
+ ]]></format>
+        </remarks>
         <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">When the part is not allowed to be referenced by this part.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">When the part is fixed content type and the passed in contentType does not match the defined content type.</exception>
         <exception cref="T:System.ArgumentNullException">Thrown when "contentType" is null reference.</exception>
@@ -184,9 +271,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a QuickAccessToolbarCustomizationsPart to the SpreadsheetDocument.
-            </summary>
+        <summary>Adds a QuickAccessToolbarCustomizationsPart to the SpreadsheetDocument.</summary>
         <returns>The newly added QuickAccessToolbarCustomizationsPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -207,9 +292,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a RibbonAndBackstageCustomizationsPart to the SpreadsheetDocument, this part is only available in Office2010.
-            </summary>
+        <summary>Adds a RibbonAndBackstageCustomizationsPart to the SpreadsheetDocument, this part is only available in Office2010.</summary>
         <returns>The newly added RibbonExtensibilityPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -230,9 +313,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a RibbonExtensibilityPart to the SpreadsheetDocument.
-            </summary>
+        <summary>Adds a RibbonExtensibilityPart to the SpreadsheetDocument.</summary>
         <returns>The newly added RibbonExtensibilityPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -255,10 +336,8 @@
         <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ThumbnailPartType" />
       </Parameters>
       <Docs>
-        <param name="partType">The type of the ThumbnailPart.</param>
-        <summary>
-            Adds a ThumbnailPart to the SpreadsheetDocument.
-            </summary>
+        <param name="partType">The type of the ThumbnailPart</param>
+        <summary>Adds a ThumbnailPart to the SpreadsheetDocument.</summary>
         <returns>The newly added ThumbnailPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -281,10 +360,8 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">The content type of the ThumbnailPart.</param>
-        <summary>
-            Addd a ThumbnailPart to the SpreadsheetDocument.
-            </summary>
+        <param name="contentType">the content type of the ThumbnailPart</param>
+        <summary>Addd a ThumbnailPart to the SpreadsheetDocument.</summary>
         <returns>The newly added ThumbnailPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -305,9 +382,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a WebExTaskpanesPart to the SpreadsheetDocument, this part is only available in Office2013.
-            </summary>
+        <summary>Adds a WebExTaskpanesPart to the SpreadsheetDocument, this part is only available in Office2013.</summary>
         <returns>The newly added WebExTaskpanesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -328,9 +403,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Created the WorkbookPart and add it to this document.
-            </summary>
+        <summary>Created the WorkbookPart and add it to this document.</summary>
         <returns>The newly added WorkbookPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -354,10 +427,15 @@
       </Parameters>
       <Docs>
         <param name="newType">The new type of the document.</param>
-        <summary>
-            Changes the document type.
-            </summary>
-        <remarks>The WorkbookPart will be changed.</remarks>
+        <summary>Changes the document type.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The WorkbookPart will be changed.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CoreFilePropertiesPart">
@@ -375,9 +453,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the CoreFilePropertiesPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the CoreFilePropertiesPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -400,11 +476,9 @@
         <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
       </Parameters>
       <Docs>
-        <param name="package">The specified OpenXml package.</param>
+        <param name="package">The specified OpenXml package</param>
         <param name="type">The type of the SpreadsheetDocument.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the spcified package.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
@@ -429,11 +503,9 @@
         <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
       </Parameters>
       <Docs>
-        <param name="stream">The IO stream on which to create the SpreadsheetDocument.</param>
+        <param name="stream">The IO stream on which to open the package.</param>
         <param name="type">The type of the SpreadsheetDocument.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -459,11 +531,9 @@
         <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
       </Parameters>
       <Docs>
-        <param name="path">The path and file name of the target SpreadsheetDocument.</param>
+        <param name="path">The path and file name of the target Package for the OpenXmlPackage.</param>
         <param name="type">The type of the SpreadsheetDocument.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -491,9 +561,7 @@
         <param name="package">The specified OpenXml package.</param>
         <param name="type">The type of the SpreadsheetDocument.</param>
         <param name="autoSave">Whether to auto save the created document.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the spcified package.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
@@ -522,9 +590,7 @@
         <param name="stream">The IO stream on which to create the SpreadsheetDocument.</param>
         <param name="type">The type of the SpreadsheetDocument.</param>
         <param name="autoSave">Whether to auto save the created document.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -554,9 +620,7 @@
         <param name="path">The path and file name of the target SpreadsheetDocument.</param>
         <param name="type">The type of the SpreadsheetDocument.</param>
         <param name="autoSave">Whether to auto save the created document.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -681,9 +745,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the CustomFilePropertiesPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the CustomFilePropertiesPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -703,9 +765,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the DigitalSignatureOriginPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the DigitalSignatureOriginPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -725,9 +785,7 @@
         <ReturnType>DocumentFormat.OpenXml.SpreadsheetDocumentType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the type of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the type of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -747,9 +805,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ExtendedFilePropertiesPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the ExtendedFilePropertiesPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1004,10 +1060,8 @@
         <Parameter Name="package" Type="System.IO.Packaging.Package" />
       </Parameters>
       <Docs>
-        <param name="package">The specified OpenXml package.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the spcified package.
-            </summary>
+        <param name="package">The specified OpenXml package</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
@@ -1035,9 +1089,7 @@
       <Docs>
         <param name="package">The specified OpenXml package.</param>
         <param name="openSettings">The advanced settings for opening a document.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the spcified package.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
@@ -1064,11 +1116,9 @@
         <Parameter Name="isEditable" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="stream">The IO stream on which to open the SpreadsheetDocument.</param>
+        <param name="stream">The IO stream on which to open the package.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -1095,11 +1145,9 @@
         <Parameter Name="isEditable" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="path">The path and file name of the target SpreadsheetDocument.</param>
+        <param name="path">The path and file name of the target Package for the OpenXmlPackage.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -1128,9 +1176,7 @@
         <param name="stream">The IO stream on which to open the SpreadsheetDocument.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
         <param name="openSettings">The advanced settings for opening a document.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -1161,9 +1207,7 @@
         <param name="path">The path and file name of the target SpreadsheetDocument.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
         <param name="openSettings">The advanced settings for opening a document.</param>
-        <summary>
-            Creates a new instance of the SpreadsheetDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
         <returns>A new instance of SpreadsheetDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -1244,9 +1288,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the QuickAccessToolbarCustomizationsPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the QuickAccessToolbarCustomizationsPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1271,9 +1313,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the RibbonAndBackstageCustomizationsPart of the SpreadsheetDocument, only available in Office2010.
-            </summary>
+        <summary>Gets the RibbonAndBackstageCustomizationsPart of the SpreadsheetDocument, only available in Office2010.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1293,9 +1333,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the RibbonExtensibilityPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the RibbonExtensibilityPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1315,9 +1353,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ThumbnailPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the ThumbnailPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1366,9 +1402,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WebExTaskpanesPart of the SpreadsheetDocument, only available in Office2013.
-            </summary>
+        <summary>Gets the WebExTaskpanesPart of the SpreadsheetDocument, only available in Office2013.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1388,9 +1422,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WorkbookPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WorkbookPart of the SpreadsheetDocument.
-            </summary>
+        <summary>Gets the WorkbookPart of the SpreadsheetDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

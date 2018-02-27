@@ -1,4 +1,4 @@
-﻿<Type Name="Box" FullName="DocumentFormat.OpenXml.Math.Box">
+<Type Name="Box" FullName="DocumentFormat.OpenXml.Math.Box">
   <TypeSignature Language="C#" Value="public class Box : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Box extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.Box" />
@@ -24,13 +24,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Box Function.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:box.</para>
-    </summary>
+    <summary>Box Function. When the object is serialized out as xml, its qualified name is m:box.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>BoxProperties &lt;m:boxPr&gt;</description></item><item><description>Base &lt;m:e&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **box (Box Object)**  
+  
+ This element specifies the box object, which is used to group components of an equation or other instance of mathematical text. A boxed object can (for example) serve as an operator emulator with or without an alignment point, serve as a line break point, have associated argSz, or be grouped such as not to allow line breaks within. If boxPr is omitted, all properties will be “false” by default.  
+  
+ [*Example*: The mathematical text  uses a box around the double equal sign.  
+  
+ Its XML representation is as follows:  
+  
+```xml  
+<m:r>  
+  <m:t>a</m:t>  
+</m:r>  
+<m:box>  
+  <m:boxPr>  
+    <m:opEmum:val="1"/>  
+    <m:aln/>  
+  </m:boxPr>  
+  <m:e>  
+      <m:r>  
+        <m:t>==</m:t>  
+      </m:r>  
+  </m:e>  
+</m:box>  
+<m:r>  
+  <m:t>  
+b</m:t>  
+</m:r>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|deg (§22.1.2.26); del (§17.13.5.14); den (§22.1.2.28); e (§22.1.2.32); fName (§22.1.2.37); ins (§17.13.5.18); lim (§22.1.2.52); moveFrom (§17.13.5.22); moveTo (§17.13.5.25); num (§22.1.2.75); oMath (§22.1.2.77); sub (§22.1.2.112); sup (§22.1.2.114)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|boxPr (Box Properties)|§22.1.2.14|  
+|e (Element (Argument))|§22.1.2.32|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Box) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +91,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Box class.
-            </summary>
+        <summary>Initializes a new instance of the Box class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +117,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Box class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Box class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +137,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Box class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Box class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +157,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Box class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Box class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +176,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.Base</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Base.</para>
-          <para> Represents the following element tag in the schema: m:e </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Base. Represents the following element tag in the schema: m:e</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.Base" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math
@@ -164,11 +199,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.BoxProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Box Properties.</para>
-          <para> Represents the following element tag in the schema: m:boxPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Box Properties. Represents the following element tag in the schema: m:boxPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.BoxProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math
@@ -193,11 +225,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -216,10 +246,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

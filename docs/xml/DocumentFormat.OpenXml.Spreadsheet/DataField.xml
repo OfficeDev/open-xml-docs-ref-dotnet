@@ -1,4 +1,4 @@
-﻿<Type Name="DataField" FullName="DocumentFormat.OpenXml.Spreadsheet.DataField">
+<Type Name="DataField" FullName="DocumentFormat.OpenXml.Spreadsheet.DataField">
   <TypeSignature Language="C#" Value="public class DataField : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataField extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.DataField" />
@@ -21,13 +21,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Data Field Item.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:dataField.</para>
-    </summary>
+    <summary>Data Field Item. When the object is serialized out as xml, its qualified name is x:dataField.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DataFieldExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `dataField (Data Field Item)`  
+  
+ Represents a field from a source list, table, or database that contains data that is summarized in a PivotTable.  
+  
+ 31cf3e83-d786-44cc-a73d-8fda196a364c  
+  
+ A data field represents data that is derived from a field in the source list or database. [*Example*: The Sport field, for example, might come from a column in the source list that is labeled Sport and contains the names of various sports (Golf, Tennis) for which the source list has sales figures. *end example*]  
+  
+ Source data can be taken from an SpreadsheetML list or range, an external database or cube, or another PivotTable. Data fields use summary functions  to combine values from the underlying source data. You can also use custom calculations  to compare data values, or add your own formulas that use elements of the report or other worksheet data.  
+  
+ *[Example:*  
+  
+```xml  
+<dataFields count="1">  
+  <dataField name="Sum of Sales Amount" fld="25" baseField="0" baseItem="0"/>  
+</dataFields>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|dataFields (§18.10.1.23)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|baseField ('Show Data As' Base Field)|Specifies the index to the base field when the *ShowDataAs* calculation is in use.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|baseItem ('Show Data As' Base Setting)|Specifies the index to the base item when the *ShowDataAs* calculation is in use.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|fld (Field)|Specifies the index to the field (\<r>) in the pivotCacheRecords part that this data item summarizes.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|name (Data Field Name)|Specifies the name of the data field.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|numFmtId (Number Format Id)|Specifies the index to the number format applied to this data field. Number formats are written to the styles part. See the Styles section(§18.8) for more information on number formats.<br /><br /> Formatting information provided by cell table and by PivotTable need not agree. If the two formats differ, the cell-level formatting takes precedence. If you change the layout the PivotTable, the PivotTable formatting will then take precedence.<br /><br /> The possible values for this attribute are defined by the *ST_NumFmtId* simple type (§18.18.47).|  
+|showDataAs (Show Data As Display Format)|Specifies the display format for this data field.<br /><br /> Formatting information provided by cell table and by PivotTable need not agree. If the two formats differ, the cell-level formatting takes precedence. If you change the  layout the PivotTable, the PivotTable formatting will then take precedence.<br /><br /> The possible values for this attribute are defined by the *ST_ShowDataAs* simple type (§18.18.70).|  
+|subtotal (Subtotal)|Specifies the aggregation function that applies to this data field.<br /><br /> The possible values for this attribute are defined by the *ST_DataConsolidateFunction* simple type (§18.18.17).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_DataField) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +86,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DataField class.
-            </summary>
+        <summary>Initializes a new instance of the DataField class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +112,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataField class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DataField class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +132,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataField class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DataField class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +152,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DataField class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DataField class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,11 +176,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> baseField.</para>
-          <para>Represents the following attribute in the schema: baseField </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>baseField.Represents the following attribute in the schema: baseField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,11 +201,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> baseItem.</para>
-          <para>Represents the following attribute in the schema: baseItem </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>baseItem.Represents the following attribute in the schema: baseItem</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,11 +224,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -217,10 +245,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.DataFieldExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> DataFieldExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
+        <summary>DataFieldExtensionList. Represents the following element tag in the schema: x:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -248,11 +273,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> fld.</para>
-          <para>Represents the following attribute in the schema: fld </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>fld.Represents the following attribute in the schema: fld</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -271,10 +293,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -298,11 +318,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -326,11 +343,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> numFmtId.</para>
-          <para>Represents the following attribute in the schema: numFmtId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>numFmtId.Represents the following attribute in the schema: numFmtId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -354,11 +368,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ShowDataAsValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> showDataAs.</para>
-          <para>Represents the following attribute in the schema: showDataAs </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>showDataAs.Represents the following attribute in the schema: showDataAs</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -382,11 +393,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.DataConsolidateFunctionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> subtotal.</para>
-          <para>Represents the following attribute in the schema: subtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>subtotal.Represents the following attribute in the schema: subtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

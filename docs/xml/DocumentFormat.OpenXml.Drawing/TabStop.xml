@@ -1,4 +1,4 @@
-﻿<Type Name="TabStop" FullName="DocumentFormat.OpenXml.Drawing.TabStop">
+<Type Name="TabStop" FullName="DocumentFormat.OpenXml.Drawing.TabStop">
   <TypeSignature Language="C#" Value="public class TabStop : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TabStop extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.TabStop" />
@@ -18,11 +18,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Tab Stop.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:tab.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Tab Stop. When the object is serialized out as xml, its qualified name is a:tab.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **tab (Tab Stop)**  
+  
+ This element specifies a single tab stop to be used on a line of text when there are one or more tab characters present within the text. When there is more than one present than they should be utilized in increasing position order which is specified via the pos attribute.  
+  
+ [*Example*: Consider the DrawingML shown below.  
+  
+```xml  
+<p:txBody>  
+  …  <a:p>  
+    <a:pPr …>  
+      <a:tabLst>  
+        <a:tab pos="2292350" algn="l"/>  
+        <a:tab pos="2627313" algn="l"/>  
+        <a:tab pos="2743200" algn="l"/>  
+        <a:tab pos="2974975" algn="l"/>  
+      </a:tabLst>  
+    </a:pPr>  
+    …    <a:t>Sample Text</a:t>  
+    …  </a:p  
+>  
+  …</p:txBody>  
+```  
+  
+ The paragraph within which this \<a:tab> information resides has a total of 4 unique tab stops that should be listed in order of increasing position. Along with specifying the tab position each tab allows for the specifying of an alignment. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tabLst (§21.1.2.2.14)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|algn (Tab Alignment)|Specifies the alignment that is to be applied to text using this tab stop. If this attribute is omitted then the application default for the generating application.<br /><br /> The possible values for this attribute are defined by the *ST_TextTabAlignType* simple type (§20.1.10.80).|  
+|pos (Tab Position)|Specifies the position of the tab stop relative to the left margin. If this attribute is omitted then the application default for tab stops is used.<br /><br /> The possible values for this attribute are defined by the *ST_Coordinate32* simple type (§20.1.10.17).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextTabStop) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TabStop class.
-            </summary>
+        <summary>Initializes a new instance of the TabStop class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +103,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Tab Alignment.</para>
-          <para>Represents the following attribute in the schema: algn </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Tab Alignment.Represents the following attribute in the schema: algn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +126,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -112,10 +147,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -139,11 +172,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Tab Position.</para>
-          <para>Represents the following attribute in the schema: pos </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Tab Position.Represents the following attribute in the schema: pos</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

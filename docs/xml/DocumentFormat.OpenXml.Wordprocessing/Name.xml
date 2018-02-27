@@ -1,4 +1,4 @@
-﻿<Type Name="Name" FullName="DocumentFormat.OpenXml.Wordprocessing.Name">
+<Type Name="Name" FullName="DocumentFormat.OpenXml.Wordprocessing.Name">
   <TypeSignature Language="C#" Value="public class Name : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Name extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Name" />
@@ -18,11 +18,73 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Data Source Name for Column.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:name.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Data Source Name for Column. When the object is serialized out as xml, its qualified name is w:name.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **name (Category Associated With Entry)**  
+  
+ This element specifies the category into which the current glossary document part shall be classified. This classification can consist of any string value as determined by its contents, and shall only be used to classify and sort this entry (via an application or a user interface).  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the properties of a single glossary document entry:  
+  
+```xml  
+<w:docPartPr>  
+  <w:category>  
+    <w:gallery w:val="coverPg" />  
+    <w:name w:val="Internal Memo Covers" />  
+  </w:category>  
+  …</w:docPartPr>  
+```  
+  
+ The name element with a value of *Internal Memo Covers* specifies that the category grouping applied to the current entry, for the purposes of classification or user interface sorting, puts this entry into the *Internal Memo Covers* classification. This category can be used as desired. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|category (§17.12.3)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **name (Data Source Name for Column)**  
+  
+ This element specifies the column name within a given external data source for the column whose index is specified via the column element (§17.14.6). This data source name provides a column name which shall be used to map a specific *MERGEFIELD* field in the document, as specified by the parent field mapping data. The val attribute specifies the name of this column in the data source when the connection is initially established, which is then used permanently to link columns in the database to *MERGEFIELD* fields in the document.  
+  
+ If this element is omitted, no data source name is provided for the current column.  
+  
+ [*Example*: Consider a source document that is connected to an external data source with three columns. Within this external data source, these are three columns are ordered and titled as follows: *first*, *middle*, and *last*, respectively.  The following WordprocessingML specifies that when this document was connected to the data source, these columns were ordered in this manner:  
+  
+```xml  
+<w:fieldMapData>  
+  …  <w:name w:val="first" />  
+  <w:column w:val="0" />  
+</w:fieldMapData>  
+<w:fieldMapData>  
+  …  <w:name w:val="middle" />  
+  <w:column w:val="1" />  
+</w:fieldMapData>  
+<w:fieldMapData>  
+  …  <w:name w:val="last" />  
+  <w:column w:val="2" />  
+</w:fieldMapData>  
+```  
+  
+ The WordprocessingML above demonstrates that the column name *first* must be associated with the first column in the external database by specifying a column element with its val attribute equal to  addition, the column name *middle* must be associated with the second column in the external database by specifying a column element with its val attribute equal to *1.* Finally, the column name *last* must be associated with the third column in the external database by specifying a column element with its val attribute equal to *2*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fieldMapData (§17.14.15)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +99,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Name class.
-            </summary>
+        <summary>Initializes a new instance of the Name class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +121,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +142,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="PivotAreaReference" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotAreaReference">
+<Type Name="PivotAreaReference" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotAreaReference">
   <TypeSignature Language="C#" Value="public class PivotAreaReference : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotAreaReference extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.PivotAreaReference" />
@@ -24,13 +24,62 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Reference.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:reference.</para>
-    </summary>
+    <summary>Reference. When the object is serialized out as xml, its qualified name is x:reference.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FieldItem &lt;x:x&gt;</description></item><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **reference (Reference)**  
+  
+ Represents a set of selected fields and selected items within those fields.  
+  
+ *[Example:*  
+  
+```xml  
+<sh:reference field="4294967294" count="1" selected="0">  
+  <sh:x v="0"/>  
+</sh:reference>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|references (§18.10.2.2)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|x (Shared Items Index)|§18.10.1.97|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|avgSubtotal (Include Average Filter)|Specifies a boolean value that indicates whether the 'average' aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the average aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|byPosition (Positional Reference)|Specifies a boolean value that indicates whether the item is referred to by position rather than item index.<br /><br /> A value of *1* or *true* indicates the item is referred to by position.<br /><br /> A value of *0* or *false* indicates the item is referred to by index.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|count (Item Index Count)|Specifies the number of item indexes in the collection of indexes (x tags).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|countASubtotal (Include CountA Filter)|Specifies a boolean value that indicates whether the 'countA' subtotal is included in the filter.<br /><br /> A value of *1* or *true* indicates the count aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|countSubtotal (Include Count Subtotal)|Specifies a boolean value that indicates whether the count aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the count aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultSubtotal (Include Default Filter)|Specifies a boolean value that indicates whether the default subtotal is included in the filter.<br /><br /> A value of *1* or *true* indicates the default subtotal is included in the filter. The default is to display the total or the grand total.<br /><br /> A value of *0* or *false* indicates another subtotal or aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|field (Field Index)|Specifies the index of the field to which this filter refers. A value of -2 indicates the 'data' field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|maxSubtotal (Include Maximum Filter)|Specifies a boolean value that indicates whether the 'maximum' aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the maximum aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|minSubtotal (Include Minimum Filter)|Specifies a boolean value that indicates whether the 'minimum' aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the minimum aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|productSubtotal (Include Product Filter)|Specifies a boolean value that indicates whether the 'product' aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the product aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|relative (Relative Reference)|Specifies a boolean value that indicates whether the item is referred to by a relative reference rather than an absolute reference.  This attribute is used if *posRef* is set to true.<br /><br /> A value of *1* or *true* indicates the item is referred to by a relative reference.<br /><br /> A value of *0* or *false* indicates the item is referred to by an absolute reference.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|selected (Selected)|Specifies a boolean value that indicates whether this field has selection. This attribute is used when the PivotTable is in Outline view. It is also used when both header and data cells have selection.<br /><br /> A value of *1* or *true* indicates the field has selection.<br /><br /> A value of *0* or *false* indicates the field does not have selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|stdDevPSubtotal (Include StdDevP Filter)|Specifies a boolean value that indicates whether the population standard deviation aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the population standard deviation aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|stdDevSubtotal (Include StdDev Filter)|Specifies a boolean value that indicates whether the standard deviation aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the standard deviation aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sumSubtotal (Include Sum Filter)|Specifies a boolean value that indicates whether the sum aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the sum aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|varPSubtotal (Include VarP Filter)|Specifies a boolean value that indicates whether the population variance aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the population variance aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|varSubtotal (Include Var Filter)|Specifies a boolean value that indicates whether the variance aggregate function is included in the filter.<br /><br /> A value of *1* or *true* indicates the variance aggregation function is included in the filter.<br /><br /> A value of *0* or *false* indicates another aggregation function is included in the filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PivotAreaReference) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +94,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PivotAreaReference class.
-            </summary>
+        <summary>Initializes a new instance of the PivotAreaReference class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +120,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotAreaReference class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PivotAreaReference class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +140,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotAreaReference class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PivotAreaReference class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +160,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PivotAreaReference class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PivotAreaReference class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,11 +184,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Product Filter.</para>
-          <para>Represents the following attribute in the schema: productSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Product Filter.Represents the following attribute in the schema: productSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -171,11 +209,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include StdDev Filter.</para>
-          <para>Represents the following attribute in the schema: stdDevSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include StdDev Filter.Represents the following attribute in the schema: stdDevSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -199,11 +234,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include StdDevP Filter.</para>
-          <para>Represents the following attribute in the schema: stdDevPSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include StdDevP Filter.Represents the following attribute in the schema: stdDevPSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -227,11 +259,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Var Filter.</para>
-          <para>Represents the following attribute in the schema: varSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Var Filter.Represents the following attribute in the schema: varSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -255,11 +284,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include VarP Filter.</para>
-          <para>Represents the following attribute in the schema: varPSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include VarP Filter.Represents the following attribute in the schema: varPSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -283,11 +309,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Average Filter.</para>
-          <para>Represents the following attribute in the schema: avgSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Average Filter.Represents the following attribute in the schema: avgSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -311,11 +334,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Positional Reference.</para>
-          <para>Represents the following attribute in the schema: byPosition </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Positional Reference.Represents the following attribute in the schema: byPosition</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -337,11 +357,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -365,11 +383,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Item Index Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Item Index Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -393,11 +408,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include CountA Filter.</para>
-          <para>Represents the following attribute in the schema: countASubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include CountA Filter.Represents the following attribute in the schema: countASubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -421,11 +433,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Count Subtotal.</para>
-          <para>Represents the following attribute in the schema: countSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Count Subtotal.Represents the following attribute in the schema: countSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -449,11 +458,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Default Filter.</para>
-          <para>Represents the following attribute in the schema: defaultSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Default Filter.Represents the following attribute in the schema: defaultSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -477,11 +483,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Index.</para>
-          <para>Represents the following attribute in the schema: field </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Index.Represents the following attribute in the schema: field</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -500,10 +503,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -527,11 +528,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Maximum Filter.</para>
-          <para>Represents the following attribute in the schema: maxSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Maximum Filter.Represents the following attribute in the schema: maxSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -555,11 +553,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Minimum Filter.</para>
-          <para>Represents the following attribute in the schema: minSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Minimum Filter.Represents the following attribute in the schema: minSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -583,11 +578,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relative Reference.</para>
-          <para>Represents the following attribute in the schema: relative </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relative Reference.Represents the following attribute in the schema: relative</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -611,11 +603,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Selected.</para>
-          <para>Represents the following attribute in the schema: selected </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Selected.Represents the following attribute in the schema: selected</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -639,11 +628,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Sum Filter.</para>
-          <para>Represents the following attribute in the schema: sumSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Sum Filter.Represents the following attribute in the schema: sumSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

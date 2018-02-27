@@ -1,4 +1,4 @@
-﻿<Type Name="Alignment" FullName="DocumentFormat.OpenXml.Spreadsheet.Alignment">
+<Type Name="Alignment" FullName="DocumentFormat.OpenXml.Spreadsheet.Alignment">
   <TypeSignature Language="C#" Value="public class Alignment : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Alignment extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Alignment" />
@@ -18,11 +18,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Alignment.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:alignment.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Alignment. When the object is serialized out as xml, its qualified name is x:alignment.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `alignment (Alignment)`  
+  
+ Formatting information pertaining to text alignment in cells. There are a variety of choices for how text is aligned both horizontally and vertically, as well as indentation settings, and so on.  
+  
+|Parent Elements|  
+|---------------------|  
+|dxf (§18.8.14); ndxf (§18.11.1.4); odxf (§18.11.1.6); xf (§18.8.45)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|horizontal (Horizontal Alignment)|Specifies the type of horizontal alignment in cells.<br /><br /> The possible values for this attribute are defined by the *ST_HorizontalAlignment* simple type (§18.18.40).|  
+|indent (Indent)|An integer value, where an increment of 1 represents 3 spaces. Indicates the number of spaces (of the normal style font) of indentation for text in a cell. The number of spaces to indent is calculated as following:<br /><br /> Number of spaces to indent = indent value * 3<br /><br /> [*Example*:For example, an indent value of '1' means that the text begins 3 space widths (of the normal style font) from the edge of the cell.<br /><br /> *end example*]<br /><br /> [*Note*: The width of one space character is defined by the font. *end note*]<br /><br /> Only *left*, *right*, and *distributed* horizontal alignments are supported.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|justifyLastLine (Justify Last Line)|A boolean value indicating if the cells justified or distributed alignment should be used on the last line of text.  (This is typical for East Asian alignments but not typical in other contexts.)<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|readingOrder (Reading Order)|An integer value indicating whether the reading order (bidirectionality) of the cell is left-to-right, right-to-left, or context dependent.<br /><br /> 0 - Context Dependent - reading order is determined by scanning the text for the first non-whitespace character: if it is a strong right-to-left character, the reading order is right-to-left; otherwise, the reading order left-to-right.<br /><br /> 1 - Left-to-Right- reading order is left-to-right in the cell, as in English.<br /><br /> 2 - Right-to-Left - reading order is right-to-left in the cell, as in Hebrew.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|relativeIndent (Relative Indent)|An integer value (used only in a dxf element) to indicate the additional number of spaces of indentation to adjust for text in a cell.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|shrinkToFit (Shrink To Fit)|A boolean value indicating if the displayed text in the cell should be shrunk to fit the cell width. Not applicable when a cell contains multiple lines of text.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|textRotation (Text Rotation)|Text rotation in cells. Expressed in degrees. Values range from 0 to 180. The first letter of the text is considered the center-point of the arc.<br /><br /> For 0 - 90, the value represents degrees above horizon. For 91-180 the degrees below the horizon is calculated as:<br /><br /> [degrees below horizon] =  90 - textRotation.<br /><br /> 0<br /><br /> f889d30a-8375-439a-9e0b-56ff52fbd5b5<br /><br /> 45<br /><br /> 872e3366-0bf4-46f0-a13a-68fab0e628a6<br /><br /> 90<br /><br /> 9ac50fd5-afdb-4e40-b324-88936a683e18<br /><br /> 135<br /><br /> 8135bb3c-b0ff-4df7-addd-1bbe447eacda<br /><br /> 180<br /><br /> 9c9f7ca0-6b7a-45a4-b699-36685b67471b<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|vertical (Vertical Alignment)|Vertical alignment in cells.<br /><br /> The possible values for this attribute are defined by the *ST_VerticalAlignment* simple type (§18.18.88).|  
+|wrapText (Wrap Text)|A boolean value indicating if the text in a cell should be line-wrapped within the cell.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CellAlignment) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Alignment class.
-            </summary>
+        <summary>Initializes a new instance of the Alignment class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +87,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +113,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.HorizontalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal Alignment.</para>
-          <para>Represents the following attribute in the schema: horizontal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal Alignment.Represents the following attribute in the schema: horizontal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +138,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Indent.</para>
-          <para>Represents the following attribute in the schema: indent </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Indent.Represents the following attribute in the schema: indent</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,11 +163,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Justify Last Line.</para>
-          <para>Represents the following attribute in the schema: justifyLastLine </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Justify Last Line.Represents the following attribute in the schema: justifyLastLine</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,10 +183,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,10 +208,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> mergeCell.</para>
-          <para>Represents the following attribute in the schema: mergeCell </para>
-        </summary>
+        <summary>mergeCell.Represents the following attribute in the schema: mergeCell</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -223,11 +233,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reading Order.</para>
-          <para>Represents the following attribute in the schema: readingOrder </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reading Order.Represents the following attribute in the schema: readingOrder</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -251,11 +258,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relative Indent.</para>
-          <para>Represents the following attribute in the schema: relativeIndent </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relative Indent.Represents the following attribute in the schema: relativeIndent</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,11 +283,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shrink To Fit.</para>
-          <para>Represents the following attribute in the schema: shrinkToFit </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shrink To Fit.Represents the following attribute in the schema: shrinkToFit</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -307,11 +308,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Rotation.</para>
-          <para>Represents the following attribute in the schema: textRotation </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Rotation.Represents the following attribute in the schema: textRotation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -335,11 +333,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.VerticalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Alignment.</para>
-          <para>Represents the following attribute in the schema: vertical </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertical Alignment.Represents the following attribute in the schema: vertical</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -363,11 +358,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Wrap Text.</para>
-          <para>Represents the following attribute in the schema: wrapText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Wrap Text.Represents the following attribute in the schema: wrapText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

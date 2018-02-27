@@ -1,4 +1,4 @@
-﻿<Type Name="LinkedToFile" FullName="DocumentFormat.OpenXml.Wordprocessing.LinkedToFile">
+<Type Name="LinkedToFile" FullName="DocumentFormat.OpenXml.Wordprocessing.LinkedToFile">
   <TypeSignature Language="C#" Value="public class LinkedToFile : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinkedToFile extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LinkedToFile" />
@@ -18,11 +18,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Maintain Link to Existing File.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:linkedToFile.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Maintain Link to Existing File. When the object is serialized out as xml, its qualified name is w:linkedToFile.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `linkedToFile (Maintain Link to Existing File)`  
+  
+ This element specifies that the file referenced by the sourceFileName element (§17.15.2.39) as the basis for the current frame shall not be changed, even when the file defined by the parent frameset is moved - i.e. the link shall remain exactly as specified.  
+  
+ [*Guidance*: Typically, when a document is incorporated into a frameset, a copy of that document is made such that all files encompassing the frameset are stored in a single subdirectory (so they can be moved as a single unit). However, if the link to the current file is absolute and must not be changed even when the location of the main frameset document, then this element must be set to indicate that setting. *end guidance*]  
+  
+ If this element is omitted, then a new file can be created as necessary when the parent frameset document is resaved to another location.  
+  
+ [*Example*: Consider a WordprocessingML document which serves as the frameset container for a frameset consisting of the following three frames:  
+  
+ 946ace1e-25a6-40cb-a64b-1e1aa3ab1f31  
+  
+ The frameset properties for this document are specified by the following WordprocessingML within the web page settings:  
+  
+```xml  
+<w:frameset>  
+  …  
+  <w:frame>  
+    <w:sz w:val="20%" />  
+    <w:name w:val="Frame 1" />  
+    <w:sourceFileName r:id="rId1" />  
+    <w:linkedToFile w:val="true" />  
+  </w:frame>  
+  <w:frameset>  
+    …  
+  </w:frameset>  
+</w:frameset>  
+```  
+  
+ The linkedToFile element specifies that the frame source location specified by the sourceFileName element (§17.15.2.39) must not be modified, even if the parent frameset document is resaved to another location. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|frame (§17.15.2.16)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +80,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LinkedToFile class.
-            </summary>
+        <summary>Initializes a new instance of the LinkedToFile class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +123,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

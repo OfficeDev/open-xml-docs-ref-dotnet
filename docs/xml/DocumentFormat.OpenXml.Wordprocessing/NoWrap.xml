@@ -1,4 +1,4 @@
-﻿<Type Name="NoWrap" FullName="DocumentFormat.OpenXml.Wordprocessing.NoWrap">
+<Type Name="NoWrap" FullName="DocumentFormat.OpenXml.Wordprocessing.NoWrap">
   <TypeSignature Language="C#" Value="public class NoWrap : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NoWrap extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NoWrap" />
@@ -18,11 +18,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the NoWrap Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:noWrap.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the NoWrap Class. When the object is serialized out as xml, its qualified name is w:noWrap.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **noWrap (Don't Wrap Cell Content)**  
+  
+ This element specifies how this table cell shall be laid out when the parent table is displayed in a document. This setting only affects the behavior of the cell when the tblLayout for this row (§17.4.53; §17.4.54) is set to use the *auto* algorithm.  
+  
+ This setting shall be interpreted in the context of the tcW element (§17.4.72) as follows:  
+  
+-   If the table cell width has a type attribute value of *fixed*, then this element specifies that that this table cell shall never be smaller than that fixed value when other cells on the line are not at their absolute minimum width.  
+  
+-   If the table cell width has a type attribute value of *pct* or *auto*, then this element specifies that when running the auto fit algorithm, the contents of that this table cell shall be treated as though they have no breaking characters (the contents should be treated as a single contiguous non-breaking string)  
+  
+ If this element is omitted, then cell content shall be allowed to wrap (the cell can be shrunk as needed if it is a fixed preferred width value, and the contents shall be treated as having breaking characters if it is a percentage or automatic width value).  
+  
+ [*Example*: Consider the following three row by three column WordprocessingML table:  
+  
+ In this table, each cell has a *fixed* preferred width of  (*3427* twentieths of a point), and the tblLayout for this row (§17.4.53; §17.4.54) is set to use the *auto* algorithm. If a long non breaking string is added to the middle row, as follows, the two cells are adjusted to override their preferences and accommodate the string:  
+  
+ sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss  
+  
+ However, if the first table cell has the noWrap element present as follows:  
+  
+```xml  
+<w:tcPr>  
+  <w:noWrap/>  
+</w:tcPr>  
+```  
+  
+ The noWrap element specifies that because it is a *fixed* width cell, that cell shall not be collapsed beyond its original size until all other cells are at their minimum size, so in this example the cell maintains its width:  
+  
+ sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NoWrap class.
-            </summary>
+        <summary>Initializes a new instance of the NoWrap class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +103,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

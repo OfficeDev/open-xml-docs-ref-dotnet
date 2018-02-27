@@ -1,4 +1,4 @@
-﻿<Type Name="StyleLink" FullName="DocumentFormat.OpenXml.Wordprocessing.StyleLink">
+<Type Name="StyleLink" FullName="DocumentFormat.OpenXml.Wordprocessing.StyleLink">
   <TypeSignature Language="C#" Value="public class StyleLink : DocumentFormat.OpenXml.Wordprocessing.String253Type" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StyleLink extends DocumentFormat.OpenXml.Wordprocessing.String253Type" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.StyleLink" />
@@ -18,11 +18,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Numbering Style Definition.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:styleLink.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Numbering Style Definition. When the object is serialized out as xml, its qualified name is w:styleLink.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **styleLink (Numbering Style Definition)**  
+  
+ This element specifies that the parent abstract numbering definition is the base numbering definition for the specified numbering style referenced in its val attribute.  
+  
+ If this element is omitted, or it references a style which does not exist, then this numbering definition shall not be the underlying properties for a numbering style.  
+  
+ [*Note*: Numbering styles are never directly referenced by paragraphs or runs in the document – instead, an abstract numbering definition specifies that it contains the underlying numbering information for a numbering style, and one or more numbering definition instances reference a numbering definition which inherits from it. The numbering style itself is just a friendly name on an abstract numbering definition. *end note*]  
+  
+ [E*xample*: Consider the WordprocessingML fragment below, representing an abstract numbering definition which defines the properties for a numbering style:  
+  
+```xml  
+<w:numbering>  
+  …  
+  <w:abstractNum w:abstractNumId="5">  
+    …  
+    <w:styleLink w:val="ExampleNumberingStyle" />  
+    …  
+  </w:abstractNum>  
+</w:numbering>  
+…  
+<w:styles>  
+  …  
+  <w:style w:type="numbering" w:styleId="ExampleNumberingStyle">  
+    <w:name w:val="ExampleNumberingStyle" />  
+    …  
+    <w:pPr>  
+      <w:numPr>  
+        <w:numId w:val="6" />  
+      </w:numPr>  
+    </w:pPr>  
+  </w:style>  
+  …  
+</w:styles>  
+```  
+  
+ The styleLink element specifies that the abstract numbering definition defines the properties for a numbering style whose styleId matches its val attribute, and is defined in the styles element of the WordprocessingML. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|abstractNum (§17.9.1)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +86,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StyleLink class.
-            </summary>
+        <summary>Initializes a new instance of the StyleLink class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +108,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +129,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

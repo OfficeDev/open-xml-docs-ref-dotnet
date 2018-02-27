@@ -1,4 +1,4 @@
-﻿<Type Name="DocPartId" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartId">
+<Type Name="DocPartId" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartId">
   <TypeSignature Language="C#" Value="public class DocPartId : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocPartId extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DocPartId" />
@@ -18,11 +18,37 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Entry ID.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:guid.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Entry ID. When the object is serialized out as xml, its qualified name is w:guid.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **guid (Entry ID)**  
+  
+ This element specifies a unique identifier (specified using a 128-bit GUID stored on the val attribute) that uniquely identifies this document building block.[*Note*: This unique identifier can be used by an application to uniquely reference a single building block regardless of different naming, for example when the same part has different names for localization purposes. *end note*]  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the properties of a single glossary document entry:  
+  
+```xml  
+<w:docPartPr>  
+  …  <w:guid w:val="{00000000-5BD2-4BC8-9F70-7020E1357FB2}" />  
+  …</w:docPartPr>  
+```  
+  
+ The guid element specifies that the unique identifier associated with the parent entry must be *{00000000-5BD2-4BC8-9F70-7020E1357FB2}.* This value can be used as needed by an application, for example, to uniquely identify a part regardless of its name. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|docPartPr (§17.12.7)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Guid) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +63,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DocPartId class.
-            </summary>
+        <summary>Initializes a new instance of the DocPartId class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +85,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +106,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +131,30 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GUID Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>GUID Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a 128-bit globally unique identifier (GUID) value as defined by the simple type referenced below. The contents of this GUID shall be interpreted based on the context of the parent XML element.  
+  
+ If this attribute is omitted, its value shall be assumed to be null (in other words, no GUID shall be associated with the parent XML element).  
+  
+ Consider the following WordprocessingML element:  
+  
+```  
+<… w:val="{6A9B8B6F-5BD2-4BC8-9F70-7020E1357FB2}"/>  
+```  
+  
+ The `val` attribute value of `{6A9B8B6F-5BD2-4BC8-9F70-7020E1357FB2}` shall  be associated with the context of the parent XML element.  
+  
+ The possible values for this attribute are defined by the `ST_Guid` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="Variant" FullName="DocumentFormat.OpenXml.VariantTypes.Variant">
+<Type Name="Variant" FullName="DocumentFormat.OpenXml.VariantTypes.Variant">
   <TypeSignature Language="C#" Value="public class Variant : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Variant extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.VariantTypes.Variant" />
@@ -123,13 +123,79 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Variant.</para>
-      <para> When the object is serialized out as xml, its qualified name is vt:variant.</para>
-    </summary>
+    <summary>Variant. When the object is serialized out as xml, its qualified name is vt:variant.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Variant &lt;vt:variant&gt;</description></item><item><description>VTVector &lt;vt:vector&gt;</description></item><item><description>VTArray &lt;vt:array&gt;</description></item><item><description>VTBlob &lt;vt:blob&gt;</description></item><item><description>VTOBlob &lt;vt:oblob&gt;</description></item><item><description>VTEmpty &lt;vt:empty&gt;</description></item><item><description>VTNull &lt;vt:null&gt;</description></item><item><description>VTByte &lt;vt:i1&gt;</description></item><item><description>VTShort &lt;vt:i2&gt;</description></item><item><description>VTInt32 &lt;vt:i4&gt;</description></item><item><description>VTInt64 &lt;vt:i8&gt;</description></item><item><description>VTInteger &lt;vt:int&gt;</description></item><item><description>VTUnsignedByte &lt;vt:ui1&gt;</description></item><item><description>VTUnsignedShort &lt;vt:ui2&gt;</description></item><item><description>VTUnsignedInt32 &lt;vt:ui4&gt;</description></item><item><description>VTUnsignedInt64 &lt;vt:ui8&gt;</description></item><item><description>VTUnsignedInteger &lt;vt:uint&gt;</description></item><item><description>VTFloat &lt;vt:r4&gt;</description></item><item><description>VTDouble &lt;vt:r8&gt;</description></item><item><description>VTDecimal &lt;vt:decimal&gt;</description></item><item><description>VTLPSTR &lt;vt:lpstr&gt;</description></item><item><description>VTLPWSTR &lt;vt:lpwstr&gt;</description></item><item><description>VTBString &lt;vt:bstr&gt;</description></item><item><description>VTDate &lt;vt:date&gt;</description></item><item><description>VTFileTime &lt;vt:filetime&gt;</description></item><item><description>VTBool &lt;vt:bool&gt;</description></item><item><description>VTCurrency &lt;vt:cy&gt;</description></item><item><description>VTError &lt;vt:error&gt;</description></item><item><description>VTStreamData &lt;vt:stream&gt;</description></item><item><description>VTOStreamData &lt;vt:ostream&gt;</description></item><item><description>VTStorage &lt;vt:storage&gt;</description></item><item><description>VTOStorage &lt;vt:ostorage&gt;</description></item><item><description>VTVStreamData &lt;vt:vstream&gt;</description></item><item><description>VTClassId &lt;vt:clsid&gt;</description></item><item><description>VTClipboardData &lt;vt:cf&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **variant (Variant)**  
+  
+ This element can contain exactly 1 child element of any variant type. This element is only valid as a child element of a vector or array variant type.  
+  
+ [*Example*: A vector of variant types:  
+  
+```xml  
+<vt:vector baseType="variant">  
+  <vt:variant>  
+    <vt:i4>12</vt:i4>  
+  </vt:variant>  
+  <vt:variant>  
+    <vt:lpstr>WorkSheets</vt:lpstr>  
+  </vt:variant>  
+</vt:vector>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|array (§22.4.2.1); variant (§22.4.2.32); vector (§22.4.2.33)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|array (Array)|§22.4.2.1|  
+|blob (Binary Blob)|§22.4.2.2|  
+|bool (Boolean)|§22.4.2.3|  
+|bstr (Basic String)|§22.4.2.4|  
+|clsid (Class ID)|§22.4.2.5|  
+|cy (Currency)|§22.4.2.6|  
+|date (Date and Time)|§22.4.2.7|  
+|decimal (Decimal)|§22.4.2.8|  
+|empty (Empty)|§22.4.2.9|  
+|error (Error Status Code)|§22.4.2.10|  
+|filetime (File Time)|§22.4.2.11|  
+|i1 (1-Byte Signed Integer)|§22.4.2.12|  
+|i2 (2-Byte Signed Integer)|§22.4.2.13|  
+|i4 (4-Byte Signed Integer)|§22.4.2.14|  
+|i8 (8-Byte Signed Integer)|§22.4.2.15|  
+|int (Integer)|§22.4.2.16|  
+|lpstr (LPSTR)|§22.4.2.17|  
+|lpwstr (LPWSTR)|§22.4.2.18|  
+|null (Null)|§22.4.2.19|  
+|oblob (Binary Blob Object)|§22.4.2.20|  
+|ostorage (Binary Storage Object)|§22.4.2.21|  
+|ostream (Binary Stream Object)|§22.4.2.22|  
+|r4 (4-Byte Real Number)|§22.4.2.23|  
+|r8 (8-Byte Real Number)|§22.4.2.24|  
+|storage (Binary Storage)|§22.4.2.25|  
+|stream (Binary Stream)|§22.4.2.26|  
+|ui1 (1-Byte Unsigned Integer)|§22.4.2.27|  
+|ui2 (2-Byte Unsigned Integer)|§22.4.2.28|  
+|ui4 (4-Byte Unsigned Integer)|§22.4.2.29|  
+|ui8 (8-Byte Unsigned Integer)|§22.4.2.30|  
+|uint (Unsigned Integer)|§22.4.2.31|  
+|variant (Variant)|§22.4.2.32|  
+|vector (Vector)|§22.4.2.33|  
+|vstream (Binary Versioned Stream)|§22.4.2.34|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Variant) is located in §A.6.4. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -144,9 +210,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Variant class.
-            </summary>
+        <summary>Initializes a new instance of the Variant class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -172,9 +236,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Variant class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Variant class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,9 +256,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Variant class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Variant class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -216,9 +276,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Variant class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Variant class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -240,11 +298,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -263,11 +319,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.Variant</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Variant.</para>
-          <para> Represents the following element tag in the schema: vt:variant </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Variant. Represents the following element tag in the schema: vt:variant</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.Variant" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -289,10 +342,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -311,11 +362,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTArray</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Array.</para>
-          <para> Represents the following element tag in the schema: vt:array </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Array. Represents the following element tag in the schema: vt:array</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTArray" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -337,11 +385,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTBlob</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Binary Blob.</para>
-          <para> Represents the following element tag in the schema: vt:blob </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Binary Blob. Represents the following element tag in the schema: vt:blob</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTBlob" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -363,11 +408,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTBool</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Boolean.</para>
-          <para> Represents the following element tag in the schema: vt:bool </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Boolean. Represents the following element tag in the schema: vt:bool</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTBool" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -389,10 +431,7 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTBString</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Basic String.</para>
-          <para> Represents the following element tag in the schema: vt:bstr </para>
-        </summary>
+        <summary>Basic String. Represents the following element tag in the schema: vt:bstr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -415,11 +454,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTByte</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 1-Byte Signed Integer.</para>
-          <para> Represents the following element tag in the schema: vt:i1 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>1-Byte Signed Integer. Represents the following element tag in the schema: vt:i1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTByte" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -441,11 +477,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTClassId</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Class ID.</para>
-          <para> Represents the following element tag in the schema: vt:clsid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Class ID. Represents the following element tag in the schema: vt:clsid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTClassId" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -467,11 +500,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTClipboardData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Clipboard Data.</para>
-          <para> Represents the following element tag in the schema: vt:cf </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Clipboard Data. Represents the following element tag in the schema: vt:cf</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTClipboardData" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -493,11 +523,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTCurrency</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Currency.</para>
-          <para> Represents the following element tag in the schema: vt:cy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Currency. Represents the following element tag in the schema: vt:cy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTCurrency" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -519,11 +546,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTDate</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Date and Time.</para>
-          <para> Represents the following element tag in the schema: vt:date </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Date and Time. Represents the following element tag in the schema: vt:date</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTDate" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -545,11 +569,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTDecimal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Decimal.</para>
-          <para> Represents the following element tag in the schema: vt:decimal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Decimal. Represents the following element tag in the schema: vt:decimal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTDecimal" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -571,11 +592,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTDouble</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 8-Byte Real Number.</para>
-          <para> Represents the following element tag in the schema: vt:r8 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>8-Byte Real Number. Represents the following element tag in the schema: vt:r8</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTDouble" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -597,11 +615,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTEmpty</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Empty.</para>
-          <para> Represents the following element tag in the schema: vt:empty </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Empty. Represents the following element tag in the schema: vt:empty</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTEmpty" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -623,11 +638,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTError</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Error Status Code.</para>
-          <para> Represents the following element tag in the schema: vt:error </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Error Status Code. Represents the following element tag in the schema: vt:error</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTError" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -649,11 +661,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTFileTime</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> File Time.</para>
-          <para> Represents the following element tag in the schema: vt:filetime </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>File Time. Represents the following element tag in the schema: vt:filetime</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTFileTime" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -675,11 +684,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTFloat</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 4-Byte Real Number.</para>
-          <para> Represents the following element tag in the schema: vt:r4 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>4-Byte Real Number. Represents the following element tag in the schema: vt:r4</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTFloat" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -701,11 +707,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTInt32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 4-Byte Signed Integer.</para>
-          <para> Represents the following element tag in the schema: vt:i4 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>4-Byte Signed Integer. Represents the following element tag in the schema: vt:i4</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTInt32" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -727,11 +730,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTInt64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 8-Byte Signed Integer.</para>
-          <para> Represents the following element tag in the schema: vt:i8 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>8-Byte Signed Integer. Represents the following element tag in the schema: vt:i8</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTInt64" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -753,11 +753,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTInteger</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Integer.</para>
-          <para> Represents the following element tag in the schema: vt:int </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Integer. Represents the following element tag in the schema: vt:int</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTInteger" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -779,11 +776,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTLPSTR</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> LPSTR.</para>
-          <para> Represents the following element tag in the schema: vt:lpstr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>LPSTR. Represents the following element tag in the schema: vt:lpstr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTLPSTR" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -805,11 +799,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTLPWSTR</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> LPWSTR.</para>
-          <para> Represents the following element tag in the schema: vt:lpwstr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>LPWSTR. Represents the following element tag in the schema: vt:lpwstr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTLPWSTR" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -831,11 +822,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTNull</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Null.</para>
-          <para> Represents the following element tag in the schema: vt:null </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Null. Represents the following element tag in the schema: vt:null</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTNull" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -857,11 +845,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTOBlob</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Binary Blob Object.</para>
-          <para> Represents the following element tag in the schema: vt:oblob </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Binary Blob Object. Represents the following element tag in the schema: vt:oblob</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTOBlob" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -883,11 +868,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTOStorage</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Binary Storage Object.</para>
-          <para> Represents the following element tag in the schema: vt:ostorage </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Binary Storage Object. Represents the following element tag in the schema: vt:ostorage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTOStorage" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -909,10 +891,7 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTOStreamData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Binary Stream Object.</para>
-          <para> Represents the following element tag in the schema: vt:ostream </para>
-        </summary>
+        <summary>Binary Stream Object. Represents the following element tag in the schema: vt:ostream</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -935,11 +914,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTShort</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 2-Byte Signed Integer.</para>
-          <para> Represents the following element tag in the schema: vt:i2 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>2-Byte Signed Integer. Represents the following element tag in the schema: vt:i2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTShort" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -961,11 +937,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTStorage</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Binary Storage.</para>
-          <para> Represents the following element tag in the schema: vt:storage </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Binary Storage. Represents the following element tag in the schema: vt:storage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTStorage" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -987,10 +960,7 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTStreamData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Binary Stream.</para>
-          <para> Represents the following element tag in the schema: vt:stream </para>
-        </summary>
+        <summary>Binary Stream. Represents the following element tag in the schema: vt:stream</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -1013,11 +983,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTUnsignedByte</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 1-Byte Unsigned Integer.</para>
-          <para> Represents the following element tag in the schema: vt:ui1 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>1-Byte Unsigned Integer. Represents the following element tag in the schema: vt:ui1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTUnsignedByte" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -1039,11 +1006,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 4-Byte Unsigned Integer.</para>
-          <para> Represents the following element tag in the schema: vt:ui4 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>4-Byte Unsigned Integer. Represents the following element tag in the schema: vt:ui4</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt32" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -1065,11 +1029,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt64</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 8-Byte Unsigned Integer.</para>
-          <para> Represents the following element tag in the schema: vt:ui8 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>8-Byte Unsigned Integer. Represents the following element tag in the schema: vt:ui8</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTUnsignedInt64" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -1091,11 +1052,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTUnsignedInteger</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Unsigned Integer.</para>
-          <para> Represents the following element tag in the schema: vt:uint </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Unsigned Integer. Represents the following element tag in the schema: vt:uint</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTUnsignedInteger" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -1117,11 +1075,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTUnsignedShort</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 2-Byte Unsigned Integer.</para>
-          <para> Represents the following element tag in the schema: vt:ui2 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>2-Byte Unsigned Integer. Represents the following element tag in the schema: vt:ui2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTUnsignedShort" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -1143,11 +1098,8 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTVector</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vector.</para>
-          <para> Represents the following element tag in the schema: vt:vector </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vector. Represents the following element tag in the schema: vt:vector</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.VariantTypes.VTVector" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:vt = http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes
@@ -1169,10 +1121,7 @@
         <ReturnType>DocumentFormat.OpenXml.VariantTypes.VTVStreamData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Binary Versioned Stream.</para>
-          <para> Represents the following element tag in the schema: vt:vstream </para>
-        </summary>
+        <summary>Binary Versioned Stream. Represents the following element tag in the schema: vt:vstream</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

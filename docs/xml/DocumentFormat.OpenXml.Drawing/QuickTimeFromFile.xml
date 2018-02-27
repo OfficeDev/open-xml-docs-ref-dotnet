@@ -1,4 +1,4 @@
-﻿<Type Name="QuickTimeFromFile" FullName="DocumentFormat.OpenXml.Drawing.QuickTimeFromFile">
+<Type Name="QuickTimeFromFile" FullName="DocumentFormat.OpenXml.Drawing.QuickTimeFromFile">
   <TypeSignature Language="C#" Value="public class QuickTimeFromFile : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QuickTimeFromFile extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.QuickTimeFromFile" />
@@ -21,13 +21,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>QuickTime from File.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:quickTimeFile.</para>
-    </summary>
+    <summary>QuickTime from File. When the object is serialized out as xml, its qualified name is a:quickTimeFile.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **quickTimeFile (QuickTime from File)**  
+  
+ This element specifies the existence of a QuickTime file, as defined in the 2007-09-04 version of the QuickTime File Format Specification: http://developer.apple.com/documentation/QuickTime/QTFF/qtff.pdf. [*Note*: For more information on the QuickTime format: http://developer.apple.com/reference/QuickTime/. *end note*]. This element is specified within the non-visual properties of an object. The QuickTime file shall be attached to an object as this is how it is represented within the document. The actual playing of the QuickTime however is done within the timing node list that is specified under the timing element.  
+  
+ [*Example*: Consider the following picture object that has a QuickTime file attached to it.  
+  
+```xml  
+<p:pic>  
+  <p:nvPicPr>  
+    <p:cNvPr id="7" name="Rectangle 6">  
+      <a:hlinkClick r:id="" action="ppaction://media"/>  
+    </p:cNvPr>  
+    <p:cNvPicPr>  
+      <a:picLocks noRot="1"/>  
+    </p:cNvPicPr>  
+    <p:nvPr>  
+      <a:quickTimeFile r:link="rId1"/>  
+    </p:nvPr>  
+  </p:nvPicPr>  
+  …</p:pic>  
+```  
+  
+ In the above example, we see that there is a single quickTimeFile element attached to this picture. This picture is placed within the document just as a normal picture or shape would be. The id of this picture, namely  this case, is used to refer to this quickTimeFile element from within the timing node list. The Linked relationship id is used to retrieve the actual video file for playback purposes. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|nvPr (§19.3.1.33)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§20.1.2.2.15|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|link (Linked Relationship ID)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Specifies the identification information for a linked object. This attribute is used to specify the location of an object that does not reside within this file.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_QuickTimeFile) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +84,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the QuickTimeFromFile class.
-            </summary>
+        <summary>Initializes a new instance of the QuickTimeFromFile class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +110,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the QuickTimeFromFile class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the QuickTimeFromFile class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the QuickTimeFromFile class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the QuickTimeFromFile class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +150,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the QuickTimeFromFile class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the QuickTimeFromFile class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +172,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,11 +193,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: a:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: a:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -192,11 +221,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Linked Relationship ID.</para>
-          <para>Represents the following attribute in the schema: r:link </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Linked Relationship ID.Represents the following attribute in the schema: r:link</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
             </remark>
@@ -217,10 +243,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="Picture" FullName="DocumentFormat.OpenXml.Wordprocessing.Picture">
+<Type Name="Picture" FullName="DocumentFormat.OpenXml.Wordprocessing.Picture">
   <TypeSignature Language="C#" Value="public class Picture : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Picture extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Picture" />
@@ -60,13 +60,97 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>VML Object.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:pict.</para>
-    </summary>
+    <summary>VML Object. When the object is serialized out as xml, its qualified name is w:pict.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocumentFormat.OpenXml.Vml.Group &lt;v:group&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.ImageFile &lt;v:image&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Line &lt;v:line&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Oval &lt;v:oval&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.PolyLine &lt;v:polyline&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Rectangle &lt;v:rect&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.RoundRectangle &lt;v:roundrect&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Shape &lt;v:shape&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Shapetype &lt;v:shapetype&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Arc &lt;v:arc&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Curve &lt;v:curve&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Office.OleObject &lt;o:OLEObject&gt;</description></item><item><description>MovieReference &lt;w:movie&gt;</description></item><item><description>Control &lt;w:control&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **pict (VML Object)**  
+  
+ This element specifies that an object is located at this position in the run’s contents. The layout properties of this object are specified using the VML syntax (§14.1).  
+  
+ [*Example*: Consider a run which consists of an object specified using VML. That run would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:pict>  
+    …  </w:pict>  
+</w:r>  
+```  
+  
+ The pict element indicates that an object specified in VML is located at the current position in the run (e.g. a floating embedded control). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (Part 1, §22.1.2.87); r (Part 1, §17.3.2.25)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|control (Floating Embedded Control)|§9.2.2.1|  
+|movie (Embedded Video)|Part 1, §17.3.3.17|  
+|Any element in the *urn:schemas-microsoft-com:vml* namespace|§14.1|  
+|Any element in the *urn:schemas-microsoft-com:office:office* namespace|§14.2|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Picture) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **pict (Picture Numbering Symbol Properties)**  
+  
+ This element specifies the properties for a picture which shall be used as a picture numbering symbol in a given document, using the VML syntax.  
+  
+ [*Example*: Consider the WordprocessingML below illustrating the usage of the pict element in a document containing a single picture numbering symbol:  
+  
+```xml  
+<w:numPicBullet w:numPicBulletId="0">  
+  <w:pict>  
+    <v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">  
+      <v:stroke joinstyle="miter" />  
+      <v:formulas>  
+        <v:f eqn="if lineDrawn pixelLineWidth 0" />  
+        <v:f eqn="sum @0 1 0" />  
+        <v:f eqn="sum 0 0 @1" />  
+        <v:f eqn="prod @2 1 2" />  
+        <v:f eqn="prod @3 21600 pixelWidth" />  
+        <v:f eqn="prod @3 21600 pixelHeight" />  
+        <v:f eqn="sum @0 0 1" />  
+        <v:f eqn="prod @6 1 2" />  
+        <v:f eqn="prod @7 21600 pixelWidth" />  
+        <v:f eqn="sum @8 21600 0" />  
+        <v:f eqn="prod @7 21600 pixelHeight" />  
+        <v:f eqn="sum @10 21600 0" />  
+      </v:formulas>  
+      <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect" />  
+      <o:lock v:ext="edit" aspectratio="t" />  
+    </v:shapetype>  
+    <v:shape id="_x0000_i1029" type="#_x0000_t75" style="width:11.25pt;height:11.25pt" o:bullet="t">  
+      <v:imagedata r:id="rId1" o:title="sample picture" />  
+    </v:shape>  
+  </w:pict>  
+</w:numPicBullet>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|numPicBullet (Part 1, §17.9.21)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|control (Floating Embedded Control)|§9.2.2.1|  
+|movie (Embedded Video)|Part 1, §17.3.3.17|  
+|Any element in the *urn:schemas-microsoft-com:vml* namespace|§14.1|  
+|Any element in the *urn:schemas-microsoft-com:office:office* namespace|§14.2|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Picture) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -81,9 +165,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Picture class.
-            </summary>
+        <summary>Initializes a new instance of the Picture class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -109,9 +191,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Picture class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Picture class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -131,9 +211,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Picture class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Picture class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,9 +231,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Picture class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Picture class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -182,10 +258,7 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> anchorId, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w14:anchorId </para>
-        </summary>
+        <summary>anchorId, this property is only available in Office2010.Represents the following attribute in the schema: w14:anchorId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w14=http://schemas.microsoft.com/office/word/2010/wordml
@@ -210,11 +283,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -233,10 +304,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

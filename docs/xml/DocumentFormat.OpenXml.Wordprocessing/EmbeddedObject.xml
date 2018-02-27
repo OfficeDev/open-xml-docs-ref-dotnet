@@ -1,4 +1,4 @@
-﻿<Type Name="EmbeddedObject" FullName="DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject">
+<Type Name="EmbeddedObject" FullName="DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject">
   <TypeSignature Language="C#" Value="public class EmbeddedObject : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EmbeddedObject extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject" />
@@ -66,13 +66,48 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Inline Embedded Object.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:object.</para>
-    </summary>
+    <summary>Inline Embedded Object. When the object is serialized out as xml, its qualified name is w:object.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocumentFormat.OpenXml.Vml.Group &lt;v:group&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.ImageFile &lt;v:image&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Line &lt;v:line&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Oval &lt;v:oval&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.PolyLine &lt;v:polyline&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Rectangle &lt;v:rect&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.RoundRectangle &lt;v:roundrect&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Shape &lt;v:shape&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Shapetype &lt;v:shapetype&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Arc &lt;v:arc&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Curve &lt;v:curve&gt;</description></item><item><description>DocumentFormat.OpenXml.Vml.Office.OleObject &lt;o:OLEObject&gt;</description></item><item><description>Drawing &lt;w:drawing&gt;</description></item><item><description>Control &lt;w:control&gt;</description></item><item><description>ObjectEmbed &lt;w:objectEmbed&gt;</description></item><item><description>ObjectLink &lt;w:objectLink&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **object (Embedded Object)**  
+  
+ This element specifies that an embedded object is located at this position in the run’s contents. The layout properties of this embedded object, as well as an optional static representation, are specified using the drawing element (§17.3.3.9).  
+  
+ [*Example*: Consider a run which consists of an embedded object which is in line with the text in that paragraph (i.e. on the line and affects the line height). That run would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:object>  
+    <w:drawing>  
+      …    </w:drawing>  
+  </w:object>  
+</w:r>  
+```  
+  
+ The object element indicates that an embedded object and its positioning data are located at the current position in the run (e.g. an embedded object). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|control (Embedded Control)|§17.3.3.3|  
+|drawing (DrawingML Object)|§17.3.3.9|  
+|movie (Embedded Video)|§17.3.3.17|  
+|objectEmbed (Embedded Object Properties)|§17.3.3.20|  
+|objectLink (Linked Object Properties)|§17.3.3.21|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Object) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -87,9 +122,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EmbeddedObject class.
-            </summary>
+        <summary>Initializes a new instance of the EmbeddedObject class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -115,9 +148,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EmbeddedObject class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the EmbeddedObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +168,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EmbeddedObject class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the EmbeddedObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,9 +188,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the EmbeddedObject class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the EmbeddedObject class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -185,10 +212,7 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> anchorId.</para>
-          <para>Represents the following attribute in the schema: w14:anchorId </para>
-        </summary>
+        <summary>anchorId.Represents the following attribute in the schema: w14:anchorId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w14=http://schemas.microsoft.com/office/word/2010/wordml
@@ -213,11 +237,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -241,12 +263,36 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dxaOrig.</para>
-          <para>Represents the following attribute in the schema: w:dxaOrig </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>dxaOrig.Represents the following attribute in the schema: w:dxaOrig</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the original (natural) width of the image representation of the current control within the document. Some vector image formats do not store a native size within their format, and this attribute shall only be used in those cases to store this information, so that the image may be appropriately restored as needed.  
+  
+ If this element is excluded, then the natural size of the image as stored in its format shall be used.  
+  
+ Consider the following WordprocessingML for an embedded object:  
+  
+```  
+<w:object w:dxaOrig="3360" w:dyaOrig="2520">  
+  …  
+  <v:shape … style="width:168pt;height:4in">  
+    …  
+  </v:shape>  
+  <o:OLEObject … />  
+</w:object>  
+```  
+  
+ The `dxaOrig` attribute has a value of `3360`, which specifies that the image used for the embedded object doesn't store its native width, but that width should be 3360 twentieths of a point.  
+  
+ The possible values for this attribute are defined by the `ST_TwipsMeasure` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -271,12 +317,36 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dyaOrig.</para>
-          <para>Represents the following attribute in the schema: w:dyaOrig </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>dyaOrig.Represents the following attribute in the schema: w:dyaOrig</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the original (natural) height of the image representation of the current control within the document. Some vector image formats do not store a native size within their format, and this attribute shall only be used in those cases to store this information, so that the image may be appropriately restored as needed.  
+  
+ If this element is excluded, then the natural size of the image as stored in its format shall be used.  
+  
+ Consider the following WordprocessingML for an embedded object:  
+  
+```  
+<w:object w:dxaOrig="3360" w:dyaOrig="2520">  
+  …  
+  <v:shape … style="width:168pt;height:4in">  
+    …  
+  </v:shape>  
+  <o:OLEObject … />  
+</w:object>  
+```  
+  
+ The `dyaOrig` attribute has a value of `2520`, which specifies that the image used for the embedded object doesn't store its native height, but that height should be 2520 twentieths of a point.  
+  
+ The possible values for this attribute are defined by the `ST_TwipsMeasure` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -296,10 +366,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

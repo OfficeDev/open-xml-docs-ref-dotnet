@@ -1,4 +1,4 @@
-﻿<Type Name="SuppressLineNumbers" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers">
+<Type Name="SuppressLineNumbers" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers">
   <TypeSignature Language="C#" Value="public class SuppressLineNumbers : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SuppressLineNumbers extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers" />
@@ -18,11 +18,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the SuppressLineNumbers Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:suppressLineNumbers.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the SuppressLineNumbers Class. When the object is serialized out as xml, its qualified name is w:suppressLineNumbers.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **suppressLineNumbers (Suppress Line Numbers for Paragraph)**  
+  
+ This element specifies whether line numbers shall be calculated for lines in this paragraph by the consumer when line numbering is requested using the lnNumType element (§17.6.8) in the paragraph's parent section settings. This element specifies whether the current paragraph's lines should be exempted from line numbering which is applied by the consumer on this document, not just suppressing the display of the numbering, but removing these lines from the line numbering calculation.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then the default line number settings for the section, as specified in the lnNumType element shall apply to each line of this paragraph.  
+  
+ [*Example*: Consider a document with three paragraphs, each of which are displayed on five lines , all contained in a section which has  the lnNumType element specified. If the second paragraph should be exempted from that line numbering, this requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:suppressLineNumbers />  
+</w:pPr>  
+```  
+  
+ The paragraph would then be exempted from line by a consumer at display time, which would result in paragraph one using line numbers one through five, the second paragraph having no line numbers, and the third paragraph using line numbers six through ten. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SuppressLineNumbers class.
-            </summary>
+        <summary>Initializes a new instance of the SuppressLineNumbers class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +87,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +108,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

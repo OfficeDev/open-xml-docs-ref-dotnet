@@ -1,4 +1,4 @@
-﻿<Type Name="FootnoteReference" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteReference">
+<Type Name="FootnoteReference" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteReference">
   <TypeSignature Language="C#" Value="public class FootnoteReference : DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FootnoteReference extends DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteReferenceType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FootnoteReference" />
@@ -18,11 +18,52 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Footnote Reference.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:footnoteReference.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Footnote Reference. When the object is serialized out as xml, its qualified name is w:footnoteReference.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `footnoteReference (Footnote Reference)`  
+  
+ This element specifies the presence of a footnote reference. A *footnote reference* is a run of automatically numbered text which references a particular footnote within the parent document, and inherits the footnote reference mark's numbering.  
+  
+ If an footnote reference is specified within a footnote or endnote, then the document shall be considered non-conformant.  
+  
+ [*Example*: Consider the following document where some text is referenced by a footnote at the bottom of the page:  
+  
+ 16ed0eec-b087-4042-bdb2-595db97909e4  
+  
+ The footnote reference is the superscript decimal number within the document content in the diagram above. The contents of the paragraph which contains the footnote reference are represented by the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t>Some   
+referenced text.</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:rPr>  
+      <w:rStyle w:val="FootnoteReference" />  
+    </w:rPr>  
+    <w:footnoteReference w:id="2" />  
+  </w:r>  
+</w:p>  
+```  
+  
+ The resulting paragraph contains the literal text content of *Some referenced text.*, followed by an automatically numbered footnote reference. Since this is the first footnote in the document, that automatically numbered reference inherits the decimal number *1* from the footnote reference mark. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FtnEdnRef) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +78,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FootnoteReference class.
-            </summary>
+        <summary>Initializes a new instance of the FootnoteReference class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +100,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +121,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

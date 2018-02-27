@@ -1,4 +1,4 @@
-﻿<Type Name="FormatScheme" FullName="DocumentFormat.OpenXml.Drawing.FormatScheme">
+<Type Name="FormatScheme" FullName="DocumentFormat.OpenXml.Drawing.FormatScheme">
   <TypeSignature Language="C#" Value="public class FormatScheme : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormatScheme extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.FormatScheme" />
@@ -30,13 +30,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Format Scheme.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:fmtScheme.</para>
-    </summary>
+    <summary>Format Scheme. When the object is serialized out as xml, its qualified name is a:fmtScheme.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FillStyleList &lt;a:fillStyleLst&gt;</description></item><item><description>LineStyleList &lt;a:lnStyleLst&gt;</description></item><item><description>EffectStyleList &lt;a:effectStyleLst&gt;</description></item><item><description>BackgroundFillStyleList &lt;a:bgFillStyleLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `fmtScheme (Format Scheme)`  
+  
+ This element contains the background fill styles, effect styles, fill styles, and line styles which define the style matrix for a theme.  The style matrix consists of subtle, moderate, and intense fills, lines, and effects.  The background fills are not generally thought of to directly be associated with the matrix, but do play a role in the style of the overall document.  Usually, a given object chooses a single line style, a single fill style, and a single effect style in order to define the overall final look of the object.  
+  
+ [*Example*:  Consider the following example of the style matrix in use within DrawingML:  
+  
+ 4f0fe3ab-df47-4254-b01e-20aeba12b67b  
+  
+ 9c41ea8a-5f72-44ca-92b4-1e59fb91330d  
+  
+ In this example, we see a shape styled which utilizes different aspects from the above defined style matrix.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|themeElements (§20.1.6.10); themeOverride (§20.1.6.12)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bgFillStyleLst (Background Fill Style List)|§20.1.4.1.7|  
+|effectStyleLst (Effect Style List)|§20.1.4.1.12|  
+|fillStyleLst (Fill Style List)|§20.1.4.1.13|  
+|lnStyleLst (Line Style List)|§20.1.4.1.21|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|name (Name)|Defines the name for the format scheme.  The name is simply a human readable string which identifies the format scheme in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_StyleMatrix) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -51,9 +84,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FormatScheme class.
-            </summary>
+        <summary>Initializes a new instance of the FormatScheme class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +110,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FormatScheme class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the FormatScheme class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -101,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FormatScheme class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the FormatScheme class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,9 +150,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the FormatScheme class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the FormatScheme class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +169,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Background Fill Style List.</para>
-          <para> Represents the following element tag in the schema: a:bgFillStyleLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Background Fill Style List. Represents the following element tag in the schema: a:bgFillStyleLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.BackgroundFillStyleList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -173,11 +195,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -196,11 +216,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.EffectStyleList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Effect Style List.</para>
-          <para> Represents the following element tag in the schema: a:effectStyleLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Effect Style List. Represents the following element tag in the schema: a:effectStyleLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.EffectStyleList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -222,11 +239,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.FillStyleList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Fill Style List.</para>
-          <para> Represents the following element tag in the schema: a:fillStyleLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Fill Style List. Represents the following element tag in the schema: a:fillStyleLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.FillStyleList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -248,11 +262,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.LineStyleList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Line Style List.</para>
-          <para> Represents the following element tag in the schema: a:lnStyleLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Line Style List. Represents the following element tag in the schema: a:lnStyleLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.LineStyleList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -274,10 +285,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -301,12 +310,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Defines the name for the format scheme.  The name is simply a human readable string which identifies the format scheme in the user interface.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

@@ -1,4 +1,4 @@
-﻿<Type Name="EndnoteReferenceMark" FullName="DocumentFormat.OpenXml.Wordprocessing.EndnoteReferenceMark">
+<Type Name="EndnoteReferenceMark" FullName="DocumentFormat.OpenXml.Wordprocessing.EndnoteReferenceMark">
   <TypeSignature Language="C#" Value="public class EndnoteReferenceMark : DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndnoteReferenceMark extends DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.EndnoteReferenceMark" />
@@ -18,11 +18,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Endnote Reference Mark.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:endnoteRef.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Endnote Reference Mark. When the object is serialized out as xml, its qualified name is w:endnoteRef.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `endnoteRef (Endnote Reference Mark)`  
+  
+ This element specifies the presence of an endnote reference mark. An *endnote reference mark* is a run of automatically numbered text which follows the numbering format set forth via the numFmt element (§17.11.17).  
+  
+ If an endnote reference mark is specified within a run which is not part of an endnote, then that endnote reference mark can be ignored.  
+  
+ [*Example*: Consider the following document where some text is referenced by an endnote at the end of the document:  
+  
+ 70d40be4-903c-4786-8499-3298be2e8aa6  
+  
+ The endnote reference mark is the lower case roman numeral within the actual endnote itself in the diagram above. The contents of the endnote (including the endnote reference mark) are represented by the following WordprocessingML:  
+  
+```xml  
+<w:endnote w:id="2">  
+  <w:p>  
+    <w:pPr>  
+      <w:pStyle w:val="EndnoteText" />  
+    </w:pPr>  
+    <w:r>  
+      <w:rPr>  
+        <w:rStyle w:val="EndnoteReference" />  
+      </w:rPr>  
+      <w:endfootnoteRef />  
+    </w:r>  
+    <w:r>  
+      <w:t>  
+Cool reference</w:t>  
+    </w:r>  
+  </w:p>  
+</w:endnote>  
+```  
+  
+ The resulting endnote contains the literal endnote content of *Cool reference*, preceding by an automatically numbered endnote reference mark. Since this is the first endnote in the document, that automatically numbered reference mark uses the lower case roman numeral *i*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Empty) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EndnoteReferenceMark class.
-            </summary>
+        <summary>Initializes a new instance of the EndnoteReferenceMark class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

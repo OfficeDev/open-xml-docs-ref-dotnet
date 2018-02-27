@@ -1,4 +1,4 @@
-﻿<Type Name="LinearGradientFill" FullName="DocumentFormat.OpenXml.Drawing.LinearGradientFill">
+<Type Name="LinearGradientFill" FullName="DocumentFormat.OpenXml.Drawing.LinearGradientFill">
   <TypeSignature Language="C#" Value="public class LinearGradientFill : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinearGradientFill extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.LinearGradientFill" />
@@ -18,11 +18,32 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Linear Gradient Fill.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:lin.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Linear Gradient Fill. When the object is serialized out as xml, its qualified name is a:lin.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **lin (Linear Gradient Fill)**  
+  
+ This element specifies a linear gradient.  
+  
+|Parent Elements|  
+|---------------------|  
+|gradFill (§20.1.8.33)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|ang (Angle)|Specifies the direction of color change for the gradient. To define this angle, let its value be x measured clockwise. Then ( -sin x, cos x ) is a vector parallel to the line of constant color in the gradient fill.<br /><br /> The possible values for this attribute are defined by the *ST_PositiveFixedAngle* simple type (§20.1.10.44).|  
+|scaled (Scaled)|Whether the gradient angle scales with the fill region. Mathematically, if this flag is true, then the gradient vector ( cos x , sin x ) is scaled by the width (w) and height (h) of the fill region, so that the vector becomes ( w cos x, h sin x ) (before normalization). Observe that now if the gradient angle is 45 degrees, the gradient vector is ( w, h ), which goes from top-left to bottom-right of the fill region. If this flag is false, the gradient angle is independent of the fill region and is not scaled using the manipulation described above. So a 45-degree gradient angle always give a gradient band whose line of constant color is parallel to the vector (1, -1).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_LinearShadeProperties) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +58,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LinearGradientFill class.
-            </summary>
+        <summary>Initializes a new instance of the LinearGradientFill class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,12 +82,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Angle.</para>
-          <para>Represents the following attribute in the schema: ang </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Angle.Represents the following attribute in the schema: ang</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the direction of color change for the gradient. To define this angle, let its value be x measured clockwise. Then ( -sin x, cos x ) is a vector parallel to the line of constant color in the gradient fill.  
+  
+ The possible values for this attribute are defined by the `ST_PositiveFixedAngle` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -89,11 +116,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -112,10 +137,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -139,12 +162,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Scaled.</para>
-          <para>Represents the following attribute in the schema: scaled </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Scaled.Represents the following attribute in the schema: scaled</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Whether the gradient angle scales with the fill region. Mathematically, if this flag is true, then we scale the gradient vector ( cos x , sin x ) by the width (w) and height (h) of the fill region, so that the vector becomes ( w cos x, h sin x ) (before normalization). Observe that now if the gradient angle is 45 degrees, the gradient vector is ( w, h ), which goes from top-left to bottom-right of the fill region. If this flag is false, the gradient angle is independent of the fill region and will not be scaled using the manipulation described above. So a 45-degree gradient angle always give a gradient band whose line of constant color is parallel to the vector (1, -1).  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

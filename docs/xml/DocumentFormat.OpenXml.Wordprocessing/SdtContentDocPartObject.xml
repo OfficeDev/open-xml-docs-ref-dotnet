@@ -1,4 +1,4 @@
-﻿<Type Name="SdtContentDocPartObject" FullName="DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject">
+<Type Name="SdtContentDocPartObject" FullName="DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject">
   <TypeSignature Language="C#" Value="public class SdtContentDocPartObject : DocumentFormat.OpenXml.Wordprocessing.SdtDocPartType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SdtContentDocPartObject extends DocumentFormat.OpenXml.Wordprocessing.SdtDocPartType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SdtContentDocPartObject" />
@@ -18,13 +18,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the SdtContentDocPartObject Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:docPartObj.</para>
-    </summary>
+    <summary>Defines the SdtContentDocPartObject Class. When the object is serialized out as xml, its qualified name is w:docPartObj.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocPartGallery &lt;w:docPartGallery&gt;</description></item><item><description>DocPartCategory &lt;w:docPartCategory&gt;</description></item><item><description>DocPartUnique &lt;w:docPartUnique&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **docPartObj (Built-In Document Part Structured Document Tag)**  
+  
+ This element specifies that the parent structured document tag shall be of a document part type.  
+  
+ This setting does not require or imply that the contents of the structured document tag shall contain only the exact contents of a document part of the specified gallery and category which is present on the current machine, it shall only be used to specify that the structured document tag is of this kind, which shall be used by an application to present the possible list of choices for insertion into the parent structured document tag.  
+  
+ This element differs from the docPartList element (§17.5.2.12) in that it can be used to semantically tag a set of block-level objects in a WordprocessingML document without requiring the ability to specify a category and gallery of objects which can be swapped with it via the user interface.  
+  
+ [*Example*: Consider the following structured document tag:  
+  
+```xml  
+<w:sdt>  
+  <w:sdtPr>  
+    …    <w:docPartObj>  
+      …    </w:docPartObj>  
+  </w:sdtPr>  
+  …</w:sdt>  
+```  
+  
+ The docPartObj element in this structured document tag's properties specify that the type of structured document tag is a document part. The child elements must specify the gallery and category semantics for this part, if any. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sdtPr (§17.5.2.38)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|docPartCategory (Document Part Category Filter)|§17.5.2.10|  
+|docPartGallery (Document Part Gallery Filter)|§17.5.2.11|  
+|docPartUnique (Built-In Document Part)|§17.5.2.14|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SdtDocPart) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +76,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SdtContentDocPartObject class.
-            </summary>
+        <summary>Initializes a new instance of the SdtContentDocPartObject class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,9 +102,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SdtContentDocPartObject class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the SdtContentDocPartObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,9 +122,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SdtContentDocPartObject class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the SdtContentDocPartObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +142,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the SdtContentDocPartObject class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the SdtContentDocPartObject class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,11 +164,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,9 +185,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="SheetFormatProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties">
+<Type Name="SheetFormatProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties">
   <TypeSignature Language="C#" Value="public class SheetFormatProperties : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SheetFormatProperties extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties" />
@@ -18,11 +18,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Dialog Sheet Format Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:sheetFormatPr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Dialog Sheet Format Properties. When the object is serialized out as xml, its qualified name is x:sheetFormatPr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **sheetFormatPr (Sheet Format Properties)**  
+  
+ Sheet formatting properties.  
+  
+|Parent Elements|  
+|---------------------|  
+|dialogsheet (§18.3.1.34); worksheet (§18.3.1.99)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|baseColWidth (Base Column Width)|Specifies the number of characters of the maximum digit width of the normal style's font. This value does not include margin padding or extra padding for gridlines. It is only the number of characters.<br /><br /> See defaultColWidth description in this section for details on calculating this value.<br /><br /> See the col element description, particularly the width attribute description, for more information on what is meant by "maximum digit width".<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|customHeight (Custom Height)|'True' if defaultRowHeight value has been manually set, or is different from the default value.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultColWidth (Default Column Width)|Default column width measured as the number of characters of the maximum digit width of the normal style's font.<br /><br /> If the user has not set this manually, then it can be calculated:<br /><br /> defaultColWidth = baseColumnWidth + {margin padding (2 pixels on each side, totalling 4 pixels)} + {gridline (1pixel)}<br /><br /> If the user has set this manually, then there is no calculation, and simply a value is specified.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|defaultRowHeight (Default Row Height)|Default row height measured in point size. Optimization so we don't have to write the height on all rows. This can be written out if most rows have custom height, to achieve the optimization.<br /><br /> When the row height of all rows in a sheet is the default value, then that value is written here, and customHeight is not set. If a few rows have a different height, that information is written directly on each row. However, if most or all of the rows in the sheet have the same height, but that height isn't the default height, then that height value should be written here (as an optimization), and the customHeight flag should also be set. In this case, all rows having this height do not need to express the height, only rows whose height differs from this value need to be explicitly expressed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|outlineLevelCol (Column Outline Level)|Highest number of outline levels for columns in this sheet. These values shall be in synch with the actual sheet outline levels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|outlineLevelRow (Maximum Outline Row)|Highest number of outline level for rows in this sheet. These values shall be in synch with the actual sheet outline levels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|thickBottom (Thick Bottom Border)|'True' if rows have a thick bottom border by default.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|thickTop (Thick Top Border)|'True' if rows have a thick top border by default.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|zeroHeight (Hidden By Default)|'True' if rows are hidden by default. This setting is an optimization used when most rows of the sheet are hidden. In this case, instead of writing out every row and specifying hidden, it is much shorter to only write out the rows that are not hidden, and specify here that rows are hidden by default, and only not hidden if specified.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SheetFormatPr) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SheetFormatProperties class.
-            </summary>
+        <summary>Initializes a new instance of the SheetFormatProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +89,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Base Column Width.</para>
-          <para>Represents the following attribute in the schema: baseColWidth </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Base Column Width.Represents the following attribute in the schema: baseColWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +112,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +138,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Height.</para>
-          <para>Represents the following attribute in the schema: customHeight </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Height.Represents the following attribute in the schema: customHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,11 +163,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Default Column Width.</para>
-          <para>Represents the following attribute in the schema: defaultColWidth </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Default Column Width.Represents the following attribute in the schema: defaultColWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +188,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Default Row Height.</para>
-          <para>Represents the following attribute in the schema: defaultRowHeight </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Default Row Height.Represents the following attribute in the schema: defaultRowHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,10 +213,7 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dyDescent.</para>
-          <para>Represents the following attribute in the schema: x14ac:dyDescent </para>
-        </summary>
+        <summary>dyDescent.Represents the following attribute in the schema: x14ac:dyDescent</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:x14ac=http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac
@@ -226,10 +235,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -253,11 +260,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Column Outline Level.</para>
-          <para>Represents the following attribute in the schema: outlineLevelCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Column Outline Level.Represents the following attribute in the schema: outlineLevelCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -281,11 +285,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximum Outline Row.</para>
-          <para>Represents the following attribute in the schema: outlineLevelRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximum Outline Row.Represents the following attribute in the schema: outlineLevelRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -309,11 +310,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Thick Bottom Border.</para>
-          <para>Represents the following attribute in the schema: thickBottom </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Thick Bottom Border.Represents the following attribute in the schema: thickBottom</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -337,11 +335,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Thick Top Border.</para>
-          <para>Represents the following attribute in the schema: thickTop </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Thick Top Border.Represents the following attribute in the schema: thickTop</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -365,11 +360,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hidden By Default.</para>
-          <para>Represents the following attribute in the schema: zeroHeight </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hidden By Default.Represents the following attribute in the schema: zeroHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

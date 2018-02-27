@@ -1,4 +1,4 @@
-﻿<Type Name="PivotHierarchy" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotHierarchy">
+<Type Name="PivotHierarchy" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotHierarchy">
   <TypeSignature Language="C#" Value="public class PivotHierarchy : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotHierarchy extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.PivotHierarchy" />
@@ -27,13 +27,63 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>OLAP Hierarchy.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:pivotHierarchy.</para>
-    </summary>
+    <summary>OLAP Hierarchy. When the object is serialized out as xml, its qualified name is x:pivotHierarchy.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>MemberProperties &lt;x:mps&gt;</description></item><item><description>Members &lt;x:members&gt;</description></item><item><description>PivotHierarchyExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **pivotHierarchy (OLAP Hierarchy)**  
+  
+ Represents a OLAP hierarchy associated with the PivotTable. A hierarchy is a  hierarchical representation of related OLAP dimensions. Hierarchies are defined on the OLAP server and cannot be changed in the PivotTable. [*Example*:  Hierarchy "A" might be defined as follows:  
+  
+ Level 1Country/Region  
+  
+ Level 2State\Provence  
+  
+ Level 3City  
+  
+ *end example*]  
+  
+ *[Example:*  
+  
+```xml  
+<sh:pivotHierarchy dragToRow="0" dragToCol="0" dragToPage="0" dragToData="1"/>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pivotHierarchies (§18.10.1.71)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|members (Members)|§18.10.1.56|  
+|mps (OLAP Member Properties)|§18.10.1.59|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|caption (Hierarchy Caption)|Specifies the user defined caption of the hierarchy.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|dragOff (Drag Off)|Specifies a boolean value that indicates whether the user is allowed to remove this hierarchy from the PivotTable.<br /><br /> A value of *1* or *true* indicates the user can remove this hierarchy from the PivotTable.<br /><br /> A value of *0* or *false* indicates the user cannot remove the hierarchy from the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToCol (Drag To Column)|Specifies a boolean value that indicates whether the user is allowed to put this hierarchy into the column area of the PivotTable.<br /><br /> A value of *1* or *true* indicates the user can put this hierarchy into the column area of the PivotTable.<br /><br /> A value of *0* or *false* indicates the user cannot remove this hierarchy.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToData (Drag To Data)|Specifies a boolean value that indicates whether the user is allowed to put this hierarchy into the data area of the view.<br /><br /> A value of *1* or *true* indicates<br /><br /> A value of *0* or *false* indicates<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToPage (Drag to Page)|Specifies a boolean value that indicates whether the user is allowed to put this hierarchy into the page area of the PivotTable.<br /><br /> A value of *1* or *true* indicates the user can put this hierarchy into the page area of the PivotTable.<br /><br /> A value of *0* or *false* indicates cannot put this hierarchy into the page area.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToRow (Drag To Row)|Specifies a boolean value that indicates whether the user is allowed to put this hierarchy into the row area of the PivotTable.<br /><br /> A value of *1* or *true* indicates the user can put this hierarchy into the row area of the PivotTable.<br /><br /> A value of *0* or *false* indicates cannot put this hierarchy into the row area.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|includeNewItemsInFilter (Inclusive Manual Filter)|Specifies a boolean value that indicates whether the application  will show only the items the user has selected.<br /><br /> A value of *1* or *true* indicates the application will show only items the user has selected; all other items are hidden.<br /><br /> A value of *0* or *false* indicates the application will show all items.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|multipleItemSelectionAllowed (Multiple Field Filters)|Specifies a boolean value that indicates whether the user can select multiple members when the hierarchy is in the page field area of the view.<br /><br /> A value of *1* or *true* indicates the user can select multiple members.<br /><br /> A value of *0* or *false* indicates the user cannot select multiple members.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|outline (Outline New Levels)|Specifies a boolean value that indicates whether new levels added to the PivotTable are shown in Outline mode.<br /><br /> A value of *1* or *true* indicates new levels are shown in Outline mode.<br /><br /> A value of *0* or *false* indicates new items are not shown in Outline mode.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showInFieldList (Show In Field List)|Specifies a boolean value that indicates whether this hierarchy is omitted from the field list. This attribute depends on how the application exposes a list of fields for PivotTables in the user interface.<br /><br /> A value of *1* or *true* indicates this hierarchy is show in the field list or similar mechanism in the user interface.<br /><br /> A value of *0* or *false* indicates is not shown in the field list.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|subtotalTop (New Levels Subtotals At Top)|Specifies a boolean value that indicates whether new levels added to the view will show their subtotals at the top.<br /><br /> A value of *1* or *true* indicates new levels added to the view show their subtotals at the top.<br /><br /> A value of *0* or *false* indicates new levels added to the view show their subtotals at the bottom.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PivotHierarchy) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PivotHierarchy class.
-            </summary>
+        <summary>Initializes a new instance of the PivotHierarchy class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +124,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotHierarchy class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PivotHierarchy class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,9 +144,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotHierarchy class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PivotHierarchy class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +164,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PivotHierarchy class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PivotHierarchy class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,11 +188,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hierarchy Caption.</para>
-          <para>Represents the following attribute in the schema: caption </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hierarchy Caption.Represents the following attribute in the schema: caption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -172,11 +211,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,11 +237,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag Off.</para>
-          <para>Represents the following attribute in the schema: dragOff </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag Off.Represents the following attribute in the schema: dragOff</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -228,11 +262,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag To Column.</para>
-          <para>Represents the following attribute in the schema: dragToCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag To Column.Represents the following attribute in the schema: dragToCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -256,11 +287,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag To Data.</para>
-          <para>Represents the following attribute in the schema: dragToData </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag To Data.Represents the following attribute in the schema: dragToData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -284,11 +312,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag to Page.</para>
-          <para>Represents the following attribute in the schema: dragToPage </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag to Page.Represents the following attribute in the schema: dragToPage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -312,11 +337,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag To Row.</para>
-          <para>Represents the following attribute in the schema: dragToRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag To Row.Represents the following attribute in the schema: dragToRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -340,11 +362,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Inclusive Manual Filter.</para>
-          <para>Represents the following attribute in the schema: includeNewItemsInFilter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Inclusive Manual Filter.Represents the following attribute in the schema: includeNewItemsInFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -363,10 +382,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -385,10 +402,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.MemberProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OLAP Member Properties.</para>
-          <para> Represents the following element tag in the schema: x:mps </para>
-        </summary>
+        <summary>OLAP Member Properties. Represents the following element tag in the schema: x:mps</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -416,11 +430,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Multiple Field Filters.</para>
-          <para>Represents the following attribute in the schema: multipleItemSelectionAllowed </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Multiple Field Filters.Represents the following attribute in the schema: multipleItemSelectionAllowed</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -444,11 +455,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Outline New Levels.</para>
-          <para>Represents the following attribute in the schema: outline </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Outline New Levels.Represents the following attribute in the schema: outline</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -472,11 +480,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show In Field List.</para>
-          <para>Represents the following attribute in the schema: showInFieldList </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show In Field List.Represents the following attribute in the schema: showInFieldList</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -500,11 +505,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> New Levels Subtotals At Top.</para>
-          <para>Represents the following attribute in the schema: subtotalTop </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>New Levels Subtotals At Top.Represents the following attribute in the schema: subtotalTop</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="Style" FullName="DocumentFormat.OpenXml.Wordprocessing.Style">
+<Type Name="Style" FullName="DocumentFormat.OpenXml.Wordprocessing.Style">
   <TypeSignature Language="C#" Value="public class Style : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Style extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Style" />
@@ -84,13 +84,206 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Style Definition.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:style.</para>
-    </summary>
+    <summary>Style Definition. When the object is serialized out as xml, its qualified name is w:style.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>StyleName &lt;w:name&gt;</description></item><item><description>Aliases &lt;w:aliases&gt;</description></item><item><description>BasedOn &lt;w:basedOn&gt;</description></item><item><description>NextParagraphStyle &lt;w:next&gt;</description></item><item><description>LinkedStyle &lt;w:link&gt;</description></item><item><description>AutoRedefine &lt;w:autoRedefine&gt;</description></item><item><description>StyleHidden &lt;w:hidden&gt;</description></item><item><description>UIPriority &lt;w:uiPriority&gt;</description></item><item><description>SemiHidden &lt;w:semiHidden&gt;</description></item><item><description>UnhideWhenUsed &lt;w:unhideWhenUsed&gt;</description></item><item><description>PrimaryStyle &lt;w:qFormat&gt;</description></item><item><description>Locked &lt;w:locked&gt;</description></item><item><description>Personal &lt;w:personal&gt;</description></item><item><description>PersonalCompose &lt;w:personalCompose&gt;</description></item><item><description>PersonalReply &lt;w:personalReply&gt;</description></item><item><description>Rsid &lt;w:rsid&gt;</description></item><item><description>StyleParagraphProperties &lt;w:pPr&gt;</description></item><item><description>StyleRunProperties &lt;w:rPr&gt;</description></item><item><description>StyleTableProperties &lt;w:tblPr&gt;</description></item><item><description>TableStyleConditionalFormattingTableRowProperties &lt;w:trPr&gt;</description></item><item><description>StyleTableCellProperties &lt;w:tcPr&gt;</description></item><item><description>TableStyleProperties &lt;w:tblStylePr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **style (Style Definition)**  
+  
+ This element specifies the definition of a single style within a WordprocessingML document. A *style* is a predefined set of table, numbering, paragraph, and/or character properties which can be applied to regions within a document.  
+  
+ The style definition for any style definition can be divided into three segments:  
+  
+-   General style properties  
+  
+-   Style type  
+  
+-   Style type-specific properties  
+  
+ *General style properties* refers to the set of properties which can be used regardless of the style type; for example, the style name, additional aliases for the style, a style ID (used by the document content to refer to the style), if style is hidden, if style is locked, etc.  
+  
+ [*Example:* Consider a style called Heading  a document as follows:  
+  
+```xml  
+<w:style w:type="paragraph" w:styleId="Heading1">  
+  <w:name w:val="Heading 1"/>  
+  <w:basedOn w:val="Normal"/>  
+  <w:next w:val="Normal"/>  
+  <w:link w:val="Heading1Char"/>  
+  <w:uiPriority w:val="1"/>  
+  <w:qformat/>  
+  <w:rsid w:val="00F303CE"/>  
+  …</w:style>  
+```  
+  
+ Above the formatting information specific to this style type are a set of general style properties which define information shared by all style types. *end example*]  
+  
+ *Style types* refers to the property on a style which defines the type of style created with this style definition. WordprocessingML supports six types of style definitions by the values for the style definition's type attribute:  
+  
+-   Paragraph styles  
+  
+-   Character styles  
+  
+-   Linked styles (paragraph + character) [*Note*: Accomplished via the link element (§17.7.4.6). *end note*]  
+  
+-   Table styles  
+  
+-   Numbering styles  
+  
+-   Default paragraph + character properties  
+  
+ [*Example:* Consider a style called Heading  a document as follows:  
+  
+```xml  
+<w:style w:type="paragraph" w:styleId="Heading1">  
+  <w:name w:val="heading 1"/>  
+  <w:basedOn w:val="Normal"/>  
+  <w:next w:val="Normal"/>  
+  <w:link w:val="Heading1Char"/>  
+  <w:uiPriority w:val="1"/>  
+  <w:qformat/>  
+  <w:rsid w:val="00F303CE"/>  
+  …</w:style>  
+```  
+  
+ The type attribute has a value of *paragraph*, which indicates that the following style definition is a paragraph style. *end example*]  
+  
+ *Style type-specific properties* refers to the payload of the style: its formatting information as well as any properties which apply only to that style type.  
+  
+ [*Example*: Consider a table style with primary name *Normal Table* defined as follows:  
+  
+```xml  
+<w:style w:type="table" w:default="1" w:styleId="TableNormal">  
+  <w:name w:val="Normal Table"/>  
+  …  <w:tblPr>  
+    <w:tblInd w:w="0" w:type="dxa"/>  
+    <w:tblCellMar>  
+      <w:top w:w="0" w:type="dxa"/>  
+      <w:left w:w="108" w:type="dxa"/>  
+      <w:bottom w:w="0" w:type="dxa"/>  
+      <w:right w:w="108" w:type="dxa"/>  
+    </w:tblCellMar>  
+  </w:tblPr>  
+</w:style>  
+```  
+  
+ The tblPr element contains the formatting payload for this table style, which is only applicable to a table style. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|styles (§17.7.4.18)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|aliases (Alternate Style Names)|§17.7.4.1|  
+|autoRedefine (Automatically Merge User Formatting Into Style Definition)|§17.7.4.2|  
+|basedOn (Parent Style ID)|§17.7.4.3|  
+|hidden (Hide Style From User Interface)|§17.7.4.4|  
+|link (Linked Style Reference)|§17.7.4.6|  
+|locked (Style Cannot Be Applied)|§17.7.4.7|  
+|name (Primary Style Name)|§17.7.4.9|  
+|next (Style For Next Paragraph)|§17.7.4.10|  
+|personal (E-Mail Message Text Style)|§17.7.4.11|  
+|personalCompose (E-Mail Message Composition Style)|§17.7.4.12|  
+|personalReply (E-Mail Message Reply Style)|§17.7.4.13|  
+|pPr (Style Paragraph Properties)|§17.7.8.2|  
+|qFormat (Primary Style)|§17.7.4.14|  
+|rPr (Run Properties)|§17.7.9.1|  
+|rsid (Revision Identifier for Style Definition)|§17.7.4.15|  
+|semiHidden (Hide Style From Main User Interface)|§17.7.4.16|  
+|tblPr (Style Table Properties)|§17.7.6.4|  
+|tblStylePr (Style Conditional Table Formatting Properties)|§17.7.6.6|  
+|tcPr (Style Table Cell Properties)|§17.7.6.9|  
+|trPr (Style Table Row Properties)|§17.7.6.11|  
+|uiPriority (Optional User Interface Sorting Order)|§17.7.4.19|  
+|unhideWhenUsed (Remove Semi-Hidden Property When Style Is Used)|§17.7.4.20|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Style) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+   
+  
+## Examples  
+ The following code example opens a word processing file that contains some text, and applies the style "Heading 1" to the first paragraph.  
+  
+```csharp  
+using System;  
+using System.Linq;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Wordprocessing;  
+  
+namespace StyleEx  
+{  
+    class Program  
+    {  
+        // Apply the Heading 1 style to a paragraph.  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\users\public\documents\StyleEx.docx";  
+  
+            using (WordprocessingDocument document =   
+                WordprocessingDocument.Open(fileName, true))  
+            {  
+                // Get the first paragraph.  
+                Paragraph p =  
+                    document.MainDocumentPart.Document.Body.Elements<Paragraph>().First();  
+  
+                // If the paragraph has no ParagraphProperties objects, create a new one for it.  
+                if (p.Elements<ParagraphProperties>().Count() == 0)  
+                {  
+                    p.PrependChild<ParagraphProperties>(new ParagraphProperties());  
+                }  
+  
+                // Get the paragraph properties element of the paragraph.  
+                ParagraphProperties pPr = p.Elements<ParagraphProperties>().First();  
+  
+                // Set the paragraph style ID to "Heading1".  
+                pPr.ParagraphStyleId = new ParagraphStyleId() { Val = "Heading1" };                
+            }  
+        }  
+    }  
+}  
+  
+```  
+  
+```sql  
+Imports System.Linq  
+Imports DocumentFormat.OpenXml.Wordprocessing  
+Imports DocumentFormat.OpenXml.Packaging  
+  
+Module Module1  
+    ' Apply the Heading 1 style to a paragraph.  
+    Sub Main()  
+        Dim fileName As String = "C:\Users\Public\Documents\StyleEx.docx"  
+  
+        Using doc As WordprocessingDocument = _  
+            WordprocessingDocument.Open(fileName, True)  
+            ' Get the first paragraph.  
+            Dim p As Paragraph = doc.MainDocumentPart.Document.Body.Elements _  
+                (Of Paragraph).First()  
+  
+            ' If the paragraph has no ParagraphProperties objects, create a new one for it.  
+            If p.Elements(Of ParagraphProperties).Count() = 0 Then  
+                p.PrependChild(Of ParagraphProperties)(New ParagraphProperties())  
+            End If  
+  
+            ' Get the paragraph properties element of the paragraph.  
+            Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties).First()  
+  
+            ' Set the paragraph style ID to "Heading1".  
+            pPr.ParagraphStyleId = New ParagraphStyleId() With {.Val = "Heading1"}  
+        End Using  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -105,9 +298,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Style class.
-            </summary>
+        <summary>Initializes a new instance of the Style class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -133,9 +324,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Style class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Style class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,9 +344,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Style class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Style class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -177,9 +364,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Style class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Style class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -198,10 +383,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Aliases</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Alternate Style Names.</para>
-          <para> Represents the following element tag in the schema: w:aliases </para>
-        </summary>
+        <summary>Alternate Style Names. Represents the following element tag in the schema: w:aliases</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -224,10 +406,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.AutoRedefine</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Automatically Merge User Formatting Into Style Definition.</para>
-          <para> Represents the following element tag in the schema: w:autoRedefine </para>
-        </summary>
+        <summary>Automatically Merge User Formatting Into Style Definition. Represents the following element tag in the schema: w:autoRedefine</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -250,10 +429,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BasedOn</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Parent Style ID.</para>
-          <para> Represents the following element tag in the schema: w:basedOn </para>
-        </summary>
+        <summary>Parent Style ID. Represents the following element tag in the schema: w:basedOn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -279,11 +455,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -307,11 +481,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> User-Defined Style.</para>
-          <para>Represents the following attribute in the schema: w:customStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>User-Defined Style.Represents the following attribute in the schema: w:customStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -337,11 +508,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Default Style.</para>
-          <para>Represents the following attribute in the schema: w:default </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Default Style.Represents the following attribute in the schema: w:default</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -362,10 +530,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LinkedStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Linked Style Reference.</para>
-          <para> Represents the following element tag in the schema: w:link </para>
-        </summary>
+        <summary>Linked Style Reference. Represents the following element tag in the schema: w:link</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -388,10 +553,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -410,10 +573,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Locked</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Cannot Be Applied.</para>
-          <para> Represents the following element tag in the schema: w:locked </para>
-        </summary>
+        <summary>Style Cannot Be Applied. Represents the following element tag in the schema: w:locked</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -436,10 +596,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NextParagraphStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style For Next Paragraph.</para>
-          <para> Represents the following element tag in the schema: w:next </para>
-        </summary>
+        <summary>Style For Next Paragraph. Represents the following element tag in the schema: w:next</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -462,10 +619,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Personal</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> E-Mail Message Text Style.</para>
-          <para> Represents the following element tag in the schema: w:personal </para>
-        </summary>
+        <summary>E-Mail Message Text Style. Represents the following element tag in the schema: w:personal</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -488,10 +642,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PersonalCompose</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> E-Mail Message Composition Style.</para>
-          <para> Represents the following element tag in the schema: w:personalCompose </para>
-        </summary>
+        <summary>E-Mail Message Composition Style. Represents the following element tag in the schema: w:personalCompose</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -514,10 +665,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PersonalReply</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> E-Mail Message Reply Style.</para>
-          <para> Represents the following element tag in the schema: w:personalReply </para>
-        </summary>
+        <summary>E-Mail Message Reply Style. Represents the following element tag in the schema: w:personalReply</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -540,10 +688,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PrimaryStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Primary Style.</para>
-          <para> Represents the following element tag in the schema: w:qFormat </para>
-        </summary>
+        <summary>Primary Style. Represents the following element tag in the schema: w:qFormat</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -566,10 +711,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Rsid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Revision Identifier for Style Definition.</para>
-          <para> Represents the following element tag in the schema: w:rsid </para>
-        </summary>
+        <summary>Revision Identifier for Style Definition. Represents the following element tag in the schema: w:rsid</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -592,10 +734,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SemiHidden</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hide Style From Main User Interface.</para>
-          <para> Represents the following element tag in the schema: w:semiHidden </para>
-        </summary>
+        <summary>Hide Style From Main User Interface. Represents the following element tag in the schema: w:semiHidden</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -618,10 +757,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleHidden</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hide Style From User Interface.</para>
-          <para> Represents the following element tag in the schema: w:hidden </para>
-        </summary>
+        <summary>Hide Style From User Interface. Represents the following element tag in the schema: w:hidden</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -649,11 +785,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style ID.</para>
-          <para>Represents the following attribute in the schema: w:styleId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Style ID.Represents the following attribute in the schema: w:styleId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -674,10 +807,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleName</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Primary Style Name.</para>
-          <para> Represents the following element tag in the schema: w:name </para>
-        </summary>
+        <summary>Primary Style Name. Represents the following element tag in the schema: w:name</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -700,10 +830,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleParagraphProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Paragraph Properties.</para>
-          <para> Represents the following element tag in the schema: w:pPr </para>
-        </summary>
+        <summary>Style Paragraph Properties. Represents the following element tag in the schema: w:pPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -726,10 +853,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleRunProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Run Properties.</para>
-          <para> Represents the following element tag in the schema: w:rPr </para>
-        </summary>
+        <summary>Run Properties. Represents the following element tag in the schema: w:rPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -752,10 +876,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleTableCellProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Table Cell Properties.</para>
-          <para> Represents the following element tag in the schema: w:tcPr </para>
-        </summary>
+        <summary>Style Table Cell Properties. Represents the following element tag in the schema: w:tcPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -778,10 +899,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleTableProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Table Properties.</para>
-          <para> Represents the following element tag in the schema: w:tblPr </para>
-        </summary>
+        <summary>Style Table Properties. Represents the following element tag in the schema: w:tblPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -804,10 +922,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableStyleConditionalFormattingTableRowProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Table Row Properties.</para>
-          <para> Represents the following element tag in the schema: w:trPr </para>
-        </summary>
+        <summary>Style Table Row Properties. Represents the following element tag in the schema: w:trPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -835,11 +950,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.StyleValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Type.</para>
-          <para>Represents the following attribute in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Style Type.Represents the following attribute in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -860,10 +972,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.UIPriority</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Optional User Interface Sorting Order.</para>
-          <para> Represents the following element tag in the schema: w:uiPriority </para>
-        </summary>
+        <summary>Optional User Interface Sorting Order. Represents the following element tag in the schema: w:uiPriority</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -886,10 +995,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.UnhideWhenUsed</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Remove Semi-Hidden Property When Style Is Used.</para>
-          <para> Represents the following element tag in the schema: w:unhideWhenUsed </para>
-        </summary>
+        <summary>Remove Semi-Hidden Property When Style Is Used. Represents the following element tag in the schema: w:unhideWhenUsed</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

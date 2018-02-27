@@ -1,4 +1,4 @@
-﻿<Type Name="HorizontalMerge" FullName="DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge">
+<Type Name="HorizontalMerge" FullName="DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge">
   <TypeSignature Language="C#" Value="public class HorizontalMerge : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HorizontalMerge extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge" />
@@ -18,11 +18,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the HorizontalMerge Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:hMerge.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the HorizontalMerge Class. When the object is serialized out as xml, its qualified name is w:hMerge.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **hMerge (Horizontally Merged Cell)**  
+  
+ This element specifies that this cell is part of a horizontally merged set of cells in a table. The val attribute on this element determines how this cell is defined with respect to the previous cell in the table (i.e., whether this cell continues the horizontal merge or starts a new merged group of cells).  
+  
+ [*Note*: This property is maintained for compatibility with legacy word processing documents which defined tables in this manner. Whenever possible, this form or horizontal merges should not be produced, and should be translated to the appropriate gridSpan (§17.4.17) settings on the table cells instead. *end note*]  
+  
+ If this element is omitted, then this cell shall not be part of any horizontally merged grouping of cells, and any horizontal merge group in the preceding cells shall be closed.  
+  
+ [*Example*: Consider a table with one row and three columns with the last two columns horizontally merged:  
+  
+ The second cell in the first row starts a merge that is completed in the right adjacent cell, resulting in the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+   …  <w:tr>  
+     <w:tc>  
+       …    </w:tc>  
+     <w:tc>  
+       <w:tcPr>  
+         <w:hmerge w:val="restart"/>  
+      </w:tcPr>  
+      …    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:hmerge/>  
+      </w:tcPr>  
+      …    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The hmerge element defines the cells which are horizontally merged, and how each group is merged together. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_HMerge) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the HorizontalMerge class.
-            </summary>
+        <summary>Initializes a new instance of the HorizontalMerge class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +104,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +125,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +150,32 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.MergedCellValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal Merge Type.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Horizontal Merge Type.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies how the table cell is part of a horizontally merged region. This determine whether the cell should join onto an existing grouping of merged cells if any exist, or start a new group of merged cells. Refer to the simple type definition for a full description of each type.  
+  
+ If this attribute is omitted, its value shall be assumed to be `continue`.  
+  
+ Consider a table cell where a horizontal cell merge begins represented as the following WordprocessingML:  
+  
+```  
+<w:tcPr>  
+    <w:hmerge w:val="restart"/>  
+</w:tcPr>  
+```  
+  
+ The attribute value of `restart` specifies that this element shall start a new horizontally merged region in this table.  
+  
+ The possible values for this attribute are defined by the `ST_Merge` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="GroupShape" FullName="DocumentFormat.OpenXml.Drawing.Spreadsheet.GroupShape">
+<Type Name="GroupShape" FullName="DocumentFormat.OpenXml.Drawing.Spreadsheet.GroupShape">
   <TypeSignature Language="C#" Value="public class GroupShape : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GroupShape extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Spreadsheet.GroupShape" />
@@ -42,13 +42,70 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Group Shape.</para>
-      <para> When the object is serialized out as xml, its qualified name is xdr:grpSp.</para>
-    </summary>
+    <summary>Group Shape. When the object is serialized out as xml, its qualified name is xdr:grpSp.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>NonVisualGroupShapeProperties &lt;xdr:nvGrpSpPr&gt;</description></item><item><description>GroupShapeProperties &lt;xdr:grpSpPr&gt;</description></item><item><description>Shape &lt;xdr:sp&gt;</description></item><item><description>GroupShape &lt;xdr:grpSp&gt;</description></item><item><description>GraphicFrame &lt;xdr:graphicFrame&gt;</description></item><item><description>ConnectionShape &lt;xdr:cxnSp&gt;</description></item><item><description>Picture &lt;xdr:pic&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Excel.Drawing.ContentPart &lt;xdr14:contentPart&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **grpSp (Group Shape)**  
+  
+ This element specifies a group shape that represents many shapes grouped together. This shape is to be treated just as if it were a regular shape but instead of being described by a single geometry it is made up of all the shape geometries encompassed within it. Within a group shape each of the shapes that make up the group are specified just as they normally would. The idea behind grouping elements however is that a single transform can apply to many shapes at the same time.  
+  
+ [*Example*: Consider the following group shape.  
+  
+```xml  
+<xdr:grpSp>  
+  <xdr:nvGrpSpPr>  
+    <xdr:cNvPr id="10" name="Group 9"/>  
+    <xdr:cNvGrpSpPr/>  
+    <xdr:nvPr/>  
+  </  
+xdr:nvGrpSpPr>  
+  <xdr:grpSpPr>  
+    <a:xfrm>  
+      <a:off x="838200" y="990600"/>  
+      <a:ext cx="2426208" cy="978408"/>  
+      <a:chOff x="838200" y="990600"/>  
+      <a:chExt cx="2426208" cy="978408"/>  
+   </a:xfrm>  
+  </  
+xdr:grpSpPr>  
+  <xdr:sp>  
+  ..  
+  </xdr:sp>  
+  <xdr:sp>  
+  ..  
+  </xdr:sp>  
+  <xdr:sp>  
+  ..  
+  </xdr:sp>  
+</xdr:grpSp>  
+```  
+  
+ In the above example we see three shapes specified within a single group. These three shapes have their position and sizes specified just as they normally would within the shape tree. The generating application should apply the transformation after the bounding box for the group shape has been calculated. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|absoluteAnchor (§20.5.2.1); grpSp (§20.5.2.17); oneCellAnchor (§20.5.2.24); twoCellAnchor (§20.5.2.33)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cxnSp (Connection Shape)|§20.5.2.13|  
+|graphicFrame (Graphic Frame)|§20.5.2.16|  
+|grpSp (Group Shape)|§20.5.2.17|  
+|grpSpPr (Group Shape Properties)|§20.5.2.18|  
+|nvGrpSpPr (Non-Visual Properties for a Group Shape)|§20.5.2.21|  
+|pic (Picture)|§20.5.2.25|  
+|sp (Shape)|§20.5.2.29|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_GroupShape) is located in §A.4.5. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -63,9 +120,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GroupShape class.
-            </summary>
+        <summary>Initializes a new instance of the GroupShape class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -91,9 +146,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GroupShape class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the GroupShape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -113,9 +166,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GroupShape class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the GroupShape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,9 +186,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the GroupShape class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the GroupShape class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,11 +208,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -182,10 +229,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Spreadsheet.GroupShapeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Group Shape Properties.</para>
-          <para> Represents the following element tag in the schema: xdr:grpSpPr </para>
-        </summary>
+        <summary>Group Shape Properties. Represents the following element tag in the schema: xdr:grpSpPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -208,10 +252,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -230,10 +272,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Spreadsheet.NonVisualGroupShapeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Non-Visual Properties for a Group Shape.</para>
-          <para> Represents the following element tag in the schema: xdr:nvGrpSpPr </para>
-        </summary>
+        <summary>Non-Visual Properties for a Group Shape. Represents the following element tag in the schema: xdr:nvGrpSpPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

@@ -1,4 +1,4 @@
-﻿<Type Name="PivotField" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotField">
+<Type Name="PivotField" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotField">
   <TypeSignature Language="C#" Value="public class PivotField : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotField extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.PivotField" />
@@ -27,13 +27,115 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>PivotTable Field.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:pivotField.</para>
-    </summary>
+    <summary>PivotTable Field. When the object is serialized out as xml, its qualified name is x:pivotField.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Items &lt;x:items&gt;</description></item><item><description>AutoSortScope &lt;x:autoSortScope&gt;</description></item><item><description>PivotFieldExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **pivotField (PivotTable Field)**  
+  
+ Represents a single field in the PivotTable. This element contains information about the field, including the collection of items in the field.  
+  
+ [*Example*:  
+  
+```xml  
+<pivotField axis="axisRow" allDrilled="1" showAll="0" measureFilter="1"  sortType="descending">  
+  <items count="8">  
+    <item s="1" c="1" x="0"/>  
+    <item s="1" c="1" x="1"/>  
+    <item c="1" x="2"/>  
+    <item c="1" x="3"/>  
+    <item c="1" x="4"/>  
+    <item c="1" x="5"/>  
+    <item c="1" x="6"/>  
+    <item t="default"/>  
+  </items>  
+  <autoSortScope>  
+    <pivotArea dataOnly="0" outline="0" fieldPosition="0">  
+      <references count="2">  
+        <reference field="4294967294" count="1" selected="0">  
+          <x v="0"/>  
+        </reference>  
+        <reference field="25" count="1" selected="0">  
+          <x v="0"/>  
+        </reference>  
+      </references>  
+    </pivotArea>  
+  </autoSortScope>  
+</pivotField>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pivotFields (§18.10.1.70)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|autoSortScope (AutoSort Scope)|§18.10.1.1|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|items (Field Items)|§18.10.1.46|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|allDrilled (All Items Expanded)|Specifies a boolean value that indicates whether all items in the field are expanded. Applies only to OLAP PivotTables.<br /><br /> A value of *1* or *true* indicates all items in the field are expanded.<br /><br /> A value of *0* or *false* indicates all items are not expanded. However some items might be expanded.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|autoShow (Auto Show)|Specifies a boolean value that indicates whether an "AutoShow" filter is applied to this field. This attribute depends on the implementation of filtering in the application.<br /><br /> A value of *1* or *true* indicates an "AutoShow" filter is applied to the field.<br /><br /> A value of *0* or *false* indicates an "AutoShow" filter is not applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|avgSubtotal (Average)|Specifies a boolean value that indicates whether to apply the 'Average' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the subtotal for this field is 'Average.'<br /><br /> A value of *0* or *false* indicates a different aggregation function is applied to the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|axis (Axis)|Specifies the region of the PivotTable that this field is displayed.<br /><br /> The possible values for this attribute are defined by the *ST_Axis* simple type (§18.18.1).|  
+|compact (Compact)|Specifies a boolean value that indicates whether the application will display fields compactly in the sheet on which this PivotTable resides.<br /><br /> A value of *1* or *true* indicates the next field should be displayed in the same column of the sheet.<br /><br /> A value of *0* or *false* indicates each pivot field will display in its own column in the sheet.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|countASubtotal (CountA)|Specifies a boolean value that indicates whether to apply the 'countA' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the subtotal for this field is 'countA.'<br /><br /> A value of *0* or *false* indicates a different aggregation function is applied to the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|countSubtotal (Count)|Specifies a boolean value that indicates whether to apply the 'count' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the subtotal for this field is 'count.'<br /><br /> A value of *0* or *false* indicates a different aggregation vfunction is applied to the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dataField (Data Field)|Specifies a boolean value that indicates whether this field appears in the data region of the PivotTable.<br /><br /> A value of *1* or *true* indicates this field appears in the data region of the PivotTable.<br /><br /> A value of *0* or *false* indicates this field appears in another region of the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dataSourceSort (Data Source Sort)|Specifies a boolean value that indicates whether sort is applied to this field in the data source.<br /><br /> A value of *1* or *true* indicates this field is sorted in the data source.<br /><br /> A value of *0* or *false* indicates this field is not sorted in the data source.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultAttributeDrillState (Drill State)|Specifies a boolean value that indicates the drill state of the attribute hierarchy in an OLAP-based PivotTable.<br /><br /> A value of *1* or *true* indicates the attribute hierarchy is expanded.<br /><br /> A value of *0* or *false* indicates the attribute hierarchy is collapsed.<br /><br /> This attribute is designed to allow the application to issue more optimized queries when all items of each field have the same drill state.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultSubtotal (Show Default Subtotal)|Specifies a boolean value that indicates whether the default subtotal aggregation function is displayed for this field.<br /><br /> A value of *1* or *true* indicates the default subtotal aggregation function is displayed for this field.<br /><br /> A value of *0* or *false* indicates the default aggregation function is not displayed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragOff (Drag Off)|Specifies a boolean value that indicates whether the field can be removed from the PivotTable.<br /><br /> A value of *1* or *true* indicates the field can be removed from the PivotTable.<br /><br /> A value of *0* or *false* indicates the field cannot be removed from the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToCol (Drag To Column)|Specifies a boolean value that indicates whether the field can be dragged to the column axis.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the column axis.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the column axis.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToData (Field Can Drag to Data)|Specifies a boolean value that indicates whether the field can be dragged to the data region.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the data region.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the data region.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToPage (Drag Field to Page)|Specifies a boolean value that indicates whether the field can be dragged to the page region.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the page region.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the page region.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToRow (Drag To Row)|Specifies a boolean value that indicates whether the field can be dragged to the row axis.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the row axis.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the row axis.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hiddenLevel (Hidden Level)|Specifies a boolean value that indicates whether there is a hidden level in the PivotTable. This attribute applies to OLAP-based PivotTables only.<br /><br /> A value of *1* or *true* indicates the OLAP PivotTable contains a hidden level.<br /><br /> A value of *0* or *false* indicates the OLAP PivotTable does not contain any hidden levels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hideNewItems (Hide New Items)|Specifies a boolean value that indicates whether new items that appear after a refresh should be hidden by default.<br /><br /> A value of *1* or *true* indicates that items that appear after a refresh should be hidden by default.<br /><br /> A value of *0* or *false* indicates that items that appear after a refresh should be shown by default.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|includeNewItemsInFilter (Inclusive Manual Filter)|Specifies a boolean value that indicates whether manual filter is in inclusive mode.<br /><br /> A value of *1* or *true* indicates the manual filter is inclusive.<br /><br /> A value of *0* or *false* indicates the manual filter is not inclusive.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|insertBlankRow (Insert Blank Row)|Specifies a boolean value that indicates whether to insert a blank row after each item.<br /><br /> A value of *1* or *true* indicates that a blank row is inserted after each item.<br /><br /> A value of *0* or *false* indicates no additional rows are inserted after each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|insertPageBreak (Insert Item Page Break)|Specifies a boolean value that indicates whether to insert a page break after each item.<br /><br /> A value of *1* or *true* indicates that a page break is inserted after each item.<br /><br /> A value of *0* or *false* indicates no page breaks are inserted after items.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|itemPageCount (Items Per Page Count)|Specifies the number of items showed per page in the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|maxSubtotal (Max Subtotal)|Specifies a boolean value that indicates whether to apply the  'max' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'max' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|measureFilter (Measure Filter)|Specifies a boolean value that indicates whether field has a measure based filter.<br /><br /> A value of *1* or *true* indicates the field has a measure-based filter.<br /><br /> A value of *0* or *false* indicates does not have a measure-based filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|minSubtotal (Min Subtotal)|Specifies a boolean value that indicates whether to apply the 'min' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'min' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|multipleItemSelectionAllowed (Multiple Field Filters)|Specifies a boolean value that indicates whether the field can have multiple items selected in the page field.<br /><br /> A value of *1* or *true* indicates the PivotTable can have multiple items selected in the page field.<br /><br /> A value of *0* or *false* indicates the PivotTable cannot have multiple items selected in the page field. This attribute depends on the application support for selecting multiple items in page fields.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|name (Field Name)|Specifies the name of the field.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|nonAutoSortDefault (Auto Sort)|Specifies a boolean value that indicates whether sort operation that is applied to field should be AutoSort operation or simple data sort operation.<br /><br /> A value of *1* or *true* indicates that an AutoSort operation is applied to the field.<br /><br /> A value of *0* or *false* indicates a simple data sort operation is applied to the field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|numFmtId (Number Format Id)|Specifies the identifier of the number format to apply to this field. Number formats are written to the styles part. See the Styles section (§18.8)  for more information on number formats.<br /><br /> Formatting information provided by cell table and by PivotTable need not agree. If the two formats differ, the cell-level formatting takes precedence. If you change the  layout the PivotTable, the PivotTable formatting will then take precedence.<br /><br /> The possible values for this attribute are defined by the *ST_NumFmtId* simple type (§18.18.47).|  
+|outline (Outline Items)|Specifies a boolean value that indicates whether the items in this field should be shown in Outline form.<br /><br /> A value of *1* or *true* indicates the items in this field is shown in Outline form.<br /><br /> A value of *0* or *false* indicates the items in this field will not be shown in Outline form. This attribute depends on the application support for displaying items in Outline form.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|productSubtotal (Product Subtotal)|Specifies a boolean value that indicates whether to apply 'product' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'product' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|rankBy (Auto Show Rank By)|Specifies the index of the data field by which AutoShow will rank.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|serverField (Server-based Page Field)|Specifies a boolean value that indicates whether this is a server-based page field.<br /><br /> A value of *1* or *true* indicates this is a server-based page field.<br /><br /> A value of *0* or *false* indicates this is a local page field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showAll (Show All Items)|Specifies a boolean value that indicates whether to show all items for this field.<br /><br /> A value of *1* or *true* indicates that all items be shown.<br /><br /> A value of *0* or *false* indicates items be shown according to user specified criteria.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showDropDowns (Show PivotField Header Drop Downs)|Specifies a boolean value that indicates whether to hide drop down buttons on PivotField headers.  This attribute depends on the application implementation for filtering in the user interface.<br /><br /> A value of *1* or *true* indicates the application will display some mechanism for selecting and applying filters – [*Example*:  A dropdown menu  *end example*] – in the user interface.<br /><br /> A value of *0* or *false* indicates for mechanism for applying a filter is displayed in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showPropAsCaption (Show As Caption)|Specifies a boolean value that indicates whether to show the property as a member caption.<br /><br /> A value of *1* or *true* indicates the property is shown as a member caption.<br /><br /> A value of *0* or *false* indicates the property will not be shown as a member caption.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showPropCell (Show Member Property in Cell)|Specifies a boolean value that indicates whether to show the member property value in a PivotTable cell.<br /><br /> A value of *1* or *true* indicates the property value is shown in a PivotTable cell.<br /><br /> A value of *0* or *false* indicates the property value will not be shown in a PivotTable cell.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showPropTip (Show Member Property ToolTip)|Specifies a boolean value that indicates whether to show the member property value in a tooltip on the appropriate PivotTable cells.<br /><br /> A value of *1* or *true* indicates the property value is shown in a tooltip in the user interface.<br /><br /> A value of *0* or *false* indicates the property will not be shown in a tooltip. This attribute depends on whether the application employs tooltips or similar mechanism in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sortType (Auto Sort Type)|Specifies the type of sort that is applied to this field.<br /><br /> The possible values for this attribute are defined by the *ST_FieldSortType* simple type (§18.18.28).|  
+|stdDevPSubtotal (StdDevP Subtotal)|Specifies a boolean value that indicates whether to apply the 'stdDevP' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'stdDevP' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|stdDevSubtotal (StdDev Subtotal)|Specifies a boolean value that indicates whether to use 'stdDev' in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'stdDev' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|subtotalCaption (Custom Subtotal Caption)|Specifies the custom text that is displayed for the subtotals label.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|subtotalTop (Subtotals At Top)|Specifies a boolean value that indicates whether to display subtotals at the top of the group. Applies only when *Outline* its *true*.<br /><br /> A value of *1* or *true* indicates a subtotal is display at the top of the group.<br /><br /> A value of *0* or *false* indicates subtotal will not be displayed at the top of the group.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sumSubtotal (Sum Subtotal)|Specifies a boolean value that indicates whether apply the 'sum' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the 'sum' aggregation function is applied in the subtotal of this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal of this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|topAutoShow (Top Auto Show)|Specifies a boolean value that indicates whether an AutoShow filter applied to this field is set to show the top ranked values.<br /><br /> A value of *1* or *true* indicates whether an AutoShow filter will show top values for this field.<br /><br /> A value of *0* or *false* indicates bottom ranked values are shown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|uniqueMemberProperty (Unique Member Property)|Specifies the unique name of the member property to be used as a caption for the field and field items.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|varPSubtotal (VarP Subtotal)|Specifies a boolean value that indicates whether to apply the 'varP' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the 'varP' aggregation function is applied in the subtotal of this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal of this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|varSubtotal (Variance Subtotal)|Specifies a boolean value that indicates whether to apply the 'variance' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the 'variance' aggregation function is applied in the subtotal of this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal of this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PivotField) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +150,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PivotField class.
-            </summary>
+        <summary>Initializes a new instance of the PivotField class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +176,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotField class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PivotField class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,9 +196,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotField class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PivotField class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +216,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PivotField class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PivotField class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,11 +240,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> All Items Expanded.</para>
-          <para>Represents the following attribute in the schema: allDrilled </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>All Items Expanded.Represents the following attribute in the schema: allDrilled</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,11 +265,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Product Subtotal.</para>
-          <para>Represents the following attribute in the schema: productSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Product Subtotal.Represents the following attribute in the schema: productSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,11 +290,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> StdDev Subtotal.</para>
-          <para>Represents the following attribute in the schema: stdDevSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>StdDev Subtotal.Represents the following attribute in the schema: stdDevSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -230,11 +315,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> StdDevP Subtotal.</para>
-          <para>Represents the following attribute in the schema: stdDevPSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>StdDevP Subtotal.Represents the following attribute in the schema: stdDevPSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -258,11 +340,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Variance Subtotal.</para>
-          <para>Represents the following attribute in the schema: varSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Variance Subtotal.Represents the following attribute in the schema: varSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -286,11 +365,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> VarP Subtotal.</para>
-          <para>Represents the following attribute in the schema: varPSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>VarP Subtotal.Represents the following attribute in the schema: varPSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -314,11 +390,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Auto Show.</para>
-          <para>Represents the following attribute in the schema: autoShow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Auto Show.Represents the following attribute in the schema: autoShow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -337,11 +410,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.AutoSortScope</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AutoSort Scope.</para>
-          <para> Represents the following element tag in the schema: x:autoSortScope </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>AutoSort Scope. Represents the following element tag in the schema: x:autoSortScope</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.AutoSortScope" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -368,11 +438,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Average.</para>
-          <para>Represents the following attribute in the schema: avgSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Average.Represents the following attribute in the schema: avgSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -396,11 +463,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Axis.</para>
-          <para>Represents the following attribute in the schema: axis </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Axis.Represents the following attribute in the schema: axis</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -422,11 +486,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -450,11 +512,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Compact.</para>
-          <para>Represents the following attribute in the schema: compact </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Compact.Represents the following attribute in the schema: compact</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -478,11 +537,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CountA.</para>
-          <para>Represents the following attribute in the schema: countASubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CountA.Represents the following attribute in the schema: countASubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -506,11 +562,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Count.</para>
-          <para>Represents the following attribute in the schema: countSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Count.Represents the following attribute in the schema: countSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -534,11 +587,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Field.</para>
-          <para>Represents the following attribute in the schema: dataField </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Field.Represents the following attribute in the schema: dataField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -562,11 +612,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Source Sort.</para>
-          <para>Represents the following attribute in the schema: dataSourceSort </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Source Sort.Represents the following attribute in the schema: dataSourceSort</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -590,11 +637,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drill State.</para>
-          <para>Represents the following attribute in the schema: defaultAttributeDrillState </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drill State.Represents the following attribute in the schema: defaultAttributeDrillState</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -618,11 +662,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Default Subtotal.</para>
-          <para>Represents the following attribute in the schema: defaultSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Default Subtotal.Represents the following attribute in the schema: defaultSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -646,11 +687,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag Off.</para>
-          <para>Represents the following attribute in the schema: dragOff </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag Off.Represents the following attribute in the schema: dragOff</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -674,11 +712,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag To Column.</para>
-          <para>Represents the following attribute in the schema: dragToCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag To Column.Represents the following attribute in the schema: dragToCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -702,11 +737,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Can Drag to Data.</para>
-          <para>Represents the following attribute in the schema: dragToData </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Can Drag to Data.Represents the following attribute in the schema: dragToData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -730,11 +762,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag Field to Page.</para>
-          <para>Represents the following attribute in the schema: dragToPage </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag Field to Page.Represents the following attribute in the schema: dragToPage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -758,11 +787,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drag To Row.</para>
-          <para>Represents the following attribute in the schema: dragToRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drag To Row.Represents the following attribute in the schema: dragToRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -786,11 +812,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hidden Level.</para>
-          <para>Represents the following attribute in the schema: hiddenLevel </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hidden Level.Represents the following attribute in the schema: hiddenLevel</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -814,11 +837,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hide New Items.</para>
-          <para>Represents the following attribute in the schema: hideNewItems </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hide New Items.Represents the following attribute in the schema: hideNewItems</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -842,11 +862,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Inclusive Manual Filter.</para>
-          <para>Represents the following attribute in the schema: includeNewItemsInFilter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Inclusive Manual Filter.Represents the following attribute in the schema: includeNewItemsInFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -870,11 +887,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Insert Blank Row.</para>
-          <para>Represents the following attribute in the schema: insertBlankRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Insert Blank Row.Represents the following attribute in the schema: insertBlankRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -898,11 +912,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Insert Item Page Break.</para>
-          <para>Represents the following attribute in the schema: insertPageBreak </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Insert Item Page Break.Represents the following attribute in the schema: insertPageBreak</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -926,11 +937,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Items Per Page Count.</para>
-          <para>Represents the following attribute in the schema: itemPageCount </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Items Per Page Count.Represents the following attribute in the schema: itemPageCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -949,11 +957,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Items</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Items.</para>
-          <para> Represents the following element tag in the schema: x:items </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Items. Represents the following element tag in the schema: x:items</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Items" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -975,10 +980,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1002,11 +1005,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Max Subtotal.</para>
-          <para>Represents the following attribute in the schema: maxSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Max Subtotal.Represents the following attribute in the schema: maxSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1030,11 +1030,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Measure Filter.</para>
-          <para>Represents the following attribute in the schema: measureFilter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Measure Filter.Represents the following attribute in the schema: measureFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1058,11 +1055,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Min Subtotal.</para>
-          <para>Represents the following attribute in the schema: minSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Min Subtotal.Represents the following attribute in the schema: minSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1086,11 +1080,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Multiple Field Filters.</para>
-          <para>Represents the following attribute in the schema: multipleItemSelectionAllowed </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Multiple Field Filters.Represents the following attribute in the schema: multipleItemSelectionAllowed</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1114,11 +1105,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1142,11 +1130,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Auto Sort.</para>
-          <para>Represents the following attribute in the schema: nonAutoSortDefault </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Auto Sort.Represents the following attribute in the schema: nonAutoSortDefault</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1170,11 +1155,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Number Format Id.</para>
-          <para>Represents the following attribute in the schema: numFmtId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Number Format Id.Represents the following attribute in the schema: numFmtId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1198,11 +1180,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Outline Items.</para>
-          <para>Represents the following attribute in the schema: outline </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Outline Items.Represents the following attribute in the schema: outline</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1221,10 +1200,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PivotFieldExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Future Feature Data Storage Area.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
+        <summary>Future Feature Data Storage Area. Represents the following element tag in the schema: x:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -1252,11 +1228,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Auto Show Rank By.</para>
-          <para>Represents the following attribute in the schema: rankBy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Auto Show Rank By.Represents the following attribute in the schema: rankBy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1280,11 +1253,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Server-based Page Field.</para>
-          <para>Represents the following attribute in the schema: serverField </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Server-based Page Field.Represents the following attribute in the schema: serverField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1308,11 +1278,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show All Items.</para>
-          <para>Represents the following attribute in the schema: showAll </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show All Items.Represents the following attribute in the schema: showAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1336,11 +1303,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show PivotField Header Drop Downs.</para>
-          <para>Represents the following attribute in the schema: showDropDowns </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show PivotField Header Drop Downs.Represents the following attribute in the schema: showDropDowns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1364,11 +1328,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show As Caption.</para>
-          <para>Represents the following attribute in the schema: showPropAsCaption </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show As Caption.Represents the following attribute in the schema: showPropAsCaption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1392,11 +1353,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Member Property in Cell.</para>
-          <para>Represents the following attribute in the schema: showPropCell </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Member Property in Cell.Represents the following attribute in the schema: showPropCell</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1420,11 +1378,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Member Property ToolTip.</para>
-          <para>Represents the following attribute in the schema: showPropTip </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Member Property ToolTip.Represents the following attribute in the schema: showPropTip</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1448,11 +1403,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.FieldSortValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Auto Sort Type.</para>
-          <para>Represents the following attribute in the schema: sortType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Auto Sort Type.Represents the following attribute in the schema: sortType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1476,11 +1428,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Subtotal Caption.</para>
-          <para>Represents the following attribute in the schema: subtotalCaption </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Subtotal Caption.Represents the following attribute in the schema: subtotalCaption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1504,11 +1453,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Subtotals At Top.</para>
-          <para>Represents the following attribute in the schema: subtotalTop </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Subtotals At Top.Represents the following attribute in the schema: subtotalTop</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1532,11 +1478,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sum Subtotal.</para>
-          <para>Represents the following attribute in the schema: sumSubtotal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sum Subtotal.Represents the following attribute in the schema: sumSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1560,11 +1503,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Auto Show.</para>
-          <para>Represents the following attribute in the schema: topAutoShow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Auto Show.Represents the following attribute in the schema: topAutoShow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1588,11 +1528,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Unique Member Property.</para>
-          <para>Represents the following attribute in the schema: uniqueMemberProperty </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Unique Member Property.Represents the following attribute in the schema: uniqueMemberProperty</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

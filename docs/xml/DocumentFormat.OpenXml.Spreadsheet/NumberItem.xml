@@ -1,4 +1,4 @@
-﻿<Type Name="NumberItem" FullName="DocumentFormat.OpenXml.Spreadsheet.NumberItem">
+<Type Name="NumberItem" FullName="DocumentFormat.OpenXml.Spreadsheet.NumberItem">
   <TypeSignature Language="C#" Value="public class NumberItem : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberItem extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.NumberItem" />
@@ -24,13 +24,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Numeric.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:n.</para>
-    </summary>
+    <summary>Numeric. When the object is serialized out as xml, its qualified name is x:n.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Tuples &lt;x:tpls&gt;</description></item><item><description>MemberPropertyIndex &lt;x:x&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **n (Numeric)**  
+  
+ Represents a numeric value in the PivotTable.  
+  
+ *[Example:*  
+  
+```xml  
+<sharedItems containsSemiMixedTypes="0" containsString="0" containsNumber="1"  containsInteger="1" minValue="3" maxValue="3" count="1">  
+  <n v="3"/>  
+</sharedItems>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|entries (§18.10.1.28); groupItems (§18.10.1.38); r (§18.10.1.77); sharedItems (§18.10.1.90)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|tpls (Tuples)|§18.10.1.93|  
+|x (Member Property Index)|§18.10.1.96|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|b (Bold)|Specifies a boolean value that indicates whether this value contains bold formatting on the OLAP server. This attribute applies to OLAP-based PivotTables only.<br /><br /> A value of *1* or *true* indicates this value contains italic formatting on the server.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|bc (Background Color)|Specifies the background color for this value that was provided by the OLAP server. This attribute applies to OLAP-based PivotTables only. The color is specified as a HEX value in  space.<br /><br /> The possible values for this attribute are defined by the *ST_UnsignedIntHex* simple type (§18.18.86).|  
+|c (Caption)|Specifies the caption for this item.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|cp (Member Property Count)|Specifies the number of member property values for this item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|f (Calculated Item)|Specifies a boolean value that indicates whether this is a calculated item value.<br /><br /> A value of *1* or *true* indicates this item is a calculated value.<br /><br /> A value of *0* or *false* indicates this item is not calculated.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|fc (Foreground Color)|Specifies the foreground color for this value that was provided by the OLAP server. This attribute applies to OLAP-based PivotTables only. The color is specified as a HEX value in  space.<br /><br /> The possible values for this attribute are defined by the *ST_UnsignedIntHex* simple type (§18.18.86).|  
+|i (Italic)|Specifies a boolean value that indicates whether the value contains italic formatting on the OLAP server. This attribute applies to OLAP-based PivotTables only.<br /><br /> A value of *1* or *true* indicates this value contains italic formatting on the server.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|in (Format Index)|Specifies the index to the OLAP serverformat element where the format string for this entry is stored.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|st (Strikethrough)|Specifies a boolean value that indicates whether the value contains strikethrough formatting on the OLAP server. This attribute applies to OLAP-based PivotTables only.<br /><br /> A value of *1* or *true* indicates this value contains strikethrough formatting on the server.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|u (Unused Item)|Specifies a boolean value that indicates whether this is an unused item. The application marks an item as unused when an item is deleted from the data source. The item and associated metadata are retained in the cache until the threshold for unused items specified in missingItemsLimit is reached.<br /><br /> A value of *1* or *true* indicates this item is not used.<br /><br /> A value of *0* or *false* indicates this item is used.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|un (Underline)|Specifies a boolean value that indicates whether the value contains underline formatting on the OLAP server. This attribute applies to OLAP-based PivotTables only.<br /><br /> A value of *1* or *true* indicates this value contains underline formatting on the server.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|v (Value)|Specified the value of this item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Number) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NumberItem class.
-            </summary>
+        <summary>Initializes a new instance of the NumberItem class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +115,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NumberItem class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the NumberItem class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NumberItem class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the NumberItem class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +155,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the NumberItem class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the NumberItem class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,11 +179,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Background Color.</para>
-          <para>Represents the following attribute in the schema: bc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Background Color.Represents the following attribute in the schema: bc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -171,11 +204,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bold.</para>
-          <para>Represents the following attribute in the schema: b </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Bold.Represents the following attribute in the schema: b</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -199,11 +229,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Calculated Item.</para>
-          <para>Represents the following attribute in the schema: f </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Calculated Item.Represents the following attribute in the schema: f</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -227,11 +254,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Caption.</para>
-          <para>Represents the following attribute in the schema: c </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Caption.Represents the following attribute in the schema: c</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -253,11 +277,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -281,11 +303,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Foreground Color.</para>
-          <para>Represents the following attribute in the schema: fc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Foreground Color.Represents the following attribute in the schema: fc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -309,11 +328,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Format Index.</para>
-          <para>Represents the following attribute in the schema: in </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Format Index.Represents the following attribute in the schema: in</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -337,11 +353,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Italic.</para>
-          <para>Represents the following attribute in the schema: i </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Italic.Represents the following attribute in the schema: i</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -360,10 +373,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -387,11 +398,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Member Property Count.</para>
-          <para>Represents the following attribute in the schema: cp </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Member Property Count.Represents the following attribute in the schema: cp</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -415,11 +423,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Strikethrough.</para>
-          <para>Represents the following attribute in the schema: st </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Strikethrough.Represents the following attribute in the schema: st</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -443,11 +448,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Underline.</para>
-          <para>Represents the following attribute in the schema: un </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Underline.Represents the following attribute in the schema: un</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -471,11 +473,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Unused Item.</para>
-          <para>Represents the following attribute in the schema: u </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Unused Item.Represents the following attribute in the schema: u</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -499,11 +498,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: v </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Value.Represents the following attribute in the schema: v</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

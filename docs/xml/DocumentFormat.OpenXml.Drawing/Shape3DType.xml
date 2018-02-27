@@ -1,4 +1,4 @@
-﻿<Type Name="Shape3DType" FullName="DocumentFormat.OpenXml.Drawing.Shape3DType">
+<Type Name="Shape3DType" FullName="DocumentFormat.OpenXml.Drawing.Shape3DType">
   <TypeSignature Language="C#" Value="public class Shape3DType : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Shape3DType extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Shape3DType" />
@@ -33,13 +33,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Apply 3D shape properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:sp3d.</para>
-    </summary>
+    <summary>Apply 3D shape properties. When the object is serialized out as xml, its qualified name is a:sp3d.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>BevelTop &lt;a:bevelT&gt;</description></item><item><description>BevelBottom &lt;a:bevelB&gt;</description></item><item><description>ExtrusionColor &lt;a:extrusionClr&gt;</description></item><item><description>ContourColor &lt;a:contourClr&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `sp3d (Apply 3D shape properties)`  
+  
+ This element defines the 3D properties associated with a particular shape in DrawingML.  The 3D properties which can be applied to a shape are top and bottom bevels, a contour and an extrusion.  
+  
+ [*Example*:  Consider the following example of an sp3d in DrawingML:  
+  
+```xml  
+<a:sp3d extrusionH="165100" contourW="50800" prstMaterial="plastic">  
+  <a:bevelT w="254000" h="254000"/>  
+  <a:bevelB w="254000" h="254000"/>  
+  <a:extrusionClr>  
+    <a:srgbClr val="FF0000"/>  
+  </a:extrusionClr>  
+  <a:contourClr>  
+    <a:schemeClr val="accent3"/>  
+  </a:contourClr>  
+</a:sp3d>  
+```  
+  
+ In this example, we see an sp3d defined which contains information defining both a top and bottom bevel, along with an extrusion and contour on the shape.  The following image illustrates a shape with the applied sp3d:  
+  
+ c4e92807-8216-41e1-9580-b168d77c2dbd  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bodyPr (§21.1.2.1.1); effectStyle (§20.1.4.1.11); spPr (§21.2.2.197); spPr (§21.3.2.23); spPr (§21.4.3.7); spPr (§20.1.2.2.35); spPr (§20.2.2.6); spPr (§20.5.2.30); spPr (§19.3.1.44); txPr (§21.4.5.12)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bevelB (Bottom Bevel)|§20.1.5.3|  
+|bevelT (Top Bevel)|§20.1.5.4|  
+|contourClr (Contour Color)|§20.1.5.6|  
+|extLst (Extension List)|§20.1.2.2.15|  
+|extrusionClr (Extrusion Color)|§20.1.5.7|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Shape3D) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Shape3DType class.
-            </summary>
+        <summary>Initializes a new instance of the Shape3DType class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +123,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Shape3DType class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Shape3DType class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +143,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Shape3DType class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Shape3DType class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +163,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Shape3DType class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Shape3DType class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,10 +182,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.BevelBottom</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bottom Bevel.</para>
-          <para> Represents the following element tag in the schema: a:bevelB </para>
-        </summary>
+        <summary>Bottom Bevel. Represents the following element tag in the schema: a:bevelB</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -173,10 +205,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.BevelTop</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Bevel.</para>
-          <para> Represents the following element tag in the schema: a:bevelT </para>
-        </summary>
+        <summary>Top Bevel. Represents the following element tag in the schema: a:bevelT</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -202,11 +231,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,10 +252,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ContourColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Contour Color.</para>
-          <para> Represents the following element tag in the schema: a:contourClr </para>
-        </summary>
+        <summary>Contour Color. Represents the following element tag in the schema: a:contourClr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -256,10 +280,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Contour Width.</para>
-          <para>Represents the following attribute in the schema: contourW </para>
-        </summary>
+        <summary>Contour Width.Represents the following attribute in the schema: contourW</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -279,10 +300,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: a:extLst </para>
-        </summary>
+        <summary>ExtensionList. Represents the following element tag in the schema: a:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -305,10 +323,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ExtrusionColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Extrusion Color.</para>
-          <para> Represents the following element tag in the schema: a:extrusionClr </para>
-        </summary>
+        <summary>Extrusion Color. Represents the following element tag in the schema: a:extrusionClr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -336,10 +351,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Extrusion Height.</para>
-          <para>Represents the following attribute in the schema: extrusionH </para>
-        </summary>
+        <summary>Extrusion Height.Represents the following attribute in the schema: extrusionH</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -359,9 +371,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -386,10 +396,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Preset Material Type.</para>
-          <para>Represents the following attribute in the schema: prstMaterial </para>
-        </summary>
+        <summary>Preset Material Type.Represents the following attribute in the schema: prstMaterial</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -414,10 +421,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Depth.</para>
-          <para>Represents the following attribute in the schema: z </para>
-        </summary>
+        <summary>Shape Depth.Represents the following attribute in the schema: z</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

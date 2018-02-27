@@ -1,4 +1,4 @@
-﻿<Type Name="Level1ParagraphProperties" FullName="DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties">
+<Type Name="Level1ParagraphProperties" FullName="DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties">
   <TypeSignature Language="C#" Value="public class Level1ParagraphProperties : DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Level1ParagraphProperties extends DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Level1ParagraphProperties" />
@@ -18,13 +18,68 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>List Level 1 Text Style.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:lvl1pPr.</para>
-    </summary>
+    <summary>List Level 1 Text Style. When the object is serialized out as xml, its qualified name is a:lvl1pPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>LineSpacing &lt;a:lnSpc&gt;</description></item><item><description>SpaceBefore &lt;a:spcBef&gt;</description></item><item><description>SpaceAfter &lt;a:spcAft&gt;</description></item><item><description>BulletColorText &lt;a:buClrTx&gt;</description></item><item><description>BulletColor &lt;a:buClr&gt;</description></item><item><description>BulletSizeText &lt;a:buSzTx&gt;</description></item><item><description>BulletSizePercentage &lt;a:buSzPct&gt;</description></item><item><description>BulletSizePoints &lt;a:buSzPts&gt;</description></item><item><description>BulletFontText &lt;a:buFontTx&gt;</description></item><item><description>BulletFont &lt;a:buFont&gt;</description></item><item><description>NoBullet &lt;a:buNone&gt;</description></item><item><description>AutoNumberedBullet &lt;a:buAutoNum&gt;</description></item><item><description>CharacterBullet &lt;a:buChar&gt;</description></item><item><description>PictureBullet &lt;a:buBlip&gt;</description></item><item><description>TabStopList &lt;a:tabLst&gt;</description></item><item><description>DefaultRunProperties &lt;a:defRPr&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `lvl1pPr (List Level 1 Text Style)`  
+  
+ This element specifies all paragraph level text properties for all elements that have the attribute lvl="0". There are a total of 9 level text property elements allowed, levels 0-8. It is recommended that the order in which this and other level property elements are specified be in order of increasing level. That is lvl2pPr should come before lvl3pPr. This allows the lower level properties to take precedence over the higher level ones because they are parsed first.  
+  
+ [*Example*: Consider the following DrawingML code that would specify a paragraph to follow the level style defined in lvl1pPr and thus create a paragraph of text that has no bullets and is right aligned.  
+  
+```xml  
+<p:txBody>  
+  …  <a:lstStyle>  
+    <a:lvl1pPr algn="r">  
+      <a:buNone/>  
+    </a:lvl1pPr>  
+  </a:lstStyle>  
+  <a:p>  
+    <a:pPr lvl="0">  
+    </a:pPr>  
+    …    <a:t>Some text</a:t>  
+    …  </a:p>  
+</p:txBody>  
+```  
+  
+ *end example*]  
+  
+ [*Note*: To resolve conflicting paragraph properties the linear hierarchy of paragraph properties should be examined starting first with the pPr element. The rule here is that properties that are defined at a level closer to the actual text should take precedence. That is if there is a conflicting property between the pPr and lvl1pPr elements then the pPr property should take precedence because in the property hierarchy it is closer to the actual text being represented. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bodyStyle (§19.3.1.5); defaultTextStyle (§19.2.1.8); lstStyle (§21.1.2.4.12); notesStyle (§19.3.1.28); otherStyle (§19.3.1.35); titleStyle (§19.3.1.49)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|buAutoNum (Auto-Numbered Bullet)|§21.1.2.4.1|  
+|buBlip (Picture Bullet)|§21.1.2.4.2|  
+|buChar (Character Bullet)|§21.1.2.4.3|  
+|buClr (Color Specified)|§21.1.2.4.4|  
+|buClrTx (Follow Text)|§21.1.2.4.5|  
+|buFont (Specified)|§21.1.2.4.6|  
+|buFontTx (Follow text)|§21.1.2.4.7|  
+|buNone (No Bullet)|§21.1.2.4.8|  
+|buSzPct (Bullet Size Percentage)|§21.1.2.4.9|  
+|buSzPts (Bullet Size Points)|§21.1.2.4.10|  
+|buSzTx (Bullet Size Follows Text)|§21.1.2.4.11|  
+|defRPr (Default Text Run Properties)|§21.1.2.3.2|  
+|extLst (Extension List)|§20.1.2.2.15|  
+|lnSpc (Line Spacing)|§21.1.2.2.5|  
+|spcAft (Space After)|§21.1.2.2.9|  
+|spcBef (Space Before)|§21.1.2.2.10|  
+|tabLst (Tab List)|§21.1.2.2.14|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextParagraphProperties) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +94,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Level1ParagraphProperties class.
-            </summary>
+        <summary>Initializes a new instance of the Level1ParagraphProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,9 +120,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Level1ParagraphProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Level1ParagraphProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,9 +140,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Level1ParagraphProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Level1ParagraphProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +160,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Level1ParagraphProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Level1ParagraphProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,11 +182,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,10 +203,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

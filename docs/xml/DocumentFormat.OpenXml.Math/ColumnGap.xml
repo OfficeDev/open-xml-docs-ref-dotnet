@@ -1,4 +1,4 @@
-﻿<Type Name="ColumnGap" FullName="DocumentFormat.OpenXml.Math.ColumnGap">
+<Type Name="ColumnGap" FullName="DocumentFormat.OpenXml.Math.ColumnGap">
   <TypeSignature Language="C#" Value="public class ColumnGap : DocumentFormat.OpenXml.Math.UnsignedShortType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColumnGap extends DocumentFormat.OpenXml.Math.UnsignedShortType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.ColumnGap" />
@@ -18,11 +18,58 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Matrix Column Gap.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:cGp.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Matrix Column Gap. When the object is serialized out as xml, its qualified name is m:cGp.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `cGp (Matrix Column Gap)`  
+  
+ This element represents the  (custom) column gap spacing information; the default value is0 (which corresponds to 1 em). This value is interpreted differently depending on the value of cGpRule (§22.1.2.19). cGp is not used unless the value of cGpRule is 3 or 4. When cGpRule is omitted, the default spacing between matrix columns is 1 em (a val attribute value of *0*).  
+  
+ Whether the element is absent or present without the val attribute, the default of the val attribute is *0*.  
+  
+ The cGp gap spacing (also referred to as “Column Gap” or “Gap Width”) is added to the cSp (Minimum Matrix Column Width) to determine the total Matrix Column Spacing (distance between the same edges of different columns). The following image depicts how cGp and cSp work together to define matrix column spacing in a 2x2 matrix:  
+  
+ f4cd01e9-21ff-434c-8869-b676b957caf3  
+  
+ [*Example*: With a cGpRule value of 4, the matrix:   has 3 ems of  spacing between columns (3 ems = 6 * 0.5 ems). The matrix properties that demonstrate this element in use are:  
+  
+```xml  
+<m:mPr>  
+  <m:cGpRule  m:val="4"/>  
+  <m:cGp  m:val="6"/>  
+  <m:mcs>  
+    <m:mc>  
+      <m:mcPr>  
+        <m:count m:val="2"/>  
+        <m:mcJc m:val="center"/>  
+      </m:mcPr>  
+    </m:mc>  
+  </m:mcs>  
+</m:mPr>  
+```  
+  
+ *end example*]  
+  
+ See the documentation for cGpRule for more information about how cGp is interpreted for each value of cGpRule.  
+  
+|Parent Elements|  
+|---------------------|  
+|mPr (§22.1.2.68)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Value)|Specifies the amount of space between columns of the parent element (for cGp/cSp) or rows (for rSp). The manner in which this value is determined depends on the setting of the rule of the parent element.<br /><br /> For cGp, if the rule is set to *3* (or "Exactly"), then the unit is interpreted as twips. If the rule is set to *4* (or "Multiple"), then the unit is interpreted as number of 0.5 em increments.<br /><br /> For cSp, this value is measured in twips. There is no corresponding cSpRule.<br /><br /> For rSp, if the rule is set to *3* (or "Exactly"), then the unit is interpreted as points. If the rule is set to *4* (or "Multiple"), then the unit is interpreted as half-lines.<br /><br /> The possible values for this attribute are defined by the *ST_UnSignedInteger* simple type (§22.1.3.14).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_UnSignedInteger) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +84,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ColumnGap class.
-            </summary>
+        <summary>Initializes a new instance of the ColumnGap class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +106,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +127,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

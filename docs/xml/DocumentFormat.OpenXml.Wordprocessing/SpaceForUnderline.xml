@@ -1,4 +1,4 @@
-﻿<Type Name="SpaceForUnderline" FullName="DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline">
+<Type Name="SpaceForUnderline" FullName="DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline">
   <TypeSignature Language="C#" Value="public class SpaceForUnderline : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpaceForUnderline extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SpaceForUnderline" />
@@ -18,11 +18,71 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Add Additional Space Below Baseline For Underlined East Asian Text.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:spaceForUL.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Add Additional Space Below Baseline For Underlined East Asian Text. When the object is serialized out as xml, its qualified name is w:spaceForUL.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `spaceForUL (Add Additional Space Below Baseline For Underlined East Asian Text)`  
+  
+ This element specifies whether East Asian content in a WordprocessingML document which has been underlined using the u element shall have additional descent added to the properties of the font in order to ensure that there is adequate spacing between the characters in the font and the underlining applied to the text.  
+  
+ Typically, no adjustments are made to the contents of text runs containing East Asian text which have been underlined. This element, when present with a val attribute value of *true* (or equivalent), specifies that whenever the following conditions are met:  
+  
+-   The text run contains East Asian characters  
+  
+-   The text run is not using baseline font alignment as defined by the textAlignment property  
+  
+ That the larger of the following two values is added to the descent property of that font in order to provide additional padding between the text characters and the underline:  
+  
+-   3 percent of the font size  
+  
+-   40 twentieths of a point (31 twentieths of a point for Japanese text)  
+  
+ [*Example*: Consider a WordprocessingML document consisting of a single run of underlined Japanese text, as follows:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:rPr>  
+      <w:u w:val="double" />  
+    </w:rPr>  
+    <w:t>  
+クリスタ</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ If this document is displayed, then the text is laid out along with the underline, as follows:  
+  
+ 10528511-852c-43ee-8245-b7df5699d29b  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:spaceForUL />  
+</w:compat>  
+```  
+  
+ Then the additional descent specified using the logic above is added to the text, resulting in the following output:  
+  
+ 1742e5f3-2c16-4366-9a65-230ef684da03  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (§17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SpaceForUnderline class.
-            </summary>
+        <summary>Initializes a new instance of the SpaceForUnderline class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +119,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +140,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

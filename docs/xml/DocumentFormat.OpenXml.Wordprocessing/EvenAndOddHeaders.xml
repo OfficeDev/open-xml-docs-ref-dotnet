@@ -1,4 +1,4 @@
-﻿<Type Name="EvenAndOddHeaders" FullName="DocumentFormat.OpenXml.Wordprocessing.EvenAndOddHeaders">
+<Type Name="EvenAndOddHeaders" FullName="DocumentFormat.OpenXml.Wordprocessing.EvenAndOddHeaders">
   <TypeSignature Language="C#" Value="public class EvenAndOddHeaders : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EvenAndOddHeaders extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.EvenAndOddHeaders" />
@@ -18,11 +18,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Different Even/Odd Page Headers and Footers.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:evenAndOddHeaders.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Different Even/Odd Page Headers and Footers. When the object is serialized out as xml, its qualified name is w:evenAndOddHeaders.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **evenAndOddHeaders (Different Even/Odd Page Headers and Footers)**  
+  
+ This element specifies whether sections in this document shall have different headers and footers for even and odd pages (an odd page header/footer and an even page header/footer).  
+  
+ If the val attribute is set to *true*, then each section in the document shall use an odd page header for all odd numbered pages in the section, and an even page header for all even numbered pages in the section (counting each page in the section starting from one, regardless of the page numbering settings for the section). If the val attribute is set to *false*, then all pages in a section shall use the odd page header.  
+  
+ This setting does not affect the presence of a first page header on each section, which is specified using the titlePg element (§17.10.6). If a first page header is specified, then all subsequent pages shall have this setting applied, including the first page in the odd/even page count.  
+  
+ If this element is set to *false* and an even page header is specified , then it shall be ignored and only the odd page header shall be displayed. Conversely, if this element is set to true and either header type is omitted for a given section, then a blank header shall be created as needed (another header type shall not be used in its place).  
+  
+ If this element is omitted, then its value shall be assumed to be *false*.  
+  
+ [*Example*: Consider a document which must have a different even and odd page header for each section in its contents. This requirement must be specified using the following WordprocessingML:  
+  
+```xml  
+<w:settings>  
+  …  <w:evenAndOddHeaders />  
+  …</w:settings>  
+```  
+  
+ Since the evenAndOddHeaders property is set (and its default value is *true*), this document now has different headers and footers for even and odd pages. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EvenAndOddHeaders class.
-            </summary>
+        <summary>Initializes a new instance of the EvenAndOddHeaders class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +93,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

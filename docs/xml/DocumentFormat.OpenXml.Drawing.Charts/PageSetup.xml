@@ -1,4 +1,4 @@
-﻿<Type Name="PageSetup" FullName="DocumentFormat.OpenXml.Drawing.Charts.PageSetup">
+<Type Name="PageSetup" FullName="DocumentFormat.OpenXml.Drawing.Charts.PageSetup">
   <TypeSignature Language="C#" Value="public class PageSetup : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PageSetup extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Charts.PageSetup" />
@@ -18,11 +18,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Page Setup.</para>
-      <para> When the object is serialized out as xml, its qualified name is c:pageSetup.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Page Setup. When the object is serialized out as xml, its qualified name is c:pageSetup.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **pageSetup (Page Setup)**  
+  
+ This element defines the page setup for the chart.  
+  
+ [*Example*: The following example shows the pageSetup element for  A0 paper, printed in black and white, with graphics:  
+  
+```xml  
+<pageSetup blackAndWhite="true" draft="false" paperHeight="1189" paperWidth="841" paperUnits="mm" />  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|printSettings (§21.2.2.148)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|blackAndWhite (Black and White)|Specifies the page shall print in black and white.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|copies (Copies)|Specifies the number of copies that shall be printed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|draft (Draft)|Specifies the page shall be printed in draft mode.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|firstPageNumber (First Page Number)|Specifies the page number.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|horizontalDpi (Horizontal DPI)|Specifies the horizontal resolution to print in dots per inch.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|orientation (Orientation)|Specifies the orientation of the paper.<br /><br /> The possible values for this attribute are defined by the *ST_PageSetupOrientation* simple type (§21.2.3.32).|  
+|paperHeight (Paper Height)|Height of custom paper as a number followed by a unit identifier. [*Example*: *297mm*, *11in* *end example*]<br /><br /> When paperHeight and paperWidth are specified, paperSize shall be ignored.<br /><br /> The possible values for this attribute are defined by the *ST_PositiveUniversalMeasure* simple type (§22.9.2.12).|  
+|paperSize (Page Size)|Specifies the paper size according to the following table.<br /><br /> Paper Size<br /><br /> Width<br /><br /> Height<br /><br /> Value<br /><br /> Letter paper<br /><br /> 8.5 in.<br /><br /> 11 in.<br /><br /> 1<br /><br /> Legal paper<br /><br /> 8.5 in.<br /><br /> 14 in.<br /><br /> 5<br /><br /> Standard paper<br /><br /> 10 in.<br /><br /> 11 in.<br /><br /> 45<br /><br /> Standard paper<br /><br /> 10 in.<br /><br /> 14 in.<br /><br /> 16<br /><br /> Standard paper<br /><br /> 11 in.<br /><br /> 17 in.<br /><br /> 17<br /><br /> Standard paper<br /><br /> 15 in.<br /><br /> 11 in.<br /><br /> 46<br /><br /> Standard paper<br /><br /> 9 in.<br /><br /> 11 in.<br /><br /> 44<br /><br /> SuperA/SuperA/A4 paper<br /><br /> 227 mm<br /><br /> 356 mm<br /><br /> 57<br /><br /> A2 paper<br /><br /> 420 mm<br /><br /> 594 mm<br /><br /> 66<br /><br /> A3 paper<br /><br /> 297 mm<br /><br /> 420 mm<br /><br /> 8<br /><br /> A3 extra paper<br /><br /> 322 mm<br /><br /> 445 mm<br /><br /> 63<br /><br /> A3 extra transverse paper<br /><br /> 322 mm<br /><br /> 445 mm<br /><br /> 68<br /><br /> A3 transverse paper<br /><br /> 297 mm<br /><br /> 420 mm<br /><br /> 67<br /><br /> A4 paper<br /><br /> 210 mm<br /><br /> 297 mm<br /><br /> 9<br /><br /> A4 extra paper<br /><br /> 236 mm<br /><br /> 322 mm<br /><br /> 53<br /><br /> A4 plus paper<br /><br /> 210 mm<br /><br /> 330 mm<br /><br /> 60<br /><br /> A4 transverse paper<br /><br /> 210 mm<br /><br /> 297 mm<br /><br /> 55<br /><br /> A4 small paper<br /><br /> 210 mm<br /><br /> 297 mm<br /><br /> 10<br /><br /> A5 paper<br /><br /> 148 mm<br /><br /> 210 mm<br /><br /> 11<br /><br /> A5 extra paper<br /><br /> 174 mm<br /><br /> 235 mm<br /><br /> 64<br /><br /> A5 transverse paper<br /><br /> 148 mm<br /><br /> 210 mm<br /><br /> 61<br /><br /> SuperB/SuperB/A3 paper<br /><br /> 305 mm<br /><br /> 487 mm<br /><br /> 58<br /><br /> B4 paper<br /><br /> 250 mm<br /><br /> 353 mm<br /><br /> 12<br /><br /> B5 paper<br /><br /> 176 mm<br /><br /> 250 mm<br /><br /> 13<br /><br /> B5 extra paper<br /><br /> 201 mm<br /><br /> 276 mm<br /><br /> 65<br /><br /> JIS B5 transverse paper<br /><br /> 182 mm<br /><br /> 257 mm<br /><br /> 62<br /><br /> C paper<br /><br /> 17 in.<br /><br /> 22 in.<br /><br /> 24<br /><br /> D paper<br /><br /> 22 in.<br /><br /> 34 in.<br /><br /> 25<br /><br /> #10 envelope<br /><br /> 4.125 in.<br /><br /> 9.5 in.<br /><br /> 20<br /><br /> #11 envelope<br /><br /> 4.5 in.<br /><br /> 10.375 in.<br /><br /> 21<br /><br /> #12 envelope<br /><br /> 4.75 in.<br /><br /> 11 in.<br /><br /> 22<br /><br /> #14 envelope<br /><br /> 5 in.<br /><br /> 11.5 in.<br /><br /> 23<br /><br /> #9 envelope<br /><br /> 3.875 in.<br /><br /> 8.875 in.<br /><br /> 19<br /><br /> B4 envelope<br /><br /> 250 mm<br /><br /> 353 mm<br /><br /> 33<br /><br /> B5 envelope<br /><br /> 176 mm<br /><br /> 250 mm<br /><br /> 34<br /><br /> B6 envelope<br /><br /> 176 mm<br /><br /> 125 mm<br /><br /> 35<br /><br /> C3 envelope<br /><br /> 324 mm<br /><br /> 458 mm<br /><br /> 29<br /><br /> C4 envelope<br /><br /> 229 mm<br /><br /> 324 mm<br /><br /> 30<br /><br /> C5 envelope<br /><br /> 162 mm<br /><br /> 229 mm<br /><br /> 28<br /><br /> C6 envelope<br /><br /> 114 mm<br /><br /> 162 mm<br /><br /> 31<br /><br /> C65 envelope<br /><br /> 114 mm<br /><br /> 229 mm<br /><br /> 32<br /><br /> DL envelope<br /><br /> 110 mm<br /><br /> 220 mm<br /><br /> 27<br /><br /> Invite envelope<br /><br /> 220 mm<br /><br /> 220 mm<br /><br /> 47<br /><br /> Italy envelope<br /><br /> 110 mm<br /><br /> 230 mm<br /><br /> 36<br /><br /> Monarch envelope<br /><br /> 3.875 in.<br /><br /> 7.5 in.).<br /><br /> 37<br /><br /> 6 3/4 envelope<br /><br /> 3.625 in.<br /><br /> 6.5 in.<br /><br /> 38<br /><br /> E paper<br /><br /> 34 in.<br /><br /> 44 in.<br /><br /> 26<br /><br /> Executive paper<br /><br /> 7.25 in.<br /><br /> 10.5 in.<br /><br /> 7<br /><br /> German legal fanfold<br /><br /> 8.5 in.<br /><br /> 13 in.<br /><br /> 41<br /><br /> German standard fanfold<br /><br /> 8.5 in.<br /><br /> 12 in.<br /><br /> 40<br /><br /> US standard fanfold<br /><br /> 14.875 in.<br /><br /> 11 in.<br /><br /> 39<br /><br /> Folio paper<br /><br /> 8.5 in.<br /><br /> 13 in.<br /><br /> 14<br /><br /> B4<br /><br /> 250 mm<br /><br /> 353 mm<br /><br /> 42<br /><br /> Japanese double postcard<br /><br /> 200 mm<br /><br /> 148 mm<br /><br /> 43<br /><br /> Ledger paper<br /><br /> 17 in.<br /><br /> 11 in.<br /><br /> 4<br /><br /> Legal extra paper<br /><br /> 9.275 in.<br /><br /> 15 in.<br /><br /> 51<br /><br /> Letter extra paper<br /><br /> 9.275 in.<br /><br /> 12 in.<br /><br /> 50<br /><br /> Letter extra transverse paper<br /><br /> 9.275 in.<br /><br /> 12 in.<br /><br /> 56<br /><br /> Letter plus paper<br /><br /> 8.5 in.<br /><br /> 12.69 in.<br /><br /> 59<br /><br /> Letter transverse paper<br /><br /> 8.275 in.<br /><br /> 11 in.<br /><br /> 54<br /><br /> Letter small paper<br /><br /> 8.5 in.<br /><br /> 11 in.<br /><br /> 2<br /><br /> Note paper<br /><br /> 8.5 in.<br /><br /> 11 in.<br /><br /> 18<br /><br /> Quarto paper<br /><br /> 215 mm<br /><br /> 275 mm<br /><br /> 15<br /><br /> Statement paper<br /><br /> 5.5 in.<br /><br /> 8.5 in.<br /><br /> 6<br /><br /> Tabloid paper<br /><br /> 11 in.<br /><br /> 17 in.<br /><br /> 3<br /><br /> Tabloid extra paper<br /><br /> 11.69 in.<br /><br /> 18 in.<br /><br /> 52<br /><br /> When paperHeight, paperWidth, and paperUnits are specified, paperSize should be ignored.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|paperWidth (Paper Width)|Width of custom paper as a number followed by a unit identifier. [*Example*: *21cm*, *8.5in* *end example*]<br /><br /> When paperHeight and paperWidth are specified, paperSize shall be ignored.<br /><br /> The possible values for this attribute are defined by the *ST_PositiveUniversalMeasure* simple type (§22.9.2.12).|  
+|useFirstPageNumber (Use First Page Number)|Specifies to use the first page number instead of automatically generating a page number.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|verticalDpi (Vertical DPI)|Specifies the vertical resolution to print in dots per inch.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PageSetup) is located in §A.5.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PageSetup class.
-            </summary>
+        <summary>Initializes a new instance of the PageSetup class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +99,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Black and White.</para>
-          <para>Represents the following attribute in the schema: blackAndWhite </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Black and White.Represents the following attribute in the schema: blackAndWhite</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +122,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +148,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Copies.</para>
-          <para>Represents the following attribute in the schema: copies </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Copies.Represents the following attribute in the schema: copies</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,11 +173,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Draft.</para>
-          <para>Represents the following attribute in the schema: draft </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Draft.Represents the following attribute in the schema: draft</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +198,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> First Page Number.</para>
-          <para>Represents the following attribute in the schema: firstPageNumber </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>First Page Number.Represents the following attribute in the schema: firstPageNumber</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,11 +223,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal DPI.</para>
-          <para>Represents the following attribute in the schema: horizontalDpi </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal DPI.Represents the following attribute in the schema: horizontalDpi</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -224,10 +243,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -251,11 +268,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Charts.PageSetupOrientationValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Orientation.</para>
-          <para>Represents the following attribute in the schema: orientation </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Orientation.Represents the following attribute in the schema: orientation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,11 +293,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Page Size.</para>
-          <para>Represents the following attribute in the schema: paperSize </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Page Size.Represents the following attribute in the schema: paperSize</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -307,11 +318,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Use First Page Number.</para>
-          <para>Represents the following attribute in the schema: useFirstPageNumber </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Use First Page Number.Represents the following attribute in the schema: useFirstPageNumber</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -335,11 +343,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical DPI.</para>
-          <para>Represents the following attribute in the schema: verticalDpi </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertical DPI.Represents the following attribute in the schema: verticalDpi</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

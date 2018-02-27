@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotSuppressBlankLines" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines">
+<Type Name="DoNotSuppressBlankLines" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines">
   <TypeSignature Language="C#" Value="public class DoNotSuppressBlankLines : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotSuppressBlankLines extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressBlankLines" />
@@ -18,11 +18,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Remove Blank Lines from Merged Documents.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotSuppressBlankLines.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Remove Blank Lines from Merged Documents. When the object is serialized out as xml, its qualified name is w:doNotSuppressBlankLines.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **doNotSuppressBlankLines (Remove Blank Lines from Merged Documents)**  
+  
+ This element specifies how an application performing the mail merge shall handle blank lines in the merged documents resulting from the mail merge. Typically, when a mail merge is performed, any blank lines which result from lines whose sole contents are merge fields with no content are removed from the merged document in order to prevent extraneous blank lines from appearing in the merged documents. When this element is present, the merged documents which are generated from the mail merge shall not have any blank lines removed before they are sent to their destination format.  
+  
+ If this element is omitted, the merged documents generated from this mail merge shall have all blank lines suppressed if they consist of only merge fields with values consisting of empty strings.  
+  
+ [*Example*: Consider a WordprocessingML document containing a single WordprocessingML field calling for *Test* data as seen in the first column of the table below. If the current record in the mail merge data source contains an empty string for the *Test* column, the resulting merged document would be displayed as follows depending on the setting for the doNotSuppressBlankLines element:  
+  
+ Source Document  
+  
+```xml  
+<w:doNotSuppressBlankLines val="true" />  
+<w:doNotSuppressBlankLines val="false" />  
+```  
+  
+ One  
+  
+ Two  
+  
+ {MERGEFIELD "Test" }  
+  
+ Three  
+  
+ One  
+  
+ Two  
+  
+ Three  
+  
+ One  
+  
+ Two  
+  
+ Three  
+  
+ With this element set to a value of *true*, the blank lines in the resulting document must not be suppressed when the resulting merged documents are created. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +86,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotSuppressBlankLines class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotSuppressBlankLines class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +108,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +129,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

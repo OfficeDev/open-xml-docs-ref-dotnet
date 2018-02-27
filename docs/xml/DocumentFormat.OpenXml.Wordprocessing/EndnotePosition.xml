@@ -1,4 +1,4 @@
-﻿<Type Name="EndnotePosition" FullName="DocumentFormat.OpenXml.Wordprocessing.EndnotePosition">
+<Type Name="EndnotePosition" FullName="DocumentFormat.OpenXml.Wordprocessing.EndnotePosition">
   <TypeSignature Language="C#" Value="public class EndnotePosition : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndnotePosition extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.EndnotePosition" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Endnote Placement.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:pos.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Endnote Placement. When the object is serialized out as xml, its qualified name is w:pos.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `pos (Endnote Placement)`  
+  
+ This element specifies where endnotes shall be placed on the page when they are referenced by text in the current document.  
+  
+ If this element is present at the section level, then it shall be ignored.  
+  
+ If this element is omitted at the document level, then endnotes shall be located at the end of the document.  
+  
+ [*Example*: Consider the following multi-page, multi-section document, where the endnote appears at the end of the section in which it is referenced:  
+  
+ 8279c120-7e72-4b89-850c-38b3882a31e1  
+  
+ The endnote setting is the same for all sections, and is represented by the following WordprocessingML at the document level:  
+  
+```xml  
+<w:settings>  
+  …  <w:endnotePr>  
+    <w:pos w:val="sectEnd" />  
+    …  </w:endnotePr>  
+  …</w:settings>  
+```  
+  
+ Within the properties of the document, the position of endnotes is specified to be at the end of each section. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|endnotePr (§17.11.4); endnotePr (§17.11.5)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_EdnPos) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EndnotePosition class.
-            </summary>
+        <summary>Initializes a new instance of the EndnotePosition class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +141,33 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Endnote Position Type.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Endnote Position Type.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the position of endnotes on the parent section or the document.  
+  
+ Consider a document in which endnotes shall be positioned at the end of the section. The section properties for this section shall be declared as follows:  
+  
+```  
+<w:settings>  
+  <w:endnotePr>  
+    <w:pos w:val="endSect" />  
+  </w:endnotePr>  
+  …  
+</w:settings>  
+```  
+  
+ The `val` attribute is `endSect`, therefore the position of endnotes is specified to be at the end of the section.  
+  
+ The possible values for this attribute are defined by the `ST_EdnPos` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

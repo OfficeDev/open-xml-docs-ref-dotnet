@@ -1,4 +1,4 @@
-﻿<Type Name="TableLayout" FullName="DocumentFormat.OpenXml.Wordprocessing.TableLayout">
+<Type Name="TableLayout" FullName="DocumentFormat.OpenXml.Wordprocessing.TableLayout">
   <TypeSignature Language="C#" Value="public class TableLayout : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableLayout extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableLayout" />
@@ -18,11 +18,63 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TableLayout Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblLayout.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TableLayout Class. When the object is serialized out as xml, its qualified name is w:tblLayout.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **tblLayout (Table Layout)**  
+  
+ This element specifies the algorithm which shall be used to lay out the contents of this table within the document. When a table is displayed in a document, it can either be displayed using a fixed width or autofit layout algorithm (each discussed in the simple type referenced by the val attribute).  
+  
+ If this element is omitted, then the value of this element shall be assumed to be *auto*.  
+  
+ [*Example*: Consider a table which must use the fixed width table layout algorithm. This requirement is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblPr>  
+  <w:tblLayout w:type="fixed"/>  
+</w:tblPr>  
+```  
+  
+ The tblLayout element specifies that the table must use the *fixed* layout algorithm. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPr (§17.4.60); tblPr (§17.4.59); tblPr (§17.7.6.4); tblPr (§17.7.6.3)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblLayoutType) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **tblLayout (Table Layout Exception)**  
+  
+ This element specifies the algorithm which shall be used to lay out the contents of all rows with this table within the table which have the set of table-level property exceptions specified by the parent element. When a table is displayed in a document, it can either be displayed using a fixed width or autofit layout algorithm (each discussed in the simple type referenced by the val attribute).  
+  
+ If this element is omitted, then the value of this element shall be assumed to be *auto*.  
+  
+ [*Example*: Consider a table which must use the fixed width table layout algorithm. This requirement is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblPrEx>  
+  <w:tblLayout w:type="fixed"/>  
+</w:tblPrEx>  
+```  
+  
+ The tblLayout element specifies that the table must use the *fixed* layout algorithm. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPrEx (§17.4.61); tblPrEx (§17.4.62)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblLayoutType) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableLayout class.
-            </summary>
+        <summary>Initializes a new instance of the TableLayout class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +111,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +132,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +157,30 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Layout Setting.</para>
-          <para>Represents the following attribute in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Table Layout Setting.Represents the following attribute in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the algorithm which shall be used to lay out the contents of the parent table (see simple type definition for details on each algorithm used).  
+  
+ Consider a table which shall use the AutoFit width table layout algorithm. This requirement is specified using the following WordprocessingML:  
+  
+```  
+<w:tblPr>  
+  <w:tblLayout w:type="auto"/>  
+</w:tblPr>  
+```  
+  
+ The `tblLayout` element specifies that the table shall use the `auto` layout algorithm.  
+  
+ The possible values for this attribute are defined by the `ST_TblLayoutType` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

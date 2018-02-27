@@ -1,4 +1,4 @@
-﻿<Type Name="Constraint" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.Constraint">
+<Type Name="Constraint" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.Constraint">
   <TypeSignature Language="C#" Value="public class Constraint : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Constraint extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Diagrams.Constraint" />
@@ -21,13 +21,44 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Constraint.</para>
-      <para> When the object is serialized out as xml, its qualified name is dgm:constr.</para>
-    </summary>
+    <summary>Constraint. When the object is serialized out as xml, its qualified name is dgm:constr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ExtensionList &lt;dgm:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **constr (Constraint)**  
+  
+ This element is used to specify size, position of nodes, text values, and layout dependencies between nodes in a layout definition.  
+  
+ [*Example*:  Consider the following example of a constraint list which contains some example constraints being defined and applied to layout nodes in the layout definition:  
+  
+```xml  
+<constrLst>  
+<constr type="w" for="ch" forName="node1" refType="w" refForName=""/>  
+<constr type="h" for="ch" forName="node1" refType="w" refFor="ch" refForName="node1" op="equ" fact="0.6"/>  
+<constr type="w" for="ch" forName="transition1" refType="w" refFor="ch" refForName="node1" op="equ" fact="0.1"/>  
+<constr type="primFontSz" for="ch" forName="node1" refForName="" op="equ" val="100"/>  
+</constrLst>  
+```  
+  
+ In this example we can see constraints being defined for the width and height along with the primary font size for a layout node referenced by *node1*.  The width for a transition is also specified.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|constrLst (§21.4.2.9)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§21.4.2.13|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Constraint) is located in §A.5.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Constraint class.
-            </summary>
+        <summary>Initializes a new instance of the Constraint class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +99,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Constraint class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Constraint class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +119,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Constraint class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Constraint class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +139,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Constraint class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Constraint class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +161,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -161,11 +182,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: dgm:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: dgm:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram
@@ -192,11 +210,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Factor.</para>
-          <para>Represents the following attribute in the schema: fact </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Factor.Represents the following attribute in the schema: fact</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -220,11 +235,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> For.</para>
-          <para>Represents the following attribute in the schema: for </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>For.Represents the following attribute in the schema: for</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -248,11 +260,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> For Name.</para>
-          <para>Represents the following attribute in the schema: forName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>For Name.Represents the following attribute in the schema: forName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -271,10 +280,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -298,11 +305,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Operator.</para>
-          <para>Represents the following attribute in the schema: op </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Operator.Represents the following attribute in the schema: op</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -326,11 +330,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Point Type.</para>
-          <para>Represents the following attribute in the schema: ptType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Point Type.Represents the following attribute in the schema: ptType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -354,11 +355,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference For.</para>
-          <para>Represents the following attribute in the schema: refFor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference For.Represents the following attribute in the schema: refFor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -382,11 +380,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference For Name.</para>
-          <para>Represents the following attribute in the schema: refForName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference For Name.Represents the following attribute in the schema: refForName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -410,11 +405,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference Point Type.</para>
-          <para>Represents the following attribute in the schema: refPtType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference Point Type.Represents the following attribute in the schema: refPtType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -438,11 +430,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference Type.</para>
-          <para>Represents the following attribute in the schema: refType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference Type.Represents the following attribute in the schema: refType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -466,11 +455,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Constraint Type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Constraint Type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -494,11 +480,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

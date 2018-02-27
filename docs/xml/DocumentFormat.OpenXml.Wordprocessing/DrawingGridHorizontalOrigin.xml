@@ -1,4 +1,4 @@
-﻿<Type Name="DrawingGridHorizontalOrigin" FullName="DocumentFormat.OpenXml.Wordprocessing.DrawingGridHorizontalOrigin">
+<Type Name="DrawingGridHorizontalOrigin" FullName="DocumentFormat.OpenXml.Wordprocessing.DrawingGridHorizontalOrigin">
   <TypeSignature Language="C#" Value="public class DrawingGridHorizontalOrigin : DocumentFormat.OpenXml.Wordprocessing.TwipsMeasureType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DrawingGridHorizontalOrigin extends DocumentFormat.OpenXml.Wordprocessing.TwipsMeasureType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DrawingGridHorizontalOrigin" />
@@ -18,11 +18,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Drawing Grid Horizontal Origin Point.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:drawingGridHorizontalOrigin.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Drawing Grid Horizontal Origin Point. When the object is serialized out as xml, its qualified name is w:drawingGridHorizontalOrigin.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **drawingGridHorizontalOrigin (Drawing Grid Horizontal Origin Point)**  
+  
+ This element specifies the distance from of the left edge of the page which shall be used as the origin for the horizontal gridlines used by the drawing grid. The *drawing grid* is a virtual grid which might be used by applications to specify where drawing objects shall be positioned on a page when inserted (i.e. to ensure objects are aligned, etc.). Since the grid always covers the entire page when the doNotUseMarginsForDrawingGridOrigin element (§17.15.1.42) is specified, this element shall only affect the starting edge of the first horizontal gridline displayed (i.e. it only adjusts the grid by the modulus of the value against the width of one grid unit).  
+  
+ If this element is omitted, then the gridlines shall start at the leftmost edge of the page. If the doNotUseMarginsForDrawingGridOrigin element is not specified, then this element is ignored.  
+  
+ [*Example*: Consider a WordprocessingML document whose drawing grid must begin three inches (4320 twentieths of a point) before the left edge of the page. This requirement would be specified using the following WordprocessingML markup in the document settings:  
+  
+```xml  
+<w:settings>  
+  …  <w:dontuseMarginsForDrawingGridOrigin w:val="true" />  
+  <w:drawingGridHorizontalOrigin w:val="4320" />  
+  …</w:settings>  
+```  
+  
+ The drawingGridHorizontalOrigin element's val attribute is equal to *4320* specifying that the horizontal edge of the document's drawing grid must begin three inches (4320 twentieths of a point) from the left edge of the page, since the dontUseMarginsForDrawingGridOrigin element's val attribute is equal to *true*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TwipsMeasure) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +66,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DrawingGridHorizontalOrigin class.
-            </summary>
+        <summary>Initializes a new instance of the DrawingGridHorizontalOrigin class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +88,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +109,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

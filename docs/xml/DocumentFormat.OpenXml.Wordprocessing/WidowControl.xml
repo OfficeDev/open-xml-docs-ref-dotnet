@@ -1,4 +1,4 @@
-﻿<Type Name="WidowControl" FullName="DocumentFormat.OpenXml.Wordprocessing.WidowControl">
+<Type Name="WidowControl" FullName="DocumentFormat.OpenXml.Wordprocessing.WidowControl">
   <TypeSignature Language="C#" Value="public class WidowControl : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WidowControl extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.WidowControl" />
@@ -18,11 +18,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the WidowControl Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:widowControl.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the WidowControl Class. When the object is serialized out as xml, its qualified name is w:widowControl.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `widowControl (Allow First/Last Line to Display on a Separate Page)`  
+  
+ This element specifies whether a consumer shall prevent a single line of this paragraph from being displayed on a separate page from the remaining content at display time by moving the line onto the following page.  
+  
+ When displaying a paragraph in a page, it is sometimes the case that the first line of that paragraph would display as the last line on one page, and all subsequent lines would display on the following page. This property ensures that a consumer shall move the single line to the following page as well to prevent having one line on its own page. As well, if a single line appears at the top of a page, a consumer shall move the preceding line onto the following page as well, to prevent a single line from being displayed on a separate page.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this paragraph shall prevent a single line from being shown on a separate page whenever it would normally occur.  
+  
+ [*Example*: Consider a document with a paragraph which must be shown on four lines at display time. If this paragraph would normally be laid out with its first line at the bottom of one page, and its following lines on the next page, as follows:  
+  
+ 70b85ab3-b400-45bb-8049-9b4c1973fd32  
+  
+ This property would ensure that the default behavior for each paragraph prevented this, by moving this line onto the following paragraph as follows:  
+  
+ 6e4f8832-5007-417a-9a24-90d9bf34c1a7  
+  
+ However, if this default is overridden by specifying the following WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:widowControl w:val="off" />  
+</w:pPr>  
+```  
+  
+ The specifying of the widowControl element with value *off* means that the consumer displaying this document must not move the first line onto a separate page if it would be separated from all other lines (the first picture above). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WidowControl class.
-            </summary>
+        <summary>Initializes a new instance of the WidowControl class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

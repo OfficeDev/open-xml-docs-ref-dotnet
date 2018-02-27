@@ -1,4 +1,4 @@
-﻿<Type Name="NoLeading" FullName="DocumentFormat.OpenXml.Wordprocessing.NoLeading">
+<Type Name="NoLeading" FullName="DocumentFormat.OpenXml.Wordprocessing.NoLeading">
   <TypeSignature Language="C#" Value="public class NoLeading : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NoLeading extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NoLeading" />
@@ -18,11 +18,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Add Leading Between Lines of Text.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:noLeading.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Add Leading Between Lines of Text. When the object is serialized out as xml, its qualified name is w:noLeading.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `noLeading (Do Not Add Leading Between Lines of Text)`  
+  
+ This element specifies whether the additional leading specified by the current font face shall be added between each line of text when that text is displayed. *Leading* refers to the additional spacing requested by a particular font in order to ensure that letters on subsequent lines do not display in a fashion where they are positioned too closely together.  
+  
+ Typically, leading should be added as specified by the associated font. This element, when present with a val attribute value of *true* (or equivalent), specifies that the additional leading specified by the font shall never be output when the text is displayed.  
+  
+ [*Example*: Consider a WordprocessingML document with three lines of text. The default presentation would have the text displayed as follows:  
+  
+ 616f7d5b-dd0c-4a42-b28f-625d24892008  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:noLeading />  
+</w:compat>  
+```  
+  
+ Then no leading is added between lines, resulting in the following output:  
+  
+ 23646f9b-3454-4bdc-83b2-c0d90dfbfc8b  
+  
+ This adjustment is usually very minute in nature; therefore the result is better illustrated by showing how the characters were pushed out due to the leading added to that text:  
+  
+ 4f4c4e55-b52c-4269-8796-f4411cf47d89  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +77,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NoLeading class.
-            </summary>
+        <summary>Initializes a new instance of the NoLeading class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +99,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

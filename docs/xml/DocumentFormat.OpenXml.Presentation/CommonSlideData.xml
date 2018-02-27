@@ -1,4 +1,4 @@
-﻿<Type Name="CommonSlideData" FullName="DocumentFormat.OpenXml.Presentation.CommonSlideData">
+<Type Name="CommonSlideData" FullName="DocumentFormat.OpenXml.Presentation.CommonSlideData">
   <TypeSignature Language="C#" Value="public class CommonSlideData : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CommonSlideData extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.CommonSlideData" />
@@ -33,13 +33,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Common slide data for notes slides.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:cSld.</para>
-    </summary>
+    <summary>Common slide data for notes slides. When the object is serialized out as xml, its qualified name is p:cSld.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Background &lt;p:bg&gt;</description></item><item><description>ShapeTree &lt;p:spTree&gt;</description></item><item><description>CustomerDataList &lt;p:custDataLst&gt;</description></item><item><description>ControlList &lt;p:controls&gt;</description></item><item><description>CommonSlideDataExtensionList &lt;p:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **cSld (Common Slide Data)**  
+  
+ This element specifies a container for slide information that is relevant to all of the slide types.  All slides share a common set of properties that is independent of the slide type; the description of these properties for any particular slide is stored within the slide's cSld container.  Slide data specific to the slide type indicated by the parent element is stored elsewhere.  
+  
+ [*Note*: The actual data in cSld describe only the particular parent slide; it is only the kind of information stored that is common across all slides.  *end note*]  
+  
+ [*Example*: Consider the following PresentationML slide  
+  
+```xml  
+<p:sld>  
+  <p:cSld>  
+    <p:spTree>  
+      …  
+    </p:spTree>  
+  </p:cSld>  
+  …  
+</p:sld>  
+```  
+  
+ As the above example shows, the shape tree of a slide (spTree) is a child element of cSld because all slide types can contain a shape tree.  Other slide properties specific to the slide type (such as transitions for sld slides) are specified elsewhere. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|handoutMaster (§19.3.1.24); notes (§19.3.1.26); notesMaster (§19.3.1.27); sld (§19.3.1.38); sldLayout (§19.3.1.39); sldMaster (§19.3.1.42)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bg (Slide Background)|§19.3.1.1|  
+|controls (List of controls)|§19.3.1.15|  
+|custDataLst (Customer Data List)|§19.3.1.18|  
+|extLst (Extension List)|§19.2.1.12|  
+|spTree (Shape Tree)|§19.3.1.45|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|name (Name)|Specifies the slide name property that is used to further identify this unique configuration of common slide data. This might be used to aid in distinguishing different slide layouts or various other slide types.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CommonSlideData) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CommonSlideData class.
-            </summary>
+        <summary>Initializes a new instance of the CommonSlideData class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +123,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CommonSlideData class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CommonSlideData class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +143,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CommonSlideData class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CommonSlideData class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +163,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CommonSlideData class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CommonSlideData class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,11 +182,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.Background</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Slide Background.</para>
-          <para> Represents the following element tag in the schema: p:bg </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Slide Background. Represents the following element tag in the schema: p:bg</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.Background" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -176,11 +208,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -199,10 +229,7 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonSlideDataExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CommonSlideDataExtensionList.</para>
-          <para> Represents the following element tag in the schema: p:extLst </para>
-        </summary>
+        <summary>CommonSlideDataExtensionList. Represents the following element tag in the schema: p:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -225,11 +252,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ControlList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> List of controls.</para>
-          <para> Represents the following element tag in the schema: p:controls </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>List of controls. Represents the following element tag in the schema: p:controls</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ControlList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -251,11 +275,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CustomerDataList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Customer Data List.</para>
-          <para> Represents the following element tag in the schema: p:custDataLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Customer Data List. Represents the following element tag in the schema: p:custDataLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CustomerDataList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -277,10 +298,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -304,11 +323,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -327,11 +343,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ShapeTree</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Tree.</para>
-          <para> Represents the following element tag in the schema: p:spTree </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape Tree. Represents the following element tag in the schema: p:spTree</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ShapeTree" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

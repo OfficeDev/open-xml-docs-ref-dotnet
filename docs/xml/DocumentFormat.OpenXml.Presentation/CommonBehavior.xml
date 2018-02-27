@@ -1,4 +1,4 @@
-﻿<Type Name="CommonBehavior" FullName="DocumentFormat.OpenXml.Presentation.CommonBehavior">
+<Type Name="CommonBehavior" FullName="DocumentFormat.OpenXml.Presentation.CommonBehavior">
   <TypeSignature Language="C#" Value="public class CommonBehavior : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CommonBehavior extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.CommonBehavior" />
@@ -27,13 +27,66 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the CommonBehavior Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:cBhvr.</para>
-    </summary>
+    <summary>Defines the CommonBehavior Class. When the object is serialized out as xml, its qualified name is p:cBhvr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CommonTimeNode &lt;p:cTn&gt;</description></item><item><description>TargetElement &lt;p:tgtEl&gt;</description></item><item><description>AttributeNameList &lt;p:attrNameLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **cBhvr (Common Behavior)**  
+  
+ This element describes the common behaviors of animations.  
+  
+ [*Example*:  Consider trying to emphasize text within a shape by changing the size of its font. The \<anim> element should be used as follows:  
+  
+```xml  
+<p:anim to="1.5" calcmode="lin" valueType="num">  
+  <p:cBhvr override="childStyle">  
+    <p:cTn id="6" dur="2000" fill="hold"/>  
+    <p:tgtEl>  
+      <p:spTgt spid="3">  
+        <p:txEl>  
+          <p:charRg st="4294967295" end="4294967295"/>  
+        </p:txEl>  
+      </p:spTgt>  
+    </p:tgtEl>  
+    <p:attrNameLst>  
+      <p:attrName>style.fontSize</p:attrName>  
+    </p:attrNameLst>  
+  </p:cBhvr>  
+</p:anim>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|anim (§19.5.1); animClr (§19.5.2); animEffect (§19.5.3); animMotion (§19.5.4); animRot (§19.5.5); animScale (§19.5.6); cmd (§19.5.28); set (§19.5.66)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|attrNameLst (Attribute Name List)|§19.5.8|  
+|cTn (Common Time Node Properties)|§19.5.33|  
+|tgtEl (Target Element)|§19.5.81|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|accumulate (Accumulate)|This attribute makes a repeating animation build with each iteration when set to "always."<br /><br /> The possible values for this attribute are defined by the *ST_TLBehaviorAccumulateType* simple type (§19.7.27).|  
+|additive (Additive)|This attribute specifies how to apply the animation values to the original value for the property.<br /><br /> The possible values for this attribute are defined by the *ST_TLBehaviorAdditiveType* simple type (§19.7.28).|  
+|by (By)|This attribute specifies a relative offset value for the animation..<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|from (From)|This attribute specifies the starting value of the animation.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|override (Override)|This attribute specifies how a behavior should override values of the attribute being animated on the target element.  The "childStyle" clears the attributes on the children contained inside the target element.<br /><br /> The possible values for this attribute are defined by the *ST_TLBehaviorOverrideType* simple type (§19.7.29).|  
+|rctx (Runtime Context)|This attribute describes the runtime context of the animation. The currently-understood values are “PPT” and “IE.” This is used to specify the behavior used when animating in the PPT slideshow vs. IE HTML runtime. An example can be seen with the transparency effect. In IE, the transparency is animated as a bitmap, where in PPT, the style.opacity property of a shape is used to animate the transparency.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|to (To)|This attribute specifies  the ending value of the animation.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|xfrmType (Transform Type)|This attribute specifies the kind of transform to be used.<br /><br /> The possible values for this attribute are defined by the *ST_TLBehaviorTransformType* simple type (§19.7.30).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLCommonBehaviorData) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CommonBehavior class.
-            </summary>
+        <summary>Initializes a new instance of the CommonBehavior class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +127,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CommonBehavior class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CommonBehavior class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,9 +147,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CommonBehavior class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CommonBehavior class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +167,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CommonBehavior class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CommonBehavior class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,12 +191,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.BehaviorAccumulateValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Accumulate.</para>
-          <para>Represents the following attribute in the schema: accumulate </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Accumulate.Represents the following attribute in the schema: accumulate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute makes a repeating animation build with each iteration when set to "always."  
+  
+ The possible values for this attribute are defined by the `ST_TLBehaviorAccumulateType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Additive">
@@ -174,12 +227,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.BehaviorAdditiveValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Additive.</para>
-          <para>Represents the following attribute in the schema: additive </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Additive.Represents the following attribute in the schema: additive</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies how to apply the animation values to the original value for the property.  
+  
+ The possible values for this attribute are defined by the `ST_TLBehaviorAdditiveType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="AttributeNameList">
@@ -197,11 +258,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.AttributeNameList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Attribute Name List.</para>
-          <para> Represents the following element tag in the schema: p:attrNameLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Attribute Name List. Represents the following element tag in the schema: p:attrNameLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.AttributeNameList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -228,12 +286,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> By.</para>
-          <para>Represents the following attribute in the schema: by </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>By.Represents the following attribute in the schema: by</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies a relative offset value for the animation.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -254,11 +320,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -277,11 +341,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonTimeNode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CommonTimeNode.</para>
-          <para> Represents the following element tag in the schema: p:cTn </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CommonTimeNode. Represents the following element tag in the schema: p:cTn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CommonTimeNode" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -308,12 +369,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> From.</para>
-          <para>Represents the following attribute in the schema: from </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>From.Represents the following attribute in the schema: from</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies the starting value of the animation.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -331,10 +400,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -358,12 +425,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.BehaviorOverrideValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Override.</para>
-          <para>Represents the following attribute in the schema: override </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Override.Represents the following attribute in the schema: override</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies how a behavior should override values of the attribute being animated on the target element.  The "childStyle" will clear the attributes on the children contained inside the target element.  
+  
+ The possible values for this attribute are defined by the `ST_TLBehaviorOverrideType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="RuntimeContext">
@@ -386,12 +461,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Runtime Context.</para>
-          <para>Represents the following attribute in the schema: rctx </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Runtime Context.Represents the following attribute in the schema: rctx</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute describes the runtime context of the animation. The currently-understood values are "PPT" and "IE." This is used to specify the behavior used when animating in the PPT slideshow vs. IE HTML runtime. An example can be seen with the transparency effect. In IE, the transparency is animated as a bitmap, where in PPT, the style.opacity property of a shape is used to animate the transparency.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="TargetElement">
@@ -409,11 +492,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.TargetElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Target Element.</para>
-          <para> Represents the following element tag in the schema: p:tgtEl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Target Element. Represents the following element tag in the schema: p:tgtEl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.TargetElement" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -440,12 +520,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> To.</para>
-          <para>Represents the following attribute in the schema: to </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>To.Represents the following attribute in the schema: to</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies  the ending value of the animation.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="TransformType">
@@ -468,12 +556,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.BehaviorTransformValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Transform Type.</para>
-          <para>Represents the following attribute in the schema: xfrmType </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Transform Type.Represents the following attribute in the schema: xfrmType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies the type of transform to be used.  
+  
+ The possible values for this attribute are defined by the `ST_TLBehaviorTransformType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

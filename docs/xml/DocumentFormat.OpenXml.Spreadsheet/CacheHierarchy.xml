@@ -1,4 +1,4 @@
-﻿<Type Name="CacheHierarchy" FullName="DocumentFormat.OpenXml.Spreadsheet.CacheHierarchy">
+<Type Name="CacheHierarchy" FullName="DocumentFormat.OpenXml.Spreadsheet.CacheHierarchy">
   <TypeSignature Language="C#" Value="public class CacheHierarchy : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheHierarchy extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CacheHierarchy" />
@@ -27,13 +27,66 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>PivotCache Hierarchy.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:cacheHierarchy.</para>
-    </summary>
+    <summary>PivotCache Hierarchy. When the object is serialized out as xml, its qualified name is x:cacheHierarchy.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FieldsUsage &lt;x:fieldsUsage&gt;</description></item><item><description>GroupLevels &lt;x:groupLevels&gt;</description></item><item><description>CacheHierarchyExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **cacheHierarchy (PivotCache Hierarchy)**  
+  
+ Represents an OLAP hierarchy in the PivotCache.  
+  
+ *[Example:*  
+  
+```xml  
+<cacheHierarchy uniqueName="[Account].[Account Number]" caption="Account Number"  attribute="1" defaultMemberUniqueName="[Account].[Account Number].[All   Accounts]" allUniqueName="[Account].[Account Number].[All Accounts]"   dimensionUniqueName="[Account]" count="0"/>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cacheHierarchies (§18.10.1.5)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|fieldsUsage (Fields Usage)|§18.10.1.31|  
+|groupLevels (OLAP Grouping Levels)|§18.10.1.40|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|allCaption (Display Name of 'All')|Specifies the display name of the "all" member of this hierarchy.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|allUniqueName (Unique Name of 'All')|Specifies the unique name of the "all" member of this hierarchy.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|attribute (Attribute Hierarchy)|Specifies a boolean value that indicates whether this hierarchy is an attribute hierarchy. An attribute hierarchy is an OLAP member that is exposed as a flat, single-level hierarchy on the OLAP server.<br /><br /> A value of *1* or *true* indicates this hierarchy is an attribute hierarchy.<br /><br /> A value of *0* or *false* indicates this hierarchy is not an attribute hierarchy.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|caption (Hierarchy Display Name)|Specifies the display name of the hierarchy.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|count (Levels Count)|Specifies the number of levels in this hierarchy.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|defaultMemberUniqueName (Default Member Unique Name)|Specifies the unique name of the default member of this hierarchy<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|dimensionUniqueName (Dimension Unique Name)|Specifies the unique name of the dimension to which this hierarchy belongs.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|displayFolder (Display Folder)|Specifies the display folder in which this hierarchy should be displayed.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|hidden (Hidden)|Specifies a boolean value that indicates whether the hierarchy is hidden.<br /><br /> A value of *1* or *true* indicates this hierarchy is hidden.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|iconSet (KPI Icon Set)|Specifies the icon set to use to visualize a KPI trend or status expression. PivotTables use the icon sets available for conditional formatting in SpreadsheetML. See associated simple type definition for details.  The following values are used by PivotTables:<br /><br /> -   no value:  default iconset. For status KPI this corresponds to 3 traffic lights.  For trend KPI this corresponds to 3-arrows.<br />-   1:  Variance Arrow - 3 arrow.<br />-   2:  3 arrows<br />-   3:  Status Arrow Ascending - 5 arrows.<br />-   4:  Status Arrow Descending - 5 arrows<br />-   5:  Standard Arrow - 5 arrows gray.<br />-   6:  Traffic Light Single - 3 traffic lights 1.<br />-   7:  Traffic Light, Traffic Light Multiple - 3 traffic lights 2.<br />-   8:  Gauge Ascending - 5 quarters.<br />-   9:  Gauge Descending - 5 quarters.<br />-   10: Thermometer, Cylinder, Smiley Face - 3 signs.<br />-   11:  Road Signs - 3 symbols.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|keyAttribute (Key Attribute Hierarchy)|Specifies a boolean value that indicates whether this hierarchy is the key attribute hierarchy in an OLAP dimension.<br /><br /> A value of *1* or *true* indicates this hierarchy is the key attribute hierarchy in an OLAP dimension.<br /><br /> A value of *0* or *false* indicates this hierarchy is not a key attribute hierarchy.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|measure (Measure Hierarchy)|Specifies a boolean value that indicates whether this hierarchy is a measure.<br /><br /> A value of *1* or *true* indicates this hierarchy is a measure.<br /><br /> A value of *0* or *false* indicates this hierarchy is not a measure.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|measureGroup (Measure Group Name)|Specifies the name of the measure group to which this hierarchy belongs.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|measures (Measures)|Specifies a boolean value that indicates whether this hierarchy contains all the measures.<br /><br /> A value of *1* or *true* indicates this hierarchy contains all the measures.<br /><br /> A value of *0* or *false* indicates this hierarchy does not contain all the measures.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|memberValueDatatype (Member Value Data Type)|Specifies the data type of the member value. This attribute stores an OLEDB data type.<br /><br /> [*Note*: Data connectivity can use a number of different technologies. One example of potential values stored in this attribute can be found at:  http://msdn.microsoft.com/library/default.asp?url=/library/en-us/oledb/htm/oledbtype_indicators.asp *end note*]<br /><br /> *memberValueDataType* is stored for key attribute hierarchies in order to tell when the application will offer date filtering instead of label filtering in OLAP PivotTables. Date filtering is only offered when the data type is Date/Time. *memberValueDatatype*="7" indicates a date/time data type.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedShort* datatype.|  
+|oneField (One Field)|Specifies a boolean value that indicates whether this hierarchy is associated with only one field due to its position in the view.<br /><br /> A value of *1* or *true* indicates this hierarchy is associated with only one field.<br /><br /> A value of *0* or *false* indicates this field is not restricted to only one association due to its position in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|parentSet (Parent Set)|Specifies the parent hierarchy of the set. If the attribute is missing it means that the parent hierarchy is unknown or doesn't exist in the cache.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|set (Set)|Specifies a boolean value that indicates whether this hierarchy is a set.<br /><br /> A value of *1* or *true* indicates this hierarchy is a set.<br /><br /> A value of *0* or *false* indicates this hierarchy is not a set.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|time (Time)|Specifies a boolean value that indicates whether this hierarchy is of type time.<br /><br /> A value of *1* or *true* indicates this hierarchy is of type time.<br /><br /> A value of *0* or *false* indicates is of a different type.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|unbalanced (Unbalanced)|Specifies a boolean value that indicates whether this hierarchy is an unbalanced hierarchy. If value is not written, then this attribute either cannot be determined or does not apply to the current hierarchy.<br /><br /> A value of *1* or *true* indicates this hierarchy is unbalanced.<br /><br /> A value of *0* or *false* indicates is balanced.<br /><br /> For more information on balanced hierarchies, see the documentation provided for your OLAP server.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|unbalancedGroup (Unbalanced Group)|Specifies a boolean value that indicated whether the grouped version of this hierarchy is an unbalanced hierarchy. If value is not written, then this attribute either cannot be determined or does not apply to the current hierarchy.<br /><br /> A value of *1* or *true* indicates this hierarchy is unbalanced when grouped.<br /><br /> A value of *0* or *false* indicates is balanced when grouped.<br /><br /> For more information on balanced hierarchies, see the documentation provided for your OLAP server.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|uniqueName (Hierarchy Unique Name)|Specifies the unique name of the hierarchy.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CacheHierarchy) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CacheHierarchy class.
-            </summary>
+        <summary>Initializes a new instance of the CacheHierarchy class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +127,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CacheHierarchy class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CacheHierarchy class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,9 +147,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CacheHierarchy class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CacheHierarchy class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +167,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CacheHierarchy class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CacheHierarchy class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,11 +191,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> allCaption.</para>
-          <para>Represents the following attribute in the schema: allCaption </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>allCaption.Represents the following attribute in the schema: allCaption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,11 +216,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> allUniqueName.</para>
-          <para>Represents the following attribute in the schema: allUniqueName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>allUniqueName.Represents the following attribute in the schema: allUniqueName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,11 +241,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> attribute.</para>
-          <para>Represents the following attribute in the schema: attribute </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>attribute.Represents the following attribute in the schema: attribute</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,10 +261,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CacheHierarchyExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CacheHierarchyExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
+        <summary>CacheHierarchyExtensionList. Represents the following element tag in the schema: x:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -256,11 +289,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> caption.</para>
-          <para>Represents the following attribute in the schema: caption </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>caption.Represents the following attribute in the schema: caption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -282,11 +312,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,11 +338,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -338,11 +363,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> defaultMemberUniqueName.</para>
-          <para>Represents the following attribute in the schema: defaultMemberUniqueName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>defaultMemberUniqueName.Represents the following attribute in the schema: defaultMemberUniqueName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -366,11 +388,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dimensionUniqueName.</para>
-          <para>Represents the following attribute in the schema: dimensionUniqueName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>dimensionUniqueName.Represents the following attribute in the schema: dimensionUniqueName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -394,11 +413,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> displayFolder.</para>
-          <para>Represents the following attribute in the schema: displayFolder </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>displayFolder.Represents the following attribute in the schema: displayFolder</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -417,11 +433,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.FieldsUsage</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FieldsUsage.</para>
-          <para> Represents the following element tag in the schema: x:fieldsUsage </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>FieldsUsage. Represents the following element tag in the schema: x:fieldsUsage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.FieldsUsage" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -443,11 +456,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.GroupLevels</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GroupLevels.</para>
-          <para> Represents the following element tag in the schema: x:groupLevels </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>GroupLevels. Represents the following element tag in the schema: x:groupLevels</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.GroupLevels" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -474,11 +484,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> hidden.</para>
-          <para>Represents the following attribute in the schema: hidden </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>hidden.Represents the following attribute in the schema: hidden</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -502,11 +509,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> iconSet.</para>
-          <para>Represents the following attribute in the schema: iconSet </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>iconSet.Represents the following attribute in the schema: iconSet</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -530,11 +534,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> keyAttribute.</para>
-          <para>Represents the following attribute in the schema: keyAttribute </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>keyAttribute.Represents the following attribute in the schema: keyAttribute</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -553,10 +554,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -580,11 +579,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> measure.</para>
-          <para>Represents the following attribute in the schema: measure </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>measure.Represents the following attribute in the schema: measure</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -608,11 +604,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> measureGroup.</para>
-          <para>Represents the following attribute in the schema: measureGroup </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>measureGroup.Represents the following attribute in the schema: measureGroup</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -636,11 +629,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> measures.</para>
-          <para>Represents the following attribute in the schema: measures </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>measures.Represents the following attribute in the schema: measures</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -664,10 +654,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt16Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> memberValueDatatype.</para>
-          <para>Represents the following attribute in the schema: memberValueDatatype </para>
-        </summary>
+        <summary>memberValueDatatype.Represents the following attribute in the schema: memberValueDatatype</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -692,11 +679,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> oneField.</para>
-          <para>Represents the following attribute in the schema: oneField </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>oneField.Represents the following attribute in the schema: oneField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -720,11 +704,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> parentSet.</para>
-          <para>Represents the following attribute in the schema: parentSet </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>parentSet.Represents the following attribute in the schema: parentSet</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -748,11 +729,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> set.</para>
-          <para>Represents the following attribute in the schema: set </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>set.Represents the following attribute in the schema: set</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -776,11 +754,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> time.</para>
-          <para>Represents the following attribute in the schema: time </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>time.Represents the following attribute in the schema: time</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -804,11 +779,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> unbalanced.</para>
-          <para>Represents the following attribute in the schema: unbalanced </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>unbalanced.Represents the following attribute in the schema: unbalanced</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -832,11 +804,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> unbalancedGroup.</para>
-          <para>Represents the following attribute in the schema: unbalancedGroup </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>unbalancedGroup.Represents the following attribute in the schema: unbalancedGroup</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -860,11 +829,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> uniqueName.</para>
-          <para>Represents the following attribute in the schema: uniqueName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>uniqueName.Represents the following attribute in the schema: uniqueName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

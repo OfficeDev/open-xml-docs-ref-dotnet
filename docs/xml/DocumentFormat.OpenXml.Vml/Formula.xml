@@ -1,4 +1,4 @@
-﻿<Type Name="Formula" FullName="DocumentFormat.OpenXml.Vml.Formula">
+<Type Name="Formula" FullName="DocumentFormat.OpenXml.Vml.Formula">
   <TypeSignature Language="C#" Value="public class Formula : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Formula extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Vml.Formula" />
@@ -18,11 +18,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Single Formula.</para>
-      <para> When the object is serialized out as xml, its qualified name is v:f.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Single Formula. When the object is serialized out as xml, its qualified name is v:f.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **f (Single Formula)**  
+  
+ This element defines a single value as the result of the evaluation of an expression. The expression is defined by the eqn attribute and has the general form of an operation followed by up to three arguments, which consist of adjustment values (see the adj attribute of the shape element (§14.1.2.19)), the results of earlier formulas, fixed numbers or pre-defined values.  Each f value is referenced using "@" followed by a number corresponding to the zero-based index for that value in the list of f elements.  [*Example*: For example, the value of the second f element is referenced as "@2". *end example*]  
+  
+ [*Example*: The following defines a blue arrow pointing to the right:  
+  
+```xml  
+<v:shape coordsize="21600,21600" adj="18000,5400,10800"   
+  path="m @0,0 l @0,@1 0,@1 0,@3 @0,@3 @0,21600 21600,10800 x e"   
+  style='left:50pt;top:50pt;width:90pt;height:30pt'  
+  fillcolor="#4f81bd" strokecolor="#4f81bd" strokeweight="2pt">  
+  <v:formulas>  
+   <v:f eqn="val #0"/>  
+   <v:f eqn="val #1"/>  
+   <v:f eqn="val #2"/>  
+   <v:f eqn="sum height 0 #1"/>  
+   <v:f eqn="sum #2 0 #1"/>  
+   <v:f eqn="sum width 0 #0"/>  
+   <v:f eqn="prod @5 @4 #2"/>  
+   <v:f eqn="sum width 0 @6"/>  
+  </v:formulas>  
+</v:shape>  
+```  
+  
+ The shape looks like this:  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|formulas (§14.1.2.6)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|eqn (Equation)|Specifies a single formula, which consists of a named operation followed by up to three parameters, typically described as v, P1 and P2.  Up to 128 formulas can be specified.  These operations are defined (calculation accuracy is discussed below):<br /><br /> Operation<br /><br /> Description<br /><br /> *val*<br /><br /> v<br /><br /> Returns the supplied value.  Exact.<br /><br /> *sum*<br /><br /> Addition and subtraction.  Exact.<br /><br /> *product*<br /><br /> Multiplication and division.  Rounds up.<br /><br /> *mid*<br /><br /> Simple average.  Rounds toward zero.<br /><br /> *abs*<br /><br /> Absolute value.  Exact.<br /><br /> *min*<br /><br /> The lesser of two values.  Exact.<br /><br /> *max*<br /><br /> The greater of two values.  Exact.<br /><br /> *if*<br /><br /> Conditional selection.  Exact.<br /><br /> *mod*<br /><br /> Modulus.  Inexact.<br /><br /> *atan2*<br /><br /> Trigonometric arc tangent of a quotient.  Result is in "fd" units or fractional degrees - degrees .  Inexact.<br /><br /> *sin*<br /><br /> Sine.  Argument is in "fd" units or fractional degrees - degrees .  Inexact.<br /><br /> *cos*<br /><br /> Cosine.  Argument is in "fd" units or fractional degrees - degrees .  Inexact.<br /><br /> *cosatan2*<br /><br /> Preserves full accuracy in the intermediate calculation.  Inexact.<br /><br /> *sinatan2*<br /><br /> Preserves full accuracy in the intermediate calculation.  Inexact.<br /><br /> *sqrt*<br /><br /> Square root.  Result is positive and rounds down.  Inexact.<br /><br /> *sumangle*<br /><br /> Adds an existing angle in fd units (v) to two other angles specified in degrees.  P1 and P2 are scaled by .  Exact.<br /><br /> *ellipse*<br /><br /> The eccentricity formula for an ellipse, where v is length of the semiminor axis and P1 is the length of the semimajor axis.  Inexact.<br /><br /> *tan*<br /><br /> Tangent.  Argument is in "fd" units or fractional degrees - degrees .  Inexact.<br /><br /> Formulas are evaluated to full precision, but the result is always a 32-bit integer.  Formula authors should avoid formulas which are discontinuous - not only are many of the trigonometric operations inexact, the transformations within the coordinate spaces are also inexact.  This can mean that a set of formulas which is discontinuous evaluates to give very different  path values with the same input on two different systems.<br /><br /> When an operation is marked as exact then a conforming implementation shall always generate the correct arithmetic answer (unless the calculations overflow internally).   The product operation is required to round to the nearest integer.   If the result is exactly 0.5 then it shall be rounded up to the next numerically greater integer.  The mid operation is required to round towards 0.<br /><br /> All other operations are inexact, but the implementation shall round non-integral values down (towards -infinity) and should perform internal calculations with this form of rounding.<br /><br /> The arguments used in the evaluation of a formula are normally either fixed numbers, the result of the evaluation of a previous formula or an adjust value - the value of the corresponding entry in the shape adj attribute.  Fixed numbers shall be positive integral values in the range 0 to 65535 (unsigned 16-bit numbers).  The following named values are defined:<br /><br /> Value<br /><br /> Description<br /><br /> *@n*<br /><br /> The value of formula n, where n is the zero-based index of the formula in the list of formulas.  n shall be less than the current formula index.<br /><br /> *#n*<br /><br /> Adjustment (adj) value n.  n shall be in the range 0 to 7.<br /><br /> *width*<br /><br /> The width defined by the coordsize attribute.<br /><br /> *height*<br /><br /> The height defined by the coordsize attribute.<br /><br /> *xcenter*<br /><br /> The x ordinate of the center of the coordinate space defined by coordorigin and coordsize.<br /><br /> *ycenter*<br /><br /> The y ordinate of the center of the coordinate space defined by coordorigin and coordsize.<br /><br /> *xlimo*<br /><br /> The x value of the limo attribute (see also the path element (§14.1.2.14)).<br /><br /> *ylimo*<br /><br /> The y value of the limo attribute (see also the path element (§14.1.2.14)).<br /><br /> *hasstroke*<br /><br /> 1 if the shape has a stroke operation, 0 if it does not, as determined by the on attribute of the stroke element (§14.1.2.21).<br /><br /> *hasfill*<br /><br /> 1 if the shape has a fill operation, 0 if it does not, as determined by the on attribute of the fill element (§14.1.2.5).<br /><br /> *pixellinewidth*<br /><br /> The line width in output device pixels.  This is used to outset lines from the edge of a rectangle on the assumption that the implementation draws to lower right pixel in preference to the upper left pixel when a line is on a pixel boundary.<br /><br /> *pixelwidth*<br /><br /> The width of the shape in device pixels (i.e., the coordsize width transformed into device space).<br /><br /> *pixelheight*<br /><br /> The height of the coordsize in device pixels.<br /><br /> *emuwidth*<br /><br /> The width of the coordsize in EMUs.<br /><br /> *emuheight*<br /><br /> The height of the coordsize in EMUs.<br /><br /> *emuwidth2*<br /><br /> Half the width of the coordsize in EMUs.<br /><br /> *emuheight2*<br /><br /> Half the height of the coordsize in EMUs.<br /><br /> The EMU, or English Metric Unit, is the smallest unit of measure in VML and corresponds to 914400 EMU per inch or 12700 EMU per point.<br /><br /> See above for an example.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_F) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Formula class.
-            </summary>
+        <summary>Initializes a new instance of the Formula class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +103,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +129,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Equation.</para>
-          <para>Represents the following attribute in the schema: eqn </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Equation.Represents the following attribute in the schema: eqn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -112,10 +149,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

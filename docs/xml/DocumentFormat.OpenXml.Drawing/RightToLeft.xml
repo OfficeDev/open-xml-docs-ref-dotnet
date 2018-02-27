@@ -1,4 +1,4 @@
-﻿<Type Name="RightToLeft" FullName="DocumentFormat.OpenXml.Drawing.RightToLeft">
+<Type Name="RightToLeft" FullName="DocumentFormat.OpenXml.Drawing.RightToLeft">
   <TypeSignature Language="C#" Value="public class RightToLeft : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RightToLeft extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.RightToLeft" />
@@ -18,11 +18,83 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the RightToLeft Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:rtl.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the RightToLeft Class. When the object is serialized out as xml, its qualified name is a:rtl.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **rtl (Right to Left Run)**  
+  
+ This element specifies whether the contents of this run shall have right-to-left characteristics. Specifically, the following behaviors are applied when this element’s val attribute is *true* (or an equivalent):  
+  
+-   Formatting – When the contents of this run are displayed, all characters shall be treated as complex script characters. This means that the values of the cs element (§21.1.2.3.1) shall be used to determine the font face.  
+  
+-   Character Directionality Override – When the contents of this run are displayed, this property acts as a right-to-left override for characters which are classified as follows (using the Unicode Character Database):  
+  
+ *Weak types except European Number, European Number Terminator, Common Number Separator, Arabic Number and (for Hebrew text) European Number Separator when constituting part of a number*  
+  
+ *Neutral types*  
+  
+-   [*Rationale*: This override allows applications to store and utilize higher-level information beyond that implicitly derived from the Unicode Bidirectional algorithm. For example, if the string “first second” appears in a right-to-left paragraph inside a document, the Unicode algorithm would always result in “first second” at display time (since the neutral character is surrounded by strongly classified characters). However, if the whitespace was entered using a right-to-left input method (e.g. a Hebrew keyboard), then that character could be classified as RTL using this property, allowing the display of “second first” in a right-to-left paragraph, since the user explicitly asked for the space in a right-to-left context. *end rationale*]  
+  
+ *This element provides information used to resolve the (Unicode) classifications of individual characters as either L, R, AN or EN. Once this is determined, the line should be displayed subject to the recommendation of the Unicode Bidirectional Algorithm in reordering resolved levels.*  
+  
+ This property shall not be used with strong left-to-right text. Any behavior under that condition is unspecified. This property, when off, should not be used with strong right-to-left text. Any behavior under that condition is unspecified.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then right to left characteristics shall not be applied to the contents of this run.  
+  
+ [*Example*: Consider the following DrawingML visual content: “*first second, أولى ثاني*”. This content might appear as follows within its parent paragraph:  
+  
+```xml  
+<a:p>  
+  <a:r>  
+    <a:t>first second, </w:t>  
+  </a:r>  
+  <a:r>  
+    <a:rPr>  
+      <a:rtl/>  
+    </a:rPr>  
+    <a:t>  
+أولى</a:t>  
+  </a:r>  
+  <a:r>  
+    <a:rPr>  
+      <a:rtl/>  
+    </a:rPr>  
+    <a:t> </a:t>  
+  </a:r>  
+  <a:r>  
+    <a:rPr>  
+      <a:rtl/>  
+    </a:rPr>  
+    <a:t>  
+ثاني</a:t>  
+  </a:r>  
+</a:p>  
+```  
+  
+ The presence of the rtl element on the second, third, and fourth runs specifies that:  
+  
+-   The formatting on those runs is specified using the complex-script property variants.  
+  
+-   The whitespace character is treated as right-to-left.  
+  
+ Note that the second, third and fourth runs could be joined as one run with the rtl element specified.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|defRPr (§21.1.2.3.2); endParaRPr (§21.1.2.2.3); rPr (§21.1.2.3.9)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Boolean) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +109,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RightToLeft class.
-            </summary>
+        <summary>Initializes a new instance of the RightToLeft class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +131,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,9 +152,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -111,10 +177,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="RunPropertiesChange" FullName="DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange">
+<Type Name="RunPropertiesChange" FullName="DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange">
   <TypeSignature Language="C#" Value="public class RunPropertiesChange : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RunPropertiesChange extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.RunPropertiesChange" />
@@ -21,13 +21,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the RunPropertiesChange Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:rPrChange.</para>
-    </summary>
+    <summary>Defines the RunPropertiesChange Class. When the object is serialized out as xml, its qualified name is w:rPrChange.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PreviousRunProperties &lt;w:rPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **rPrChange (Revision Information for Run Properties)**  
+  
+ This element specifies the details about a single revision to a set of run properties in a WordprocessingML document.  
+  
+ This element stores this revision as follows:  
+  
+-   The child element of this element contains the complete set of run properties which were applied to this run before this revision  
+  
+-   The attributes of this element contain information about when this revision took place (i.e. when these properties became a 'former' set of run properties).  
+  
+ [*Example*: Consider an italicized run in a WordprocessingML document which is also made bold and the latter change in the run properties is tracked as a revision. This revision would be specified using the following WordprocessingML markup:  
+  
+```xml  
+<w:rPr>  
+  <w:b/>  
+  <w:i/>  
+  <w:rPrChange w:id="0" w:date="01-01-2006T12:00:00" w:author="John Doe">  
+    <w:rPr>  
+      <w:i/>  
+    </w:rPr>  
+  </w:rPrChange>  
+</w:rPr>  
+```  
+  
+ The rPrChange element specifies that there was a revision to the run properties at  by *John Doe*, and the previous set of run properties was simply the italicization using the i element (§17.3.2.16). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|rPr (Previous Run Properties)|§17.3.2.27|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_RPrChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RunPropertiesChange class.
-            </summary>
+        <summary>Initializes a new instance of the RunPropertiesChange class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +108,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RunPropertiesChange class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the RunPropertiesChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +128,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RunPropertiesChange class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the RunPropertiesChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +148,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the RunPropertiesChange class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the RunPropertiesChange class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,10 +172,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> author.</para>
-          <para>Represents the following attribute in the schema: w:author </para>
-        </summary>
+        <summary>author.Represents the following attribute in the schema: w:author</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -168,11 +197,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -196,10 +223,7 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> date.</para>
-          <para>Represents the following attribute in the schema: w:date </para>
-        </summary>
+        <summary>date.Represents the following attribute in the schema: w:date</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -226,10 +250,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Annotation Identifier.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
+        <summary>Annotation Identifier.Represents the following attribute in the schema: w:id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -251,10 +272,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -273,10 +292,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PreviousRunProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Run Properties.</para>
-          <para> Represents the following element tag in the schema: w:rPr </para>
-        </summary>
+        <summary>Previous Run Properties. Represents the following element tag in the schema: w:rPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

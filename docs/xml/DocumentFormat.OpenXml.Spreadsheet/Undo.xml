@@ -1,4 +1,4 @@
-﻿<Type Name="Undo" FullName="DocumentFormat.OpenXml.Spreadsheet.Undo">
+<Type Name="Undo" FullName="DocumentFormat.OpenXml.Spreadsheet.Undo">
   <TypeSignature Language="C#" Value="public class Undo : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Undo extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Undo" />
@@ -18,11 +18,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Undo.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:undo.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Undo. When the object is serialized out as xml, its qualified name is x:undo.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **undo (Undo)**  
+  
+ This element represents undo information for row/column deletion when there are functions in the spreadsheet that reference the deleted rows/columns. This element is not applicable for insert revisions.  
+  
+|Parent Elements|  
+|---------------------|  
+|rm (§18.11.1.19); rrc (§18.11.1.21)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|array (Array Formula)|Flag indicating that the affected formula is an array formula.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|cs (Cross Sheet Move)|A Boolean flag indicating this was a cross-sheet move.  True if it was a cross sheet move, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dn (Defined Name)|Identifies the named range that referenced the deleted cell range. Mutually exclusive with the cell reference attribute.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|dr (Range)|The range which was deleted that is referenced by the affected formula.<br /><br /> The possible values for this attribute are defined by the *ST_RefA* simple type (§18.18.63).|  
+|exp (Expression)|Identifies the expression that should be adjusted in the corresponding formula.<br /><br /> The possible values for this attribute are defined by the *ST_FormulaExpression* simple type (§18.18.36).|  
+|index (Index)|Index of the expression within the corresponding formula that was affected by this change.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|nf (Defined Name Formula)|A Boolean flag indicating that the corresponding formula is part of a defined name.  True if this formula is part of a defined name, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|r (Cell Reference)|Location of the cell whose formula referenced the deleted cell range. Mutually exclusive with the defined name attribute<br /><br /> The possible values for this attribute are defined by the *ST_CellRef* simple type (§18.18.7).|  
+|ref3D (Reference 3D)|A Boolean flag indicating that the expression contained the sheet name in addition to the cell reference.  True if it contained the sheet name, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sId (Sheet Id)|Internal Id of the worksheet that contained the formula that referenced the deleted cell range. Mutually exclusive with the defined name attribute.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|v (Value Needed)|A Boolean flag indicating the formula needs the actual value of the cell(s) it's referencing.  True if the formula requires the value of the cell it references, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_UndoInfo) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Undo class.
-            </summary>
+        <summary>Initializes a new instance of the Undo class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +91,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Array Entered.</para>
-          <para>Represents the following attribute in the schema: array </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Array Entered.Represents the following attribute in the schema: array</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -91,11 +116,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Reference.</para>
-          <para>Represents the following attribute in the schema: r </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Reference.Represents the following attribute in the schema: r</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +139,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,11 +165,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cross Sheet Move.</para>
-          <para>Represents the following attribute in the schema: cs </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cross Sheet Move.Represents the following attribute in the schema: cs</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +190,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Defined Name.</para>
-          <para>Represents the following attribute in the schema: dn </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Defined Name.Represents the following attribute in the schema: dn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,11 +215,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Defined Name Formula.</para>
-          <para>Represents the following attribute in the schema: nf </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Defined Name Formula.Represents the following attribute in the schema: nf</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -229,11 +240,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Range.</para>
-          <para>Represents the following attribute in the schema: dr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Range.Represents the following attribute in the schema: dr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -257,11 +265,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.FormulaExpressionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Expression.</para>
-          <para>Represents the following attribute in the schema: exp </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Expression.Represents the following attribute in the schema: exp</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -285,11 +290,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Index.</para>
-          <para>Represents the following attribute in the schema: index </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Index.Represents the following attribute in the schema: index</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -308,10 +310,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -335,11 +335,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference 3D.</para>
-          <para>Represents the following attribute in the schema: ref3D </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference 3D.Represents the following attribute in the schema: ref3D</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -363,11 +360,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sheet Id.</para>
-          <para>Represents the following attribute in the schema: sId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sheet Id.Represents the following attribute in the schema: sId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -391,11 +385,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value Needed.</para>
-          <para>Represents the following attribute in the schema: v </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Value Needed.Represents the following attribute in the schema: v</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

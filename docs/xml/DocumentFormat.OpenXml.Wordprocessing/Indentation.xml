@@ -1,4 +1,4 @@
-﻿<Type Name="Indentation" FullName="DocumentFormat.OpenXml.Wordprocessing.Indentation">
+<Type Name="Indentation" FullName="DocumentFormat.OpenXml.Wordprocessing.Indentation">
   <TypeSignature Language="C#" Value="public class Indentation : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Indentation extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Indentation" />
@@ -18,11 +18,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Indentation Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:ind.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Indentation Class. When the object is serialized out as xml, its qualified name is w:ind.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **ind (Paragraph Indentation)**  
+  
+ This element specifies the set of indentation properties applied to the current paragraph.  
+  
+ Indentation settings are overriden on an individual basis - if any single attribute on this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If any single attribute on this element is never specified in the style hierarchy, then no indentation of that indentation type is applied to the paragraph.  
+  
+ [*Example*: Consider a paragraph which should have a one inch indentation from the text margins on both the left and the right sides, except for the first line in each paragraph, which should only be indented one quarter of an inch from the text margin (on the side which begins the flow of text for this paragraph). This set of indentations is specified using the following WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:ind w:left="1440" w:right="1440" w:hanging="1080" />   
+</w:pPr>  
+```  
+  
+ This set of indentation properties specifies that a *1440* twentieths of a point indentation should be provided on both the left and the right side of the text margins for this paragraph, and that a *1080* twentieths of a point hanging indent (towards the text margin) should be applied to the text in the first paragraph, giving it a net one-quarter inch indent from the text margin. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Ind) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Indentation class.
-            </summary>
+        <summary>Initializes a new instance of the Indentation class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +87,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,10 +116,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> end, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:end </para>
-        </summary>
+        <summary>end, this property is only available in Office2010.Represents the following attribute in the schema: w:end</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -125,10 +146,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> endChars, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:endChars </para>
-        </summary>
+        <summary>endChars, this property is only available in Office2010.Represents the following attribute in the schema: w:endChars</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -155,11 +173,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Additional First Line Indentation.</para>
-          <para>Represents the following attribute in the schema: w:firstLine </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Additional First Line Indentation.Represents the following attribute in the schema: w:firstLine</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -185,11 +200,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Additional First Line Indentation in Character Units.</para>
-          <para>Represents the following attribute in the schema: w:firstLineChars </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Additional First Line Indentation in Character Units.Represents the following attribute in the schema: w:firstLineChars</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -215,11 +227,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Indentation Removed from First Line.</para>
-          <para>Represents the following attribute in the schema: w:hanging </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Indentation Removed from First Line.Represents the following attribute in the schema: w:hanging</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -245,11 +254,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Indentation Removed From First Line in Character Units.</para>
-          <para>Represents the following attribute in the schema: w:hangingChars </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Indentation Removed From First Line in Character Units.Represents the following attribute in the schema: w:hangingChars</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -275,11 +281,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Left Indentation.</para>
-          <para>Represents the following attribute in the schema: w:left </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Left Indentation.Represents the following attribute in the schema: w:left</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -305,11 +308,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Left Indentation in Character Units.</para>
-          <para>Represents the following attribute in the schema: w:leftChars </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Left Indentation in Character Units.Represents the following attribute in the schema: w:leftChars</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -330,10 +330,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -357,11 +355,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Right Indentation.</para>
-          <para>Represents the following attribute in the schema: w:right </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Right Indentation.Represents the following attribute in the schema: w:right</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -387,11 +382,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Right Indentation in Character Units.</para>
-          <para>Represents the following attribute in the schema: w:rightChars </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Right Indentation in Character Units.Represents the following attribute in the schema: w:rightChars</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -420,10 +412,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> start, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:start </para>
-        </summary>
+        <summary>start, this property is only available in Office2010.Represents the following attribute in the schema: w:start</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -453,10 +442,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> startChars, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:startChars </para>
-        </summary>
+        <summary>startChars, this property is only available in Office2010.Represents the following attribute in the schema: w:startChars</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

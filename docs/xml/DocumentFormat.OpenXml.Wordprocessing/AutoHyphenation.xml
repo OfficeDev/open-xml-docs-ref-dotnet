@@ -1,4 +1,4 @@
-﻿<Type Name="AutoHyphenation" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoHyphenation">
+<Type Name="AutoHyphenation" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoHyphenation">
   <TypeSignature Language="C#" Value="public class AutoHyphenation : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutoHyphenation extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AutoHyphenation" />
@@ -18,11 +18,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Automatically Hyphenate Document Contents When Displayed.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:autoHyphenation.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Automatically Hyphenate Document Contents When Displayed. When the object is serialized out as xml, its qualified name is w:autoHyphenation.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `autoHyphenation (Automatically Hyphenate Document Contents When Displayed)`  
+  
+ This element specifies whether the content of a given WordprocessingML document should automatically be hyphenated by the hosting application before it is displayed, if the application supports this functionality.  
+  
+ If this element is omitted, then hyphenation shall not automatically be performed by application displaying this document.  
+  
+ [*Example*: Consider the images below illustrating a paragraph of text in a WordprocessingML document:  
+  
+ 3e2a665b-2db7-4bb5-a922-b1477712411e  
+  
+ If the content in this document must automatically be hyphenated when it is displayed,  that requirement would be specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:autoHyphenation w:val="true" />  
+```  
+  
+ The resulting output might look like the following (depending on the application's hyphenation algorithm and the hyphenation zone setting (§17.15.1.53):  
+  
+ 234967fd-41ec-43a5-a0d5-d8c32358d49d  
+  
+ The autoHypehenation element has its val attribute equal to *true*, the document is automatically hyphenated and the word *sample*, beginning at the end of the second line, is hyphenated automatically and thus carried over onto the third line. Conversely, when the autoHypehnation element has its val attribute equal to *off*, the entire word *sample* is carried over to the third line as it was not hyphenated automatically and could not fit onto the second line. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AutoHyphenation class.
-            </summary>
+        <summary>Initializes a new instance of the AutoHyphenation class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +93,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

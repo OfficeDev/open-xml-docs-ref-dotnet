@@ -1,4 +1,4 @@
-﻿<Type Name="FontCharSet" FullName="DocumentFormat.OpenXml.Wordprocessing.FontCharSet">
+<Type Name="FontCharSet" FullName="DocumentFormat.OpenXml.Wordprocessing.FontCharSet">
   <TypeSignature Language="C#" Value="public class FontCharSet : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontCharSet extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FontCharSet" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the FontCharSet Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:charset.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the FontCharSet Class. When the object is serialized out as xml, its qualified name is w:charset.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **charset (Character Set Supported By Font)**  
+  
+ This element specifies the character set which is supported by the parent font. This information can be used as defined in font substitution logic to locate an appropriate substitute font when this font is not available. This information is determined by querying the font when present and shall not be modified when the font is not available.  
+  
+ If this element is not present, then the character set for this font shall be assumed to be the /IEC 8859-1 character set.  
+  
+ [*Example*: Consider the following information stored for a single font:  
+  
+```xml  
+<w:font w:name="SimSun">  
+  <w:charset w:characterSet="GBK" />  
+  …</w:font>  
+```  
+  
+ The charset element specifies via its characterSet attribute value of *GBK* that this font uses the GB-2312 character set. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|font (§17.8.3.10)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|characterSet (IANA Name of Character Set)|Name of the character set associated with the font. The values allowed by this attribute are defined by the names and aliases listed in the IANA registration table. If this value is specified, the value of the val attribute is ignored.<br /><br /> The possible values for this attribute are defined by the *ST_String* simple type (§22.9.2.13).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Charset) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FontCharSet class.
-            </summary>
+        <summary>Initializes a new instance of the FontCharSet class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,9 +112,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -111,10 +137,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.StrictCharacterSet&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> characterSet.</para>
-          <para>Represents the following attribute in the schema: w:characterSet </para>
-        </summary>
+        <summary>characterSet.Represents the following attribute in the schema: w:characterSet</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -141,10 +164,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

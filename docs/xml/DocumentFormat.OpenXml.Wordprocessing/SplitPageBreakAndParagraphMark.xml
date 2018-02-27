@@ -1,4 +1,4 @@
-﻿<Type Name="SplitPageBreakAndParagraphMark" FullName="DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark">
+<Type Name="SplitPageBreakAndParagraphMark" FullName="DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark">
   <TypeSignature Language="C#" Value="public class SplitPageBreakAndParagraphMark : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SplitPageBreakAndParagraphMark extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SplitPageBreakAndParagraphMark" />
@@ -18,11 +18,65 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Always Move Paragraph Mark to Page after a Page Break.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:splitPgBreakAndParaMark.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Always Move Paragraph Mark to Page after a Page Break. When the object is serialized out as xml, its qualified name is w:splitPgBreakAndParaMark.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `splitPgBreakAndParaMark (Always Move Paragraph Mark to Page after a Page Break)`  
+  
+ This element specifies whether a page break shall automatically complete the line on which it appears, moving the end of the paragraph to a new line on the next page, or if it shall behave as true run-level content within its current paragraph.  
+  
+ Typically, a page break defined using the br element (Part 1, §17.3.3.1) is treated as run-level content, which means that although it delimits the end of the page, if there is no content after it within the current paragraph, that the paragraph shall also end on that page. This element, when present with a val attribute value of *true* (or equivalent), specifies that a page break shall always immediately end the current page, moving the paragraph mark which delimits the end of its parent paragraph to a new line on the next page.  
+  
+ Note that this setting only affects the case where there is no run-level content after the page break within the paragraph - if any further run content appears in the paragraph it shall appear on subsequent lines on the next page.  
+  
+ [*Example*: Consider a WordprocessingML document with two paragraphs of content - the first ending with a page break:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t>This is text before a page break.</w:t>  
+    <w:br w:type="page" />  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t>This is text on the next page.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The default presentation would have the text content *This is text on the next page.* as the first line of the second page, as there is no run content after the page break in paragraph one, and therefore no need for a new line on page two (in this image, a graphical illustration of the pilcrow and the page break have been added for clarity):  
+  
+ 497d9601-fdf3-40a6-b256-26bc6c55dc39  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:splitPgBreakAndParaMark />  
+</w:compat>  
+```  
+  
+ Then even though it is followed by no additional content, the page break must immediately end the first page, pushing the end of the first paragraph onto the first line of the second page, resulting in the following output:  
+  
+ 5ec276fb-e868-4dab-a592-6127a7e5e698  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +91,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SplitPageBreakAndParagraphMark class.
-            </summary>
+        <summary>Initializes a new instance of the SplitPageBreakAndParagraphMark class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +113,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +134,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

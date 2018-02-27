@@ -1,4 +1,4 @@
-﻿<Type Name="TabChar" FullName="DocumentFormat.OpenXml.Wordprocessing.TabChar">
+<Type Name="TabChar" FullName="DocumentFormat.OpenXml.Wordprocessing.TabChar">
   <TypeSignature Language="C#" Value="public class TabChar : DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TabChar extends DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TabChar" />
@@ -18,11 +18,44 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Tab Character.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tab.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Tab Character. When the object is serialized out as xml, its qualified name is w:tab.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **tab (Tab Character)**  
+  
+ This element specifies that a tab character shall be placed at the current location in the run content. An *tab* is a character which is used to advance the position on the current line of text when displaying this WordprocessingML content, using the following logic:  
+  
+-   When there are one or more custom tab stops defined using the tabs element (§17.3.1.38) , then the tab character shall advance to the next custom tab stop location which is further along than the starting location of the tab  
+  
+-   When there are no custom tab stops which are further than the current position in the line, the tab character shall advance to the nearest multiple of the defaultTabStop element (§17.15.1.25) width value.  
+  
+ [*Example*: Consider a paragraph which contains two custom tab stops at 1.5" and 3.5", respectively. These two tab stops would be contained within a tabs element defining the set of tab stops of the paragraph as follows:  
+  
+```xml  
+<w:pPr>  
+  <w:tabs>  
+    <w:tab w:val="left" w:pos="2160" />   
+    <w:tab w:val="left" w:pos="5040" />   
+  </w:tabs>  
+</w:pPr>  
+```  
+  
+ If a tab character was added to a run in this paragraph and appeared  along the line after all preceding content was laid out, then this tab would move the position to . If the tab character appeared  along the line after all preceding content was laid out, then this tab would move the position to . In both cases, the tab advanced to the next custom tab stop. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Empty) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +70,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TabChar class.
-            </summary>
+        <summary>Initializes a new instance of the TabChar class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +92,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +113,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

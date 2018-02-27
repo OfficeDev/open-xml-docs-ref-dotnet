@@ -1,4 +1,4 @@
-﻿<Type Name="UnderlineFill" FullName="DocumentFormat.OpenXml.Drawing.UnderlineFill">
+<Type Name="UnderlineFill" FullName="DocumentFormat.OpenXml.Drawing.UnderlineFill">
   <TypeSignature Language="C#" Value="public class UnderlineFill : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UnderlineFill extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.UnderlineFill" />
@@ -36,13 +36,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Underline Fill.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:uFill.</para>
-    </summary>
+    <summary>Underline Fill. When the object is serialized out as xml, its qualified name is a:uFill.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>NoFill &lt;a:noFill&gt;</description></item><item><description>SolidFill &lt;a:solidFill&gt;</description></item><item><description>GradientFill &lt;a:gradFill&gt;</description></item><item><description>BlipFill &lt;a:blipFill&gt;</description></item><item><description>PatternFill &lt;a:pattFill&gt;</description></item><item><description>GroupFill &lt;a:grpFill&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **uFill (Underline Fill)**  
+  
+ This element specifies the fill color of an underline for a run of text.  
+  
+ [*Example*: Consider the DrawingML shown below.  
+  
+```xml  
+<p:txBody>  
+  …  <a:p>  
+    <a:r>  
+      <a:rPr …>  
+        <a:uFill>  
+          <a:solidFill>  
+            <a:srgbClr val="FFFF00"/>  
+          </a:solidFill>  
+        </a:uFill>  
+      </a:r  
+Pr>  
+      …      <a:t>  
+Sample Text</a:t>  
+      …    </a:r>  
+  </a:p  
+>  
+  …</p:txBody>  
+```  
+  
+ The underline color of the above text is yellow specified by the srgbClr child element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|defRPr (§21.1.2.3.2); endParaRPr (§21.1.2.2.3); rPr (§21.1.2.3.9)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|blipFill (Picture Fill)|§20.1.8.14|  
+|gradFill (Gradient Fill)|§20.1.8.33|  
+|grpFill (Group Fill)|§20.1.8.35|  
+|noFill (No Fill)|§20.1.8.44|  
+|pattFill (Pattern Fill)|§20.1.8.47|  
+|solidFill (Solid Fill)|§20.1.8.54|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextUnderlineFillGroupWrapper) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -57,9 +104,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UnderlineFill class.
-            </summary>
+        <summary>Initializes a new instance of the UnderlineFill class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the UnderlineFill class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the UnderlineFill class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -107,9 +150,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the UnderlineFill class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the UnderlineFill class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,9 +170,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the UnderlineFill class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the UnderlineFill class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +189,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.BlipFill</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> BlipFill.</para>
-          <para> Represents the following element tag in the schema: a:blipFill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>BlipFill. Represents the following element tag in the schema: a:blipFill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.BlipFill" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -179,11 +215,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,11 +236,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.GradientFill</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GradientFill.</para>
-          <para> Represents the following element tag in the schema: a:gradFill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>GradientFill. Represents the following element tag in the schema: a:gradFill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.GradientFill" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -228,11 +259,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.GroupFill</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Group Fill.</para>
-          <para> Represents the following element tag in the schema: a:grpFill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Group Fill. Represents the following element tag in the schema: a:grpFill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.GroupFill" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -254,10 +282,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -276,11 +302,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.NoFill</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> NoFill.</para>
-          <para> Represents the following element tag in the schema: a:noFill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>NoFill. Represents the following element tag in the schema: a:noFill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.NoFill" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -302,11 +325,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.PatternFill</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Pattern Fill.</para>
-          <para> Represents the following element tag in the schema: a:pattFill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Pattern Fill. Represents the following element tag in the schema: a:pattFill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.PatternFill" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -328,11 +348,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.SolidFill</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SolidFill.</para>
-          <para> Represents the following element tag in the schema: a:solidFill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SolidFill. Represents the following element tag in the schema: a:solidFill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.SolidFill" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main

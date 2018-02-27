@@ -1,4 +1,4 @@
-﻿<Type Name="ActiveRecord" FullName="DocumentFormat.OpenXml.Wordprocessing.ActiveRecord">
+<Type Name="ActiveRecord" FullName="DocumentFormat.OpenXml.Wordprocessing.ActiveRecord">
   <TypeSignature Language="C#" Value="public class ActiveRecord : DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveRecord extends DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ActiveRecord" />
@@ -18,11 +18,70 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Record Currently Displayed In Merged Document.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:activeRecord.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Record Currently Displayed In Merged Document. When the object is serialized out as xml, its qualified name is w:activeRecord.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **activeRecord (Record Currently Displayed In Merged Document)**  
+  
+ This element specifies that the hosting application shall display the given record from the specified external data source in place of the *MERGEFIELD* fields (§17.16.5.35) its data is mapped to via the fieldMapData element (§17.14.15) in a merged document. When this element is present, the val attribute shall specify the one-based index of the record from that data source which shall be used to populate this document.  
+  
+ *If the* activeRecord *element is omitted with the* viewMergedData *element's* val *attribute equal to true, the hosting application shall behave as if the* activeRecord *element's* val *attribute was equal to 1. If the* viewMergedData *element (§17.14.36) is omitted or present with a* val *attribute equal to 0 or false, then this element shall be ignored. If the* activeRecord *record is given a* val *attribute that is less than one or greater than the number of records in the specified external data source, the hosting application shall treat this* val *attribute as if it were equal to 1.*  
+  
+ [*Example*: Consider a merged WordprocessingML document containing two WordprocessingML fields calling for *Courtesy Title* and *Last Name* data and a sample text paragraph.  Also, note that the external data source this merged document is connected to contains two records, both containing name and address information, with the first record pertaining to *Mr. Doe*, and the second pertaining to *Ms. Smith*.  
+  
+ This table below illustrates the necessary WordprocessingML to display applicable data from the specified external data source within the merged document where fields have been inserted:  
+  
+```xml  
+<w:viewMergedData val="0"/>  
+<w:viewMergedData val="1" />  
+<w:activeRecord w:val="1" />  
+<w:viewMergedData val="1" />  
+<w:activeRecord w:val="2" />  
+```  
+  
+ Dear {MERGEFIELD "Courtesy Title" \m} {MERGEFIELD "Last Name" \m},  
+  
+ Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text.  
+  
+ Sincerely,  
+  
+ Dear Mr. Doe:  
+  
+ Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text.  
+  
+ Sincerely,  
+  
+ Dear Ms. Smith:  
+  
+ Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text.  
+  
+ Sincerely,  
+  
+ *end example*]  
+  
+ [*Example*: Consider the following WordprocessingML from a merged WordprocessingML document:  
+  
+```xml  
+<w:viewMergedData />  
+<w:activeRecord w:val="2" />  
+```  
+  
+ The activeRecord element is present and has a val attribute equal to *2*, therefore this WordprocessingML specifies that a conforming hosting application must display data from the second record of the specified external data source in place of fields its data is mapped to within the merged document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ActiveRecord class.
-            </summary>
+        <summary>Initializes a new instance of the ActiveRecord class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +118,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +139,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

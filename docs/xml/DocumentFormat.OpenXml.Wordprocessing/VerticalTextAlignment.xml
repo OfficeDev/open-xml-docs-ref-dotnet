@@ -1,4 +1,4 @@
-﻿<Type Name="VerticalTextAlignment" FullName="DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment">
+<Type Name="VerticalTextAlignment" FullName="DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment">
   <TypeSignature Language="C#" Value="public class VerticalTextAlignment : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VerticalTextAlignment extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment" />
@@ -18,11 +18,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the VerticalTextAlignment Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:vertAlign.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the VerticalTextAlignment Class. When the object is serialized out as xml, its qualified name is w:vertAlign.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **vertAlign (Subscript/Superscript Text)**  
+  
+ This element specifies the alignment which shall be applied to the contents of this run in relation to the default appearance of the run's text. This allows the text to be repositioned as subscript or superscript without altering the font size of the run properties.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the text shall not be subscript or superscript relative to the default baseline location for the contents of this run.  
+  
+ [*Example*: Consider a run which must be positioning as superscript when displaying its contents. This requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:rPr>  
+  <w:vertAlign w:val="superscript" />  
+</w:rPr>  
+```  
+  
+ The resulting run is positioned as *superscript*, therefore it is rendered in a smaller size above the default baseline location for the contents of the run. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_VerticalAlignRun) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the VerticalTextAlignment class.
-            </summary>
+        <summary>Initializes a new instance of the VerticalTextAlignment class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +87,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +108,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +133,30 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Subscript/Superscript Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Subscript/Superscript Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of  vertical alignment applied to the contents of the current run.  
+  
+ Consider a run which shall be positioning as superscript when displaying its contents. This requirement would be specified using the following WordprocessingML:  
+  
+```  
+<w:rPr>  
+  <w:vertAlign w:val="superscript" />  
+</w:rPr>  
+```  
+  
+ The value of the `val` attribute is `superscript`; therefore, the run's contents are rendered in a smaller size above the default baseline location for the contents of the run.  
+  
+ The possible values for this attribute are defined by the `ST_VerticalAlignRun` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

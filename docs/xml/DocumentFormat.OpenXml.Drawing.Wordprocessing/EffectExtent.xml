@@ -1,4 +1,4 @@
-﻿<Type Name="EffectExtent" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent">
+<Type Name="EffectExtent" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent">
   <TypeSignature Language="C#" Value="public class EffectExtent : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EffectExtent extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Wordprocessing.EffectExtent" />
@@ -18,11 +18,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Object Extents Including Effects.</para>
-      <para> When the object is serialized out as xml, its qualified name is wp:effectExtent.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Object Extents Including Effects. When the object is serialized out as xml, its qualified name is wp:effectExtent.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `effectExtent (Object Extents Including Effects)`  
+  
+ This element specifies the additional extent which shall be added to each edge of the image (top, bottom, left, right) in order to compensate for any drawing effects applied to the DrawingML object.  
+  
+ The extent element (§20.4.2.7) specifies the size of the actual DrawingML object; however, an object can have effects applied which change its overall size [*Example*: A reflection and/or shadow effect. *end example*]. The additional size for each edge of the shape shall be stored on this element, and used to calculate the appropriate wrapping for wrap types without a wrapping polygon and the appropriate line height for inline objects.  
+  
+ [*Example*: Consider the following DrawingML image:  
+  
+ b82fa6a5-aa0a-41b1-8c8d-a51e7cfee974  
+  
+ This object has no effects, and hence would have the following effect extents:  
+  
+```xml  
+<wp:effectExtents b="0" t="0" l="0" r="0" />  
+```  
+  
+ However, if a shadow effect was applied which added effects to the right of the image:  
+  
+ 13a89c13-d7bd-4b21-b4c5-61890fcf2953  
+  
+ Then the additional extent the right side would be specified in the r attribute on this element:  
+  
+```xml  
+<wp:effectExtents b="0" t="0" l="0" r="695325" />  
+```  
+  
+ The r attribute has a value of *695325*, specifying that that 695325 EMUs must be added to the right side of the image. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|anchor (§20.4.2.3); inline (§20.4.2.8); wrapSquare (§20.4.2.17); wrapTopAndBottom (§20.4.2.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_EffectExtent) is located in §A.4.4. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +77,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EffectExtent class.
-            </summary>
+        <summary>Initializes a new instance of the EffectExtent class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,11 +101,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Additional Extent on Bottom Edge.</para>
-          <para>Represents the following attribute in the schema: b </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Additional Extent on Bottom Edge.Represents the following attribute in the schema: b</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int64Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +124,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +150,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Additional Extent on Left Edge.</para>
-          <para>Represents the following attribute in the schema: l </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Additional Extent on Left Edge.Represents the following attribute in the schema: l</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int64Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,10 +170,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -167,11 +195,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Additional Extent on Right Edge.</para>
-          <para>Represents the following attribute in the schema: r </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Additional Extent on Right Edge.Represents the following attribute in the schema: r</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int64Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,11 +220,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Additional Extent on Top Edge.</para>
-          <para>Represents the following attribute in the schema: t </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Additional Extent on Top Edge.Represents the following attribute in the schema: t</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int64Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

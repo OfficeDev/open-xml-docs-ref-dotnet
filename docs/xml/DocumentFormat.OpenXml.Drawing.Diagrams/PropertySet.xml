@@ -1,4 +1,4 @@
-﻿<Type Name="PropertySet" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet">
+<Type Name="PropertySet" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet">
   <TypeSignature Language="C#" Value="public class PropertySet : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertySet extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Diagrams.PropertySet" />
@@ -24,13 +24,79 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Property Set.</para>
-      <para> When the object is serialized out as xml, its qualified name is dgm:prSet.</para>
-    </summary>
+    <summary>Property Set. When the object is serialized out as xml, its qualified name is dgm:prSet.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PresentationLayoutVariables &lt;dgm:presLayoutVars&gt;</description></item><item><description>Style &lt;dgm:style&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **prSet (Property Set)**  
+  
+ This element holds properties and customizations which are used throughout certain elements in DiagramML.  The properties can be grouped into the following general categories:  
+  
+-   Presentation Properties - presLayoutVars, style, presAssocId, presName, presStyleLbl, presStyleIdx, presStyleCnt  
+  
+-   Document Properties - loTypeId, loCatId, qsTypeId, qaCatId, csTypeId, coherent3DOff  
+  
+-   Semantic Element Properties - phldrT, phldr  
+  
+-   Customization Properties - custAng, custFlipVert, custFlipHor, custSzX, custSzY, custScaleX, custScaleY, custT, custLinFactX, custLinFactY, custLinFactNeighborX, custLinFactNeighborY, custRadScaleRad, custRadScaleInc  
+  
+ [*Example*:  Consider the basic example of prSet in use in DrawingML on a document point type:  
+  
+```xml  
+<prSet loTypeId="urn:microsoft.com/office/officeart/2005/8/layout/default" loCatId="list" qsTypeId="urn:microsoft.com/office/officeart/2005/8/quickstyle/3d1" qsCatId="3D" csTypeId="urn:microsoft.com/office/officeart/2005/8/colors/colorful2" csCatId="colorful" phldr="1"/>  
+```  
+  
+ In this example we define the layout identifier, the category of the layout, the quick style identifier, the quick style category, along with the color style and color style category.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pt (§21.4.3.5)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|presLayoutVars (Presentation Layout Variables)|§21.4.5.4|  
+|style (Shape Style)|§21.4.2.28|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|coherent3DOff (Coherent 3D Behavior)|Enables or disables the Coherent 3D behavior for styles that specify this property.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|csCatId (Color Transform Category)|This attribute specifies the identifier of the current color transform category.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|csTypeId (Color Transform Type Identifier)|This attribute specifies the identifier of the currently applied color transform.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|custAng (Custom Rotation)|Specifies the amount that rotation is customized by.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custFlipHor (Custom Horizontal Flip)|Specifies if there is a custom horizontal flip applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|custFlipVert (Custom Vertical Flip)|Specifies if there is a custom vertical flip applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|custLinFactNeighborX (Neighbor Offset Width)|Specifies the percentage of the neighbor's width used for offsetting shape.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custLinFactNeighborY (Neighbor Offset Height)|Specifies the percentage of the neighbor's height used for offsetting shape.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custLinFactX (Custom Factor Width)|Specifies the percentage of the current shape width used for offsetting the shape.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custLinFactY (Custom Factor Height)|Specifies the percentage of the current shape height used for offsetting the shape.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custRadScaleInc (Include Angle Scale)|Specifies the amount that the include angle has been scaled by.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custRadScaleRad (Radius Scale)|Specifies how much the radius has been scaled.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custScaleX (Width Scale)|Specifies the amount that the width has been scaled by.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custScaleY (Height Scale)|Specifies the amount that the height has been scaled by.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custSzX (Fixed Width Override)|Specifies a fixed width override for a shape.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custSzY (Fixed Height Override)|Specifies a fixed height override for a shape.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|custT (Text Changed)|Specifies if the text has been customized which allows layout to ignore automatic formatting options available to the text.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|loCatId (Current Diagram Category)|Specifies the current identifier of the layout category applied to the diagram.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|loTypeId (Current Diagram Type)|Specifies the identifier for the layout currently applied to the diagram.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|phldr (Placeholder)|Indicates that the point is a placeholder or sample item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|phldrT (Placeholder Text)|The text used for display in the element if the placeholder flag is set to *true*. If this property is not set then the default placeholder text is used.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|presAssocID (Presentation Element Identifier)|The point associated with this presentation element. This identifier is used together with presName to create a unique key for presentation element indexing.<br /><br /> The possible values for this attribute are defined by the *ST_ModelId* simple type (§21.4.7.43).|  
+|presName (Presentation Name)|The layout node name of this presentation element. This name is used together with presAssocID to create a unique key for presentation element indexing.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|presStyleCnt (Presentation Style Count)|Specifies the layout node style count of this presentation element.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|presStyleIdx (Presentation Style Index)|Specifies the layout node style index of this presentation element.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|presStyleLbl (Presentation Style Label)|Specifies the layout node style label of this presentation element.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|qsCatId (Current Style Category)|Specifies the identifier of the category of the currently applied quick style.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|qsTypeId (Current Style Type)|Specifies the identifier of the currently applied quick style.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ElemPropSet) is located in §A.5.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +111,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PropertySet class.
-            </summary>
+        <summary>Initializes a new instance of the PropertySet class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +137,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PropertySet class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PropertySet class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +157,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PropertySet class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PropertySet class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +177,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PropertySet class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PropertySet class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +199,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -169,11 +225,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Coherent 3D Behavior.</para>
-          <para>Represents the following attribute in the schema: coherent3DOff </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Coherent 3D Behavior.Represents the following attribute in the schema: coherent3DOff</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,11 +250,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Color Transform Category.</para>
-          <para>Represents the following attribute in the schema: csCatId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Color Transform Category.Represents the following attribute in the schema: csCatId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,11 +275,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Color Transform Type Identifier.</para>
-          <para>Represents the following attribute in the schema: csTypeId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Color Transform Type Identifier.Represents the following attribute in the schema: csTypeId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -253,11 +300,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Factor Height.</para>
-          <para>Represents the following attribute in the schema: custLinFactY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Factor Height.Represents the following attribute in the schema: custLinFactY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -281,11 +325,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Factor Width.</para>
-          <para>Represents the following attribute in the schema: custLinFactX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Factor Width.Represents the following attribute in the schema: custLinFactX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -309,11 +350,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Fixed Height Override.</para>
-          <para>Represents the following attribute in the schema: custSzY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Fixed Height Override.Represents the following attribute in the schema: custSzY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -337,11 +375,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Fixed Width Override.</para>
-          <para>Represents the following attribute in the schema: custSzX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Fixed Width Override.Represents the following attribute in the schema: custSzX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -365,11 +400,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Height Scale.</para>
-          <para>Represents the following attribute in the schema: custScaleY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Height Scale.Represents the following attribute in the schema: custScaleY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -393,11 +425,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Horizontal Flip.</para>
-          <para>Represents the following attribute in the schema: custFlipHor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Horizontal Flip.Represents the following attribute in the schema: custFlipHor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -421,11 +450,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Angle Scale.</para>
-          <para>Represents the following attribute in the schema: custRadScaleInc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Angle Scale.Represents the following attribute in the schema: custRadScaleInc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -449,11 +475,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Current Diagram Category.</para>
-          <para>Represents the following attribute in the schema: loCatId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Current Diagram Category.Represents the following attribute in the schema: loCatId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -477,11 +500,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Current Diagram Type.</para>
-          <para>Represents the following attribute in the schema: loTypeId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Current Diagram Type.Represents the following attribute in the schema: loTypeId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -500,10 +520,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -527,11 +545,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Neighbor Offset Height.</para>
-          <para>Represents the following attribute in the schema: custLinFactNeighborY </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Neighbor Offset Height.Represents the following attribute in the schema: custLinFactNeighborY</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -555,11 +570,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Neighbor Offset Width.</para>
-          <para>Represents the following attribute in the schema: custLinFactNeighborX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Neighbor Offset Width.Represents the following attribute in the schema: custLinFactNeighborX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -583,11 +595,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Placeholder.</para>
-          <para>Represents the following attribute in the schema: phldr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Placeholder.Represents the following attribute in the schema: phldr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -611,11 +620,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Placeholder Text.</para>
-          <para>Represents the following attribute in the schema: phldrT </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Placeholder Text.Represents the following attribute in the schema: phldrT</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -639,11 +645,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Presentation Element Identifier.</para>
-          <para>Represents the following attribute in the schema: presAssocID </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Presentation Element Identifier.Represents the following attribute in the schema: presAssocID</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -662,11 +665,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Presentation Layout Variables.</para>
-          <para> Represents the following element tag in the schema: dgm:presLayoutVars </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Presentation Layout Variables. Represents the following element tag in the schema: dgm:presLayoutVars</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.PresentationLayoutVariables" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram
@@ -693,11 +693,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Presentation Name.</para>
-          <para>Represents the following attribute in the schema: presName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Presentation Name.Represents the following attribute in the schema: presName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -721,11 +718,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Presentation Style Count.</para>
-          <para>Represents the following attribute in the schema: presStyleCnt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Presentation Style Count.Represents the following attribute in the schema: presStyleCnt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -749,11 +743,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Presentation Style Index.</para>
-          <para>Represents the following attribute in the schema: presStyleIdx </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Presentation Style Index.Represents the following attribute in the schema: presStyleIdx</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -777,11 +768,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Presentation Style Label.</para>
-          <para>Represents the following attribute in the schema: presStyleLbl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Presentation Style Label.Represents the following attribute in the schema: presStyleLbl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -805,11 +793,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Current Style Category.</para>
-          <para>Represents the following attribute in the schema: qsCatId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Current Style Category.Represents the following attribute in the schema: qsCatId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -833,11 +818,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Current Style Type.</para>
-          <para>Represents the following attribute in the schema: qsTypeId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Current Style Type.Represents the following attribute in the schema: qsTypeId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -861,11 +843,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Radius Scale.</para>
-          <para>Represents the following attribute in the schema: custRadScaleRad </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Radius Scale.Represents the following attribute in the schema: custRadScaleRad</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -889,11 +868,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Rotation.</para>
-          <para>Represents the following attribute in the schema: custAng </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Rotation.Represents the following attribute in the schema: custAng</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -912,11 +888,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.Style</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Style.</para>
-          <para> Represents the following element tag in the schema: dgm:style </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape Style. Represents the following element tag in the schema: dgm:style</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.Style" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram
@@ -943,11 +916,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Changed.</para>
-          <para>Represents the following attribute in the schema: custT </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Changed.Represents the following attribute in the schema: custT</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -971,11 +941,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Vertical Flip.</para>
-          <para>Represents the following attribute in the schema: custFlipVert </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Vertical Flip.Represents the following attribute in the schema: custFlipVert</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -999,11 +966,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Width Scale.</para>
-          <para>Represents the following attribute in the schema: custScaleX </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Width Scale.Represents the following attribute in the schema: custScaleX</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="SaveXmlDataOnly" FullName="DocumentFormat.OpenXml.Wordprocessing.SaveXmlDataOnly">
+<Type Name="SaveXmlDataOnly" FullName="DocumentFormat.OpenXml.Wordprocessing.SaveXmlDataOnly">
   <TypeSignature Language="C#" Value="public class SaveXmlDataOnly : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SaveXmlDataOnly extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SaveXmlDataOnly" />
@@ -18,11 +18,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Only Save Custom XML Markup.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:saveXmlDataOnly.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Only Save Custom XML Markup. When the object is serialized out as xml, its qualified name is w:saveXmlDataOnly.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **saveXmlDataOnly (Only Save Custom XML Markup)**  
+  
+ This element specifies that the contents of this document shall be saved as an XML file containing only the custom XML markup in this document in its regular form. The resulting document does not conform to /IEC 29500 (i.e. this is an export-only save option for a WordprocessingML document).  
+  
+ [*Rationale*: This setting is typically used to extract custom XML markup from a WordprocessingML document for further processing by XML-enabled applications. *end rationale*]  
+  
+ If this element is omitted, then the contents of the entire document (not just custom XML markup) should be saved according to the definition of WordprocessingML in /IEC 29500.  
+  
+ [*Example*: Consider a WordprocessingML document which should be saved as an XML file containing only its custom XML markup. This requirement is specified using the following WordprocessingML fragment in the document settings:  
+  
+```xml  
+<w:saveXmlDataOnly w:val="true"/>  
+```  
+  
+ The saveXmlDataOnly element's val attribute has a value of *true* specifying that only custom XML must be saved into a regular XML file when saving this document. For example, the document body formerly looked like this:  
+  
+```xml  
+<w:body>  
+  <w:p>  
+    <w:customXml w:element="root" w:namespaceuri="urn:example">  
+      <w:r>  
+        <w:t>Hello world</w:t>  
+      </w:r>  
+    </w:customXml>  
+  </w:p>  
+</w:body>  
+```  
+  
+ The presence of this element specifies that the resulting document only contains the custom Xml markup, resulting in the following:  
+  
+```xml  
+<ns0:root xmlns:ns0="urn:example">Hello world</ns0:root>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SaveXmlDataOnly class.
-            </summary>
+        <summary>Initializes a new instance of the SaveXmlDataOnly class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +107,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +128,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

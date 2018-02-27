@@ -1,4 +1,4 @@
-﻿<Type Name="CustomWorkbookView" FullName="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView">
+<Type Name="CustomWorkbookView" FullName="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView">
   <TypeSignature Language="C#" Value="public class CustomWorkbookView : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomWorkbookView extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView" />
@@ -21,13 +21,66 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Custom Workbook View.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:customWorkbookView.</para>
-    </summary>
+    <summary>Custom Workbook View. When the object is serialized out as xml, its qualified name is x:customWorkbookView.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **customWorkbookView (Custom Workbook View)**  
+  
+ This element specifies a single custom workbook view. A custom workbook view consists of a set of display and print settings that you can name and apply to a workbook. You can create more than one custom workbook view of the same workbook.  Custom Workbook Views are not required in order to construct a valid SpreadsheetML document, and are not necessary if the document is never displayed by a spreadsheet application, or if the spreadsheet application has a fixed display for workbooks.  However, if a spreadsheet application chooses to implement configurable display modes, the customWorkbookView element should be used to persist the settings for those display modes.  The settings fall into the following categories, and individual settings are detailed in the table following:  
+  
+ Window settings - these include size and positioning of the spreadsheet window as well as which window features should be displayed (scrollbars, sheet tabs, etc.).  
+  
+ Workbook content display and print settings - specifies whether features in the workbook should be included or ignored by a spreadsheet application when a custom workbook view is displayed or printed. [*Example*: Whether comments in the workbook should be displayed and how objects such as images should be displayed can be controlled by a Custom Workbook View. *end example*]  
+  
+ Persistence settings - these include settings that describe how a spreadsheet application should update persisted SpreadsheetML content if multiple spreadsheet applications are accessing a common instance of the SpreadsheetML document at the same time.  
+  
+ When a Custom Workbook View is present, there should also be corresponding customSheetView (§18.3.1.25) elements for each sheet (§18.2.19) in the workbook.  The guid attribute of these customSheetView elements associates the customSheetView with the appropriate customWorkbookView. Attributes on the customWorkbookView element should be used to determine which settings within the Custom Sheet View should be respected by a spreadsheet application if the Custom Workbook View is displayed.  
+  
+|Parent Elements|  
+|---------------------|  
+|customWorkbookViews (§18.2.4)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|activeSheetId (Active Sheet in Book View)|Specifies the sheetId of a sheet in the workbook that identifies to a consuming application the default sheet to display. Corresponds to a sheetId of a sheet in the sheets collection.<br /><br /> This attribute is required.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|autoUpdate (Auto Update)|Specifies a boolean value that is an instruction that if the workbook is loaded by a spreadsheet application, that spreadsheet application should automatically update changes at the interval specified by the *mergeInterval* attribute. This is only applicable for shared workbooks (§18.11).<br /><br /> A value of *1* or *true* is an instruction to the spreadsheet application to  update changes at the interval specified in the *mergeInterval* attribute.<br /><br /> A value of *0* or *false* is an instruction to the spreadsheet applicationto update changes whenever the spreadsheet application generates SpreadsheetML representing the workbook.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|changesSavedWin (Changes Saved Win)|Specifies a boolean value that instructs a spreadsheet application to overwrite the persisted version of the document with the updated version being persisted. This is only applicable for shared workbooks in automatic update mode.<br /><br /> A value of *1* or *true* instructs a spreadsheet application to overwrite changes in the persisted version of a shared workbook when conflicts in data are found.<br /><br /> A value of *0* or *false* instructs a spreadsheet application to not overwrite changes in the persisted version of a shared workbook when conflicts are found.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|guid (Custom View GUID)|Specifies a globally unique identifier (GUID) for this custom view<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
+|includeHiddenRowCol (Include Hidden Rows & Columns)|Specifies a boolean value that indicates whether to include hidden rows, columns, and filter settings in this custom view.<br /><br /> A value of *1* or *true* indicates that hidden rows, columns, and filter settings are included in this custom view.<br /><br /> A value of *0* or *false* indicates that hidden rows, columns, and filter settings are not included.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|includePrintSettings (Include Print Settings)|Specifies a boolean value that indicates whether to include print settings in this custom view.<br /><br /> A value of *1* or *true* indicates that print settings are included in this custom view.<br /><br /> A value of *0* or *false* indicates print settings are not included in this custom view.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|maximized (Maximized)|Specifies a boolean value that indicates whether the workbook window is maximized.<br /><br /> A value of *1* or *true* indicates the workbook window is maximized.<br /><br /> A value of *0* or *false* indicates the workbook window is not maximized.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|mergeInterval (Merge Interval)|Automatic update interval (in minutes). Only applicable for shared workbooks in automatic update mode.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|minimized (Minimized)|Specifies a boolean value that indicates whether the workbook window is minimized.<br /><br /> A value of *1* or *true* indicates the workbook window is minimized.<br /><br /> A value of *0* or *false* indicates the workbook window is not minimized.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|name (Custom View Name)|Specifies the name of the custom view.<br /><br /> This attribute is required.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|onlySync (Only Synch)|Specifies a boolean value that indicates, during automatic update, the current user's changes are not saved.  The workbook is only updated with other users' changes. Only applicable for shared workbooks in automatic update mode.<br /><br /> A value of *1* or *true* indicates the current user's changes is not saved during automatic update.<br /><br /> A value of *0* or *false* indicates the current user's is saved during automatic update.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|personalView (Personal View)|Specifies a boolean value that indicates that this custom view is a personal view for a shared workbook user. Only applicable for shared workbooks. Personal views allow each user of a shared workbook to store their individual print and filter settings.<br /><br /> A value of *1* or *true* indicates this custom view is a personal view for a shared workbook user.<br /><br /> A value of *0* or *false* indicates this view is not a personal view.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showComments (Show Comments)|Specifies how comments are displayed in this custom view<br /><br /> The possible values for this attribute are defined by the *ST_Comments* simple type (§18.18.14).|  
+|showFormulaBar (Show Formula Bar)|Specifies a boolean value that indicates whether to display the formula bar in the application user interface.<br /><br /> A value of *1* or *true* indicates the formula bar is shown in the user interface.<br /><br /> A value of *0* or *false* indicates the formula bar is not shown in the user interface.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showHorizontalScroll (Show Horizontal Scroll)|Specifies a boolean value that indicates whether to display the horizontal scroll bar in the user interface.<br /><br /> A value of *1* or *true* indicates that the horizontal scrollbar is shown.<br /><br /> A value of *0* or *false* indicates that the horizontal scrollbar is not shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showObjects (Show Objects)|Specifies how objects are displayed in this custom view.<br /><br /> The default value for this attribute is "all."<br /><br /> The possible values for this attribute are defined by the *ST_Objects* simple type (§18.18.48).|  
+|showSheetTabs (Show Sheet Tabs)|Specifies a boolean value that indicates whether to display the sheet tabs in the user interface.<br /><br /> A value of *1* or *true* indicates that sheet tabs shall be shown.<br /><br /> A value of *0* or *false* indicates that sheet tabs shall not be shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showStatusbar (Show Status Bar)|Specifies a boolean value that indicates whether to display the status bar in the user interface.<br /><br /> A value of *1* or *true* indicates that the status bar is shown.<br /><br /> A value of *0* or *false* indicates the status bar is not shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showVerticalScroll (Show Vertical Scroll)|Specifies a boolean value that indicates whether to display the vertical scroll bar.<br /><br /> A value of *1* or *true* indicates the vertical scrollbar shall be shown.<br /><br /> A value of *0* or *false* indicates the vertical scrollbar shall not be shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|tabRatio (Sheet Tab Ratio)|Specifies the ratio between the workbook tabs bar and the horizontal scroll bar. *tabRatio* is assumed to be out of 1000 of the horizontal window width.<br /><br /> The default value for this attribute is 600.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|windowHeight (Window Height)|Specifies the height of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|windowWidth (Window Width)|Specifies the width of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|xWindow (Top Left Corner (X Coordinate))|Specifies the X coordinate for the upper left corner of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|yWindow (Top Left Corner (Y Coordinate))|Specifies the Y coordinate for the upper left corner of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CustomWorkbookView) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +95,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CustomWorkbookView class.
-            </summary>
+        <summary>Initializes a new instance of the CustomWorkbookView class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +121,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CustomWorkbookView class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CustomWorkbookView class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +141,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CustomWorkbookView class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CustomWorkbookView class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +161,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CustomWorkbookView class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CustomWorkbookView class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,11 +185,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Active Sheet in Book View.</para>
-          <para>Represents the following attribute in the schema: activeSheetId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Active Sheet in Book View.Represents the following attribute in the schema: activeSheetId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,11 +210,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Auto Update.</para>
-          <para>Represents the following attribute in the schema: autoUpdate </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Auto Update.Represents the following attribute in the schema: autoUpdate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -196,11 +235,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Changes Saved Win.</para>
-          <para>Represents the following attribute in the schema: changesSavedWin </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Changes Saved Win.Represents the following attribute in the schema: changesSavedWin</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -222,11 +258,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -245,11 +279,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -276,11 +307,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom View GUID.</para>
-          <para>Represents the following attribute in the schema: guid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom View GUID.Represents the following attribute in the schema: guid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -304,11 +332,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Hidden Rows and Columns.</para>
-          <para>Represents the following attribute in the schema: includeHiddenRowCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Hidden Rows and Columns.Represents the following attribute in the schema: includeHiddenRowCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -332,11 +357,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Include Print Settings.</para>
-          <para>Represents the following attribute in the schema: includePrintSettings </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Include Print Settings.Represents the following attribute in the schema: includePrintSettings</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -355,10 +377,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -382,11 +402,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximized.</para>
-          <para>Represents the following attribute in the schema: maximized </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximized.Represents the following attribute in the schema: maximized</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -410,11 +427,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Merge Interval.</para>
-          <para>Represents the following attribute in the schema: mergeInterval </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Merge Interval.Represents the following attribute in the schema: mergeInterval</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -438,11 +452,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimized.</para>
-          <para>Represents the following attribute in the schema: minimized </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimized.Represents the following attribute in the schema: minimized</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -466,11 +477,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom View Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom View Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -494,11 +502,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Only Synch.</para>
-          <para>Represents the following attribute in the schema: onlySync </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Only Synch.Represents the following attribute in the schema: onlySync</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -522,11 +527,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Personal View.</para>
-          <para>Represents the following attribute in the schema: personalView </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Personal View.Represents the following attribute in the schema: personalView</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -550,11 +552,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CommentsValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Comments.</para>
-          <para>Represents the following attribute in the schema: showComments </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Comments.Represents the following attribute in the schema: showComments</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -578,11 +577,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Formula Bar.</para>
-          <para>Represents the following attribute in the schema: showFormulaBar </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Formula Bar.Represents the following attribute in the schema: showFormulaBar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -606,11 +602,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Horizontal Scroll.</para>
-          <para>Represents the following attribute in the schema: showHorizontalScroll </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Horizontal Scroll.Represents the following attribute in the schema: showHorizontalScroll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -634,11 +627,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Objects.</para>
-          <para>Represents the following attribute in the schema: showObjects </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Objects.Represents the following attribute in the schema: showObjects</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -662,11 +652,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Sheet Tabs.</para>
-          <para>Represents the following attribute in the schema: showSheetTabs </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Sheet Tabs.Represents the following attribute in the schema: showSheetTabs</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -690,11 +677,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Status Bar.</para>
-          <para>Represents the following attribute in the schema: showStatusbar </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Status Bar.Represents the following attribute in the schema: showStatusbar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -718,11 +702,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Vertical Scroll.</para>
-          <para>Represents the following attribute in the schema: showVerticalScroll </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Vertical Scroll.Represents the following attribute in the schema: showVerticalScroll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -746,11 +727,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sheet Tab Ratio.</para>
-          <para>Represents the following attribute in the schema: tabRatio </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sheet Tab Ratio.Represents the following attribute in the schema: tabRatio</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -774,11 +752,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Window Height.</para>
-          <para>Represents the following attribute in the schema: windowHeight </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Window Height.Represents the following attribute in the schema: windowHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -802,11 +777,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Window Width.</para>
-          <para>Represents the following attribute in the schema: windowWidth </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Window Width.Represents the following attribute in the schema: windowWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -830,11 +802,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Left Corner (X Coordinate).</para>
-          <para>Represents the following attribute in the schema: xWindow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Left Corner (X Coordinate).Represents the following attribute in the schema: xWindow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -858,11 +827,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Left Corner (Y Coordinate).</para>
-          <para>Represents the following attribute in the schema: yWindow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Left Corner (Y Coordinate).Represents the following attribute in the schema: yWindow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

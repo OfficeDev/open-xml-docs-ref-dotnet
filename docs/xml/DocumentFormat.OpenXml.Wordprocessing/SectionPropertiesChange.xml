@@ -1,4 +1,4 @@
-﻿<Type Name="SectionPropertiesChange" FullName="DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange">
+<Type Name="SectionPropertiesChange" FullName="DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange">
   <TypeSignature Language="C#" Value="public class SectionPropertiesChange : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SectionPropertiesChange extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange" />
@@ -21,13 +21,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Revision Information for Section Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:sectPrChange.</para>
-    </summary>
+    <summary>Revision Information for Section Properties. When the object is serialized out as xml, its qualified name is w:sectPrChange.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PreviousSectionProperties &lt;w:sectPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **sectPrChange (Revision Information for Section Properties)**  
+  
+ This element specifies the details about a single revision to a set of section properties in a WordprocessingML document.  
+  
+ This element stores this revision as follows:  
+  
+-   The child element of this element contains the complete set of section properties which were applied to the parent section before this revision  
+  
+-   The attributes of this element contain information about when this revision took place (i.e. when these properties became a 'former' set of section properties).  
+  
+ [*Example*: Consider a section in a WordprocessingML document which is set to be divided into three columns, and this change in the section properties is tracked as a revision. This revision would be specified using the following WordprocessingML markup:  
+  
+```xml  
+<w:sectPr>  
+  <w:cols w:num="3" … >  
+    …  </w:cols>  
+  <w:sectPrChange w:id="0" w:date="01-01-2006T12:00:00" w:author="John Doe">  
+    <w:sectPr/>  
+  </w:sectPrChange>  
+</w:sectPr>  
+```  
+  
+ The sectPrChange element specifies that there was a revision to the section properties at  by *John Doe*, and the previous set of properties on the section were the null set (i.e. no section properties explicitly present under the sectPr element). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sectPr (§17.6.17); sectPr (§17.6.18)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|sectPr (Previous Section Properties)|§17.6.19|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_SectPrChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +80,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SectionPropertiesChange class.
-            </summary>
+        <summary>Initializes a new instance of the SectionPropertiesChange class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +106,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SectionPropertiesChange class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the SectionPropertiesChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +126,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SectionPropertiesChange class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the SectionPropertiesChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +146,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the SectionPropertiesChange class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the SectionPropertiesChange class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,12 +170,32 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> author.</para>
-          <para>Represents the following attribute in the schema: w:author </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>author.Represents the following attribute in the schema: w:author</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the author for an annotation within a WordprocessingML document.  
+  
+ If this attribute is omitted, then no author shall be associated with the parent annotation type.  
+  
+ Consider a comment represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" w:author="Example Author">  
+  …  
+</w:…>  
+```  
+  
+ The `author` attribute specifies that the author of the current annotation is `Example Author`, which may be used as desired.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -168,11 +218,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -196,12 +244,32 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> date.</para>
-          <para>Represents the following attribute in the schema: w:date </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>date.Represents the following attribute in the schema: w:date</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DateTimeValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the date information for an annotation within a WordprocessingML document. The use of this information is outside of the scope of the Office Open XML Standard.  
+  
+ If this attribute is omitted, then no date information shall be associated with the parent annotation type.  
+  
+ Consider a comment represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" w:date="2006-01-01T10:00:00">  
+  …  
+</w:…>  
+```  
+  
+ The `date` attribute specifies that the date of the current annotation is January 1, 2006 at 10:00 A.M., which may be used as desired.  
+  
+ The possible values for this attribute are defined by the `ST_DateTime` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -226,12 +294,32 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Annotation Identifier.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Annotation Identifier.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier for an annotation within a WordprocessingML document. The restrictions on the `id` attribute, if any, are defined by the parent XML element.  
+  
+ If this attribute is omitted, then the document is non-conformant.  
+  
+ Consider an annotation represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" … >  
+  …  
+</w:…>  
+```  
+  
+ The `id` attribute specifies that the ID of the current annotation is `1`. This value is used to uniquely identify this annotation within the document content.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -251,10 +339,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -273,11 +359,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Section Properties.</para>
-          <para> Represents the following element tag in the schema: w:sectPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Previous Section Properties. Represents the following element tag in the schema: w:sectPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

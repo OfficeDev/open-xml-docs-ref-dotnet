@@ -1,4 +1,4 @@
-﻿<Type Name="SmallCaps" FullName="DocumentFormat.OpenXml.Wordprocessing.SmallCaps">
+<Type Name="SmallCaps" FullName="DocumentFormat.OpenXml.Wordprocessing.SmallCaps">
   <TypeSignature Language="C#" Value="public class SmallCaps : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SmallCaps extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SmallCaps" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the SmallCaps Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:smallCaps.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the SmallCaps Class. When the object is serialized out as xml, its qualified name is w:smallCaps.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **smallCaps (Small Caps)**  
+  
+ This element specifies that all small letter characters in this text run shall be formatted for display only as their capital letter character equivalents in a font size two points smaller than the actual font size specified for this text. This property does not affect any non-alphabetic character in this run, and does not change the Unicode character for lowercase text, only the method in which it is displayed. If this font cannot be made two point smaller than the current size, then it shall be displayed as the smallest possible font size in capital letters.  
+  
+ This formatting property is a *toggle property* (§17.7.3).  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the characters are not formatted as capital letters.  
+  
+ This element shall not be present with the caps (§17.3.2.5) property on the same run, since they are mutually exclusive in terms of appearance.  
+  
+ [*Example*: Consider the words *Hello World*, which must be displayed in small capital letters in a document. This constraint is specified as follows in the WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:smallCaps w:val="true" />  
+    <w:sz w:val="24" />  
+  </w:rPr>  
+  <w:t>Hello World</w:t>  
+</w:r>  
+```  
+  
+ This run displays using a 12 point capital letter for the capital letter H and W, and a 10 point capital letter for the lowercase letters in the run, even though the lowercase characters are used in actual run contents. If this property is removed, the original character forms is displayed (they are not lost). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SmallCaps class.
-            </summary>
+        <summary>Initializes a new instance of the SmallCaps class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

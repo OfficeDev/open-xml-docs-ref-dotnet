@@ -1,4 +1,4 @@
-﻿<Type Name="FormulaReference" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference">
+<Type Name="FormulaReference" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference">
   <TypeSignature Language="C#" Value="public class FormulaReference : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormulaReference extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Drawing.Chart.FormulaReference" />
@@ -24,14 +24,67 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the FormulaReference Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is c15:formulaRef.</para>
-    </summary>
+    <summary>Defines the FormulaReference Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is c15:formulaRef.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>SequenceOfReferences &lt;c15:sqref&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.66   formulaRef*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chart  
+  
+ A *CT_FormulaRef* element (section 2.5.104) that specifies the visible data source reference for filtered out chart ([ISO/IEC-29500-1] section 21.2) series data. This element specifies the reference for the series caption or values or category labels for a chart series that is filtered out from the chart.  
+  
+ This reference is in the form of a book, sheet, and cell reference. This reference does not include the equals sign.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="formulaRef" type="CT_FormulaRef"/>*  
+  
+ See section 5.13 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.104   CT_FormulaRef*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chart  
+  
+ *Referenced by:* formulaRef  
+  
+ The *CT_FormulaRef* complex type specifies the data source reference for a chart ([ISO/IEC-29500-1] section 21.2) with filtered series data.\<164>  
+  
+ This reference is in the form of a book, sheet, and cell reference. This reference does not include the equals sign.  
+  
+ *Child Elements:*  
+  
+ *sqref:* A *string* element ([XMLSCHEMA2] section 3.2.1) that specifies the data source reference for the chart data. This reference MUST follow the ABNF grammar rules defined in Formulas ([MS-XLSX] section 2.2.2) with the following restrictions:  
+  
+ *MUST follow the ref-nospace-expression rule.*  
+  
+ *MUST NOT use the bang-reference, bang-name, sheet-range-reference, or local-cell-reference production rules*  
+  
+ *MUST NOT use the A1-relative-column and A1-relative-row rules.*  
+  
+ *MUST ONLY use A1-absolute-column and A1-absolute-row.*  
+  
+ Contains the data source reference for the series caption or values, or category labels of a filtered out series in the chart.  
+  
+ An application can adjust these cell references when the worksheet layout changes, even when the containing *ext* element ([ISO/IEC-29500-1] section 18.2.7) is not recognized by the application.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_FormulaRef">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="sqref" type="xsd:string" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.13 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -46,9 +99,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FormulaReference class.
-            </summary>
+        <summary>Initializes a new instance of the FormulaReference class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -74,9 +125,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FormulaReference class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the FormulaReference class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +145,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FormulaReference class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the FormulaReference class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -118,9 +165,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the FormulaReference class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the FormulaReference class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -142,11 +187,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,9 +208,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -187,10 +228,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SequenceOfReferences.</para>
-          <para> Represents the following element tag in the schema: c15:sqref </para>
-        </summary>
+        <summary>SequenceOfReferences. Represents the following element tag in the schema: c15:sqref</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

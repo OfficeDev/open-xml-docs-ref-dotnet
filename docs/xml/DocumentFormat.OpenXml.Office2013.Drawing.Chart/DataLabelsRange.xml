@@ -1,4 +1,4 @@
-﻿<Type Name="DataLabelsRange" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange">
+<Type Name="DataLabelsRange" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange">
   <TypeSignature Language="C#" Value="public class DataLabelsRange : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataLabelsRange extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRange" />
@@ -27,14 +27,63 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the DataLabelsRange Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is c15:datalabelsRange.</para>
-    </summary>
+    <summary>Defines the DataLabelsRange Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is c15:datalabelsRange.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Formula &lt;c15:f&gt;</description></item><item><description>DataLabelsRangeChache &lt;c15:dlblRangeCache&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.55   datalabelsRange*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chart  
+  
+ *datalabelsRange* is a CT_SeriesDataLabelsRange element\<115> that specifies the reference to the formula from which the values of dLbls element ([ISO/IEC-29500-1] section 21.2.2.49) on a chart series ([ISO/IEC-29500-1] section 21.2) are obtained.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="datalabelsRange" type="CT_SeriesDataLabelsRange"/>*  
+  
+ See section 5.13 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.97   CT_SeriesDataLabelsRange*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chart  
+  
+ *Referenced by:* datalabelsRange  
+  
+ The *CT_SeriesDataLabelsRange* is a complex type that specifies the formula from which the values of the *Datalabels* (section 2.2.1.3) on a chart series ([ISO/IEC-29500-1] section 21.2) are obtained.\<158>  
+  
+ *Child Elements:*  
+  
+ *f:* It is a *string* ([XMLSCHEMA2] section 3.2.1) element that specifies the reference from which the values of the *Datalabels* on a chart series ([ISO/IEC-29500-1] section 21.2) are obtained. This reference MUST follow the ABNF grammar rules defined in the Formulas section ([MS-XLSX] section 2.2.2) with the following restrictions:  
+  
+ *MUST follow the single-sheet-reference rule OR the external-name rule.*  
+  
+ *MUST NOT use the A1-relative-column and A1-relative-row rules. MUST use ONLY A1-absolute-column and A1-absolute-row*  
+  
+ *MUST NOT use the bang-name rule.*  
+  
+ *If the string contains a "#REF!", it MUST be the ONLY value in the string.*  
+  
+ *dlblRangeCache:* It is a *CT_StrData* ([ISO/IEC-29500-1] section A.5.1) element that contains the values to be inserted in each of the *Datalabels* in the parent chart series ([ISO/IEC-29500-1] section 21.2). This is a cache of values obtained from the reference formula specified by the element *f* in this complex type. Each value corresponds to one *Datalabel* in the series. The values are assigned to *Datalabels* in the order of their index.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_SeriesDataLabelsRange">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="f" type="xsd:string" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="dlblRangeCache" type="c:CT_StrData" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.13 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -49,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DataLabelsRange class.
-            </summary>
+        <summary>Initializes a new instance of the DataLabelsRange class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,9 +124,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataLabelsRange class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DataLabelsRange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,9 +144,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataLabelsRange class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DataLabelsRange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -121,9 +164,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DataLabelsRange class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DataLabelsRange class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,11 +186,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,10 +207,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelsRangeChache</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> DataLabelsRangeChache.</para>
-          <para> Represents the following element tag in the schema: c15:dlblRangeCache </para>
-        </summary>
+        <summary>DataLabelsRangeChache. Represents the following element tag in the schema: c15:dlblRangeCache</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -194,10 +230,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula.</para>
-          <para> Represents the following element tag in the schema: c15:f </para>
-        </summary>
+        <summary>Formula. Represents the following element tag in the schema: c15:f</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -220,9 +253,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

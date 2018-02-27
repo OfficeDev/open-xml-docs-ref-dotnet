@@ -1,4 +1,4 @@
-﻿<Type Name="AddressFieldName" FullName="DocumentFormat.OpenXml.Wordprocessing.AddressFieldName">
+<Type Name="AddressFieldName" FullName="DocumentFormat.OpenXml.Wordprocessing.AddressFieldName">
   <TypeSignature Language="C#" Value="public class AddressFieldName : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AddressFieldName extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AddressFieldName" />
@@ -18,11 +18,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Column Containing E-mail Address.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:addressFieldName.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Column Containing E-mail Address. When the object is serialized out as xml, its qualified name is w:addressFieldName.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **addressFieldName (Column Containing E-mail Address)**  
+  
+ This element specifies the column within a given external data source that contains e-mail addresses. This element is specified independently of the field mappings specified for a given merged document via the fieldMapData element (§17.14.15).  
+  
+ If this element is omitted, or no column exists in the data source with this column name, then the source document specifies that no e-mail address data shall be associated with this mail merge.  
+  
+ [*Note*: This element is generally used to allow the e-mailing of merged documents resulting from populating the fields within a merged document with external data.  
+  
+ This element is independent of the field mapping specified for a given merged document via the fieldMapData element (§17.14.15). This separation enables applications to email the documents resulting from the population of WordprocessingML fields with external data regardless of the presence or absence of a field mapped to external data specifying email addresses. *end note*]  
+  
+ [*Example*: Consider a merged WordprocessingML document that is connected to an external data source containing a column of data tilted *Alternate Email Addresses*. The following WordprocessingML would be included in the source and merged documents to specify which column in the external data source contains email addresses.  
+  
+```xml  
+<w:addressFieldName w:val="Alternate Email Address" />   
+```  
+  
+ The addressFieldName element specifies that the *Alternate Email Address* column contains e-mail addresses for each record. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AddressFieldName class.
-            </summary>
+        <summary>Initializes a new instance of the AddressFieldName class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +89,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

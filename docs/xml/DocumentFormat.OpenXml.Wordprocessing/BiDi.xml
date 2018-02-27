@@ -1,4 +1,4 @@
-﻿<Type Name="BiDi" FullName="DocumentFormat.OpenXml.Wordprocessing.BiDi">
+<Type Name="BiDi" FullName="DocumentFormat.OpenXml.Wordprocessing.BiDi">
   <TypeSignature Language="C#" Value="public class BiDi : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BiDi extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BiDi" />
@@ -18,11 +18,73 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the BiDi Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:bidi.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the BiDi Class. When the object is serialized out as xml, its qualified name is w:bidi.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **bidi (Right to Left Paragraph Layout)**  
+  
+ This element specifies that this paragraph shall be displayed from right to left. This property only affects the following set of paragraph-level properties:  
+  
+-   ind (§17.3.1.12)  
+  
+-   jc (§17.3.1.13)  
+  
+-   tab (§17.3.1.37)  
+  
+-   textDirection (§17.3.1.41)  
+  
+ This setting alone does not affect the ordering of text within the paragraph – see the rtl element (§17.3.2.30) for a detailed description.  
+  
+ [*Example*: Consider a paragraph with the bidi property set as follows:  
+  
+```xml  
+<w:p>  
+    <w:pPr>  
+      <w:bidi/>  
+    </w:pPr>  
+    …  
+</w:p>  
+```  
+  
+ This paragraph direction is now right to left, which means that all paragraph properties are displayed right to left (e.g. the paragraph marker glyph (if any) is displayed on the right, and indentation for the first line of the paragraph occurs on the right side of the page). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **bidi (Right to Left Section Layout)**  
+  
+ This element specifies that this section shall be presented using a right-to-left page direction. This property only affects section-level properties, and does not affect the layout of text within the contents of this section.  
+  
+ [*Example*: Consider a section with the bidi property set as follows:  
+  
+```xml  
+<w:sectPr>  
+  …  
+  <w:bidi/>  
+</w:sectPr>  
+```  
+  
+ This section direction is now right-to-left, which means that all section level properties are displayed right-to-left (e.g., page numbers are displayed on the right of text; columns are populated from right-to-left). However, the layout of text is determined by properties applied at the text level. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sectPr (§17.6.17); sectPr (§17.6.18); sectPr (§17.6.19)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +99,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BiDi class.
-            </summary>
+        <summary>Initializes a new instance of the BiDi class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +121,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +142,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

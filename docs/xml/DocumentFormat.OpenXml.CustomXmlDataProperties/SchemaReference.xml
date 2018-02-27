@@ -1,4 +1,4 @@
-﻿<Type Name="SchemaReference" FullName="DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference">
+<Type Name="SchemaReference" FullName="DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference">
   <TypeSignature Language="C#" Value="public class SchemaReference : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SchemaReference extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.CustomXmlDataProperties.SchemaReference" />
@@ -18,11 +18,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Associated XML Schema.</para>
-      <para> When the object is serialized out as xml, its qualified name is ds:schemaRef.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Associated XML Schema. When the object is serialized out as xml, its qualified name is ds:schemaRef.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **schemaRef (Associated XML Schema)**  
+  
+ This element specifies a single XML schema that is associated with the custom XML data part. This XML schema is identified using its target namespace, and can be located via any means available to an application processing the contents of this file.  
+  
+ If the custom XML part cannot be validated using the specified XML schema when it is opened, then this reference can be omitted when the file is subsequently saved.  
+  
+ [*Example*: Consider the following content for a custom XML part properties part:  
+  
+```xml  
+<ds:datastoreItem ds:itemID="{A67AC88A-A164-4ADE-8889-8826CE44DE6E}">  
+  <ds:schemaRefs>  
+    <ds:schemaRef ds:uri="http://www.example.com/exampleSchema" />  
+  </ds:schemaRefs>  
+</ds:datastoreItem>  
+```  
+  
+ The schemaRef element contains a single XML Schema reference to a schema with a target namespace of *http://www.example.com/exampleSchema*. Applications can then locate and utilize a schema for this namespace using any means available. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|schemaRefs (§22.5.2.3)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DatastoreSchemaRef) is located in §A.6.5. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SchemaReference class.
-            </summary>
+        <summary>Initializes a new instance of the SchemaReference class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +89,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +135,37 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Target Namespace of Associated XML Schema.</para>
-          <para>Represents the following attribute in the schema: ds:uri </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Target Namespace of Associated XML Schema.Represents the following attribute in the schema: ds:uri</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the target namespace for the XML Schema associated with this schema reference.  
+  
+ Consider the following content for a custom XML part properties part:  
+  
+```  
+…  
+<w:schemaRef w:uri="http://www.contoso.com/schema1" />  
+<w:schemaRef w:uri="http://www.contoso.com/schema2" />  
+…  
+```  
+  
+ The `uri` attribute specifies the target namespace of each XML schema reference:  
+  
+-   `http://www.contoso.com/schema1`  
+  
+-   `http://www.contoso.com/schema2`  
+  
+ Applications may then locate and use a schema for these namespaces using any means available.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` data type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:ds=http://schemas.openxmlformats.org/officeDocument/2006/customXml
             </remark>
       </Docs>

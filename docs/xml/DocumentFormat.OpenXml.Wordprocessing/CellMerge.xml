@@ -1,4 +1,4 @@
-﻿<Type Name="CellMerge" FullName="DocumentFormat.OpenXml.Wordprocessing.CellMerge">
+<Type Name="CellMerge" FullName="DocumentFormat.OpenXml.Wordprocessing.CellMerge">
   <TypeSignature Language="C#" Value="public class CellMerge : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CellMerge extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.CellMerge" />
@@ -18,11 +18,71 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Vertically Merged/Split Table Cells.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:cellMerge.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Vertically Merged/Split Table Cells. When the object is serialized out as xml, its qualified name is w:cellMerge.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `cellMerge (Vertically Merged/Split Table Cells)`  
+  
+ This element specifies that the vertical merge state of the parent table cell has been modified while revisions were being tracked for the document. The vmerge and vmergeOrig attributes on this element specify the original and revised vertical merge states of the table cell.  
+  
+ [*Example*: Consider a document with a two row by two columns table as follows:  
+  
+ d8a8964c-0c3c-435e-ad2b-33e4626ca213  
+  
+ If this table has the two cells in the second column merged into one and this modification is tracked as a revision, as follows:  
+  
+ d17e7cf9-f894-4f55-99a6-50d50df80a66  
+  
+ The resulting WordprocessingML for the revision would appear as follows:  
+  
+```xml  
+<w:tbl>  
+  …  <w:tr>  
+    <w:tc>  
+      <w:r>  
+        <w:t>One</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:r>  
+        <w:t>Two</w:t>  
+      </w:r>  
+    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:tc>  
+      <w:r>  
+        <w:t>Three</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:cellMerge w:id="0" w:vMerge="cont"/>  
+      </w:tcPr>  
+      <w:r>  
+        <w:t>Four</w:t>  
+      </w:r>  
+    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The cellMerge element specifies that changes were made to the vertical merge settings of the last cell in the table, specifically; the cell was vertically merged with the cell above it (gaining a revised vmerge attribute value of *cont*). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_CellMergeTrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CellMerge class.
-            </summary>
+        <summary>Initializes a new instance of the CellMerge class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -63,12 +121,32 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> author.</para>
-          <para>Represents the following attribute in the schema: w:author </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>author.Represents the following attribute in the schema: w:author</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the author for an annotation within a WordprocessingML document.  
+  
+ If this attribute is omitted, then no author shall be associated with the parent annotation type.  
+  
+ Consider a comment represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" w:author="Example Author">  
+  …  
+</w:…>  
+```  
+  
+ The `author` attribute specifies that the author of the current annotation is `Example Author`, which may be used as desired.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -91,11 +169,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,12 +195,32 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> date.</para>
-          <para>Represents the following attribute in the schema: w:date </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>date.Represents the following attribute in the schema: w:date</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DateTimeValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the date information for an annotation within a WordprocessingML document. The use of this information is outside of the scope of this Office Open XML standard.  
+  
+ If this attribute is omitted, then no date information shall be associated with the parent annotation type.  
+  
+ Consider a comment represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" w:date="2006-01-01T10:00:00">  
+  …  
+</w:…>  
+```  
+  
+ The `date` attribute specifies that the date of the current annotation is January 1, 2006 at 10:00 A.M., which may be used as desired.  
+  
+ The possible values for this attribute are defined by the `ST_DateTime` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -149,12 +245,32 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Annotation Identifier.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Annotation Identifier.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier for an annotation within a WordprocessingML document. The restrictions on the `id` attribute, if any, are defined by the parent XML element.  
+  
+ If this attribute is omitted, then the document will be considered non-conformant.  
+  
+ Consider an annotation represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" … >  
+  …  
+</w:…>  
+```  
+  
+ The `id` attribute specifies that the ID of the current annotation is `1`. This value is used to uniquely identify this annotation within the document content.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -174,10 +290,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,12 +315,35 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> vMerge.</para>
-          <para>Represents the following attribute in the schema: w:vMerge </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>vMerge.Represents the following attribute in the schema: w:vMerge</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the vertical merge setting which was applied to the parent table cell by this revision.  
+  
+ If this attribute is omitted, then no revised vertical merge setting is supplied for this revision. (If neither this nor the `vMergeOrig` attribute is specified, the revision may be ignored.)  
+  
+ Consider a two-row by two-column table in which the cells in the second column are merged, and this change is tracked as a revision. The annotation on the last cell in the table would appear as follows:  
+  
+```  
+<w:tc>  
+  <w:tcPr>  
+    <w:cellMerge … w:vMerge="cont" />  
+  </w:tcPr>  
+  …  
+</w:tc>  
+```  
+  
+ The `vMerge` attribute value of `cont` specifies that the revision on the table cell resulted in it being merged with the previous set of vertically merged cells above it (whether that was one cell or many).  
+  
+ The possible values for this attribute are defined by the `ST_AnnotationVMerge` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -231,12 +368,35 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> vMergeOrig.</para>
-          <para>Represents the following attribute in the schema: w:vMergeOrig </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>vMergeOrig.Represents the following attribute in the schema: w:vMergeOrig</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the vertical merge setting which was removed from the parent table cell by this revision.  
+  
+ If this attribute is omitted, then the original vertical merge setting shall be assumed to be `rest` (not merged).  
+  
+ Consider a two-row by two-column table in which the merged cells in the second column are split, and this change is tracked as a revision. The annotation on the last cell in the table would appear as follows:  
+  
+```  
+<w:tc>  
+  <w:tcPr>  
+    <w:cellMerge … w:vMergeOrig="cont" />  
+  </w:tcPr>  
+  …  
+</w:tc>  
+```  
+  
+ The `vMergeOrig` attribute value of `cont` specifies that the revision on the table cell resulted in it having its vertical merge property removed.  
+  
+ The possible values for this attribute are defined by the `ST_AnnotationVMerge` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

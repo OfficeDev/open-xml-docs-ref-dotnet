@@ -1,4 +1,4 @@
-﻿<Type Name="LevelText" FullName="DocumentFormat.OpenXml.Wordprocessing.LevelText">
+<Type Name="LevelText" FullName="DocumentFormat.OpenXml.Wordprocessing.LevelText">
   <TypeSignature Language="C#" Value="public class LevelText : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LevelText extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LevelText" />
@@ -18,11 +18,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Numbering Level Text.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:lvlText.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Numbering Level Text. When the object is serialized out as xml, its qualified name is w:lvlText.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **lvlText (Numbering Level Text)**  
+  
+ This element specifies the textual content which shall be displayed when displaying a paragraph with the given numbering level.  
+  
+ All text in this element's val attribute shall be taken as literal text to be repeated in each instance of this numbering level, except for any use of the percent symbol (%) followed by a number, which shall be used to indicate the one-based index of the number to be used at this level. Any number of a level higher than this level shall be ignored.  
+  
+ When the % syntax is used, the number shall be incremented for each subsequent paragraph of that level (sequential or not), until the restart level is seen between two subsequent paragraphs of this level.  
+  
+ [*Example*: Consider the following WordprocessingML for a numbering level:  
+  
+```xml  
+<w:lvl w:ilvl="1">  
+  …  
+  <w:lvlText w:val="StringA %2 StringB %1 StringC %3"/>  
+  …   
+</w:lvl>  
+```  
+  
+ This specifies that three strings (*StringA*, *StringB*, *StringC*) must be used as string literals in the numbering for level two (ilvl of *1*) along with the numbering symbol used for level one and level zero. Although level two is also referenced here, it is ignored as it is a higher level than the current numbering level.  
+  
+ Therefore, assuming the numbering symbol used by numbering level zero is an Arabic numeral, and the numbering symbol used by numbering level one is a Roman numeral, a set of numbered paragraphs using this WordprocessingML numbering set must be output as:  
+  
+```xml  
+1  
+  StringA I StringB 1 StringC  
+  StringA II StringB 1 StringC  
+  StringA III StringB 1 StringC  
+2  
+  StringA I StringB 2 StringC  
+  StringA II StringB 2 StringC  
+```  
+  
+ with the *%1* and *%2* values corresponding to the current numbering symbol value for numbering level zero and one, respectively. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lvl (§17.9.6); lvl (§17.9.7)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_LevelText) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LevelText class.
-            </summary>
+        <summary>Initializes a new instance of the LevelText class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,11 +151,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Level Text Is Null Character.</para>
-          <para>Represents the following attribute in the schema: w:null </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Level Text Is Null Character.Represents the following attribute in the schema: w:null</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -141,11 +178,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Level Text.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Level Text.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

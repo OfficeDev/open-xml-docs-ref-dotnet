@@ -1,4 +1,4 @@
-﻿<Type Name="WrapTight" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight">
+<Type Name="WrapTight" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight">
   <TypeSignature Language="C#" Value="public class WrapTight : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WrapTight extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTight" />
@@ -21,13 +21,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Tight Wrapping.</para>
-      <para> When the object is serialized out as xml, its qualified name is wp:wrapTight.</para>
-    </summary>
+    <summary>Tight Wrapping. When the object is serialized out as xml, its qualified name is wp:wrapTight.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>WrapPolygon &lt;wp:wrapPolygon&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `wrapTight (Tight Wrapping)`  
+  
+ This element specifies that text shall wrap around the wrapping polygon bounding this object as defined by the child wrapPolygon element. When this element specifies a wrapping polygon, it shall not allow text to wrap within the object's maximum left and right extents.  
+  
+ [*Example*: Consider an object with the following wrap points:  
+  
+ a3edb7ed-7edb-429c-860f-69f9d82b4fc7  
+  
+ If this object uses tight wrapping, then text cannot be placed within the maximum left and right extents of the wrap polygon at any location:  
+  
+ 67235318-a5f8-4f45-9c77-9ea0ce3c1b03  
+  
+ However, with through wrapping:  
+  
+ cf86355a-b519-43f5-a9ed-2d8b7eee0e61  
+  
+ *end example*]  
+  
+ [*Example*: Consider a DrawingML object using tight wrapping and defined as follows:  
+  
+```xml  
+<wp:anchor … >  
+  …  <wp:wrapTight wrapText="bothSides">  
+    …  </wp:wrapTight>  
+</wp:anchor>  
+```  
+  
+ The wrapTight element specifies that text must wrap through this object as defined by its wrap polygon. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|anchor (§20.4.2.3)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|wrapPolygon (Wrapping Polygon)|§20.4.2.16|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_WrapTight) is located in §A.4.4. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WrapTight class.
-            </summary>
+        <summary>Initializes a new instance of the WrapTight class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +111,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the WrapTight class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the WrapTight class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +131,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the WrapTight class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the WrapTight class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +151,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the WrapTight class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the WrapTight class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +173,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,11 +199,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Distance From Test on Left Edge.</para>
-          <para>Represents the following attribute in the schema: distL </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Distance From Test on Left Edge.Represents the following attribute in the schema: distL</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,11 +224,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Distance From Text on Right Edge.</para>
-          <para>Represents the following attribute in the schema: distR </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Distance From Text on Right Edge.Represents the following attribute in the schema: distR</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -217,10 +244,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -239,11 +264,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Tight Wrapping Extents Polygon.</para>
-          <para> Represents the following element tag in the schema: wp:wrapPolygon </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Tight Wrapping Extents Polygon. Represents the following element tag in the schema: wp:wrapPolygon</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapPolygon" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:wp = http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing
@@ -270,11 +292,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Wrapping Location.</para>
-          <para>Represents the following attribute in the schema: wrapText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Wrapping Location.Represents the following attribute in the schema: wrapText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

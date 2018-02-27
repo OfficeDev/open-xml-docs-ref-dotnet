@@ -1,4 +1,4 @@
-﻿<Type Name="AdjustValueList" FullName="DocumentFormat.OpenXml.Drawing.AdjustValueList">
+<Type Name="AdjustValueList" FullName="DocumentFormat.OpenXml.Drawing.AdjustValueList">
   <TypeSignature Language="C#" Value="public class AdjustValueList : DocumentFormat.OpenXml.Drawing.GeometryGuideListType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdjustValueList extends DocumentFormat.OpenXml.Drawing.GeometryGuideListType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.AdjustValueList" />
@@ -18,13 +18,77 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>List of Shape Adjust Values.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:avLst.</para>
-    </summary>
+    <summary>List of Shape Adjust Values. When the object is serialized out as xml, its qualified name is a:avLst.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ShapeGuide &lt;a:gd&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `avLst (List of Shape Adjust Values)`  
+  
+ This element specifies the adjust values that are applied to the specified shape. An adjust value is simply a guide that has a value based formula specified. That is, no calculation takes place for an adjust value guide. Instead, this guide specifies a parameter value that is used for calculations within the shape guides.  
+  
+ [*Example*: Consider the case where the user would like to specify a triangle with it's bottom edge defined not by static points but by using a varying parameter, namely an adjust value. Consider the diagrams and DrawingML shown below. This first triangle has been drawn with a bottom edge that is equal to the height, namely 2. Thus we see in the figure below that the bottom of the triangle matches the bottom of the shape bounding box.  
+  
+ eb5e30ca-2b5c-423b-b61a-55ea0dd2ce21  
+  
+```xml  
+<a:xfrm>  
+  <a:off x="3200400" y="1600200"/>  
+  <a:ext cx="1705233" cy="679622"/>  
+</a:xfrm>  
+<a:custGeom>  
+  <a:avLst>  
+    <a:gd name="myGuide" fmla="val 2"/>  
+  </a:avLst>   
+  <a:gdLst/>  
+  <a:ahLst/>  
+  <a:cxnLst/>  
+  <a:rect l="0" t="0" r="0" b="0"/>  
+  <a:pathLst>  
+    <a:path w="2" h="2">  
+      <a:moveTo>  
+        <a:pt x="0" y="myGuide"/>  
+      </a:moveTo>  
+      <a:lnTo>  
+        <a:pt x="2" y="myGuide"/>  
+      </a:lnTo>  
+      <a:lnTo>  
+        <a:pt x="1" y="0"/>  
+      </a:lnTo>  
+      <a:close/>  
+    </a:path>  
+  </a:pathLst>  
+</a:custGeom>  
+```  
+  
+ If however we change the adjust value to half that, namely 1. Then we see the entire bottom edge of the triangle move to now be placed along the vertical midpoint within the shape bounding box. This is because both of the bottom points in this triangle depend on this adjust value for their coordinate positions. The triangle and corresponding DrawingML shown below illustrate this point.  
+  
+ 4bf24463-4c49-47cf-a611-c8963511da2f  
+  
+```xml  
+<a:avLst>  
+  <a:gd name="myGuide" fmla="val 1"/>  
+</a:avLst>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|custGeom (§20.1.9.8); prstGeom (§20.1.9.18); prstTxWarp (§20.1.9.19)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|gd (Shape Guide)|§20.1.9.11|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_GeomGuideList) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +103,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AdjustValueList class.
-            </summary>
+        <summary>Initializes a new instance of the AdjustValueList class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,9 +129,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AdjustValueList class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the AdjustValueList class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,9 +149,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AdjustValueList class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the AdjustValueList class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +169,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the AdjustValueList class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the AdjustValueList class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,11 +191,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,10 +212,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

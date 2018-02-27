@@ -1,4 +1,4 @@
-﻿<Type Name="Shape" FullName="DocumentFormat.OpenXml.Presentation.Shape">
+<Type Name="Shape" FullName="DocumentFormat.OpenXml.Presentation.Shape">
   <TypeSignature Language="C#" Value="public class Shape : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Shape extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.Shape" />
@@ -33,13 +33,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Shape.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:sp.</para>
-    </summary>
+    <summary>Shape. When the object is serialized out as xml, its qualified name is p:sp.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>NonVisualShapeProperties &lt;p:nvSpPr&gt;</description></item><item><description>ShapeProperties &lt;p:spPr&gt;</description></item><item><description>ShapeStyle &lt;p:style&gt;</description></item><item><description>TextBody &lt;p:txBody&gt;</description></item><item><description>ExtensionListWithModification &lt;p:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **sp (Shape)**  
+  
+ This element specifies the existence of a single shape. A shape can either be a preset or a custom geometry, defined using the DrawingML framework. In addition to a geometry each shape can have both visual and non-visual properties attached. Text and corresponding styling information can also be attached to a shape. This shape is specified along with all other shapes within either the shape tree or group shape elements.  
+  
+ [*Note*: Shapes are the preferred mechanism for specifying text on a slide. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|grpSp (§19.3.1.22); spTree (§19.3.1.45)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List with Modification Flag)|§19.3.1.20|  
+|nvSpPr (Non-Visual Properties for a Shape)|§19.3.1.34|  
+|spPr (Shape Properties)|§19.3.1.44|  
+|style (Shape Style)|§19.3.1.46|  
+|txBody (Shape Text Body)|§19.3.1.51|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|useBgFill (Use Background Fill)|Specifies that the shape fill should be set to that of the slide background surface.<br /><br /> [*Note*: This attribute does not set the fill of the shape to be transparent but instead sets it to be filled with the portion of the slide background that is directly behind it. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Shape) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Shape class.
-            </summary>
+        <summary>Initializes a new instance of the Shape class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +108,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Shape class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Shape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +128,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Shape class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Shape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +148,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Shape class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Shape class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +170,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +191,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ExtensionListWithModification</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionListWithModification.</para>
-          <para> Represents the following element tag in the schema: p:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionListWithModification. Represents the following element tag in the schema: p:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ExtensionListWithModification" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -199,10 +214,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,11 +234,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Non-Visual Properties for a Shape.</para>
-          <para> Represents the following element tag in the schema: p:nvSpPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Non-Visual Properties for a Shape. Represents the following element tag in the schema: p:nvSpPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -247,11 +257,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ShapeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ShapeProperties.</para>
-          <para> Represents the following element tag in the schema: p:spPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ShapeProperties. Represents the following element tag in the schema: p:spPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ShapeProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -273,11 +280,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ShapeStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Style.</para>
-          <para> Represents the following element tag in the schema: p:style </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape Style. Represents the following element tag in the schema: p:style</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ShapeStyle" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -299,11 +303,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.TextBody</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Text Body.</para>
-          <para> Represents the following element tag in the schema: p:txBody </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape Text Body. Represents the following element tag in the schema: p:txBody</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.TextBody" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -330,11 +331,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Use Background Fill.</para>
-          <para>Represents the following attribute in the schema: useBgFill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Use Background Fill.Represents the following attribute in the schema: useBgFill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

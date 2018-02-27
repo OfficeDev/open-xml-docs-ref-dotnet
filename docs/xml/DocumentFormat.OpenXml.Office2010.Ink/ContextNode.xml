@@ -1,4 +1,4 @@
-﻿<Type Name="ContextNode" FullName="DocumentFormat.OpenXml.Office2010.Ink.ContextNode">
+<Type Name="ContextNode" FullName="DocumentFormat.OpenXml.Office2010.Ink.ContextNode">
   <TypeSignature Language="C#" Value="public class ContextNode : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContextNode extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Ink.ContextNode" />
@@ -27,13 +27,179 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ContextNode Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is msink:context.</para>
-    </summary>
+    <summary>Defines the ContextNode Class. When the object is serialized out as xml, its qualified name is msink:context.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ContextNodeProperty &lt;msink:property&gt;</description></item><item><description>SourceLink &lt;msink:sourceLink&gt;</description></item><item><description>DestinationLink &lt;msink:destinationLink&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.7   context*  
+  
+ *Target namespace:* http://schemas.microsoft.com/ink/2010/main  
+  
+ A CT_CtxNode element that specifies the context of a set of Ink traces stored in a *traceGroup* element as specified in [InkML].  
+  
+ This element MUST be a child of an *emma:interpretation* element ([EMMA] section 3.2). The *emma:interpretation* element must be a child of an *inkml::annotationXML* element ([InkML] section 6.3.2). The *inkml:annotationXML* element MUST be a child of an *inkml:traceGroup* element ([InkML] section 3.3.1).  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="context" type="CT_CtxNode"/>*  
+  
+ See section 5.7 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.47   CT_CtxNode*  
+  
+ *Target namespace:* http://schemas.microsoft.com/ink/2010/main  
+  
+ *Referenced by:* context  
+  
+ The *CT_CtxNode* defines an Ink context node and its properties. A context node is a logical collection of Ink traces. When Ink is drawn by the user, the Ink traces are analyzed and organized into a hierarchy of context nodes. Each context node has a type (specified by the *type* attribute) and can have zero or more child content nodes. For example, a *writingRegion* content node can have one or more *paragraph* content nodes. In addition, context nodes can have relational links to each other. For example, if a word is underlined, the context node representing the ink word and the context node representing the underline are linked.  
+  
+ For example, the following figure shows ink that is analyzed as shown in the following code example.  
+  
+ *Figure 29: Example ink text*  
+  
+ *\<context type="writingRegion"/>*  
+  
+ *...*  
+  
+ *\<context type="paragraph"/>*  
+  
+ *...*  
+  
+ *\<context type="line"/>*  
+  
+ *...*  
+  
+ *\<context type="inkWord"/>*  
+  
+ *...*  
+  
+ *\<context type="inkWord">*  
+  
+ *\<destinationLink direction="with" ref="id of inkDrawing below"/>*  
+  
+ *\</context>*  
+  
+ *\<context type="inkDrawing" semanticType="underline">*  
+  
+ *\<sourceLink direction="with" ref="id of inkWord above"/>*  
+  
+ *\<context>*  
+  
+ *Child Elements:*  
+  
+ *property:* A *CT_Property* element that specifies a user-defined binary data property.  
+  
+ *sourceLink:* A *CT_CtxLink* element that specifies a semantic link from another content node.  
+  
+ *destinationLink:* A *CT_CtxLink* element that specifies a semantic link to another context node.  
+  
+ *Attributes:*  
+  
+ *id:* An *ST_Guid* attribute that specifies a GUID for this context node.  
+  
+ *type:* An *ST_CtxNodeType* attribute that specifies the type of this context node.  
+  
+ *rotatedBoundingBox:* An ST_Points attribute that specifies a rectangular region encompassed by this context node. Applies to all context node types.  
+  
+ *alignmentLevel:* An *xsd:int* attribute ([XMLSCHEMA2] section 3.3.17) that specifies the alignment level of a paragraph type context node. If this attribute is present, the value of the type attribute MUST be set to "paragraph".  
+  
+ *contentType:* An *xsd:int* attribute ([XMLSCHEMA2] section 3.3.17) that specifies the content type of the context node. If this attribute is present, the value of the type attribute MUST be set to "paragraph".  
+  
+ *ascender:* An ST_Points attribute that specifies the ascender. If this attribute is present, the value of the type attribute MUST be set to "line".  
+  
+ *descender:* An ST_Points attribute that specifies the descender. If this attribute is present, the value of the type attribute MUST be set to "line".  
+  
+ *baseline:* An ST_Points attribute that specifies the baseline of a line. If this attribute is present, the value of the type attribute MUST be set to "line".  
+  
+ *midline:* An ST_Points attribute that specifies the midline of a line. If this attribute is present, the value of the type attribute MUST be set to "line".  
+  
+ *customRecognizerId:* An *ST_Guid* attribute that specifies the globally unique identifier (GUID) that represents the custom ink recognizer.  If this attribute is present, the value of the type attribute MUST be set to "customRecognizer".  
+  
+ *mathML:* An *xsd:string* attribute ([XMLSCHEMA2] section 3.2.1) that specifies a string of Math Markup Language ([MathML2.0]). If this attribute is present, the value of the type attribute MUST be set to "mathEquation".  
+  
+ *mathStruct:* An *xsd:string* attribute ([XMLSCHEMA2] section 3.2.1) that specifies a math *struct*. If this attribute is present, the value of the type attribute MUST be set to "mathStruct".  
+  
+ *mathSymbol:* An *xsd:string* attribute ([XMLSCHEMA2] section 3.2.1) that specifies a math symbol. If this attribute is present, the value of the type attribute MUST be set to "mathSymbol".  
+  
+ *beginModifierType:* An *xsd:string* attribute ([XMLSCHEMA2] section 3.2.1) that specifies the beginning modifier type. If this attribute is present, the value of the type attribute MUST be set to "inkDrawing", "nonInkDrawing", or "mixedDrawing".  
+  
+ *endModifierType:* An *xsd:string* attribute ([XMLSCHEMA2] section 3.2.1) that specifies the ending modifier type. If this attribute is present, the value of the type attribute MUST be set to "inkDrawing", "nonInkDrawing", or "mixedDrawing".  
+  
+ *rotationAngle:* An *xsd:int* attribute ([XMLSCHEMA2] section 3.3.17) that specifies the rotation angle of the drawing, in degrees. If this attribute is present, the value of the type attribute MUST be set to "inkDrawing", "nonInkDrawing", or "mixedDrawing".  
+  
+ *hotPoints:* An *ST_Points* attribute that specifies coordinates of the hot points of the drawing. If this attribute is present, the value of the type attribute MUST be set to "inkDrawing", "nonInkDrawing", or "mixedDrawing".  
+  
+ *centroid:* An *ST_Point* attribute that specifies the center point of the drawing. If this attribute is present, the value of the type attribute MUST be set to "inkDrawing", "nonInkDrawing", or "mixedDrawing".  
+  
+ *semanticType:* An *ST_SemanticType* attribute that specifies the semantic type of the writing region or drawing. If this attribute is present, the value of the type attribute MUST be set to "writingRegion", "inkDrawing", "nonInkDrawing", or "mixedDrawing".  
+  
+ *shapeName:* An *xsd:string* attribute ([XMLSCHEMA2] section 3.2.1) that specifies the shape name. If this attribute is present, the value of the type attribute MUST be set to "inkDrawing", "nonInkDrawing", or "mixedDrawing".  
+  
+ *shapeGeometry:* An *ST_Points* attribute that specifies coordinates of the line segments of a drawing. If this attribute is present, the value of the type attribute MUST be set to "nonInkDrawing".  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_CtxNode">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="property" type="CT_Property" minOccurs="0" maxOccurs="unbounded"/>*  
+  
+ *\<xsd:element name="sourceLink" type="CT_CtxLink" minOccurs="0" maxOccurs="unbounded"/>*  
+  
+ *\<xsd:element name="destinationLink" type="CT_CtxLink" minOccurs="0" maxOccurs="unbounded"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="id" type="ST_Guid" use="optional"/>*  
+  
+ *\<xsd:attribute name="type" type="ST_CtxNodeType" use="required"/>*  
+  
+ *\<xsd:attribute name="rotatedBoundingBox" type="ST_Points" use="optional"/>*  
+  
+ *\<xsd:attribute name="alignmentLevel" type="xsd:int" use="optional" default="0"/>*  
+  
+ *\<xsd:attribute name="contentType" type="xsd:int" use="optional" default="0"/>*  
+  
+ *\<xsd:attribute name="ascender" type="ST_Points" use="optional" default="0,0"/>*  
+  
+ *\<xsd:attribute name="descender" type="ST_Points" use="optional" default="0,0"/>*  
+  
+ *\<xsd:attribute name="baseline" type="ST_Points" use="optional" default="0,0"/>*  
+  
+ *\<xsd:attribute name="midline" type="ST_Points" use="optional" default="0,0"/>*  
+  
+ *\<xsd:attribute name="customRecognizerId" type="ST_Guid" use="optional"/>*  
+  
+ *\<xsd:attribute name="mathML" type="xsd:string" use="optional" default=""/>*  
+  
+ *\<xsd:attribute name="mathStruct" type="xsd:string" use="optional" default=""/>*  
+  
+ *\<xsd:attribute name="mathSymbol" type="xsd:string" use="optional" default=""/>*  
+  
+ *\<xsd:attribute name="beginModifierType" type="xsd:string" use="optional" default=""/>*  
+  
+ *\<xsd:attribute name="endModifierType" type="xsd:string" use="optional" default=""/>*  
+  
+ *\<xsd:attribute name="rotationAngle" type="xsd:int" use="optional" default="0"/>*  
+  
+ *\<xsd:attribute name="hotPoints" type="ST_Points" use="optional"/>*  
+  
+ *\<xsd:attribute name="centroid" type="ST_Point" use="optional"/>*  
+  
+ *\<xsd:attribute name="semanticType" type="ST_SemanticType" use="optional" default="none"/>*  
+  
+ *\<xsd:attribute name="shapeName" type="xsd:string" use="optional" default=""/>*  
+  
+ *\<xsd:attribute name="shapeGeometry" type="ST_Points" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.7 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +214,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ContextNode class.
-            </summary>
+        <summary>Initializes a new instance of the ContextNode class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +240,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ContextNode class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ContextNode class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -98,9 +260,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ContextNode class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ContextNode class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +280,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ContextNode class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ContextNode class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,10 +304,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> alignmentLevel.</para>
-          <para>Represents the following attribute in the schema: alignmentLevel </para>
-        </summary>
+        <summary>alignmentLevel.Represents the following attribute in the schema: alignmentLevel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -174,10 +329,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ascender.</para>
-          <para>Represents the following attribute in the schema: ascender </para>
-        </summary>
+        <summary>ascender.Represents the following attribute in the schema: ascender</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -202,10 +354,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> baseline.</para>
-          <para>Represents the following attribute in the schema: baseline </para>
-        </summary>
+        <summary>baseline.Represents the following attribute in the schema: baseline</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -230,10 +379,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> beginModifierType.</para>
-          <para>Represents the following attribute in the schema: beginModifierType </para>
-        </summary>
+        <summary>beginModifierType.Represents the following attribute in the schema: beginModifierType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -258,10 +404,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> centroid.</para>
-          <para>Represents the following attribute in the schema: centroid </para>
-        </summary>
+        <summary>centroid.Represents the following attribute in the schema: centroid</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -284,11 +427,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -312,10 +453,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> contentType.</para>
-          <para>Represents the following attribute in the schema: contentType </para>
-        </summary>
+        <summary>contentType.Represents the following attribute in the schema: contentType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -340,10 +478,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> customRecognizerId.</para>
-          <para>Represents the following attribute in the schema: customRecognizerId </para>
-        </summary>
+        <summary>customRecognizerId.Represents the following attribute in the schema: customRecognizerId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -368,10 +503,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> descender.</para>
-          <para>Represents the following attribute in the schema: descender </para>
-        </summary>
+        <summary>descender.Represents the following attribute in the schema: descender</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -396,10 +528,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> endModifierType.</para>
-          <para>Represents the following attribute in the schema: endModifierType </para>
-        </summary>
+        <summary>endModifierType.Represents the following attribute in the schema: endModifierType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -424,10 +553,7 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.StringValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> hotPoints.</para>
-          <para>Represents the following attribute in the schema: hotPoints </para>
-        </summary>
+        <summary>hotPoints.Represents the following attribute in the schema: hotPoints</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -452,10 +578,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -475,9 +598,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -502,10 +623,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> mathML.</para>
-          <para>Represents the following attribute in the schema: mathML </para>
-        </summary>
+        <summary>mathML.Represents the following attribute in the schema: mathML</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -530,10 +648,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> mathStruct.</para>
-          <para>Represents the following attribute in the schema: mathStruct </para>
-        </summary>
+        <summary>mathStruct.Represents the following attribute in the schema: mathStruct</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -558,10 +673,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> mathSymbol.</para>
-          <para>Represents the following attribute in the schema: mathSymbol </para>
-        </summary>
+        <summary>mathSymbol.Represents the following attribute in the schema: mathSymbol</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -586,10 +698,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> midline.</para>
-          <para>Represents the following attribute in the schema: midline </para>
-        </summary>
+        <summary>midline.Represents the following attribute in the schema: midline</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -614,10 +723,7 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.StringValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> rotatedBoundingBox.</para>
-          <para>Represents the following attribute in the schema: rotatedBoundingBox </para>
-        </summary>
+        <summary>rotatedBoundingBox.Represents the following attribute in the schema: rotatedBoundingBox</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -642,10 +748,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> rotationAngle.</para>
-          <para>Represents the following attribute in the schema: rotationAngle </para>
-        </summary>
+        <summary>rotationAngle.Represents the following attribute in the schema: rotationAngle</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -670,10 +773,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> semanticType.</para>
-          <para>Represents the following attribute in the schema: semanticType </para>
-        </summary>
+        <summary>semanticType.Represents the following attribute in the schema: semanticType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -698,10 +798,7 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.StringValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> shapeGeometry.</para>
-          <para>Represents the following attribute in the schema: shapeGeometry </para>
-        </summary>
+        <summary>shapeGeometry.Represents the following attribute in the schema: shapeGeometry</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -726,10 +823,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> shapeName.</para>
-          <para>Represents the following attribute in the schema: shapeName </para>
-        </summary>
+        <summary>shapeName.Represents the following attribute in the schema: shapeName</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -754,10 +848,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
+        <summary>type.Represents the following attribute in the schema: type</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

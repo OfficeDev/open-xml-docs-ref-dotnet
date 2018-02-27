@@ -1,4 +1,4 @@
-﻿<Type Name="Kern" FullName="DocumentFormat.OpenXml.Wordprocessing.Kern">
+<Type Name="Kern" FullName="DocumentFormat.OpenXml.Wordprocessing.Kern">
   <TypeSignature Language="C#" Value="public class Kern : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Kern extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Kern" />
@@ -18,11 +18,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Kern Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:kern.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Kern Class. When the object is serialized out as xml, its qualified name is w:kern.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **kern (Font Kerning)**  
+  
+ This element specifies whether font kerning shall be applied to the contents of this run. If it is specified, then kerning shall be automatically adjusted when displaying characters in this run as needed.  
+  
+ The val attribute specifies the smallest font size which shall have its kerning automatically adjusted if this setting is specified. If the font size in the sz element (§17.3.2.38) is smaller than this value, then no font kerning shall be performed.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then font kerning shall not be applied to the contents of this run.  
+  
+ [*Example*: Consider the following WordprocessingML run which has font kerning properties specified:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:kern w:val="28" />  
+    <w:sz w:val="22" />  
+  </w:rPr>  
+</w:r>  
+```  
+  
+ Even though font kerning is turned on via the kern element, the contents of this run must not be kerned because that settings only applied to font sizes of 14 points (*28* half-points) or larger. If the kern element's val attribute was less than or equal to the sz element's val attribute, then kerning would be applied:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:kern w:val="22" />  
+    <w:sz w:val="22" />  
+  </w:rPr>  
+</w:r>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_HpsMeasure) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Kern class.
-            </summary>
+        <summary>Initializes a new instance of the Kern class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +103,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,10 +149,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

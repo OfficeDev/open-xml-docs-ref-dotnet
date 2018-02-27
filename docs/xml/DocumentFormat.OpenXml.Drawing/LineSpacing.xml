@@ -1,4 +1,4 @@
-﻿<Type Name="LineSpacing" FullName="DocumentFormat.OpenXml.Drawing.LineSpacing">
+<Type Name="LineSpacing" FullName="DocumentFormat.OpenXml.Drawing.LineSpacing">
   <TypeSignature Language="C#" Value="public class LineSpacing : DocumentFormat.OpenXml.Drawing.TextSpacingType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LineSpacing extends DocumentFormat.OpenXml.Drawing.TextSpacingType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.LineSpacing" />
@@ -18,13 +18,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Line Spacing.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:lnSpc.</para>
-    </summary>
+    <summary>Line Spacing. When the object is serialized out as xml, its qualified name is a:lnSpc.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>SpacingPercent &lt;a:spcPct&gt;</description></item><item><description>SpacingPoints &lt;a:spcPts&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **lnSpc (Line Spacing)**  
+  
+ This element specifies the vertical line spacing that is to be used within a paragraph. This can be specified in two different ways, percentage spacing and font point spacing. If this element is omitted then the spacing between two lines of text should be determined by the point size of the largest piece of text within a line.  
+  
+ [*Example*: Consider the DrawingML shown below.  
+  
+```xml  
+<p:txBody>  
+  <a:p>  
+    <a:pPr>  
+      <a:lnSpc>  
+        <a:spcPct val="200%"/>  
+      </a:lnSpc>  
+    </a:pPr>  
+    <a:r>  
+      <a:rPr lang="en-US" dirty="0" smtClean="0"/>  
+      <a:t>  
+Some</a:t>  
+    </a:r>  
+    <a:br>  
+      <a:rPr lang="en-US" smtClean="0"/>  
+    </a:br>  
+    <a:r>  
+      <a:rPr lang="en-US" dirty="0" smtClean="0"/>  
+      <a:t>Text</a:t>  
+    </a:r>  
+  </a:p>  
+</p:txBody  
+>  
+```  
+  
+ This paragraph has two lines of text that have percentage based vertical spacing. This kind of spacing should change based on the size of the text involved as its size is calculated as a percentage of this. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|defPPr (§21.1.2.2.2); lvl1pPr (§21.1.2.4.13); lvl2pPr (§21.1.2.4.14); lvl3pPr (§21.1.2.4.15); lvl4pPr (§21.1.2.4.16); lvl5pPr (§21.1.2.4.17); lvl6pPr (§21.1.2.4.18); lvl7pPr (§21.1.2.4.19); lvl8pPr (§21.1.2.4.20); lvl9pPr (§21.1.2.4.21); pPr (§21.1.2.2.7)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|spcPct (Spacing Percent)|§21.1.2.2.11|  
+|spcPts (Spacing Points)|§21.1.2.2.12|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextSpacing) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +87,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LineSpacing class.
-            </summary>
+        <summary>Initializes a new instance of the LineSpacing class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -67,9 +113,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the LineSpacing class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the LineSpacing class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,9 +133,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the LineSpacing class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the LineSpacing class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +153,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the LineSpacing class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the LineSpacing class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -135,11 +175,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,10 +196,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="TextAlignment" FullName="DocumentFormat.OpenXml.Wordprocessing.TextAlignment">
+<Type Name="TextAlignment" FullName="DocumentFormat.OpenXml.Wordprocessing.TextAlignment">
   <TypeSignature Language="C#" Value="public class TextAlignment : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextAlignment extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TextAlignment" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TextAlignment Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:textAlignment.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TextAlignment Class. When the object is serialized out as xml, its qualified name is w:textAlignment.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `textAlignment (Vertical Character Alignment on Line)`  
+  
+ This element specifies the vertical alignment of all text on each line displayed within a paragraph. If the line height (before any added spacing) is larger than one or more characters on the line, all characters are aligned  to each other as specified by this element.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then the vertical alignment of all characters on the line shall be automatically determined by the consumer.  
+  
+ [*Example*: Consider a paragraph of text of different font sizes, as follows:  
+  
+ 41136969-9983-47e3-8086-2da49a9024f8  
+  
+ If the text on this paragraph must be aligned based on the top point of the maximum character height, that requirement would be specified as follows in the WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:textAlignment w:val="top" />  
+</w:pPr>  
+```  
+  
+ The resulting text would be top aligned, as follows:  
+  
+ 06ee619f-569c-49cf-8c21-d2a5f795a4d0  
+  
+ The characters are all aligned to the maximum character extent on the line. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextAlignment) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TextAlignment class.
-            </summary>
+        <summary>Initializes a new instance of the TextAlignment class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +141,30 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Character Alignment Position.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Vertical Character Alignment Position.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of vertical alignment which shall be used to align the characters on each line in the current paragraph.  
+  
+ Consider a paragraph of text of different font sizes which shall be aligned based on the baseline point of each character in each line. This requirement would be specified as follows in the WordprocessingML:  
+  
+```  
+<w:pPr>  
+  <w:textAlignment w:val="baseLine" />  
+</w:pPr>  
+```  
+  
+ The resulting text would be aligned to the baseline for each character on the line.  
+  
+ The possible values for this attribute are defined by the `ST_TextAlignment` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="ConvertMailMergeEscape" FullName="DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape">
+<Type Name="ConvertMailMergeEscape" FullName="DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape">
   <TypeSignature Language="C#" Value="public class ConvertMailMergeEscape : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConvertMailMergeEscape extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ConvertMailMergeEscape" />
@@ -18,11 +18,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Treat Backslash Quotation Delimiter as Two Quotation Marks.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:convMailMergeEsc.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Treat Backslash Quotation Delimiter as Two Quotation Marks. When the object is serialized out as xml, its qualified name is w:convMailMergeEsc.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **convMailMergeEsc (Treat Backslash Quotation Delimiter as Two Quotation Marks)**  
+  
+ This element specifies whether applications should perform a conversion of the contents of a mail merge data source when reading those contents in order to perform a mail merge operation with their contents.  
+  
+ Typically, the contents of a mail merge data source are read in exactly as specified when performing a mail merge with the contents of a data source. This element, when present with a val attribute value of *true* (or equivalent), specifies that applications shall interpret delimiters composed of a backslash and quotation mark (\\") as two quotation marks (""), within external data sources to be connected to via a mail merge.  
+  
+ [*Example*: Consider a WordprocessingML document with the following content in its data source:  
+  
+```xml  
+This is a \"test\".  
+```  
+  
+ The default presentation would have the resulting merged data read in just as it appears:  
+  
+```xml  
+This is a \"test\".  
+```  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:convMailMergeEsc />  
+</w:compat>  
+```  
+  
+ Then instances of a backslash and quotation mark would be converted, resulting in the following output:  
+  
+```xml  
+This is a ""test"".  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ConvertMailMergeEscape class.
-            </summary>
+        <summary>Initializes a new instance of the ConvertMailMergeEscape class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

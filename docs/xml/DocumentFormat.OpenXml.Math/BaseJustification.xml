@@ -1,4 +1,4 @@
-﻿<Type Name="BaseJustification" FullName="DocumentFormat.OpenXml.Math.BaseJustification">
+<Type Name="BaseJustification" FullName="DocumentFormat.OpenXml.Math.BaseJustification">
   <TypeSignature Language="C#" Value="public class BaseJustification : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BaseJustification extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.BaseJustification" />
@@ -18,11 +18,126 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Equation Array Base Justification.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:baseJc.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Equation Array Base Justification. When the object is serialized out as xml, its qualified name is m:baseJc.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **baseJc (Matrix Base Justification)**  
+  
+ This element specifies the justification of the matrix. Text outside of the matrix can be aligned with the bottom, top, or center of a matrix object. If this element is omitted, the matrix assumes center justification. In other words, whether the element is absent or present without the val attribute, the default of the val attribute is *center*.  
+  
+ [*Example*: This matrix has center baseJc:  
+  
+ This matrix has top baseJc:  
+  
+ This matrix has bottom baseJc:  
+  
+ The XML below represents the matrix with top baseJC:  
+  
+```xml  
+<m:d>  
+  <m:dPr>  
+    <m:shp  m:val="match"/>  
+  </m:dPr>  
+  <m:e>  
+    <m:m>  
+      <m:mPr>  
+        <m:baseJc m:val="top"/>  
+        <m:mcs>  
+          <m:mc>  
+            <m:mcPr>  
+                            <m:count m:val="2"/>  
+              <m:mcJc  m:val="center"/>  
+            </m:mcPr>  
+          </m:mc>  
+        </m:mcs>  
+      </m:mPr>  
+      <m:mr>  
+        <m:e>  
+          <m:r>  
+            <m:rPr>  
+              <m:scr  m:val="roman"/>  
+              <m:sty m:val="p"/>  
+            </m:rPr>  
+            <m:t>1</m:t>  
+          </m:r>  
+        </m:e>  
+        <m:e>  
+          <m:r>  
+            <m:rPr>  
+              <m:scr  m:val="roman"/>  
+              <m:sty  m:val="p"/>  
+            </m:rPr>  
+            <m:t>2</m:t>  
+          </m:r>  
+        </m:e>  
+      </m:mr>  
+      <m:mr>  
+        <m:e>  
+          <m:r>  
+            <m:rPr>  
+              <m:scr  m:val="roman"/>  
+              <m:sty  m:val="p"/>  
+            </m:rPr>  
+            <m:t>3</m:t>  
+          </m:r>  
+        </m:e>  
+        <m:e>  
+          <m:r>  
+            <m:rPr>  
+              <m:scr  m:val="roman"/>  
+              <m:sty  m:val="p"/>  
+            </m:rPr>  
+            <m:t>4</m:t>  
+          </m:r>  
+        </m:e>  
+      </m:mr>  
+      <m:mr>  
+        <m:e>  
+          <m:r>  
+            <m:rPr>  
+              <m:scr  m:val="roman"/>  
+              <m:sty  m:val="p"/>  
+            </m:rPr>  
+            <m:t>5</m:t>  
+          </m:r>  
+        </m:e>  
+        <m:e>  
+          <m:r>  
+            <m:rPr>  
+              <m:scr  m:val="roman"/>  
+              <m:sty  m:val="p"/>  
+            </m:rPr>  
+            <m:t>6</m:t>  
+          </m:r>  
+        </m:e>  
+      </m:mr>  
+    </m:m>  
+  </m:e>  
+</m:d>  
+```  
+  
+ Because the matrix base justification is top, the top row of the matrix is lined up with the baseline of the rest of the line.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|eqArrPr (§22.1.2.35); mPr (§22.1.2.68)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Value)|Specifies the vertical justification parent element respect to surrounding text. Possible values are *top*, *bottom*, and *center*. [*Example*: The following examples illustrate baseJc on the matrix object m.<br /><br /> This matrix has *center* baseJc:<br /><br /> This matrix has *top* baseJc:<br /><br /> This matrix has *bottom* baseJc:<br /><br /> The possible values for this attribute are defined by the *ST_YAlign* simple type (§22.9.2.20).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_YAlign) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +152,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BaseJustification class.
-            </summary>
+        <summary>Initializes a new instance of the BaseJustification class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +174,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +195,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +220,26 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Math.VerticalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: m:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: m:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the vertical justification parent element respect to surrounding text. Possible values are `top`, `bot`, and `center`. The following examples illustrate `baseJc` on the matrix object `m`.  
+  
+ This matrix has `center``baseJc`:  5359b397-cee3-4c71-a9a8-390270b9d23d  
+  
+ This matrix has `top``baseJc`:  66857fa3-2b06-46f3-b7d7-abdc9c050ad8  
+  
+ This matrix has `bot``baseJc`:  9702e906-4d0d-4fca-91e7-366f6d598dd0  
+  
+ The possible values for this attribute are defined by the `ST_YAlign` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:m=http://schemas.openxmlformats.org/officeDocument/2006/math
             </remark>
       </Docs>

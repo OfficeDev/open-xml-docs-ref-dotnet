@@ -1,4 +1,4 @@
-﻿<Type Name="TableProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableProperties">
+<Type Name="TableProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableProperties">
   <TypeSignature Language="C#" Value="public class TableProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableProperties" />
@@ -66,13 +66,216 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Table Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblPr.</para>
-    </summary>
+    <summary>Table Properties. When the object is serialized out as xml, its qualified name is w:tblPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TableStyle &lt;w:tblStyle&gt;</description></item><item><description>TablePositionProperties &lt;w:tblpPr&gt;</description></item><item><description>TableOverlap &lt;w:tblOverlap&gt;</description></item><item><description>BiDiVisual &lt;w:bidiVisual&gt;</description></item><item><description>TableWidth &lt;w:tblW&gt;</description></item><item><description>TableJustification &lt;w:jc&gt;</description></item><item><description>TableCellSpacing &lt;w:tblCellSpacing&gt;</description></item><item><description>TableIndentation &lt;w:tblInd&gt;</description></item><item><description>TableBorders &lt;w:tblBorders&gt;</description></item><item><description>Shading &lt;w:shd&gt;</description></item><item><description>TableLayout &lt;w:tblLayout&gt;</description></item><item><description>TableCellMarginDefault &lt;w:tblCellMar&gt;</description></item><item><description>TableLook &lt;w:tblLook&gt;</description></item><item><description>TableCaption &lt;w:tblCaption&gt;</description></item><item><description>TableDescription &lt;w:tblDescription&gt;</description></item><item><description>TablePropertiesChange &lt;w:tblPrChange&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **tblPr (Table Properties)**  
+  
+ This element specifies the set of table-wide properties applied to the current table. These properties affect the appearance of all rows and cells within the parent table, but can be overridden by individual table-level exception, row, and cell level properties as defined by each property.  
+  
+ [*Example*: Consider the following simple WordprocessingML table:  
+  
+ This table defines a one point single border for all border types and is set to 100% of page width - both table-wide properties. The resulting table is represented by the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblW w:w="0" w:type="auto"/>  
+    <w:tblBorders>  
+      <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+      <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+      <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+      <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+      <w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+      <w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/>  
+    </w:tblBorders>  
+  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ In this example, the tblW element (§17.4.64) defines the total width of the table, which, in this case, is set to a type of *auto*, which specifies that the table should be automatically sized to fit its contents. The tblBorders element (§17.4.39) specifies each of the table's borders, and specifies a one point border on the top, left, bottom, right and inside horizontal and vertical border. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tbl (§17.4.38)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bidiVisual (Visually Right to Left Table)|§17.4.1|  
+|jc (Table Alignment)|§17.4.29|  
+|shd (Table Shading)|§17.4.32|  
+|tblBorders (Table Borders)|§17.4.39|  
+|tblCaption (Table Caption)|§17.4.41|  
+|tblCellMar (Table Cell Margin Defaults)|§17.4.43|  
+|tblCellSpacing (Table Cell Spacing Default)|§17.4.46|  
+|tblDescription (Table Description)|§17.4.47|  
+|tblInd (Table Indent from Leading Margin)|§17.4.51|  
+|tblLayout (Table Layout)|§17.4.53|  
+|tblLook (Table Style Conditional Formatting Settings)|§17.4.56|  
+|tblOverlap (Floating Table Allows Other Tables to Overlap)|§17.4.57|  
+|tblpPr (Floating Table Positioning)|§17.4.58|  
+|tblPrChange (Revision Information for Table Properties)|§17.13.5.34|  
+|tblStyle (Referenced Table Style)|§17.4.63|  
+|tblStyleColBandSize (Number of Columns in Column Band)|§17.7.6.5|  
+|tblStyleRowBandSize (Number of Rows in Row Band)|§17.7.6.7|  
+|tblW (Preferred Table Width)|§17.4.64|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+   
+  
+## Examples  
+ The following code example uses the `TableProperties` class to create a Table and specify its border information.  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Wordprocessing;  
+  
+namespace TablePropertiesEx  
+{  
+    class Program  
+    {  
+        // Insert a table into an existing word processing document.  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\users\public\documents\TablePropertiesEx.docx";  
+            using (WordprocessingDocument document  
+                = WordprocessingDocument.Open(fileName, true))  
+            {  
+                // Create an empty table.  
+                Table table = new Table();  
+  
+                // Create a TableProperties object and specify its border information.  
+                TableProperties tableProperties = new TableProperties(  
+                    new TableBorders(new TopBorder() { Val = new EnumValue<BorderValues>(BorderValues.Birds), Size = 24 },  
+                        new BottomBorder() { Val = new EnumValue<BorderValues>(BorderValues.Birds), Size = 24 },  
+                        new LeftBorder() { Val = new EnumValue<BorderValues>(BorderValues.Birds), Size = 24 },  
+                        new RightBorder() { Val = new EnumValue<BorderValues>(BorderValues.Birds), Size = 24 },  
+                        new InsideHorizontalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Birds), Size = 24 },  
+                        new InsideVerticalBorder() { Val = new EnumValue<BorderValues>(BorderValues.Birds), Size = 24 })  
+                );  
+  
+                // Append the TableProperties object to the empty table.  
+                table.AppendChild<TableProperties>(tableProperties);  
+  
+                // Create a row and a cell.  
+                TableRow tableRow = new TableRow();  
+                TableCell tableCell1 = new TableCell();  
+  
+                // Specify the width property of the table cell.  
+                tableCell1.Append(new TableCellProperties(  
+                    new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));  
+  
+                // Write some text in the cell.  
+                tableCell1.Append(new Paragraph(new Run(new Text("Some cell text."))));  
+  
+                // Append the cell to the row.  
+                tableRow.Append(tableCell1);  
+  
+                // Create a second table cell by copying the OuterXml value of the first table cell.  
+                TableCell tableCell2 = new TableCell(tableCell1.OuterXml);  
+  
+                // Append the cell to the row.  
+                tableRow.Append(tableCell2);  
+  
+                // Append the table row to the table.  
+                table.Append(tableRow);  
+  
+                // Append the table to the document.  
+                document.MainDocumentPart.Document.Body.Append(table);  
+  
+                Console.WriteLine("The table has been created.\nPress a key.");  
+                Console.ReadKey();  
+            }  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Wordprocessing  
+  
+Module Module1  
+    ' Insert a table into an existing word processing document.  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "C:\users\public\documents\TablePropertiesEx.docx"  
+        Using document As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)  
+            ' Create an empty table.  
+            Dim table As New Table()  
+  
+            ' Create a TableProperties object and specify its border information.  
+            Dim tableProperties As New TableProperties(New TableBorders(New TopBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Birds), _  
+             .Size = 24 _  
+            }, New BottomBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Birds), _  
+             .Size = 24 _  
+            }, New LeftBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Birds), _  
+             .Size = 24 _  
+            }, New RightBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Birds), _  
+             .Size = 24 _  
+            }, New InsideHorizontalBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Birds), _  
+             .Size = 24 _  
+            }, New InsideVerticalBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Birds), _  
+             .Size = 24 _  
+            }))  
+  
+            ' Append the TableProperties object to the empty table.  
+            table.AppendChild(Of TableProperties)(tableProperties)  
+  
+            ' Create a row and a cell.  
+            Dim tableRow As New TableRow()  
+            Dim tableCell1 As New TableCell()  
+  
+            ' Specify the width property of the table cell.  
+            tableCell1.Append(New TableCellProperties(New TableCellWidth() With { _  
+             .Type = TableWidthUnitValues.Dxa, _  
+             .Width = "2400" _  
+            }))  
+  
+            ' Write some text in the cell.  
+            tableCell1.Append(New Paragraph(New Run(New Text("Some cell text."))))  
+  
+            ' Append the cell to the row.  
+            tableRow.Append(tableCell1)  
+  
+            ' Create a second table cell by copying the OuterXml value of the first table cell.  
+            Dim tableCell2 As New TableCell(tableCell1.OuterXml)  
+  
+            ' Append the cell to the row.  
+            tableRow.Append(tableCell2)  
+  
+            ' Append the table row to the table.  
+            table.Append(tableRow)  
+  
+            ' Append the table to the document.  
+            document.MainDocumentPart.Document.Body.Append(table)  
+  
+            Console.WriteLine("The table has been created." & vbLf & "Press a key.")  
+            Console.ReadKey()  
+        End Using  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -87,9 +290,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableProperties class.
-            </summary>
+        <summary>Initializes a new instance of the TableProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -115,9 +316,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TableProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +336,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TableProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,9 +356,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TableProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TableProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -180,11 +375,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BiDiVisual</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> BiDiVisual.</para>
-          <para> Represents the following element tag in the schema: w:bidiVisual </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>BiDiVisual. Represents the following element tag in the schema: w:bidiVisual</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.BiDiVisual" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -209,11 +401,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -232,10 +422,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -254,11 +442,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Shading</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shading.</para>
-          <para> Represents the following element tag in the schema: w:shd </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shading. Represents the following element tag in the schema: w:shd</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Shading" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -280,11 +465,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableBorders</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableBorders.</para>
-          <para> Represents the following element tag in the schema: w:tblBorders </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableBorders. Represents the following element tag in the schema: w:tblBorders</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableBorders" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -311,10 +493,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCaption</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCaption, this property is only available in Office2010.</para>
-          <para> Represents the following element tag in the schema: w:tblCaption </para>
-        </summary>
+        <summary>TableCaption, this property is only available in Office2010. Represents the following element tag in the schema: w:tblCaption</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -337,11 +516,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellMarginDefault.</para>
-          <para> Represents the following element tag in the schema: w:tblCellMar </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableCellMarginDefault. Represents the following element tag in the schema: w:tblCellMar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -363,11 +539,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellSpacing.</para>
-          <para> Represents the following element tag in the schema: w:tblCellSpacing </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableCellSpacing. Represents the following element tag in the schema: w:tblCellSpacing</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -394,10 +567,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableDescription</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableDescription, this property is only available in Office2010.</para>
-          <para> Represents the following element tag in the schema: w:tblDescription </para>
-        </summary>
+        <summary>TableDescription, this property is only available in Office2010. Represents the following element tag in the schema: w:tblDescription</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -420,11 +590,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableIndentation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableIndentation.</para>
-          <para> Represents the following element tag in the schema: w:tblInd </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableIndentation. Represents the following element tag in the schema: w:tblInd</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableIndentation" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -446,10 +613,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableJustification</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableJustification.</para>
-          <para> Represents the following element tag in the schema: w:jc </para>
-        </summary>
+        <summary>TableJustification. Represents the following element tag in the schema: w:jc</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -472,11 +636,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableLayout</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableLayout.</para>
-          <para> Represents the following element tag in the schema: w:tblLayout </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableLayout. Represents the following element tag in the schema: w:tblLayout</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableLayout" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -498,11 +659,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableLook</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableLook.</para>
-          <para> Represents the following element tag in the schema: w:tblLook </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableLook. Represents the following element tag in the schema: w:tblLook</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableLook" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -524,11 +682,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableOverlap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableOverlap.</para>
-          <para> Represents the following element tag in the schema: w:tblOverlap </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableOverlap. Represents the following element tag in the schema: w:tblOverlap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableOverlap" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -550,11 +705,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TablePositionProperties.</para>
-          <para> Represents the following element tag in the schema: w:tblpPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TablePositionProperties. Represents the following element tag in the schema: w:tblpPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TablePositionProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -576,11 +728,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TablePropertiesChange</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Revision Information for Table Properties.</para>
-          <para> Represents the following element tag in the schema: w:tblPrChange </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Revision Information for Table Properties. Represents the following element tag in the schema: w:tblPrChange</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TablePropertiesChange" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -602,10 +751,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableStyle.</para>
-          <para> Represents the following element tag in the schema: w:tblStyle </para>
-        </summary>
+        <summary>TableStyle. Represents the following element tag in the schema: w:tblStyle</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -628,11 +774,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableWidth</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableWidth.</para>
-          <para> Represents the following element tag in the schema: w:tblW </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TableWidth. Represents the following element tag in the schema: w:tblW</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TableWidth" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

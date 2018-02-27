@@ -1,4 +1,4 @@
-﻿<Type Name="NormalAutoFit" FullName="DocumentFormat.OpenXml.Drawing.NormalAutoFit">
+<Type Name="NormalAutoFit" FullName="DocumentFormat.OpenXml.Drawing.NormalAutoFit">
   <TypeSignature Language="C#" Value="public class NormalAutoFit : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NormalAutoFit extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.NormalAutoFit" />
@@ -18,11 +18,64 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Normal AutoFit.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:normAutofit.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Normal AutoFit. When the object is serialized out as xml, its qualified name is a:normAutofit.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **normAutofit (Normal AutoFit)**  
+  
+ This element specifies that text within the text body should be normally auto-fit to the bounding box. Auto-fitting is when text within a text box is scaled in order to remain inside the text box. If this element is omitted, then noAutofit or auto-fit off is implied.  
+  
+ [*Example*: Consider the situation where a user is building a diagram and needs to have the text for each shape that they are using stay within the bounds of the shape. An easy way this might be done is by using normAutofit. The following DrawingML illustrates how this might be accomplished.  
+  
+```xml  
+<p:sp>  
+  <p:txBody>  
+    <a:bodyPr rtlCol="0" anchor="ctr">  
+      <a:normAutofit fontScale="92.000%" lnSpcReduction="20.000%"/>  
+    </a:bodyPr>  
+    …  
+    <a:p>  
+      …      <a:t>  
+Diagram Object 1</a:t>  
+      …    </a:p>  
+  </p:txBody>  
+</p:sp  
+>  
+<p:sp>  
+  <p:txBody>  
+    <a:bodyPr rtlCol="0" anchor="ctr">  
+      <a:normAutofit fontScale="92.000%" lnSpcReduction="20.000%"/>      
+                                                                   </a:bodyPr>  
+    …  
+    <a:p>  
+      …      <a:t>  
+Diagram Object 2</a:t>  
+      …    </a:p>  
+  </p:txBody>  
+</p:sp>  
+```  
+  
+ In the above example there are two shapes that have normAutofit turned on so that when the user types more text within the shape that the text actually resizes to accommodate the new data. For the application to know how and to what degree the text should be resized two attributes are set for the auto-fit resize logic. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bodyPr (§21.1.2.1.1)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|fontScale (Font Scale)|Specifies the percentage of the original font size to which each run in the text body is scaled. In order to auto-fit text within a bounding box it is sometimes necessary to decrease the font size by a certain percentage. Using this attribute the font within a text box can be scaled based on the value provided. A value of *100%* scales the text to 100%, while a value of *1%* scales the text to 1%. If this attribute is omitted, then a value of 100% is implied.<br /><br /> The possible values for this attribute are defined by the *ST_TextFontScalePercentOrPercentString* simple type (§20.1.10.67).|  
+|lnSpcReduction (Line Space Reduction)|Specifies the percentage amount by which the line spacing of each paragraph in the text body is reduced. The reduction is applied by subtracting it from the original line spacing value. Using this attribute the vertical spacing between the lines of text can be scaled by a percent amount. A value of *100%* reduces the line spacing by 100%, while a value of *1%* reduces the line spacing by one percent. If this attribute is omitted, then a value of 0% is implied.<br /><br /> [*Note*: This attribute applies only to paragraphs with percentage line spacing. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_TextSpacingPercentOrPercentString* simple type (§20.1.10.77).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextNormalAutofit) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +90,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NormalAutoFit class.
-            </summary>
+        <summary>Initializes a new instance of the NormalAutoFit class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +112,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,12 +138,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Font Scale.</para>
-          <para>Represents the following attribute in the schema: fontScale </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Font Scale.Represents the following attribute in the schema: fontScale</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the percentage of the original font size to which each run in the text body is scaled. In order to auto-fit text within a bounding box it is sometimes necessary to decrease the font size by a certain percentage. Using this attribute the font within a text box can be scaled based on the value provided. A value of `100000` is treated as 100% while a value of `1000` is consequently 1%. If this attribute is omitted, then a value of `100000` or 100% is implied.  
+  
+ The possible values for this attribute are defined by the `ST_TextFontScalePercent` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LineSpaceReduction">
@@ -117,12 +174,22 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Line Space Reduction.</para>
-          <para>Represents the following attribute in the schema: lnSpcReduction </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Line Space Reduction.Represents the following attribute in the schema: lnSpcReduction</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the percentage amount by which the line spacing of each paragraph in the text body is reduced. The reduction is applied by subtracting it from the original line spacing value. Using this attribute the vertical spacing between the lines of text can be scaled by a percent amount. A value of `100000` is treated as 100% while a value of `1000` is consequently 1%. If this attribute is omitted, then a value of 0 or 0% is implied.  
+  
+ This attribute applies only to paragraphs with percentage line spacing.  
+  
+ The possible values for this attribute are defined by the `ST_TextSpacingPercent` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -140,10 +207,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="NoBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.NoBorder">
+<Type Name="NoBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.NoBorder">
   <TypeSignature Language="C#" Value="public class NoBorder : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NoBorder extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NoBorder" />
@@ -18,11 +18,62 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Display Frameset Splitters.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:noBorder.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Display Frameset Splitters. When the object is serialized out as xml, its qualified name is w:noBorder.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `noBorder (Do Not Display Frameset Splitters)`  
+  
+ This element specifies whether the splitters shall be displayed for the contents of the frameset in this WordprocessingML document. This element shall only be honored on the root frameset for this document, and can be ignored for all nested framesets in this document. If this element is present, then no splitters shall be displayed, and all other frameset splitter properties can be ignored.  
+  
+ If this element is omitted, then the splitters in this document shall be displayed as defined by the w and color elements.  
+  
+ [*Example*: Consider a frameset consisting of the following three frames:  
+  
+ 7f993e41-89ae-405c-b822-0d98c7e4e084  
+  
+ The following properties define the presentation of the splitter bars within this frameset:  
+  
+```xml  
+<w:frameset>  
+  <w:framesetSplitbar>  
+    <w:w w:val="200" />  
+    <w:color w:val="0000FF" />  
+  </w:framesetSplitbar>  
+  … </w:frameset>  
+```  
+  
+ If the noBorder element is also specified:  
+  
+```xml  
+<w:frameset>  
+  <w:framesetSplitbar>  
+    <w:w w:val="200" />  
+    <w:color w:val="0000FF" />  
+    <w:noBorder w:val="true" />  
+  </w:framesetSplitbar>  
+  … </w:frameset>  
+```  
+  
+ Then all frameset splitters are suppressed:  
+  
+ 11ba979d-a7d9-4ac5-8df1-0c4f6f398d24  
+  
+ The noBorder element's val attribute has a value of *true*, which specifies that the splitters for this document must not be displayed. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|framesetSplitbar (§17.15.2.20)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +88,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NoBorder class.
-            </summary>
+        <summary>Initializes a new instance of the NoBorder class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +110,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +131,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

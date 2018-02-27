@@ -1,4 +1,4 @@
-﻿<Type Name="NumberingInstance" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingInstance">
+<Type Name="NumberingInstance" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingInstance">
   <TypeSignature Language="C#" Value="public class NumberingInstance : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberingInstance extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NumberingInstance" />
@@ -24,13 +24,75 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Numbering Definition Instance.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:num.</para>
-    </summary>
+    <summary>Numbering Definition Instance. When the object is serialized out as xml, its qualified name is w:num.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>AbstractNumId &lt;w:abstractNumId&gt;</description></item><item><description>LevelOverride &lt;w:lvlOverride&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **num (Numbering Definition Instance)**  
+  
+ This element specifies a unique instance of numbering information that can be referenced by zero or more paragraphs within the parent WordprocessingML document.  
+  
+ This instance requires the referencing of a base abstract numbering definition through the abstractNumId child element (§17.9.2).  This element also can be used to specify a set of optional overrides applied to zero or more levels from the abstract numbering definition inherited by this instance second though the optional lvlOverride child elements (§17.9.9).  
+  
+ [*Example*: Consider the WordprocessingML for a document with four numbering definition instances, two of which reference the same underlying abstract numbering definition:  
+  
+```xml  
+<w:numbering>  
+  …  <w:num w:numId="2">  
+    <w:abstractNumId w:val="0" />  
+  </w:num>  
+  <w:num w:numId="3">  
+    <w:abstractNumId w:val="1" />  
+  </w:num>  
+  <w:num w:numId="4">  
+    <w:abstractNumId w:val="4" />  
+  </w:num>  
+  <w:num w:numId="5">  
+    <w:abstractNumId w:val="4" />  
+  </w:num>  
+</w:numbering>  
+```  
+  
+ As shown above, the first two numbering definition instances reference abstractNumId values of *0* and *1* respectively, and the last two both reference the abstract numbering definition with an abstractNumId of *4*. *end example*]  
+  
+ [*Example*: Consider a numbering definition instance which inherits its information from the abstract numbering definition with abstractNumId of *4*, but wishes to use a different set of properties for level *0* of the numbering definition. The resulting WordprocessingML would look like:  
+  
+```xml  
+<w:num w:numId="6">  
+  <w:abstractNumId w:val="4" />  
+  <w:lvlOverride w:ilvl="0">  
+    <w:lvl w:ilvl="0">  
+      <w:start w:val="4" />  
+      <w:lvlText w:val="%1)" />  
+      <w:lvlJc w:val="left" />  
+      <w:pPr>  
+        <w:ind w:left="360" w:hanging="360" />  
+      </w:pPr>  
+    </w:lvl>  
+  </w:lvlOverride>  
+</w:num>  
+```  
+  
+ The lvlOverride element specifies an override for level *0* of the abstract numbering definition. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|numbering (§17.9.17)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|abstractNumId (Abstract Numbering Definition Reference)|§17.9.2|  
+|lvlOverride (Numbering Level Definition Override)|§17.9.9|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Num) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +107,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NumberingInstance class.
-            </summary>
+        <summary>Initializes a new instance of the NumberingInstance class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +133,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NumberingInstance class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the NumberingInstance class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +153,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NumberingInstance class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the NumberingInstance class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +173,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the NumberingInstance class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the NumberingInstance class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,10 +192,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.AbstractNumId</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Abstract Numbering Definition Reference.</para>
-          <para> Represents the following element tag in the schema: w:abstractNumId </para>
-        </summary>
+        <summary>Abstract Numbering Definition Reference. Represents the following element tag in the schema: w:abstractNumId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -167,11 +218,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -190,9 +239,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -217,10 +264,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Numbering Definition Instance ID.</para>
-          <para>Represents the following attribute in the schema: w:numId </para>
-        </summary>
+        <summary>Numbering Definition Instance ID.Represents the following attribute in the schema: w:numId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

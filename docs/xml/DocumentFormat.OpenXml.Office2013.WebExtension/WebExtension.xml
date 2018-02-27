@@ -1,4 +1,4 @@
-﻿<Type Name="WebExtension" FullName="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension">
+<Type Name="WebExtension" FullName="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension">
   <TypeSignature Language="C#" Value="public class WebExtension : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebExtension extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension" />
@@ -39,13 +39,81 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the WebExtension Class. The root element of WebExtensionPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is we:webextension.</para>
-    </summary>
+    <summary>Defines the WebExtension Class. The root element of WebExtensionPart. When the object is serialized out as xml, its qualified name is we:webextension.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>WebExtensionStoreReference &lt;we:reference&gt;</description></item><item><description>WebExtensionReferenceList &lt;we:alternateReferences&gt;</description></item><item><description>WebExtensionPropertyBag &lt;we:properties&gt;</description></item><item><description>WebExtensionBindingList &lt;we:bindings&gt;</description></item><item><description>Snapshot &lt;we:snapshot&gt;</description></item><item><description>OfficeArtExtensionList &lt;we:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.1.1   webextension*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/webextensions/webextension/2010/11  
+  
+ A *CT_OsfWebExtension* element (section 2.2.7) that specifies an office app document part [ISO/IEC-29500-1].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="webextension" type="CT_OsfWebExtension"/>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.2.7   CT_OsfWebExtension*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/webextensions/webextension/2010/11  
+  
+ *Referenced by:* webextension  
+  
+ This is the root element of an office app document part.  
+  
+ *Child Elements:*  
+  
+ *reference:* A *CT_OsfWebExtensionReference* element (section 2.2.5) that specifies the primary reference to an office app.  
+  
+ *alternateReferences:* A *CT_OsfWebExtensionReferenceList* element (section 2.2.6) that specifies a list of *CT_OsfWebExtensionReference* elements (section 2.2.5). The first of these *alternateReferences* is used if the office app could not be located using the primary reference.  
+  
+ *properties:* A *CT_OsfWebExtensionPropertyBag* element (section 2.2.2) that contains a set of office app custom properties.  
+  
+ *bindings:* A *CT_OsfWebExtensionBindingList* element (section 2.2.4) that specifies a list of office app bindings.  
+  
+ *snapshot:* A *CT_Blip* element ([ISO/IEC-29500-1] section 20.1.8.13) that specifies a static image used to render the contents of the office app when it is not active.  
+  
+ *extLst:* A *CT_OfficeArtExtensionList* element ([ISO/IEC-29500-1] section A.4.1) that specifies a list of extensions for an office app. This element MAY be ignored.  
+  
+ *Attributes:*  
+  
+ *id:* A string attribute ([XMLSCHEMA2] section 3.2.1). This attribute uniquely identifies the office app instance in the current document.  
+  
+ *frozen:* A Boolean attribute ([XMLSCHEMA2] section 3.2.2) that specifies whether the user can interact with the office app or not.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_OsfWebExtension">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="reference" type="CT_OsfWebExtensionReference"/>*  
+  
+ *\<xsd:element name="alternateReferences" type="CT_OsfWebExtensionReferenceList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="properties" type="CT_OsfWebExtensionPropertyBag"/>*  
+  
+ *\<xsd:element name="bindings" type="CT_OsfWebExtensionBindingList"/>*  
+  
+ *\<xsd:element name="snapshot" type="a:CT_Blip" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="id" type="xsd:string" use="required"/>*  
+  
+ *\<xsd:attribute name="frozen" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -60,9 +128,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WebExtension class.
-            </summary>
+        <summary>Initializes a new instance of the WebExtension class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,9 +154,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the WebExtension class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the WebExtension class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -110,9 +174,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the WebExtension class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the WebExtension class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -132,9 +194,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the WebExtension class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the WebExtension class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -156,11 +216,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -184,10 +242,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> frozen.</para>
-          <para>Represents the following attribute in the schema: frozen </para>
-        </summary>
+        <summary>frozen.Represents the following attribute in the schema: frozen</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -212,10 +267,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -239,9 +291,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the WebExtensionPart.
-            </summary>
+        <summary>Loads the DOM from the WebExtensionPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -260,9 +310,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -282,10 +330,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OfficeArtExtensionList.</para>
-          <para> Represents the following element tag in the schema: we:extLst </para>
-        </summary>
+        <summary>OfficeArtExtensionList. Represents the following element tag in the schema: we:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -312,9 +357,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the WebExtensionPart.
-            </summary>
+        <summary>Saves the DOM into the WebExtensionPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -333,10 +376,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Snapshot.</para>
-          <para> Represents the following element tag in the schema: we:snapshot </para>
-        </summary>
+        <summary>Snapshot. Represents the following element tag in the schema: we:snapshot</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -359,10 +399,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WebExtensionBindingList.</para>
-          <para> Represents the following element tag in the schema: we:bindings </para>
-        </summary>
+        <summary>WebExtensionBindingList. Represents the following element tag in the schema: we:bindings</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -385,9 +422,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WebExtensionPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WebExtensionPart associated with this element.
-            </summary>
+        <summary>Gets the WebExtensionPart associated with this element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -407,10 +442,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WebExtensionPropertyBag.</para>
-          <para> Represents the following element tag in the schema: we:properties </para>
-        </summary>
+        <summary>WebExtensionPropertyBag. Represents the following element tag in the schema: we:properties</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -433,10 +465,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WebExtensionReferenceList.</para>
-          <para> Represents the following element tag in the schema: we:alternateReferences </para>
-        </summary>
+        <summary>WebExtensionReferenceList. Represents the following element tag in the schema: we:alternateReferences</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -459,10 +488,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WebExtensionStoreReference.</para>
-          <para> Represents the following element tag in the schema: we:reference </para>
-        </summary>
+        <summary>WebExtensionStoreReference. Represents the following element tag in the schema: we:reference</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

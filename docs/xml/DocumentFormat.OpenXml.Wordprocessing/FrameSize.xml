@@ -1,4 +1,4 @@
-﻿<Type Name="FrameSize" FullName="DocumentFormat.OpenXml.Wordprocessing.FrameSize">
+<Type Name="FrameSize" FullName="DocumentFormat.OpenXml.Wordprocessing.FrameSize">
   <TypeSignature Language="C#" Value="public class FrameSize : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FrameSize extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FrameSize" />
@@ -18,11 +18,102 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Frame Size.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:sz.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Frame Size. When the object is serialized out as xml, its qualified name is w:sz.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `sz (Frame Size)`  
+  
+ This element specifies the size for a single frame within a frameset.  
+  
+ This size shall be interpreted based on the contents of the frameLayout element (§17.15.2.17) for the parent frameset, as follows:  
+  
+-   If the val attribute on that element is *cols*, then this element specifies the width of the frame  
+  
+-   If the val attribute on that element is *rows*, then this element specifies the height of the frame  
+  
+ Once the axis of this measurement has been established using the criteria above, the actual value of the measurement shall be determined by the following:  
+  
+-   If the val attribute ends in a asterisk (*\**), then this measurement is a relative measurement (relative to all other frames in this frameset).  
+  
+-   If the val attribute ends in a percentage symbol (*%*), then this measurement is a percentage of the height and/or width of the parent window, respectively.  
+  
+-   Otherwise, the value of the val attribute specifies the size of the frame in pixels. This measurement shall be interpreted in the context of the pixelsPerInch element (§17.15.2.34) to determine the width of the resulting measurement in inches.  
+  
+ If this element is omitted, then no information shall be implied about the size of the current frame.  
+  
+ [*Example*: Consider a frameset consisting of the following three frames:  
+  
+ c70dbbf5-4f66-47c4-a121-d420a20f1f5a  
+  
+ The following properties define the presentation of the top frame within this frameset:  
+  
+```xml  
+<w:frameset>  
+  …  <w:frame>  
+    <w:sz w:val="300" />  
+    <w:name w:val="Frame 1" />  
+  </w:frame>  
+  …  <w:pixelsPerInch w:val="150" />  
+</w:frameset>  
+```  
+  
+ The sz element's val attribute specifies that the size of this frame is *300* - which translates to a height of exactly 300 pixels tall. In addition, this document specifies that the intended number of pixels per inch for this measurement is *150*, resulting in a 2" tall frame height. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|frame (§17.15.2.16)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `sz (Nested Frameset Size)`  
+  
+ This element specifies the size for a frameset that has been nested within another frameset. If this size appears on a root frameset, then it can be ignored and the main frameset shall encompass the entire window.  
+  
+ This size shall be interpreted based on the contents of the frameLayout element (§17.15.2.17) for the parent frameset (not the current nested frameset), as follows:  
+  
+-   If the val attribute on that element is *cols*, then this element specifies the width of the frameset  
+  
+-   If the val attribute on that element is *rows*, then this element specifies the height of the frameset  
+  
+ Once the axis of this measurement has been established using the criteria above, the actual value of the measurement shall be determined by the following:  
+  
+-   If the val attribute ends in a asterisk (*\**), then this measurement is a relative measurement (relative to all other frames in this frameset).  
+  
+-   If the val attribute ends in a percentage symbol (*%*), then this measurement is a percentage of the height and/or width of the parent frameset, respectively.  
+  
+-   Otherwise, the value of the val attribute specifies the size of the frameset in pixels. This measurement shall be interpreted in the context of the pixelsPerInch element (§17.15.2.34) to determine the width of the resulting measurement in inches.  
+  
+ If this element is omitted, then no information shall be implied about the size of the current frameset.  
+  
+ [*Example*: Consider a nested frameset defined as follows:  
+  
+```xml  
+<w:frameset>  
+  …  <w:frameset>  
+    <w:sz w:val="50%" />  
+    …  </w:frameset>  
+  …  <w:pixelsPerInch w:val="150" />  
+</w:frameset>  
+```  
+  
+ The sz element's val attribute specifies that the size of this nested frameset is *50%* - which translates to a width of fifty percent of the width of the parent frameset's height. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|frameset (§17.15.2.18); frameset (§17.15.2.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +128,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FrameSize class.
-            </summary>
+        <summary>Initializes a new instance of the FrameSize class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +150,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +171,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

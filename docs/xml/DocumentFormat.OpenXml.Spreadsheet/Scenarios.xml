@@ -1,4 +1,4 @@
-﻿<Type Name="Scenarios" FullName="DocumentFormat.OpenXml.Spreadsheet.Scenarios">
+<Type Name="Scenarios" FullName="DocumentFormat.OpenXml.Spreadsheet.Scenarios">
   <TypeSignature Language="C#" Value="public class Scenarios : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Scenarios extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Scenarios" />
@@ -21,13 +21,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Scenarios Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:scenarios.</para>
-    </summary>
+    <summary>Defines the Scenarios Class. When the object is serialized out as xml, its qualified name is x:scenarios.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Scenario &lt;x:scenario&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **scenarios (Scenarios)**  
+  
+ A collection of Scenarios. A scenario is a named what-if model that includes variable cells linked together by one or more formulas.  
+  
+ [*Example*: For example, you might want to compare best-case and worst-case scenarios for sales in a coffee shop, based on the number of cups of coffee sold in a week.  
+  
+```xml  
+<scenarios current="1" show="0" sqref="G4 G6 G7 G8">  
+  <scenario name="Best Case" locked="1" count="3" user="anonymous"     comment="Created on _x000a_Modified on ">  
+    <inputCells r="D5" val="151" numFmtId="37"/>  
+    <inputCells r="D9" val="226"/>  
+    <inputCells r="D13" val="126"/>  
+  </scenario>  
+  <scenario name="Worst Case" locked="1" count="3" user="anonymous"    comment="Created on ">  
+    <inputCells r="D5" val="50" numFmtId="37"/>  
+    <inputCells r="D9" val="40"/>  
+    <inputCells r="D13" val="30"/>  
+  </scenario>  
+</scenarios>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|worksheet (§18.3.1.99)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|scenario (Scenario)|§18.3.1.75|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|current (Current Scenario)|Zero-based index to current scenario selected. Can correspond to selection UI.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|show (Last Shown Scenario)|Zero-based index to last shown scenario. Indicates which scenario was last selected by the user to be run/shown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|sqref (Sequence of References)|Range or sequence of cells used for scenario results summary.<br /><br /> The possible values for this attribute are defined by the *ST_Sqref* simple type (§18.18.76).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Scenarios) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Scenarios class.
-            </summary>
+        <summary>Initializes a new instance of the Scenarios class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +111,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Scenarios class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Scenarios class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +131,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Scenarios class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Scenarios class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +151,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Scenarios class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Scenarios class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +173,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,11 +199,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Current Scenario.</para>
-          <para>Represents the following attribute in the schema: current </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Current Scenario.Represents the following attribute in the schema: current</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -189,10 +219,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -216,11 +244,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.StringValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sequence of References.</para>
-          <para>Represents the following attribute in the schema: sqref </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sequence of References.Represents the following attribute in the schema: sqref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -244,11 +269,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Last Shown Scenario.</para>
-          <para>Represents the following attribute in the schema: show </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Last Shown Scenario.Represents the following attribute in the schema: show</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

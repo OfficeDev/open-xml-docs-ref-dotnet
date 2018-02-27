@@ -1,4 +1,4 @@
-﻿<Type Name="MaxLength" FullName="DocumentFormat.OpenXml.Wordprocessing.MaxLength">
+<Type Name="MaxLength" FullName="DocumentFormat.OpenXml.Wordprocessing.MaxLength">
   <TypeSignature Language="C#" Value="public class MaxLength : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MaxLength extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MaxLength" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Text Box Form Field Maximum Length.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:maxLength.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Text Box Form Field Maximum Length. When the object is serialized out as xml, its qualified name is w:maxLength.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **maxLength (Text Box Form Field Maximum Length)**  
+  
+ This element specifies the maximum length of text which should be allowed within the parent text box form field before any formatting specified by the format element (§17.16.20). If the current contents of this field exceed the specified value when the document is loaded, that violation shall not result in an error, but the application shall prevent the addition of any additional characters until the contents are brought below that limit.  
+  
+ If this element is omitted, then there shall be no limit on the number of characters in the parent text box form field.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the properties of a text box form field:  
+  
+```xml  
+<w:ffData>  
+  <w:textInput>  
+    <w:type w:val="number" />  
+    <w:maxLength w:val="4" />  
+    <w:format w:val="0.00" />  
+  </w:textInput>  
+</w:ffData>  
+```  
+  
+ The maxLength element specifies that the contents of this form field should not be allowed to exceed four characters when edited by an application. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|textInput (§17.16.33)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MaxLength class.
-            </summary>
+        <summary>Initializes a new instance of the MaxLength class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,10 +137,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int16Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

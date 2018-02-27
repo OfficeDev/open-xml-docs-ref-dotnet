@@ -1,4 +1,4 @@
-﻿<Type Name="AdjustLineHeightInTable" FullName="DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable">
+<Type Name="AdjustLineHeightInTable" FullName="DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable">
   <TypeSignature Language="C#" Value="public class AdjustLineHeightInTable : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdjustLineHeightInTable extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AdjustLineHeightInTable" />
@@ -18,11 +18,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Add Document Grid Line Pitch To Lines in Table Cells.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:adjustLineHeightInTable.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Add Document Grid Line Pitch To Lines in Table Cells. When the object is serialized out as xml, its qualified name is w:adjustLineHeightInTable.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `adjustLineHeightInTable (Add Document Grid Line Pitch To Lines in Table Cells)`  
+  
+ This element specifies whether a document grid defined using the docGrid element (§17.6.5) that specifies a line grid (manually adding additional pitch to each line in the section) shall also be applied to lines within table cells in this section.  
+  
+ Typically, when additional line pitch is added to all lines in a section via the document grid, it is not applied to text in tables. This element, when present with a val attribute value of *true* (or equivalent), specifies that additional line pitch shall be added to lines in table cells.  
+  
+ [*Example*: Consider a WordprocessingML document with a single section, whose document grid is defined such that 25.9 points of additional line pitch are added to each line in the section, as follows:  
+  
+```xml  
+<w:docGrid w:type="lines" w:linePitch="518"/>  
+```  
+  
+ If text was entered into this section, the default behavior would have line pitch only added to lines which are not in a table cell:  
+  
+ 1892a578-eb28-41fe-84cb-7d1070242d74  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:adjustLineHeightInTable />  
+</w:compat>  
+```  
+  
+ Then all lines in this document would have the line pitch from the document grid added to them, resulting in the following output:  
+  
+ 4c93e239-4867-4861-be9f-c0c127c45586  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (§17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AdjustLineHeightInTable class.
-            </summary>
+        <summary>Initializes a new instance of the AdjustLineHeightInTable class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +101,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +122,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

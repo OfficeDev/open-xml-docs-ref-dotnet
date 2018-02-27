@@ -1,4 +1,4 @@
-﻿<Type Name="TableRowProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableRowProperties">
+<Type Name="TableRowProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableRowProperties">
   <TypeSignature Language="C#" Value="public class TableRowProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableRowProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableRowProperties" />
@@ -69,13 +69,146 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Table Row Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:trPr.</para>
-    </summary>
+    <summary>Table Row Properties. When the object is serialized out as xml, its qualified name is w:trPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ConditionalFormatStyle &lt;w:cnfStyle&gt;</description></item><item><description>DivId &lt;w:divId&gt;</description></item><item><description>GridBefore &lt;w:gridBefore&gt;</description></item><item><description>GridAfter &lt;w:gridAfter&gt;</description></item><item><description>WidthBeforeTableRow &lt;w:wBefore&gt;</description></item><item><description>WidthAfterTableRow &lt;w:wAfter&gt;</description></item><item><description>TableRowHeight &lt;w:trHeight&gt;</description></item><item><description>Hidden &lt;w:hidden&gt;</description></item><item><description>CantSplit &lt;w:cantSplit&gt;</description></item><item><description>TableHeader &lt;w:tblHeader&gt;</description></item><item><description>TableCellSpacing &lt;w:tblCellSpacing&gt;</description></item><item><description>TableJustification &lt;w:jc&gt;</description></item><item><description>Inserted &lt;w:ins&gt;</description></item><item><description>Deleted &lt;w:del&gt;</description></item><item><description>TableRowPropertiesChange &lt;w:trPrChange&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.ConflictInsertion &lt;w14:conflictIns&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.ConflictDeletion &lt;w14:conflictDel&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **trPr (Table Row Properties)**  
+  
+ This element specifies the set of row-level properties applied to the current table row. Each unique property is specified by a child element of this element. These properties affect the appearance of all cells in the current row within the parent table, but can be overridden by individual cell-level properties, as defined by each property.  
+  
+ [*Example*: Consider the following WordprocessingML table:  
+  
+ Some text in R1C1.  
+  
+ The first row must have a table-row level property which specifies that it shall be restricted to  high (144 twentieths of a point) regardless of its contents, that would be specified using the trHeight element as follows:  
+  
+```xml  
+<w:trPr>  
+  <w:trHeight w:val="144" w:hRule="exact"/>  
+  …</w:trPr>  
+```  
+  
+ The trPr element specifies the set of table row properties applied to the current table row in the document, in this case a row height requirement using the trHeight element (§17.4.81). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tr (§17.4.79)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cantSplit (Table Row Cannot Break Across Pages)|§17.4.6|  
+|cnfStyle (Table Row Conditional Formatting)|§17.4.7|  
+|del (Deleted Table Row)|§17.13.5.12|  
+|divId (Associated HTML div ID)|§17.4.9|  
+|gridAfter (Grid Columns After Last Cell)|§17.4.14|  
+|gridBefore (Grid Columns Before First Cell)|§17.4.15|  
+|hidden (Hidden Table Row Marker)|§17.4.20|  
+|ins (Inserted Table Row)|§17.13.5.17|  
+|jc (Table Row Alignment)|§17.4.28|  
+|tblCellSpacing (Table Row Cell Spacing)|§17.4.44|  
+|tblHeader (Repeat Table Row on Every New Page)|§17.4.50|  
+|trHeight (Table Row Height)|§17.4.81|  
+|trPrChange (Revision Information for Table Row Properties)|§17.13.5.37|  
+|wAfter (Preferred Width After Table Row)|§17.4.86|  
+|wBefore (Preferred Width Before Table Row)|§17.4.87|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **trPr (Table Style Conditional Formatting Table Row Properties)**  
+  
+ This element specifies the set of table row properties which shall be applied to all rows within a table which match the conditional formatting type specified on the parent tblStylePr element. These properties are applied in the order specified via the style hierarchy.  
+  
+ [*Example*: Consider a table style which contains conditional formatting for its *firstRow*, defined as follows:  
+  
+```xml  
+<w:style w:type="table" w:styleId="exampleTableStyle">  
+  …  <w:tblStylePr w:type="firstRow">  
+    <w:trPr>  
+      <w:tblHeader/>  
+      <w:cantSplit/>  
+    </w:trPr>  
+    …  </w:tblStylePr>  
+</w:style>  
+```  
+  
+ The trPr element specified within the tblStylePr element specifies the set of table row properties which must be applied to all rows of the table which meet the criteria specified by the type value of *firstRow* - all of the header rows of the table. In this example, the table row properties applied are the fact that these rows must be repeated on each page via the tblHeader element (§17.4.50) and the fact that these rows must not be split across pages using the cantSplit element (§17.4.6). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblStylePr (§17.7.6.6)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cantSplit (Table Row Cannot Break Across Pages)|§17.4.6|  
+|cnfStyle (Table Row Conditional Formatting)|§17.4.7|  
+|del (Deleted Table Row)|§17.13.5.12|  
+|divId (Associated HTML div ID)|§17.4.9|  
+|gridAfter (Grid Columns After Last Cell)|§17.4.14|  
+|gridBefore (Grid Columns Before First Cell)|§17.4.15|  
+|hidden (Hidden Table Row Marker)|§17.4.20|  
+|ins (Inserted Table Row)|§17.13.5.17|  
+|jc (Table Row Alignment)|§17.4.28|  
+|tblCellSpacing (Table Row Cell Spacing)|§17.4.44|  
+|tblHeader (Repeat Table Row on Every New Page)|§17.4.50|  
+|trHeight (Table Row Height)|§17.4.81|  
+|trPrChange (Revision Information for Table Row Properties)|§17.13.5.37|  
+|wAfter (Preferred Width After Table Row)|§17.4.86|  
+|wBefore (Preferred Width Before Table Row)|§17.4.87|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **trPr (Style Table Row Properties)**  
+  
+ This element specifies the set of table row properties which shall be applied to the table. These properties are not conditional and shall always be applied (although they are applied before all conditional formatting properties).  
+  
+ [*Example*: Consider a table style defined as follows:  
+  
+```xml  
+<w:style w:type="table" w:styleId="exampleTableStyle">  
+  <w:trPr>  
+    <w:jc w:val="center"/>  
+  </w:trPr>  
+</w:style>  
+```  
+  
+ The trPr element specified within the style element specifies the set of table row properties which must be applied to all parts of the table. In this example, the single table row property applied is the alignment setting of center via the jc element (§17.4.28). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cantSplit (Table Row Cannot Break Across Pages)|§17.4.6|  
+|cnfStyle (Table Row Conditional Formatting)|§17.4.7|  
+|del (Deleted Table Row)|§17.13.5.12|  
+|divId (Associated HTML div ID)|§17.4.9|  
+|gridAfter (Grid Columns After Last Cell)|§17.4.14|  
+|gridBefore (Grid Columns Before First Cell)|§17.4.15|  
+|hidden (Hidden Table Row Marker)|§17.4.20|  
+|ins (Inserted Table Row)|§17.13.5.17|  
+|jc (Table Row Alignment)|§17.4.28|  
+|tblCellSpacing (Table Row Cell Spacing)|§17.4.44|  
+|tblHeader (Repeat Table Row on Every New Page)|§17.4.50|  
+|trHeight (Table Row Height)|§17.4.81|  
+|trPrChange (Revision Information for Table Row Properties)|§17.13.5.37|  
+|wAfter (Preferred Width After Table Row)|§17.4.86|  
+|wBefore (Preferred Width Before Table Row)|§17.4.87|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -90,9 +223,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableRowProperties class.
-            </summary>
+        <summary>Initializes a new instance of the TableRowProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -118,9 +249,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableRowProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TableRowProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,9 +269,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableRowProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TableRowProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,9 +289,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TableRowProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TableRowProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -186,11 +311,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -209,10 +332,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="DeletedFieldCode" FullName="DocumentFormat.OpenXml.Wordprocessing.DeletedFieldCode">
+<Type Name="DeletedFieldCode" FullName="DocumentFormat.OpenXml.Wordprocessing.DeletedFieldCode">
   <TypeSignature Language="C#" Value="public class DeletedFieldCode : DocumentFormat.OpenXml.Wordprocessing.TextType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DeletedFieldCode extends DocumentFormat.OpenXml.Wordprocessing.TextType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DeletedFieldCode" />
@@ -18,11 +18,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Deleted Field Code.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:delInstrText.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Deleted Field Code. When the object is serialized out as xml, its qualified name is w:delInstrText.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **delInstrText (Deleted Field Code)**  
+  
+ This element specifies that this run contains deleted field codes (§17.16.5) within a complex field in the document. The delInstrText element shall be used for all runs containing field codes which are part of a region of text that is contained in a deleted region using the del element (§17.13.5.14).  
+  
+ If this element is not contained within a del element, then the document is non-conformant. If this element is contained within a run which is not part of a complex field's field codes, then it should be handled as regular deleted text.  
+  
+ [*Example*: Consider a complex field within a WordprocessingML document which was changed from a text box form field to a checkbox form field with revision tracking enabled. This field would therefore be represented as follows:  
+  
+```xml  
+<w:fldChar w:fldCharType="begin" />  
+<w:ins>  
+  <w:r>  
+    <w:instrText>FORMCHECKBOX</w:instrText>  
+  </w:r>  
+</w:ins>  
+<w:del>  
+  <w:r>  
+    <w:delInstrText>FORMFIELDTEXT</w:delInstrText>  
+  </w:r>  
+</w:del>  
+<w:fldChar w:fldCharType="separate" />  
+…<w:fldChar w:fldCharType="end" />  
+```  
+  
+ The deleted field code is contained in a delInstrText node, while the inserted (and current) field code is contained in an instrText node. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Text) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DeletedFieldCode class.
-            </summary>
+        <summary>Initializes a new instance of the DeletedFieldCode class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -58,10 +94,8 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">Specifies the text content of the element.</param>
-        <summary>
-            Initializes a new instance of the DeletedFieldCode class with the specified text content.
-            </summary>
+        <param name="text">Specifies text content of the element.</param>
+        <summary>Initializes a new instance of the DeletedFieldCode class with the specified text content.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,11 +117,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,10 +138,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="MovieReference" FullName="DocumentFormat.OpenXml.Wordprocessing.MovieReference">
+<Type Name="MovieReference" FullName="DocumentFormat.OpenXml.Wordprocessing.MovieReference">
   <TypeSignature Language="C#" Value="public class MovieReference : DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MovieReference extends DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MovieReference" />
@@ -18,11 +18,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the MovieReference Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:movie.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the MovieReference Class. When the object is serialized out as xml, its qualified name is w:movie.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **movie (Embedded Video)**  
+  
+ This element specifies a location within a document where the specified parent image shall be treated as a static placeholder for an embedded movie. [*Note*: A list of suggested video types in provided in §15.2.17. *end note*]The specified movie file's contents should be displayed when requested at this location in the document. The location of the embedded movie to be displayed when supported shall be specified by the relationship whose Id attribute matches the id attribute on this element.  
+  
+ If the relationship type of the relationship specified by this element is not *http://schemas.openxmlformats.org/officeDocument/2006/movie*, or is not present, then the document shall be considered non-conformant. If an application cannot process external content of the content type specified by the targeted part, then it can be ignored.  
+  
+ [*Example*: Consider a WordprocessingML document which contains a DrawingML shape holding the static image for a movie:  
+  
+```xml  
+<w:object>  
+  <w:drawing>  
+    …  
+  </w:drawing>  
+  <w:movie r:id="rIdMovie" />  
+</w:object>  
+```  
+  
+ The movie element specifies that the part targeted by the relationship with an ID of *rIdMovie* must be imported at the beginning of the document. Examining the contents of the corresponding relationship part item, we can see the targets for that relationship:  
+  
+```xml  
+<Relationships … >  
+  …  <Relationship Id="rIdMovie" TargetMode="Internal" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/movie" Target="movie.mov" />  
+  …</Relationships>  
+```  
+  
+ The corresponding relationship part item shows that the movie file is located next to the main document and is named *movie.mov*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|object (§17.3.3.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Rel) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +76,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MovieReference class.
-            </summary>
+        <summary>Initializes a new instance of the MovieReference class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="SparklineGroup" FullName="DocumentFormat.OpenXml.Office2010.Excel.SparklineGroup">
+<Type Name="SparklineGroup" FullName="DocumentFormat.OpenXml.Office2010.Excel.SparklineGroup">
   <TypeSignature Language="C#" Value="public class SparklineGroup : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SparklineGroup extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.SparklineGroup" />
@@ -51,14 +51,155 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the SparklineGroup Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is x14:sparklineGroup.</para>
-    </summary>
+    <summary>Defines the SparklineGroup Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:sparklineGroup.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>SeriesColor &lt;x14:colorSeries&gt;</description></item><item><description>NegativeColor &lt;x14:colorNegative&gt;</description></item><item><description>AxisColor &lt;x14:colorAxis&gt;</description></item><item><description>MarkersColor &lt;x14:colorMarkers&gt;</description></item><item><description>FirstMarkerColor &lt;x14:colorFirst&gt;</description></item><item><description>LastMarkerColor &lt;x14:colorLast&gt;</description></item><item><description>HighMarkerColor &lt;x14:colorHigh&gt;</description></item><item><description>LowMarkerColor &lt;x14:colorLow&gt;</description></item><item><description>DocumentFormat.OpenXml.Office.Excel.Formula &lt;xne:f&gt;</description></item><item><description>Sparklines &lt;x14:sparklines&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.6.7   CT_SparklineGroup*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* CT_SparklineGroups  
+  
+ *CT_SparklineGroup* is a complex type that specifies properties for a sparkline group.  
+  
+ *Child Elements:*  
+  
+ *colorSeries:* A *CT_Color* ([ISO/IEC-29500-4] section A.2) element that specifies the color for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *colorNegative:* A *CT_Color* element that specifies the color of the negative *data points* for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *colorAxis:* A *CT_Color* element that specifies the color of the horizontal axis for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *colorMarkers:* A *CT_Color* element that specifies the color of the *data markers* for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *colorFirst:* A *CT_Color* element that specifies the color of the first data point for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *colorLast:* A *CT_Color* element that specifies the color of the last data point for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *colorHigh:* A *CT_Color* element that specifies the color of the highest data point for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *colorLow:* A *CT_Color* element that specifies the color of the lowest data point for each sparkline in this sparkline group. The *auto* attribute of the *CT_Color* element MUST NOT exist.  
+  
+ *xm:f:* An *f* element (section 2.4.3) that specifies the date range for the sparkline group. The syntax, as specified in section 2.2.2, for this *f* element is the following:  
+  
+ *sparklinegroup-formula = single-sheet-area / [single-sheet-prefix / book-prefix] name*  
+  
+ Additionally, if a single-sheet-area is specified, that single-sheet-area MUST contain cells from either a single row (2) or a single column (2).  
+  
+ *sparklines:* A *CT_Sparklines* element (section 2.6.8) that specifies properties for individual sparklines.  
+  
+ *Attributes:*  
+  
+ *manualMax:* A *double* ([XMLSCHEMA2] section 3.2.5) attribute that specifies the maximum for the vertical axis that is shared across all sparklines in this sparkline group. This attribute MUST NOT exist if *maxAxisType* does not equal "custom".  
+  
+ *manualMin:* A *double* attribute that specifies the minimum for the vertical axis that is shared across all sparklines in this sparkline group. This attribute MUST NOT exist if *minAxisType* does not equal "custom".  
+  
+ *lineWeight:* A *double* attribute that specifies the line weight for each sparkline in the sparkline group, where the line weight is measured in *points*. MUST be greater than or equal to zero, and MUST be less than or equal to 1584.  
+  
+ *type:* An *ST_SparklineType* attribute (section 2.7.5) that specifies the type of the sparkline group.  
+  
+ *dateAxis:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether this sparkline group uses a date axis.  
+  
+|||  
+|-|-|  
+|*Value of dateAxis*|*Meaning*|  
+|*"false"*|*No date axis is specified for this sparkline group.*|  
+|*"true"*|*A date axis is specified for this sparkline group.*|  
+  
+ *displayEmptyCellsAs:* An *ST_DispBlanksAs* attribute (section 2.7.3) that specifies how empty cells are plotted.  
+  
+ *markers:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether data markers are displayed for each sparkline in this sparkline group.  
+  
+ *high:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the data points with the highest value are formatted differently for each sparkline in this sparkline group.  
+  
+ *low:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the data points with the lowest value are formatted differently for each sparkline in this sparkline group.  
+  
+ *first:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the first data point is formatted differently for each sparkline in this sparkline group.  
+  
+ *last:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the last data point is formatted differently for each sparkline in this sparkline group.  
+  
+ *negative:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the negative data points are formatted differently for each sparkline in this sparkline group.  
+  
+ *displayXAxis:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the horizontal axis is displayed for each sparkline in this sparkline group.  
+  
+ *displayHidden:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether data in *hidden* cells are plotted for the sparklines in this sparkline group.  
+  
+ *minAxisType:* An *ST_SparklineAxisMinMax* attribute (section 2.7.4) that specifies how the vertical axis minimums for the sparklines in this sparkline group are calculated.  
+  
+ *maxAxisType:* An *ST_SparklineAxisMinMax* attribute that specifies how the vertical axis maximums for the sparklines in this sparkline group are calculated.  
+  
+ *rightToLeft:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether each sparkline in the sparkline group is displayed in a *right-to-left* manner.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_SparklineGroup">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="colorSeries" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element name="colorNegative" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element name="colorAxis" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element name="colorMarkers" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element name="colorFirst" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element name="colorLast" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element name="colorHigh" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element name="colorLow" minOccurs="0" maxOccurs="1" type="x:CT_Color"/>*  
+  
+ *\<xsd:element ref="xm:f" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="sparklines" type="CT_Sparklines" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="manualMax" type="xsd:double" use="optional"/>*  
+  
+ *\<xsd:attribute name="manualMin" type="xsd:double" use="optional"/>*  
+  
+ *\<xsd:attribute name="lineWeight" type="xsd:double" use="optional" default="0.75"/>*  
+  
+ *\<xsd:attribute name="type" type="ST_SparklineType" use="optional" default="line"/>*  
+  
+ *\<xsd:attribute name="dateAxis" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="displayEmptyCellsAs" type="ST_DispBlanksAs" use="optional" default="zero"/>*  
+  
+ *\<xsd:attribute name="markers" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="high" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="low" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="first" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="last" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="negative" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="displayXAxis" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="displayHidden" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="minAxisType" type="ST_SparklineAxisMinMax" use="optional" default="individual"/>*  
+  
+ *\<xsd:attribute name="maxAxisType" type="ST_SparklineAxisMinMax" use="optional" default="individual"/>*  
+  
+ *\<xsd:attribute name="rightToLeft" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -73,9 +214,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SparklineGroup class.
-            </summary>
+        <summary>Initializes a new instance of the SparklineGroup class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -101,9 +240,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SparklineGroup class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the SparklineGroup class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,9 +260,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SparklineGroup class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the SparklineGroup class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,9 +280,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the SparklineGroup class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the SparklineGroup class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,10 +299,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.AxisColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AxisColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorAxis </para>
-        </summary>
+        <summary>AxisColor. Represents the following element tag in the schema: x14:colorAxis</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -195,11 +325,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -223,10 +351,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dateAxis.</para>
-          <para>Represents the following attribute in the schema: dateAxis </para>
-        </summary>
+        <summary>dateAxis.Represents the following attribute in the schema: dateAxis</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -251,10 +376,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DisplayBlanksAsValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> displayEmptyCellsAs.</para>
-          <para>Represents the following attribute in the schema: displayEmptyCellsAs </para>
-        </summary>
+        <summary>displayEmptyCellsAs.Represents the following attribute in the schema: displayEmptyCellsAs</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -279,10 +401,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> displayHidden.</para>
-          <para>Represents the following attribute in the schema: displayHidden </para>
-        </summary>
+        <summary>displayHidden.Represents the following attribute in the schema: displayHidden</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -307,10 +426,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> displayXAxis.</para>
-          <para>Represents the following attribute in the schema: displayXAxis </para>
-        </summary>
+        <summary>displayXAxis.Represents the following attribute in the schema: displayXAxis</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -335,10 +451,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> first.</para>
-          <para>Represents the following attribute in the schema: first </para>
-        </summary>
+        <summary>first.Represents the following attribute in the schema: first</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -358,10 +471,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.FirstMarkerColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FirstMarkerColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorFirst </para>
-        </summary>
+        <summary>FirstMarkerColor. Represents the following element tag in the schema: x14:colorFirst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -384,10 +494,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office.Excel.Formula</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula.</para>
-          <para> Represents the following element tag in the schema: xne:f </para>
-        </summary>
+        <summary>Formula. Represents the following element tag in the schema: xne:f</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -415,10 +522,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> high.</para>
-          <para>Represents the following attribute in the schema: high </para>
-        </summary>
+        <summary>high.Represents the following attribute in the schema: high</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -438,10 +542,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.HighMarkerColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> HighMarkerColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorHigh </para>
-        </summary>
+        <summary>HighMarkerColor. Represents the following element tag in the schema: x14:colorHigh</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -469,10 +570,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> last.</para>
-          <para>Represents the following attribute in the schema: last </para>
-        </summary>
+        <summary>last.Represents the following attribute in the schema: last</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -492,10 +590,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.LastMarkerColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> LastMarkerColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorLast </para>
-        </summary>
+        <summary>LastMarkerColor. Represents the following element tag in the schema: x14:colorLast</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -523,10 +618,7 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lineWeight.</para>
-          <para>Represents the following attribute in the schema: lineWeight </para>
-        </summary>
+        <summary>lineWeight.Represents the following attribute in the schema: lineWeight</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -546,9 +638,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -573,10 +663,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> low.</para>
-          <para>Represents the following attribute in the schema: low </para>
-        </summary>
+        <summary>low.Represents the following attribute in the schema: low</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -596,10 +683,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.LowMarkerColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> LowMarkerColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorLow </para>
-        </summary>
+        <summary>LowMarkerColor. Represents the following element tag in the schema: x14:colorLow</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -627,10 +711,7 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> manualMax.</para>
-          <para>Represents the following attribute in the schema: manualMax </para>
-        </summary>
+        <summary>manualMax.Represents the following attribute in the schema: manualMax</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -655,10 +736,7 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> manualMin.</para>
-          <para>Represents the following attribute in the schema: manualMin </para>
-        </summary>
+        <summary>manualMin.Represents the following attribute in the schema: manualMin</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -683,10 +761,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> markers.</para>
-          <para>Represents the following attribute in the schema: markers </para>
-        </summary>
+        <summary>markers.Represents the following attribute in the schema: markers</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -706,10 +781,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.MarkersColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> MarkersColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorMarkers </para>
-        </summary>
+        <summary>MarkersColor. Represents the following element tag in the schema: x14:colorMarkers</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -737,10 +809,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.SparklineAxisMinMaxValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> maxAxisType.</para>
-          <para>Represents the following attribute in the schema: maxAxisType </para>
-        </summary>
+        <summary>maxAxisType.Represents the following attribute in the schema: maxAxisType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -765,10 +834,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.SparklineAxisMinMaxValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> minAxisType.</para>
-          <para>Represents the following attribute in the schema: minAxisType </para>
-        </summary>
+        <summary>minAxisType.Represents the following attribute in the schema: minAxisType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -793,10 +859,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> negative.</para>
-          <para>Represents the following attribute in the schema: negative </para>
-        </summary>
+        <summary>negative.Represents the following attribute in the schema: negative</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -816,10 +879,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.NegativeColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> NegativeColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorNegative </para>
-        </summary>
+        <summary>NegativeColor. Represents the following element tag in the schema: x14:colorNegative</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -847,10 +907,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> rightToLeft.</para>
-          <para>Represents the following attribute in the schema: rightToLeft </para>
-        </summary>
+        <summary>rightToLeft.Represents the following attribute in the schema: rightToLeft</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -870,10 +927,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.SeriesColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SeriesColor.</para>
-          <para> Represents the following element tag in the schema: x14:colorSeries </para>
-        </summary>
+        <summary>SeriesColor. Represents the following element tag in the schema: x14:colorSeries</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -896,10 +950,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.Sparklines</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sparklines.</para>
-          <para> Represents the following element tag in the schema: x14:sparklines </para>
-        </summary>
+        <summary>Sparklines. Represents the following element tag in the schema: x14:sparklines</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -927,10 +978,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.SparklineTypeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
+        <summary>type.Represents the following attribute in the schema: type</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="DefaultTabStop" FullName="DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop">
+<Type Name="DefaultTabStop" FullName="DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop">
   <TypeSignature Language="C#" Value="public class DefaultTabStop : DocumentFormat.OpenXml.Wordprocessing.NonNegativeShortType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultTabStop extends DocumentFormat.OpenXml.Wordprocessing.NonNegativeShortType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DefaultTabStop" />
@@ -18,11 +18,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Distance Between Automatic Tab Stops.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:defaultTabStop.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Distance Between Automatic Tab Stops. When the object is serialized out as xml, its qualified name is w:defaultTabStop.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **defaultTabStop (Distance Between Automatic Tab Stops)**  
+  
+ This element specifies the value which shall be used as the multiplier to generate automatic tab stops in this document. *Automatic tab stops* refer to the tab stop locations which occur after all custom tab stops in the current paragraph have been surpassed.  
+  
+ If this element is omitted, then automatic tab stops should be generated at 720 twentieths of a point (0.5") intervals across the displayed page.  
+  
+ [*Example*: Consider a WordprocessingML document which should have automatic tab stops every 360 twentieths of a point (). This requirement is specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:defaultTabStop w:val="360" />  
+```  
+  
+ The defaultTabStop element's val attribute has a value of *360* specifying that automatic tab stops shall occur every 1/4th of an inch across the page.  
+  
+ If a custom tab stop was located at 2.28", then the next three automatic tab stops would be at 2.5", 2.75" and 3.0" (the next three multiples of the default tab stop value). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TwipsMeasure) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DefaultTabStop class.
-            </summary>
+        <summary>Initializes a new instance of the DefaultTabStop class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +87,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +108,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

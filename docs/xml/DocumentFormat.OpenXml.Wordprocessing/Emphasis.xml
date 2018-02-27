@@ -1,4 +1,4 @@
-﻿<Type Name="Emphasis" FullName="DocumentFormat.OpenXml.Wordprocessing.Emphasis">
+<Type Name="Emphasis" FullName="DocumentFormat.OpenXml.Wordprocessing.Emphasis">
   <TypeSignature Language="C#" Value="public class Emphasis : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Emphasis extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Emphasis" />
@@ -18,11 +18,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Emphasis Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:em.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Emphasis Class. When the object is serialized out as xml, its qualified name is w:em.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **em (Emphasis Mark)**  
+  
+ This element specifies the emphasis mark which shall be displayed for each non-space character in this run. An *emphasis mark* is an additional character that is rendered above or below the main character glyph as specified by the contents of the val attribute.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then no emphasis mark shall be added to each character in the contents of this run.  
+  
+ [*Example*: Consider a run of text which must have a dot underneath each character as an emphasis mark. This constraint is specified using the following WordprocessingML:  
+  
+```xml  
+<w:rPr>  
+  <w:em w:val="dot"/>  
+</w:rPr>  
+```  
+  
+ This run explicitly declares that the emphasis mark type is *dot*, so the contents of this run has a dot emphasis mark above each character. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Em) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Emphasis class.
-            </summary>
+        <summary>Initializes a new instance of the Emphasis class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +87,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +108,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +133,30 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Emphasis Mark Type.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Emphasis Mark Type.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the emphasis mark type used for each character in this run.  
+  
+ Consider a run of text which shall have a dot underneath each character as an emphasis mark. This constraint is specified using the following WordprocessingML:  
+  
+```  
+<w:rPr>  
+  <w:em w:val="dot"/>  
+</w:rPr>  
+```  
+  
+ This run explicitly declares that the `em` type is `dot`, so the contents of this run will have a dot emphasis mark beneath each character.  
+  
+ The possible values for this attribute are defined by the `ST_Em` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="LineTo" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo">
+<Type Name="LineTo" FullName="DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo">
   <TypeSignature Language="C#" Value="public class LineTo : DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LineTo extends DocumentFormat.OpenXml.Drawing.Wordprocessing.Point2DType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Wordprocessing.LineTo" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Wrapping Polygon Line End Position.</para>
-      <para> When the object is serialized out as xml, its qualified name is wp:lineTo.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Wrapping Polygon Line End Position. When the object is serialized out as xml, its qualified name is wp:lineTo.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **lineTo (Wrapping Polygon Line End Position)**  
+  
+ This element specifies a single point on the wrapping polygon for a DrawingML object. This point shall be the termination of the edge of the wrapping polygon started by the previous start or lineTo element in document order, and shall be the origin of the next edge on the same polygon.  
+  
+ The attributes on this element shall dictate the position of the point relative to the upper-left corner of the actual object.  
+  
+ [*Example*: Consider the following basic wrapping polygon for a DrawingML object:  
+  
+```xml  
+<wp:wrapPolygon>  
+  <wp:start x="0" y="0" />  
+  <wp:lineTo x="0" y="100" />  
+  <wp:lineTo x="100" y="100" />  
+  <wp:lineTo x="100" y="0" />  
+  <wp:lineTo x="0" y="0" />  
+</wp:wrapPolygon>  
+```  
+  
+ The lineTo element defines each point of the wrapping polygon (in this case, the four points of the wrapping square). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|wrapPolygon (§20.4.2.16)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Point2D) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LineTo class.
-            </summary>
+        <summary>Initializes a new instance of the LineTo class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

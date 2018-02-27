@@ -1,4 +1,4 @@
-﻿<Type Name="TableRowHeight" FullName="DocumentFormat.OpenXml.Wordprocessing.TableRowHeight">
+<Type Name="TableRowHeight" FullName="DocumentFormat.OpenXml.Wordprocessing.TableRowHeight">
   <TypeSignature Language="C#" Value="public class TableRowHeight : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableRowHeight extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableRowHeight" />
@@ -18,11 +18,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TableRowHeight Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:trHeight.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TableRowHeight Class. When the object is serialized out as xml, its qualified name is w:trHeight.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **trHeight (Table Row Height)**  
+  
+ This element specifies the height of the current table row within the current table. This height shall be used to determine the resulting height of the table row, which can be absolute or relative (depending on its attribute values).  
+  
+ If omitted, then the table row shall automatically resize its height to the height required by its contents (the equivalent of an hRule value of *auto*).  
+  
+ [*Example*: Consider the following WordprocessingML table:  
+  
+ Some text in R1C1.  
+  
+ Examining the WordprocessingML for this table, the trHeight element is not specified, so the row heights are automatically determined by their contents (in the first row, the text *Some text in R1C1.*). If the first row shall be restricted to  high (144 twentieths of a point) regardless of its contents, that would be specified using the trHeight element as follows:  
+  
+```xml  
+<w:trPr>  
+  <w:trHeight w:val="144" w:hRule="exact"/>  
+</w:trPr>  
+```  
+  
+ The resulting table row would be exactly 144 twentieths of a point high:  
+  
+ Some text in R1C1.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11); trPr (§17.4.83)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Height) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableRowHeight class.
-            </summary>
+        <summary>Initializes a new instance of the TableRowHeight class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +95,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -89,11 +121,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Row Height Type.</para>
-          <para>Represents the following attribute in the schema: w:hRule </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Row Height Type.Represents the following attribute in the schema: w:hRule</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -114,10 +143,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +168,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Row Height.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Row Height.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

@@ -1,4 +1,4 @@
-﻿<Type Name="Border" FullName="DocumentFormat.OpenXml.Spreadsheet.Border">
+<Type Name="Border" FullName="DocumentFormat.OpenXml.Spreadsheet.Border">
   <TypeSignature Language="C#" Value="public class Border : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Border extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Border" />
@@ -45,13 +45,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Border Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:border.</para>
-    </summary>
+    <summary>Border Properties. When the object is serialized out as xml, its qualified name is x:border.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>StartBorder &lt;x:start&gt;</description></item><item><description>EndBorder &lt;x:end&gt;</description></item><item><description>LeftBorder &lt;x:left&gt;</description></item><item><description>RightBorder &lt;x:right&gt;</description></item><item><description>TopBorder &lt;x:top&gt;</description></item><item><description>BottomBorder &lt;x:bottom&gt;</description></item><item><description>DiagonalBorder &lt;x:diagonal&gt;</description></item><item><description>VerticalBorder &lt;x:vertical&gt;</description></item><item><description>HorizontalBorder &lt;x:horizontal&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `border (Border)`  
+  
+ Expresses a single set of cell border formats (left, right, top, bottom, diagonal). Color is optional. When missing, 'automatic' is implied.  
+  
+|Parent Elements|  
+|---------------------|  
+|borders (§18.8.5); dxf (§18.8.14); ndxf (§18.11.1.4); odxf (§18.11.1.6)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bottom (Bottom Border)|§18.8.6|  
+|diagonal (Diagonal)|§18.8.13|  
+|end (Trailing Edge Border)|§18.8.16|  
+|horizontal (Horizontal Inner Borders)|§18.8.25|  
+|start (Leading Edge Border)|§18.8.37|  
+|top (Top Border)|§18.8.43|  
+|vertical (Vertical Inner Border)|§18.8.44|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|diagonalDown (Diagonal Down)|A boolean value indicating if the cell's diagonal border includes a diagonal line, starting at the top left corner of the cell and moving down to the bottom right corner of the cell.<br /><br /> [*Example*:<br /><br /> This example shows a thin diagonal down line:<br /><br /> ae41d5d7-083b-4105-bc38-0045584f20b3<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|diagonalUp (Diagonal Up)|A boolean value indicating if the cell's diagonal border includes a diagonal line, starting at the bottom left corner of the cell and moving up to the top right corner of the cell.<br /><br /> [*Example*:<br /><br /> This example shows a thin diagonal up line:<br /><br /> 052b7545-3c9b-4847-8234-ea646c80a403<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|outline (Outline)|A boolean value indicating if left, right, top, and bottom borders should be applied only to outside borders of a cell range.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Border) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -66,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Border class.
-            </summary>
+        <summary>Initializes a new instance of the Border class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -94,9 +122,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Border class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Border class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,9 +142,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Border class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Border class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,9 +162,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Border class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Border class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,11 +181,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.BottomBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bottom Border.</para>
-          <para> Represents the following element tag in the schema: x:bottom </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Bottom Border. Represents the following element tag in the schema: x:bottom</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.BottomBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -188,11 +207,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -211,11 +228,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.DiagonalBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Diagonal.</para>
-          <para> Represents the following element tag in the schema: x:diagonal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Diagonal. Represents the following element tag in the schema: x:diagonal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.DiagonalBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -242,11 +256,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Diagonal Down.</para>
-          <para>Represents the following attribute in the schema: diagonalDown </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Diagonal Down.Represents the following attribute in the schema: diagonalDown</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,11 +281,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Diagonal Up.</para>
-          <para>Represents the following attribute in the schema: diagonalUp </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Diagonal Up.Represents the following attribute in the schema: diagonalUp</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -298,10 +306,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.EndBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> EndBorder, this property is only available in Office2010.</para>
-          <para> Represents the following element tag in the schema: x:end </para>
-        </summary>
+        <summary>EndBorder, this property is only available in Office2010. Represents the following element tag in the schema: x:end</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -324,11 +329,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.HorizontalBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal Inner Borders.</para>
-          <para> Represents the following element tag in the schema: x:horizontal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal Inner Borders. Represents the following element tag in the schema: x:horizontal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.HorizontalBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -350,11 +352,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.LeftBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Left Border.</para>
-          <para> Represents the following element tag in the schema: x:left </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Left Border. Represents the following element tag in the schema: x:left</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.LeftBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -376,10 +375,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -403,11 +400,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Outline.</para>
-          <para>Represents the following attribute in the schema: outline </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Outline.Represents the following attribute in the schema: outline</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -426,11 +420,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.RightBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Right Border.</para>
-          <para> Represents the following element tag in the schema: x:right </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Right Border. Represents the following element tag in the schema: x:right</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.RightBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -457,10 +448,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.StartBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> StartBorder, this property is only available in Office2010.</para>
-          <para> Represents the following element tag in the schema: x:start </para>
-        </summary>
+        <summary>StartBorder, this property is only available in Office2010. Represents the following element tag in the schema: x:start</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -483,11 +471,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TopBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Border.</para>
-          <para> Represents the following element tag in the schema: x:top </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Border. Represents the following element tag in the schema: x:top</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.TopBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -509,11 +494,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.VerticalBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Inner Border.</para>
-          <para> Represents the following element tag in the schema: x:vertical </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertical Inner Border. Represents the following element tag in the schema: x:vertical</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.VerticalBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main

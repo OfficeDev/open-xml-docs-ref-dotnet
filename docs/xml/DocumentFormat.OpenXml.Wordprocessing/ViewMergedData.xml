@@ -1,4 +1,4 @@
-﻿<Type Name="ViewMergedData" FullName="DocumentFormat.OpenXml.Wordprocessing.ViewMergedData">
+<Type Name="ViewMergedData" FullName="DocumentFormat.OpenXml.Wordprocessing.ViewMergedData">
   <TypeSignature Language="C#" Value="public class ViewMergedData : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ViewMergedData extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ViewMergedData" />
@@ -18,11 +18,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>View Merged Data Within Document.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:viewMergedData.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>View Merged Data Within Document. When the object is serialized out as xml, its qualified name is w:viewMergedData.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **viewMergedData (View Merged Data Within Document)**  
+  
+ This element specifies that a specific merged document shall display the data from the specified external data source where merge fields have been inserted. The activeRecord element (§17.14.2) is used to specify which record within the external data source is to have its applicable data displayed where applicable within the WordprocessingML merged document.  
+  
+ If the activeRecord element is not present in the WordprocessingML for the document with the viewMergedData's val attribute equal to *true*, the hosting application can behave as if the acitveRecord element's val attribute was equal to *1*. This element is ignored if the viewMergedData (§17.14.36) element is not present or present with a val attribute equal to *Off*, *0*, or *false.*  
+  
+ [*Example*: Consider a merged WordprocessingML document containing two WordprocessingML fields calling for *Courtesy Title* and *Last Name* data and a sample text paragraph.  Also, note that the external data source this merged document is connected to contains two records, both containing name and address information, with the first record pertaining to *Mr. Doe*, and the second pertaining to *Ms. Smith*.  
+  
+ This table below illustrates the necessary WordprocessingML to display applicable data from the specified external data source within the merged document where fields have been inserted:  
+  
+```xml  
+<w:viewMergedData val="0"/>  
+<w:viewMergedData val="1" />  
+<w:activeRecord w:val="1" />  
+<w:viewMergedData val="0" />  
+<w:activeRecord w:val="1" />  
+```  
+  
+ Dear {MERGEFIELD "Courtesy Title" \m} {MERGEFIELD "Last Name" \m},  
+  
+ Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text.  
+  
+ Sincerely,  
+  
+ Dear Mr. Doe:  
+  
+ Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text.  
+  
+ Sincerely,  
+  
+ Dear {MERGEFIELD "Courtesy Title" \m} {MERGEFIELD "Last Name" \m},  
+  
+ Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text. Sample letter text.  
+  
+ Sincerely,  
+  
+ The viewMergedData element specifies that the specified record in the external data source must be displayed in place of merge fields in the current document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +87,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ViewMergedData class.
-            </summary>
+        <summary>Initializes a new instance of the ViewMergedData class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +109,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +130,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

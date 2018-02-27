@@ -1,4 +1,4 @@
-﻿<Type Name="EmbeddedFont" FullName="DocumentFormat.OpenXml.Presentation.EmbeddedFont">
+<Type Name="EmbeddedFont" FullName="DocumentFormat.OpenXml.Presentation.EmbeddedFont">
   <TypeSignature Language="C#" Value="public class EmbeddedFont : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EmbeddedFont extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.EmbeddedFont" />
@@ -33,13 +33,48 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Embedded Font.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:embeddedFont.</para>
-    </summary>
+    <summary>Embedded Font. When the object is serialized out as xml, its qualified name is p:embeddedFont.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Font &lt;p:font&gt;</description></item><item><description>RegularFont &lt;p:regular&gt;</description></item><item><description>BoldFont &lt;p:bold&gt;</description></item><item><description>ItalicFont &lt;p:italic&gt;</description></item><item><description>BoldItalicFont &lt;p:boldItalic&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **embeddedFont (Embedded Font)**  
+  
+ This element specifies an embedded font. Once specified, this font is available for use within the presentation. Within a font specification there can be regular, bold, italic and boldItalic versions of the font specified. The actual font data for each of these is referenced using a relationships file that contains links to all available fonts. This font data contains font information for each of the characters to be made available in each version of the font.  
+  
+ [*Example*: Consider the following embedded font.  
+  
+```xml  
+<p:embeddedFont>  
+  <p:font typeface="MyFont" pitchFamily="34" charset="0"/>  
+  <p:regular r:id="rId2"/>  
+</p:embeddedFont>  
+```  
+  
+ *end example*]  
+  
+ [*Note*: Not all characters for a typeface must be stored. It is up to the generating application to determine which characters are to be stored in the corresponding font data files. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|embeddedFontLst (§19.2.1.10)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bold (Bold Embedded Font)|§19.2.1.1|  
+|boldItalic (Bold Italic Embedded Font)|§19.2.1.2|  
+|font (Embedded Font Name)|§19.2.1.13|  
+|italic (Italic Embedded Font)|§19.2.1.16|  
+|regular (Regular Embedded Font)|§19.2.1.29|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_EmbeddedFontListEntry) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EmbeddedFont class.
-            </summary>
+        <summary>Initializes a new instance of the EmbeddedFont class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +115,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EmbeddedFont class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the EmbeddedFont class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -104,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EmbeddedFont class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the EmbeddedFont class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +155,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the EmbeddedFont class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the EmbeddedFont class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,11 +174,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.BoldFont</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bold Embedded Font.</para>
-          <para> Represents the following element tag in the schema: p:bold </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Bold Embedded Font. Represents the following element tag in the schema: p:bold</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.BoldFont" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -173,11 +197,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.BoldItalicFont</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bold Italic Embedded Font.</para>
-          <para> Represents the following element tag in the schema: p:boldItalic </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Bold Italic Embedded Font. Represents the following element tag in the schema: p:boldItalic</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.BoldItalicFont" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -202,11 +223,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,11 +244,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.Font</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Embedded Font Name.</para>
-          <para> Represents the following element tag in the schema: p:font </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Embedded Font Name. Represents the following element tag in the schema: p:font</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.Font" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -251,11 +267,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ItalicFont</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Italic Embedded Font.</para>
-          <para> Represents the following element tag in the schema: p:italic </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Italic Embedded Font. Represents the following element tag in the schema: p:italic</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ItalicFont" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -277,10 +290,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -299,11 +310,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.RegularFont</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Regular Embedded Font.</para>
-          <para> Represents the following element tag in the schema: p:regular </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Regular Embedded Font. Represents the following element tag in the schema: p:regular</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.RegularFont" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

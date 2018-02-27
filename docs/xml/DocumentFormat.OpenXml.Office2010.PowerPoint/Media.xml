@@ -1,4 +1,4 @@
-﻿<Type Name="Media" FullName="DocumentFormat.OpenXml.Office2010.PowerPoint.Media">
+<Type Name="Media" FullName="DocumentFormat.OpenXml.Office2010.PowerPoint.Media">
   <TypeSignature Language="C#" Value="public class Media : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Media extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.PowerPoint.Media" />
@@ -33,14 +33,71 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Media Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is p14:media.</para>
-    </summary>
+    <summary>Defines the Media Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is p14:media.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>MediaTrim &lt;p14:trim&gt;</description></item><item><description>MediaFade &lt;p14:fade&gt;</description></item><item><description>MediaBookmarkList &lt;p14:bmkLst&gt;</description></item><item><description>ExtensionList &lt;p14:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.24   media*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/powerpoint/2010/main  
+  
+ A *CT_Media* element (section 2.5.14) that specifies a media object. See section 2.2.4 for how this element integrates with [ISO/IEC-29500:2008].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="media" type="CT_Media"/>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.14   CT_Media*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/powerpoint/2010/main  
+  
+ *Referenced by:* media  
+  
+ A complex type that specifies the media file data and its associated parameters.  
+  
+ *Child Elements:*  
+  
+ *trim:* A *CT_MediaTrim* element (section 2.5.10) that specifies the amount of time to be trimmed from the start and end of the media during playback.  
+  
+ *fade:* A *CT_MediaFade* element (section 2.5.11) that specifies the starting and ending fade durations for the media.  
+  
+ *bmkLst:* A *CT_MediaBookmarkList* element (section 2.5.13) that specifies a list of bookmarks on the media.  
+  
+ *extLst:* A *p:CT_ExtensionList* element ([ISO/IEC-29500-4] section A.3) that specifies the extension list. All future extensions to the media will be stored in the extension list.  
+  
+ *Attributes:*  
+  
+ *r:embed:* An *r:ST_RelationshipId* attribute ([ISO/IEC-29500-4] section A.7.8) that specifies the relationship identifier that is used to determine the location of the media if it is embedded in the document. The *r:embed* attribute MUST be present if the *r:link* attribute is not present. If both the *r:embed* and *r:link* attributes are present, the *r:link* attribute takes precedence.  
+  
+ *r:link:* An *r:ST_RelationshipId* attribute ([ISO/IEC-29500-4] section A.7.8) that specifies the relationship identifier that is used to determine the location of the media if it is linked from the document. The *r:link* attribute MUST be present if the *r:embed* attribute is not present. If both the *r:link* and *r:embed* attributes are present, the *r:link* attribute takes precedence.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_Media">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="trim" type="CT_MediaTrim" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="fade" type="CT_MediaFade" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="bmkLst" type="CT_MediaBookmarkList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="extLst" type="p:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attributeGroup ref="a:AG_Blob"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -55,9 +112,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Media class.
-            </summary>
+        <summary>Initializes a new instance of the Media class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,9 +138,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Media class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Media class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,9 +158,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Media class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Media class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -127,9 +178,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Media class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Media class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,11 +200,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -179,10 +226,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Embedded Picture Reference.</para>
-          <para>Represents the following attribute in the schema: r:embed </para>
-        </summary>
+        <summary>Embedded Picture Reference.Represents the following attribute in the schema: r:embed</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
@@ -204,10 +248,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.PowerPoint.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: p14:extLst </para>
-        </summary>
+        <summary>ExtensionList. Represents the following element tag in the schema: p14:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -235,10 +276,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Linked Picture Reference.</para>
-          <para>Represents the following attribute in the schema: r:link </para>
-        </summary>
+        <summary>Linked Picture Reference.Represents the following attribute in the schema: r:link</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
@@ -260,9 +298,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -282,10 +318,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.PowerPoint.MediaBookmarkList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> MediaBookmarkList.</para>
-          <para> Represents the following element tag in the schema: p14:bmkLst </para>
-        </summary>
+        <summary>MediaBookmarkList. Represents the following element tag in the schema: p14:bmkLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -308,10 +341,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.PowerPoint.MediaFade</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> MediaFade.</para>
-          <para> Represents the following element tag in the schema: p14:fade </para>
-        </summary>
+        <summary>MediaFade. Represents the following element tag in the schema: p14:fade</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -334,10 +364,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.PowerPoint.MediaTrim</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> MediaTrim.</para>
-          <para> Represents the following element tag in the schema: p14:trim </para>
-        </summary>
+        <summary>MediaTrim. Represents the following element tag in the schema: p14:trim</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

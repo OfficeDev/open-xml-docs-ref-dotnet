@@ -1,4 +1,4 @@
-﻿<Type Name="VerticalJustification" FullName="DocumentFormat.OpenXml.Math.VerticalJustification">
+<Type Name="VerticalJustification" FullName="DocumentFormat.OpenXml.Math.VerticalJustification">
   <TypeSignature Language="C#" Value="public class VerticalJustification : DocumentFormat.OpenXml.Math.TopBottomType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VerticalJustification extends DocumentFormat.OpenXml.Math.TopBottomType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.VerticalJustification" />
@@ -18,11 +18,82 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Vertical Justification.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:vertJc.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Vertical Justification. When the object is serialized out as xml, its qualified name is m:vertJc.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **vertJc (Vertical Justification)**  
+  
+ This element, combined with pos of groupChrPr, specifies the vertical layout of the groupChr object. Where pos specifies the position of the grouping character, vertJc specifies the alignment of the object with respect to the baseline. For example, when the group character is above the object, vertJc of *top* signifies that the top of the object falls on the baseline; when vertJc is set to *bot*, the bottom of the object is on the baseline. The table below demonstrates the four possible combinations of groupChr layout:  
+  
+ Pos  
+  
+ vertJc  
+  
+ Layout  
+  
+ *top*  
+  
+ *top*  
+  
+ *top*  
+  
+ *bot*  
+  
+ *bot*  
+  
+ *top*  
+  
+ *bot*  
+  
+ *bot*  
+  
+ When the element is absent, the default value of the property is *top*.  
+  
+ When the element is present and the val attribute is absent, the default of the val attribute is *bot*.  
+  
+ [*Example*:  
+  
+ is represented by the following XML:  
+  
+```xml  
+<m:oMath>  
+  <m:r>  
+    <m:t>a+</m:t>  
+  </m:r>  
+  <m:groupChr>  
+    <m:groupChrPr>  
+      <m:vertJc m:val="bot"/>  
+    </m:groupChrPr>  
+    <m:e>  
+      <m:r>  
+        <m:t>b+c</m:t>  
+      </m:r>  
+    </m:e>  
+  </m:groupChr>  
+  <m:r>  
+    <m:t>+d</m:t>  
+  </m:r>  
+</m:oMath>  
+```  
+  
+ Since the vertical justification property is set to bot on the group-character object, the bottom of the group-character object is aligned with the baseline.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|groupChrPr (§22.1.2.42)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TopBot) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +108,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the VerticalJustification class.
-            </summary>
+        <summary>Initializes a new instance of the VerticalJustification class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +130,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +151,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

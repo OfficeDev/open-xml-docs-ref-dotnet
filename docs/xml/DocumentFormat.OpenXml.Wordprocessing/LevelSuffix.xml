@@ -1,4 +1,4 @@
-﻿<Type Name="LevelSuffix" FullName="DocumentFormat.OpenXml.Wordprocessing.LevelSuffix">
+<Type Name="LevelSuffix" FullName="DocumentFormat.OpenXml.Wordprocessing.LevelSuffix">
   <TypeSignature Language="C#" Value="public class LevelSuffix : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LevelSuffix extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LevelSuffix" />
@@ -18,11 +18,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Content Between Numbering Symbol and Paragraph Text.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:suff.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Content Between Numbering Symbol and Paragraph Text. When the object is serialized out as xml, its qualified name is w:suff.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `suff (Content Between Numbering Symbol and Paragraph Text)`  
+  
+ This element specifies the content which shall be added between a given numbering level's text and the text of every numbered paragraph which references that numbering level.  
+  
+ If this element is omitted, then its value shall be assumed to be *tab*.  
+  
+ *[Example: Consider the numbered paragraph below:*  
+  
+ 422240af-d41c-4c18-ab3f-a3a503ed4f63  
+  
+ In this example, a space exists between the numbering symbol *1.* and the numbered paragraph text *Test*. The space would be specified in WordprocessingML as follows:  
+  
+```xml  
+<w:lvl w:ilvl="0">   
+  …  
+  <w:suff w:val="space" />   
+  …  
+</w:lvl>  
+```  
+  
+ The suff element with an attribute value of *space* specifies that the character between the numbering's level text and the paragraph text must be a space. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lvl (§17.9.6); lvl (§17.9.7)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_LevelSuffix) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LevelSuffix class.
-            </summary>
+        <summary>Initializes a new instance of the LevelSuffix class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +93,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +139,32 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Character Type Between Numbering and Text.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Character Type Between Numbering and Text.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the character which shall follow the list number.  
+  
+ Consider a numbered for which a tab exists between the numbering symbol and the numbered paragraph's text. The tab would be specified in WordprocessingML as follows:  
+  
+```  
+<w:lvl w:ilvl="0">   
+  …  
+  <w:suff w:val="tab" />   
+  …  
+</w:lvl>  
+```  
+  
+ The `val` attribute with a value of `tab` specifies that the character between the numbering's level text and the paragraph text shall be a tab. This tab will follow normal tab stop rules.  
+  
+ The possible values for this attribute are defined by the `ST_LevelSuffix` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

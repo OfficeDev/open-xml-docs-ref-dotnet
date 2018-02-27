@@ -1,4 +1,4 @@
-﻿<Type Name="ArgumentSize" FullName="DocumentFormat.OpenXml.Math.ArgumentSize">
+<Type Name="ArgumentSize" FullName="DocumentFormat.OpenXml.Math.ArgumentSize">
   <TypeSignature Language="C#" Value="public class ArgumentSize : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ArgumentSize extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.ArgumentSize" />
@@ -18,11 +18,84 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Argument Size.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:argSz.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Argument Size. When the object is serialized out as xml, its qualified name is m:argSz.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **argSz (Argument Size)**  
+  
+ This element specifies the size, or script level, of an argument. If the element is omitted, the default argument size is 0.  
+  
+ Whether the element is absent or present without the val attribute, the default value of the val attribute is always *0*.  However, this property does not specify an absolute size, rather it’s absolute to it’s starting size.  Most arguments begin at the normal size which will be defined as *0* in the list below, but some begin, by default smaller or larger than the normal size.  For instance, *1* represents that it is one size larger than normal, *2* represents that it is two sizes larger than normal, *-1* represents that it is one size smaller than normal, and *-2* represents that it is two sizes smaller than normal.  The list below indicates the default starting sizes for each argument, if it is not in this list, then the size cannot be changed on that argument.  
+  
+-   box base:  0  
+  
+-   group-character base:  0  
+  
+-   lower limit limit:  -1  
+  
+-   upper limit limit:  -1  
+  
+-   n-ary operator subscript:  -1  
+  
+-   n-ary operator superscript:  -1  
+  
+-   radical degree:  -2  
+  
+-   pre-sub-superscript subscript:  -1  
+  
+-   pre-sub-superscript superscript:  -1  
+  
+-   subscript subscript:  -1  
+  
+-   sub-supersript subscript:  -1  
+  
+-   sub-supersript superscript:  -1  
+  
+-   superscript superscript:  -1  
+  
+ [*Example*: The following example contains three runs: regular mathematical text, a box object with the base at script size (val=-1) and a box object with the base at script-script size (val=-2).  
+  
+ The XML below shows argSz used in the middle box.  
+  
+```xml  
+<m:box>  
+  <m:boxPr>  
+    <m:noBreak m:val="0"/>  
+  </m:boxPr>  
+  <m:e>  
+    <m:argPr>  
+      <m:argSz m:val="-1"/>  
+    </m:argPr>  
+    <m:r>  
+      <m:t>abc</m:t>  
+    </m:  
+r>  
+  </m:e>  
+</m:box>  
+```  
+  
+ Because the size is set to -1 on the degree argument, the degree argument is 1 size smaller normal.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|argPr (§22.1.2.5)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Value)|Specifies a value between -2 and 2 for the property defined by the parent XML element. The positive or negative sign specifies in which direction to change argument size; the absolute value specifies by how much.<br /><br /> The table below represents two cases in which argument size can be changed: superscripts and boxes.<br /><br /> In the superscript object , by default the term  has script-script size. Should the user wish for the  to be shown at script size, *val* should be set to +1 (that is, one size larger). Should the user wish for  to be shown at text size, *val* should be set to +2 (that is, two sizes larger).<br /><br /> *val of  in*<br /><br /> Display<br /><br /> Default<br /><br /> +1<br /><br /> +2<br /><br /> *val of*<br /><br /> Display<br /><br /> Default<br /><br /> -1<br /><br /> -2<br /><br /> The possible values for this attribute are defined by the *ST_Integer2* simple type (§22.1.3.5).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Integer2) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +110,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ArgumentSize class.
-            </summary>
+        <summary>Initializes a new instance of the ArgumentSize class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +132,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +153,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,12 +178,36 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: m:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: m:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a value between `-2` and `2` for the property defined by the parent XML element. The positive or negative sign specifies in which direction to change argument size; the absolute value specifies by how much.  
+  
+ The table below represents two cases in which argument size can be changed: superscripts and boxes.  
+  
+ In the superscript object 38fc7146-515b-426a-9a7f-60f505ec5c4a, by default the term  has script-script size. If the user wants to see  8190b077-c7c1-4e75-9edd-f606151c02d9 at script size, he or she should set the `val` to `+1` (that is, one size larger). If the user wants to see  8190b077-c7c1-4e75-9edd-f606151c02d9 at text size, he or she should set the `val` to `+2` (that is, two sizes larger).  
+  
+|`val` of   2bdcda11-f644-4cd4-b768-2e867e2e4af0 in  b2022665-c0c9-4667-b0cd-f446584703f0|Display|  
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|  
+|Default|38fc7146-515b-426a-9a7f-60f505ec5c4a|  
+|`+1`|63cfaa32-796a-4a00-88e5-63faeac178f6|  
+|`+2`|fac415ec-4389-4314-8790-9aba2872d648|  
+  
+|`val` of   5edc14af-5fd4-4264-9ed4-2eff526d57e0|Display|  
+|---------------------------------------------------------------------------------------------|-------------|  
+|Default|0f764e4b-604b-418e-82aa-47569c7c133f|  
+|`-1`|e3af5f4a-cb55-4e73-b2da-31259c6fb35b|  
+|`-2`|0cd8f464-dfbf-4895-8c43-c6d1d5f4d3cc|  
+  
+ The possible values for this attribute are defined by the `ST_Integer2` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:m=http://schemas.openxmlformats.org/officeDocument/2006/math
             </remark>
       </Docs>

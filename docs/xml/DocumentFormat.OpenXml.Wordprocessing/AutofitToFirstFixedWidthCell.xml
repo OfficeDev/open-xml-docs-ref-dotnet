@@ -1,4 +1,4 @@
-﻿<Type Name="AutofitToFirstFixedWidthCell" FullName="DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell">
+<Type Name="AutofitToFirstFixedWidthCell" FullName="DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell">
   <TypeSignature Language="C#" Value="public class AutofitToFirstFixedWidthCell : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutofitToFirstFixedWidthCell extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AutofitToFirstFixedWidthCell" />
@@ -18,11 +18,75 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Allow Table Columns To Exceed Preferred Widths of Constituent Cells.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:autofitToFirstFixedWidthCell.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Allow Table Columns To Exceed Preferred Widths of Constituent Cells. When the object is serialized out as xml, its qualified name is w:autofitToFirstFixedWidthCell.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `autofitToFirstFixedWidthCell (Allow Table Columns To Exceed Preferred Widths of Constituent Cells)`  
+  
+ This element specifies that when performing an AutoFit on a table in a WordprocessingML document in order to display it, applications shall alter that logic slightly in order to mimic the behavior of a previous word processing application.  
+  
+ Normally, the AutoFit behavior of a table is as is described in the associated simple type. This element, when present with a val attribute value of *true* (or equivalent), specifies that this logic shall be changed as follows:  
+  
+-   If the width of a grid column in a table has been set by a preferred table cell width, then that column's width can be enlarged by the content of cells which themselves do not have a preferred width (in contrast, the normal logic never allows the content of cells to override a preferred width on a grid column).  
+  
+ [*Example*: Consider a WordprocessingML table with only one preferred cell width, a width of *720* points on the second cell in the first column, as follows:  
+  
+```xml  
+<w:tbl>  
+  …  <w:tr>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:tcW w:w="720" w:type="dxa" />  
+      </w:tcPr>  
+      <w:p/>  
+    </w:tc>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The default presentation would have the first column constrained to 720 points by the preferred width of the second cell in the first column:  
+  
+ 0f596393-5886-4165-aef9-bef9ed88b07d  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:autofitToFirstFixedWidthCell />  
+</w:compat>  
+```  
+  
+ Then the column would be resized proportionally based on the content (ignoring the preferred width in that row), resulting in the following output:  
+  
+ ff035e3a-e222-45f6-9ecf-57f2ee46e829  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AutofitToFirstFixedWidthCell class.
-            </summary>
+        <summary>Initializes a new instance of the AutofitToFirstFixedWidthCell class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +123,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +144,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

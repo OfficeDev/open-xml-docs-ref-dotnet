@@ -1,4 +1,4 @@
-﻿<Type Name="AttributeName" FullName="DocumentFormat.OpenXml.Presentation.AttributeName">
+<Type Name="AttributeName" FullName="DocumentFormat.OpenXml.Presentation.AttributeName">
   <TypeSignature Language="C#" Value="public class AttributeName : DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AttributeName extends DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.AttributeName" />
@@ -18,11 +18,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Attribute Name.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:attrName.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Attribute Name. When the object is serialized out as xml, its qualified name is p:attrName.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **attrName (Attribute Name)**  
+  
+ This element is used to contain an attribute value for an Attribute Name List. This value defines the specific attribute that an animation should be applied to, such as fill, style, and shadow, etc. A specific property is defined by using a "property.sub-property" format which is often extended to multiple sub properties as seen in the allowed values below.  
+  
+ Allowed property values:  
+  
+```xml  
+style.opacity, style.rotation, style.visibility, style.color, style.fontSize, style.fontWeight, style.fontStyle, style.fontFamily, style.textEffectEmboss, style.textShadow, style.textTransform, style.textDecorationUnderline, style.textEffectOutline, style.textDecorationLineThrough, style.sRotation, imageData.cropTop, imageData.cropBottom, imageData.cropLeft, imageData.cropRight, imageData.cropRight, imageData.gain, imageData.blacklevel, imageData.gamma, imageData.grayscale, imageData.chromakey, fill.on, fill.type, fill.color, fill.opacity, fill.color2, fill.method, fill.opacity2, fill.angle, fill.focus, fill.focusposition.x, fill.focusposition.y, fill.focussize.x, fill.focussize.y, stroke.on, stroke.color, stroke.weight, stroke.opacity, stroke.linestyle, stroke.dashstyle, stroke.filltype, stroke.src, stroke.color2, stroke.imagesize.x, stroke.imagesize.y, stroke.startArrow, stroke.endArrow, stroke.startArrowWidth, stroke.startArrowLength, stroke.endArrowWidth, stroke.endArrowLength, shadow.on, shadow.type, shadow.color, shadow.color2, shadow.opacity, shadow.offset.x, shadow.offset.y, shadow.offset2.x, shadow.offset2.y, shadow.origin.x, shadow.origin.y, shadow.matrix.xtox, shadow.matrix.ytox, shadow.matrix.xtox, shadow.matrix.ytoy, shadow.matrix.perspectiveX, shadow.matrix.perspectiveY, skew.on, skew.offset.x, skew.offset.y, skew.origin.x, skew.origin.y, skew.matrix.xtox, skew.matrix.ytox, skew.matrix.xtox, skew.matrix.ytoy, skew.matrix.perspectiveX, skew.matrix.perspectiveY, extrusion.on, extrusion.type, extrusion.render, extrusion.viewpointorigin.x, extrusion.viewpointorigin.y, extrusion.viewpoint.x, extrusion.viewpoint.y, extrusion.viewpoint.z, extrusion.plane, extrusion.skewangle, extrusion.skewamt, extrusion.backdepth, extrusion.foredepth, extrusion.orientation.x, extrusion.orientation.y, extrusion.orientation.z, extrusion.orientationangle, extrusion.color, extrusion.rotationangle.x, extrusion.rotationangle.y, extrusion.lockrotationcenter, extrusion.autorotationcenter, extrusion.rotationcenter.x, extrusion.rotationcenter.y, extrusion.rotationcenter.z, and extrusion.colormode.  
+```  
+  
+ [*Example*:  Consider trying to emphasize the txt font size within the body of a shape. The attribute would be 'style.fontSize' and this can be done by doing the following:  
+  
+```xml  
+<p:anim to="1.5" calcmode="lin" valueType="num">  
+  <p:cBhvr override="childStyle">  
+    <p:cTn id="6" dur="2000" fill="hold"/>  
+    <p:tgtEl>  
+      <p:spTgt spid="3">  
+        <p:txEl>  
+          <p:charRg st="4294967295" end="4294967295"/>  
+        </p:txEl>  
+      </p:spTgt>  
+    </p:tgtEl>  
+    <p:attrNameLst>  
+      <p:attrName>style.fontSize</p:attrName>  
+    </p:attrNameLst>  
+  </p:cBhvr>  
+</p:anim>  
+```  
+  
+ *end example*]  
+  
+ The possible values for this element are defined by the W3C XML Schema *string* datatype.  
+  
+|Parent Elements|  
+|---------------------|  
+|attrNameLst (§19.5.8)|  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AttributeName class.
-            </summary>
+        <summary>Initializes a new instance of the AttributeName class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -58,10 +100,8 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">Specifies the text content of the element.</param>
-        <summary>
-            Initializes a new instance of the AttributeName class with the specified text content.
-            </summary>
+        <param name="text">Specifies text content of the element.</param>
+        <summary>Initializes a new instance of the AttributeName class with the specified text content.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,11 +123,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,10 +144,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

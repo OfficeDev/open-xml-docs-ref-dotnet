@@ -1,4 +1,4 @@
-﻿<Type Name="MailAsAttachment" FullName="DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment">
+<Type Name="MailAsAttachment" FullName="DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment">
   <TypeSignature Language="C#" Value="public class MailAsAttachment : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailAsAttachment extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MailAsAttachment" />
@@ -18,11 +18,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Merged Document To E-Mail Attachment.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:mailAsAttachment.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Merged Document To E-Mail Attachment. When the object is serialized out as xml, its qualified name is w:mailAsAttachment.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **mailAsAttachment (Merged Document To E-Mail Attachment)**  
+  
+ This element specifies that, after importing external data into fields to generate a series of destination WordprocessingML documents as e-mails, the resulting documents should be emailed as an attachment rather than the body of the actual e-mail.  
+  
+ If this element is omitted, then its value shall be assumed to be *false* (i.e. the destination source is not an e-mail attachment). If the destination element (§17.14.11) specifies that the merged document destination is not *email*, then this element shall be ignored.  
+  
+ [*Example*: Consider a merged WordprocessingML document that has been connected to an external data source containing three records and that contains the following WordprocessingML in its mail merge properties as follows:  
+  
+```xml  
+<w:mailMerge>  
+  …  <w:destination w:val="email" />  
+  <w:mailAsAttachment />  
+  …</w:mailMerge>  
+```  
+  
+ After the external data has been imported into the merged document's respective merge fields, three emails is generated (as specified by the destination element (§17.14.11) with a val attribute of *email*, each an attachment consisting of one of the three documents resulting from the mail merge result (rather than just including the merged document as the body of the email). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +66,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MailAsAttachment class.
-            </summary>
+        <summary>Initializes a new instance of the MailAsAttachment class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +88,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +109,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

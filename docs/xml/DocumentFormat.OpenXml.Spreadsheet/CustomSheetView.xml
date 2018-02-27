@@ -1,4 +1,4 @@
-﻿<Type Name="CustomSheetView" FullName="DocumentFormat.OpenXml.Spreadsheet.CustomSheetView">
+<Type Name="CustomSheetView" FullName="DocumentFormat.OpenXml.Spreadsheet.CustomSheetView">
   <TypeSignature Language="C#" Value="public class CustomSheetView : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomSheetView extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CustomSheetView" />
@@ -48,13 +48,78 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Custom Sheet View.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:customSheetView.</para>
-    </summary>
+    <summary>Custom Sheet View. When the object is serialized out as xml, its qualified name is x:customSheetView.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Pane &lt;x:pane&gt;</description></item><item><description>Selection &lt;x:selection&gt;</description></item><item><description>RowBreaks &lt;x:rowBreaks&gt;</description></item><item><description>ColumnBreaks &lt;x:colBreaks&gt;</description></item><item><description>PageMargins &lt;x:pageMargins&gt;</description></item><item><description>PrintOptions &lt;x:printOptions&gt;</description></item><item><description>PageSetup &lt;x:pageSetup&gt;</description></item><item><description>HeaderFooter &lt;x:headerFooter&gt;</description></item><item><description>AutoFilter &lt;x:autoFilter&gt;</description></item><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **customSheetView (Custom Sheet View)**  
+  
+ This collection stores information pertaining to one custom sheet view definition. A custom view is a collection of settings defining a particular view of the sheet. These views can be selected by the user for quick access to predefined views of the sheet.  
+  
+ [*Example*:This example indicates that there is both a horizontal and vertical split in the sheet view, and that the top left cell of the bottom right pane is F7. Page margin, print options, page setup, and header / footer information is also stored with this view.  
+  
+```xml  
+<customSheetView guid="{F3A061A9-D5FD-4F9C-A7CD-483AD476BA25}"  sizeWithWindow="0">  
+  <pane xSplit="5" ySplit="6" topLeftCell="F7"/>  
+  <selection/>  
+  <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3"    footer="0.3"/>  
+  <printOptions gridLinesSet="0"/>  
+  <pageSetup paperSize="0" scale="0" orientation="portrait" printDriver="0"    horizontalDpi="0" verticalDpi="0" copies="0"/>  
+  <headerFooter/>  
+</customSheetView>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|customSheetViews (§18.3.1.27)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|autoFilter (AutoFilter Settings)|§18.3.1.2|  
+|colBreaks (Vertical Page Breaks)|§18.3.1.14|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|headerFooter (Header Footer Settings)|§18.3.1.46|  
+|pageMargins (Page Margins)|§18.3.1.62|  
+|pageSetup (Page Setup Settings)|§18.3.1.63|  
+|pane (View Pane)|§18.3.1.66|  
+|printOptions (Print Options)|§18.3.1.70|  
+|rowBreaks (Horizontal Page Breaks (Row))|§18.3.1.74|  
+|selection (Selection)|§18.3.1.78|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|colorId (Color Id)|Index to the color value for the text in row/column headings and gridlines for this custom view. This is an 'index color value' (ICV) rather than rgb value.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|filter (Filtered List)|Flag indicating whether the view contains a filtered range.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|filterUnique (Filter)|Indicates whether an advanced filter has been applied, and the option to filter out duplicate records from the data list has been selected, in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|fitToPage (Fit To Page)|Flag indicating whether this view should be fit to page when printing this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|guid (GUID)|Unique identifier of this custom view. This is used to ensure uniqueness. It is generated when the view is created. Shall correspond to a customWorkbookView guid value in the workbook Start Part.<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
+|hiddenColumns (Hidden Columns)|Flag indicating that there is one or more hidden column(s) in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hiddenRows (Hidden Rows)|Flag indicating that there is one or more hidden row(s) in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|outlineSymbols (Show Outline Symbols)|Flag indicating whether outline symbols are displayed in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|printArea (Print Area Defined)|Flag indicating whether a print area is defined as part of this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|scale (Print Scale)|Print scaling for this custom view. The values of this attribute shall be restricted to the range from 10 to 400.<br /><br /> [*Example*:<br /><br /> 10 - 10%<br /><br /> 20 - 20%<br /><br /> …<br /><br /> 100 - 100%<br /><br /> …<br /><br /> 400 - 400%<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|showAutoFilter (Show AutoFitler Drop Down Controls)|Flag indicating whether the autofilter dropdown buttons are visible in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showFormulas (Show Formulas)|Flag indicating whether formulas are shown in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showGridLines (Show Grid Lines)|Flag indicating whether gridlines are shown in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showPageBreaks (Show Page Breaks)|Flag indicating whether page breaks are shown in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showRowCol (Show Headers)|Flag indicating whether row and column headers are shown in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showRuler (Show Ruler)|Flag indicating whether to show the ruler in this custom view. Only applicable if this Custom View is in Page Layout View.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|state (Visible State)|Visibility state for this custom view.<br /><br /> The possible values for this attribute are defined by the *ST_SheetState* simple type (§18.18.68).|  
+|topLeftCell (Top Left Visible Cell)|Location of the top left visible cell in the bottom right pane in this custom view (when in Left-to-Right mode).<br /><br /> The possible values for this attribute are defined by the *ST_CellRef* simple type (§18.18.7).|  
+|view (View Type)|Indicates the view type for this Custom View<br /><br /> The possible values for this attribute are defined by the *ST_SheetViewType* simple type (§18.18.69).|  
+|zeroValues (Show Zero Values)|Flag indicating whether the window should display 0 (zero) values in this custom view.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CustomSheetView) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -69,9 +134,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CustomSheetView class.
-            </summary>
+        <summary>Initializes a new instance of the CustomSheetView class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,9 +160,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CustomSheetView class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CustomSheetView class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +180,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CustomSheetView class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CustomSheetView class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,9 +200,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CustomSheetView class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CustomSheetView class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,11 +219,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.AutoFilter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AutoFilter Settings.</para>
-          <para> Represents the following element tag in the schema: x:autoFilter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>AutoFilter Settings. Represents the following element tag in the schema: x:autoFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.AutoFilter" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -191,11 +245,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -219,11 +271,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Color Id.</para>
-          <para>Represents the following attribute in the schema: colorId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Color Id.Represents the following attribute in the schema: colorId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -242,11 +291,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ColumnBreaks</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Page Breaks.</para>
-          <para> Represents the following element tag in the schema: x:colBreaks </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertical Page Breaks. Represents the following element tag in the schema: x:colBreaks</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ColumnBreaks" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -268,11 +314,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -299,11 +342,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Filtered List.</para>
-          <para>Represents the following attribute in the schema: filter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Filtered List.Represents the following attribute in the schema: filter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -327,11 +367,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Filter.</para>
-          <para>Represents the following attribute in the schema: filterUnique </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Filter.Represents the following attribute in the schema: filterUnique</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -355,11 +392,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Fit To Page.</para>
-          <para>Represents the following attribute in the schema: fitToPage </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Fit To Page.Represents the following attribute in the schema: fitToPage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -383,11 +417,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GUID.</para>
-          <para>Represents the following attribute in the schema: guid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>GUID.Represents the following attribute in the schema: guid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -406,11 +437,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.HeaderFooter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Header Footer Settings.</para>
-          <para> Represents the following element tag in the schema: x:headerFooter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Header Footer Settings. Represents the following element tag in the schema: x:headerFooter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.HeaderFooter" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -437,11 +465,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hidden Columns.</para>
-          <para>Represents the following attribute in the schema: hiddenColumns </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hidden Columns.Represents the following attribute in the schema: hiddenColumns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -465,11 +490,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hidden Rows.</para>
-          <para>Represents the following attribute in the schema: hiddenRows </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hidden Rows.Represents the following attribute in the schema: hiddenRows</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -488,10 +510,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -515,11 +535,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Outline Symbols.</para>
-          <para>Represents the following attribute in the schema: outlineSymbols </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Outline Symbols.Represents the following attribute in the schema: outlineSymbols</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -538,11 +555,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PageMargins</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Page Margins.</para>
-          <para> Represents the following element tag in the schema: x:pageMargins </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Page Margins. Represents the following element tag in the schema: x:pageMargins</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.PageMargins" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -564,11 +578,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PageSetup</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Page Setup Settings.</para>
-          <para> Represents the following element tag in the schema: x:pageSetup </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Page Setup Settings. Represents the following element tag in the schema: x:pageSetup</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.PageSetup" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -590,11 +601,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Pane</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Pane Split Information.</para>
-          <para> Represents the following element tag in the schema: x:pane </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Pane Split Information. Represents the following element tag in the schema: x:pane</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Pane" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -621,11 +629,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Print Area Defined.</para>
-          <para>Represents the following attribute in the schema: printArea </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Print Area Defined.Represents the following attribute in the schema: printArea</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -644,11 +649,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PrintOptions</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Print Options.</para>
-          <para> Represents the following element tag in the schema: x:printOptions </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Print Options. Represents the following element tag in the schema: x:printOptions</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.PrintOptions" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -670,11 +672,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.RowBreaks</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal Page Breaks.</para>
-          <para> Represents the following element tag in the schema: x:rowBreaks </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal Page Breaks. Represents the following element tag in the schema: x:rowBreaks</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.RowBreaks" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -701,11 +700,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Print Scale.</para>
-          <para>Represents the following attribute in the schema: scale </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Print Scale.Represents the following attribute in the schema: scale</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -724,11 +720,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Selection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Selection.</para>
-          <para> Represents the following element tag in the schema: x:selection </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Selection. Represents the following element tag in the schema: x:selection</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Selection" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -755,11 +748,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show AutoFitler Drop Down Controls.</para>
-          <para>Represents the following attribute in the schema: showAutoFilter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show AutoFitler Drop Down Controls.Represents the following attribute in the schema: showAutoFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -783,11 +773,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Formulas.</para>
-          <para>Represents the following attribute in the schema: showFormulas </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Formulas.Represents the following attribute in the schema: showFormulas</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -811,11 +798,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Grid Lines.</para>
-          <para>Represents the following attribute in the schema: showGridLines </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Grid Lines.Represents the following attribute in the schema: showGridLines</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -839,11 +823,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Page Breaks.</para>
-          <para>Represents the following attribute in the schema: showPageBreaks </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Page Breaks.Represents the following attribute in the schema: showPageBreaks</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -867,11 +848,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Headers.</para>
-          <para>Represents the following attribute in the schema: showRowCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Headers.Represents the following attribute in the schema: showRowCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -895,11 +873,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Ruler.</para>
-          <para>Represents the following attribute in the schema: showRuler </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Ruler.Represents the following attribute in the schema: showRuler</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -923,11 +898,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SheetStateValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Visible State.</para>
-          <para>Represents the following attribute in the schema: state </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Visible State.Represents the following attribute in the schema: state</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -951,11 +923,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Left Visible Cell.</para>
-          <para>Represents the following attribute in the schema: topLeftCell </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Left Visible Cell.Represents the following attribute in the schema: topLeftCell</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -979,11 +948,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SheetViewValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> View Type.</para>
-          <para>Represents the following attribute in the schema: view </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>View Type.Represents the following attribute in the schema: view</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1007,11 +973,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Zero Values.</para>
-          <para>Represents the following attribute in the schema: zeroValues </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Zero Values.Represents the following attribute in the schema: zeroValues</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

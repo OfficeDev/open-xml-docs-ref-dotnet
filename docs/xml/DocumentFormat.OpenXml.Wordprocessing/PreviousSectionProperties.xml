@@ -1,4 +1,4 @@
-﻿<Type Name="PreviousSectionProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties">
+<Type Name="PreviousSectionProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties">
   <TypeSignature Language="C#" Value="public class PreviousSectionProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PreviousSectionProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties" />
@@ -78,13 +78,70 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Previous Section Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:sectPr.</para>
-    </summary>
+    <summary>Previous Section Properties. When the object is serialized out as xml, its qualified name is w:sectPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FootnoteProperties &lt;w:footnotePr&gt;</description></item><item><description>EndnoteProperties &lt;w:endnotePr&gt;</description></item><item><description>SectionType &lt;w:type&gt;</description></item><item><description>PageSize &lt;w:pgSz&gt;</description></item><item><description>PageMargin &lt;w:pgMar&gt;</description></item><item><description>PaperSource &lt;w:paperSrc&gt;</description></item><item><description>PageBorders &lt;w:pgBorders&gt;</description></item><item><description>LineNumberType &lt;w:lnNumType&gt;</description></item><item><description>PageNumberType &lt;w:pgNumType&gt;</description></item><item><description>Columns &lt;w:cols&gt;</description></item><item><description>FormProtection &lt;w:formProt&gt;</description></item><item><description>VerticalTextAlignmentOnPage &lt;w:vAlign&gt;</description></item><item><description>NoEndnote &lt;w:noEndnote&gt;</description></item><item><description>TitlePage &lt;w:titlePg&gt;</description></item><item><description>TextDirection &lt;w:textDirection&gt;</description></item><item><description>BiDi &lt;w:bidi&gt;</description></item><item><description>GutterOnRight &lt;w:rtlGutter&gt;</description></item><item><description>DocGrid &lt;w:docGrid&gt;</description></item><item><description>PrinterSettingsReference &lt;w:printerSettings&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns &lt;w15:footnoteColumns&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **sectPr (Previous Section Properties)**  
+  
+ When specified as a child element of sectPrChange, the sectPr element specifies a set of section properties that were modified when the document was set to track all revisions.  
+  
+ [*Example*: If the page orientation was changed with revision tracking enabled, the following WordprocessingML defines the contents of that change:  
+  
+```xml  
+<w:sectPr>  
+  …  <w:sectPrChange …>  
+    <w:sectPr>  
+      <w:pgSz w:w="15840" w:h="12240"/>  
+    </w:sectPr>  
+  </w:sectPrChange>  
+</w:sectPr>  
+```  
+  
+ The properties that were changed as part of this revision are stored in this sectPr element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sectPrChange (§17.13.5.32)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bidi (Right to Left Section Layout)|§17.6.1|  
+|cols (Column Definitions)|§17.6.4|  
+|docGrid (Document Grid)|§17.6.5|  
+|endnotePr (Section-Wide Endnote Properties)|§17.11.5|  
+|footnotePr (Section-Wide Footnote Properties)|§17.11.11|  
+|formProt (Only Allow Editing of Form Fields)|§17.6.6|  
+|lnNumType (Line Numbering Settings)|§17.6.8|  
+|noEndnote (Suppress Endnotes In Document)|§17.11.16|  
+|paperSrc (Paper Source Information)|§17.6.9|  
+|pgBorders (Page Borders)|§17.6.10|  
+|pgMar (Page Margins)|§17.6.11|  
+|pgNumType (Page Numbering Settings)|§17.6.12|  
+|pgSz (Page Size)|§17.6.13|  
+|printerSettings (Reference to Printer Settings Data)|§17.6.14|  
+|rtlGutter (Gutter on Right Side of Page)|§17.6.16|  
+|textDirection (Text Flow Direction)|§17.6.20|  
+|titlePg (Different First Page Headers and Footers)|§17.10.6|  
+|type (Section Type)|§17.6.22|  
+|vAlign (Vertical Text Alignment on Page)|§17.6.23|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|rsidDel (Section Deletion Revision ID)|Specifies a unique identifier used to track the *editing session* when the section mark for this section was deleted from the document.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
+|rsidR (Section Addition Revision ID)|Specifies a unique identifier used to track the *editing session* when the section mark for this section was added to the document.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
+|rsidRPr (Physical Section Mark Character Revision ID)|Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
+|rsidSect (Section Properties Revision ID)|Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SectPrBase) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -99,9 +156,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PreviousSectionProperties class.
-            </summary>
+        <summary>Initializes a new instance of the PreviousSectionProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -127,9 +182,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PreviousSectionProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PreviousSectionProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -149,9 +202,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PreviousSectionProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PreviousSectionProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -171,9 +222,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PreviousSectionProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PreviousSectionProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -192,11 +241,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BiDi</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> BiDi.</para>
-          <para> Represents the following element tag in the schema: w:bidi </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>BiDi. Represents the following element tag in the schema: w:bidi</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.BiDi" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -221,11 +267,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -244,11 +288,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Columns</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Columns.</para>
-          <para> Represents the following element tag in the schema: w:cols </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Columns. Represents the following element tag in the schema: w:cols</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Columns" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -270,11 +311,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DocGrid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> DocGrid.</para>
-          <para> Represents the following element tag in the schema: w:docGrid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>DocGrid. Represents the following element tag in the schema: w:docGrid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.DocGrid" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -296,11 +334,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> EndnoteProperties.</para>
-          <para> Represents the following element tag in the schema: w:endnotePr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>EndnoteProperties. Represents the following element tag in the schema: w:endnotePr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -327,10 +362,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FootnoteColumns, this property is only available in Office2013.</para>
-          <para> Represents the following element tag in the schema: w15:footnoteColumns </para>
-        </summary>
+        <summary>FootnoteColumns, this property is only available in Office2013. Represents the following element tag in the schema: w15:footnoteColumns</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -353,11 +385,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FootnoteProperties.</para>
-          <para> Represents the following element tag in the schema: w:footnotePr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>FootnoteProperties. Represents the following element tag in the schema: w:footnotePr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -379,11 +408,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.FormProtection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FormProtection.</para>
-          <para> Represents the following element tag in the schema: w:formProt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>FormProtection. Represents the following element tag in the schema: w:formProt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.FormProtection" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -405,11 +431,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.GutterOnRight</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GutterOnRight.</para>
-          <para> Represents the following element tag in the schema: w:rtlGutter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>GutterOnRight. Represents the following element tag in the schema: w:rtlGutter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.GutterOnRight" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -431,11 +454,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LineNumberType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> LineNumberType.</para>
-          <para> Represents the following element tag in the schema: w:lnNumType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>LineNumberType. Represents the following element tag in the schema: w:lnNumType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LineNumberType" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -457,10 +477,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -479,11 +497,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NoEndnote</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> NoEndnote.</para>
-          <para> Represents the following element tag in the schema: w:noEndnote </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>NoEndnote. Represents the following element tag in the schema: w:noEndnote</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.NoEndnote" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -505,11 +520,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PageBorders</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PageBorders.</para>
-          <para> Represents the following element tag in the schema: w:pgBorders </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>PageBorders. Represents the following element tag in the schema: w:pgBorders</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PageBorders" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -531,11 +543,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PageMargin</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PageMargin.</para>
-          <para> Represents the following element tag in the schema: w:pgMar </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>PageMargin. Represents the following element tag in the schema: w:pgMar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PageMargin" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -557,11 +566,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PageNumberType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PageNumberType.</para>
-          <para> Represents the following element tag in the schema: w:pgNumType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>PageNumberType. Represents the following element tag in the schema: w:pgNumType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PageNumberType" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -583,11 +589,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PageSize</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PageSize.</para>
-          <para> Represents the following element tag in the schema: w:pgSz </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>PageSize. Represents the following element tag in the schema: w:pgSz</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PageSize" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -609,11 +612,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PaperSource</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PaperSource.</para>
-          <para> Represents the following element tag in the schema: w:paperSrc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>PaperSource. Represents the following element tag in the schema: w:paperSrc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PaperSource" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -635,11 +635,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PrinterSettingsReference.</para>
-          <para> Represents the following element tag in the schema: w:printerSettings </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>PrinterSettingsReference. Represents the following element tag in the schema: w:printerSettings</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -666,12 +663,24 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Section Deletion Revision ID.</para>
-          <para>Represents the following attribute in the schema: w:rsidDel </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Section Deletion Revision ID.Represents the following attribute in the schema: w:rsidDel</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier used to track the editing session when the section mark for this section was deleted from the document.  
+  
+ All `rsid*` attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.  
+  
+ A producer may choose to increment the revision save ID value to indicate subsequent *editing sessions* (editing between save actions) to indicate the order of the saves performed.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -696,12 +705,24 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Section Addition Revision ID.</para>
-          <para>Represents the following attribute in the schema: w:rsidR </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Section Addition Revision ID.Represents the following attribute in the schema: w:rsidR</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier used to track the editing session when the section mark for this section was added to the document.  
+  
+ All `rsid*` attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.  
+  
+ A producer may choose to increment the revision save ID value to indicate subsequent editing sessions to indicate the order of the saves performed.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -726,12 +747,24 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Physical Section Mark Character Revision ID.</para>
-          <para>Represents the following attribute in the schema: w:rsidRPr </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Physical Section Mark Character Revision ID.Represents the following attribute in the schema: w:rsidRPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.  
+  
+ All `rsid*` attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.  
+  
+ A producer may choose to increment the revision save ID value to indicate subsequent editing sessions to indicate the order of the saves performed.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -756,12 +789,24 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Section Properties Revision ID.</para>
-          <para>Represents the following attribute in the schema: w:rsidSect </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Section Properties Revision ID.Represents the following attribute in the schema: w:rsidSect</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.  
+  
+ All `rsid*` attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.  
+  
+ A producer may choose to increment the revision save ID value to indicate subsequent editing sessions to indicate the order of the saves performed.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -781,11 +826,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SectionType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SectionType.</para>
-          <para> Represents the following element tag in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SectionType. Represents the following element tag in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.SectionType" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -807,11 +849,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TextDirection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextDirection.</para>
-          <para> Represents the following element tag in the schema: w:textDirection </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TextDirection. Represents the following element tag in the schema: w:textDirection</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TextDirection" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -833,11 +872,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TitlePage</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TitlePage.</para>
-          <para> Represents the following element tag in the schema: w:titlePg </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TitlePage. Represents the following element tag in the schema: w:titlePg</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TitlePage" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -859,11 +895,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> VerticalTextAlignmentOnPage.</para>
-          <para> Represents the following element tag in the schema: w:vAlign </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>VerticalTextAlignmentOnPage. Represents the following element tag in the schema: w:vAlign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

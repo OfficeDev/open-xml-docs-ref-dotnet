@@ -1,4 +1,4 @@
-﻿<Type Name="StyleDefinitionHeader" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionHeader">
+<Type Name="StyleDefinitionHeader" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionHeader">
   <TypeSignature Language="C#" Value="public class StyleDefinitionHeader : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StyleDefinitionHeader extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Diagrams.StyleDefinitionHeader" />
@@ -30,13 +30,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Style Definition Header.</para>
-      <para> When the object is serialized out as xml, its qualified name is dgm:styleDefHdr.</para>
-    </summary>
+    <summary>Style Definition Header. When the object is serialized out as xml, its qualified name is dgm:styleDefHdr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>StyleDefinitionTitle &lt;dgm:title&gt;</description></item><item><description>StyleLabelDescription &lt;dgm:desc&gt;</description></item><item><description>StyleDisplayCategories &lt;dgm:catLst&gt;</description></item><item><description>ExtensionList &lt;dgm:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **styleDefHdr (Style Definition Header)**  
+  
+ This element specifies header information associated with a style definition.  The header information is used by an application to preprocess required data in order to help with possible performance concerns associated with an initial full load of a color transform definition.  
+  
+ [*Example*:  Consider the following example of a styleDefHdr element within DiagramML:  
+  
+```xml  
+<styleDefHdr uniqueId="urn:quicktyle/3d1">  
+    <title val="3D" />  
+    <desc val="" />  
+    <catLst>  
+        <cat type="3D" pri="10100" />  
+    </catLst>  
+</  
+ styleDefHdr >  
+```  
+  
+ In this example we see a style definition header which defines a title and category for a set of style definitions.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|styleDefHdrLst (§21.4.5.9)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|catLst (Category List)|§21.4.5.2|  
+|desc (Style Label Description)|§21.4.5.3|  
+|extLst (Extension List)|§21.4.2.13|  
+|title (Title)|§21.4.5.11|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|minVer (Minimum Version)|The minimum product version that can support this quick style.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|resId (Resource ID)|This attribute is the id which associates this header to the actual style definition part.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|uniqueId (Unique Style ID)|This attribute defines a unique identifier for the associated style definition.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_StyleDefinitionHeader) is located in §A.5.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -51,9 +93,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StyleDefinitionHeader class.
-            </summary>
+        <summary>Initializes a new instance of the StyleDefinitionHeader class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +119,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the StyleDefinitionHeader class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the StyleDefinitionHeader class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -101,9 +139,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the StyleDefinitionHeader class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the StyleDefinitionHeader class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,9 +159,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the StyleDefinitionHeader class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the StyleDefinitionHeader class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,11 +181,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -170,10 +202,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,12 +227,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Version.</para>
-          <para>Represents the following attribute in the schema: minVer </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Minimum Version.Represents the following attribute in the schema: minVer</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ The minimum product version that can support this quick style.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ResourceId">
@@ -225,12 +263,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Resource ID.</para>
-          <para>Represents the following attribute in the schema: resId </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Resource ID.Represents the following attribute in the schema: resId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute is the ID which associates this header to the actual style definition part.  
+  
+ The possible values for this attribute are defined by the XML Schema `int` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="UniqueId">
@@ -253,12 +299,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Unique Style ID.</para>
-          <para>Represents the following attribute in the schema: uniqueId </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Unique Style ID.Represents the following attribute in the schema: uniqueId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute defines a unique identifier for the associated style definition.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

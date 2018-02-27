@@ -1,4 +1,4 @@
-﻿<Type Name="EquationArray" FullName="DocumentFormat.OpenXml.Math.EquationArray">
+<Type Name="EquationArray" FullName="DocumentFormat.OpenXml.Math.EquationArray">
   <TypeSignature Language="C#" Value="public class EquationArray : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EquationArray extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.EquationArray" />
@@ -24,13 +24,108 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Equation-Array Function.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:eqArr.</para>
-    </summary>
+    <summary>Equation-Array Function. When the object is serialized out as xml, its qualified name is m:eqArr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>EquationArrayProperties &lt;m:eqArrPr&gt;</description></item><item><description>Base &lt;m:e&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **eqArr (Array Object)**  
+  
+ This element specifies the Array object (sometimes referred to as "Equation Array", despite its ability to hold mathematical text other than equations), an object consisting of one or more equations, expressions, or other mathematical text runs that can be vertically justified as a unit with respect to surrounding text on the line. Alignment of multiple points within each run of mathematical text can occur within the array through the use of align values and spacer values. An *align value* is an ampersand within the array which acts as an alignment point (as described in §22.1.2.3). A *spacer value* is an ampersand (represented by "&amp;" in the example below) within the array which designates where space can be added in order to align the align values on different rows of the array. Within each argument in the array, every odd ampersand is an align value and every even ampersand is a spacer value (as well, the beginning of each argument provides an implied spacer value). If eqArrPr is omitted then the default values for its properties will be used. These defaults are:  
+  
+ Property  
+  
+ Default Value  
+  
+ baseJc  
+  
+ “center”  
+  
+ ctrlPr  
+  
+ ‎\<The character property of the first control character will be the character property of the first character ‎in the eqArr object >‎  
+  
+ maxDist  
+  
+ “0”  
+  
+ objDist  
+  
+ “0”  
+  
+ rSp  
+  
+ “0”  
+  
+ rSpRule  
+  
+ “0” \<single>  
+  
+ [*Example*:  
+  
+ A simple array,   , is represented as follows:  
+  
+```xml  
+<m:eqArr>  
+  <m:e>  
+    <m:r>  
+      <m:t>a=b+c</m:t>  
+    </m:r>  
+  </m:e>  
+  <m:e>  
+    <m:r>  
+      <m:t>d+e=f</m:t>  
+    </m:r>  
+  </m:e>  
+</m:eqArr>  
+```  
+  
+ A more complex array with alignment points, e.g.:  
+  
+ is represented as follows:  
+  
+```xml  
+<m:eqArr>  
+    <m:e>  
+        <m:r>  
+            <m:t>  
+&amp;x+&amp;&amp;y+&amp;&amp;z&amp;&amp;= &amp;&amp;10</m:t>   
+        </m:r>  
+    </m:e>  
+    <m:e>  
+        <m:r>  
+            <m:t>3&amp;x+&amp;&amp;y+&amp;2&amp;z&amp;&amp;= &amp;&amp;34</m:t>   
+        </m:r>  
+    </m:e>  
+    <m:e>  
+        <m:r>  
+            <m:t>-5&amp;x+&amp;2&amp;y-&amp;&amp;z&amp;&amp;= &amp;&amp;-14</m:t>   
+        </m:r>  
+    </m:e>  
+</m:eqArr>  
+```  
+  
+ Notice that the variables, operators, and digits of the sums line up properly, as the align values line up between each argument by adding space at the position of each spacer value.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|deg (§22.1.2.26); del (§17.13.5.14); den (§22.1.2.28); e (§22.1.2.32); fName (§22.1.2.37); ins (§17.13.5.18); lim (§22.1.2.52); moveFrom (§17.13.5.22); moveTo (§17.13.5.25); num (§22.1.2.75); oMath (§22.1.2.77); sub (§22.1.2.112); sup (§22.1.2.114)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|e (Element (Argument))|§22.1.2.32|  
+|eqArrPr (Array Properties)|§22.1.2.35|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_EqArr) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +140,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EquationArray class.
-            </summary>
+        <summary>Initializes a new instance of the EquationArray class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +166,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EquationArray class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the EquationArray class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +186,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the EquationArray class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the EquationArray class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +206,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the EquationArray class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the EquationArray class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +228,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -164,10 +249,7 @@
         <ReturnType>DocumentFormat.OpenXml.Math.EquationArrayProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Equation Array Properties.</para>
-          <para> Represents the following element tag in the schema: m:eqArrPr </para>
-        </summary>
+        <summary>Equation Array Properties. Represents the following element tag in the schema: m:eqArrPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -190,10 +272,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

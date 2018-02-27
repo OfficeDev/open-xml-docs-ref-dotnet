@@ -1,4 +1,4 @@
-﻿<Type Name="GradientFill" FullName="DocumentFormat.OpenXml.Spreadsheet.GradientFill">
+<Type Name="GradientFill" FullName="DocumentFormat.OpenXml.Spreadsheet.GradientFill">
   <TypeSignature Language="C#" Value="public class GradientFill : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GradientFill extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.GradientFill" />
@@ -21,13 +21,80 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Gradient.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:gradientFill.</para>
-    </summary>
+    <summary>Gradient. When the object is serialized out as xml, its qualified name is x:gradientFill.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>GradientStop &lt;x:stop&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `gradientFill (Gradient)`  
+  
+ This element defines a gradient-style cell fill. Gradient cell fills can use one or two colors as the end points of color interpolation.  
+  
+ [*Example*:  
+  
+ This example shows a gradient cell fill, with color green at the top transitioning into blue at the bottom.  
+  
+ 31f059aa-15c7-4efe-9340-7e699f1a829c  
+  
+ This is the XML:  
+  
+```xml  
+<fill>  
+  <gradientFill degree="90">  
+    <stop position="0">  
+      <color rgb="FF92D050"/>  
+    </stop>  
+    <stop position="1">  
+      <color rgb="FF0070C0"/>  
+    </stop>  
+  </gradientFill>  
+</fill>  
+```  
+  
+ This example shows a gradient cell fill, from the center. Note the left, right, top, and bottom values (and see explanation in the attribute section):  
+  
+ 1bf7ccb1-2ee4-429f-8e3f-187d0445b49d  
+  
+```xml  
+<fill>  
+  <gradientFill type="path" left="0.2" right="0.8" top="0.2" bottom="0.8">  
+    <stop position="0">  
+      <color theme="0"/>  
+    </stop>  
+    <stop position="1">  
+      <color theme="4"/>  
+    </stop>  
+  </gradientFill>  
+</fill>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fill (§18.8.20)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|stop (Gradient Stop)|§18.8.38|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|bottom (Bottom Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the top to the bottom) the position of the bottom edge of the inner rectangle (color 1). For bottom, 0 means the bottom edge of the inner rectangle is on the top edge of the cell, and 1 means it is on the bottom edge of the cell.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|degree (Linear Gradient Degree)|Angle of the linear gradient - vertical, horizontal, diagonal.<br /><br /> [*Example*:<br /><br /> In these examples, color 1 is white and color 2 is blue.<br /><br /> 90 = Horizontal & color 1 to color 2<br /><br /> 6fade633-9673-4234-ba5e-b6c96943cbad<br /><br /> 270 = Horizontal & color 1 to color 2<br /><br /> 5e0953dd-6545-4ebd-8f85-69d78592831c<br /><br /> 0 = Vertical & color 1 to color 2<br /><br /> 64e89be5-c2a1-4334-b91d-9063f47ab57a<br /><br /> 180 = Vertical & color 1 to color 2<br /><br /> ade8885d-3c6e-4a4a-b20b-524740404555<br /><br /> 45 = Diagonal Up & top to bottom (color 1 to color 2)<br /><br /> 225 = Diagonal Up & bottom to top (color 1 to color 2)<br /><br /> 135 = Diagonal Down & top to bottom (color 1 to color 2)<br /><br /> 315 = Diagonal Down & bottom to top (color 1 to color 2)<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|left (Left Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the left to the right) the position of the left edge of the inner rectangle (color 1). For left, 0 means the left edge of the inner rectangle is on the left edge of the cell, and 1 means it is on the right edge of the cell. (applies to From Corner and From Center gradients).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|right (Right Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the left to the right) the position of the right edge of the inner rectangle (color 1). For right, 0 means the right edge of the inner rectangle is on the left edge of the cell, and 1 means it is on the right edge of the cell. (applies to From Corner and From Center gradients).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|top (Top Gradient Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the top to the bottom) the position of the top edge of the inner rectangle (color 1). For top, 0 means the top edge of the inner rectangle is on the top edge of the cell, and 1 means it is on the bottom edge of the cell. (applies to From Corner and From Center gradients).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|type (Gradient Fill Type)|Type of this gradient fill.<br /><br /> The possible values for this attribute are defined by the *ST_GradientType* simple type (§18.18.37).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_GradientFill) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +109,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GradientFill class.
-            </summary>
+        <summary>Initializes a new instance of the GradientFill class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GradientFill class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the GradientFill class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +155,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GradientFill class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the GradientFill class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +175,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the GradientFill class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the GradientFill class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,11 +199,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bottom Convergence.</para>
-          <para>Represents the following attribute in the schema: bottom </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Bottom Convergence.Represents the following attribute in the schema: bottom</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,11 +222,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,11 +248,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Linear Gradient Degree.</para>
-          <para>Represents the following attribute in the schema: degree </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Linear Gradient Degree.Represents the following attribute in the schema: degree</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -222,11 +273,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Left Convergence.</para>
-          <para>Represents the following attribute in the schema: left </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Left Convergence.Represents the following attribute in the schema: left</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -245,10 +293,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -272,11 +318,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Right Convergence.</para>
-          <para>Represents the following attribute in the schema: right </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Right Convergence.Represents the following attribute in the schema: right</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -300,11 +343,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Gradient Convergence.</para>
-          <para>Represents the following attribute in the schema: top </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Gradient Convergence.Represents the following attribute in the schema: top</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -328,11 +368,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GradientValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Gradient Fill Type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Gradient Fill Type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

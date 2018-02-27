@@ -1,4 +1,4 @@
-﻿<Type Name="ObjectDistribution" FullName="DocumentFormat.OpenXml.Math.ObjectDistribution">
+<Type Name="ObjectDistribution" FullName="DocumentFormat.OpenXml.Math.ObjectDistribution">
   <TypeSignature Language="C#" Value="public class ObjectDistribution : DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectDistribution extends DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.ObjectDistribution" />
@@ -18,11 +18,65 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Object Distribution.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:objDist.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Object Distribution. When the object is serialized out as xml, its qualified name is m:objDist.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ `objDist (Object Distribution)`  
+  
+ This element specifies Array Object Distribution. When *1* or *true*, the contents of the array are spaced to the maximum width of the array object. When this element is omitted, the array does not receive object distribution. In other words, when the element is absent, the default value of the property is *0* meaning that this property is not applied.  
+  
+ When the element is present and the val attribute is absent, the default of the val attribute is *1* meaning that this property is applied.  
+  
+ [*Example*:  
+  
+ 997a9ba5-b191-451d-a20f-de874953c975  
+  
+```xml  
+<m:eqArr>  
+  <m:eqArrPr>  
+<m:maxDist m:val="1"/>  
+    <m:objDist m:val="1"/>  
+  </m:eqArrPr>  
+  <m:e>  
+    <m:r>  
+      <m:t>111&amp;a&amp;&amp;&amp;&amp;&amp;&amp;=&amp;&amp;c</m:t>  
+    </m:r>  
+  </m:e>  
+  <m:e>  
+    <m:r>  
+      <m:t>111&amp;a&amp;&amp;+&amp;111&amp;b&amp;&amp;=&amp;111&amp;c</m:t>  
+    </m:r>  
+  </m:e>  
+  <m:e>  
+    <m:r>  
+      <m:t>&amp;&amp;&amp;&amp;&amp;b&amp;&amp;=&amp;111&amp;c</m:t>  
+    </m:r>  
+  </m:e>  
+</m:eqArr>  
+```  
+  
+ Because object distribution and maximum distribution are applied, the equation array is expanded to fill the width that is allowed and the columns are distributed horizontally within the object to the bounds of the object.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|eqArrPr (§22.1.2.35)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (value)|Specifies a binary value for the property defined by the parent XML element.<br /><br /> A value of *1* or *true* specifies that the property shall be explicitly applied. This is the default value for this attribute, and is implied when the parent element is present.<br /><br /> A value of *0* or *false* specifies that the property shall be explicitly turned off. This is implied when the parent element is not present.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_OnOff) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +91,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ObjectDistribution class.
-            </summary>
+        <summary>Initializes a new instance of the ObjectDistribution class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +113,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +134,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

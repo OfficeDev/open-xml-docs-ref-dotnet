@@ -1,4 +1,4 @@
-﻿<Type Name="Spacing" FullName="DocumentFormat.OpenXml.Wordprocessing.Spacing">
+<Type Name="Spacing" FullName="DocumentFormat.OpenXml.Wordprocessing.Spacing">
   <TypeSignature Language="C#" Value="public class Spacing : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Spacing extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Spacing" />
@@ -18,11 +18,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Spacing Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:spacing.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Spacing Class. When the object is serialized out as xml, its qualified name is w:spacing.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **spacing (Character Spacing Adjustment)**  
+  
+ This element specifies the amount of character pitch which shall be added or removed after each character in this run before the following character is rendered in the document. This property has an effect equivalent to the additional character pitched added by a document grid applied to the contents of a run.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the run shall not have any additional character pitch applied to any character in its contents.  
+  
+ [*Example*: Consider a run of text which must have ten points of additional character spacing explicitly added to each character within the contents of the run. This constraint is specified using the following WordprocessingML:  
+  
+```xml  
+<w:rPr>  
+  <w:spacing w:val="200"/>  
+</w:rPr>  
+```  
+  
+ This run explicitly declares that the spacing value is *200*, so the contents of this run appear as if they have 10 additional points of spacing added between them. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Positive or Negative Value in Twentieths of a Point)|Specifies a positive or negative measurement in twentieths of a point (equivalent to 1/1440th of an inch).<br /><br /> The contents of this measurement shall be interpreted based on the context of the parent XML element.<br /><br /> [*Example*: Consider an attribute value of -*720* whose type is ST_SignedTwipsMeasure. This attribute value specifies a value of negative one-half of an inch or -36 points (-*720* twentieths of a point = -36 points = ). *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_SignedTwipsMeasure* simple type (§17.18.81).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SignedTwipsMeasure) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Spacing class.
-            </summary>
+        <summary>Initializes a new instance of the Spacing class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,10 +137,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

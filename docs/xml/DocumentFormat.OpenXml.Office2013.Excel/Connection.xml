@@ -1,4 +1,4 @@
-﻿<Type Name="Connection" FullName="DocumentFormat.OpenXml.Office2013.Excel.Connection">
+<Type Name="Connection" FullName="DocumentFormat.OpenXml.Office2013.Excel.Connection">
   <TypeSignature Language="C#" Value="public class Connection : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Connection extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Excel.Connection" />
@@ -36,14 +36,99 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Connection Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is x15:connection.</para>
-    </summary>
+    <summary>Defines the Connection Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is x15:connection.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TextProperties &lt;x15:textPr&gt;</description></item><item><description>ModelTextProperties &lt;x15:modelTextPr&gt;</description></item><item><description>RangeProperties &lt;x15:rangePr&gt;</description></item><item><description>OleDbPrpoperties &lt;x15:oledbPr&gt;</description></item><item><description>DataFeedProperties &lt;x15:dataFeedPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.43   connection*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ A CT_Connection element that specifies the extended properties of an external connection.\<20>  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="connection" type="CT_Connection"/>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.91   CT_Connection*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ *Referenced by:* connection  
+  
+ A complex type that specifies the extended properties of an external connection ([ISO/IEC-29500-1] section 18.13).\<67> See section 2.2.4.1 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1].  
+  
+ *Child Elements:*  
+  
+ *modelTextPr:* A CT_ModelTextPr element that specifies  Model Data Source text importation properties in addition to those specified in *textPr* element.  
+  
+ If this element is present, then:  
+  
+ *the type attribute of the ancestor CT_Connection element, as specified in* [ISO/IEC-29500-4] *section A.2, MUST be equal to "103".*  
+  
+ *Ancestor CT_Connection element MUST contain textPr element.*  
+  
+ *rangePr:* A CT_RangePr element that specifies Model Data Source Worksheet Data connection properties.  
+  
+ If this element is present, then the *type* attribute of the ancestor *CT_Connection* element, as specified in [ISO/IEC-29500-4] section A.2, MUST be equal to "102".  
+  
+ *oledbPr:* A CT_OledbPr element that specifies Model Data Source OLE DB connection properties.  
+  
+ If this element is present, then the *type* attribute of the ancestor *CT_Connection* element, as specified in [ISO/IEC-29500-4] section A.2, MUST be equal to "100".  
+  
+ *dataFeedPr:* A CT_DataFeedPr element that specifies Model Data Source Data Feed connection properties.  
+  
+ If this element is present, then the *type* attribute of the ancestor *CT_Connection* element, as specified in [ISO/IEC-29500-4] section A.2, MUST be equal to "101".  
+  
+ *Attributes:*  
+  
+ *id:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies the identifier of the Data Model data source. The string MUST be less than or equal to 65535 characters in length. The string length MUST be equal to zero characters if the *sandbox* attribute equals "true".  
+  
+ *model:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether this connection is a connection to the Spreadsheet Data Model*.* If this element equals "true", the *type* attribute of the ancestor *CT_Connection* element, as specified in [ISO/IEC-29500-4] section A.2, MUST be equal to "5".  
+  
+ *excludeFromRefreshAll:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether this connection is not to be refreshed on Refresh All.  
+  
+ *autoDelete:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether this connection will be automatically deleted when all data features which use it are deleted.  
+  
+ *usedByAddin:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies [TYPE HERE]  
+  
+ *<\<REVIEW>>*Flag indicating if this connection is used by Power View addin and must not be automatically deleted with data features using it*<\<REVIEW>>*  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_Connection">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="modelTextPr" minOccurs="0" maxOccurs="1" type="CT_ModelTextPr"/>*  
+  
+ *\<xsd:element name="rangePr" minOccurs="0" maxOccurs="1" type="CT_RangePr"/>*  
+  
+ *\<xsd:element name="oledbPr" minOccurs="0" maxOccurs="1" type="CT_OledbPr"/>*  
+  
+ *\<xsd:element name="dataFeedPr" minOccurs="0" maxOccurs="1" type="CT_DataFeedPr"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="id" use="required" type="x:ST_Xstring"/>*  
+  
+ *\<xsd:attribute name="model" type="xsd:boolean" default="false" use="optional"/>*  
+  
+ *\<xsd:attribute name="excludeFromRefreshAll" type="xsd:boolean" default="false" use="optional"/>*  
+  
+ *\<xsd:attribute name="autoDelete" type="xsd:boolean" default="false" use="optional"/>*  
+  
+ *\<xsd:attribute name="usedByAddin" type="xsd:boolean" default="false" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -58,9 +143,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Connection class.
-            </summary>
+        <summary>Initializes a new instance of the Connection class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -86,9 +169,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Connection class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Connection class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,9 +189,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Connection class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Connection class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -130,9 +209,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Connection class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Connection class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -156,10 +233,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> autoDelete.</para>
-          <para>Represents the following attribute in the schema: autoDelete </para>
-        </summary>
+        <summary>autoDelete.Represents the following attribute in the schema: autoDelete</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -182,11 +256,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -205,10 +277,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.DataFeedProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> DataFeedProperties.</para>
-          <para> Represents the following element tag in the schema: x15:dataFeedPr </para>
-        </summary>
+        <summary>DataFeedProperties. Represents the following element tag in the schema: x15:dataFeedPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -236,10 +305,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> excludeFromRefreshAll.</para>
-          <para>Represents the following attribute in the schema: excludeFromRefreshAll </para>
-        </summary>
+        <summary>excludeFromRefreshAll.Represents the following attribute in the schema: excludeFromRefreshAll</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -264,10 +330,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -287,9 +350,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -314,10 +375,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> model.</para>
-          <para>Represents the following attribute in the schema: model </para>
-        </summary>
+        <summary>model.Represents the following attribute in the schema: model</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -337,10 +395,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.ModelTextProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ModelTextProperties.</para>
-          <para> Represents the following element tag in the schema: x15:modelTextPr </para>
-        </summary>
+        <summary>ModelTextProperties. Represents the following element tag in the schema: x15:modelTextPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -363,10 +418,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.OleDbPrpoperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OleDbPrpoperties.</para>
-          <para> Represents the following element tag in the schema: x15:oledbPr </para>
-        </summary>
+        <summary>OleDbPrpoperties. Represents the following element tag in the schema: x15:oledbPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -389,10 +441,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.RangeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> RangeProperties.</para>
-          <para> Represents the following element tag in the schema: x15:rangePr </para>
-        </summary>
+        <summary>RangeProperties. Represents the following element tag in the schema: x15:rangePr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -415,10 +464,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.TextProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextProperties.</para>
-          <para> Represents the following element tag in the schema: x15:textPr </para>
-        </summary>
+        <summary>TextProperties. Represents the following element tag in the schema: x15:textPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -446,10 +492,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> usedByAddin.</para>
-          <para>Represents the following attribute in the schema: usedByAddin </para>
-        </summary>
+        <summary>usedByAddin.Represents the following attribute in the schema: usedByAddin</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

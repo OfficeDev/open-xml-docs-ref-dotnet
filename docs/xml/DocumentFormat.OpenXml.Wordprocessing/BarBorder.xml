@@ -1,4 +1,4 @@
-﻿<Type Name="BarBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.BarBorder">
+<Type Name="BarBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.BarBorder">
   <TypeSignature Language="C#" Value="public class BarBorder : DocumentFormat.OpenXml.Wordprocessing.BorderType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BarBorder extends DocumentFormat.OpenXml.Wordprocessing.BorderType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BarBorder" />
@@ -18,11 +18,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Paragraph Border Between Facing Pages.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:bar.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Paragraph Border Between Facing Pages. When the object is serialized out as xml, its qualified name is w:bar.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **bar (Paragraph Border Between Facing Pages)**  
+  
+ This element specifies the border which can be displayed on the inside edge of the paragraph when the parent's section settings specify that the section shall be printed using mirrored margins using the mirrorMargins element (§17.15.1.57). [*Note*: This information is present in the WordprocessingML for the purposes of legacy document format compatibility, and it can be removed and/or ignored as required. *end note*]  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then no bar border shall be applied to the current paragraph.  
+  
+ [*Example*: Consider the following paragraph's WordprocessingML definition for its paragraph borders:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB"         w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034"         w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="1" w:color="F2DCDB"         w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B"         w:themeColor="accent3" w:themeTint="99" />   
+      <w:bar w:val="single" w:sz="24" w:space="1" w:color="4F81BD"         w:themeColor="accent1" />  
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Sample paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+```  
+  
+ This paragraph has a single line bar border as defined by the bar element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pBdr (§17.3.1.24)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -37,9 +76,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BarBorder class.
-            </summary>
+        <summary>Initializes a new instance of the BarBorder class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -84,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

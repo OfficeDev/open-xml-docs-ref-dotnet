@@ -1,4 +1,4 @@
-﻿<Type Name="BuildGraphics" FullName="DocumentFormat.OpenXml.Presentation.BuildGraphics">
+<Type Name="BuildGraphics" FullName="DocumentFormat.OpenXml.Presentation.BuildGraphics">
   <TypeSignature Language="C#" Value="public class BuildGraphics : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildGraphics extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.BuildGraphics" />
@@ -24,13 +24,52 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Build Graphics.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:bldGraphic.</para>
-    </summary>
+    <summary>Build Graphics. When the object is serialized out as xml, its qualified name is p:bldGraphic.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>BuildAsOne &lt;p:bldAsOne&gt;</description></item><item><description>BuildSubElement &lt;p:bldSub&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](../Token/openxmlnoticeiso_md.md)]  
+  
+ **bldGraphic (Build Graphics)**  
+  
+ This element specifies how to build a graphical element.  
+  
+ [*Example*:  Consider having a chart graphical element appear as a whole as opposed to by a category. The \<bldGraphic> element should be used as follows:  
+  
+```xml  
+<p:bldLdst>  
+  <p:bldGraphic spid="3" grpId="0">  
+    <p:bldSub>  
+      <a:bldChart bld="category"/>  
+    </p:bldSub>  
+  </p:bldGraphic>  
+</p:bldLst>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bldLst (§19.5.14)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bldAsOne (Build As One)|§19.5.11|  
+|bldSub (Build Sub Elements)|§19.5.17|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|grpId (Group ID)|This attribute ties effects persisted in the animation to the build information. The attribute is used by the editor when changes to the build information are made. GroupIDs are unique for a given shape. They are not guaranteed to be unique IDs across all shapes on a slide.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|spid (Shape ID)|This attribute describes the shape to which the build applies.<br /><br /> The possible values for this attribute are defined by the *ST_ShapeID* simple type (§20.1.10.55).|  
+|uiExpand (Expand UI)|This attribute describes the view option indicating if the build should be displayed expanded.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLGraphicalObjectBuild) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlcopyrightiso](../Token/openxmlcopyrightiso_md.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -45,9 +84,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BuildGraphics class.
-            </summary>
+        <summary>Initializes a new instance of the BuildGraphics class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +110,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BuildGraphics class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the BuildGraphics class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BuildGraphics class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the BuildGraphics class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +150,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the BuildGraphics class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the BuildGraphics class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -138,11 +169,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.BuildAsOne</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Build As One.</para>
-          <para> Represents the following element tag in the schema: p:bldAsOne </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Build As One. Represents the following element tag in the schema: p:bldAsOne</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.BuildAsOne" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -164,11 +192,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.BuildSubElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Build Sub Elements.</para>
-          <para> Represents the following element tag in the schema: p:bldSub </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Build Sub Elements. Represents the following element tag in the schema: p:bldSub</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.BuildSubElement" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -193,11 +218,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,12 +244,20 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Group ID.</para>
-          <para>Represents the following attribute in the schema: grpId </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Group ID.Represents the following attribute in the schema: grpId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute ties effects persisted in the animation to the build information. The attribute is used by the editor when changes to the build information are made. GroupIDs are unique for a given shape. They are not guaranteed to be unique IDs across all shapes on a slide.  
+  
+ The possible values for this attribute are defined by the XML Schema `unsignedInt` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -244,10 +275,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -271,12 +300,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape ID.</para>
-          <para>Represents the following attribute in the schema: spid </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Shape ID.Represents the following attribute in the schema: spid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute describes the shape to which the build applies.  
+  
+ The possible values for this attribute are defined by the `ST_ShapeID` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="UiExpand">
@@ -299,12 +336,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Expand UI.</para>
-          <para>Represents the following attribute in the schema: uiExpand </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Expand UI.Represents the following attribute in the schema: uiExpand</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute describes the view option indicating if the build should be displayed expanded.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>
