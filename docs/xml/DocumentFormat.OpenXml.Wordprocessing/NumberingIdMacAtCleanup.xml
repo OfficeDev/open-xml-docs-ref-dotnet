@@ -1,4 +1,4 @@
-﻿<Type Name="NumberingIdMacAtCleanup" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup">
+<Type Name="NumberingIdMacAtCleanup" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup">
   <TypeSignature Language="C#" Value="public class NumberingIdMacAtCleanup : DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberingIdMacAtCleanup extends DocumentFormat.OpenXml.Wordprocessing.DecimalNumberType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NumberingIdMacAtCleanup" />
@@ -19,11 +19,37 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Last Reviewed Abstract Numbering Definition.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:numIdMacAtCleanup.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Last Reviewed Abstract Numbering Definition. When the object is serialized out as xml, its qualified name is w:numIdMacAtCleanup.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **numIdMacAtCleanup (Last Reviewed Abstract Numbering Definition)**  
+  
+ This element specifies to a consumer the progress in the last attempt made by the application to remove unused abstract numbering definitions from a given document. If a legacy document is opened by a consumer, it can choose to remove abstract numbering definition which are 'orphaned' (have no associated numbering definition instances). This element is used by those consumers to indicate their progress (if not complete) in reviewing existing abstract numbering definitions.  [*Note*: Removing unused abstract numbering definition from a document reduces the file size, but is not required. *end note*]  
+  
+ If omitted, then all abstract numbering definitions shall be considered reviewed.  
+  
+ [*Example*: Consider a document with 32 abstract numbering definitions, with abstractNumId values ranging from *0* to *85*. If an application has only reviewed those abstract numbering definitions with abstractNumId values lower than *25* at save time, it would indicate that state as follows:  
+  
+```xml  
+<w:numIdMacAtCleanup w:val="25"/>  
+```  
+  
+ This value specifies that all abstract numbering definitions with an abstractNumId value higher than *25* have not yet been reviewed. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|numbering (§17.9.17)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NumberingIdMacAtCleanup class.
-            </summary>
+        <summary>Initializes a new instance of the NumberingIdMacAtCleanup class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +88,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

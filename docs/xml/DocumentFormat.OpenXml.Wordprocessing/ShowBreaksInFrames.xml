@@ -1,4 +1,4 @@
-﻿<Type Name="ShowBreaksInFrames" FullName="DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames">
+<Type Name="ShowBreaksInFrames" FullName="DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames">
   <TypeSignature Language="C#" Value="public class ShowBreaksInFrames : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ShowBreaksInFrames extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ShowBreaksInFrames" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Display Page/Column Breaks Present in Frames.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:showBreaksInFrames.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Display Page/Column Breaks Present in Frames. When the object is serialized out as xml, its qualified name is w:showBreaksInFrames.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `showBreaksInFrames (Display Page/Column Breaks Present in Frames)`  
+  
+ This element specifies whether applications should honor the presence of page and/or column breaks which are present within the contents of paragraphs which have been defined as frames using the framePr element (Part 1, §17.3.1.11).  
+  
+ Typically, breaks within frames shall be ignored and shall have no effect on the display of the paragraph in which they are contained. This element, when present with a val attribute value of *true* (or equivalent), specifies that rather than completely ignoring these breaks, applications should display the break and move the remaining frame content, and all subsequent text, to the next page and/or column, as needed.  
+  
+ [*Example*: Consider a WordprocessingML document with a paragraph contained within a text frame:  
+  
+ 141a9688-82ae-4802-b304-45992c509066  
+  
+ The default presentation would display the page break inline in the frame (breaking the frame into two) but would not actually break the page:  
+  
+ bffd8468-2000-4309-b943-669013faad29  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:showBreaksInFrames />  
+</w:compat>  
+```  
+  
+ Then the page breaks is used even though they are present in the frame, breaking the page and resulting in the following output:  
+  
+ df4d62ef-1eea-4f1c-8a81-3b59415a725d  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ShowBreaksInFrames class.
-            </summary>
+        <summary>Initializes a new instance of the ShowBreaksInFrames class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

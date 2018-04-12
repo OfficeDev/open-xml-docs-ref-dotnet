@@ -1,4 +1,4 @@
-﻿<Type Name="AutoFormatOverride" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoFormatOverride">
+<Type Name="AutoFormatOverride" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoFormatOverride">
   <TypeSignature Language="C#" Value="public class AutoFormatOverride : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutoFormatOverride extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AutoFormatOverride" />
@@ -19,11 +19,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Allow Automatic Formatting to Override Formatting Protection Settings.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:autoFormatOverride.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Allow Automatic Formatting to Override Formatting Protection Settings. When the object is serialized out as xml, its qualified name is w:autoFormatOverride.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **autoFormatOverride (Allow Automatic Formatting to Override Formatting Protection Settings)**  
+  
+ This element specifies whether formatting automatically applied by an application (i.e. not explicitly applied by a use or an application) shall be allowed to override formatting protection enabled via the formatting attribute on the documentProtection element (§17.15.1.9) when those formatting operations would add formatting which has been explicitly disabled. [*Example*: Automatically adding superscript to the *st* in the string *1st*. *end example*]  
+  
+ If this element is omitted, then no automatic formatting rule(s) shall be allowed to override the formatting restrictions enabled for the document.  
+  
+ [*Example* Consider a WordprocessingML document which has been protected such that a user must not be able to directly format text within the document. Consider also that the hosting application has been constructed such that if a user enters a ampersand, then one or more alphabetical characters, then another ampersand, that the alphabetical characters are to take on italicized formatting.  
+  
+ If the autoFormatOverride element is omitted or set to *false* and document protection is enabled, the aforementioned series of events does not cause the English alphabetical characters to be italicized as the document protection preventing formatting of the document in question supersedes the formatting to take place after these events. If this operation should not be prevented when active formatting restrictions are used, this would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:autoFormatOverride w:val="true"/>  
+```  
+  
+ The autoFormatOverride element's val attribute is equal to *true* specifying that the automatic formatting behavior shall be applied regardless of the formatting restrictions in place. *End Example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AutoFormatOverride class.
-            </summary>
+        <summary>Initializes a new instance of the AutoFormatOverride class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +90,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

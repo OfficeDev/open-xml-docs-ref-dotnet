@@ -1,4 +1,4 @@
-﻿<Type Name="AlphaOffset" FullName="DocumentFormat.OpenXml.Drawing.AlphaOffset">
+<Type Name="AlphaOffset" FullName="DocumentFormat.OpenXml.Drawing.AlphaOffset">
   <TypeSignature Language="C#" Value="public class AlphaOffset : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AlphaOffset extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.AlphaOffset" />
@@ -19,11 +19,27 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Alpha Offset.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:alphaOff.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Alpha Offset. When the object is serialized out as xml, its qualified name is a:alphaOff.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **alphaOff (Alpha Offset)**  
+  
+ This element specifies a more or less opaque version of its input color. Increases or decreases the input alpha percentage by the specified percentage offset. A 10% alpha offset increases a 50% opacity to 60%. A -10% alpha offset decreases a 50% opacity to 40%. The transformed alpha values are limited to a range of 0 to 100%. A 10% alpha offset increase to a 100% opaque object still results in 100% opacity.  
+  
+|Parent Elements|  
+|---------------------|  
+|hslClr (§20.1.2.3.13); prstClr (§20.1.2.3.22); schemeClr (§20.1.2.3.29); scrgbClr (§20.1.2.3.30); srgbClr (§20.1.2.3.32); sysClr (§20.1.2.3.33)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FixedPercentage) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +55,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AlphaOffset class.
-            </summary>
+        <summary>Initializes a new instance of the AlphaOffset class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +78,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +100,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +126,30 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the opacity as expressed by a percentage offset increase or decrease relative to the input color. Increases will never increase the opacity beyond 100%; decreases will never decrease the opacity below 0%.  
+  
+ The following represents a green solid fill which is 90% opaque  
+  
+```  
+<a:solidFill>  
+  <a:srgbClr val="00FF00">  
+    <a:alphaOff val="-10000"/>  
+  </a:srgbClr>  
+</a:solidFill>  
+```  
+  
+ The possible values for this attribute are defined by the `ST_FixedPercentage` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

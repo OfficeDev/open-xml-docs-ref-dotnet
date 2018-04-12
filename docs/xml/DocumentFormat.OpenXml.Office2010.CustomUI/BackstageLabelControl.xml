@@ -1,4 +1,4 @@
-﻿<Type Name="BackstageLabelControl" FullName="DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl">
+<Type Name="BackstageLabelControl" FullName="DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl">
   <TypeSignature Language="C#" Value="public class BackstageLabelControl : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BackstageLabelControl extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.CustomUI.BackstageLabelControl" />
@@ -22,12 +22,69 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the BackstageLabelControl Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is mso14:labelControl.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the BackstageLabelControl Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is mso14:labelControl.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.13   CT_BackstageLabelControl*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/2009/07/customui  
+  
+ *Referenced by:* CT_GroupControls, CT_GroupBox, CT_LayoutContainer  
+  
+ Specifies a Backstage control that displays a simple string of text.  
+  
+ *Attributes:*  
+  
+ *id:* An *ST_UniqueID* attribute, as specified in section 2.4.22, that specifies the identifier of a custom control. All custom controls MUST have unique identifiers. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
+  
+ *idQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control. This attribute is used to reference controls or containers created by other Custom UI documents. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
+  
+ *tag:* An *ST_String* attribute, as specified in section 2.4.19, that specifies an arbitrary *string* that provides additional information about this control during callback function calls. If this attribute is omitted, the value defaults to an empty string.  
+  
+ *alignLabel:* An *ST_AlignLabel* attribute, as specified in section 2.4.2, that specifies how the label of this control is aligned relative to the control. If this attribute is omitted, the label defaults to the top left alignment.  
+  
+ *expand:* An *ST_Expand* attribute, as specified in section 2.4.8, that specifies how this control expands within its container. If this attribute is omitted, the control does not expand.  
+  
+ *enabled:* A *Boolean* attribute that specifies the enabled state of this control. The *enabled* and *getEnabled* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being enabled.  
+  
+ *getEnabled:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the enabled state of this control. The *enabled* and *getEnabled* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being enabled.  
+  
+ *label:* An *ST_String* attribute that specifies a string that is displayed as the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
+  
+ *getLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
+  
+ *visible:* A *Boolean* attribute that specifies the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
+  
+ *getVisible:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
+  
+ *noWrap:* A *Boolean* attribute that specifies that this control’s text will appear on a single line. If this attribute is omitted, its value defaults to *false*.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_BackstageLabelControl">*  
+  
+ *\<xsd:attributeGroup ref="AG_IDCustom"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_AlignAttributes"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Expand"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Enabled"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Label"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Visible"/>*  
+  
+ *\<xsd:attribute name="noWrap" type="xsd:boolean" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +100,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BackstageLabelControl class.
-            </summary>
+        <summary>Initializes a new instance of the BackstageLabelControl class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,10 +125,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> alignLabel.</para>
-          <para>Represents the following attribute in the schema: alignLabel </para>
-        </summary>
+        <summary>alignLabel.Represents the following attribute in the schema: alignLabel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -97,11 +149,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,10 +176,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> enabled.</para>
-          <para>Represents the following attribute in the schema: enabled </para>
-        </summary>
+        <summary>enabled.Represents the following attribute in the schema: enabled</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -155,10 +202,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> expand.</para>
-          <para>Represents the following attribute in the schema: expand </para>
-        </summary>
+        <summary>expand.Represents the following attribute in the schema: expand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -184,10 +228,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getEnabled.</para>
-          <para>Represents the following attribute in the schema: getEnabled </para>
-        </summary>
+        <summary>getEnabled.Represents the following attribute in the schema: getEnabled</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -213,10 +254,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getLabel.</para>
-          <para>Represents the following attribute in the schema: getLabel </para>
-        </summary>
+        <summary>getLabel.Represents the following attribute in the schema: getLabel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -242,10 +280,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getVisible.</para>
-          <para>Represents the following attribute in the schema: getVisible </para>
-        </summary>
+        <summary>getVisible.Represents the following attribute in the schema: getVisible</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -271,10 +306,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -300,10 +332,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> label.</para>
-          <para>Represents the following attribute in the schema: label </para>
-        </summary>
+        <summary>label.Represents the following attribute in the schema: label</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -324,9 +353,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -352,10 +379,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> noWrap.</para>
-          <para>Represents the following attribute in the schema: noWrap </para>
-        </summary>
+        <summary>noWrap.Represents the following attribute in the schema: noWrap</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -381,10 +405,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> idQ.</para>
-          <para>Represents the following attribute in the schema: idQ </para>
-        </summary>
+        <summary>idQ.Represents the following attribute in the schema: idQ</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -410,10 +431,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> tag.</para>
-          <para>Represents the following attribute in the schema: tag </para>
-        </summary>
+        <summary>tag.Represents the following attribute in the schema: tag</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -439,10 +457,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> visible.</para>
-          <para>Represents the following attribute in the schema: visible </para>
-        </summary>
+        <summary>visible.Represents the following attribute in the schema: visible</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

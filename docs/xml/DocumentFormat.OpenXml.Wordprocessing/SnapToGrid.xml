@@ -1,4 +1,4 @@
-﻿<Type Name="SnapToGrid" FullName="DocumentFormat.OpenXml.Wordprocessing.SnapToGrid">
+<Type Name="SnapToGrid" FullName="DocumentFormat.OpenXml.Wordprocessing.SnapToGrid">
   <TypeSignature Language="C#" Value="public class SnapToGrid : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SnapToGrid extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SnapToGrid" />
@@ -19,11 +19,79 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the SnapToGrid Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:snapToGrid.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the SnapToGrid Class. When the object is serialized out as xml, its qualified name is w:snapToGrid.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **snapToGrid (Use Document Grid Settings for Inter-Line Paragraph Spacing)**  
+  
+ This element specifies whether the current paragraph should use the document grid lines per page settings defined in the docGrid element (§17.6.5) when laying out the contents in the paragraph. This setting determines whether the additional line pitch specified in the document grid shall be added to each line in this paragraph as specified by the document grid.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then the paragraph shall use the document grid to lay out text when a document grid is defined for this document.  
+  
+ [*Example*: Consider two single-spaced paragraphs in a section with a document grid set to allow *15* lines per page. This document grid would effectively specifies that an additional line pitch of *45.6* points must be added to each line in order to ensure that the resulting page contains only 15 lines of text.  
+  
+ If this property is set on the first paragraph, but turned off on the second paragraph, as follows:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:snapToGrid w:val="off" />  
+  </w:pPr>  
+  …  
+</w:p>  
+<w:p>  
+  …  
+</w:p>  
+```  
+  
+ The resulting document must have *45.6* points of additional line pitch added to each line in paragraph two, but zero lines of additional line pitch added to each line in paragraph one, since the snapToGrid property is turned off. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **snapToGrid (Use Document Grid Settings For Inter-Character Spacing)**  
+  
+ This element specifies whether the current run should use the document grid characters per line settings defined in the docGrid element (§17.6.5) when laying out the contents in this run. This setting determines whether the additional character pitch specified in the document grid shall be added to each character in this run as specified by the document grid.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the run shall use the document grid setting to lay out text when a document grid is defined for the parent section.  
+  
+ [*Example*: Consider two runs in a section with a document grid set to allow *20* characters per line. This document grid would effectively specifies that an additional character pitch must be added to each line in order to ensure that the resulting line contains only 20 East Asian characters.  
+  
+ If this property is set on the first run, but turned off on the second run, as follows:  
+  
+```xml  
+<w:r>  
+  <w:t>Run One</w:t>  
+</w:r>  
+<w:r>  
+  <w:rPr>  
+    <w:snapToGrid w:val="off" />  
+  </w:rPr>  
+  <w:t>Run Two</w:t>  
+</w:r>  
+```  
+  
+ The resulting document must have the required additional character pitch added to each character in run one, but zero additional character pitch added to each character in run two, since the snapToGrid property is turned *off*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +107,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SnapToGrid class.
-            </summary>
+        <summary>Initializes a new instance of the SnapToGrid class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +130,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +152,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

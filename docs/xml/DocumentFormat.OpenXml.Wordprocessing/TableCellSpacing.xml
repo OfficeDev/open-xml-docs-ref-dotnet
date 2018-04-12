@@ -1,4 +1,4 @@
-﻿<Type Name="TableCellSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing">
+<Type Name="TableCellSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing">
   <TypeSignature Language="C#" Value="public class TableCellSpacing : DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableCellSpacing extends DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing" />
@@ -19,11 +19,143 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TableCellSpacing Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblCellSpacing.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TableCellSpacing Class. When the object is serialized out as xml, its qualified name is w:tblCellSpacing.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblCellSpacing (Table Row Cell Spacing)**  
+  
+ This element specifies the default table cell spacing (the spacing between adjacent cells and the edges of the table) for all cells in the parent row. If specified, this element specifies the minimum amount of space which shall be left between all cells in the table including the width of the table borders in the calculation. It is important to note that row-level cell spacing shall be added inside of the text margins, which shall be aligned with the innermost starting edge of the text extents in a cell without row-level indentation or cell spacing. Row-level cell spacing shall not increase the width of the overall table.  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* or *auto* for this element shall be ignored.  
+  
+ [*Example*: Consider a table whose first cell has a six point wide table border, and a table cell spacing value of . The resulting table would have  of space between each table cell regardless of the width of the cell border, as follows (notice that no border is covered by any other border):  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ *end example*]  
+  
+ If this element is omitted, then the cells in this row shall inherit the cell spacing from the associated table level properties.  
+  
+ [*Example*: Consider a table where the second row has a cell spacing of  for all sides specified via the table row properties as follows:  
+  
+ This table row cell spacing is specified using the following WordprocessingML:  
+  
+```xml  
+<w:trPr>  
+  <w:tblCellSpacing w:w="144" w:type="dxa"/>  
+  …</w:trPr>  
+```  
+  
+ The tblCellSpacing element as a child of trPr specifies the default cell spacing between all cells in the current row, in this case *144* twentieths of a point. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11); trPr (§17.4.83)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblCellSpacing (Table Cell Spacing Exception)**  
+  
+ This element specifies a table cell spacing exception for all cells in the parent table row as part of a set of table-level property exceptions. If specified, this element specifies the minimum amount of space which shall be left between all cells in the parent row after including the width of the table borders in the calculation. This setting shall be superseded by the row cell spacing value (§17.4.44). It is important to note that table-level cell spacing shall be added outside of the text margins, which shall be aligned with the innermost starting edge of the text extents in a table cell.  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* or *auto* for this element shall be ignored.  
+  
+ [*Example*: Consider a table whose first cell has a six point wide table border, and a table cell spacing value of . The resulting table would have  of space between each table cell regardless of the width of the cell border, as follows (notice that no border is covered by any other border):  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ *end example*]  
+  
+ If this element is omitted, then the row shall inherit the table cell spacing from the table-level cell spacing setting (§17.4.43), excepting the case of a row level override.  
+  
+ [*Example*: Consider a table whose final two rows are defined to have cell spacing of  for all sides via a table-level property exception, as follows:  
+  
+ This table cell spacing exception is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblPrEx>  
+  <w:tblCellSpacing w:w="144" w:type="dxa"/>  
+  …</w:tblPrEx>  
+```  
+  
+ The tblCellSpacing element as a child of tblPrEx specifies the default cell spacing between all cells in final two rows in the current table, in this case *144* twentieths of a point. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPrEx (§17.4.61); tblPrEx (§17.4.62)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblCellSpacing (Table Cell Spacing Default)**  
+  
+ This element specifies the default table cell spacing (the spacing between adjacent cells and the edges of the table) for all cells in the parent table. If specified, this element specifies the minimum amount of space which shall be left between all cells in the table including the width of the table borders in the calculation. This setting shall be superseded by a table-level exception (§17.4.45) or the row cell spacing value (§17.4.44) in that order. It is important to note that table-level cell spacing shall be added outside of the text margins, which shall be aligned with the innermost starting edge of the text extents in a table cell.  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* or *auto* for this element shall be ignored.  
+  
+ [*Example*: Consider a table whose first cell has a six point wide table border, and a table cell spacing value of . The resulting table would have  of space between each table cell regardless of the width of the cell border, as follows (notice that no border is covered by any other border):  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ *end example*]  
+  
+ If this element is omitted, then the table shall inherit the table cell spacing from the associated table style. If table cell spacing is never specified in the style hierarchy, no cell spacing shall be added to the parent table.  
+  
+ [*Example*: Consider a table with a default cell spacing of  for all sides as follows:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This table cell spacing deafult is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblPr>  
+  <w:tblCellSpacing w:w="144" w:type="dxa"/>  
+  …</w:tblPr>  
+```  
+  
+ The tblCellSpacing element as a child of tblPr specifies the default cell spacing between all cells in the current table, in this case *144* twentieths of a point. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPr (§17.4.60); tblPr (§17.4.59); tblPr (§17.7.6.4); tblPr (§17.7.6.3)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +171,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableCellSpacing class.
-            </summary>
+        <summary>Initializes a new instance of the TableCellSpacing class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +194,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +216,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

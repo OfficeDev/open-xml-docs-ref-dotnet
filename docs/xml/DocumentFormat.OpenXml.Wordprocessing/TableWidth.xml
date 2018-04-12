@@ -1,4 +1,4 @@
-﻿<Type Name="TableWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.TableWidth">
+<Type Name="TableWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.TableWidth">
   <TypeSignature Language="C#" Value="public class TableWidth : DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableWidth extends DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableWidth" />
@@ -19,11 +19,113 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TableWidth Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblW.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TableWidth Class. When the object is serialized out as xml, its qualified name is w:tblW.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblW (Preferred Table Width)**  
+  
+ This element specifies the preferred width for this table. This preferred width is used as part of the table layout algorithm specified by the tblLayout element (§17.4.53; §17.4.54) - full description of the algorithm in the ST_TblLayout simple type (§17.18.87).  
+  
+ All widths in a table are considered preferred because:  
+  
+-   The table shall satisfy the shared columns as specified by the tblGrid element (§17.4.49)  
+  
+-   Two or more widths can have conflicting values for the width of the same grid column  
+  
+-   The table layout algorithm (§17.18.87) can require a preference to be overridden  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* for this element shall be calculated relative to the text extents of the page (page width excluding margins).  
+  
+ If this element is omitted, then the cell width shall be of type *auto*.  
+  
+ [*Example*: Consider a WordprocessingML table defined as follows:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblW w:type="dxa" w:w="1440"/>  
+  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ This table specifies that it has a preferred table width of *1440* twentieths of a point (one inch). The resulting table would therefore be sized such that the table maintains that preferred width, as follows:  
+  
+ Hello world  
+  
+ The text *Hello world* makes the middle cell larger, and the other two cells are size to maintain the preferred widths of one inch for the overall table width:  
+  
+ Hello world this is a longer string.  
+  
+ However, when the middle table cell requires a larger width to accommodate non-breaking text, that preference can be overridden as needed:  
+  
+ Hello worldddddddddddddddddddddddddddddd  
+  
+ In this case, the middle cell's long non breaking string caused the table to be expanded to prevent breaking the string, and therefore to override the preferred width on the table. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPr (§17.4.60); tblPr (§17.4.59); tblPr (§17.7.6.4); tblPr (§17.7.6.3)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblW (Preferred Table Width Exception)**  
+  
+ This element specifies the preferred width for the parent table row via a set of table-level property exceptions. This preferred width is used as part of the table layout algorithm specified by the tblLayout element (§17.4.53n; §17.4.54) - full description of the algorithm in the ST_TblLayout simple type (§17.18.87).  
+  
+ All widths in a table are considered preferred because:  
+  
+-   The table shall satisfy the shared columns as specified by the tblGrid element (§17.4.49)  
+  
+-   Two or more widths can have conflicting values for the width of the same grid column  
+  
+-   The table layout algorithm (§17.18.87) can require a preference to be overridden  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* for this element shall be calculated relative to the text extents of the page (page width excluding margins).  
+  
+ If this element is omitted, then the cell width shall be of type *auto*.  
+  
+ [*Example*: Consider a row in a WordprocessingML table defined as follows:  
+  
+```xml  
+<w:tr>  
+  <w:tblPrEx>  
+    <w:tblW w:type="fixed" w:w="1440"/>  
+  </w:tblPrEx>  
+  <w:trPr>  
+  </w:trPr>  
+  …</w:tr>  
+```  
+  
+ This table-level property exception specifies that it has a preferred table width of *1440* twentieths of a point (one inch). The resulting table row would therefore be sized such that the table maintains that preferred width, as follows:  
+  
+ Hello world  
+  
+ The text *Hello world* makes the middle cell larger, and the other two cells are size to maintain the preferred widths of one inch for the overall table width:  
+  
+ Hello world this is a longer string.  
+  
+ However, when the middle table cell requires a larger width to accommodate non-breaking text, that preference can be overridden as needed:  
+  
+ Hello worldddddddddddddddddddddddddddddd  
+  
+ In this case, the middle cell's long non breaking string caused the table to be expanded to prevent breaking the string, and therefore to override the preferred width on the table row. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPrEx (§17.4.61); tblPrEx (§17.4.62)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +141,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableWidth class.
-            </summary>
+        <summary>Initializes a new instance of the TableWidth class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +164,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +186,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

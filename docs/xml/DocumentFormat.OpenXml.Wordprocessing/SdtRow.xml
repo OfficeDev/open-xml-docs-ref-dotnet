@@ -1,4 +1,4 @@
-﻿<Type Name="SdtRow" FullName="DocumentFormat.OpenXml.Wordprocessing.SdtRow">
+<Type Name="SdtRow" FullName="DocumentFormat.OpenXml.Wordprocessing.SdtRow">
   <TypeSignature Language="C#" Value="public class SdtRow : DocumentFormat.OpenXml.Wordprocessing.SdtElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SdtRow extends DocumentFormat.OpenXml.Wordprocessing.SdtElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SdtRow" />
@@ -88,13 +88,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Row-Level Structured Document Tag.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:sdt.</para>
-    </summary>
+    <summary>Row-Level Structured Document Tag. When the object is serialized out as xml, its qualified name is w:sdt.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>SdtProperties &lt;w:sdtPr&gt;</description></item><item><description>SdtEndCharProperties &lt;w:sdtEndPr&gt;</description></item><item><description>SdtContentRow &lt;w:sdtContent&gt;</description></item><item><description>BookmarkStart &lt;w:bookmarkStart&gt;</description></item><item><description>BookmarkEnd &lt;w:bookmarkEnd&gt;</description></item><item><description>CommentRangeStart &lt;w:commentRangeStart&gt;</description></item><item><description>CommentRangeEnd &lt;w:commentRangeEnd&gt;</description></item><item><description>MoveFromRangeStart &lt;w:moveFromRangeStart&gt;</description></item><item><description>MoveFromRangeEnd &lt;w:moveFromRangeEnd&gt;</description></item><item><description>MoveToRangeStart &lt;w:moveToRangeStart&gt;</description></item><item><description>MoveToRangeEnd &lt;w:moveToRangeEnd&gt;</description></item><item><description>CustomXmlInsRangeStart &lt;w:customXmlInsRangeStart&gt;</description></item><item><description>CustomXmlInsRangeEnd &lt;w:customXmlInsRangeEnd&gt;</description></item><item><description>CustomXmlDelRangeStart &lt;w:customXmlDelRangeStart&gt;</description></item><item><description>CustomXmlDelRangeEnd &lt;w:customXmlDelRangeEnd&gt;</description></item><item><description>CustomXmlMoveFromRangeStart &lt;w:customXmlMoveFromRangeStart&gt;</description></item><item><description>CustomXmlMoveFromRangeEnd &lt;w:customXmlMoveFromRangeEnd&gt;</description></item><item><description>CustomXmlMoveToRangeStart &lt;w:customXmlMoveToRangeStart&gt;</description></item><item><description>CustomXmlMoveToRangeEnd &lt;w:customXmlMoveToRangeEnd&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart &lt;w14:customXmlConflictInsRangeStart&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd &lt;w14:customXmlConflictInsRangeEnd&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart &lt;w14:customXmlConflictDelRangeStart&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd &lt;w14:customXmlConflictDelRangeEnd&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **sdt (Row-Level Structured Document Tag)**  
+  
+ This element specifies the presence of a structured document tag around a single table row. The two child elements of this element shall be used to specify the properties and content of the current structured document tag via the sdtPr and sdtContent elements, respectively.  
+  
+ [*Example*: Consider a structured document tag with the friendly name *invoiceItem* that must be located around a single table row in a WordprocessingML document. This requirement would be specified as follows in the WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  <w:sdt>  
+    <w:sdtPr>  
+      <w:alias w:val="invoiceItem"/>  
+    </w:sdtPr>  
+    <w:sdtContent>  
+      <w:tr>  
+        …      </w:tr>  
+    </w:sdtContent>  
+  </w:sdt>  
+  …</w:tbl>  
+```  
+  
+ The sdt element specifies the structured document tag, the child sdtPr element contains the friendly name property set to *invoiceItem*, and the sdtContent element contains a single table row (it is a row-level structured document tag). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|customXml (§17.5.1.5); sdtContent (§17.5.2.35); tbl (§17.4.38)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|sdtContent (Row-Level Structured Document Tag Content)|§17.5.2.35|  
+|sdtEndPr (Structured Document Tag End Character Properties)|§17.5.2.37|  
+|sdtPr (Structured Document Tag Properties)|§17.5.2.38|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SdtRow) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -110,9 +148,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SdtRow class.
-            </summary>
+        <summary>Initializes a new instance of the SdtRow class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -139,9 +175,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SdtRow class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the SdtRow class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,9 +196,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SdtRow class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the SdtRow class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -185,9 +217,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the SdtRow class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the SdtRow class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -210,11 +240,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -234,10 +262,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -257,11 +283,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SdtContentRow</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Row-Level Structured Document Tag Content.</para>
-          <para> Represents the following element tag in the schema: w:sdtContent </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Row-Level Structured Document Tag Content. Represents the following element tag in the schema: w:sdtContent</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.SdtContentRow" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

@@ -1,4 +1,4 @@
-﻿<Type Name="TableGridChange" FullName="DocumentFormat.OpenXml.Wordprocessing.TableGridChange">
+<Type Name="TableGridChange" FullName="DocumentFormat.OpenXml.Wordprocessing.TableGridChange">
   <TypeSignature Language="C#" Value="public class TableGridChange : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableGridChange extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableGridChange" />
@@ -22,13 +22,52 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Revision Information for Table Grid Column Definitions.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblGridChange.</para>
-    </summary>
+    <summary>Revision Information for Table Grid Column Definitions. When the object is serialized out as xml, its qualified name is w:tblGridChange.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PreviousTableGrid &lt;w:tblGrid&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblGridChange (Revision Information for Table Grid Column Definitions)**  
+  
+ This element specifies the details about a single revision to a table's grid column definitions within a WordprocessingML document.  
+  
+ This element stores this revision as follows:  
+  
+-   The child element of this element contains the definition of the table grid which was applied to the parent table before this revision  
+  
+ [*Example*: Consider a two column table in a WordprocessingML document which has the width of its first column significantly reduced, and this change in the table grid is tracked as a revision. This revision would be specified using the following WordprocessingML markup:  
+  
+```xml  
+<w:tblGrid>  
+  <w:gridCol w:w="1548" />  
+  <w:gridCol w:w="8028" />  
+  <w:tblGridChange w:id="1">  
+    <w:tblGrid>  
+      <w:gridCol w:w="4788" />  
+      <w:gridCol w:w="4788" />  
+    </w:tblGrid>  
+  </w:tblGridChange>  
+</w:tblGrid>  
+```  
+  
+ The tblGridChange element specifies that there was a revision to the table grid, and the previous table grid had both columns with a width of *4788* twentieths of a point, vs. their current widths of *1548* and *8028* twentieths of a point respectively. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblGrid (§17.4.49)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|tblGrid (Previous Table Grid)|§17.4.48|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblGridChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableGridChange class.
-            </summary>
+        <summary>Initializes a new instance of the TableGridChange class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +110,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableGridChange class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TableGridChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +131,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableGridChange class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TableGridChange class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +152,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TableGridChange class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TableGridChange class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +175,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,12 +202,32 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Annotation Identifier.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Annotation Identifier.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier for an annotation within a WordprocessingML document. The restrictions on the `id` attribute, if any, are defined by the parent XML element.  
+  
+ If this attribute is omitted, then the document is non-conformant.  
+  
+ Consider an annotation represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" … >  
+  …  
+</w:…>  
+```  
+  
+ The `id` attribute specifies that the ID of the current annotation is `1`. This value is used to uniquely identify this annotation within the document content.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -199,10 +248,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -222,11 +269,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Table Grid.</para>
-          <para> Represents the following element tag in the schema: w:tblGrid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Previous Table Grid. Represents the following element tag in the schema: w:tblGrid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.PreviousTableGrid" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

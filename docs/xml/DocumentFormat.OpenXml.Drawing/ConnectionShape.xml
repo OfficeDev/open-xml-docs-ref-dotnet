@@ -1,4 +1,4 @@
-﻿<Type Name="ConnectionShape" FullName="DocumentFormat.OpenXml.Drawing.ConnectionShape">
+<Type Name="ConnectionShape" FullName="DocumentFormat.OpenXml.Drawing.ConnectionShape">
   <TypeSignature Language="C#" Value="public class ConnectionShape : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionShape extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.ConnectionShape" />
@@ -31,13 +31,69 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Connection Shape.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:cxnSp.</para>
-    </summary>
+    <summary>Connection Shape. When the object is serialized out as xml, its qualified name is a:cxnSp.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>NonVisualConnectionShapeProperties &lt;a:nvCxnSpPr&gt;</description></item><item><description>ShapeProperties &lt;a:spPr&gt;</description></item><item><description>ShapeStyle &lt;a:style&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `cxnSp (Connection Shape)`  
+  
+ This element specifies a connection shape that is used to connect two sp elements. Once a connection is specified using a cxnSp, it is left to the generating application to determine the exact path the connector takes. That is the connector routing algorithm is left up to the generating application as the desired path might be different depending on the specific needs of the application.  
+  
+ 04320cf9-53a9-4812-aabc-0ced2ef4171c  
+  
+ [*Example*: Consider the following connector shape that connects two regular shapes.  
+  
+```xml  
+<p:spTree>  
+  …  <p:sp>  
+    <p:nvSpPr>  
+      <p:cNvPr id="1" name="Rectangle 1"/>  
+      <p:cNvSpPr/>  
+      <p:nvPr/>  
+    </p:nvSpPr>  
+    …  </p:sp>  
+  <p:sp>  
+    <p:nvSpPr>  
+      <p:cNvPr id="2" name="Rectangle 2"/>  
+      <p:cNvSpPr/>  
+      <p:nvPr/>  
+    </p:nvSpPr>  
+    …  </p:sp>  
+  <p:cxnSp>  
+    <p:nvCxnSpPr>  
+      <p:cNvPr id="3" name="Elbow Connector 3"/>  
+      <p:cNvCxnSpPr>  
+        <a:stCxn id="1" idx="3"/>  
+        <a:endCxn id="2" idx="1"/>  
+      </p:cNvCxnSpPr>  
+      <p:nvPr/>  
+    </p:nvCxnSpPr>  
+    …  </p:cxnSp>  
+</p:spTree>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|grpSp (§20.1.2.2.20); lockedCanvas (§20.3.2.1)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§20.1.2.2.15|  
+|nvCxnSpPr (Non-Visual Properties for a Connection Shape)|§20.1.2.2.25|  
+|spPr (Shape Properties)|§20.1.2.2.35|  
+|style (Shape Style)|§20.1.2.2.37|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_GvmlConnector) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -53,9 +109,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ConnectionShape class.
-            </summary>
+        <summary>Initializes a new instance of the ConnectionShape class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +136,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConnectionShape class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ConnectionShape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,9 +157,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ConnectionShape class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ConnectionShape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,9 +178,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ConnectionShape class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ConnectionShape class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,11 +201,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -177,11 +223,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: a:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: a:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -204,10 +247,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -227,11 +268,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.NonVisualConnectionShapeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Non-Visual Properties for a Connection Shape.</para>
-          <para> Represents the following element tag in the schema: a:nvCxnSpPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Non-Visual Properties for a Connection Shape. Represents the following element tag in the schema: a:nvCxnSpPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.NonVisualConnectionShapeProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -254,11 +292,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ShapeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Visual Properties.</para>
-          <para> Represents the following element tag in the schema: a:spPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Visual Properties. Represents the following element tag in the schema: a:spPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ShapeProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -281,11 +316,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ShapeStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Style.</para>
-          <para> Represents the following element tag in the schema: a:style </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape Style. Represents the following element tag in the schema: a:style</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ShapeStyle" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main

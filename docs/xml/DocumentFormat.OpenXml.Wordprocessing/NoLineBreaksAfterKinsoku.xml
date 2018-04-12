@@ -1,4 +1,4 @@
-﻿<Type Name="NoLineBreaksAfterKinsoku" FullName="DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku">
+<Type Name="NoLineBreaksAfterKinsoku" FullName="DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku">
   <TypeSignature Language="C#" Value="public class NoLineBreaksAfterKinsoku : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NoLineBreaksAfterKinsoku extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NoLineBreaksAfterKinsoku" />
@@ -19,11 +19,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Custom Set of Characters Which Cannot End a Line.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:noLineBreaksAfter.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Custom Set of Characters Which Cannot End a Line. When the object is serialized out as xml, its qualified name is w:noLineBreaksAfter.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `noLineBreaksAfter (Custom Set of Characters Which Cannot End a Line)`  
+  
+ This element specifies the set of characters which shall be restricted from ending a line for runs of text which shall be subject to custom line breaking logic using the kinsoku element (§17.3.1.16) when the contents of the document are displayed. This constraint shall only apply to text which has been flagged in the language of this rule via the lang element (§17.3.2.20) or automatic detection methods outside the scope of /IEC 29500.  
+  
+ If this element is omitted, then no custom set of characters shall be used to restrict the characters which can end a line when using the kinsoku element.  
+  
+ [*Example*: Consider a paragraph of WordprocessingML text displayed as follows, with the dollar symbol *$* was flagged as Japanese content using the following WordprocessingML in the run properties:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:lang w:eastAsia="ja-JP" />  
+  </w:rPr>  
+  <w:t>$</w:t>  
+</w:r>  
+```  
+  
+ c2233670-26bc-41d4-9288-09891e9e83ce  
+  
+ This text is displayed and the resulting first line ends with the dollar sign symbol. If this character must not be used to end a line, that requirement would be specified as follows in the document settings:  
+  
+```xml  
+  <w:noLineBreaksAfter w:lang="ja-JP" w:val="$" />  
+```  
+  
+ The noLineBreaksAfter element's val attribute has a value of *ja-JP*, specifying that all dollar signs in this document which are marked as Japanese text must not be allowed to end a line. This means that the dollar sign character must therefore be moved to the next line as it can no longer be the last character on a line:  
+  
+ acd718ef-694d-4d8c-9651-346fe28ab919  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Kinsoku) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NoLineBreaksAfterKinsoku class.
-            </summary>
+        <summary>Initializes a new instance of the NoLineBreaksAfterKinsoku class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,10 +132,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lang.</para>
-          <para>Represents the following attribute in the schema: w:lang </para>
-        </summary>
+        <summary>lang.Represents the following attribute in the schema: w:lang</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -119,10 +155,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,10 +181,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

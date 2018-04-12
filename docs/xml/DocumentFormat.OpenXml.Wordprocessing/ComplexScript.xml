@@ -1,4 +1,4 @@
-﻿<Type Name="ComplexScript" FullName="DocumentFormat.OpenXml.Wordprocessing.ComplexScript">
+<Type Name="ComplexScript" FullName="DocumentFormat.OpenXml.Wordprocessing.ComplexScript">
   <TypeSignature Language="C#" Value="public class ComplexScript : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComplexScript extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ComplexScript" />
@@ -19,11 +19,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ComplexScript Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:cs.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the ComplexScript Class. When the object is serialized out as xml, its qualified name is w:cs.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cs (Use Complex Script Formatting on Run)**  
+  
+ This element specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.  
+  
+ This means that a consumer shall use the complex script formatting applied to the run [*Example*: The bCs value (§17.3.2.2), not the b value (§17.3.2.1). *end example*] when determining the resulting formatting properties.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the run contents are set to complex script based on the Unicode character positions of the content.  
+  
+ [*Example*: Consider the following run of English text in a WordprocessingML document:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:bCs/>  
+    <w:i/>  
+    <w:cs/>  
+  </w:rPr>  
+  <w:t>some English text</w:t>  
+</w:r>  
+```  
+  
+ This run has bold applied to complex script characters, and italics applied to non-complex script characters. However, since the cs property is set, the text in this run must be treated as complex script text when determining the resulting formatting. Therefore, the run has bold formatting, but no italic formatting when displayed. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +74,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ComplexScript class.
-            </summary>
+        <summary>Initializes a new instance of the ComplexScript class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

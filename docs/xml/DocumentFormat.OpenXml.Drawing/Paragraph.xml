@@ -1,4 +1,4 @@
-﻿<Type Name="Paragraph" FullName="DocumentFormat.OpenXml.Drawing.Paragraph">
+<Type Name="Paragraph" FullName="DocumentFormat.OpenXml.Drawing.Paragraph">
   <TypeSignature Language="C#" Value="public class Paragraph : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Paragraph extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Paragraph" />
@@ -37,13 +37,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Text Paragraphs.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:p.</para>
-    </summary>
+    <summary>Text Paragraphs. When the object is serialized out as xml, its qualified name is a:p.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ParagraphProperties &lt;a:pPr&gt;</description></item><item><description>Run &lt;a:r&gt;</description></item><item><description>Break &lt;a:br&gt;</description></item><item><description>Field &lt;a:fld&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Drawing.TextMath &lt;a14:m&gt;</description></item><item><description>EndParagraphRunProperties &lt;a:endParaRPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **p (Text Paragraphs)**  
+  
+ This element specifies the presence of a paragraph of text within the containing text body. The paragraph is the highest level text separation mechanism within a text body. A paragraph can contain text paragraph properties associated with the paragraph. If no properties are listed then properties specified in the defPPr element are used.  
+  
+ [*Example*: Consider the case where the user would like to describe a text body that contains two paragraphs. The requirement for these paragraphs is that one be right aligned and the other left aligned. The following DrawingML would specify a text body such as this.  
+  
+```xml  
+<p:txBody>  
+    …    <a:p>  
+    <a:pPr algn="r">  
+    </a:pPr>  
+    …  
+    <a:t>Some text</a:t>  
+    …  </a:p>  
+  <a:p>  
+    <a:pPr algn="l">  
+    </a:pPr>  
+    …    <a:t>Some text</a:t>  
+    …  </a:p>  
+</p:txBody>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rich (§21.2.2.156); t (§21.4.3.8); txBody (§21.3.2.26); txBody (§20.1.2.2.40); txBody (§20.5.2.34); txBody (§19.3.1.51); txPr (§21.2.2.216)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|br (Text Line Break)|§21.1.2.2.1|  
+|endParaRPr (End Paragraph Run Properties)|§21.1.2.2.3|  
+|fld (Text Field)|§21.1.2.2.4|  
+|pPr (Text Paragraph Properties)|§21.1.2.2.7|  
+|r (Text Run)|§21.1.2.3.8|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextParagraph) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -59,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Paragraph class.
-            </summary>
+        <summary>Initializes a new instance of the Paragraph class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,9 +128,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Paragraph class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Paragraph class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +149,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Paragraph class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Paragraph class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -134,9 +170,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Paragraph class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Paragraph class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,11 +193,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -183,10 +215,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -206,10 +236,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ParagraphProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Paragraph Properties.</para>
-          <para> Represents the following element tag in the schema: a:pPr </para>
-        </summary>
+        <summary>Text Paragraph Properties. Represents the following element tag in the schema: a:pPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

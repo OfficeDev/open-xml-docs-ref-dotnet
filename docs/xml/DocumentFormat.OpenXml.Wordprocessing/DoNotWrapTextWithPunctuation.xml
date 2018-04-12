@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotWrapTextWithPunctuation" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation">
+<Type Name="DoNotWrapTextWithPunctuation" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation">
   <TypeSignature Language="C#" Value="public class DoNotWrapTextWithPunctuation : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotWrapTextWithPunctuation extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotWrapTextWithPunctuation" />
@@ -19,11 +19,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Allow Hanging Punctuation With Character Grid.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotWrapTextWithPunct.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Allow Hanging Punctuation With Character Grid. When the object is serialized out as xml, its qualified name is w:doNotWrapTextWithPunct.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotWrapTextWithPunct (Do Not Allow Hanging Punctuation With Character Grid)`  
+  
+ This element specifies whether applications shall allowing hanging punctuation when:  
+  
+-   The overflowPunct element (Part 1, §17.3.1.21) is turned on for a paragraph  
+  
+-   A document grid is defined using the docGrid element (Part 1, §17.6.5) which defines the number of characters per line  
+  
+ Typically, paragraphs which allow hanging punctuation shall allow the number of characters on a line as specified by the document grid to be exceeded by one in order to allow for hanging punctuation. This element, when present with a val attribute value of *true* (or equivalent), specifies that the document grid shall never be exceeded for hanging punctuation.  
+  
+ [*Example*: Consider a WordprocessingML document with a document grid set to allow 10 characters per line:  
+  
+```xml  
+<w:sectPr>  
+  <w:docGrid w:type="snapTOCars" w:charSpace="146636" … />  
+</w:sectPr>  
+```  
+  
+ If the eleventh character on the line was a punctuation characters, the default presentation would allow that character to behave as hanging punctuation on the first line:  
+  
+ 61feaeac-42dd-4846-a898-c2e8bb0540ba  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotwrapTextWithPunct />  
+</w:compat>  
+```  
+  
+ Then the character grid cannot be exceeded even for the hanging punctuation, resulting in the following output:  
+  
+ 1e1eb475-0d7e-4e9a-bf3c-e80585eac930  
+  
+ The hanging punctuation was disallowed, moving it (and the character before it, since that character cannot begin a line) to the following line. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +87,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotWrapTextWithPunctuation class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotWrapTextWithPunctuation class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +110,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +132,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

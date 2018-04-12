@@ -1,4 +1,4 @@
-﻿<Type Name="NormalViewProperties" FullName="DocumentFormat.OpenXml.Presentation.NormalViewProperties">
+<Type Name="NormalViewProperties" FullName="DocumentFormat.OpenXml.Presentation.NormalViewProperties">
   <TypeSignature Language="C#" Value="public class NormalViewProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NormalViewProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.NormalViewProperties" />
@@ -28,13 +28,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Normal View Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:normalViewPr.</para>
-    </summary>
+    <summary>Normal View Properties. When the object is serialized out as xml, its qualified name is p:normalViewPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>RestoredLeft &lt;p:restoredLeft&gt;</description></item><item><description>RestoredTop &lt;p:restoredTop&gt;</description></item><item><description>ExtensionList &lt;p:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `normalViewPr (Normal View Properties)`  
+  
+ This element specifies the view properties associated with the normal view mode.  The normal view consists of three content regions: the slide itself, a side content region, and a bottom content region.  The content of the side content region and bottom content region is determined by the generating application.  Properties pertaining to the positioning of the different content regions are stored in this element.  This information allows the application to save its view state to the file, so that when reopened the view is in the same state as when the presentation was last saved.  
+  
+ A vertical splitter bar separates the slide from the side content region.  A horizontal splitter bar separates the slide from the content region below the slide.  If the presentation is set to left-to-right, the side content region is to the left of the slide.  If the presentation is set to right-to-left, the side content region is to the right of the slide.  
+  
+ a151ad89-197b-47c9-8e08-485b7800683c  
+  
+|Parent Elements|  
+|---------------------|  
+|viewPr (§19.2.2.18)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§19.2.1.12|  
+|restoredLeft (Normal View Restored Left Properties)|§19.2.2.11|  
+|restoredTop (Normal View Restored Top Properties)|§19.2.2.12|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|horzBarState (State of the Horizontal Splitter Bar)|Specifies the state that the horizontal splitter bar should be in when in normal view mode.  The region to be maximized or minimized is the side content region.<br /><br /> The possible values for this attribute are defined by the *ST_SplitterBarState* simple type (§19.7.19).|  
+|preferSingleView (Prefer Single View)|Specifies whether the user prefers to see a full-window single-content region over the standard normal view with three content regions.  If enabled, the application can choose to display one of the content regions in the entire window.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showOutlineIcons (Show Outline Icons in Normal View)|Specifies whether the application should show icons if displaying outline content in any of the content regions of normal view mode.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|snapVertSplitter (Snap Vertical Splitter)|Specifies whether the vertical splitter should snap to a minimized state when the side region is sufficiently small.  The specific parameters of this behaviour are left to the generating application.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|vertBarState (State of the Vertical Splitter Bar)|Specifies the state that the vertical splitter bar should be in when in normal view mode.  The region to be maximized or minimized is the slide region.<br /><br /> The possible values for this attribute are defined by the *ST_SplitterBarState* simple type (§19.7.19).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_NormalViewProperties) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NormalViewProperties class.
-            </summary>
+        <summary>Initializes a new instance of the NormalViewProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +109,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NormalViewProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the NormalViewProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -102,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NormalViewProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the NormalViewProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -125,9 +151,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the NormalViewProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the NormalViewProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +174,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,11 +196,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: p:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: p:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -206,12 +225,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.SplitterBarStateValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> State of the Horizontal Splitter Bar.</para>
-          <para>Represents the following attribute in the schema: horzBarState </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>State of the Horizontal Splitter Bar.Represents the following attribute in the schema: horzBarState</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the state that the horizontal splitter bar should be in when in normal view mode. The region to be maximized or minimized is the side content region.  
+  
+ The possible values for this attribute are defined by the `ST_SplitterBarState` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -230,10 +257,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -258,12 +283,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Prefer Single View.</para>
-          <para>Represents the following attribute in the schema: preferSingleView </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Prefer Single View.Represents the following attribute in the schema: preferSingleView</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies whether the user prefers to see a full-window single-content region over the standard normal view with three content regions. If enabled, the application may choose to display one of the content regions in the entire window.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="RestoredLeft">
@@ -282,11 +315,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.RestoredLeft</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Normal View Restored Left Properties.</para>
-          <para> Represents the following element tag in the schema: p:restoredLeft </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Normal View Restored Left Properties. Represents the following element tag in the schema: p:restoredLeft</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.RestoredLeft" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -309,11 +339,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.RestoredTop</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Normal View Restored Top Properties.</para>
-          <para> Represents the following element tag in the schema: p:restoredTop </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Normal View Restored Top Properties. Represents the following element tag in the schema: p:restoredTop</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.RestoredTop" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -341,12 +368,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Outline Icons in Normal View.</para>
-          <para>Represents the following attribute in the schema: showOutlineIcons </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Show Outline Icons in Normal View.Represents the following attribute in the schema: showOutlineIcons</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies whether the application should show icons if displaying outline content in any of the content regions of normal view mode.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SnapVerticalSplitter">
@@ -370,12 +405,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Snap Vertical Splitter.</para>
-          <para>Represents the following attribute in the schema: snapVertSplitter </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Snap Vertical Splitter.Represents the following attribute in the schema: snapVertSplitter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies whether the vertical splitter should snap to a minimized state when the side region is sufficiently small. The specific parameters of this behaviour are left to the generating application.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="VerticalBarState">
@@ -399,12 +442,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.SplitterBarStateValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> State of the Vertical Splitter Bar.</para>
-          <para>Represents the following attribute in the schema: vertBarState </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>State of the Vertical Splitter Bar.Represents the following attribute in the schema: vertBarState</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the state that the vertical splitter bar should be in when in normal view mode. The region to be maximized or minimized is the slide region.  
+  
+ The possible values for this attribute are defined by the `ST_SplitterBarState` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

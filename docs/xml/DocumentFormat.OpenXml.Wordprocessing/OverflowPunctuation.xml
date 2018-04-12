@@ -1,4 +1,4 @@
-﻿<Type Name="OverflowPunctuation" FullName="DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation">
+<Type Name="OverflowPunctuation" FullName="DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation">
   <TypeSignature Language="C#" Value="public class OverflowPunctuation : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OverflowPunctuation extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation" />
@@ -19,11 +19,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the OverflowPunctuation Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:overflowPunct.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the OverflowPunctuation Class. When the object is serialized out as xml, its qualified name is w:overflowPunct.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **overflowPunct (Allow Punctuation to Extend Past Text Extents)**  
+  
+ This element specifies that the text in this paragraph shall be allowed to extend one character beyond the extents applied by any indents/margins when the character that extends past those extents is a punctuation character.  
+  
+ Omitting this element sets its value to *true*.  
+  
+ [*Example*: Consider a WordprocessingML document with the following string at the end of a line:  
+  
+```xml  
+"This is some text in quotation marks"  
+```  
+  
+ Typically, if the text extents would normally fall between the letter s and the closing quotation mark, the quotation mark would be allowed to extend past the end of the line by one character even though the punctuation is not part of the word *marks* (since the omission of overflowPunct is equivalent to setting its val attribute to *true*).  
+  
+ However, if this behavior should not be applied to this paragraph, a producer can specify this by setting the property in the WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:overflowPunct w:val="0" />  
+</w:pPr>  
+```  
+  
+ The line would now break after the letter *s*, regardless of the fact that the next character is a quotation mark. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the OverflowPunctuation class.
-            </summary>
+        <summary>Initializes a new instance of the OverflowPunctuation class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

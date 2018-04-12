@@ -1,4 +1,4 @@
-﻿<Type Name="VTArray" FullName="DocumentFormat.OpenXml.VariantTypes.VTArray">
+<Type Name="VTArray" FullName="DocumentFormat.OpenXml.VariantTypes.VTArray">
   <TypeSignature Language="C#" Value="public class VTArray : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VTArray extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.VariantTypes.VTArray" />
@@ -70,13 +70,79 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Array.</para>
-      <para> When the object is serialized out as xml, its qualified name is vt:array.</para>
-    </summary>
+    <summary>Array. When the object is serialized out as xml, its qualified name is vt:array.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Variant &lt;vt:variant&gt;</description></item><item><description>VTByte &lt;vt:i1&gt;</description></item><item><description>VTShort &lt;vt:i2&gt;</description></item><item><description>VTInt32 &lt;vt:i4&gt;</description></item><item><description>VTInteger &lt;vt:int&gt;</description></item><item><description>VTUnsignedByte &lt;vt:ui1&gt;</description></item><item><description>VTUnsignedShort &lt;vt:ui2&gt;</description></item><item><description>VTUnsignedInt32 &lt;vt:ui4&gt;</description></item><item><description>VTUnsignedInteger &lt;vt:uint&gt;</description></item><item><description>VTFloat &lt;vt:r4&gt;</description></item><item><description>VTDouble &lt;vt:r8&gt;</description></item><item><description>VTDecimal &lt;vt:decimal&gt;</description></item><item><description>VTBString &lt;vt:bstr&gt;</description></item><item><description>VTDate &lt;vt:date&gt;</description></item><item><description>VTBool &lt;vt:bool&gt;</description></item><item><description>VTError &lt;vt:error&gt;</description></item><item><description>VTCurrency &lt;vt:cy&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **array (Array)**  
+  
+ The array element defines the array variant type.  Array contents shall be of uniform type as specified by the baseType attribute.  The contents of an array are defined using repeated child elements of the appropriate variant type.  
+  
+ Multi-dimensional arrays can be defined by specifying the length of each dimension in the lBound and uBound attributes through the use of the "," delimiter.  Child elements of multi-dimensional arrays are indexed along each dimension in the order the dimensions are declared.  
+  
+ In other words, the array shall be filled as follows:  
+  
+-   The first index shall be incremented to its maximum value [*Example*: [0,0,0] to [max,0,0] *end example*]  
+  
+-   The second index shall be incremented to its maximum value [*Example*: [0,1,0] to [0,max,0] *end example*]  
+  
+-   Subsequent indices shall be filled until all provided values have been added  
+  
+-   All other values shall have null values within the array (i.e. no default value shall be assumed).  
+  
+ [*Example*: A 2x3 variant type array of type "i4" is specified as follows:  
+  
+```xml  
+<vt:array lBounds="0,0" uBounds="1,2" baseType="i4">  
+  <vt:i4>0</vt:i4>  
+  <vt:i4>1</vt:i4>  
+  <vt:i4>2</vt:i4>  
+  <vt:i4>3</vt:i4>  
+  <vt:i4>4</vt:i4>  
+</vt:array>  
+```  
+  
+ The resulting array: [0,0] = 0, [1,0] = 1, [0,1] = 2, [1,1] = 3, [0,2] = 4. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|property (§22.3.2.2); variant (§22.4.2.32)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bool (Boolean)|§22.4.2.3|  
+|bstr (Basic String)|§22.4.2.4|  
+|cy (Currency)|§22.4.2.6|  
+|date (Date and Time)|§22.4.2.7|  
+|decimal (Decimal)|§22.4.2.8|  
+|error (Error Status Code)|§22.4.2.10|  
+|i1 (1-Byte Signed Integer)|§22.4.2.12|  
+|i2 (2-Byte Signed Integer)|§22.4.2.13|  
+|i4 (4-Byte Signed Integer)|§22.4.2.14|  
+|int (Integer)|§22.4.2.16|  
+|r4 (4-Byte Real Number)|§22.4.2.23|  
+|r8 (8-Byte Real Number)|§22.4.2.24|  
+|ui1 (1-Byte Unsigned Integer)|§22.4.2.27|  
+|ui2 (2-Byte Unsigned Integer)|§22.4.2.28|  
+|ui4 (4-Byte Unsigned Integer)|§22.4.2.29|  
+|uint (Unsigned Integer)|§22.4.2.31|  
+|variant (Variant)|§22.4.2.32|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|baseType (Array Base Type)|The baseType attribute specifies the base variant type of an array.<br /><br /> The allowed values are: variant, i1, i2, i4, int, ui1, ui2, ui4, uint, r4, r8, decimal, bstr, date, bool, cy, and error.<br /><br /> The possible values for this attribute are defined by the *ST_ArrayBaseType* simple type (§22.4.3.1).|  
+|lBounds (Array Lower Bounds Attribute)|The lBounds attribute specifies the lower bound of an array in the format: #, #, # … # where each # represents an integer.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|uBounds (Array Upper Bounds Attribute)|The uBounds attribute specifies the upper bound of an array in the format: #, #, # … # where each # represents an integer.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Array) is located in §A.6.4. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -92,9 +158,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the VTArray class.
-            </summary>
+        <summary>Initializes a new instance of the VTArray class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -121,9 +185,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the VTArray class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the VTArray class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,9 +206,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the VTArray class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the VTArray class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -167,9 +227,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the VTArray class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the VTArray class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,12 +252,22 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.VariantTypes.ArrayBaseValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Array Base Type.</para>
-          <para>Represents the following attribute in the schema: baseType </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Array Base Type.Represents the following attribute in the schema: baseType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ The `baseType` attribute specifies the base variant type of an array.  
+  
+ The allowed values are: variant, i1, i2, i4, int, ui1, ui2, ui4, uint, r4, r8, decimal, bstr, date, bool, cy, and error.  
+  
+ The possible values for this attribute are defined by the `ST_ArrayBaseType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -221,11 +289,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -245,10 +311,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -273,12 +337,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Array Lower Bounds Attribute.</para>
-          <para>Represents the following attribute in the schema: lBound </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Array Lower Bounds Attribute.Represents the following attribute in the schema: lBound</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ The `lBounds` attribute specifies the lower bound of an array in the format: #, #, # ... # where each # represents an integer.  
+  
+ The possible values for this attribute are defined by the XML Schema `int` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpperBounds">
@@ -302,12 +374,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Array Upper Bounds Attribute.</para>
-          <para>Represents the following attribute in the schema: uBound </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Array Upper Bounds Attribute.Represents the following attribute in the schema: uBound</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ The `uBounds` attribute specifies the upper bound of an array in the format: #, #, # ... # where each # represents an integer.  
+  
+ The possible values for this attribute are defined by the XML Schema `int` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

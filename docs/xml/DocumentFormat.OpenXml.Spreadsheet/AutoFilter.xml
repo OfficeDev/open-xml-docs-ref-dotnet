@@ -1,4 +1,4 @@
-﻿<Type Name="AutoFilter" FullName="DocumentFormat.OpenXml.Spreadsheet.AutoFilter">
+<Type Name="AutoFilter" FullName="DocumentFormat.OpenXml.Spreadsheet.AutoFilter">
   <TypeSignature Language="C#" Value="public class AutoFilter : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutoFilter extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.AutoFilter" />
@@ -28,13 +28,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>AutoFilter Settings.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:autoFilter.</para>
-    </summary>
+    <summary>AutoFilter Settings. When the object is serialized out as xml, its qualified name is x:autoFilter.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FilterColumn &lt;x:filterColumn&gt;</description></item><item><description>SortState &lt;x:sortState&gt;</description></item><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **autoFilter (AutoFilter Settings)**  
+  
+ AutoFilter temporarily hides rows based on a filter criteria, which is applied column by column to a table of data in the worksheet. This collection expresses AutoFilter settings.  
+  
+ [*Example*:This example expresses a filter indicating to 'show only values greater than 0.5'. The filter is being applied to the range B3:E8, and the criteria is being applied to values in the column whose colId='1' (zero based column numbering, from left to right). Therefore any rows must be hidden if the value in that particular column is less than or equal to 0.5.  
+  
+```xml  
+<autoFilter ref="B3:E8">  
+  <filterColumn colId="1">  
+    <customFilters>  
+      <customFilter operator="greaterThan" val="0.5"/>  
+    </customFilters>  
+  </filterColumn>  
+</autoFilter>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|customSheetView (§18.3.1.25); filter (§18.10.1.33); table (§18.5.1.2); worksheet (§18.3.1.99)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|filterColumn (AutoFilter Column)|§18.3.2.7|  
+|sortState (Sort State)|§18.3.1.92|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|ref (Cell or Range Reference)|Reference to the cell range to which the AutoFilter is applied.<br /><br /> The possible values for this attribute are defined by the *ST_Ref* simple type (§18.18.62).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_AutoFilter) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,9 +88,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AutoFilter class.
-            </summary>
+        <summary>Initializes a new instance of the AutoFilter class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +115,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AutoFilter class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the AutoFilter class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -102,9 +136,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AutoFilter class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the AutoFilter class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -125,9 +157,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the AutoFilter class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the AutoFilter class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +180,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,10 +202,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,11 +228,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell or Range Reference.</para>
-          <para>Represents the following attribute in the schema: ref </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell or Range Reference.Represents the following attribute in the schema: ref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

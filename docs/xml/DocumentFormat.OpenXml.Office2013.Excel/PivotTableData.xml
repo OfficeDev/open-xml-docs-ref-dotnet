@@ -1,4 +1,4 @@
-﻿<Type Name="PivotTableData" FullName="DocumentFormat.OpenXml.Office2013.Excel.PivotTableData">
+<Type Name="PivotTableData" FullName="DocumentFormat.OpenXml.Office2013.Excel.PivotTableData">
   <TypeSignature Language="C#" Value="public class PivotTableData : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotTableData extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData" />
@@ -25,14 +25,69 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the PivotTableData Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is x15:pivotTableData.</para>
-    </summary>
+    <summary>Defines the PivotTableData Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is x15:pivotTableData.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PivotRow &lt;x15:pivotRow&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.63   pivotTableData*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ A *pivotTableData* element\<40> is a CT_PivotTableData element that specifies the PivotValues of a PivotTable ([ISO/IEC-29500-1] section 18.10), specified by the pivotTableReference element in the extension of a workbook. See section 2.2.4.4 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1]. If the PivotTable ([ISO/IEC-29500-1] section 18.10) is not a Non-Worksheet PivotTable, MUST NOT be specified.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="pivotTableData" type="CT_PivotTableData"/>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.133   CT_PivotTableData*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ *Referenced by:* pivotTableData  
+  
+ The *CT_PivotTableData* complex type specifies the *PivotValues* (section 2.3.4) of the *PivotTable* ([ISO/IEC-29500-1] section 18.10) that is specified by the *pivotTableReference* (section 2.4.1) element in the extension of a workbook (section 2.2.4.10).\<109>  
+  
+ *Child Elements:*  
+  
+ *pivotRow:* A *CT_PivotRow* (section 2.6.134) element that specifies a single row of *PivotValueCells* (section 2.3.4.1) in an element of this type in the *PivotTable* ([ISO/IEC-29500-1] section 18.10) that is specified by the *pivotTableReference* (section 2.4.1) element in the extension of a workbook (section 2.2.4.10).  
+  
+ *Attributes:*  
+  
+ *rowCount:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the number of *pivotRow* child elements in an element of this type. This value MUST be equal to the value of the *count* attribute of the *rowItems* element, as specified in [ISO/IEC-29500-1] section 18.10.1.84.  
+  
+ *columnCount:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute specifying the number of *PivotValueCells* (section 2.3.4.1) that are specified by the *CT_PivotValueCell* (section 2.6.135) complex type in each of the *pivotRow* child elements of this type. This value MUST be equal to the value of the *count* attribute in the *pivotRow* element, as specified by the *CT_PivotRow* (section 2.6.134) complex type. This value MUST be equal to the value of the *count* attribute of the *colItems*, ([ISO/IEC-29500-1] section 18.10.1.17) element.  
+  
+ *cacheId:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the associated OLAP PivotTable ([ISO/IEC-29500-1] section 18.10) PivotCache.  
+  
+ The OLAP PivotTable PivotCache that is specified by this attribute MUST be extended by an *ext* ([ISO/IEC-29500-1] section 18.2.7) element that has a structure specified by a *CT_PivotCacheDefinition* (section 2.6.33) element. The *pivotCacheId* attribute of such a *CT_PivotCacheDefinition* element MUST be equal to this attribute.  
+  
+ The OLAP PivotTable PivotCache that is specified by this attribute MUST also be extended by an *ext* element that has structure specified by a *CT_PivotCacheIdVersion* (section 2.6.139) element.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_PivotTableData">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="pivotRow" type="CT_PivotRow" minOccurs="1" maxOccurs="unbounded"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="rowCount" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="columnCount" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="cacheId" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +103,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PivotTableData class.
-            </summary>
+        <summary>Initializes a new instance of the PivotTableData class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotTableData class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PivotTableData class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -100,9 +151,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotTableData class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PivotTableData class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,9 +172,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PivotTableData class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PivotTableData class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,10 +197,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> cacheId.</para>
-          <para>Represents the following attribute in the schema: cacheId </para>
-        </summary>
+        <summary>cacheId.Represents the following attribute in the schema: cacheId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -177,11 +221,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -206,10 +248,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> columnCount.</para>
-          <para>Represents the following attribute in the schema: columnCount </para>
-        </summary>
+        <summary>columnCount.Represents the following attribute in the schema: columnCount</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -230,9 +269,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -258,10 +295,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> rowCount.</para>
-          <para>Represents the following attribute in the schema: rowCount </para>
-        </summary>
+        <summary>rowCount.Represents the following attribute in the schema: rowCount</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="Div" FullName="DocumentFormat.OpenXml.Wordprocessing.Div">
+<Type Name="Div" FullName="DocumentFormat.OpenXml.Wordprocessing.Div">
   <TypeSignature Language="C#" Value="public class Div : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Div extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Div" />
@@ -43,13 +43,81 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Information About Single HTML div Element.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:div.</para>
-    </summary>
+    <summary>Information About Single HTML div Element. When the object is serialized out as xml, its qualified name is w:div.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>BlockQuote &lt;w:blockQuote&gt;</description></item><item><description>BodyDiv &lt;w:bodyDiv&gt;</description></item><item><description>LeftMarginDiv &lt;w:marLeft&gt;</description></item><item><description>RightMarginDiv &lt;w:marRight&gt;</description></item><item><description>TopMarginDiv &lt;w:marTop&gt;</description></item><item><description>BottomMarginDiv &lt;w:marBottom&gt;</description></item><item><description>DivBorder &lt;w:divBdr&gt;</description></item><item><description>DivsChild &lt;w:divsChild&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `div (Information About Single HTML div Element)`  
+  
+ This element specifies information about a single HTML *div*, *body*, or *blockquote* element which was included in this document, so that that information (which is stored on a logical structure with no direct analog in WordprocessingML) can be maintained when an HTML document is stored in the WordprocessingML format.  
+  
+ The div element stores the following information about these structures:  
+  
+-   The child HTML *div*, and *blockquote* elements  
+  
+-   The borders for the element  
+  
+-   The margins for the element  
+  
+ When the resulting WordprocessingML document is displayed by an application, the settings specified by this information shall be reflected in the formatting of the resulting paragraphs (i.e. this information shall not only be used when the document is resaved in the HTML format).  
+  
+ [*Example*: Consider a simple HTML document defined as follows:  
+  
+```xml  
+<html>  
+  <body>  
+    <div style="border-left-style: solid; border-left-width: 1px; border-right-style: solid; border-right-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px; margin-left: 50px">  
+      <p>Paragraph one.</p>  
+      <p>Paragraph two.</p>  
+    </div>  
+  </body>  
+</html>  
+```  
+  
+ This HTML would therefore normally appear as follows (image scaled appropriately):  
+  
+ 8a573cb3-846b-4276-a9ee-84a35f3a4d2d  
+  
+ Now, when this document is saved in the WordprocessingML format, the information stored on the *div*, *blockquote*, and *body* elements is stored in the web setting part as follows:  
+  
+```xml  
+<w:divs>  
+  <w:div w:id="1785730240">  
+    <w:marLeft w:val="750" />  
+    …    <w:divBdr>  
+      <w:left w:val="single" w:sz="6" w:color="auto" />  
+      <w:right w:val="single" w:sz="6" w:color="auto" />  
+    </w:divBdr>  
+  </w:div>  
+</w:divs>  
+```  
+  
+ The div element specifies all margin and border information about the single HTML *div* structures in the document; in this case, the left indentation and the left and right borders. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|divs (§17.15.2.8); divsChild (§17.15.2.9)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|blockQuote (Data for HTML blockquote Element)|§17.15.2.2|  
+|bodyDiv (Data for HTML body Element)|§17.15.2.3|  
+|divBdr (Set of Borders for HTML div)|§17.15.2.7|  
+|divsChild (Child div Elements Contained within Current div)|§17.15.2.9|  
+|marBottom (Bottom Margin for HTML div)|§17.15.2.24|  
+|marLeft (Left Margin for HTML div)|§17.15.2.26|  
+|marRight (Right Margin for HTML div)|§17.15.2.27|  
+|marTop (Top Margin for HTML div)|§17.15.2.28|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Div) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -65,9 +133,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Div class.
-            </summary>
+        <summary>Initializes a new instance of the Div class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -94,9 +160,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Div class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Div class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +181,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Div class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Div class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,9 +202,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Div class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Div class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,10 +222,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BlockQuote</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data for HTML blockquote Element.</para>
-          <para> Represents the following element tag in the schema: w:blockQuote </para>
-        </summary>
+        <summary>Data for HTML blockquote Element. Represents the following element tag in the schema: w:blockQuote</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -189,10 +246,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BodyDiv</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data for HTML body Element.</para>
-          <para> Represents the following element tag in the schema: w:bodyDiv </para>
-        </summary>
+        <summary>Data for HTML body Element. Represents the following element tag in the schema: w:bodyDiv</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -216,10 +270,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bottom Margin for HTML div.</para>
-          <para> Represents the following element tag in the schema: w:marBottom </para>
-        </summary>
+        <summary>Bottom Margin for HTML div. Represents the following element tag in the schema: w:marBottom</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -246,11 +297,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,10 +319,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DivBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Set of Borders for HTML div.</para>
-          <para> Represents the following element tag in the schema: w:divBdr </para>
-        </summary>
+        <summary>Set of Borders for HTML div. Represents the following element tag in the schema: w:divBdr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -302,11 +348,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> div Data ID.</para>
-          <para>Represents the following attribute in the schema: w:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>div Data ID.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -328,10 +371,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LeftMarginDiv</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Left Margin for HTML div.</para>
-          <para> Represents the following element tag in the schema: w:marLeft </para>
-        </summary>
+        <summary>Left Margin for HTML div. Represents the following element tag in the schema: w:marLeft</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -355,10 +395,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -378,10 +416,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.RightMarginDiv</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Right Margin for HTML div.</para>
-          <para> Represents the following element tag in the schema: w:marRight </para>
-        </summary>
+        <summary>Right Margin for HTML div. Represents the following element tag in the schema: w:marRight</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -405,10 +440,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TopMarginDiv</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Margin for HTML div.</para>
-          <para> Represents the following element tag in the schema: w:marTop </para>
-        </summary>
+        <summary>Top Margin for HTML div. Represents the following element tag in the schema: w:marTop</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

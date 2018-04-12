@@ -1,4 +1,4 @@
-﻿<Type Name="AutoSpaceLikeWord95" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95">
+<Type Name="AutoSpaceLikeWord95" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95">
   <TypeSignature Language="C#" Value="public class AutoSpaceLikeWord95 : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutoSpaceLikeWord95 extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AutoSpaceLikeWord95" />
@@ -19,11 +19,92 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Emulate Word 95 Full-Width Character Spacing.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:autoSpaceLikeWord95.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Emulate Word 95 Full-Width Character Spacing. When the object is serialized out as xml, its qualified name is w:autoSpaceLikeWord95.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `9.7.3.4 autoSpaceLikeWord95 (Incorrectly Adjust Text Spacing for Specific Unicode Ranges)`  
+  
+ This element specifies adjustments (detailed below) which should be applied to the spacing between adjoining regions of non-ideographic and ideographic text when the autoSpaceDE (Part 1, §17.3.1.2) and autoSpaceDN (Part 1, §17.3.1.3) elements have a value of *true* (or equivalent). This algorithm typically results in the following:  
+  
+-   An increase in the inter-character spacing added between non-ideographic and/or number characters and certain full-width characters  
+  
+-   No inter-character spacing between non-ideographic and/or number characters and certain half-width characters  
+  
+ Typically, applications apply additional spacing between ideographic and non-ideographic characters/numeric characters when the autoSpaceDE / autoSpaceDN properties are applied. This element, when present with a val attribute value of *true* (or equivalent), specifies that applications shall apply the following adjustments to this logic:  
+  
+-   Characters in the following Unicode ranges should be treated as ideographic, even though those characters are full-width forms of non-ideographic text: U+FF10–U+FF19, U+FF21–U+FF3A, and U+FF41–U+FF5A. [*Note*: This results in the unnecessary addition of space. *end note*]  
+  
+-   Characters in the following Unicode ranges should be treated as non-ideographic, even though those characters are ideographic: U+FF66–U+FF9F. [*Note*: This results in the omission of the intended additional space. *end note*]  
+  
+ [*Example*: Consider a WordprocessingML document with two paragraphs containing a mix of East Asian and Latin characters:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t>ab</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:t>  
+ｦ</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:t>  
+ｦ</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:t>cd</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t>ab</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:t>  
+２</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:t>  
+２</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:t>cd</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The first paragraph contains characters with Unicode value U+FF66 (ｦ). The second paragraph contains characters with Unicode value U+FF12 (２). If autoSpaceDE is *true*, spacing is added in the first paragraph (between the ideographs and the non-ideographic characters), but not in the second (all four characters are not ideographs):  
+  
+ c7f3e403-18c7-44d3-b022-25ec0c031f39  
+  
+ If this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:autoSpaceLikeWord95 />  
+</w:compat>  
+```  
+  
+ Then, although it appears incorrect, applications should not add space in the first paragraph and should apply it in the second:  
+  
+ 4711cc1f-5024-44c8-8244-2375cb54dea2  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +120,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AutoSpaceLikeWord95 class.
-            </summary>
+        <summary>Initializes a new instance of the AutoSpaceLikeWord95 class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +143,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +165,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

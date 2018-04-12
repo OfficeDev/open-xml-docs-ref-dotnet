@@ -1,4 +1,4 @@
-﻿<Type Name="GroupShape" FullName="DocumentFormat.OpenXml.Office.Drawing.GroupShape">
+<Type Name="GroupShape" FullName="DocumentFormat.OpenXml.Office.Drawing.GroupShape">
   <TypeSignature Language="C#" Value="public class GroupShape : DocumentFormat.OpenXml.Office.Drawing.GroupShapeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GroupShape extends DocumentFormat.OpenXml.Office.Drawing.GroupShapeType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office.Drawing.GroupShape" />
@@ -19,13 +19,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the GroupShape Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is dsp:grpSp.</para>
-    </summary>
+    <summary>Defines the GroupShape Class. When the object is serialized out as xml, its qualified name is dsp:grpSp.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>GroupShapeNonVisualProperties &lt;dsp:nvGrpSpPr&gt;</description></item><item><description>GroupShapeProperties &lt;dsp:grpSpPr&gt;</description></item><item><description>Shape &lt;dsp:sp&gt;</description></item><item><description>GroupShape &lt;dsp:grpSp&gt;</description></item><item><description>OfficeArtExtensionList &lt;dsp:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.5.42   CT_GroupShape*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2008/diagram  
+  
+ *Referenced by:* CT_GroupShape, CT_Drawing  
+  
+ This element specifies a group shape that represents one or more shapes grouped together. This shape is to be treated as if it were a regular shape, but instead of being described by a single geometry, it is made up of all the shape geometries encompassed within it. Within a group shape, each shape in the group is specified as it normally would be. However, a single transform can apply to the group of shapes as though it were a single shape.  
+  
+ *Child Elements:*  
+  
+ *nvGrpSpPr:* A *CT_GroupShapeNonVisual* element that specifies the non-visual properties of the group shape.  
+  
+ *grpSpPr:* A *CT_GroupShapeProperties* element ([ISO/IEC-29500-1] section A.4.1) that specifies group shape properties.  
+  
+ *sp:* A *CT_Shape* element that specifies a shape that is a child of this group.  
+  
+ *grpSp:* A *CT_GroupShape* element that specifies a group shape that is a child of this group.  
+  
+ *extLst:* A *CT_OfficeArtExtensionList* element ([ISO/IEC-29500-1] section A.4.1) that enables future extensions to the group shape.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_GroupShape">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="nvGrpSpPr" type="CT_GroupShapeNonVisual" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="grpSpPr" type="a:CT_GroupShapeProperties" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:choice minOccurs="0" maxOccurs="unbounded">*  
+  
+ *\<xsd:element name="sp" type="CT_Shape"/>*  
+  
+ *\<xsd:element name="grpSp" type="CT_GroupShape"/>*  
+  
+ *\</xsd:choice>*  
+  
+ *\<xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.6 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -41,9 +87,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GroupShape class.
-            </summary>
+        <summary>Initializes a new instance of the GroupShape class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +114,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GroupShape class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the GroupShape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the GroupShape class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the GroupShape class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,9 +156,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the GroupShape class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the GroupShape class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +179,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,9 +201,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

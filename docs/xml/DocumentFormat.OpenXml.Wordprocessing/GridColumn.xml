@@ -1,4 +1,4 @@
-﻿<Type Name="GridColumn" FullName="DocumentFormat.OpenXml.Wordprocessing.GridColumn">
+<Type Name="GridColumn" FullName="DocumentFormat.OpenXml.Wordprocessing.GridColumn">
   <TypeSignature Language="C#" Value="public class GridColumn : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridColumn extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.GridColumn" />
@@ -19,11 +19,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Grid Column Definition.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:gridCol.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Grid Column Definition. When the object is serialized out as xml, its qualified name is w:gridCol.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **gridCol (Grid Column Definition)**  
+  
+ This element specifies the presence and details about a single grid column within a table grid. A *grid column* is a logical column in a table used to specify the presence of a shared vertical edge in the table. When table cells are then added to this table, these shared edges (or grid columns, looking at the column between those shared edges) determine how table cells are placed into the table grid.  
+  
+ [*Example*: If a table row specifies that it is preceded by two grid columns, then it would start on the third vertical edge in the table including edges which are not shared by all columns. *end example*]  
+  
+ If the table grid does not match the requirements of one or more rows in the table (i.e. it does not define enough grid columns), then the grid can be redefined as needed when the table is processed.  
+  
+ [*Example*: Consider the following, more complex table that has two rows and two columns; as shown, the columns are not aligned:  
+  
+ This table is represented by laying out the cells on a table grid consisting of three table grid columns as follows, each grid column representing a logical vertical column in the table:  
+  
+ The dashed lines represent the virtual vertical continuations of each table grid column, and thus resulting table grid is represented as the following in WordprocessingML:  
+  
+```xml  
+<w:tblGrid>  
+  <w:gridCol w:w="5051" />  
+  <w:gridCol w:w="3008" />  
+  <w:gridCol w:w="1531" />  
+</w:tblGrid>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblGrid (§17.4.49); tblGrid (§17.4.48)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblGridCol) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GridColumn class.
-            </summary>
+        <summary>Initializes a new instance of the GridColumn class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +146,43 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Grid Column Width.</para>
-          <para>Represents the following attribute in the schema: w:w </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Grid Column Width.Represents the following attribute in the schema: w:w</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the width of this grid column.  
+  
+ This value does not solely determine the actual width of the resulting grid column in the document. When the table is displayed in a document, these widths determine the initial width of each grid column, which may then be overridden by:  
+  
+-   The table layout algorithm applied to the current table row(s)  
+  
+-   The preferred widths of specific cells which are part of that grid column as the table is displayed (which is an input to the algorithm above)  
+  
+ This value is specified in twentieths of a point.  
+  
+ If this attribute is omitted, then the last saved width of the grid column is assumed to be zero.  
+  
+ Consider the following table grid definition:  
+  
+```  
+<w:tblGrid>  
+  <w:gridCol w:w="6888"/>  
+  <w:gridCol w:w="248"/>  
+  <w:gridCol w:w="886"/>  
+  <w:gridCol w:w="1554"/>  
+</w:tblGrid>  
+```  
+  
+ This table grid specifies four grid columns, each of which has an initial size of `6888` twentieths of a point, `248` twentieths of a point, `886` twentieths of a point, and `1554` twentieths of a point respectively.  
+  
+ The possible values for this attribute are defined by the `ST_TwipsMeasure` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

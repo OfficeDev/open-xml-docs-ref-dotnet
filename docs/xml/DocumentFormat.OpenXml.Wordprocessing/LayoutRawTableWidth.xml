@@ -1,4 +1,4 @@
-﻿<Type Name="LayoutRawTableWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth">
+<Type Name="LayoutRawTableWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth">
   <TypeSignature Language="C#" Value="public class LayoutRawTableWidth : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LayoutRawTableWidth extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LayoutRawTableWidth" />
@@ -19,11 +19,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Ignore Space Before Table When Deciding If Table Should Wrap Floating Object.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:layoutRawTableWidth.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Ignore Space Before Table When Deciding If Table Should Wrap Floating Object. When the object is serialized out as xml, its qualified name is w:layoutRawTableWidth.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `layoutRawTableWidth (Ignore Space Before Table When Deciding If Table Should Wrap Floating Object)`  
+  
+ This element specifies how tables which have been indented from the margin using the tblInd element (Part 1, §17.4.51) shall be wrapped around floating objects.  
+  
+ Typically, when a table is positioned next to a floating object, the table shall only remain next to the object if it can fit in the remaining space on the line when considering the full width needed for the table: the space before the table, plus the width of the table. This element, when present with a val attribute value of *true* (or equivalent), specifies that the calculation determining whether the table shall fit next to the object shall not include the space before the table, even if that means that the table is actually clipped by the object.  
+  
+ [*Example*: Consider a WordprocessingML document with a floating shape using square wrapping, next to a table which has been indented one inch from the left margin:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblInd w:w="1440" w:type="dxa" />  
+  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ The resulting presentation would place the table next to the object:  
+  
+ 2fef9add-7a38-4b68-8ff1-88918733fc92  
+  
+ If this object is then moved to the left, such that it would clip the table, the default presentation would have the entire table moved below the shape, since it does not fit in the remaining space on the line:  
+  
+ e0031efc-6299-457c-aa0d-72204c9eae03  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:layoutRawTableWidth />  
+</w:compat>  
+```  
+  
+ Then the determination to move the table is done ignoring the spaced needed before the table, resulting in the following output:  
+  
+ 8d309711-e60c-40a5-8026-d6f42dddd893  
+  
+ The resulting table is clipped behind the object, as the fit calculation ignores the space needed before the table. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LayoutRawTableWidth class.
-            </summary>
+        <summary>Initializes a new instance of the LayoutRawTableWidth class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +112,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +134,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

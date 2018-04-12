@@ -1,4 +1,4 @@
-﻿<Type Name="MoveFrom" FullName="DocumentFormat.OpenXml.Wordprocessing.MoveFrom">
+<Type Name="MoveFrom" FullName="DocumentFormat.OpenXml.Wordprocessing.MoveFrom">
   <TypeSignature Language="C#" Value="public class MoveFrom : DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MoveFrom extends DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MoveFrom" />
@@ -19,11 +19,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Move Source Paragraph.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:moveFrom.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Move Source Paragraph. When the object is serialized out as xml, its qualified name is w:moveFrom.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **moveFrom (Move Source Paragraph)**  
+  
+ This element specifies that the parent paragraph has been moved away from this location and tracked as a revision. This does not imply anything about the revision state of the contents of the paragraph, and applies only to the existence of the paragraph as its own unique paragraph.  
+  
+ The following restrictions shall be applied to this content:  
+  
+-   If this element occurs outside of a move source container (§17.13.5.24; §17.13.5.23) for which a matching move destination container (§17.13.5.28; §17.13.5.27) exists in the document, then the document is non-conformant.  
+  
+ [*Example*: Consider a WordprocessingML document in which a paragraph of text is moved down in the document. This moved paragraph would be represented using the following WordprocessingML markup:  
+  
+```xml  
+<w:moveFromRangeStart w:id="0" w:name="aMove"/>  
+<w:p>  
+  <w:pPr>  
+    <w:rPr>  
+      <w:moveFrom w:id="1" … />  
+    </w:rPr>  
+  </w:pPr>  
+  …</w:p>  
+</w:moveFromRangeEnd w:id="0"/>  
+```  
+  
+ The moveFrom element as a child of the run properties of the paragraph mark specify that this paragraph mark was part of the content which was moved in the document. This implies nothing about the contents, since they can have been added later and not tracked as a revision (they must be marked as a move using the moveFrom element (§17.13.5.22) around the run content). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MoveFrom class.
-            </summary>
+        <summary>Initializes a new instance of the MoveFrom class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

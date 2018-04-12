@@ -1,4 +1,4 @@
-﻿<Type Name="UsePrinterMetrics" FullName="DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics">
+<Type Name="UsePrinterMetrics" FullName="DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics">
   <TypeSignature Language="C#" Value="public class UsePrinterMetrics : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UsePrinterMetrics extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UsePrinterMetrics" />
@@ -19,11 +19,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Use Printer Metrics To Display Documents.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:usePrinterMetrics.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Use Printer Metrics To Display Documents. When the object is serialized out as xml, its qualified name is w:usePrinterMetrics.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **usePrinterMetrics (Use Printer Metrics To Display Documents)**  
+  
+ This element specifies whether applications shall use the printer metrics of the currently active printer when determining how to display the contents of a WordprocessingML document. *Printer metrics* are printer-specific settings which can be queried to tell an application how and where text shall be displayed on a printed page.  
+  
+ Typically, applications display the content of a document in a device independent manner - the application is therefore not changing the layout of a document based on the currently attached printer, and instead shall dictate to the printer where characters shall be presented on the page when printed. This element, when present with a val attribute value of *true* (or equivalent), specifies that the metrics of the current printer shall be used to display the document instead.  
+  
+ Specifically, when this setting is enabled, the printer metrics are used to determine the number of pixels per logical inch along the screen width and height. This should then be used to compute the pixel height of the fonts requested when displaying the document, as well as to scale between any logical units within the document (e.g. drawing object sizes) to the appropriate device units. Those units would then need to be scaled back into screen units for final display to a screen, but not scaled again when displayed to a printer.  
+  
+ [*Note*: On the Windows platform, you can use the *GetDeviceCaps* function to retrieve device-specific information for the specified printer. For this specific setting, you can use *GetDeviceCaps(hdc, LOGPIXELSX)* and *GetDeviceCaps(hdc, LOGPIXELSY)* with a printer DC to retrieve the number of pixels per logical inch along the screen width and height. With this, you can then use those DPI metrics to compute a pixel value for the font request in the *LOGFONT* structure (the *LOGFONT* structure defines the attributes of a font). A common formula to do this is. *end* *note*]  
+  
+ [*Example*: Consider a WordprocessingML document. The default must use device-independent layout to present the contents of the page.  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:usePrinterMetrics />  
+</w:compat>  
+```  
+  
+ Then the printer metrics of the current active printer must be used to determine the display of the contents of the document instead, as needed. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UsePrinterMetrics class.
-            </summary>
+        <summary>Initializes a new instance of the UsePrinterMetrics class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +96,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotSuppressParagraphBorders" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders">
+<Type Name="DoNotSuppressParagraphBorders" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders">
   <TypeSignature Language="C#" Value="public class DoNotSuppressParagraphBorders : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotSuppressParagraphBorders extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotSuppressParagraphBorders" />
@@ -19,11 +19,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Suppress Paragraph Borders Next To Frames.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotSuppressParagraphBorders.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Suppress Paragraph Borders Next To Frames. When the object is serialized out as xml, its qualified name is w:doNotSuppressParagraphBorders.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotSuppressParagraphBorders (Do Not Suppress Paragraph Borders Next To Frames)`  
+  
+ This element specifies whether applications should suppress paragraph borders defined using the pBdr element (Part 1, §17.3.1.24) when those borders would be displayed next to the contents of paragraphs which have been defined as frames using the framePr element (Part 1, §17.3.1.11).  
+  
+ Typically, when a paragraph's borders appear next to a frame, those borders are suppressed to avoid having two borders in close proximity. This element, when present with a val attribute value of *true* (or equivalent), specifies that those borders shall not be suppressed.  
+  
+ [*Example*: Consider a WordprocessingML document with a paragraph with a paragraph border that is bounded on its bottom let side by a text frame.  
+  
+ The default presentation would suppress the borders which intersect the frame (in this case, the right border of lines three through eight):  
+  
+ 04b86ef6-325b-4a43-83c3-fd0f6af042cc  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotSuppressParagraphBorders />  
+</w:compat>  
+```  
+  
+ Then no border suppression must take place, resulting in the following output:  
+  
+ bebec731-7653-4e14-bc6a-98a9ad865781  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +77,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotSuppressParagraphBorders class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotSuppressParagraphBorders class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +100,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +122,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

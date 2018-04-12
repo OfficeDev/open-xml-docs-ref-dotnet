@@ -1,4 +1,4 @@
-﻿<Type Name="Text" FullName="DocumentFormat.OpenXml.Wordprocessing.Text">
+<Type Name="Text" FullName="DocumentFormat.OpenXml.Wordprocessing.Text">
   <TypeSignature Language="C#" Value="public class Text : DocumentFormat.OpenXml.Wordprocessing.TextType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Text extends DocumentFormat.OpenXml.Wordprocessing.TextType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Text" />
@@ -19,11 +19,122 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Text.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:t.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Text. When the object is serialized out as xml, its qualified name is w:t.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **t (Text)**  
+  
+ This element specifies that this run contains literal text which shall be displayed in the document. The *t* element shall be used for all text runs which are not:  
+  
+-   Part of a region of text that is contained in a deleted region using the del element (§17.13.5.14)  
+  
+-   Part of a region of text that is contained within a field code  
+  
+ [*Example*: Consider a paragraph of WordprocessingML content which reads *This is text*. This paragraph would therefore be represented as follows:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t>This is text</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The text is contained in a t node. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Text) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following code example creates a document named "TextEx.docx" at the specified path, and writes the phrase "Hello, World!" to it.  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Wordprocessing;  
+  
+namespace TextEx  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+             string fileName = @"c:\users\public\documents\TextEx.docx";  
+             // Create a wordprocessing document with the specified file name.  
+            WordprocessingDocument wordprocessingDocument =   
+                WordprocessingDocument.Create(fileName, WordprocessingDocumentType.Document);  
+  
+            // Add a MainDocumentPart object.  
+            MainDocumentPart mainDocumentPart =   
+                wordprocessingDocument.AddMainDocumentPart();  
+            // Creatre the document structure.  
+            mainDocumentPart.Document = new Document();  
+            Document document = mainDocumentPart.Document;  
+            Body body = document.AppendChild(new Body());  
+            Paragraph para = body.AppendChild(new Paragraph());  
+            Run run = para.AppendChild(new Run());  
+            // Write some text to the file.  
+            run.AppendChild(new Text("Hello, World!"));  
+  
+            // Close the document.  
+            wordprocessingDocument.Close();  
+  
+            Console.WriteLine("The document has been created.\nPress a key");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Wordprocessing  
+  
+Module Module1  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "c:\users\public\documents\TextEx.docx"  
+        ' Create a wordprocessing document with the specified file name.  
+        Dim wordprocessingDocument As WordprocessingDocument = _  
+            wordprocessingDocument.Create(fileName, WordprocessingDocumentType.Document)  
+  
+        ' Add a MainDocumentPart object.  
+        Dim mainDocumentPart As MainDocumentPart = _  
+            wordprocessingDocument.AddMainDocumentPart()  
+        ' Creatre the document structure.  
+        mainDocumentPart.Document = New Document()  
+        Dim document As Document = mainDocumentPart.Document  
+        Dim body As Body = document.AppendChild(New Body())  
+        Dim para As Paragraph = body.AppendChild(New Paragraph())  
+        Dim run As Run = para.AppendChild(New Run())  
+        ' Write some text to the file.  
+        run.AppendChild(New Text("Hello, World!"))  
+  
+        ' Close the document.  
+        wordprocessingDocument.Close()  
+  
+        Console.WriteLine("The document has been created." & vbLf & "Press a key")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +150,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Text class.
-            </summary>
+        <summary>Initializes a new instance of the Text class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -61,10 +170,8 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">Specifies the text content of the element.</param>
-        <summary>
-            Initializes a new instance of the Text class with the specified text content.
-            </summary>
+        <param name="text">Specifies text content of the element.</param>
+        <summary>Initializes a new instance of the Text class with the specified text content.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -87,11 +194,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,10 +216,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

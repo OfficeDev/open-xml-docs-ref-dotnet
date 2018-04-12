@@ -1,4 +1,4 @@
-﻿<Type Name="FontSignature" FullName="DocumentFormat.OpenXml.Wordprocessing.FontSignature">
+<Type Name="FontSignature" FullName="DocumentFormat.OpenXml.Wordprocessing.FontSignature">
   <TypeSignature Language="C#" Value="public class FontSignature : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontSignature extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FontSignature" />
@@ -19,11 +19,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the FontSignature Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:sig.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the FontSignature Class. When the object is serialized out as xml, its qualified name is w:sig.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **sig (Supported Unicode Subranges and Code Pages)**  
+  
+ This element specifies information identifying the code pages and Unicode subranges for which the parent font provides glyphs using the mechanism defined in §4.2.7.18 and §4.2.7.28 of /IEC 14496-22:2007. This information can be used as defined in font substitution logic to locate an appropriate substitute font when this font is not available. This information is determined by querying the font when present and shall not be modified when the font is not available.  
+  
+ When storing Unicode subrange information, the appropriate bit in the bitfield shall only be set  if the entire subrange is supported by that font.  
+  
+ If this element is omitted, then no supported code page/Unicode subrange information is available.  
+  
+ [*Example*: Consider the following information stored for a single font:  
+  
+```xml  
+<w:font w:name="Times New Roman">  
+  <w:sig w:usb0="20002A87" w:usb1="80000000" w:usb2="00000008" w:usb3="00000000" w:csb0="000001FF" w:csb1="00000000" />  
+  …</w:font>  
+```  
+  
+ The sig element specifies the supported code pages and Unicode sub ranges via its attributes. For example, the code pages supported are:  
+  
+-   Latin 1  
+  
+-   Latin 2: Eastern Europe  
+  
+-   Cyrillic  
+  
+-   Greek  
+  
+-   Turkish  
+  
+-   Baltic  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|font (§17.8.3.10)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FontSig) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FontSignature class.
-            </summary>
+        <summary>Initializes a new instance of the FontSignature class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +106,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,11 +133,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Lower 32 Bits of Code Page Bit Field.</para>
-          <para>Represents the following attribute in the schema: w:csb0 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Lower 32 Bits of Code Page Bit Field.Represents the following attribute in the schema: w:csb0</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -124,11 +161,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Upper 32 Bits of Code Page Bit Field.</para>
-          <para>Represents the following attribute in the schema: w:csb1 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Upper 32 Bits of Code Page Bit Field.Represents the following attribute in the schema: w:csb1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -150,10 +184,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -178,11 +210,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> First 32 Bits of Unicode Subset Bitfield.</para>
-          <para>Represents the following attribute in the schema: w:usb0 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>First 32 Bits of Unicode Subset Bitfield.Represents the following attribute in the schema: w:usb0</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -209,11 +238,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Second 32 Bits of Unicode Subset Bitfield.</para>
-          <para>Represents the following attribute in the schema: w:usb1 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Second 32 Bits of Unicode Subset Bitfield.Represents the following attribute in the schema: w:usb1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -240,11 +266,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Third 32 Bits of Unicode Subset Bitfield.</para>
-          <para>Represents the following attribute in the schema: w:usb2 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Third 32 Bits of Unicode Subset Bitfield.Represents the following attribute in the schema: w:usb2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -271,11 +294,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Fourth 32 Bits of Unicode Subset Bitfield.</para>
-          <para>Represents the following attribute in the schema: w:usb3 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Fourth 32 Bits of Unicode Subset Bitfield.Represents the following attribute in the schema: w:usb3</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

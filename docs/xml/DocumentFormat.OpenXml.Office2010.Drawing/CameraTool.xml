@@ -1,4 +1,4 @@
-﻿<Type Name="CameraTool" FullName="DocumentFormat.OpenXml.Office2010.Drawing.CameraTool">
+<Type Name="CameraTool" FullName="DocumentFormat.OpenXml.Office2010.Drawing.CameraTool">
   <TypeSignature Language="C#" Value="public class CameraTool : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CameraTool extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Drawing.CameraTool" />
@@ -22,12 +22,67 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the CameraTool Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is a14:cameraTool.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the CameraTool Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is a14:cameraTool.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.19   cameraTool*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2010/main  
+  
+ A CT_CameraTool element that specifies that a picture, as defined by the *pic* element as specified in [ISO/IEC-29500-1] section 20.2.2.5, is a camera object. A camera object is a picture that shows a live view of a cell range in the specified spreadsheet, including any graphic objects contained in the cell range and all formatting applied to the contents of the cell range. Updates to the contents of the cell range are reflected in the camera object. Shape properties, such as the position and size of the camera object, are defined by the parent *pic* element. The view of the cell range MUST be a rectangle. The view of the cell range MUST scale vertically and horizontally to fill the rectangle exactly.  
+  
+ See section 2.2.6.1 for information about how this element is integrated with the Open XML file formats as specified in- [ISO/IEC-29500:2008].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="cameraTool" type="CT_CameraTool"/>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.71   CT_CameraTool*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2010/main  
+  
+ *Referenced by:* cameraTool  
+  
+ A complex type that specifies camera tool properties.  
+  
+ *Attributes:*  
+  
+ *cellRange:* An *xsd:string* ([XMLSCHEMA2] section 3.2.1) that uses standard cell reference syntax as specified in [ISO/IEC-29500-1] section 18.17.2.3. This specifies the cell range of the camera tool. The cell range MUST use the A1 style reference, instead of the R1C1 reference. The cell range MUST be used when defining the camera tool.  
+  
+ *spid:* An *xsd:string* ([XMLSCHEMA2] section 3.2.1) that specifies the shape identifier of a legacy drawing object. If string is "0" there is no legacy shape. However the legacy drawing object MUST be deleted if the current drawing element is to be used. Otherwise, two camera tool objects are present.  
+  
+ This string has the following characteristics:  
+  
+ *If string is not the default value it MUST begin with "_x0000\_" followed by one character and a number that specifies the identifier: _x0000\_[c]\<shape id>*  
+  
+ *The character [c] MUST be set to ‘s’.*  
+  
+ *Shape identifiers MUST be in the range from 1025 through 268435456.*  
+  
+ *Shape identifiers are clustered, and each cluster has 1024 values. The first cluster ranges from 1025 through 2048.*  
+  
+ *Shape identifiers in the same cluster SHOULD only exist in one worksheet.*  
+  
+ *It MUST NOT contain Numeric Character Reference (NCR) characters.*  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_CameraTool">*  
+  
+ *\<xsd:attribute name="cellRange" type="xsd:string"/>*  
+  
+ *\<xsd:attribute name="spid" use="optional" default="0" type="xsd:string"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CameraTool class.
-            </summary>
+        <summary>Initializes a new instance of the CameraTool class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,10 +123,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> cellRange.</para>
-          <para>Represents the following attribute in the schema: cellRange </para>
-        </summary>
+        <summary>cellRange.Represents the following attribute in the schema: cellRange</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -97,11 +147,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -121,9 +169,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -149,10 +195,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> spid.</para>
-          <para>Represents the following attribute in the schema: spid </para>
-        </summary>
+        <summary>spid.Represents the following attribute in the schema: spid</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

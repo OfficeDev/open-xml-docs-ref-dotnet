@@ -1,4 +1,4 @@
-﻿<Type Name="Matrix" FullName="DocumentFormat.OpenXml.Math.Matrix">
+<Type Name="Matrix" FullName="DocumentFormat.OpenXml.Math.Matrix">
   <TypeSignature Language="C#" Value="public class Matrix : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Matrix extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.Matrix" />
@@ -25,13 +25,133 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Matrix Function.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:m.</para>
-    </summary>
+    <summary>Matrix Function. When the object is serialized out as xml, its qualified name is m:m.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>MatrixProperties &lt;m:mPr&gt;</description></item><item><description>MatrixRow &lt;m:mr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **m (Matrix Object)**  
+  
+ This element specifies the Matrix object, consisting of one or more elements laid out in one or more rows and one or more columns. It is important to note that matrices do not have built in delimiters. Like other math elements, matrices are contained in a delimiter object (§22.1.2.24) when delimiters are desired. Empty arguments (see §22.1.2.32) can be used to create gaps in matrices. The plcHide tag (§22.1.2.83) can be used to indicate whether the empty arguments should be visible in the matrix (see the plcHide documentation for more information). If mPr is omitted, the values of baseJc, cGp, cGpRule, cSp, ctrlPr, mcs, plcHide, rSp, and rSpRule are shown in the following table:  
+  
+ Property  
+  
+ Default Value  
+  
+ baseJc  
+  
+ “center”  
+  
+ cGp  
+  
+ “0”  
+  
+ cGpRule  
+  
+ “0” \<single>  
+  
+ cSp  
+  
+ “0”  
+  
+ ctrlPr  
+  
+ \<The character property of the first control character shall be the character property of the first character in the m object >  
+  
+ mcs  
+  
+ \<All columns will be vertically center aligned>  
+  
+ plcHide  
+  
+ “0”  
+  
+ rSp  
+  
+ “0”  
+  
+ rSpRule  
+  
+ “0” \<single>  
+  
+ [*Example*: Examples of matrices are:  and . Below is an example of a 2x2 matrix and its XML in its proper form (surrounding delimiters are not a property of the matrix and are only shown to demonstrate their relationship with a matrix. See the documentation for the d tag for XML examples of delimiters).  
+  
+```xml  
+<m:d>  
+  <m:m>  
+    <m:mPr>  
+      <m:mcs>  
+        <m:mc>  
+          <m:mcPr>  
+            <m:count m:val="2"/>  
+            <m:mcJc  m:val="center"/>  
+          </m:mcPr>  
+        </m:mc>  
+      </m:mcs>  
+    </m:mPr>  
+    <m:mr>  
+      <m:e>  
+        <m:r>  
+          <m:rPr>  
+            <m:scr  m:val="roman"/>  
+            <m:sty  m:val="p"/>  
+          </m:rPr>  
+          <m:t>1</m:t>  
+        </m:r >  
+      </m:e>  
+      <m:e>  
+        <m:r>  
+          <m:rPr>  
+            <m:scr  m:val="roman"/>  
+            <m:sty  m:val="p"/>  
+          </m:rPr>  
+          <m:t>2</m:t>  
+        </m:r >  
+      </m:e>  
+    </m:mr>  
+    <m:mr>  
+      <m:e>  
+        <m:r>  
+          <m:rPr>  
+            <m:scr  m:val="roman"/>  
+            <m:sty  m:val="p"/>  
+          </m:rPr>  
+          <m:t>3</m:t>  
+        </m:r >  
+      </m:e>  
+      <m:e>  
+        <m:r>  
+          <m:rPr>  
+            <m:scr  m:val="roman"/>  
+            <m:sty  m:val="p"/>  
+          </m:rPr>  
+          <m:t>4</m:t>  
+        </m:r >  
+      </m:e>  
+    </m:mr>  
+  </m:m>  
+</m:d>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|deg (§22.1.2.26); del (§17.13.5.14); den (§22.1.2.28); e (§22.1.2.32); fName (§22.1.2.37); ins (§17.13.5.18); lim (§22.1.2.52); moveFrom (§17.13.5.22); moveTo (§17.13.5.25); num (§22.1.2.75); oMath (§22.1.2.77); sub (§22.1.2.112); sup (§22.1.2.114)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|mPr (Matrix Properties)|§22.1.2.68|  
+|mr (Matrix Row)|§22.1.2.69|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_M) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -47,9 +167,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Matrix class.
-            </summary>
+        <summary>Initializes a new instance of the Matrix class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +194,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Matrix class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Matrix class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,9 +215,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Matrix class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Matrix class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,9 +236,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Matrix class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Matrix class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,11 +259,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -171,10 +281,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,10 +302,7 @@
         <ReturnType>DocumentFormat.OpenXml.Math.MatrixProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Matrix Properties.</para>
-          <para> Represents the following element tag in the schema: m:mPr </para>
-        </summary>
+        <summary>Matrix Properties. Represents the following element tag in the schema: m:mPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

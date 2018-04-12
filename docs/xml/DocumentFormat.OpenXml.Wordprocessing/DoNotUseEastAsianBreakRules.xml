@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotUseEastAsianBreakRules" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules">
+<Type Name="DoNotUseEastAsianBreakRules" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules">
   <TypeSignature Language="C#" Value="public class DoNotUseEastAsianBreakRules : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotUseEastAsianBreakRules extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotUseEastAsianBreakRules" />
@@ -19,11 +19,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Compress Compressible Characters When Using Document Grid.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotUseEastAsianBreakRules.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Compress Compressible Characters When Using Document Grid. When the object is serialized out as xml, its qualified name is w:doNotUseEastAsianBreakRules.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotUseEastAsianBreakRules (Do Not Compress Compressible Characters When Using Document Grid)`  
+  
+ This element specifies whether applications should compress characters with identical compression rules when the document grid has been defined using the docGrid element (Part 1, §17.6.5). *Compression rules* refer to the additional bearing on the left and/or right side of a typical character, which can be compressed as needed without modifying the actual width of the character (its breadth).  
+  
+ Typically, punctuation characters with an identical set of compression rules are compressed when the contents of a document are displayed. This element, when present with a val attribute value of *true* (or equivalent), specifies that if a document grid is defined for the current section, compression shall never be performed on any character - all compressible characters shall be individually snapped to the document grid.  
+  
+ [*Example*: Consider a WordprocessingML document with a document grid set to allow 10 characters per line:  
+  
+```xml  
+<w:sectPr>  
+  <w:docGrid w:type="snapTOCars" w:charSpace="146636" … />  
+</w:sectPr>  
+```  
+  
+ The default presentation would allow characters with identical compression rules to compress and utilize a single slot on the document grid (notice that the four parenthesis on the first line are combined since they can be compressed identically, while the two parenthesis with different compression on line two are not):  
+  
+ 4424c356-d30e-4d33-9ffa-a3d02ce4d736  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotUseEastAsianBreakRules />  
+</w:compat>  
+```  
+  
+ Then no character with compression is compressed and instead are snapped to the grid individually, resulting in the following output:  
+  
+ 5c01d793-6ea3-4981-b450-196dfffd8c4c  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotUseEastAsianBreakRules class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotUseEastAsianBreakRules class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +106,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +128,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

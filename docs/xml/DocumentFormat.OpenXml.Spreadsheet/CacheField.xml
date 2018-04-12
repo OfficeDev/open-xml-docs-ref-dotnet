@@ -1,4 +1,4 @@
-﻿<Type Name="CacheField" FullName="DocumentFormat.OpenXml.Spreadsheet.CacheField">
+<Type Name="CacheField" FullName="DocumentFormat.OpenXml.Spreadsheet.CacheField">
   <TypeSignature Language="C#" Value="public class CacheField : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheField extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CacheField" />
@@ -31,13 +31,64 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>PivotCache Field.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:cacheField.</para>
-    </summary>
+    <summary>PivotCache Field. When the object is serialized out as xml, its qualified name is x:cacheField.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>SharedItems &lt;x:sharedItems&gt;</description></item><item><description>FieldGroup &lt;x:fieldGroup&gt;</description></item><item><description>MemberPropertiesMap &lt;x:mpMap&gt;</description></item><item><description>CacheFieldExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cacheField (PivotCache Field)**  
+  
+ Represent a single field in the PivotCache. This definition contains information about the field, such as its source, data type, and location within a level or hierarchy. The sharedItems element stores additional information about the data in this field. If there are no shared items, then values are stored directly in the pivotCacheRecords part.  
+  
+ *[Example:*  
+  
+```xml  
+<cacheField name="Group" numFmtId="0">  
+  <sharedItems count="3">  
+    <s v="Pacific"/>  
+    <s v="North America"/>  
+    <s v="Europe"/>  
+  </sharedItems>  
+</cacheField>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cacheFields (§18.10.1.4)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|fieldGroup (Field Group Properties)|§18.10.1.30|  
+|mpMap (Member Properties Map)|§18.10.1.58|  
+|sharedItems (Shared Items)|§18.10.1.90|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|caption (PivotCache Field Caption)|Specifies the caption of the cache field.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|databaseField (Database Field)|Specifies a boolean value that indicates whether this field came from the source database rather having been created by the application.<br /><br /> A value of *1* or *true* indicates the field is from the source database.<br /><br /> A value of *0* or *false* indicates the field was created by the application.<br /><br /> [*Note*: This attribute could be used for a defined grouped or calculated field. In this case, source database fields should precede defined grouped or calculated fields. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|formula (Calculated Field Formula)|Specifies the formula for the calculated field. This formula is specified by the end-user. Calculated fields can perform calculations by using the contents of other fields in the PivotTable.<br /><br /> In formulas you create for calculated fields or calculated items, you can use operators and expressions as you do in other worksheet formulas. You can use constants and refer to data from the PivotTable, but you cannot use cell references or defined names. You cannot use worksheet functions that require cell references or defined names as arguments, and you cannot use array functions.<br /><br /> Further behaviors and restrictions apply to formulas for calculated fields:<br /><br /> -   Formulas for calculated fields operate on the sum of the underlying data for any fields in the formula. [*Example*:  The formula =Sales * 1.2 multiplies the sum of the sales for each type and region by 1.2; it does not multiply each individual sale by 1.2 and then sum the multiplied amounts. *end example*]<br />-   Formulas cannot refer to totals.<br /><br /> For more information about formulas see §18.17 in Formulas. For more information about defined names see §18.2.6 in Workbook.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|hierarchy (Hierarchy)|Specifies the hierarchy that this field is part of.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|level (Hierarchy Level)|Specifies the hierarchy level that this field is part of.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|mappingCount (Member Property Count)|Specifies the number of property mappings for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|memberPropertyField (Member Property Field)|Specifies a boolean value that indicates whether the field contains OLAP member property information.<br /><br /> A value of *1* or *true* indicates this field contains OLAP member property information.<br /><br /> A value of *0* or *false* indicates this field does not contain OLAP member property information.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|name (PivotCache Field Name)|Specifies the name of the cache field.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|numFmtId (Number Format Id)|Specifies the number format that is applied to all items in the field. Number formats are written to the styles part. For more information see §18.8.31 in Styles.<br /><br /> [*Note*: Formatting information provided by cell table and by PivotTable need not agree. If the two formats differ, the cell-level formatting takes precedence. If you change the  layout of the PivotTable, the PivotTable formatting will then take precedence. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_NumFmtId* simple type (§18.18.47).|  
+|propertyName (Property Name)|Specifies the name of the property if this field is an OLAP property field.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|serverField (Server-based Field)|Specifies a boolean value that indicates whether the field is a server-based page field.<br /><br /> A value of *1* or *true* indicates this field is a server-based page field.<br /><br /> A value of *0* or *false* indicates this field is not a server-based page field.<br /><br /> This attribute applies to ODBC sources only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sqlType (SQL Data Type)|Specifies the SQL data type of the field.  This attribute stores an<br /><br /> ODBC data type and applies to ODBC data sources only. A value is supplied for this attribute only if it is provided to the application.<br /><br /> The following are data types supported by ODBC. For a more information, see the ODBC specification.<br /><br /> -   0      SQL_UNKNOWN_TYPE<br />-   1      SQL_<br />-   2      SQL_VARCHAR<br />-   -1     SQL_LONGVARCHAR<br />-   -8     SQL_WCHAR<br />-   -9     SQL_WVARCHAR<br />-   -10   SQL_WLONGVARCHAR<br />-   3       SQL_DECIMAL<br />-   2       SQL_NUMERIC<br />-   5       SQL_SMALLINT<br />-   4       SQL_INTEGER<br />-   7       SQL_<br />-   6       SQL_FLOAT<br />-   8       SQL_DOUBLE<br />-   -7      SQL_<br />-   -6      SQL_TINYINT<br />-   -5      SQL_BIGINT<br />-   -2      SQL_BINARY<br />-   -3      SQL_VARBINARY<br />-   -4      SQL_LONGVARBINARY<br />-   9       SQL_TYPE_DATE or SQL_DATE<br />-   10     SQL_TYPE_TIME or SQL_TIME<br />-   11     SQL_TYPE_TIMESTAMP or SQL_TIMESTAMP<br />-   102   SQL_INTERVAL_MONTH<br />-   101   SQL_INTERVAL_YEAR<br />-   107   SQL_INTERVAL_YEAR_TO_MONTH<br />-   103   SQL_INTERVAL_DAY<br />-   104   SQL_INTERVAL_HOUR<br />-   105   SQL_INTERVAL_MINUTE<br />-   106   SQL_INTERVAL_SECOND<br />-   108   SQL_INTERVAL_DAY_TO_HOUR<br />-   109   SQL_INTERVAL_DAY_TO_MINUTE<br />-   110   SQL_INTERVAL_DAY_TO_SECOND<br />-   111   SQL_INTERVAL_HOUR_TO_MINUTE<br />-   112   SQL_INTERVAL_HOUR_TO_SECOND<br />-   113   SQL_INTERVAL_MINUTE_TO_SECOND<br />-   -11    SQL_GUID<br />-   -20    SQL_SIGNED_OFFSET<br />-   -22    SQL_UNSIGNED_OFFSET<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|uniqueList (Unique List Retrieved)|Specifies a boolean value that indicates whether the application was able to get a list of unique items for the field. The attribute only applies to PivotTables that use ODBC and is intended to be used in conjunction with optimization features in the application. [*Example*:  the application can optimize memory usage when populating PivotCache records if it has a list of unique items for a field before all the records are retrieved from ODBC.   *end example*]<br /><br /> A value of *1* or *true* indicates the application was able to get a list of unique values for the field.<br /><br /> A value of *0* or *false* indicates the application was unable to get a list of unique values for the field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CacheField) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -53,9 +104,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CacheField class.
-            </summary>
+        <summary>Initializes a new instance of the CacheField class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +131,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CacheField class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CacheField class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,9 +152,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CacheField class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CacheField class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,9 +173,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CacheField class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CacheField class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,11 +198,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> caption.</para>
-          <para>Represents the following attribute in the schema: caption </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>caption.Represents the following attribute in the schema: caption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -182,11 +222,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -211,11 +249,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> databaseField.</para>
-          <para>Represents the following attribute in the schema: databaseField </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>databaseField.Represents the following attribute in the schema: databaseField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -235,10 +270,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.FieldGroup</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FieldGroup.</para>
-          <para> Represents the following element tag in the schema: x:fieldGroup </para>
-        </summary>
+        <summary>FieldGroup. Represents the following element tag in the schema: x:fieldGroup</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -267,11 +299,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> formula.</para>
-          <para>Represents the following attribute in the schema: formula </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>formula.Represents the following attribute in the schema: formula</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -296,11 +325,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> hierarchy.</para>
-          <para>Represents the following attribute in the schema: hierarchy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>hierarchy.Represents the following attribute in the schema: hierarchy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -325,11 +351,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> level.</para>
-          <para>Represents the following attribute in the schema: level </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>level.Represents the following attribute in the schema: level</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -349,10 +372,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -377,11 +398,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> mappingCount.</para>
-          <para>Represents the following attribute in the schema: mappingCount </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>mappingCount.Represents the following attribute in the schema: mappingCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -406,11 +424,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> memberPropertyField.</para>
-          <para>Represents the following attribute in the schema: memberPropertyField </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>memberPropertyField.Represents the following attribute in the schema: memberPropertyField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -435,11 +450,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -464,11 +476,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> numFmtId.</para>
-          <para>Represents the following attribute in the schema: numFmtId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>numFmtId.Represents the following attribute in the schema: numFmtId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -493,11 +502,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> propertyName.</para>
-          <para>Represents the following attribute in the schema: propertyName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>propertyName.Represents the following attribute in the schema: propertyName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -522,11 +528,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> serverField.</para>
-          <para>Represents the following attribute in the schema: serverField </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>serverField.Represents the following attribute in the schema: serverField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -546,10 +549,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.SharedItems</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SharedItems.</para>
-          <para> Represents the following element tag in the schema: x:sharedItems </para>
-        </summary>
+        <summary>SharedItems. Represents the following element tag in the schema: x:sharedItems</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -578,11 +578,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> sqlType.</para>
-          <para>Represents the following attribute in the schema: sqlType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>sqlType.Represents the following attribute in the schema: sqlType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -607,11 +604,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> uniqueList.</para>
-          <para>Represents the following attribute in the schema: uniqueList </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>uniqueList.Represents the following attribute in the schema: uniqueList</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

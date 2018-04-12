@@ -1,4 +1,4 @@
-﻿<Type Name="DataLabelFieldTableEntry" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry">
+<Type Name="DataLabelFieldTableEntry" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry">
   <TypeSignature Language="C#" Value="public class DataLabelFieldTableEntry : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataLabelFieldTableEntry extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableEntry" />
@@ -31,14 +31,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the DataLabelFieldTableEntry Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is c15:dlblFTEntry.</para>
-    </summary>
+    <summary>Defines the DataLabelFieldTableEntry Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is c15:dlblFTEntry.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TextFieldGuid &lt;c15:txfldGUID&gt;</description></item><item><description>Formula &lt;c15:f&gt;</description></item><item><description>DataLabelFieldTableCache &lt;c15:dlblFieldTableCache&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.5.98   CT_DataLabelFieldTableEntry*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chart  
+  
+ *Referenced by:* CT_DataLabelFieldTable  
+  
+ The *CT_DataLabelFieldTableEntry* is a complex type that specifies the formula reference used to obtain the text value of a cell reference field in the parent *dLbl* element ([ISO/IEC-29500-1] section 21.2.2.47).\<159> A *Datalabel* (section 2.2.1.3) can contain more than one field pointing to formula references. This complex type associates one field in the *Datalabel* with the formula reference to which it refers.  
+  
+ *Child Elements:*  
+  
+ *txfldGUID:* A *string* ([XMLSCHEMA2] section 3.2.1) element that specifies the GUID (identifier) of the cell-reference field in the *Datalabel* text. This element is used to identify which field in the *Datalabel* text this entry corresponds to.  
+  
+ *f:* A *string* element ([XMLSCHEMA2] section 3.2.1) that specifies the formula reference of the text field in the *Datalabel* text whose GUID is identified by the *txfldGUID* element.  
+  
+ *dlblFieldTableCache:* A CT_StrData element ([ISO/IEC-29500-1] section A.5.1) that contains the value to be inserted into the ancestor *Datalabel*. This is a cached value obtained from the reference formula specified by the *f* element in the parent *Datalabel* field table entry.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_DataLabelFieldTableEntry">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="txfldGUID" type="xsd:string" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="f" type="xsd:string" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="dlblFieldTableCache" type="c:CT_StrData" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.13 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +87,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DataLabelFieldTableEntry class.
-            </summary>
+        <summary>Initializes a new instance of the DataLabelFieldTableEntry class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,9 +114,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataLabelFieldTableEntry class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DataLabelFieldTableEntry class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataLabelFieldTableEntry class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DataLabelFieldTableEntry class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,9 +156,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DataLabelFieldTableEntry class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DataLabelFieldTableEntry class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -154,11 +179,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -178,10 +201,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabelFieldTableCache</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> DataLabelFieldTableCache.</para>
-          <para> Represents the following element tag in the schema: c15:dlblFieldTableCache </para>
-        </summary>
+        <summary>DataLabelFieldTableCache. Represents the following element tag in the schema: c15:dlblFieldTableCache</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -205,10 +225,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Formula</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula.</para>
-          <para> Represents the following element tag in the schema: c15:f </para>
-        </summary>
+        <summary>Formula. Represents the following element tag in the schema: c15:f</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -232,9 +249,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -255,10 +270,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.TextFieldGuid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextFieldGuid.</para>
-          <para> Represents the following element tag in the schema: c15:txfldGUID </para>
-        </summary>
+        <summary>TextFieldGuid. Represents the following element tag in the schema: c15:txfldGUID</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

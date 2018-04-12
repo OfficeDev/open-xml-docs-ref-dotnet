@@ -1,4 +1,4 @@
-﻿<Type Name="SchemaLibrary" FullName="DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary">
+<Type Name="SchemaLibrary" FullName="DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary">
   <TypeSignature Language="C#" Value="public class SchemaLibrary : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SchemaLibrary extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.CustomXmlSchemaReferences.SchemaLibrary" />
@@ -22,13 +22,48 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Embedded Custom XML Schema Supplementary Data.</para>
-      <para> When the object is serialized out as xml, its qualified name is sl:schemaLibrary.</para>
-    </summary>
+    <summary>Embedded Custom XML Schema Supplementary Data.When the object is serialized out as xml, its qualified name is sl:schemaLibrary.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Schema &lt;sl:schema&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following table lists the possible child types:  
+  
+-   Schema \<sl:schema>  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **23.2.2 schemaLibrary (Embedded Custom XML Schema Supplementary Data)**  
+  
+ This element specifies the set of XML namespaces which have been associated with the contents of the custom XML markup within the current Office Open XML document. Each unique namespace which is referenced within the document can be referenced within this element by a single schema element, regardless of the number of constituent XML schemas which comprise that namespace.  
+  
+ [*Example*: Consider a WordprocessingML document which contains custom XML markup in two distinct namespaces: the *http://www.example.com* namespace and the *http://www.example2.com* namespace. If the first namespace is defined by a single XML schema, and the second is defined by five XML schemas (which are cross-referenced using the appropriate XML Schema syntax), the following content would be displayed in the document's schema library XML:  
+  
+```xml  
+  
+<sl:schemaLibrary>  
+<sl:schema … />  
+<sl:schema … />  
+</sl:schemaLibrary>  
+  
+```  
+  
+ The schemaLibrary element contains only two schema elements even though there are six XML schemas in use, as there are only two distinct namespaces for which data is stored. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|schema (Custom XML Schema Reference)|§23.2.1|  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SchemaLibrary class.
-            </summary>
+        <summary>Initializes a new instance of the SchemaLibrary class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +106,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SchemaLibrary class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the SchemaLibrary class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +127,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the SchemaLibrary class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the SchemaLibrary class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +148,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the SchemaLibrary class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the SchemaLibrary class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +171,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,10 +193,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

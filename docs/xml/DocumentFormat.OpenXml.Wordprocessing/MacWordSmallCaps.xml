@@ -1,4 +1,4 @@
-﻿<Type Name="MacWordSmallCaps" FullName="DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps">
+<Type Name="MacWordSmallCaps" FullName="DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps">
   <TypeSignature Language="C#" Value="public class MacWordSmallCaps : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MacWordSmallCaps extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MacWordSmallCaps" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Emulate Word 5.x for the Macintosh Small Caps Formatting.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:mwSmallCaps.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Emulate Word 5.x for the Macintosh Small Caps Formatting. When the object is serialized out as xml, its qualified name is w:mwSmallCaps.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **mwSmallCaps (Use Specific Small Caps Algorithm)**  
+  
+ This element specifies that applications should use a specific algorithm to determine the font size of small caps (the formatting resulting from the use of the smallCaps element (Part 1, §17.3.2.33). This emulation typically results in small caps which are smaller than typical small caps at most font sizes.  
+  
+ Typically, applications can utilize any algorithm that results in small caps formatting. This element, when present with a val attribute value of *true* (or equivalent), specifies that applications should determine the font size for small caps using the following algorithm:  
+  
+-   If , then the font size for small caps is 7 points.  
+  
+-   Otherwise, sequentially iterate through  until , at which point the font size for small caps is  points.  
+  
+ where  
+  
+-   is an array defined as follows:  where .  
+  
+-   is an integer calculated as follows: The font size of the run to which small caps formatting is applied (in points).  
+  
+ [*Example*: Consider a WordprocessingML document with small caps on its text contents.  
+  
+ If this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:mwSmallCaps />  
+</w:compat>  
+```  
+  
+ And the font size for a single run is 16 points, and performing the algorithm above would result in 14 points as the calculated font size for small caps. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MacWordSmallCaps class.
-            </summary>
+        <summary>Initializes a new instance of the MacWordSmallCaps class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

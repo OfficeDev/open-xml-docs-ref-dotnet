@@ -1,4 +1,4 @@
-﻿<Type Name="UIPriority" FullName="DocumentFormat.OpenXml.Wordprocessing.UIPriority">
+<Type Name="UIPriority" FullName="DocumentFormat.OpenXml.Wordprocessing.UIPriority">
   <TypeSignature Language="C#" Value="public class UIPriority : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UIPriority extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UIPriority" />
@@ -19,11 +19,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Optional User Interface Sorting Order.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:uiPriority.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Optional User Interface Sorting Order. When the object is serialized out as xml, its qualified name is w:uiPriority.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **uiPriority (Optional User Interface Sorting Order)**  
+  
+ This element specifies a number which can be used to sort the set of style definitions in a user interface when this document is loaded by an application and the recommended setting is specified in the stylePaneSortMethod element (§17.15.1.86). If this element is set, then this priority shall be used to sort all available styles in ascending value order.  
+  
+ If this element is omitted, then the style shall not have an associated priority value and shall be sorted to the end of the list of style definitions (more or less equivalent to a priority value of infinity) when the recommended sort order setting is specified.  
+  
+ [*Example*: Consider a style with a primary name of *Comment Style* that should have an associated priority value of ten. This requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:style … w:styleId="CStyle">  
+  <w:name w:val="Comment Style"/>  
+  <w:uiPriority w:val="10"/>  
+  …</w:style>  
+```  
+  
+ The uiPriority element specifies that this style definition should be sorted into the list of styles using a value of *10* when the styles are listed in recommended order using the stylePaneSortMethod element (§17.15.1.86). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UIPriority class.
-            </summary>
+        <summary>Initializes a new instance of the UIPriority class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +113,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,10 +139,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

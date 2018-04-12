@@ -1,4 +1,4 @@
-﻿<Type Name="StyleHidden" FullName="DocumentFormat.OpenXml.Wordprocessing.StyleHidden">
+<Type Name="StyleHidden" FullName="DocumentFormat.OpenXml.Wordprocessing.StyleHidden">
   <TypeSignature Language="C#" Value="public class StyleHidden : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StyleHidden extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.StyleHidden" />
@@ -19,11 +19,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Hide Style From User Interface.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:hidden.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Hide Style From User Interface. When the object is serialized out as xml, its qualified name is w:hidden.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **hidden (Hide Style From User Interface)**  
+  
+ This element specifies whether this style shall be hidden from any and all user interfaces when this document is loaded by an application. If this element is set, then this style can be used to format content (i.e. any content which references this style shall have its properties as normal), but the style shall be hidden from all user interface associated with that application. [*Note*: This setting is typically used to hide styles which are being used internally by an application which should not be used as formatting in a typical case. *end note*]  
+  
+ If this element is omitted, then the style shall not be required to be hidden from the user interface.  
+  
+ [*Example*: Consider a style with a primary name of *InternalStyle* that should not be displayed in any user interface. This requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:style … w:styleId="Style2">  
+  <w:name w:val="InternalStyle"/>  
+  <w:hidden/>  
+  …</w:style>  
+```  
+  
+ The hidden element specifies that this style definition shall be round-tripped with the file (since it is part of the document) but should not be displayed in any user interface associated with an application which processes this document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StyleHidden class.
-            </summary>
+        <summary>Initializes a new instance of the StyleHidden class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,9 +113,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

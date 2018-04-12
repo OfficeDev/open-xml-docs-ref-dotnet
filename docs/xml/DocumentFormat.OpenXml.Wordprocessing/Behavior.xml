@@ -1,4 +1,4 @@
-﻿<Type Name="Behavior" FullName="DocumentFormat.OpenXml.Wordprocessing.Behavior">
+<Type Name="Behavior" FullName="DocumentFormat.OpenXml.Wordprocessing.Behavior">
   <TypeSignature Language="C#" Value="public class Behavior : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Behavior extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Behavior" />
@@ -19,11 +19,85 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Entry Insertion Behavior.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:behavior.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Entry Insertion Behavior. When the object is serialized out as xml, its qualified name is w:behavior.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **behavior (Entry Insertion Behavior)**  
+  
+ This element specifies a single behavior which shall be applied to the contents of the parent glossary document entry (§17.12.5) when it is added to the main document story of a WordprocessingML document. These behaviors shall be used to format the surrounding WordprocessingML around insertion, and do not require the presence of a user interface (i.e. applications without a user interface shall also utilize these settings).  
+  
+ [*Example*: Consider the WordprocessingML fragment for a glossary document entry containing a single run, defined as follows:  
+  
+```xml  
+<w:docPart>  
+  <w:docPartPr>  
+    <w:behaviors>  
+      <w:behavior w:val="p"/>  
+    </w:behaviors>  
+    …  </w:docPartPr>  
+  <w:docPartBody>  
+    <w:p>  
+      <w:r>  
+        <w:t>Sample entry.</w:t>  
+      </w:r>  
+    </w:p>  
+  </w:docPartBody>  
+</w:docPart>  
+```  
+  
+ The behavior element has a value of *p*, which specifies that the contents of the parent glossary document entry must be inserted in their own paragraph when they are added to the contents of a document. If the document content to which they are added is defined as follows (and the part is added between the two text runs):  
+  
+```xml  
+<w:body>  
+  <w:p>  
+    <w:r>  
+      <w:t>After this text</w:t>  
+    </w:r>  
+    <w:r>  
+      <w:t>Before this text</w:t>  
+    </w:r>  
+  </w:p>  
+</w:body>  
+```  
+  
+ This setting specifies that although the part would normally be inserted between the two existing runs in the paragraph, that behavior must ensure that the part is inserted into its own paragraph, resulting in the following WordprocessingML:  
+  
+```xml  
+<w:body>  
+  <w:p>  
+    <w:r>  
+      <w:t>After this text</w:t>  
+    </w:r>  
+  </w:p>  
+  <w:p>  
+    <w:r>  
+      <w:t>Sample entry.</w:t>  
+    </w:r>  
+  </w:p>  
+  <w:p>  
+    <w:r>  
+      <w:t>Before this text</w:t>  
+    </w:r>  
+  </w:p>  
+</w:body>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|behaviors (§17.12.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DocPartBehavior) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +113,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Behavior class.
-            </summary>
+        <summary>Initializes a new instance of the Behavior class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +136,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +158,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +184,32 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Insertion Behavior Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Insertion Behavior Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the insertion behavior which shall be associated with the current glossary document entry.  
+  
+ Consider the following WordprocessingML fragment for a glossary document entry's properties:  
+  
+```  
+<w:docPartPr>  
+  <w:behaviors>  
+    <w:behavior w:val="content"/>  
+  </w:behavior>  
+</w:docPartPr>  
+```  
+  
+ The `val` attribute’s value of `content` specifies that the insertion of this glossary document entry shall include only the content (the last paragraph in the part shall be merged into the current paragraph in the document).  
+  
+ The possible values for this attribute are defined by the `ST_DocPartBehavior` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="Kpis" FullName="DocumentFormat.OpenXml.Spreadsheet.Kpis">
+<Type Name="Kpis" FullName="DocumentFormat.OpenXml.Spreadsheet.Kpis">
   <TypeSignature Language="C#" Value="public class Kpis : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Kpis extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Kpis" />
@@ -22,13 +22,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Kpis Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:kpis.</para>
-    </summary>
+    <summary>Defines the Kpis Class. When the object is serialized out as xml, its qualified name is x:kpis.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Kpi &lt;x:kpi&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **kpis (OLAP KPIs)**  
+  
+ Represents the collection of Key Performance Indicators (KPIs) defined on the OLAP server and stored in the PivotCache.  
+  
+ *[Example:*  
+  
+```xml  
+<kpis count="3">  
+  <kpi uniqueName="Growth in Customer Base" caption="Growth in Customer Base"    displayFolder="Customer Perspective\Expand Customer Base"     measureGroup="Internet Sales" value="[Measures].[Growth in Customer Base]"     goal="[Measures].[Growth in Customer Base Goal]"     status="[Measures].[Growth in Customer Base Status]"     trend="[Measures].[Growth in Customer Base Trend]"/>  
+  <kpi uniqueName="Net Income" caption="Net Income"     displayFolder="Financial Perspective\Maintain Overall Margins"     measureGroup="Financial Reporting" value="[Measures].[Net Income Value]"     goal="[Measures].[Net Income Goal]" status="[Measures].[Net Income Status]"     trend="[Measures].[Net Income Trend]"/>  
+  <kpi uniqueName="Operating Profit" caption="Operating Profit"    displayFolder="Financial Perspective\Maintain Overall Margins"     measureGroup="Financial Reporting" parent="Net Income"     value="[Measures].[Operating Profit Value]"     goal="[Measures].[Operating Profit Goal]"     status="[Measures].[Operating Profit Status]"     trend="[Measures].[Operating Profit Trend]"/>  
+…  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pivotCacheDefinition (§18.10.1.67)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|kpi (OLAP KPI)|§18.10.1.47|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|count (KPI Count)|Specifies the number of KPIs stored in the PivotCache.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PCDKPIs) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +78,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Kpis class.
-            </summary>
+        <summary>Initializes a new instance of the Kpis class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +105,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Kpis class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Kpis class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +126,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Kpis class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Kpis class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +147,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Kpis class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Kpis class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +170,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +197,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> KPI Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>KPI Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,10 +218,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

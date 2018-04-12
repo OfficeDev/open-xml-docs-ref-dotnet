@@ -1,4 +1,4 @@
-﻿<Type Name="Table" FullName="DocumentFormat.OpenXml.Spreadsheet.Table">
+<Type Name="Table" FullName="DocumentFormat.OpenXml.Spreadsheet.Table">
   <TypeSignature Language="C#" Value="public class Table : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Table extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Table" />
@@ -34,13 +34,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Table. The root element of TableDefinitionPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:table.</para>
-    </summary>
+    <summary>Table. The root element of TableDefinitionPart. When the object is serialized out as xml, its qualified name is x:table.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>AutoFilter &lt;x:autoFilter&gt;</description></item><item><description>SortState &lt;x:sortState&gt;</description></item><item><description>TableColumns &lt;x:tableColumns&gt;</description></item><item><description>TableStyleInfo &lt;x:tableStyleInfo&gt;</description></item><item><description>TableExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **table (Table)**  
+  
+ This element is the root element for a table that is not a single cell XML table.  
+  
+|Parent Elements|  
+|---------------------|  
+|Root element of SpreadsheetML Table Definitions part|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|autoFilter (AutoFilter Settings)|§18.3.1.2|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|sortState (Sort State)|§18.3.1.92|  
+|tableColumns (Table Columns)|§18.5.1.4|  
+|tableStyleInfo (Table Style)|§18.5.1.5|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|comment (Table Comment)|A string representing a textual comment about the table.<br /><br /> [*Note*:  This can be used by the spreadsheet application in other UI. *end note*]  [*Example*: There can be name UI that is used to organize defined names and function references, if tables are listed in that UI the comment can give more information about the table. *end example*]<br /><br /> The maximum length of this string should be 32767 characters.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|connectionId (Connection ID)|An integer representing an ID to indicate which connection from the connections collection is used by this table.<br /><br /> This shall only be used for tables that are based off of xml maps.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|dataCellStyle (Data Style Name)|A string representing the name of the cell style that is applied to the data area cells of the table.<br /><br /> If this string is missing or does not correspond to the name of a cell style, then the data cell style specified by the current table style should be applied.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|dataDxfId (Data Area Format Id)|A zero based integer index into the differential formatting records *\<dxfs>* in the styleSheet indicating which format to apply to the data area of this table.<br /><br /> The spreadsheet should fail to load if this index is out of bounds.<br /><br /> The possible values for this attribute are defined by the *ST_DxfId* simple type (§18.18.25).|  
+|displayName (Table Name)|A string representing the name of the table.  This is the name that shall be used in formula references, and displayed in the UI to the spreadsheet user.<br /><br /> This name shall not have any spaces in it, and it shall be unique amongst all other *displayNames* and *definedNames* in the workbook.  The character lengths and restrictions are the same as for *definedNames*.  See *SpreadsheetML Reference - Workbook definedNames* section for details<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|headerRowBorderDxfId (Header Row Border Format Id)|A zero based integer index into the differential formatting records *\<dxfs>* in the styleSheet indicating what border formatting to apply to the header row of this table.<br /><br /> The spreadsheet should fail to load if this index is out of bounds.<br /><br /> The possible values for this attribute are defined by the *ST_DxfId* simple type (§18.18.25).|  
+|headerRowCellStyle (Header Row Style)|A string representing the name of the cell style that is applied to the header row cells of the table.<br /><br /> If this string is missing or does not correspond to the name of a cell style, then the header row style specified by the current table style should be applied.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|headerRowCount (Header Row Count)|An integer representing the number of header rows showing at the top of the table. 0 means that the header row is not shown.<br /><br /> It is up to the spreadsheet application to determine if numbers greater than 1 are allowed. Unless the spreadsheet application has a feature where there might ever be more than one header row, this number should not be higher than 1.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|headerRowDxfId (Header Row Format Id)|A zero based integer index into the differential formatting records *\<dxfs>*in the styleSheet indicating which format to apply to the header row of this table.<br /><br /> The spreadsheet should fail to load if this index is out of bounds.<br /><br /> The possible values for this attribute are defined by the *ST_DxfId* simple type (§18.18.25).|  
+|id (Table Id)|A non zero integer representing the unique identifier for this table.  Each table in the workbook shall have a unique id.<br /><br /> Ids can be used to refer to the specific table in the workbook.  [*Note*: For instance a future records bucket could refer to the table using this id.  *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|insertRow (Insert Row Showing)|A Boolean value indicating whether the insert row is showing.  True when the insert row is showing, false otherwise.<br /><br /> The insert row should only be shown if the table has no data.<br /><br /> When a user clicks the insert row in the UI, it provides them an easy way to enter data into a table.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|insertRowShift (Insert Row Shift)|A Boolean that indicates whether cells in the sheet had to be inserted when the insert row was shown for this table.  True if the cells were shifted, false otherwise.<br /><br /> [*Note*:  This happens when there are values in cells immediately below the table when the table is created and the insert row is shown.  In this case blank cells for the insert row are inserted, and the existing values in the sheet are shifted down by one row to make room.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|name (Name)|A string representing the name of the table that is used to reference the table programmatically through the spreadsheet applications object model.  This string shall be unique per table per sheet.  It has the same length and character restrictions as for displayName.<br /><br /> By default this should be the same as the table's *displayName*.  This name should also be kept in synch with the *displayName* when the *displayName* is updated in the UI by the spreadsheet user.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|published (Published)|A Boolean representing whether this table is marked as published for viewing by a server based spreadsheet application.  True if it should be viewed by the server spreadsheet application, false otherwise.<br /><br /> [*Note*:  Such an application might only display objects from the workbook that are marked as published, thus being able to load and calculate the entire workbook but only show the specific items that are marked as published.  This can allow the server spreadsheet rendering to provide a more restricted view of the workbook. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|ref (Reference)|The range on the relevant sheet that the table occupies expressed using A1 style referencing.<br /><br /> The reference shall include the totals row if it is shown.<br /><br /> The possible values for this attribute are defined by the *ST_Ref* simple type (§18.18.62).|  
+|tableBorderDxfId (Table Border Format Id)|A zero based integer index into the differential formatting records \<dxfs> in the styleSheet indicating what border formatting to apply to the borders of this table.<br /><br /> The spreadsheet should fail to load if this index is out of bounds.<br /><br /> The possible values for this attribute are defined by the *ST_DxfId* simple type (§18.18.25).|  
+|tableType (Table Type)|An optional enumeration specifying the type or source of the table.<br /><br /> Indicates whether the table is based off of an external data query, data in a worksheet, or from an xml data mapped to a worksheet.<br /><br /> The possible values for this attribute are defined by the *ST_TableType* simple type (§18.18.78).|  
+|totalsRowBorderDxfId (Totals Row Border Format Id)|A zero based integer index into the differential formatting records \<dxfs> in the styleSheet indicating what border formatting to apply to the totals row of this table.<br /><br /> The spreadsheet should fail to load if this index is out of bounds.<br /><br /> The possible values for this attribute are defined by the *ST_DxfId* simple type (§18.18.25).|  
+|totalsRowCellStyle (Totals Row Style)|A string representing the name of the cell style that is applied to the totals row cells of the table.<br /><br /> If this string is missing or does not correspond to the name of a cell style, then the totals row style specified by the current table style should be applied.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|totalsRowCount (Totals Row Count)|An integer representing the number of totals rows that shall be shown at the bottom of the table.<br /><br /> 0 means that the totals row is not shown.  It is up to the spreadsheet application to determine if numbers greater than 1 are allowed. Unless the spreadsheet application has a feature where their might ever be more than one totals row, this number should not be higher than 1.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|totalsRowDxfId (Totals Row Format Id)|A zero based integer index into the differential formatting records \<dxfs> in the styleSheet indicating which format to apply to the totals row of this table.<br /><br /> The spreadsheet should fail to load if this index is out of bounds.<br /><br /> The possible values for this attribute are defined by the *ST_DxfId* simple type (§18.18.25).|  
+|totalsRowShown (Totals Row Shown)|A Boolean indicating whether the totals row has ever been shown in the past for this table.  True if the totals row has been shown, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Table) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -56,9 +103,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Table class.
-            </summary>
+        <summary>Initializes a new instance of the Table class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Table class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Table class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,9 +151,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Table class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Table class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -131,9 +172,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Table class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Table class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,11 +192,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.AutoFilter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table AutoFilter.</para>
-          <para> Represents the following element tag in the schema: x:autoFilter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table AutoFilter. Represents the following element tag in the schema: x:autoFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.AutoFilter" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -185,11 +221,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Border Format Id.</para>
-          <para>Represents the following attribute in the schema: tableBorderDxfId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Border Format Id.Represents the following attribute in the schema: tableBorderDxfId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -212,11 +245,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -241,11 +272,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Comment.</para>
-          <para>Represents the following attribute in the schema: comment </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Comment.Represents the following attribute in the schema: comment</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,11 +298,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Connection ID.</para>
-          <para>Represents the following attribute in the schema: connectionId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Connection ID.Represents the following attribute in the schema: connectionId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -299,11 +324,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Style Name.</para>
-          <para>Represents the following attribute in the schema: dataCellStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Style Name.Represents the following attribute in the schema: dataCellStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -328,11 +350,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Area Format Id.</para>
-          <para>Represents the following attribute in the schema: dataDxfId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Area Format Id.Represents the following attribute in the schema: dataDxfId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -357,11 +376,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Name.</para>
-          <para>Represents the following attribute in the schema: displayName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Name.Represents the following attribute in the schema: displayName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -386,11 +402,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Header Row Border Format Id.</para>
-          <para>Represents the following attribute in the schema: headerRowBorderDxfId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Header Row Border Format Id.Represents the following attribute in the schema: headerRowBorderDxfId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -415,11 +428,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Header Row Style.</para>
-          <para>Represents the following attribute in the schema: headerRowCellStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Header Row Style.Represents the following attribute in the schema: headerRowCellStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -444,11 +454,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Header Row Count.</para>
-          <para>Represents the following attribute in the schema: headerRowCount </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Header Row Count.Represents the following attribute in the schema: headerRowCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -473,11 +480,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Header Row Format Id.</para>
-          <para>Represents the following attribute in the schema: headerRowDxfId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Header Row Format Id.Represents the following attribute in the schema: headerRowDxfId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -502,11 +506,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Id.Represents the following attribute in the schema: id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -531,11 +532,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Insert Row Showing.</para>
-          <para>Represents the following attribute in the schema: insertRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Insert Row Showing.Represents the following attribute in the schema: insertRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -560,11 +558,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Insert Row Shift.</para>
-          <para>Represents the following attribute in the schema: insertRowShift </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Insert Row Shift.Represents the following attribute in the schema: insertRowShift</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -588,9 +583,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the TableDefinitionPart.
-            </summary>
+        <summary>Loads the DOM from the TableDefinitionPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -610,10 +603,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -638,11 +629,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -667,11 +655,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Published.</para>
-          <para>Represents the following attribute in the schema: published </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Published.Represents the following attribute in the schema: published</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -696,11 +681,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reference.</para>
-          <para>Represents the following attribute in the schema: ref </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reference.Represents the following attribute in the schema: ref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -724,9 +706,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the TableDefinitionPart.
-            </summary>
+        <summary>Saves the DOM into the TableDefinitionPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -746,11 +726,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.SortState</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sort State.</para>
-          <para> Represents the following element tag in the schema: x:sortState </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sort State. Represents the following element tag in the schema: x:sortState</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.SortState" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -773,11 +750,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TableColumns</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Columns.</para>
-          <para> Represents the following element tag in the schema: x:tableColumns </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Columns. Represents the following element tag in the schema: x:tableColumns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.TableColumns" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -800,10 +774,8 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.TableDefinitionPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the TableDefinitionPart associated with this element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the TableDefinitionPart associated with this element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.TableDefinitionPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -823,10 +795,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TableExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Future Feature Data Storage Area.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
+        <summary>Future Feature Data Storage Area. Represents the following element tag in the schema: x:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -850,11 +819,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TableStyleInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Style.</para>
-          <para> Represents the following element tag in the schema: x:tableStyleInfo </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Style. Represents the following element tag in the schema: x:tableStyleInfo</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.TableStyleInfo" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -882,11 +848,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.TableValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Type.</para>
-          <para>Represents the following attribute in the schema: tableType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Type.Represents the following attribute in the schema: tableType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -911,11 +874,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Totals Row Border Format Id.</para>
-          <para>Represents the following attribute in the schema: totalsRowBorderDxfId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Totals Row Border Format Id.Represents the following attribute in the schema: totalsRowBorderDxfId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -940,11 +900,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Totals Row Style.</para>
-          <para>Represents the following attribute in the schema: totalsRowCellStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Totals Row Style.Represents the following attribute in the schema: totalsRowCellStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -969,11 +926,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Totals Row Count.</para>
-          <para>Represents the following attribute in the schema: totalsRowCount </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Totals Row Count.Represents the following attribute in the schema: totalsRowCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -998,11 +952,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Totals Row Format Id.</para>
-          <para>Represents the following attribute in the schema: totalsRowDxfId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Totals Row Format Id.Represents the following attribute in the schema: totalsRowDxfId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1027,11 +978,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Totals Row Shown.</para>
-          <para>Represents the following attribute in the schema: totalsRowShown </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Totals Row Shown.Represents the following attribute in the schema: totalsRowShown</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="WorkbookProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties">
+<Type Name="WorkbookProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties">
   <TypeSignature Language="C#" Value="public class WorkbookProperties : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkbookProperties extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties" />
@@ -19,11 +19,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the WorkbookProperties Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:workbookPr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the WorkbookProperties Class. When the object is serialized out as xml, its qualified name is x:workbookPr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **workbookPr (Workbook Properties)**  
+  
+ This element defines a collection of workbook properties.  
+  
+ *[Example:*  
+  
+```xml  
+<workbookPr dateCompatibility="false" showObjects="none" saveExternalLinkValues="0"  defaultThemeVersion="123820"/>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|workbook (§18.2.27)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|allowRefreshQuery (Allow Refresh Query)|Specifies a boolean value that indicates whether the application will refresh query tables in this workbook.<br /><br /> A value of *1* or *true* indicates the application will refresh query tables when the workbook is loaded.<br /><br /> A value of *0* or *false* indicates the application will not refresh query tables.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|autoCompressPictures (Auto Compress Pictures)|Specifies a boolean value that indicates the application automatically compressed pictures in the workbook.<br /><br /> A value of *1* or *true* indicates the application automatically compresses pictures of the workbook. When a picture is compressed, the application:<br /><br /> -   Reduces resolution (to 96 dots per inch (dpi) for Web and 200 dpi for print), and unnecessary information is discarded.<br />-   Discards extra information. [*Example*: When a picture has been cropped or resized, the "hidden" parts of the picture are stored in the file. *end example*]<br />-   Compress the picture, if possible.<br /><br /> A value of *0* or *false* indicates the application does not compress pictures in this workbook.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|backupFile (Create Backup File)|Specifies a boolean value that indicates whether the application creates a backup of the workbook on save.<br /><br /> A value of *1* or *true* indicates the application creates a backup of the workbook on save.<br /><br /> A value of *0* or *false* indicates the application does not create a backup.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|checkCompatibility (Check Compatibility On Save)|Specifies a boolean value that indicates whether the application checks for compatibility when saving this workbook to older file formats.<br /><br /> A value of *1* or *true* indicates the application performs a compatibility check when saving to legacy binary formats.<br /><br /> A value of *0* or *false* indicates the application does not perform a compatibility check when saving to legacy binary formats.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|codeName (Code Name)|Specifies the codename of the application that created this workbook. Use this attribute to track file content in incremental releases of the application.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|date1904 (Date 1904)|Value that indicates whether to use a 1900 or 1904 date base when converting serial values in the workbook to dates. [*Note*: If the dateCompatibility attribute is *0* or *false*, this attribute is ignored. *end note*]<br /><br /> A value of *1* or *true* indicates the workbook uses the 1904 backward compatibility date system.<br /><br /> A value of *0* or *false* indicates the workbook uses a date system based in 1900, as specified by the value of the dateCompatibility attribute.<br /><br /> (See §18.17.4.1 for the definition of the date bases.)<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dateCompatibility (Date Compatibility)|Specifies whether the date base should be treated as a compatibility date base or should support the full  8601 date range.<br /><br /> A value of 1 or true indicates that the date system in use is either the 1900 backward compatibility date base or the 1904 backward compatibility date base, as specified by the value of the date1904 attribute.<br /><br /> A value of 0 or false indicates that the date system is the 1900 date base, based on the  8601 date range.<br /><br /> (See §18.17.4.1 for the definition of the date bases.)<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultThemeVersion (Default Theme Version)|Specifies the default version of themes to apply in the workbook.<br /><br /> The value for defaultThemeVersion depends on the application. SpreadsheetML defaults to the form [version][build], where [version] refers to the version of the application, and [build] refers to the build of the application when the themes in the user interface changed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|filterPrivacy (Filter Privacy)|Specifies a boolean value that indicates whether the application has inspected the workbook for personally identifying information (). If this flag is set, the application warns the user any time the user performs an action that will insert  into the document. [*Example*: Inserting a comment might insert the user's name. *end example*]<br /><br /> A value of *1* or *true* indicates the application will warn the user when they insert  into the workbook.<br /><br /> A value of *0* or *false* indicates the application will not warn the user when they insert  into the workbook; the workbook has not been inspected for .<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hidePivotFieldList (Hide Pivot Field List)|Specifies a boolean value that indicates whether a list of fields is shown for pivot tables in the application user interface.<br /><br /> A value of *1* or *true* indicates a list of fields is show for pivot tables.<br /><br /> A value of *0* or *false* indicates a list of fields is not shown for pivot tables.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|promptedSolutions (Prompted Solutions)|Specifies a boolean value that indicates whether the user has received an alert to load Smart Document components.<br /><br /> A value of *1* or *true* indicates the user received an alert to load SmartDoc.<br /><br /> A value of *0* or *false* indicates the user did not receive an alert.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|publishItems (Publish Items)|Specifies a boolean value that indicates whether the publish the workbook or workbook items to the application server.<br /><br /> A value of *1* or *true* indicates that workbook items are published.<br /><br /> A value of *0* or *false* indicates that the workbook is published.<br /><br /> The default value for this attribute is *false*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|refreshAllConnections (Refresh all Connections on Open)|Specifies a boolean value that indicates whether the workbok shall refresh all the connections to data sources during load.<br /><br /> The default value for this attribute is *false*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|saveExternalLinkValues (Save External Link Values)|Specifies a boolean value that indicates whether the application will cache values retrieved from other workbooks via an externally linking formula. Data is cached at save.<br /><br /> A value of *1* or *true* indicates data from externally linked formulas is cached. A supporting part is written out containing a cached cell table from the external workbook.<br /><br /> A value of *0* or *false* indicates data from externally linked formulas is not cached.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showBorderUnselectedTables (Show Border Unselected Table)|Specifies a boolean value that indicates whether a border is drawn around unselected tables in the workbook.<br /><br /> A value of *1* or *true* indicates borders are drawn around unselected tables.<br /><br /> A value of *0* or *false* indicates borders are not drawn around unselected tables.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showInkAnnotation (Show Ink Annotations)|Specifies a boolean value that indicates whether the book shows ink annotations.<br /><br /> A value of *1* or *true* indicates that ink annotations are shown in the workbook.<br /><br /> A value of *0* or *false* indicates that ink annotations are not shown in the workbook.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showObjects (Show Objects)|Specifies how the application shows embedded objects in the workbook.<br /><br /> This attribute it optional.<br /><br /> The default value for this attribute is "all."<br /><br /> The possible values for this attribute are defined by the *ST_Objects* simple type (§18.18.48).|  
+|showPivotChartFilter (Show Pivot Chart Filter)|Specifies a boolean value that indicates whether filtering options are shown for pivot charts in the workbook.<br /><br /> A value of *1* or *true* indicates filtering options shall be shown for pivot charts.<br /><br /> A value of *0* or *false* indicates filtering options shall not be shown.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|updateLinks (Update Links Behavior)|Specifies how the application updates external links when the workbook is opened.<br /><br /> The default value for this attribute is userSet.<br /><br /> The possible values for this attribute are defined by the *ST_UpdateLinks* simple type (§18.18.87).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_WorkbookPr) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WorkbookProperties class.
-            </summary>
+        <summary>Initializes a new instance of the WorkbookProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,11 +110,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Allow Refresh Query.</para>
-          <para>Represents the following attribute in the schema: allowRefreshQuery </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Allow Refresh Query.Represents the following attribute in the schema: allowRefreshQuery</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,11 +136,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Auto Compress Pictures.</para>
-          <para>Represents the following attribute in the schema: autoCompressPictures </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Auto Compress Pictures.Represents the following attribute in the schema: autoCompressPictures</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -124,11 +162,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Create Backup File.</para>
-          <para>Represents the following attribute in the schema: backupFile </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Create Backup File.Represents the following attribute in the schema: backupFile</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,11 +188,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Check Compatibility On Save.</para>
-          <para>Represents the following attribute in the schema: checkCompatibility </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Check Compatibility On Save.Represents the following attribute in the schema: checkCompatibility</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -180,11 +212,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -209,11 +239,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Code Name.</para>
-          <para>Represents the following attribute in the schema: codeName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Code Name.Represents the following attribute in the schema: codeName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -238,11 +265,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Date 1904.</para>
-          <para>Represents the following attribute in the schema: date1904 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Date 1904.Represents the following attribute in the schema: date1904</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,10 +294,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dateCompatibility, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: dateCompatibility </para>
-        </summary>
+        <summary>dateCompatibility, this property is only available in Office2010.Represents the following attribute in the schema: dateCompatibility</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -299,11 +320,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Default Theme Version.</para>
-          <para>Represents the following attribute in the schema: defaultThemeVersion </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Default Theme Version.Represents the following attribute in the schema: defaultThemeVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -328,11 +346,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Filter Privacy.</para>
-          <para>Represents the following attribute in the schema: filterPrivacy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Filter Privacy.Represents the following attribute in the schema: filterPrivacy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -357,11 +372,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hide Pivot Field List.</para>
-          <para>Represents the following attribute in the schema: hidePivotFieldList </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hide Pivot Field List.Represents the following attribute in the schema: hidePivotFieldList</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -381,10 +393,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -409,11 +419,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Prompted Solutions.</para>
-          <para>Represents the following attribute in the schema: promptedSolutions </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Prompted Solutions.Represents the following attribute in the schema: promptedSolutions</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -438,11 +445,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Publish Items.</para>
-          <para>Represents the following attribute in the schema: publishItems </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Publish Items.Represents the following attribute in the schema: publishItems</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -467,11 +471,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Refresh all Connections on Open.</para>
-          <para>Represents the following attribute in the schema: refreshAllConnections </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Refresh all Connections on Open.Represents the following attribute in the schema: refreshAllConnections</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -496,11 +497,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Save External Link Values.</para>
-          <para>Represents the following attribute in the schema: saveExternalLinkValues </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Save External Link Values.Represents the following attribute in the schema: saveExternalLinkValues</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -525,11 +523,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Border Unselected Table.</para>
-          <para>Represents the following attribute in the schema: showBorderUnselectedTables </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Border Unselected Table.Represents the following attribute in the schema: showBorderUnselectedTables</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -554,11 +549,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Ink Annotations.</para>
-          <para>Represents the following attribute in the schema: showInkAnnotation </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Ink Annotations.Represents the following attribute in the schema: showInkAnnotation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -583,11 +575,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Objects.</para>
-          <para>Represents the following attribute in the schema: showObjects </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Objects.Represents the following attribute in the schema: showObjects</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -612,11 +601,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Pivot Chart Filter.</para>
-          <para>Represents the following attribute in the schema: showPivotChartFilter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Pivot Chart Filter.Represents the following attribute in the schema: showPivotChartFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -641,11 +627,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.UpdateLinksBehaviorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Update Links Behavior.</para>
-          <para>Represents the following attribute in the schema: updateLinks </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Update Links Behavior.Represents the following attribute in the schema: updateLinks</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

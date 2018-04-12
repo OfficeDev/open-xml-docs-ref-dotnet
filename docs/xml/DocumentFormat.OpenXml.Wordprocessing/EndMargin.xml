@@ -1,4 +1,4 @@
-﻿<Type Name="EndMargin" FullName="DocumentFormat.OpenXml.Wordprocessing.EndMargin">
+<Type Name="EndMargin" FullName="DocumentFormat.OpenXml.Wordprocessing.EndMargin">
   <TypeSignature Language="C#" Value="public class EndMargin : DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndMargin extends DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.EndMargin" />
@@ -22,12 +22,95 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the EndMargin Class.</para>
-      <para>This class is only available in Office2010.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:end.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the EndMargin Class.This class is only available in Office2010. When the object is serialized out as xml, its qualified name is w:end.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **end (Table Cell Trailing Margin Exception)**  
+  
+ This element specifies the amount of space which shall be present between the trailing extent of the current cell's text contents and the trailing border of a specific individual table cell within a table. This setting shall override the table cell trailing margin definition specified by the end element contained within the table properties (§17.4.11).  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* or *auto* for this element shall be ignored.  
+  
+ If omitted, then this table cell shall use the trailing cell margins defined in the end element contained within the table properties (§17.4.11).  
+  
+ [*Example*: Consider a two row, two column  table in which the first table cell in the second row has a trailing margin which is specified via an exception to be , the region marked with an arrow in the table below:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ The exception on this cell would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    <w:tcMar>  
+      <w:end w:w="720" w:type="dxa" />  
+    </w:tcMar>  
+  </w:tcPr>  
+  …</w:tc>  
+```  
+  
+ The R2C1 cell in this table has an exception applied to the table cell trailing cell margin setting it to *720* twentieths of a point (). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcMar (§17.4.69)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **end (Table Cell Trailing Margin Default)**  
+  
+ This element specifies the amount of space which shall be present between the trailing extent of the cell contents and the trailing border of all table cells within the parent table (or table row) . This setting can be overridden by the table cell trailing margin definition specified by the end element contained within the table cell's properties (§17.4.10).  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* or *auto* for this element shall be ignored.  
+  
+ If this element is omitted, then it shall inherit the table cell margin from the associated table style. If a trailing margin is never specified in the style hierarchy, this table shall have 115 twentieths of a point () left cell padding by default (excepting individual cell overrides).  
+  
+ [*Example*: Consider a two by two  table in which the default table cell trailing margin is specified to be exactly , as follows (marked with an arrow in the first table cell below):  
+  
+ R1C1  
+  
+ R2C1  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This table property is specified using the following WordprocessingML markup:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblCellMar>  
+      <w:end w:w="360" w:type="dxa"/>  
+    </w:tblCellMar>  
+  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ Every cell in the table has a default trailing cell margin setting it to *360* twentieths of a point. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblCellMar (§17.4.42); tblCellMar (§17.4.43)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +126,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the EndMargin class.
-            </summary>
+        <summary>Initializes a new instance of the EndMargin class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,11 +149,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +171,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="ConditionalFormatStyle" FullName="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle">
+<Type Name="ConditionalFormatStyle" FullName="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle">
   <TypeSignature Language="C#" Value="public class ConditionalFormatStyle : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConditionalFormatStyle extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle" />
@@ -19,11 +19,99 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ConditionalFormatStyle Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:cnfStyle.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the ConditionalFormatStyle Class. When the object is serialized out as xml, its qualified name is w:cnfStyle.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cnfStyle (Paragraph Conditional Formatting)**  
+  
+ This element specifies the set of conditional table style formatting properties which have been applied to this paragraph, if this paragraph is contained within a table cell. [*Note*: This property is an optimization which can be used by consumers to determine if a given property on a paragraph is the result of the table style properties vs. direct formatting on the paragraph itself. *end note*]  
+  
+ If this property is specified on a paragraph which is not contained within a table cell, then its contents shall be ignored when reading the contents of the document.  
+  
+ [*Example*: Consider a paragraph in the top right corner of a table with a table style applied and where the table is formatted as left to right. This paragraph would need to specify the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:cnfStyle w:firstRow="true" w:lastColumn="true" w:firstRowLastColumn="true" />  
+    …  
+  </w:pPr>  
+  …  
+</w:p>  
+```  
+  
+ This paragraph specifies that it has the conditional properties from the table style for the first column, first row, and the top right corner of the parent table by setting the appropriate attributes. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Cnf) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cnfStyle (Table Row Conditional Formatting)**  
+  
+ This element specifies the set of conditional table style formatting properties which have been applied to this table row. [*Note*: This property is an optimization which is used by consumers to determine if a given property on a table row is the result of the table style conditional formatting properties vs. direct formatting on the table cell itself. It specifies the components of the conditional formatting in the table style applied to this cell, so that the table's conditional formatting can be applied after the document is displayed without having the table style properties override the style hierarchy. *end note*]  
+  
+ If this element is omitted, then its value shall be assumed to be zero for all entries in the bit mask.  
+  
+ [*Example*: Consider a table row in the top of a table with a table style applied. This table cell would need to specify the following WordprocessingML to express that fact:  
+  
+```xml  
+<w:tr>  
+  <w:trPr>  
+    <w:cnfStyle w:firstRow="true" />  
+    …  
+  </w:trPr>  
+  …  
+</w:tr>  
+```  
+  
+ This table row specifies that it has the conditional properties from the table style for the first row of the parent table by setting the appropriate attribute value. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11); trPr (§17.4.83)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Cnf) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cnfStyle (Table Cell Conditional Formatting)**  
+  
+ This element specifies the set of conditional table style formatting properties which have been applied to this table cell. [*Note*: This property is an optimization which is used by consumers to determine if a given property on a table cell is the result of the table style conditional formatting properties vs. direct formatting on the table cell itself. It specifies the components of the conditional formatting in the table style applied to this cell, so that the table's conditional formatting can be applied after the document is displayed without having the table style properties override the style hierarchy. *end note*]  
+  
+ If this element is omitted, then its value shall be assumed to be zero for all entries in the bit mask.  
+  
+ [*Example*: Consider a table cell in the top right corner of a table with a table style applied and where the table is formatted as left to right. This table cell would need to specify the following WordprocessingML to express that fact:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    <w:cnfStyle w:firstRow="true" w:lastColumn="true" w:firstRowLastColumn="true" />  
+    …  
+  </w:tcPr>  
+  …  
+</w:tc>  
+```  
+  
+ This table cell specifies that it has the conditional properties from the table style for the first column, first row, and the top right corner of the parent table by setting the appropriate attributes. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Cnf) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +127,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ConditionalFormatStyle class.
-            </summary>
+        <summary>Initializes a new instance of the ConditionalFormatStyle class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +150,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,10 +180,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> evenHBand, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:evenHBand </para>
-        </summary>
+        <summary>evenHBand, this property is only available in Office2010.Represents the following attribute in the schema: w:evenHBand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -130,10 +211,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> evenVBand, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:evenVBand </para>
-        </summary>
+        <summary>evenVBand, this property is only available in Office2010.Represents the following attribute in the schema: w:evenVBand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -164,10 +242,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:firstColumn </para>
-        </summary>
+        <summary>firstColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:firstColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -198,10 +273,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstRow, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:firstRow </para>
-        </summary>
+        <summary>firstRow, this property is only available in Office2010.Represents the following attribute in the schema: w:firstRow</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -232,10 +304,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstRowFirstColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:firstRowFirstColumn </para>
-        </summary>
+        <summary>firstRowFirstColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:firstRowFirstColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -266,10 +335,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstRowLastColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:firstRowLastColumn </para>
-        </summary>
+        <summary>firstRowLastColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:firstRowLastColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -300,10 +366,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lastColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:lastColumn </para>
-        </summary>
+        <summary>lastColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:lastColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -334,10 +397,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lastRow, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:lastRow </para>
-        </summary>
+        <summary>lastRow, this property is only available in Office2010.Represents the following attribute in the schema: w:lastRow</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -368,10 +428,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lastRowFirstColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:lastRowFirstColumn </para>
-        </summary>
+        <summary>lastRowFirstColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:lastRowFirstColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -402,10 +459,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lastRowLastColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:lastRowLastColumn </para>
-        </summary>
+        <summary>lastRowLastColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:lastRowLastColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -428,10 +482,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -459,10 +511,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> oddHBand, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:oddHBand </para>
-        </summary>
+        <summary>oddHBand, this property is only available in Office2010.Represents the following attribute in the schema: w:oddHBand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -493,10 +542,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> oddVBand, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:oddVBand </para>
-        </summary>
+        <summary>oddVBand, this property is only available in Office2010.Represents the following attribute in the schema: w:oddVBand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -524,12 +570,62 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Conditional Formatting Bit Mask.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Conditional Formatting Bit Mask.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the set of conditional formatting properties that have been applied to this object.  
+  
+ These properties are expressed using a string serialization of a binary bitmask for each of the following properties (reading from the first character position right):  
+  
+-   First Row - Is this the first row of the table?  
+  
+-   Last Row - Is this the last row of the table?  
+  
+-   First Column - Does this belong to the first column of the table?  
+  
+-   Last Column - Does this belong to the last column of the table?  
+  
+-   Band 1 Vertical - Does this belong to a column which should receive Band 1 formatting? This property specifies whether the cell should receive the formatting specified for odd-numbered columns (1, 3, 5, and so on).  
+  
+-   Band 2 Vertical - Does this belong to a column which should receive Band 2 formatting? This property specifies whether the cell should receive the formatting specified for even-numbered columns (2, 4, 6, and so on).  
+  
+-   Band 1 Horizontal - Does this receive Band 1 formatting? This property specifies whether the cell should receive the formatting specified for odd-numbered rows (1, 3, 5, and so on).  
+  
+-   Band 2 Horizontal - Does this receive Band 2 formatting? This property specifies whether the cell should receive the formatting specified for even-numbered rows (2, 4, 6, and so on).  
+  
+-   NE Cell - Is this part of the top-right corner of the table?  
+  
+-   NW Cell - Is this part of the top-left corner of the table?  
+  
+-   SE Cell - Is this part of the bottom-right corner of the table?  
+  
+-   SW Cell -  Is this part of the bottom-left corner of the table?  
+  
+ For each of these properties, a value of `1` in the specified character position in the string means that the value is `true`; and a value of `0` means `false`. All the values must be specified.  
+  
+ Consider a paragraph in the top-right corner of a table with a table style applied. This paragraph would need to specify the following WordprocessingML:  
+  
+```  
+<w:p>  
+  <w:pPr>  
+    <w:cnfStyle w:val="101000000100" />  
+    ...  
+  </w:pPr>  
+  ...  
+</w:p>  
+```  
+  
+ This paragraph specifies that it has the conditional properties from the table style for the first column, first row, and NW corner of the parent table by setting the appropriate bits in the `val` attribute.  
+  
+ The possible values for this attribute are defined by the `ST_Cnf` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="RecipientDataReference" FullName="DocumentFormat.OpenXml.Wordprocessing.RecipientDataReference">
+<Type Name="RecipientDataReference" FullName="DocumentFormat.OpenXml.Wordprocessing.RecipientDataReference">
   <TypeSignature Language="C#" Value="public class RecipientDataReference : DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RecipientDataReference extends DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.RecipientDataReference" />
@@ -19,11 +19,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Reference to Inclusion/Exclusion Data for Data Source.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:recipientData.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Reference to Inclusion/Exclusion Data for Data Source. When the object is serialized out as xml, its qualified name is w:recipientData.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **recipientData (Reference to Inclusion/Exclusion Data for Data Source)**  
+  
+ This element shall specify a reference to the part which contains data about whether the set of records in the associated data source have been explicitly included or excluded from the specified mail merge. Only those records which must not be used to generate merged WordprocessingML documents shall be stored within the referenced part, as all records shall be merged by default as part of the mail merge operation. [*Guidance*: Applications can choose to store only those records which are excluded for efficiency, or a list of all records in order to determine which set of records were added/removed between mail merge operations. *end guidance*]  
+  
+ [*Rationale*: When defining a mail merge, it is possible that a user wishes to connect to a specified data source, but specify only a subset of the records returned by the query specified by the query element (§17.14.26) which must be merged as part of the mail merge operation. This element allows applications to utilize a separate part to store this information, either the shared part defined by /IEC 29500, or an application-defined part as needed. *end rationale*]  
+  
+ If the relationship type of the relationship specified by this element is not *http://schemas.openxmlformats.org/officeDocument/2006/mailMergeRecipientData*, is not present, or does not have a TargetMode attribute value of *Internal*, then the document shall be considered non-conformant. If an application cannot process external content of the content type specified by the targeted part, then it can be ignored.  
+  
+ /IEC 29500 defines one shared mechanism for storing this data: using the Mail Merge Recipient Data part. This mechanism shall be used if the associated data source has a column which can be used as the unique key. However, when using data sources which do not have a unique key, applications can store their own part (of an application-defined content type) using this relationship.  
+  
+ [*Example*: Consider a WordprocessingML document which is a mail merge source document, containing inclusion/exclusion data for the data source. The document settings part would contain the mail merge data:  
+  
+```xml  
+<w:settings>  
+  …  <w:mailMerge>  
+     …  
+     <w:odso>  
+       …       <w:recipientData r:id="recipient1" />  
+     </w:odso>  
+  </w:mailMerge>  
+</w:settings>  
+```  
+  
+ The recipientData element specifies that the external content targeted by the relationship with an ID of *recipient1* contains the recipient inclusion/exclusion data for the mail merge operation. Examining the contents of the corresponding relationship part item, we can see the targets for that relationship:  
+  
+```xml  
+<Relationships … >  
+  …  <Relationship Id="recipient1" TargetMode="Internal" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/mailMergeRecipientData" Target="recipientData.xml" />  
+  …</Relationships>  
+```  
+  
+ The corresponding relationship part item shows that the file containing this data is located next to the main document and is named *recipientData.xml*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|odso (§17.14.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Rel) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +84,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RecipientDataReference class.
-            </summary>
+        <summary>Initializes a new instance of the RecipientDataReference class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +107,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +129,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

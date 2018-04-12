@@ -1,4 +1,4 @@
-﻿<Type Name="Enabled" FullName="DocumentFormat.OpenXml.Wordprocessing.Enabled">
+<Type Name="Enabled" FullName="DocumentFormat.OpenXml.Wordprocessing.Enabled">
   <TypeSignature Language="C#" Value="public class Enabled : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Enabled extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Enabled" />
@@ -19,11 +19,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Form Field Enabled.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:enabled.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Form Field Enabled. When the object is serialized out as xml, its qualified name is w:enabled.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **enabled (Form Field Enabled)**  
+  
+ This element specifies whether the parent form field shall behave as though it is enabled or disabled when it is displayed in the document. This setting shall have no effect on the behavior of this form field unless the document's Settings part specifies that the documentProtection element for the current document is in a state allowing the filling in of form fields.  
+  
+ If this element is omitted, then the parent form field shall be in its enabled state when the document settings specify that the document allows the filling-in of form fields.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for a text box form field:  
+  
+```xml  
+<w:fldSimple w:instr="FORMTEXT">  
+  <w:ffData>  
+    <w:enabled w:val="false"/>  
+    <w:textInput>  
+      …    </w:textInput>  
+  </w:ffData>  
+</w:fldSimple>  
+```  
+  
+ The enabled element specifies that the state of the current text box form field is disabled; therefore this text box must not be editable within the current document even when the state of the documentProtection element specifically allows the editing of form fields. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|ffData (§17.16.17)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Enabled class.
-            </summary>
+        <summary>Initializes a new instance of the Enabled class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +94,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

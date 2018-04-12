@@ -1,4 +1,4 @@
-﻿<Type Name="Animate" FullName="DocumentFormat.OpenXml.Presentation.Animate">
+<Type Name="Animate" FullName="DocumentFormat.OpenXml.Presentation.Animate">
   <TypeSignature Language="C#" Value="public class Animate : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Animate extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.Animate" />
@@ -25,13 +25,62 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Animate.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:anim.</para>
-    </summary>
+    <summary>Animate. When the object is serialized out as xml, its qualified name is p:anim.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CommonBehavior &lt;p:cBhvr&gt;</description></item><item><description>TimeAnimateValueList &lt;p:tavLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **anim (Animate)**  
+  
+ This element is a generic animation element that requires little or no semantic understanding of the attribute being animated.  It can animate text within a shape or even the shape itself.  
+  
+ [*Example*:  Consider trying to emphasize text within a shape by changing the size of its font by 150%. The \<anim> element should be used as follows:  
+  
+```xml  
+<p:anim to="1.5" calcmode="lin" valueType="num">  
+  <p:cBhvr override="childStyle">  
+    <p:cTn id="1" dur="2000" fill="hold"/>  
+    <p:tgtEl>  
+      <p:spTgt spid="1">  
+        <p:txEl>  
+          <p:charRg st="1" end="4"/>  
+        </p:txEl>  
+      </p:spTgt>  
+    </p:tgtEl>  
+    <p:attrNameLst>  
+      <p:attrName>style.fontSize</p:attrName>  
+    </p:attrNameLst>  
+  </p:cBhvr>  
+</p:anim>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|childTnLst (§19.5.25); subTnLst (§19.5.78); tnLst (§19.5.87)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cBhvr (Common Behavior)|§19.5.22|  
+|tavLst (Time Animated Value List)|§19.5.80|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|by (By)|This attribute specifies a relative offset value for the animation with respect to its position before the start of the animation.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|calcmode (Calculation Mode)|This attribute specifies the interpolation mode for the animation.<br /><br /> The possible values for this attribute are defined by the *ST_TLAnimateBehaviorCalcMode* simple type (§19.7.20).|  
+|from (From)|This attribute specifies the starting value of the animation.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|to (To)|This attribute specifies the ending value for the animation as a percentage.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|valueType (Value Type)|This attribute specifies the type of property value.<br /><br /> The possible values for this attribute are defined by the *ST_TLAnimateBehaviorValueType* simple type (§19.7.21).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLAnimateBehavior) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -47,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Animate class.
-            </summary>
+        <summary>Initializes a new instance of the Animate class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +123,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Animate class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Animate class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,9 +144,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Animate class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Animate class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,9 +165,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Animate class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Animate class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -149,10 +190,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> bounceEnd.</para>
-          <para>Represents the following attribute in the schema: p14:bounceEnd </para>
-        </summary>
+        <summary>bounceEnd.Represents the following attribute in the schema: p14:bounceEnd</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:p14=http://schemas.microsoft.com/office/powerpoint/2010/main
@@ -180,11 +218,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> by.</para>
-          <para>Represents the following attribute in the schema: by </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>by.Represents the following attribute in the schema: by</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -209,11 +244,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.AnimateBehaviorCalculateModeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> calcmode.</para>
-          <para>Represents the following attribute in the schema: calcmode </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>calcmode.Represents the following attribute in the schema: calcmode</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -236,11 +268,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -260,11 +290,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonBehavior</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CommonBehavior.</para>
-          <para> Represents the following element tag in the schema: p:cBhvr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CommonBehavior. Represents the following element tag in the schema: p:cBhvr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CommonBehavior" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -292,11 +319,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> from.</para>
-          <para>Represents the following attribute in the schema: from </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>from.Represents the following attribute in the schema: from</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -316,10 +340,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -339,11 +361,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.TimeAnimateValueList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TimeAnimateValueList.</para>
-          <para> Represents the following element tag in the schema: p:tavLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TimeAnimateValueList. Represents the following element tag in the schema: p:tavLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.TimeAnimateValueList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -371,11 +390,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> to.</para>
-          <para>Represents the following attribute in the schema: to </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>to.Represents the following attribute in the schema: to</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -400,11 +416,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.AnimateBehaviorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> valueType.</para>
-          <para>Represents the following attribute in the schema: valueType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>valueType.Represents the following attribute in the schema: valueType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

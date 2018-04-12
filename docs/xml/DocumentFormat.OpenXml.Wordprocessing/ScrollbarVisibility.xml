@@ -1,4 +1,4 @@
-﻿<Type Name="ScrollbarVisibility" FullName="DocumentFormat.OpenXml.Wordprocessing.ScrollbarVisibility">
+<Type Name="ScrollbarVisibility" FullName="DocumentFormat.OpenXml.Wordprocessing.ScrollbarVisibility">
   <TypeSignature Language="C#" Value="public class ScrollbarVisibility : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScrollbarVisibility extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ScrollbarVisibility" />
@@ -19,11 +19,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Scrollbar Display Option.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:scrollbar.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Scrollbar Display Option. When the object is serialized out as xml, its qualified name is w:scrollbar.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `scrollbar (Scrollbar Display Option)`  
+  
+ This element specifies when a scrollbar shall be visible for the contents of the current frame. When this element is set, the val attribute determines exactly when the scrollbar shall be visible. This property is analogous to the *scrolling* attribute on the *frame* element in HTML.  
+  
+ If this element is omitted, the scrollbar shall only be displayed when the contents of the frame exceed the visible space for the frame (i.e. when the scrollbar is needed to display all of the content).  
+  
+ [*Example*: Consider a WordprocessingML document which serves as the frameset container for a frameset consisting of the following three frames:  
+  
+ 66006077-4a37-41cc-abd7-2617c7e3e174  
+  
+ The frameset properties for this document are specified by the following WordprocessingML within the web page settings:  
+  
+```xml  
+<w:frameset>  
+  …  
+  <w:frameset>  
+    …    <w:frame>  
+      <w:name w:val="Frame 2" />  
+      <w:scrollbar w:val="auto" />  
+    </w:frame>  
+    …  
+  </w:frameset>  
+</w:frameset>  
+```  
+  
+ The scrollbar element has a val attribute of *auto*, which specifies that the frame must only display a scrollbar when it is needed to display all of its content. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|frame (§17.15.2.16)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FrameScrollbar) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +78,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ScrollbarVisibility class.
-            </summary>
+        <summary>Initializes a new instance of the ScrollbarVisibility class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +101,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +123,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +149,31 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Scrollbar Display Option Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Scrollbar Display Option Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the criteria under which a scrollbar shall be displayed along with the contents of this frameset, as defined by the simple type referenced below.  
+  
+ Consider a frameset definition within a WordprocessingML document which defines the following scrollbar visibility setting:  
+  
+```  
+<w:frame>  
+  <w:scrollbar w:val="on" />  
+  …  
+</w:frame>  
+```  
+  
+ The `val` attribute value of `on` specifies that the scrollbar shall always be displayed, even when it is not needed (in other words, when it would be displayed disabled).  
+  
+ The possible values for this attribute are defined by the `ST_FrameScrollbar` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

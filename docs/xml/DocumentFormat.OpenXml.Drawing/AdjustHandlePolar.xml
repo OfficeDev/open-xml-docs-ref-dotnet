@@ -1,4 +1,4 @@
-﻿<Type Name="AdjustHandlePolar" FullName="DocumentFormat.OpenXml.Drawing.AdjustHandlePolar">
+<Type Name="AdjustHandlePolar" FullName="DocumentFormat.OpenXml.Drawing.AdjustHandlePolar">
   <TypeSignature Language="C#" Value="public class AdjustHandlePolar : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdjustHandlePolar extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.AdjustHandlePolar" />
@@ -22,13 +22,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Polar Adjust Handle.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:ahPolar.</para>
-    </summary>
+    <summary>Polar Adjust Handle. When the object is serialized out as xml, its qualified name is a:ahPolar.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Position &lt;a:pos&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **ahPolar (Polar Adjust Handle)**  
+  
+ This element specifies a polar adjust handle for a custom shape. The position of this adjust handle is specified by the corresponding pos child element. The allowed adjustment of this adjust handle are specified via it's min and max attributes. Based on the adjustment of this adjust handle certain corresponding guides are updated to contain these values.  
+  
+|Parent Elements|  
+|---------------------|  
+|ahLst (§20.1.9.1)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pos (Shape Position Coordinate)|§20.1.9.17|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|gdRefAng (Angle Adjustment Guide)|Specifies the name of the guide that is updated with the adjustment angle from this adjust handle.<br /><br /> The possible values for this attribute are defined by the *ST_GeomGuideName* simple type (§20.1.10.28).|  
+|gdRefR (Radial Adjustment Guide)|Specifies the name of the guide that is updated with the adjustment radius from this adjust handle.<br /><br /> The possible values for this attribute are defined by the *ST_GeomGuideName* simple type (§20.1.10.28).|  
+|maxAng (Maximum Angle Adjustment)|Specifies the maximum angle position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move angularly. That is the maxAng and minAng are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjAngle* simple type (§20.1.10.1).|  
+|maxR (Maximum Radial Adjustment)|Specifies the maximum radial position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move radially. That is the maxR and minR are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+|minAng (Minimum Angle Adjustment)|Specifies the minimum angle position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move angularly. That is the maxAng and minAng are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjAngle* simple type (§20.1.10.1).|  
+|minR (Minimum Radial Adjustment)|Specifies the minimum radial position that is allowed for this adjustment handle. If this attribute is omitted, then it is assumed that this adjust handle cannot move radially. That is the maxR and minR are equal.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PolarAdjustHandle) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AdjustHandlePolar class.
-            </summary>
+        <summary>Initializes a new instance of the AdjustHandlePolar class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +98,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AdjustHandlePolar class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the AdjustHandlePolar class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +119,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AdjustHandlePolar class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the AdjustHandlePolar class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +140,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the AdjustHandlePolar class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the AdjustHandlePolar class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,11 +165,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Angle Adjustment Guide.</para>
-          <para>Represents the following attribute in the schema: gdRefAng </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Angle Adjustment Guide.Represents the following attribute in the schema: gdRefAng</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +189,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,10 +211,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,11 +237,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximum Angle Adjustment.</para>
-          <para>Represents the following attribute in the schema: maxAng </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximum Angle Adjustment.Represents the following attribute in the schema: maxAng</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -254,11 +263,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximum Radial Adjustment.</para>
-          <para>Represents the following attribute in the schema: maxR </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximum Radial Adjustment.Represents the following attribute in the schema: maxR</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -283,11 +289,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Angle Adjustment.</para>
-          <para>Represents the following attribute in the schema: minAng </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum Angle Adjustment.Represents the following attribute in the schema: minAng</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -312,11 +315,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Radial Adjustment.</para>
-          <para>Represents the following attribute in the schema: minR </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum Radial Adjustment.Represents the following attribute in the schema: minR</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -336,11 +336,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Position</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Position Coordinate.</para>
-          <para> Represents the following element tag in the schema: a:pos </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape Position Coordinate. Represents the following element tag in the schema: a:pos</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Position" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -368,11 +365,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Radial Adjustment Guide.</para>
-          <para>Represents the following attribute in the schema: gdRefR </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Radial Adjustment Guide.Represents the following attribute in the schema: gdRefR</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

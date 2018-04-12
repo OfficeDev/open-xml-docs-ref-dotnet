@@ -1,4 +1,4 @@
-﻿<Type Name="TimeAnimateValue" FullName="DocumentFormat.OpenXml.Presentation.TimeAnimateValue">
+<Type Name="TimeAnimateValue" FullName="DocumentFormat.OpenXml.Presentation.TimeAnimateValue">
   <TypeSignature Language="C#" Value="public class TimeAnimateValue : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TimeAnimateValue extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.TimeAnimateValue" />
@@ -22,13 +22,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Time Animate Value.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:tav.</para>
-    </summary>
+    <summary>Time Animate Value. When the object is serialized out as xml, its qualified name is p:tav.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>VariantValue &lt;p:val&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tav (Time Animate Value)**  
+  
+ This element defines a "keypoint" in animation interpolation.  
+  
+ [*Example*:  Consider a shape with a "fly-in" animation. The \<tav> element should be used as follows:  
+  
+```xml  
+<p:anim calcmode="lin" valueType="num">  
+  <p:cBhvr additive="base">  
+ … </p:cBhvr>  
+  <p:tavLst>  
+    <p:tav tm="0">  
+      <p:val>  
+        <p:strVal val="1+#ppt_h/2"/>  
+      </p:val>  
+    </p:tav>  
+    <p:tav tm="100000">  
+      <p:val>  
+        <p:strVal val="#ppt_y"/>  
+      </p:val>  
+    </p:tav>  
+  </p:tavLst>  
+</p:anim>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tavLst (§19.5.80)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|val (Value)|§19.5.92|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLTimeAnimateValue) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TimeAnimateValue class.
-            </summary>
+        <summary>Initializes a new instance of the TimeAnimateValue class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +112,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TimeAnimateValue class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TimeAnimateValue class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +133,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TimeAnimateValue class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TimeAnimateValue class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +154,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TimeAnimateValue class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TimeAnimateValue class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +177,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,12 +204,42 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula.</para>
-          <para>Represents the following attribute in the schema: fmla </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Formula.Represents the following attribute in the schema: fmla</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute allows for a specific formula to be used during the animation. This is specified in a semicolon-separated list of formulas. The value generated by interpolating the values list will be fed into the formula as an input. The resulting value is used to set the property being animated. There should be n-1 number of formulas for n values in the values list. The formula is applied starting at the corresponding time in the keyTimes list and up to the next time in the list.  
+  
+ Formulas can only support a `calcMode` (Calculation Mode) of linear or discrete. If another `calcMode` is specified or no `calcMode` is specified then a `calcMode` of linear will be assumed.  
+  
+ Formulas must be written using the elements defined below. When a formula is used in an attribute that takes more than one parameter (such as for animateScale or animateMotion), a space will be taken as a delimiter between parameter values. To work around this, either don't put spaces in the formula or include parentheses around the formula.  
+  
+ Formulas within values, from, to, by attributes can be made up of these:  
+  
+-   Standard arithmetic operators: ‘+’, ‘-‘, ‘*’, ‘/’, ‘^’, ‘%’ (mod)  
+  
+-   Constants:  ‘pi’ ‘e’  
+  
+-   Conditional operators: ‘abs’, ‘min’, ‘max’, ‘?’ (if)  
+  
+-   Comparison operators: '==', '>=', '<=', '!=', '!'  
+  
+-   Trigonometric operators: ‘sin()’, ‘cos()’, ‘tan()’, ‘asin()’, ‘acos()’, ‘atan()’  
+  
+-   Natural logarithm ‘ln()’  
+  
+-   Property references (host supported properties)  
+  
+ The above formula elements are different than those used in javascript expressions. For example "cos()" used in formulas would be "Math.cos()" in javascript.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` datatype.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -197,10 +258,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,12 +284,20 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Time.</para>
-          <para>Represents the following attribute in the schema: tm </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Time.Represents the following attribute in the schema: tm</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies the time at which the attribute being animated will take on the value.  
+  
+ The possible values for this attribute are defined by the `ST_TLTimeAnimateValueTime` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="VariantValue">
@@ -249,11 +316,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.VariantValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para> Represents the following element tag in the schema: p:val </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Value. Represents the following element tag in the schema: p:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.VariantValue" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

@@ -1,4 +1,4 @@
-﻿<Type Name="Header" FullName="DocumentFormat.OpenXml.Spreadsheet.Header">
+<Type Name="Header" FullName="DocumentFormat.OpenXml.Spreadsheet.Header">
   <TypeSignature Language="C#" Value="public class Header : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Header extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Header" />
@@ -28,13 +28,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Header.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:header.</para>
-    </summary>
+    <summary>Header. When the object is serialized out as xml, its qualified name is x:header.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>SheetIdMap &lt;x:sheetIdMap&gt;</description></item><item><description>ReviewedList &lt;x:reviewedList&gt;</description></item><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **header (Header)**  
+  
+ This element is essentially a table that contains metadata about a list of specific changes that have taken place for this workbook.  It  lists when the changes were made, who made them, and the relationship IDs so that the log detailing the specific change can be found.  If tracking changes, or sharing workbooks, are enabled, then changes are persisted on the Save event, or at a specified time interval.  A header is created for each set of changes.  
+  
+|Parent Elements|  
+|---------------------|  
+|Root element of SpreadsheetML Shared Workbook Revision Headers part; headers (§18.11.1.2)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|reviewedList (Reviewed List)|§18.11.1.15|  
+|sheetIdMap (Sheet Id Map)|§18.11.1.24|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|dateTime (Date Time)|The date and time when this set of revisions was saved.<br /><br /> [*Note*:  This can happen when the user explicitly saves, or the save can occur due to a time interval, specified in the spreadsheet application, elapsing. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *dateTime* datatype.|  
+|guid (GUID)|A globally unique identifier for this set of revisions.<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
+|id (Relationship ID)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|This is the ID that is used to find the corresponding log record of the changes made for this header.<br /><br /> Use the corresponding relationship expressed in the revisionHeaders part to locate the log record that lists the specific changes.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|maxRId (Max Revision Id)|The highest revision Id that belongs to this header.<br /><br /> [*Note*: This can be used when, given a revision ID, the spreadsheet application needs to determine which revision log to access. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|maxSheetId (Last Sheet Id)|Internal identifier of the next available sheet in this workbook.<br /><br /> The numbering here is the index of the next available sheet in the workbook in a 1-based index system.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|minRId (Minimum Revision Id)|The lowest revision id that belongs to this header.<br /><br /> [*Note*: this can be used when, given a revision ID, the spreadsheet application needs to determine which revision log to access. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|userName (User Name)|A string representing the name of the user making the revision..<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_RevisionHeader) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,9 +80,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Header class.
-            </summary>
+        <summary>Initializes a new instance of the Header class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +107,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Header class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Header class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -102,9 +128,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Header class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Header class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -125,9 +149,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Header class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Header class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +172,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -179,11 +199,8 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Date Time.</para>
-          <para>Represents the following attribute in the schema: dateTime </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Date Time.Represents the following attribute in the schema: dateTime</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DateTimeValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,11 +220,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -235,11 +249,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GUID.</para>
-          <para>Represents the following attribute in the schema: guid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>GUID.Represents the following attribute in the schema: guid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -264,11 +275,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relationship ID.</para>
-          <para>Represents the following attribute in the schema: r:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relationship ID.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
             </remark>
@@ -290,10 +298,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -318,11 +324,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Max Revision Id.</para>
-          <para>Represents the following attribute in the schema: maxRId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Max Revision Id.Represents the following attribute in the schema: maxRId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -347,11 +350,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Last Sheet Id.</para>
-          <para>Represents the following attribute in the schema: maxSheetId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Last Sheet Id.Represents the following attribute in the schema: maxSheetId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -376,11 +376,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum Revision Id.</para>
-          <para>Represents the following attribute in the schema: minRId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum Revision Id.Represents the following attribute in the schema: minRId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -400,11 +397,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ReviewedList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reviewed List.</para>
-          <para> Represents the following element tag in the schema: x:reviewedList </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reviewed List. Represents the following element tag in the schema: x:reviewedList</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ReviewedList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -427,11 +421,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.SheetIdMap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sheet Id Map.</para>
-          <para> Represents the following element tag in the schema: x:sheetIdMap </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sheet Id Map. Represents the following element tag in the schema: x:sheetIdMap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.SheetIdMap" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -459,11 +450,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> User Name.</para>
-          <para>Represents the following attribute in the schema: userName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>User Name.Represents the following attribute in the schema: userName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="Inserted" FullName="DocumentFormat.OpenXml.Wordprocessing.Inserted">
+<Type Name="Inserted" FullName="DocumentFormat.OpenXml.Wordprocessing.Inserted">
   <TypeSignature Language="C#" Value="public class Inserted : DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Inserted extends DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Inserted" />
@@ -19,11 +19,144 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Inserted Paragraph.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:ins.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Inserted Paragraph. When the object is serialized out as xml, its qualified name is w:ins.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `ins (Inserted Table Row)`  
+  
+ This element specifies that the parent table row shall be treated as an inserted row whose insertion has been tracked as a revision. This setting shall not imply any revision state about the table cells in this row or their contents (which shall be revision marked independently), and shall only affect the table row itself.  
+  
+ [*Example*: Consider a two row by two column table in which the second row has been marked as inserted using a revision. This requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  …  <w:tr>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:trPr>  
+      <w:ins w:id="0" … />  
+    </w:trPr>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The ins element on the table row properties for the second table row specifies that this row was inserted, and this insertion was tracked as a revision. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `ins (Inserted Numbering Properties)`  
+  
+ This element specifies that the numbering information defined by the parent element shall be treated as numbering information which was recorded as an insertion using revisions.  
+  
+ [*Example*: Consider two paragraphs in a WordprocessingML document, with the words *one* and *two* respectively, as follows:  
+  
+ f84a0b6d-2161-406f-8045-0c1efb27495d  
+  
+ If numbering is then applied to these two paragraphs, and this numbering is tracked as a revision, this revision is represented using the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:numPr>  
+      <w:ilvl w:val="0" />  
+      <w:numId w:val="1" />  
+      <w:ins w:id="0" w:author="Joe Smith" w:date="2005-01-01T10:00:00Z" />  
+    </w:numPr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>one</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:numPr>  
+      <w:ilvl w:val="0" />  
+      <w:numId w:val="1" />  
+      <w:ins w:id="0" w:author="Joe Smith" w:date="2005-01-01T10:00:00Z" />  
+    </w:numPr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>two</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The ins element as a child of the numbering properties specifies that the paragraphs in this document have been given numbering properties by *Joe Smith* and that this change was marked as a revision. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|numPr (§17.3.1.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `ins (Inserted Paragraph)`  
+  
+ This element specifies that the paragraph mark delimiting the end of a paragraph within a WordprocessingML document shall be treated as deleted (i.e. the contents of this paragraph are no longer delimited by this paragraph mark, and are combined with the following paragraph) as part of a tracked revision.  
+  
+ [*Example*: Consider a document consisting of a single paragraph, as follows:  
+  
+ 7012f134-887c-4e68-b938-9c0c91b2f8be  
+  
+ If the first sentence is moved into its own new paragraph, and this change is tracked as a revision, resulting in the following:  
+  
+ ca3921d9-2c3c-45b9-a0ac-2dccb39df8b0  
+  
+ This revision is represented using the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:rPr>  
+      <w:ins w:id="0" … />  
+    </w:rPr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>This is paragraph one.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t>This is paragraph two.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The ins element on the run properties for the first paragraph mark specifies that this paragraph mark was inserted, and this insertion was tracked as a revision. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +172,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Inserted class.
-            </summary>
+        <summary>Initializes a new instance of the Inserted class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +195,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +217,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="CalculatedMember" FullName="DocumentFormat.OpenXml.Spreadsheet.CalculatedMember">
+<Type Name="CalculatedMember" FullName="DocumentFormat.OpenXml.Spreadsheet.CalculatedMember">
   <TypeSignature Language="C#" Value="public class CalculatedMember : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CalculatedMember extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CalculatedMember" />
@@ -22,13 +22,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Calculated Member.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:calculatedMember.</para>
-    </summary>
+    <summary>Calculated Member. When the object is serialized out as xml, its qualified name is x:calculatedMember.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CalculatedMemberExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **calculatedMember (Calculated Member)**  
+  
+ Represents a calculated OLAP hierarchy. A calculated member is a member of an OLAP-based PivotTable whose value is calculated on the OLAP server. For PivotTables that are created from OLAP cubes the summarized values are precalculated on the OLAP server before the SpreadsheetML application displays the results. These fields appear in the PivotTable field list but cannot be changed from within the PivotTable. You cannot change the summary function used to calculate data fields or subtotals, or add calculated items.  
+  
+ Calculated members are defined by the Multidimensional Expressions (MDX) expression in the mdx attribute.  
+  
+ *[Example:*  
+  
+```xml  
+<calculatedMembers count="1">  
+  <calculatedMember name="[Product].[Product Categories].[All     Products].[Calculated Member]" mdx="'[Product].[Product Categories].[All     Products].[Accessories]'" memberName="Calculated Member"     hierarchy="[Product].[Product Categories]" parent="[Product].[Product     Categories].[All Products]"/>  
+</calculatedMembers>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|calculatedMembers (§18.10.1.11)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|hierarchy (Hierarchy Name)|Specifies the name of the hierarchy to which the calculated member belongs.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|mdx (Calculated Member MDX Formula)|Specifies the MDX formula for the calculated member.<br /><br /> [*Note*: Data connectivity can use a number of different technologies. One example of potential values stored in this attribute can be found at: http://msdn2.microsoft.com/en-us/library/ms145595.aspx *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|memberName (OLAP Calculated Member Name)|Specifies the OLAP member name for the calculated member.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|name (Calculated Member Name)|Specifies the name of the calculated member.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|parent (Parent Name)|Specifies the name of the parent of the calculated member.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|set (Set)|Specifies a boolean value that indicates whether this calculated member describes a calculated set rather than a calculated member.<br /><br /> A value of *1* or *true* indicates this is a calculated set.<br /><br /> A value of *0* or *false* indicates this is a calculated member.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|solveOrder (Calculated Members Solve Order)|Specifies the order in which this calculated member is calculated in relation to other calculated members.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CalculatedMember) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +84,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CalculatedMember class.
-            </summary>
+        <summary>Initializes a new instance of the CalculatedMember class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +111,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CalculatedMember class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CalculatedMember class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +132,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CalculatedMember class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CalculatedMember class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +153,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CalculatedMember class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CalculatedMember class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,10 +173,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CalculatedMemberExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CalculatedMemberExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
+        <summary>CalculatedMemberExtensionList. Represents the following element tag in the schema: x:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -171,11 +200,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,11 +227,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> hierarchy.</para>
-          <para>Represents the following attribute in the schema: hierarchy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>hierarchy.Represents the following attribute in the schema: hierarchy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -224,10 +248,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -252,11 +274,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> mdx.</para>
-          <para>Represents the following attribute in the schema: mdx </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>mdx.Represents the following attribute in the schema: mdx</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -281,11 +300,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> memberName.</para>
-          <para>Represents the following attribute in the schema: memberName </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>memberName.Represents the following attribute in the schema: memberName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,11 +326,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -339,11 +352,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> parent.</para>
-          <para>Represents the following attribute in the schema: parent </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>parent.Represents the following attribute in the schema: parent</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -368,11 +378,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> set.</para>
-          <para>Represents the following attribute in the schema: set </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>set.Represents the following attribute in the schema: set</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -397,11 +404,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> solveOrder.</para>
-          <para>Represents the following attribute in the schema: solveOrder </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>solveOrder.Represents the following attribute in the schema: solveOrder</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

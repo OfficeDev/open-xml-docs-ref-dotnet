@@ -1,4 +1,4 @@
-﻿<Type Name="AlignTablesRowByRow" FullName="DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow">
+<Type Name="AlignTablesRowByRow" FullName="DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow">
   <TypeSignature Language="C#" Value="public class AlignTablesRowByRow : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AlignTablesRowByRow extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AlignTablesRowByRow" />
@@ -19,11 +19,67 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Align Table Rows Independently.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:alignTablesRowByRow.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Align Table Rows Independently. When the object is serialized out as xml, its qualified name is w:alignTablesRowByRow.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `alignTablesRowByRow (Align Table Rows Independently)`  
+  
+ This element specifies whether applications shall align each row within a table independently based on the alignment setting of the jc element (Part 1, §17.4.28) when displaying the contents of a table in a WordprocessingML document.  
+  
+ When the justification of a table using the jc element is typically applied, that alignment is applied to the contents of the table (the table is centered, left justified, or right-aligned), and then individual rows are laid out based on the resulting table's position. This element, when present with a val attribute value of *true* (or equivalent), specifies that each table row shall be independently aligned based on the table alignment setting, ignoring the placement of all other rows.  
+  
+ [*Example*: Consider a WordprocessingML document with a single centered table, whose second row is defined such that one-half of an inch is left before the row begins, as follows:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:jc w:val="center" />  
+  </w:tblPr>  
+  <w:tr>  
+    …  </w:tr>  
+  <w:tr>  
+    <w:trPr>  
+      <w:gridBefore w:val="1" />   
+      <w:wBefore w:w="720" w:type="dxa" />  
+    </w:trPr>  
+    …  </w:tr>  
+  <w:tr>  
+    …  </w:tr>  
+</w:tbl>  
+```  
+  
+ The default presentation would have the entire table centered, then the second row indented beyond that by 720 points:  
+  
+ 8610705f-56e9-4c9e-a4f1-7234021b43d0  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:alignTablesRowByRow />  
+</w:compat>  
+```  
+  
+ Then that second row would instead be centered on the page independently of the other table rows, resulting in the following output:  
+  
+ a036035a-23a7-4ef2-abea-c1e5d1418235  
+  
+ In this case, the wBefore element's value is ignored, since the row was centered on the line as a row, and there is no table to be indented relative to. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +95,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AlignTablesRowByRow class.
-            </summary>
+        <summary>Initializes a new instance of the AlignTablesRowByRow class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +118,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +140,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

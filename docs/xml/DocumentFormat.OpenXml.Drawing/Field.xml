@@ -1,4 +1,4 @@
-﻿<Type Name="Field" FullName="DocumentFormat.OpenXml.Drawing.Field">
+<Type Name="Field" FullName="DocumentFormat.OpenXml.Drawing.Field">
   <TypeSignature Language="C#" Value="public class Field : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Field extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Field" />
@@ -28,13 +28,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Text Field.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:fld.</para>
-    </summary>
+    <summary>Text Field. When the object is serialized out as xml, its qualified name is a:fld.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>RunProperties &lt;a:rPr&gt;</description></item><item><description>ParagraphProperties &lt;a:pPr&gt;</description></item><item><description>Text &lt;a:t&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **fld (Text Field)**  
+  
+ This element specifies a text field which contains generated text that the application should update periodically. Each piece of text when it is generated is given a unique identification number that is used to refer to a specific field. At the time of creation the text field indicates the kind of text that should be used to update this field. This update type is used so that all applications that did not create this text field can still know what kind of text it should be updated with. Thus the new application can then attach an update type to the text field id for continual updating.  
+  
+ [*Example*: Consider a slide within a presentation that needs to have the slide number placed on the slide. The following DrawingML can be used to describe such a situation.  
+  
+```xml  
+<p:txBody>  
+  <a:bodyPr/>  
+    <a:lstStyle/>  
+    <a:p>  
+      <a:fld id="{424CEEAC-8F67-4238-9622-1B74DC6E8318}" type="slidenum">  
+      <a:rPr lang="en-US" smtClean="0"/>  
+      <a:pPr/>  
+      <a:t>3</a:t>  
+    </a:fld>  
+    <a:endParaRPr lang="en-US"/>  
+  </a:p>  
+</p:txBody>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|p (§21.1.2.2.6)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pPr (Text Paragraph Properties)|§21.1.2.2.7|  
+|rPr (Text Run Properties)|§21.1.2.3.9|  
+|t (Text String)|§21.1.2.3.11|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|id (Field ID)|Specifies the unique to this document, host specified token that is used to identify the field. This token is generated when the text field is created and persists in the file as the same token until the text field is removed. Any application should check the document for conflicting tokens before assigning a new token to a text field.<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
+|type (Field Type)|Specifies the type of text that should be used to update this text field. This is used to inform the rendering application what text it should use to update this text field. There are no specific syntax restrictions placed on this attribute. The generating application can use it to represent any text that should be updated before rendering the presentation.<br /><br /> Reserved Values:<br /><br /> Value<br /><br /> Description<br /><br /> *slidenum*<br /><br /> presentation slide number<br /><br /> *datetime*<br /><br /> default date time format for the rendering application<br /><br /> *datetime1*<br /><br /> MM/DD/YYYY date time format [*Example:* *end example*]<br /><br /> *datetime2*<br /><br /> Day, Month DD, YYYY date time format [*Example:* Friday,  *end example*]<br /><br /> *datetime3*<br /><br /> DD Month YYYY date time format [*Example:* 12 October 2007 *end example*]<br /><br /> *datetime4*<br /><br /> Month DD, YYYY date time format [*Example:* *end example*]<br /><br /> *datetime5*<br /><br /> DD-Mon-YY date time format [*Example:* 12-Oct-07 *end example*]<br /><br /> *datetime6*<br /><br /> Month YY date time format [*Example:* October 07 *end example*]<br /><br /> *datetime7*<br /><br /> Mon-YY date time format [*Example:* Oct-07 *end example*]<br /><br /> *datetime8*<br /><br /> MM/DD/YYYY hh:mm AM/PM date time format [*Example:* *end example*]<br /><br /> *datetime9*<br /><br /> MM/DD/YYYY hh:mm:ss AM/PM date time format [*Example:* 4:28:34 PM *end example*]<br /><br /> *datetime10*<br /><br /> hh:mm date time format [*Example:* 16:28 *end example*]<br /><br /> *datetime11*<br /><br /> hh:mm:ss date time format [*Example:* 16:28:34 *end example*]<br /><br /> *datetime12*<br /><br /> hh:mm AM/PM date time format [*Example:* *end example*]<br /><br /> *datetime13*<br /><br /> hh:mm:ss: AM/PM date time format [*Example:* 4:28:34 PM *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextField) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,9 +94,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Field class.
-            </summary>
+        <summary>Initializes a new instance of the Field class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +121,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Field class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Field class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -102,9 +142,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Field class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Field class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -125,9 +163,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Field class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Field class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +186,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -179,11 +213,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field ID.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field ID.Represents the following attribute in the schema: id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,10 +234,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -226,11 +255,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ParagraphProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Paragraph Properties.</para>
-          <para> Represents the following element tag in the schema: a:pPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Paragraph Properties. Represents the following element tag in the schema: a:pPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ParagraphProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -253,11 +279,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.RunProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Character Properties.</para>
-          <para> Represents the following element tag in the schema: a:rPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Character Properties. Represents the following element tag in the schema: a:rPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.RunProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -280,11 +303,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Text</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text.</para>
-          <para> Represents the following element tag in the schema: a:t </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text. Represents the following element tag in the schema: a:t</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Text" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -312,11 +332,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

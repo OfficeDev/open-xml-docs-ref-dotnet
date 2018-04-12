@@ -1,4 +1,4 @@
-﻿<Type Name="DynamicFilter" FullName="DocumentFormat.OpenXml.Spreadsheet.DynamicFilter">
+<Type Name="DynamicFilter" FullName="DocumentFormat.OpenXml.Spreadsheet.DynamicFilter">
   <TypeSignature Language="C#" Value="public class DynamicFilter : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicFilter extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.DynamicFilter" />
@@ -19,11 +19,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Dynamic Filter.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:dynamicFilter.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Dynamic Filter. When the object is serialized out as xml, its qualified name is x:dynamicFilter.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **dynamicFilter (Dynamic Filter)**  
+  
+ This collection specifies dynamic filter criteria. These criteria are considered dynamic because they can change, either with the data itself (e.g., "above average") or with the current system date (e.g., show values for "today"). For any cells whose values do not meet the specified criteria, the corresponding rows shall be hidden from view when the filter is applied.  
+  
+ [*Example*:  
+  
+```xml  
+<filterColumn colId="0">  
+  <dynamicFilter type="today"/>  
+</filterColumn>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|filterColumn (§18.3.2.7)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|maxValIso (Max ISO Value)|A maximum value for dynamic filter. maxValIso shall be required for today, yesterday, tomorrow, nextWeek, thisWeek, lastWeek, nextMonth, thisMonth, lastMonth, nextQuarter, thisQuarter, lastQuarter, nextYear, thisYear, lastYear, and yearToDate.<br /><br /> The above criteria are based on a value range; that is, if today's date is September 22nd, then the range for thisWeek  is the values greater than or equal to September 17 and less than September 24.   In the thisWeek range, the lower value is expressed valIso. The higher value is expressed using maxValIso.<br /><br /> These dynamic filters shall not require valIso or maxValIso:<br /><br /> Q1, Q2, Q3, Q4, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11 and M12.<br /><br /> The above criteria shall not specify the range using valIso and maxValIso because Q1 always starts from M1 to M3, and M1 is always January.<br /><br /> These types of dynamic filters shall use valIso and shall not use maxValIso:<br /><br /> -   aboveAverage and belowAverage<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *dateTime* datatype.|  
+|type (Dynamic filter type)|Dynamic filter type, e.g., “today” or “nextWeek”.<br /><br /> The possible values for this attribute are defined by the *ST_DynamicFilterType* simple type (§18.18.26).|  
+|valIso (ISO Value)|A minimum value for dynamic filter. (See description of maxValIso to understand when valIso is required.)<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *dateTime* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_DynamicFilter) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DynamicFilter class.
-            </summary>
+        <summary>Initializes a new instance of the DynamicFilter class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +94,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +116,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,11 +142,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Max Value.</para>
-          <para>Represents the following attribute in the schema: maxVal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Max Value.Represents the following attribute in the schema: maxVal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -148,10 +171,7 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> maxValIso, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: maxValIso </para>
-        </summary>
+        <summary>maxValIso, this property is only available in Office2010.Represents the following attribute in the schema: maxValIso</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -177,11 +197,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.DynamicFilterValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Dynamic filter type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Dynamic filter type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -206,11 +223,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -238,10 +252,7 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> valIso, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: valIso </para>
-        </summary>
+        <summary>valIso, this property is only available in Office2010.Represents the following attribute in the schema: valIso</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

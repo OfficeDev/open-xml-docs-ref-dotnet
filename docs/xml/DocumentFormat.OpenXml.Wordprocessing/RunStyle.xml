@@ -1,4 +1,4 @@
-﻿<Type Name="RunStyle" FullName="DocumentFormat.OpenXml.Wordprocessing.RunStyle">
+<Type Name="RunStyle" FullName="DocumentFormat.OpenXml.Wordprocessing.RunStyle">
   <TypeSignature Language="C#" Value="public class RunStyle : DocumentFormat.OpenXml.Wordprocessing.String253Type" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RunStyle extends DocumentFormat.OpenXml.Wordprocessing.String253Type" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.RunStyle" />
@@ -19,11 +19,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the RunStyle Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:rStyle.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the RunStyle Class. When the object is serialized out as xml, its qualified name is w:rStyle.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **rStyle (Referenced Character Style)**  
+  
+ This element specifies the style ID of the character style which shall be used to format the contents of this paragraph.  
+  
+ This formatting is applied at the following location in the *style hierarchy*:  
+  
+-   Document defaults  
+  
+-   Table styles  
+  
+-   Numbering styles  
+  
+-   Paragraph styles  
+  
+-   Character styles (this element)  
+  
+-   Direct Formatting  
+  
+ This means that all properties specified in the style element (§17.7.4.17) with a styleId which corresponds to the value in this element's val attribute are applied to the run at the appropriate level in the hierarchy.  
+  
+ If this element is omitted, or it references a style which does not exist, then no character style shall be applied to the current paragraph. As well, this property is ignored if the run properties are part of a character style.  
+  
+ [*Example*: Consider the following WordprocessingML fragment:  
+  
+```xml  
+<w:rPr>  
+  <w:pStyle w:val="TestCharacterStyle" />  
+  <w:b />  
+  <w:i />  
+</w:rPr>  
+```  
+  
+ This run specifies that it inherits all of the run properties specified by the paragraph style with a styleId of *TestCharacterStyle*, which then have any bold or italics settings overridden and set to be applied to the run. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RunStyle class.
-            </summary>
+        <summary>Initializes a new instance of the RunStyle class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +108,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,9 +130,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

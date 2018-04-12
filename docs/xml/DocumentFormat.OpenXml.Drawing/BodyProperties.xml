@@ -1,4 +1,4 @@
-﻿<Type Name="BodyProperties" FullName="DocumentFormat.OpenXml.Drawing.BodyProperties">
+<Type Name="BodyProperties" FullName="DocumentFormat.OpenXml.Drawing.BodyProperties">
   <TypeSignature Language="C#" Value="public class BodyProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BodyProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.BodyProperties" />
@@ -43,13 +43,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the BodyProperties Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:bodyPr.</para>
-    </summary>
+    <summary>Defines the BodyProperties Class. When the object is serialized out as xml, its qualified name is a:bodyPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PresetTextWrap &lt;a:prstTxWarp&gt;</description></item><item><description>NoAutoFit &lt;a:noAutofit&gt;</description></item><item><description>NormalAutoFit &lt;a:normAutofit&gt;</description></item><item><description>ShapeAutoFit &lt;a:spAutoFit&gt;</description></item><item><description>Scene3DType &lt;a:scene3d&gt;</description></item><item><description>Shape3DType &lt;a:sp3d&gt;</description></item><item><description>FlatText &lt;a:flatTx&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **bodyPr (Body Properties)**  
+  
+ This element defines the body properties for the text body within a shape.  
+  
+ [*Example*: Consider a shape with a text body that has some formatting properties associated with it. For the formatting of text body properties, the bodyPr element should be used as follows:  
+  
+```xml  
+<p:sp>  
+  …  <p:txBody>  
+    <a:bodyPr>  
+      (text body properties)    </a:bodyPr>  
+  …  </p:txBody>  
+</p:sp>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lnDef (§20.1.4.1.20); rich (§21.2.2.156); spDef (§20.1.4.1.27); t (§21.4.3.8); txBody (§21.3.2.26); txBody (§20.1.2.2.40); txBody (§20.5.2.34); txBody (§19.3.1.51); txDef (§20.1.4.1.28); txPr (§21.2.2.216)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§20.1.2.2.15|  
+|flatTx (No text in 3D scene)|§20.1.5.8|  
+|noAutofit (No AutoFit)|§21.1.2.1.2|  
+|normAutofit (Normal AutoFit)|§21.1.2.1.3|  
+|prstTxWarp (Preset Text Warp)|§20.1.9.19|  
+|scene3d (3D Scene Properties)|§20.1.4.1.26|  
+|sp3d (Apply 3D shape properties)|§20.1.5.12|  
+|spAutoFit (Shape AutoFit)|§21.1.2.1.4|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextBodyProperties) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -65,9 +103,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BodyProperties class.
-            </summary>
+        <summary>Initializes a new instance of the BodyProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -94,9 +130,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BodyProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the BodyProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +151,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BodyProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the BodyProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,9 +172,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the BodyProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the BodyProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -167,12 +197,31 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Anchor.</para>
-          <para>Represents the following attribute in the schema: anchor </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Anchor.Represents the following attribute in the schema: anchor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the anchoring position of the `txBody` within the shape. If this attribute is omitted, then a value of `t`, meaning *top*, is implied.  
+  
+ Consider the following DrawingML:  
+  
+```  
+<p:txBody>  
+  <a:bodyPr anchor="ctr" … />  
+  …  
+</p:txBody>  
+```  
+  
+ Here the text is vertically aligned in the center of the shape within which it is contained.  
+  
+ The possible values for this attribute are defined by the `ST_TextAnchoringType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="AnchorCenter">
@@ -196,12 +245,29 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Anchor Center.</para>
-          <para>Represents the following attribute in the schema: anchorCtr </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Anchor Center.Represents the following attribute in the schema: anchorCtr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the centering of the text box. The way it works fundamentally is to determine the smallest possible "bounds box" for the text and then to center that bounds box accordingly. Note that this is different than paragraph alignment, which aligns the text within the bounds box for the text. This flag is compatible with all of the different types of anchoring. If this attribute is omitted, then a value of `0`, meaning *off*, is implied.  
+  
+ The text within this shape has been both vertically centered with the `anchor` attribute and horizontally centered with the `anchorCtr` attribute.  
+  
+```  
+<p:txBody>  
+  <a:bodyPr anchor="ctr" anchorCtr="1" … />  
+  …  
+</p:txBody>  
+```  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="BottomInset">
@@ -225,12 +291,32 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bottom Inset.</para>
-          <para>Represents the following attribute in the schema: bIns </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Bottom Inset.Represents the following attribute in the schema: bIns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the bottom inset of the bounding rectangle. *Insets* are used just as internal margins for text boxes within shapes. If this attribute is omitted, a value of `45720`, meaning 0.05 inches, is implied.  
+  
+ Consider the following DrawingML:  
+  
+```  
+<p:txBody>  
+  <a:bodyPr lIns="91440" tIns="91440"   
+  rIns="91440" bIns="91440" … />  
+  …  
+</p:txBody>  
+```  
+  
+ The text box having the above body properties will have inset margins of `91440`, or 0.1 inches, on all four sides.  
+  
+ The possible values for this attribute are defined by the `ST_Coordinate32` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -252,11 +338,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -281,12 +365,35 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Number of Columns.</para>
-          <para>Represents the following attribute in the schema: numCol </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Number of Columns.Represents the following attribute in the schema: numCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number of columns of text in the bounding rectangle. When applied to a text run this property takes the width of the bounding box for the text and divides it by the number of columns specified. These columns are then treated as overflow containers in that when the previous column has been filled with text the next column will act as the repository for additional text. When all columns have been filled and text still remains then the overflow properties set for this text body will be used and the text will be reflowed to make room for additional text. If this attribute is omitted, then a value of `1` is implied.  
+  
+ Consider the case where a text area would need to be split up into four separate columns. Then simply specifying one paragraph with one run of text is enough to describe four columns of text here.  
+  
+```  
+<p:txBody>  
+  <a:bodyPr numCol="4" … />  
+  <a:p>  
+    <a:r>  
+      …  
+      (Some text)  
+      …  
+    </a:r>  
+  </a:p>  
+</p:txBody>  
+```  
+  
+ The possible values for this attribute are defined by the `ST_TextColumnCount` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ColumnSpacing">
@@ -310,12 +417,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Space Between Columns.</para>
-          <para>Represents the following attribute in the schema: spcCol </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Space Between Columns.Represents the following attribute in the schema: spcCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the space between text columns in the text area. This should only apply when there is more than 1 column present. If this attribute is omitted, then a value of `0` is implied.  
+  
+ The possible values for this attribute are defined by the `ST_PositiveCoordinate32` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CompatibleLineSpacing">
@@ -339,12 +454,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Compatible Line Spacing.</para>
-          <para>Represents the following attribute in the schema: compatLnSpc </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Compatible Line Spacing.Represents the following attribute in the schema: compatLnSpc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that the line spacing for this text body will be decided in a simplistic manner using the font scene. If this attribute is omitted, a value of `0`, meaning *false*, is implied.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ForceAntiAlias">
@@ -368,12 +491,20 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Force Anti-Alias.</para>
-          <para>Represents the following attribute in the schema: forceAA </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Force Anti-Alias.Represents the following attribute in the schema: forceAA</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Forces the text to be rendered anti-aliased regardless of the font size. Certain fonts may appear grainy around their edges unless they are anti-aliased. Therefore this attribute allows for the specifying of which bodies of text should always be anti-aliased and which ones should not. If this attribute is omitted, then a value of `0`, meaning *off*, is implied.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="FromWordArt">
@@ -397,12 +528,32 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> From WordArt.</para>
-          <para>Represents the following attribute in the schema: fromWordArt </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>From WordArt.Represents the following attribute in the schema: fromWordArt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that text within this textbox is converted text from a WordArt object. This is more of a backwards compatibility attribute that is useful to the application from a tracking perspective. WordArt was the former way to apply text effects and therefore this attribute is useful in document conversion scenarios. If this attribute is omitted, then a value of `0`, meaning *off*, is implied.  
+  
+ Consider the following DrawingML:  
+  
+```  
+<p:txBody>  
+  <a:bodyPr wrap="none" fromWordArt="1" …   
+  />  
+  …  
+</p:txBody>  
+```  
+  
+ Because of the presence of the `fromWordArt` attribute the text within this shape can be mapped back to the corresponding WordArt during document conversion.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="HorizontalOverflow">
@@ -426,12 +577,39 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Horizontal Overflow.</para>
-          <para>Represents the following attribute in the schema: horzOverflow </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Text Horizontal Overflow.Represents the following attribute in the schema: horzOverflow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Determines whether the text can flow out of the bounding box horizontally. This is used to determine what will happen in the event that the text within a shape is too large for the bounding box it is contained within. If this attribute is omitted, then a value of `overflow` is implied.  
+  
+ Consider the case where we have multiply paragraphs within a shape and the second is greater in length and causes text to flow outside the shape. By applying the `clip` value of the `horzOverflow` attribute as a body property this overflowing text will now be cut off instead of extending beyond the bounds of the shape.  
+  
+```  
+<p:txBody>  
+  <a:bodyPr horzOverflow="clip" … />  
+   …  
+    <a:p>  
+     …  
+     (Some text)  
+     …  
+    </a:p>  
+    <a:p>  
+     …  
+     (Some more text)  
+     …  
+    </a:p>  
+</p:txBody>  
+```  
+  
+ The possible values for this attribute are defined by the `ST_TextHorzOverflowType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LeftInset">
@@ -455,12 +633,32 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Left Inset.</para>
-          <para>Represents the following attribute in the schema: lIns </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Left Inset.Represents the following attribute in the schema: lIns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the left inset of the bounding rectangle. Insets are used just as internal margins for text boxes within shapes. If this attribute is omitted, then a value of `91440`, meaning 0.1 inches, is implied.  
+  
+ Consider the following DrawingML:  
+  
+```  
+<p:txBody>  
+  <a:bodyPr lIns="91440" tIns="91440" rIns="91440"   
+    bIns="91440" … />  
+  …  
+</p:txBody>  
+```  
+  
+ The text box having the above body properties will have inset margins of `91440`, or 0.1 inches, on all four sides.  
+  
+ The possible values for this attribute are defined by the `ST_Coordinate32` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -479,10 +677,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -502,10 +698,7 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.PresetTextWrap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Preset Text Shape.</para>
-          <para> Represents the following element tag in the schema: a:prstTxWarp </para>
-        </summary>
+        <summary>Preset Text Shape. Represents the following element tag in the schema: a:prstTxWarp</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -534,12 +727,32 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Right Inset.</para>
-          <para>Represents the following attribute in the schema: rIns </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Right Inset.Represents the following attribute in the schema: rIns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the right inset of the bounding rectangle. Insets are used just as internal margins for text boxes within shapes. If this attribute is omitted, then a value of `91440`, meaning 0.1 inches, is implied.  
+  
+ Consider the following DrawingML:  
+  
+```  
+<p:txBody>  
+  <a:bodyPr lIns="91440" tIns="91440"   
+  rIns="91440" bIns="91440" … />  
+  …  
+</p:txBody>  
+```  
+  
+ The text box having the above body properties will have inset margins of `91440`, or 0.1 inches, on all four sides.  
+  
+ The possible values for this attribute are defined by the `ST_Coordinate32` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="RightToLeftColumns">
@@ -563,12 +776,22 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Columns Right-To-Left.</para>
-          <para>Represents the following attribute in the schema: rtlCol </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Columns Right-To-Left.Represents the following attribute in the schema: rtlCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies whether columns are used in a right-to-left or left-to-right order. The usage of this attribute only sets the column order that is used to determine which column overflow text should go to next. If this attribute is omitted, then a value of `0`, meaning *off*, is implied in which case text will start in the leftmost column and flow to the right.  
+  
+ This attribute in no way determines the direction of text but merely the direction in which multiple columns are used.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Rotation">
@@ -592,12 +815,39 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Rotation.</para>
-          <para>Represents the following attribute in the schema: rot </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Rotation.Represents the following attribute in the schema: rot</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the rotation that is being applied to the text within the bounding box. If it not specified, the rotation of the accompanying shape is used. If it is specified, then this is applied independently from the shape. That is the shape can have a rotation applied in addition to the text itself having a rotation applied to it. If this attribute is omitted, then a value of `0` is implied.  
+  
+ Consider the case where a shape has a rotation of `5400000`, meaning 90 degrees clockwise, applied to it. In addition to this, the text body itself has a rotation of `5400000`, or 90 degrees counter-clockwise, applied to it. Then the resulting shape would appear to be rotated but the text within it would appear as though it had not been rotated at all. The DrawingML specifying this would look like the following:  
+  
+```  
+<p:sp>  
+  <p:spPr>  
+    <a:xfrm rot="5400000">  
+      …  
+    </a:xfrm>  
+  </p:spPr>  
+  …  
+  <p:txBody>  
+    <a:bodyPr rot="-5400000" … />  
+    …  
+    (Some text)  
+    …  
+  </p:txBody>  
+</p:sp>  
+```  
+  
+ The possible values for this attribute are defined by the `ST_Angle` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="TopInset">
@@ -621,12 +871,32 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Inset.</para>
-          <para>Represents the following attribute in the schema: tIns </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Top Inset.Represents the following attribute in the schema: tIns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the top inset of the bounding rectangle. Insets are used just as internal margins for text boxes within shapes. If this attribute is omitted, then a value of `45720`, meaning 0.05 inches, is implied.  
+  
+ Consider the following DrawingML:  
+  
+```  
+<p:txBody>  
+  <a:bodyPr lIns="91440" tIns="91440"   
+  rIns="91440" bIns="91440" … />  
+  …  
+</p:txBody>  
+```  
+  
+ The text box having the above body properties will have inset margins of `91440`, or 0.1 inches, on all four sides.  
+  
+ The possible values for this attribute are defined by the `ST_Coordinate32` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="UpRight">
@@ -650,12 +920,33 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Upright.</para>
-          <para>Represents the following attribute in the schema: upright </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Text Upright.Represents the following attribute in the schema: upright</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies whether text should remain upright, regardless of the transform applied to it and the accompanying shape transform. If this attribute is omitted, then a value of `0`, meaning *false*, will be implied.  
+  
+ Consider text that has been rotated within the text body but has the `upright` flag set.  
+  
+```  
+<p:txBody>  
+  <a:bodyPr upright="1" rot="5400000" …/>  
+  …  
+  (Some text)  
+  …  
+</p:txBody>  
+```  
+  
+ This text will appear as though no transform has been applied to it.  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="UseParagraphSpacing">
@@ -679,12 +970,56 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Paragraph Spacing.</para>
-          <para>Represents the following attribute in the schema: spcFirstLastPara </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Paragraph Spacing.Represents the following attribute in the schema: spcFirstLastPara</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies whether the before and after paragraph spacing defined by the user is to be respected. While the spacing between paragraphs is helpful, it is additionally useful to be able to set a flag as to whether this spacing is to be followed at the edges of the text body, in other words the first and last paragraphs in the text body. More precisely since this is a text body level property it should only effect the before paragraph spacing of the first paragraph and the after paragraph spacing of the last paragraph for a given text body. If this attribute is omitted, then a value of `0`, meaning *false*, is implied.  
+  
+ Consider the case where spacing has been defined between multiple paragraphs within a text body using the `spcBef` and `spcAft` paragraph spacing attributes. For this text body however the user would like to not have this followed for the edge paragraphs and thus we have the following DrawingML.  
+  
+```  
+<p:txBody>  
+  <a:bodyPr spcFirstLastPara="0" … />  
+  …  
+  <a:p>  
+      <a:pPr>  
+        <a:spcBef>  
+        <a:spcPts val="1800"/>  
+      </a:spcBef>  
+      <a:spcAft>  
+        <a:spcPts val="600"/>  
+      </a:spcAft>  
+      </a:pPr>  
+    …  
+    (Some text)  
+    …  
+  </a:p>  
+  <a:p>  
+      <a:pPr>  
+        <a:spcBef>  
+        <a:spcPts val="1800"/>  
+      </a:spcBef>  
+      <a:spcAft>  
+        <a:spcPts val="600"/>  
+      </a:spcAft>  
+      </a:pPr>  
+    …  
+    (Some text)  
+    …  
+  </a:p>  
+  …  
+</p:txBody>  
+```  
+  
+ The possible values for this attribute are defined by the XML Schema `boolean` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Vertical">
@@ -708,12 +1043,41 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextVerticalValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Text.</para>
-          <para>Represents the following attribute in the schema: vert </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Vertical Text.Represents the following attribute in the schema: vert</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Determines if the text within the given text body should be displayed vertically. If this attribute is omitted, then a value of `horz`, meaning *no vertical text*, is implied.  
+  
+ Consider the case where the user needs to display text that appears vertical and has a right to left flow with respect to its columns.  
+  
+```  
+<p:txBody>  
+  <a:bodyPr vert="wordArtVertRtl" … />  
+  …  
+  <a:p>  
+    …  
+    <a:t>This is</a:t>  
+    …  
+  </a:p>  
+  <a:p>  
+    …  
+    <a:t>some text.</a:t>  
+    …  
+  </a:p>  
+</p:txBody>  
+```  
+  
+ In the above sample DrawingML there are two paragraphs denoting a separation between the text otherwise which are known as either a line or paragraph break. Because `wordArtVertRtl` is used here this text will not only be displayed in a stacked manner flowing from top to bottom but also have the first paragraph be displayed to the right of the second. This is because it is both vertical text and right to left.  
+  
+ The possible values for this attribute are defined by the `ST_TextVerticalType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="VerticalOverflow">
@@ -737,12 +1101,39 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Vertical Overflow.</para>
-          <para>Represents the following attribute in the schema: vertOverflow </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Text Vertical Overflow.Represents the following attribute in the schema: vertOverflow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Determines whether the text can flow out of the bounding box vertically. This is used to determine what will happen in the event that the text within a shape is too large for the bounding box it is contained within. If this attribute is omitted, then a value of `overflow` is implied.  
+  
+ Consider the case where we have multiply paragraphs within a shape and the second causes text to flow outside the shape. By applying the `clip` value of the `vertOverflow` attribute as a body property this overflowing text will now be cut off instead of extending beyond the bounds of the shape.  
+  
+```  
+<p:txBody>  
+  <a:bodyPr vertOverflow="clip" … />  
+  …  
+  <a:p>  
+    …  
+    (Some text)  
+    …  
+  </a:p>  
+  <a:p>  
+    …  
+    (Some longer text)  
+    …  
+  </a:p>  
+</p:txBody>  
+```  
+  
+ The possible values for this attribute are defined by the `ST_TextVertOverflowType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Wrap">
@@ -766,12 +1157,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextWrappingValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Wrapping Type.</para>
-          <para>Represents the following attribute in the schema: wrap </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Text Wrapping Type.Represents the following attribute in the schema: wrap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the wrapping options to be used for this text body. If this attribute is omitted, then a value of `square` is implied which will wrap the text using the bounding text box.  
+  
+ The possible values for this attribute are defined by the `ST_TextWrappingType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

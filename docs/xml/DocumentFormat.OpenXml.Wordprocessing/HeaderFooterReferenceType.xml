@@ -1,4 +1,4 @@
-﻿<Type Name="HeaderFooterReferenceType" FullName="DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType">
+<Type Name="HeaderFooterReferenceType" FullName="DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType">
   <TypeSignature Language="C#" Value="public abstract class HeaderFooterReferenceType : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HeaderFooterReferenceType extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.HeaderFooterReferenceType" />
@@ -19,9 +19,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-            Defines the HeaderFooterReferenceType class.
-            </summary>
+    <summary>Defines the HeaderFooterReferenceType class.</summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -38,9 +36,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the HeaderFooterReferenceType class.
-            </summary>
+        <summary>Initializes a new instance of the HeaderFooterReferenceType class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -65,12 +61,38 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relationship to Part.</para>
-          <para>Represents the following attribute in the schema: r:id </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Relationship to Part.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the relationship ID to a specified part.  
+  
+ The specified relationship shall match the type required by the parent element:  
+  
+-   `http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer` for the `footerReference` element  
+  
+-   `http://schemas.openxmlformats.org/officeDocument/2006/relationships/header` for the `headerReference` element  
+  
+-   `http://schemas.openxmlformats.org/officeDocument/2006/relationships/font` for the `embedBold`, `embedBoldItalic`, `embedItalic`, or `embedRegular` elements  
+  
+-   `http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings` for the `printerSettings` element  
+  
+ Consider an XML element which has the following `id` attribute:  
+  
+```  
+<… r:id="rId10" />  
+```  
+  
+ The markup specifies the associated relationship part with relationship ID `rId1` contains the corresponding relationship information for the parent XML element.  
+  
+ The possible values for this attribute are defined by the `ST_RelationshipId` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
             </remark>
       </Docs>
@@ -96,12 +118,44 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> type.</para>
-          <para>Represents the following attribute in the schema: w:type </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>type.Represents the following attribute in the schema: w:type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of header or footer specified by the target relationship ID. This type determines the page(s) on which the current header or footer shall be displayed.  
+  
+ If any section contains more than a single header or footer of each type, then the document shall be considered non-conformant.  
+  
+ Consider a document with the following WordprocessingML:  
+  
+```  
+<w:sectPr>  
+  …  
+  <w:footerReference r:id="rId6" w:type="first" />  
+  <w:footerReference r:id="rId7" w:type="first" />  
+  <w:footerReference r:id="rId10" w:type="even" />  
+  …  
+</w:sectPr>  
+```  
+  
+ The resulting section has two footers of type `first`, and therefore is invalid.  
+  
+ Consider a WordprocessingML section which specifies the following header reference:  
+  
+```  
+<w:headerReference r:id="rId10" w:type="first" />  
+```  
+  
+ The resulting section shall use the specified header part for the first page.  
+  
+ The possible values for this attribute are defined by the `ST_HdrFtr` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

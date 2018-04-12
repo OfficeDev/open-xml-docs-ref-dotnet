@@ -1,4 +1,4 @@
-﻿<Type Name="Sheet" FullName="DocumentFormat.OpenXml.Spreadsheet.Sheet">
+<Type Name="Sheet" FullName="DocumentFormat.OpenXml.Spreadsheet.Sheet">
   <TypeSignature Language="C#" Value="public class Sheet : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Sheet extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Sheet" />
@@ -19,11 +19,140 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Sheet Information.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:sheet.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Sheet Information. When the object is serialized out as xml, its qualified name is x:sheet.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **sheet (Sheet Information)**  
+  
+ This element defines a sheet in this workbook. Sheet data is stored in a separate part.  
+  
+|Parent Elements|  
+|---------------------|  
+|sheets (§18.2.20)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|id (Relationship Id)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Specifies the identifier of the sheet part where the definition for this sheet is stored.<br /><br /> This attribute is required.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|name (Sheet Name)|Specifies the name of the sheet. This name shall be unique.<br /><br /> This attribute is required.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|sheetId (Sheet Tab Id)|Specifies the internal identifier for the sheet. This identifier shall be unique.<br /><br /> This attribute is required.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|state (Visible State)|Specifies the visible state of this sheet.<br /><br /> The default value for this attribute is "visible."<br /><br /> The possible values for this attribute are defined by the *ST_SheetState* simple type (§18.18.68).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Sheet) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following code example inserts a new worksheet in the workbook of an existing spreadsheet document.  
+  
+```csharp  
+using System;  
+using System.Linq;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace SheetEx  
+{  
+    class Program  
+    {  
+        // Insert a new worksheet in a spreadsheet document.  
+        static void Main(string[] args)  
+        {  
+            string document = @"C:\users\public\documents\SheetsEx.xlsx";  
+  
+            // Open the document for editing.  
+            using (SpreadsheetDocument spreadsheetDocument  
+                = SpreadsheetDocument.Open(document, true))  
+            {  
+                // Add a blank WorksheetPart.  
+                WorksheetPart newWorksheetPart =   
+                    spreadsheetDocument.WorkbookPart.AddNewPart<WorksheetPart>();  
+                newWorksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+                Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook  
+                    .GetFirstChild<Sheets>();  
+                string relationshipId = spreadsheetDocument.WorkbookPart  
+                    .GetIdOfPart(newWorksheetPart);  
+  
+                // Get a unique ID for the new worksheet.  
+                uint sheetId = 1;  
+                if (sheets.Elements<Sheet>().Count() > 0)  
+                   sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;  
+  
+                // Give the new worksheet a name.  
+                string sheetName = "mySheet" + sheetId;  
+  
+                // Append the new worksheet and associate it with the workbook.  
+                Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId,  
+                    Name = sheetName };  
+                sheets.Append(sheet);  
+  
+                Console.WriteLine("A new sheet has been inserted into the workbook.\nPress a key.");  
+                Console.ReadKey();  
+            }  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports System.Linq  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+  
+Module Module1  
+    ' Insert a new worksheet in a spreadsheet document.  
+    Sub Main(ByVal args As String())  
+        Dim document As String = "C:\users\public\documents\SheetsEx.xlsx"  
+  
+        ' Open the document for editing.  
+        Using spreadsheetDocument As SpreadsheetDocument = _  
+            spreadsheetDocument.Open(document, True)  
+            ' Add a blank WorksheetPart.  
+            Dim newWorksheetPart As WorksheetPart = _  
+                spreadsheetDocument.WorkbookPart.AddNewPart(Of WorksheetPart)()  
+            newWorksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+            Dim sheets As Sheets = _  
+                spreadsheetDocument.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()  
+            Dim relationshipId As String = _  
+                spreadsheetDocument.WorkbookPart.GetIdOfPart(newWorksheetPart)  
+  
+            ' Get a unique ID for the new worksheet.  
+            Dim sheetId As UInteger = 1  
+            If sheets.Elements(Of Sheet)().Count() > 0 Then  
+                sheetId = sheets.Elements(Of Sheet)().[Select](Function(s) _  
+                           s.SheetId.Value).Max() + 1  
+            End If  
+  
+            ' Give the new worksheet a name.  
+            Dim sheetName As String = "mySheet" & sheetId  
+  
+            ' Append the new worksheet and associate it with the workbook.  
+            Dim sheet As New Sheet() With { _  
+             .Id = relationshipId, _  
+             .SheetId = sheetId, _  
+             .Name = sheetName _  
+            }  
+            sheets.Append(sheet)  
+  
+            Console.WriteLine("A new sheet has been inserted into the workbook." _  
+                              & vbLf & "Press a key.")  
+            Console.ReadKey()  
+        End Using  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +168,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Sheet class.
-            </summary>
+        <summary>Initializes a new instance of the Sheet class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +191,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,11 +218,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relationship Id.</para>
-          <para>Represents the following attribute in the schema: r:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relationship Id.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
             </remark>
@@ -119,10 +241,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,11 +267,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sheet Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sheet Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,11 +293,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sheet Tab Id.</para>
-          <para>Represents the following attribute in the schema: sheetId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sheet Tab Id.Represents the following attribute in the schema: sheetId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -205,11 +319,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SheetStateValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Visible State.</para>
-          <para>Represents the following attribute in the schema: state </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Visible State.Represents the following attribute in the schema: state</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="Proxy" FullName="DocumentFormat.OpenXml.Vml.Office.Proxy">
+<Type Name="Proxy" FullName="DocumentFormat.OpenXml.Vml.Office.Proxy">
   <TypeSignature Language="C#" Value="public class Proxy : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Proxy extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Vml.Office.Proxy" />
@@ -19,11 +19,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Shape Reference.</para>
-      <para> When the object is serialized out as xml, its qualified name is o:proxy.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Shape Reference. When the object is serialized out as xml, its qualified name is o:proxy.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **proxy (Shape Reference)**  
+  
+ This element specifies an entry in a r element rule that contains a reference to one or more shapes that are participating in the rule.  
+  
+ [*Example*: The following rule defines a connection between two shapes.  The shape with id _s1036 connects shape _s1033 to _s1032:  
+  
+```xml  
+<o:shapelayout v:ext="edit">  
+  <o:rules v:ext="edit">  
+    <o:r id="V:Rule1" type="connector" idref="#_s1036">  
+      <o:proxy start="" idref="#_s1033" connectloc="0"/>  
+      <o:proxy end="" idref="#_s1032" connectloc="2"/>  
+    </o:r>  
+  </o:rules>  
+</o:shapelayout>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§14.2.2.22)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|connectloc (Connection Location)|Specifies the location on the shape where the connector is attached.  The value is an index into the list of connection points defined in the shape - see the connectlocs attribute.  Default is 0.  Only used in a connector rule.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|end (End Point Connection Flag)|Specifies whether the connector's end point is connected to the shape.  Default is *false*.  Only used in a connector rule.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalseBlank* simple type (§15.1.2.6).|  
+|idref (Proxy Shape Reference)|Specifies a reference to a shape in the current document.  Default is no value.  A shape name is used as the reference mechanism; this is not a relationship ID.<br /><br /> This attribute indicates that the referenced shape is part of this rule.  Two or more proxy elements are used for an alignment rule.  A connector rule uses one or two, indicating which shapes the connector is attached to.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|start (Start Point Connection Flag)|Specifies whether the connector’s start point is connected to the shape.  Default is *false*.  Only used in a connector rule.  If both start and end are specified the later one takes precedence.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalseBlank* simple type (§15.1.2.6).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Proxy) is located in §A.6.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +77,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Proxy class.
-            </summary>
+        <summary>Initializes a new instance of the Proxy class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +100,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,11 +127,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Connection Location.</para>
-          <para>Represents the following attribute in the schema: connectloc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Connection Location.Represents the following attribute in the schema: connectloc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,11 +153,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseBlankValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> End Point Connection Flag.</para>
-          <para>Represents the following attribute in the schema: end </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>End Point Connection Flag.Represents the following attribute in the schema: end</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,10 +174,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,11 +200,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Proxy Shape Reference.</para>
-          <para>Represents the following attribute in the schema: idref </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Proxy Shape Reference.Represents the following attribute in the schema: idref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,11 +226,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseBlankValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Start Point Connection Flag.</para>
-          <para>Represents the following attribute in the schema: start </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Start Point Connection Flag.Represents the following attribute in the schema: start</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

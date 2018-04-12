@@ -1,4 +1,4 @@
-﻿<Type Name="CalculationCell" FullName="DocumentFormat.OpenXml.Spreadsheet.CalculationCell">
+<Type Name="CalculationCell" FullName="DocumentFormat.OpenXml.Spreadsheet.CalculationCell">
   <TypeSignature Language="C#" Value="public class CalculationCell : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CalculationCell extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CalculationCell" />
@@ -19,11 +19,36 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Cell.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:c.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Cell. When the object is serialized out as xml, its qualified name is x:c.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **c (Cell)**  
+  
+ This element represents a single cell, which shall contain a formula, in the calc chain.  Cells are calculated in the same order as the c elements appear in the Calculation Chain part.  
+  
+|Parent Elements|  
+|---------------------|  
+|calcChain (§18.6.2)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|a (Array)|A Boolean flag indicating whether the cell's formula is an array formula.  True if this cell's formula is an array formula, false otherwise. If there is a conflict between this attribute and the t attribute of the f element (§18.3.1.40), the t attribute takes precedence.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|i (Sheet Id)|A sheet Id of a sheet the cell belongs to.  If this is omitted, it is assumed to be the same as the *i* value of the previous cell.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|l (New Dependency Level)|A Boolean flag indicating that the cell's formula starts a new dependency level.  True if the formula starts a new dependency level, false otherwise.<br /><br /> Starting a new dependency level means that all concurrent calculations, and child calculations, shall be completed - and the cells have new values -  before the calc chain can continue.  In other words, this dependency level might depend on levels that came before it, and any later dependency levels might depend on this level; but not later dependency levels can have any calculations started until this dependency level completes.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|r (Cell Reference)|An A-1 style reference to a cell.<br /><br /> The possible values for this attribute are defined by the *ST_CellRef* simple type (§18.18.7).|  
+|s (Child Chain)|A Boolean flag indicating whether the cell's formula is on a child chain.  True if this cell is part of a child chain, false otherwise.  If this is omitted, it is assumed to be the same as the *s* value of the previous cell .<br /><br /> A child chain is a list of calculations that occur which depend on the parent to the chain.  There shall not be cross dependencies between child chains.  Child chains are not the same as dependency levels - a child chain and its parent are all on the same dependency level.  Child chains are series of calculations that can be independently farmed out to other threads or processors.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|t (New Thread)|A Boolean flag indicating whether the cell's formula starts a new thread.  True if the cell's formula starts a new thread, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CalcCell) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +64,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CalculationCell class.
-            </summary>
+        <summary>Initializes a new instance of the CalculationCell class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,11 +89,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Array.</para>
-          <para>Represents the following attribute in the schema: a </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Array.Represents the following attribute in the schema: a</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,11 +115,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Reference.</para>
-          <para>Represents the following attribute in the schema: r </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Reference.Represents the following attribute in the schema: r</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,11 +139,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,11 +166,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Child Chain.</para>
-          <para>Represents the following attribute in the schema: s </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Child Chain.Represents the following attribute in the schema: s</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,10 +187,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,11 +213,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> New Dependency Level.</para>
-          <para>Represents the following attribute in the schema: l </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>New Dependency Level.Represents the following attribute in the schema: l</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -232,11 +239,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> New Thread.</para>
-          <para>Represents the following attribute in the schema: t </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>New Thread.Represents the following attribute in the schema: t</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -261,11 +265,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sheet Id.</para>
-          <para>Represents the following attribute in the schema: i </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sheet Id.Represents the following attribute in the schema: i</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

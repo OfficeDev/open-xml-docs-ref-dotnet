@@ -1,4 +1,4 @@
-﻿<Type Name="CellDeletion" FullName="DocumentFormat.OpenXml.Wordprocessing.CellDeletion">
+<Type Name="CellDeletion" FullName="DocumentFormat.OpenXml.Wordprocessing.CellDeletion">
   <TypeSignature Language="C#" Value="public class CellDeletion : DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CellDeletion extends DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.CellDeletion" />
@@ -19,11 +19,70 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Table Cell Deletion.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:cellDel.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Table Cell Deletion. When the object is serialized out as xml, its qualified name is w:cellDel.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `cellDel (Table Cell Deletion)`  
+  
+ This element specifies that the parent table cell shall be treated as though it was deleted from the document while revisions were being recorded. This means that although the table cell element exists in the structure of the table, the table cell technically no longer exists in the document.  
+  
+ [*Example*: Consider a document with a two row by two columns table as follows:  
+  
+ 8edc004e-9e52-4c1f-99aa-74b10e155945  
+  
+ If this table has each cell in its final column deleted and this is tracked as a revision, the resulting WordprocessingML would show each of these cells as deleted as follows:  
+  
+```xml  
+<w:tbl>  
+  …  <w:tr>  
+    <w:tc>  
+      <w:r>  
+        <w:t>One</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:cellDel w:id="0" … />  
+      </w:tcPr>  
+      <w:r>  
+        <w:t>Two</w:t>  
+      </w:r>  
+    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:tc>  
+      <w:r>  
+        <w:t>Three</w:t>  
+      </w:r>  
+    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:cellDel w:id="1" … />  
+      </w:tcPr>  
+      <w:r>  
+        <w:t>Four</w:t>  
+      </w:r>  
+    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The cellDel elements in the table cell properties of the cells with text *Two* and *Four* specify that each of those cells have been deleted from the document. Their attributes (omitted) can optionally provide information about the time at which this deletion took place. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CellDeletion class.
-            </summary>
+        <summary>Initializes a new instance of the CellDeletion class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +121,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +143,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

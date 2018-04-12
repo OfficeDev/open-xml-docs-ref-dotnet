@@ -1,4 +1,4 @@
-﻿<Type Name="PivotField" FullName="DocumentFormat.OpenXml.Office2010.Excel.PivotField">
+<Type Name="PivotField" FullName="DocumentFormat.OpenXml.Office2010.Excel.PivotField">
   <TypeSignature Language="C#" Value="public class PivotField : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotField extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.PivotField" />
@@ -22,12 +22,81 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the PivotField Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is x14:pivotField.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the PivotField Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:pivotField.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.18   pivotField*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ A *pivotField* element is a *CT_PivotField* element, as specified in section 2.6.31, that specifies properties of a PivotTable, as specified in [ISO/IEC-29500-1] section 18.10, field (1). See section 2.2.4.4 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="pivotField" type="CT_PivotField"/>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.31   CT_PivotField*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* pivotField  
+  
+ This complex type specifies additional properties of a PivotTable ([ISO/IEC-29500-1] section 18.10) field (1).  
+  
+ *Attributes:*  
+  
+ *fillDownLabels:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the PivotTable ([ISO/IEC-29500-1] section 18.10) item labels are repeated for this *PivotTable* ([ISO/IEC-29500-1] section 18.10) field (1). This attribute is ignored when the *compact* attribute and the *outline* attribute of the *PivotTable* ([ISO/IEC-29500-1] section 18.10) field (1) are "true". This attribute is ignored if the *PivotTable* ([ISO/IEC-29500-1] section 18.10) field (1) is not on the PivotTable ([ISO/IEC-29500-1] section 18.10) row (2) axis or the PivotTable ([ISO/IEC-29500-1] section 18.10) column (2) axis. This value MUST be one of the following:  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"false"*|*The item labels are not repeated.*|  
+|*"true"*|*The item labels are repeated for each nested item.*|  
+  
+ *ignore:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether this *PivotTable* ([ISO/IEC-29500-1] section 18.10) field (1) SHOULD\<50> be ignored.  
+  
+ If this attribute is "true", the ancestor *CT_PivotField* ([ISO/IEC-29500-4] section A.2) MUST have only the following attributes specified, and these attributes MUST have the following values.  
+  
+|||  
+|-|-|  
+|*Name*|*Value*|  
+|*compact*|*"false"*|  
+|*dataField*|*"true"*|  
+|*defaultSubtotal*|*"false"*|  
+|*dragOff*|*"false"*|  
+|*dragToCol*|*"false"*|  
+|*dragToData*|*"false"*|  
+|*dragToPage*|*"false"*|  
+|*dragToRow*|*"false"*|  
+|*includeNewItemsInFilter*|*"true"*|  
+|*itemPageCount*|*"false"*|  
+|*outline*|*"false"*|  
+|*showAll*|*"false"*|  
+|*subtotalTop*|*"false"*|  
+|*topAutoShow*|*"false"*|  
+  
+ If this attribute is equal to "true", there MUST exist a *CT_Datafield* ([ISO/IEC-29500-4] section A.2) element with an *fld* attribute that specifies this PivotTable ([ISO/IEC-29500-1] section 18.10) field (1). Additionally, that *CT_DataField* ([ISO/IEC-29500-4] section A.2) element MUST have a descendant CT_DataField element with a *sourceField* attribute specified.  
+  
+ For more details, see CT_DataField.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_PivotField">*  
+  
+ *\<xsd:attribute name="fillDownLabels" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="ignore" type="xsd:boolean" default="false" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +112,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PivotField class.
-            </summary>
+        <summary>Initializes a new instance of the PivotField class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,11 +135,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,10 +162,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> fillDownLabels.</para>
-          <para>Represents the following attribute in the schema: fillDownLabels </para>
-        </summary>
+        <summary>fillDownLabels.Represents the following attribute in the schema: fillDownLabels</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -126,10 +188,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ignore.</para>
-          <para>Represents the following attribute in the schema: ignore </para>
-        </summary>
+        <summary>ignore.Represents the following attribute in the schema: ignore</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -150,9 +209,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

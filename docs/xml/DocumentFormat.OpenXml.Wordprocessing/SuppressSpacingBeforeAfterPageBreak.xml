@@ -1,4 +1,4 @@
-﻿<Type Name="SuppressSpacingBeforeAfterPageBreak" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak">
+<Type Name="SuppressSpacingBeforeAfterPageBreak" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak">
   <TypeSignature Language="C#" Value="public class SuppressSpacingBeforeAfterPageBreak : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SuppressSpacingBeforeAfterPageBreak extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingBeforeAfterPageBreak" />
@@ -19,11 +19,65 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Use Space Before On First Line After a Page Break.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:suppressSpBfAfterPgBrk.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Use Space Before On First Line After a Page Break. When the object is serialized out as xml, its qualified name is w:suppressSpBfAfterPgBrk.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `suppressSpBfAfterPgBrk (Do Not Use Space Before On First Line After a Page Break)`  
+  
+ This element specifies that applications should not postpone any before paragraph spacing to the first line containing content after a page break.  
+  
+ Typically, a page break defined using the br element (Part 1, §17.3.3.1) is treated as run-level content, which means that although it delimits the end of the page, if there is no content after it within the current paragraph, that the paragraph shall also end on that page. However, in the case where there is additional run-level content within the same paragraph, that content, although part of the same paragraph as the page break, is displayed on the following page.  
+  
+ This leads to a situation where the only run content on the page with the page break is the break itself, with all subsequent content on the following page. In this case, applications shall apply the value specified by the spacing element's before attribute to the first line on the new page (since it is ostensibly the only page with content in that paragraph).  
+  
+ This element, when present with a val attribute value of *true* (or equivalent), specifies the paragraph before spacing shall not be 'postponed' in this way - if the line with the page break has no content, then the spacing element's before attribute is simply ignored.  
+  
+ [*Example*: Consider a WordprocessingML document whose first paragraph specifies that it must be preceded by 50 points of additional spacing:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:before="1000" />  
+  </w:pPr>  
+  <w:r>  
+    <w:br w:type="page" />  
+    <w:t>This is sample text with 50 points before formatting.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The default presentation would have the necessary amount of space added to the first line on the second page, as the page break was not preceded by any run content (highlighting has been added to the image below in order to illustrate the additional spacing above the first line):  
+  
+ 47ebbee2-d611-4ebf-88e2-8146d050a6ec  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:suppressSpBfAfterPgBrk />  
+</w:compat>  
+```  
+  
+ Then the spacing must not be added above the first line on the page (it is essentially ignored), resulting in the following output:  
+  
+ 4448c4d4-93e0-4efa-ad69-097f2c23f3a5  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +93,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SuppressSpacingBeforeAfterPageBreak class.
-            </summary>
+        <summary>Initializes a new instance of the SuppressSpacingBeforeAfterPageBreak class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +116,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +138,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="TransformGroup" FullName="DocumentFormat.OpenXml.Drawing.TransformGroup">
+<Type Name="TransformGroup" FullName="DocumentFormat.OpenXml.Drawing.TransformGroup">
   <TypeSignature Language="C#" Value="public class TransformGroup : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TransformGroup extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.TransformGroup" />
@@ -31,13 +31,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>2D Transform for Grouped Objects.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:xfrm.</para>
-    </summary>
+    <summary>2D Transform for Grouped Objects. When the object is serialized out as xml, its qualified name is a:xfrm.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Offset &lt;a:off&gt;</description></item><item><description>Extents &lt;a:ext&gt;</description></item><item><description>ChildOffset &lt;a:chOff&gt;</description></item><item><description>ChildExtents &lt;a:chExt&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `xfrm (2D Transform for Grouped Objects)`  
+  
+ This element is nearly identical to the representation of 2-D transforms for ordinary shapes (§20.1.7.6).  The only addition is a member to represent the Child offset and the Child extents.  
+  
+|Parent Elements|  
+|---------------------|  
+|grpSpPr (§21.3.2.14); grpSpPr (§20.1.2.2.22); grpSpPr (§20.5.2.18); grpSpPr (§19.3.1.23)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|chExt (Child Extents)|§20.1.7.1|  
+|chOff (Child Offset)|§20.1.7.2|  
+|ext (Extents)|§20.1.7.3|  
+|off (Offset)|§20.1.7.4|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|flipH (Horizontal Flip)|Horizontal flip. When true, this attribute defines that the group is flipped horizontally about the center of its bounding box.<br /><br /> [*Example*: The following illustrates the effect of a horizontal flip.<br /><br /> d83ea95b-6b48-41ba-b664-214427353e3f<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|flipV (Vertical Flip)|Vertical flip. When true, this attribute defines that the group is flipped vertically about the center of its bounding box.[*Example*: The following illustrates the effect of a vertical flip.<br /><br /> 0d0e2113-a083-439a-86fd-32bcad34e054<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|rot (Rotation)|Rotation. Specifies the clockwise rotation of a group in 1/64000 of a degree.<br /><br /> The possible values for this attribute are defined by the *ST_Angle* simple type (§20.1.10.3).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_GroupTransform2D) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -53,9 +80,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TransformGroup class.
-            </summary>
+        <summary>Initializes a new instance of the TransformGroup class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +107,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TransformGroup class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TransformGroup class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,9 +128,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TransformGroup class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TransformGroup class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,9 +149,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TransformGroup class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TransformGroup class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +169,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ChildExtents</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Child Extents.</para>
-          <para> Represents the following element tag in the schema: a:chExt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Child Extents. Represents the following element tag in the schema: a:chExt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ChildExtents" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -177,11 +193,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ChildOffset</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Child Offset.</para>
-          <para> Represents the following element tag in the schema: a:chOff </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Child Offset. Represents the following element tag in the schema: a:chOff</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ChildOffset" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -207,11 +220,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -231,11 +242,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Extents</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Extents.</para>
-          <para> Represents the following element tag in the schema: a:ext </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Extents. Represents the following element tag in the schema: a:ext</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Extents" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -263,11 +271,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal Flip.</para>
-          <para>Represents the following attribute in the schema: flipH </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal Flip.Represents the following attribute in the schema: flipH</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -287,10 +292,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,11 +313,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Offset</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Offset.</para>
-          <para> Represents the following element tag in the schema: a:off </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Offset. Represents the following element tag in the schema: a:off</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Offset" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -342,11 +342,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Rotation.</para>
-          <para>Represents the following attribute in the schema: rot </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Rotation.Represents the following attribute in the schema: rot</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -371,11 +368,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Flip.</para>
-          <para>Represents the following attribute in the schema: flipV </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertical Flip.Represents the following attribute in the schema: flipV</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

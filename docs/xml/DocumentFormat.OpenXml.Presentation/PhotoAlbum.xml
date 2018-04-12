@@ -1,4 +1,4 @@
-﻿<Type Name="PhotoAlbum" FullName="DocumentFormat.OpenXml.Presentation.PhotoAlbum">
+<Type Name="PhotoAlbum" FullName="DocumentFormat.OpenXml.Presentation.PhotoAlbum">
   <TypeSignature Language="C#" Value="public class PhotoAlbum : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PhotoAlbum extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.PhotoAlbum" />
@@ -22,13 +22,52 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the PhotoAlbum Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:photoAlbum.</para>
-    </summary>
+    <summary>Defines the PhotoAlbum Class. When the object is serialized out as xml, its qualified name is p:photoAlbum.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ExtensionList &lt;p:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **photoAlbum (Photo Album Information)**  
+  
+ This element specifies that the corresponding presentation contains a photo album.  A photo album specifies a list of images within the presentation that spread across one or more slides, all of which share a consistent layout.  Each image in the album is formatted with a consistent style.  This functionality enables the application to manage all of the images together and modify their ordering, layout, and formatting as a set.  
+  
+ This element does not enforce the specified properties on individual photo album images; rather, it specifies common settings that should be applied by default to all photo album images and their containing slides.  Images that are part of the photo album are identified by the presence of the isPhoto element in the definition of the picture.  
+  
+ [*Example*: Consider the following presentation that has been specified as a photo album  
+  
+```xml  
+<p:presentation xmlns:a="" xmlns:r="" xmlns:p="" embedTrueTypeFonts="1">  
+  …  
+  <p:photoAlbum bw="1" layout="2pic"/>  
+  …  
+</p:presentation>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|presentation (§19.2.1.26)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§19.2.1.12|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|bw (Black and White)|Specifies whether all pictures in the photo album are to be displayed as black and white.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|frame (Frame Type)|Specifies the frame type that is to be used on all the pictures in the photo album.<br /><br /> The possible values for this attribute are defined by the *ST_PhotoAlbumFrameShape* simple type (§19.7.7).|  
+|layout (Photo Album Layout)|Specifies the layout that is to be used to arrange the pictures in the photo album on individual slides.<br /><br /> The possible values for this attribute are defined by the *ST_PhotoAlbumLayout* simple type (§19.7.8).|  
+|showCaptions (Show/Hide Captions)|Specifies whether to show captions for pictures in the photo album.  Captions are text boxes grouped with each image, with the group set to not allow ungrouping.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PhotoAlbum) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PhotoAlbum class.
-            </summary>
+        <summary>Initializes a new instance of the PhotoAlbum class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +110,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PhotoAlbum class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PhotoAlbum class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +131,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PhotoAlbum class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PhotoAlbum class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +152,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PhotoAlbum class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PhotoAlbum class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,11 +177,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Black and White.</para>
-          <para>Represents the following attribute in the schema: bw </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Black and White.Represents the following attribute in the schema: bw</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +201,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,11 +223,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: p:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: p:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -229,11 +252,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.PhotoAlbumFrameShapeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Frame Type.</para>
-          <para>Represents the following attribute in the schema: frame </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Frame Type.Represents the following attribute in the schema: frame</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -258,11 +278,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.PhotoAlbumLayoutValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Photo Album Layout.</para>
-          <para>Represents the following attribute in the schema: layout </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Photo Album Layout.Represents the following attribute in the schema: layout</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -282,10 +299,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,11 +325,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show/Hide Captions.</para>
-          <para>Represents the following attribute in the schema: showCaptions </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show/Hide Captions.Represents the following attribute in the schema: showCaptions</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

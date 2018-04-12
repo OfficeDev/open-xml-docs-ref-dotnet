@@ -1,4 +1,4 @@
-﻿<Type Name="TextEffect" FullName="DocumentFormat.OpenXml.Wordprocessing.TextEffect">
+<Type Name="TextEffect" FullName="DocumentFormat.OpenXml.Wordprocessing.TextEffect">
   <TypeSignature Language="C#" Value="public class TextEffect : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextEffect extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TextEffect" />
@@ -19,11 +19,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TextEffect Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:effect.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TextEffect Class. When the object is serialized out as xml, its qualified name is w:effect.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **effect (Animated Text Effect)**  
+  
+ This element specifies an animated text effect which should be displayed when rendering the contents of this run. This effect is rendered around the extents of the text in the run in the same location as a run border with zero pixels of padding would be rendered (if such a run border was present).  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then no text effect shall be applied to the contents of this run.  
+  
+ [*Example*: Consider a run of text which must have an animated text effect consisting of multiple colored flashing lights (see possible attribute values for descriptions of each effect). This constraint is specified using the following WordprocessingML:  
+  
+```xml  
+<w:rPr>  
+  <w:effect w:val="lights"/>  
+</w:rPr>  
+```  
+  
+ This run explicitly declares that the effect property is *lights*, so the contents of this run has an animated lights text effect. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextEffect) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TextEffect class.
-            </summary>
+        <summary>Initializes a new instance of the TextEffect class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +90,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +138,30 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TextEffectValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Animated Text Effect Type.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Animated Text Effect Type.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of animated text effect which shall be applied to this text run.  
+  
+ Consider a run of text which shall have an animated text effect consisting of multiple colored flashing lights. This constraint is specified using the following WordprocessingML:  
+  
+```  
+<w:rPr>  
+  <w:effect w:val="lights"/>  
+</w:rPr>  
+```  
+  
+ This run explicitly declares a type of text effect, using the `val` attribute, of `lights`, so the contents of this run will have the animated lights text effect.  
+  
+ The possible values for this attribute are defined by the `ST_TextEffect` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

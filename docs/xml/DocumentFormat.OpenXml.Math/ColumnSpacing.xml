@@ -1,4 +1,4 @@
-﻿<Type Name="ColumnSpacing" FullName="DocumentFormat.OpenXml.Math.ColumnSpacing">
+<Type Name="ColumnSpacing" FullName="DocumentFormat.OpenXml.Math.ColumnSpacing">
   <TypeSignature Language="C#" Value="public class ColumnSpacing : DocumentFormat.OpenXml.Math.TwipsMeasureType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColumnSpacing extends DocumentFormat.OpenXml.Math.TwipsMeasureType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.ColumnSpacing" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Matrix Column Spacing.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:cSp.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Matrix Column Spacing. When the object is serialized out as xml, its qualified name is m:cSp.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `cSp (Minimum Matrix Column Width)`  
+  
+ This element specifies the minimum column width of a matrix. The actual column width of a matrix will be the greater of either the width of the column’s widest argument or cSp. This additional spacing can be added to enhance appearance. If this element is omitted, the default minimum column width is '*0*'. Whether the element is absent or present without the val attribute, the default of the val attribute is *0*. The cGp gap spacing (also referred to as “Column Gap” or “Gap Width”) is added to the cSp (Minimum Matrix Column Width) to determine the total Matrix Column Spacing (distance between the same edges of different columns). The value of cSp is interpreted as twips (a twip is 1/20th of a point). Therefore, a spacing of '*1*' point will be set by a cSp value of '*20*'. This is the only use for cSp. There is no corresponding cSpRule. The following image depicts how cGp and cSp work together to define matrix column spacing in a 2x2 matrix:  
+  
+ 6569347f-62b4-4fe6-b68b-a4ef7aee840b  
+  
+ [*Example*: The following XML specifies that there should never be fewer than . (120 twips) between adjacent column edges of the matrix:  
+  
+```xml  
+<m:mPr>  
+  <m:cSp  m:val="120"/>  
+  <m:mcs>  
+    <m:mc>  
+      <m:mcPr>  
+        <m:count  m:val="2"/>  
+        <m:mcJc m:val="center"/>  
+      </m:mcPr>  
+    </m:mc>  
+  </m:mcs>  
+</m:mPr>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mPr (§22.1.2.68)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Value)|Specifies the amount of space between columns of the parent element (for cGp/cSp) or rows (for rSp). The manner in which this value is determined depends on the setting of the rule of the parent element.<br /><br /> For cGp, if the rule is set to *3* (or "Exactly"), then the unit is interpreted as twips. If the rule is set to *4* (or "Multiple"), then the unit is interpreted as number of 0.5 em increments.<br /><br /> For cSp, this value is measured in twips. There is no corresponding cSpRule.<br /><br /> For rSp, if the rule is set to *3* (or "Exactly"), then the unit is interpreted as points. If the rule is set to *4* (or "Multiple"), then the unit is interpreted as half-lines.<br /><br /> The possible values for this attribute are defined by the *ST_UnSignedInteger* simple type (§22.1.3.14).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_UnSignedInteger) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ColumnSpacing class.
-            </summary>
+        <summary>Initializes a new instance of the ColumnSpacing class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

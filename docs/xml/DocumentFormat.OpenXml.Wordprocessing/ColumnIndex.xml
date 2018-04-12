@@ -1,4 +1,4 @@
-﻿<Type Name="ColumnIndex" FullName="DocumentFormat.OpenXml.Wordprocessing.ColumnIndex">
+<Type Name="ColumnIndex" FullName="DocumentFormat.OpenXml.Wordprocessing.ColumnIndex">
   <TypeSignature Language="C#" Value="public class ColumnIndex : DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColumnIndex extends DocumentFormat.OpenXml.Wordprocessing.UnsignedDecimalNumberType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ColumnIndex" />
@@ -19,11 +19,80 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Index of Column Containing Unique Values for Record.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:column.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Index of Column Containing Unique Values for Record. When the object is serialized out as xml, its qualified name is w:column.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **column (Index of Column Being Mapped)**  
+  
+ This element specifies the zero-based index of the column within a given external data source which shall be mapped to the local name of a specific *MERGEFIELD* field (§17.16.5.35) specified by the parent field mapping data. The val attribute specifies this index value, which is used to look up the appropriate column in the data source.  
+  
+ If this element is omitted, or its value exceeds the number of columns in the associated data source, then the index of the referenced column shall be assumed to be *0*.  
+  
+ [*Example*: Consider a source document that is connected to an external data source with three columns. Within this external data source, these are three columns are ordered and titled as follows: *first*, *middle*, and *last*, respectively.  The following WordprocessingML specifies that when this document was connected to the data source, these columns were ordered in this manner:  
+  
+```xml  
+<w:fieldMapData>  
+  …  <w:name w:val="first" />  
+  <w:column w:val="0" />  
+</w:fieldMapData>  
+<w:fieldMapData>  
+  …  <w:name w:val="middle" />  
+  <w:column w:val="1" />  
+</w:fieldMapData>  
+<w:fieldMapData>  
+  …  <w:name w:val="last" />  
+  <w:column w:val="2" />  
+</w:fieldMapData>  
+```  
+  
+ The WordprocessingML above demonstrates that the column titled *first* must be associated with the first column in the external database by specifying a column element with its val attribute equal to  addition, the column titled *middle* must be associated with the second column in the external database by specifying a column element with its val attribute equal to *1.* Finally, the column titled *last* must be associated with the third column in the external database by specifying a column element with its val attribute equal to *2*. *end example*]  
+  
+ It is important to realize that the name element's values are a cache of the last time the document was connected to the database, and the indices specified must be used to connect the field mappings with the columns in the data source. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fieldMapData (§17.14.15)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **column (Index of Column Containing Unique Values for Record)**  
+  
+ This element specifies the column within the specified external data source that contains unique data for the current record within that data source. This element shall be used in conjunction with the uniqueTag element (§17.14.35) to maintain a relationship between a specific record within an external data source and a given source or merged document. The val attribute on this element shall be interpreted as a zero-based index into the columns specified by the data source, specifying the resulting column as the column in which the uniqueTag element shall be looked up.  
+  
+ If this element specifies a column number which exceeds the number of columns in the specified external data source, then its value shall be ignored.  
+  
+ [*Note*: This information is necessary as part of a mail merge as records can be added or deleted from external data sources, and a means must be provided to maintain record-specific inclusion or exclusion data using the active element (§17.14.1) and the affected external data record when the WordprocessingML document is reconnected to the external data source irrespective of the ordering of the records within the external data source. *end note*]  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the information about a single record in a source document for a mail merge:  
+  
+```xml  
+<w:recipientData>  
+  <w:active w:val="0" />  
+  <w:column w:val="12" />   
+  <w:uniqueTag>258865469</w:uniqueTag>   
+</w:recipientData>  
+```  
+  
+ The external data record associated with this information is specified via the column in the external data source corresponding to the column element with a val attribute equal to *12*, which contains a row whose value in this column has a value corresponding to the uniqueTag element (§17.14.35) with a val attribute equal to *258865469*. This record is not imported into the merged WordprocessingML document as the active (§17.14.1) element associated with the given external data record has a val attribute equal to *0*.  
+  
+ In other words, when the specified external data source is connected to, the record within the thirteenth column of the external data source that has the contents *258865469*, and not populate mapped fields in a merged document with data from that record. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|recipientData (§17.14.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +108,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ColumnIndex class.
-            </summary>
+        <summary>Initializes a new instance of the ColumnIndex class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +131,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +153,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="AltName" FullName="DocumentFormat.OpenXml.Wordprocessing.AltName">
+<Type Name="AltName" FullName="DocumentFormat.OpenXml.Wordprocessing.AltName">
   <TypeSignature Language="C#" Value="public class AltName : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AltName extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AltName" />
@@ -19,11 +19,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the AltName Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:altName.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the AltName Class. When the object is serialized out as xml, its qualified name is w:altName.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **altName (Alternate Names for Font)**  
+  
+ This element specifies a set of alternative names which can be used to locate the font specified by the parent element. This set of alternative names is stored in a comma-delimited list, with all adjacent commas ignored (i.e. a value of *Name A, Name B* is equivalent to *Name A,,,,,,,,, Name B*).  
+  
+ When an application cannot locate a font using the primary name stored on the font attribute of the font element (§17.8.3.10), it should use each alternate name in term to attempt to locate the font, and use the first font for which is locates a match.  
+  
+ If this element is omitted, then no alternate names are present for the parent font.  
+  
+ [*Example*: Consider the following information stored for a single font:  
+  
+```xml  
+<w:font w:name="SimSun">  
+  <w:altName w:val="Arial Unicode MS" />  
+  …</w:font>  
+```  
+  
+ The altName element specifies that when no font with a name of *SimSun* (the primary font name) can be located, that applications should attempt to locate a font with the name *Arial Unicode MS* before doing substitution based on the font metrics. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|font (§17.8.3.10)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AltName class.
-            </summary>
+        <summary>Initializes a new instance of the AltName class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +92,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="BoxProperties" FullName="DocumentFormat.OpenXml.Math.BoxProperties">
+<Type Name="BoxProperties" FullName="DocumentFormat.OpenXml.Math.BoxProperties">
   <TypeSignature Language="C#" Value="public class BoxProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BoxProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.BoxProperties" />
@@ -37,13 +37,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Box Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:boxPr.</para>
-    </summary>
+    <summary>Box Properties. When the object is serialized out as xml, its qualified name is m:boxPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>OperatorEmulator &lt;m:opEmu&gt;</description></item><item><description>NoBreak &lt;m:noBreak&gt;</description></item><item><description>Differential &lt;m:diff&gt;</description></item><item><description>Break &lt;m:brk&gt;</description></item><item><description>Alignment &lt;m:aln&gt;</description></item><item><description>ControlProperties &lt;m:ctrlPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **boxPr (Box Properties)**  
+  
+ This element specifies properties of the Box object, for example, whether the Box serves as operator emulator with or without an alignment point, serves as a line break point, or receives the correct spacing for the mathematical differential. [*Example*:  
+  
+ is partly represented by the following XML:  
+  
+```xml  
+<m:box>  
+  <m:boxPr>  
+    <m:opEmu m:val="1"/>  
+  </m:boxPr>  
+  <m:e>  
+    <m:r>  
+      <m:t>x</m:t>  
+    </m:r>  
+  </m:e>  
+</m:box>  
+```  
+  
+ The x is set to be an operator emulator so it is given operator spacing around it.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|box (§22.1.2.13)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|aln (Alignment)|§22.1.2.3|  
+|brk (Break)|§22.1.2.15|  
+|ctrlPr (Control Properties)|§22.1.2.23|  
+|diff (Differential)|§22.1.2.29|  
+|noBreak (No Break)|§22.1.2.73|  
+|opEmu (Operator Emulator)|§22.1.2.80|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_BoxPr) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -59,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BoxProperties class.
-            </summary>
+        <summary>Initializes a new instance of the BoxProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,9 +128,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BoxProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the BoxProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -111,9 +149,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BoxProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the BoxProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -134,9 +170,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the BoxProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the BoxProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -156,11 +190,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.Alignment</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Alignment.</para>
-          <para> Represents the following element tag in the schema: m:aln </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Alignment. Represents the following element tag in the schema: m:aln</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.Alignment" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math
@@ -183,11 +214,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.Break</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Break.</para>
-          <para> Represents the following element tag in the schema: m:brk </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Break. Represents the following element tag in the schema: m:brk</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.Break" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math
@@ -213,11 +241,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -237,11 +263,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.ControlProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ControlProperties.</para>
-          <para> Represents the following element tag in the schema: m:ctrlPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ControlProperties. Represents the following element tag in the schema: m:ctrlPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.ControlProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math
@@ -264,11 +287,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.Differential</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Differential.</para>
-          <para> Represents the following element tag in the schema: m:diff </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Differential. Represents the following element tag in the schema: m:diff</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.Differential" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math
@@ -291,10 +311,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -314,11 +332,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.NoBreak</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> No Break.</para>
-          <para> Represents the following element tag in the schema: m:noBreak </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>No Break. Represents the following element tag in the schema: m:noBreak</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.NoBreak" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math
@@ -341,11 +356,8 @@
         <ReturnType>DocumentFormat.OpenXml.Math.OperatorEmulator</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Operator Emulator.</para>
-          <para> Represents the following element tag in the schema: m:opEmu </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Operator Emulator. Represents the following element tag in the schema: m:opEmu</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Math.OperatorEmulator" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:m = http://schemas.openxmlformats.org/officeDocument/2006/math

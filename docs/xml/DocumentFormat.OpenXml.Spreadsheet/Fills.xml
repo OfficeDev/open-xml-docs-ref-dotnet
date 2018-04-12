@@ -1,4 +1,4 @@
-﻿<Type Name="Fills" FullName="DocumentFormat.OpenXml.Spreadsheet.Fills">
+<Type Name="Fills" FullName="DocumentFormat.OpenXml.Spreadsheet.Fills">
   <TypeSignature Language="C#" Value="public class Fills : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Fills extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Fills" />
@@ -22,13 +22,66 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Fills Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:fills.</para>
-    </summary>
+    <summary>Defines the Fills Class. When the object is serialized out as xml, its qualified name is x:fills.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Fill &lt;x:fill&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `fills (Fills)`  
+  
+ This element defines the cell fills portion of the Styles part, consisting of a sequence of fill records. A cell fill consists of a background color, foreground color, and pattern to be applied across the cell.  
+  
+ [*Example*:This cell has a yellow fill:  
+  
+ 0d307a60-cde2-4cad-8d5a-b39d13fe799b  
+  
+ This is the corresponding XML:  
+  
+```xml  
+<fill>  
+  <patternFill patternType="solid">  
+    <fgColor rgb="FFFFFF00"/>  
+    <bgColor indexed="64"/>  
+  </patternFill>  
+</fill>  
+```  
+  
+ This cell has a yellow fill with a thin horizontal crosshatch pattern applied (patternType = *lightGrid*):  
+  
+ 6a5cad67-fbe3-43be-bb07-1917bc113c4b  
+  
+ This is the corresponding XML:  
+  
+```xml  
+<fill>  
+  <patternFill patternType="lightGrid">  
+  <bgColor rgb="FFFFFF00"/>  
+  </patternFill>  
+</fill>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|styleSheet (§18.8.39)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|fill (Fill)|§18.8.20|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|count (Fill Count)|Count of fill elements.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Fills) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Fills class.
-            </summary>
+        <summary>Initializes a new instance of the Fills class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +124,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Fills class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Fills class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +145,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Fills class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Fills class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +166,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Fills class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Fills class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +189,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,12 +216,20 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Fill Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Fill Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Count of fill elements.  
+  
+ The possible values for this attribute are defined by the XML Schema `unsignedInt` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -197,10 +248,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

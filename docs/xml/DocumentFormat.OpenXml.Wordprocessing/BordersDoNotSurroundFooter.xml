@@ -1,4 +1,4 @@
-﻿<Type Name="BordersDoNotSurroundFooter" FullName="DocumentFormat.OpenXml.Wordprocessing.BordersDoNotSurroundFooter">
+<Type Name="BordersDoNotSurroundFooter" FullName="DocumentFormat.OpenXml.Wordprocessing.BordersDoNotSurroundFooter">
   <TypeSignature Language="C#" Value="public class BordersDoNotSurroundFooter : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BordersDoNotSurroundFooter extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BordersDoNotSurroundFooter" />
@@ -19,11 +19,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Page Border Excludes Footer.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:bordersDoNotSurroundFooter.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Page Border Excludes Footer. When the object is serialized out as xml, its qualified name is w:bordersDoNotSurroundFooter.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `bordersDoNotSurroundFooter (Page Border Excludes Footer)`  
+  
+ This element specifies that a given WordprocessingML document’s page border specified using the pgBorders element (§17.6.10) should not surround contents of the footer.  
+  
+ If this element is omitted, then the page border shall not exclude the footer on the page. As well, this element shall be ignored if the pgBorders element has an offsetFrom attribute which is not equal to *text*.  
+  
+ [*Note*: If the pgBorders element has a offsetFrom attribute equal to *page,* the bordersDoNotSurroundFooter element is ignored as specifying the pgBorders element with a offsetFrom attribute equal to *page* is to specify that the positioning of borders within the document shall be calculated relative to the edge of the page and therefore irrespective of document content in the footer. *end note*]  
+  
+ [*Example*: Consider the following page in a WordprocessingML document:  
+  
+ d751c518-8652-4096-8383-0acb79939599  
+  
+ If this WordprocessingML document is modified to leverage the behavior enabled by this element, this setting would be specified using the following WordprocessingML fragment in the document settings:  
+  
+```xml  
+<w:bordersDoNotSurroundFooter w:val="true"/>  
+```  
+  
+ The bordersDoNotSurroundFooter element's val attribute is equal to *true* specifying that the page border shall not surround the text extents of the footer, as follows:  
+  
+ 376562d9-6927-4290-9da2-a5edf08bea8c  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BordersDoNotSurroundFooter class.
-            </summary>
+        <summary>Initializes a new instance of the BordersDoNotSurroundFooter class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

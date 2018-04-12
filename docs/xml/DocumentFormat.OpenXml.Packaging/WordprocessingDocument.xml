@@ -1,4 +1,4 @@
-﻿<Type Name="WordprocessingDocument" FullName="DocumentFormat.OpenXml.Packaging.WordprocessingDocument">
+<Type Name="WordprocessingDocument" FullName="DocumentFormat.OpenXml.Packaging.WordprocessingDocument">
   <TypeSignature Language="C#" Value="public class WordprocessingDocument : DocumentFormat.OpenXml.Packaging.OpenXmlPackage" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WordprocessingDocument extends DocumentFormat.OpenXml.Packaging.OpenXmlPackage" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Packaging.WordprocessingDocument" />
@@ -14,10 +14,84 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>
-            Defines WordprocessingDocument - an OpenXmlPackage represents a Word document.
-            </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines WordprocessingDocument - an OpenXmlPackage represents a Word document.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ The following example shows how to apply the "Heading3" style to the first paragraph in an existing word processing document. To run the code example, create a word-processing file and write some text in it. After you run the code example, examine the text in the file. You would notice that the style of the first paragraph is changed to “Heading3.”  
+  
+```csharp  
+using System;  
+using System.Linq;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Wordprocessing;  
+  
+namespace WordProcessingEx  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            // Apply the Heading 3 style to a paragraph.   
+            string fileName = @"C:\Users\Public\Documents\WordProcessingEx.docx";  
+            using ( WordprocessingDocument myDocument = WordprocessingDocument.Open(fileName, true))  
+            {  
+                // Get the first paragraph.  
+                Paragraph p = myDocument.MainDocumentPart.Document.Body.Elements<Paragraph>().First();  
+  
+                // If the paragraph has no ParagraphProperties object, create a new one.  
+                if ( p.Elements<ParagraphProperties>().Count() == 0 )  
+                    p.PrependChild<ParagraphProperties>(new ParagraphProperties());  
+  
+                // Get the ParagraphProperties element of the paragraph.  
+                ParagraphProperties pPr = p.Elements<ParagraphProperties>().First();  
+  
+                // Set the value of ParagraphStyleId to "Heading3".  
+                pPr.ParagraphStyleId = new ParagraphStyleId() { Val = "Heading3" };  
+            }  
+            Console.WriteLine("All done. Press a key.");  
+            Console.ReadKey();  
+        }  
+   }  
+}  
+  
+```  
+  
+```vb  
+Imports System  
+Imports System.Linq  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Wordprocessing  
+  
+Module Module1  
+    Sub Main()  
+        ' Apply the Heading 3 style to a paragraph.   
+        Dim fileName As String = "C:\Users\Public\Documents\WordProcessingEx.docx"  
+        Using myDocument As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)  
+            ' Get the first paragraph.  
+            Dim p As Paragraph = myDocument.MainDocumentPart.Document.Body.Elements(Of Paragraph)().First()  
+  
+            ' If the paragraph has no ParagraphProperties object, create a new one.  
+            If p.Elements(Of ParagraphProperties)().Count() = 0 Then  
+                p.PrependChild(Of ParagraphProperties)(New ParagraphProperties())  
+            End If  
+  
+            ' Get the ParagraphProperties element of the paragraph.  
+            Dim pPr As ParagraphProperties = p.Elements(Of ParagraphProperties)().First()  
+  
+            ' Set the value of ParagraphStyleId to "Heading3".  
+            pPr.ParagraphStyleId = New ParagraphStyleId() With {.Val = "Heading3"}  
+        End Using  
+        Console.WriteLine("All done. Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -33,9 +107,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Creates a WordprocessingDocument.
-            </summary>
+        <summary>Creates a WordprocessingDocument.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -56,9 +128,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a CoreFilePropertiesPart to the WordprocessingDocument.
-            </summary>
+        <summary>Adds a CoreFilePropertiesPart to the WordprocessingDocument.</summary>
         <returns>The newly added CoreFilePropertiesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -80,9 +150,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a CustomFilePropertiesPart to the WordprocessingDocument.
-            </summary>
+        <summary>Adds a CustomFilePropertiesPart to the WordprocessingDocument.</summary>
         <returns>The newly added CustomFilePropertiesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -104,9 +172,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a DigitalSignatureOriginPart to the WordprocessingDocument.
-            </summary>
+        <summary>Adds a DigitalSignatureOriginPart to the WordprocessingDocument.</summary>
         <returns>The newly added DigitalSignatureOriginPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -128,9 +194,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a ExtendedFilePropertiesPart to the WordprocessingDocument.
-            </summary>
+        <summary>Adds a ExtendedFilePropertiesPart to the WordprocessingDocument.</summary>
         <returns>The newly added ExtendedFilePropertiesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -152,9 +216,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Creates the MainDocumentPart and add it to this document.
-            </summary>
+        <summary>Creates the MainDocumentPart and add it to this document.</summary>
         <returns>The newly added MainDocumentPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -189,11 +251,16 @@
         <typeparam name="T">The class of the part.</typeparam>
         <param name="contentType">The content type of the part. Must match the defined content type if the part is fixed content type.</param>
         <param name="id">The relationship id. The id will be automaticly generated if this param is null.</param>
-        <summary>
-            Adds a new part of type <typeparamref name="T" />.
-            </summary>
+        <summary>Adds a new part of type <paramref name="T" />.</summary>
         <returns>The added part.</returns>
-        <remarks>Mainly used for adding not-fixed content type part - ImagePart, etc</remarks>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Mainly used for adding not-fixed content type part - ImagePart, VideoPart, AudioPart, etc  
+  
+ ]]></format>
+        </remarks>
         <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">When the part is not allowed to be referenced by this part.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">When the part is fixed content type and the passed in contentType does not match the defined content type.</exception>
         <exception cref="T:System.ArgumentNullException">Thrown when "contentType" is null reference.</exception>
@@ -216,9 +283,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a QuickAccessToolbarCustomizationsPart to the WordprocessingDocument.
-            </summary>
+        <summary>Adds a QuickAccessToolbarCustomizationsPart to the WordprocessingDocument.</summary>
         <returns>The newly added QuickAccessToolbarCustomizationsPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -240,9 +305,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a RibbonAndBackstageCustomizationsPart to the WordprocessingDocument, this part is only available in Office2010.
-            </summary>
+        <summary>Adds a RibbonAndBackstageCustomizationsPart to the WordprocessingDocument, this part is only available in Office2010.</summary>
         <returns>The newly added RibbonExtensibilityPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -264,9 +327,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a RibbonExtensibilityPart to the WordprocessingDocument.
-            </summary>
+        <summary>Adds a RibbonExtensibilityPart to the WordprocessingDocument.</summary>
         <returns>The newly added RibbonExtensibilityPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -290,10 +351,8 @@
         <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ThumbnailPartType" />
       </Parameters>
       <Docs>
-        <param name="partType">The type of the ThumbnailPart.</param>
-        <summary>
-            Adds a ThumbnailPart to the WordprocessingDocument.
-            </summary>
+        <param name="partType">The type of the ThumbnailPart</param>
+        <summary>Adds a ThumbnailPart to the WordprocessingDocument.</summary>
         <returns>The newly added ThumbnailPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -317,10 +376,8 @@
         <Parameter Name="contentType" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="contentType">The content type of the ThumbnailPart.</param>
-        <summary>
-            Adds a ThumbnailPart to the WordprocessingDocument.
-            </summary>
+        <param name="contentType">the content type of the ThumbnailPart</param>
+        <summary>Adds a ThumbnailPart to the WordprocessingDocument.</summary>
         <returns>The newly added ThumbnailPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -342,9 +399,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Adds a WebExTaskpanesPart to the WordprocessingDocument, this part is only available in Office2013.
-            </summary>
+        <summary>Adds a WebExTaskpanesPart to the WordprocessingDocument, this part is only available in Office2013.</summary>
         <returns>The newly added WebExTaskpanesPart.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -369,10 +424,15 @@
       </Parameters>
       <Docs>
         <param name="newType">The new type of the document.</param>
-        <summary>
-            Changes the document type.
-            </summary>
-        <remarks>The MainDocumentPart will be changed.</remarks>
+        <summary>Changes the document type.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The MainDocumentPart will be changed.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CoreFilePropertiesPart">
@@ -391,9 +451,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the CoreFilePropertiesPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the CoreFilePropertiesPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -417,11 +475,9 @@
         <Parameter Name="type" Type="DocumentFormat.OpenXml.WordprocessingDocumentType" />
       </Parameters>
       <Docs>
-        <param name="package">The specified OpenXml package.</param>
+        <param name="package">The specified OpenXml package</param>
         <param name="type">The type of the WordprocessingDocument.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the spcified package.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the spcified package.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
@@ -447,11 +503,9 @@
         <Parameter Name="type" Type="DocumentFormat.OpenXml.WordprocessingDocumentType" />
       </Parameters>
       <Docs>
-        <param name="stream">The IO stream on which to create the WordprocessingDocument.</param>
+        <param name="stream">The IO stream on which to open the package.</param>
         <param name="type">The type of the WordprocessingDocument.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the IO stream.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -478,11 +532,9 @@
         <Parameter Name="type" Type="DocumentFormat.OpenXml.WordprocessingDocumentType" />
       </Parameters>
       <Docs>
-        <param name="path">The path and file name of the target WordprocessingDocument.</param>
+        <param name="path">The path and file name of the target Package for the OpenXmlPackage.</param>
         <param name="type">The type of the WordprocessingDocument.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the specified file.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -511,9 +563,7 @@
         <param name="package">The specified OpenXml package</param>
         <param name="type">The type of the WordprocessingDocument.</param>
         <param name="autoSave">Whether to auto save the created document.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the spcified package.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the spcified package.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
@@ -543,9 +593,7 @@
         <param name="stream">The IO stream on which to create the WordprocessingDocument.</param>
         <param name="type">The type of the WordprocessingDocument.</param>
         <param name="autoSave">Whether to auto save the created document.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the IO stream.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -576,9 +624,7 @@
         <param name="path">The path and file name of the target WordprocessingDocument.</param>
         <param name="type">The type of the WordprocessingDocument.</param>
         <param name="autoSave">Whether to auto save the created document.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the specified file.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -749,9 +795,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the CustomFilePropertiesPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the CustomFilePropertiesPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -772,9 +816,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the DigitalSignatureOriginPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the DigitalSignatureOriginPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -795,9 +837,7 @@
         <ReturnType>DocumentFormat.OpenXml.WordprocessingDocumentType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the type of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the type of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -818,9 +858,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ExtendedFilePropertiesPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the ExtendedFilePropertiesPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1082,9 +1120,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.MainDocumentPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the MainDocumentPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the MainDocumentPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1107,10 +1143,8 @@
         <Parameter Name="package" Type="System.IO.Packaging.Package" />
       </Parameters>
       <Docs>
-        <param name="package">The specified OpenXml package.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the spcified package.
-            </summary>
+        <param name="package">The specified OpenXml package</param>
+        <summary>Creates a new instance of the WordprocessingDocument class from the spcified package.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
@@ -1139,9 +1173,7 @@
       <Docs>
         <param name="package">The specified OpenXml package</param>
         <param name="openSettings">The advanced settings for opening a document.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the spcified package.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the spcified package.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when package is a null reference.</exception>
@@ -1169,11 +1201,9 @@
         <Parameter Name="isEditable" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="stream">The IO stream on which to open the WordprocessingDocument.</param>
+        <param name="stream">The IO stream on which to open the package.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the IO stream.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -1201,11 +1231,9 @@
         <Parameter Name="isEditable" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="path">The path and file name of the target WordprocessingDocument.</param>
+        <param name="path">The path and file name of the target Package for the OpenXmlPackage.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the specified file.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -1235,9 +1263,7 @@
         <param name="stream">The IO stream on which to open the WordprocessingDocument.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
         <param name="openSettings">The advanced settings for opening a document.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the IO stream.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the IO stream.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
@@ -1269,9 +1295,7 @@
         <param name="path">The path and file name of the target WordprocessingDocument.</param>
         <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
         <param name="openSettings">The advanced settings for opening a document.</param>
-        <summary>
-            Creates a new instance of the WordprocessingDocument class from the specified file.
-            </summary>
+        <summary>Creates a new instance of the WordprocessingDocument class from the specified file.</summary>
         <returns>A new instance of WordprocessingDocument.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
@@ -1355,9 +1379,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the QuickAccessToolbarCustomizationsPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the QuickAccessToolbarCustomizationsPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1383,9 +1405,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the RibbonAndBackstageCustomizationsPart of the WordprocessingDocument, only available in Office2010.
-            </summary>
+        <summary>Gets the RibbonAndBackstageCustomizationsPart of the WordprocessingDocument, only available in Office2010.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1406,9 +1426,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the RibbonExtensibilityPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the RibbonExtensibilityPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1429,9 +1447,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ThumbnailPart of the WordprocessingDocument.
-            </summary>
+        <summary>Gets the ThumbnailPart of the WordprocessingDocument.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1482,9 +1498,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WebExTaskpanesPart of the WordprocessingDocument, only available in Office2013.
-            </summary>
+        <summary>Gets the WebExTaskpanesPart of the WordprocessingDocument, only available in Office2013.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

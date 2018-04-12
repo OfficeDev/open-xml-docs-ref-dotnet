@@ -1,4 +1,4 @@
-﻿<Type Name="Document" FullName="DocumentFormat.OpenXml.Wordprocessing.Document">
+<Type Name="Document" FullName="DocumentFormat.OpenXml.Wordprocessing.Document">
   <TypeSignature Language="C#" Value="public class Document : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Document extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Document" />
@@ -25,13 +25,117 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Document. The root element of MainDocumentPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:document.</para>
-    </summary>
+    <summary>Document. The root element of MainDocumentPart. When the object is serialized out as xml, its qualified name is w:document.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocumentBackground &lt;w:background&gt;</description></item><item><description>Body &lt;w:body&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **document (Document)**  
+  
+ This element specifies the contents of a main document part in a WordprocessingML document.  
+  
+ [*Example*: Consider the basic structure of the main document part in a basic WordprocessingML document, as follows:  
+  
+```xml  
+<w:document>  
+  <w:body>  
+    <w:p/>  
+  </w:body>  
+</w:document>  
+```  
+  
+ All of the contents of the main document part are contained beneath the document element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|Root element of WordprocessingML Main Document part|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|background (Document Background)|§17.2.1|  
+|body (Document Body)|§17.2.2|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Document) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following code example creates a word-processing document named "DocumentEx.docx" in the supplied path.  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Wordprocessing;  
+  
+namespace DocumentEx  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\users\public\documents\DocumentEx.docx";  
+  
+            // Create a document.   
+            using (WordprocessingDocument myDocument =  
+                WordprocessingDocument.Create(fileName, WordprocessingDocumentType.Document))  
+            {  
+                // Add a main part.   
+                MainDocumentPart mainPart = myDocument.AddMainDocumentPart();  
+  
+                // Create the document structure.  
+                mainPart.Document = new Document();  
+                Body body = mainPart.Document.AppendChild(new Body());  
+                Paragraph para = body.AppendChild(new Paragraph());  
+                Run run = para.AppendChild(new Run());  
+  
+                // Add some text to the document.  
+                run.AppendChild(new Text("Hello, World!"));  
+            }  
+            Console.WriteLine("The document has been created.\nPress a key.");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Wordprocessing  
+  
+Module Module1  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "C:\users\public\documents\DocumentEx.docx"  
+  
+        ' Create a document.   
+        Using myDocument As WordprocessingDocument = WordprocessingDocument.Create(fileName, WordprocessingDocumentType.Document)  
+            ' Add a main part.   
+            Dim mainPart As MainDocumentPart = myDocument.AddMainDocumentPart()  
+  
+            ' Create the document structure.  
+            mainPart.Document = New Document()  
+            Dim body As Body = mainPart.Document.AppendChild(New Body())  
+            Dim para As Paragraph = body.AppendChild(New Paragraph())  
+            Dim run As Run = para.AppendChild(New Run())  
+  
+            ' Add some text to the document.  
+            run.AppendChild(New Text("Hello, World!"))  
+        End Using  
+        Console.WriteLine("The document has been created." & vbLf & "Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -47,9 +151,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Document class.
-            </summary>
+        <summary>Initializes a new instance of the Document class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +178,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Document class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Document class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,9 +199,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Document class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Document class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,9 +220,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Document class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Document class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +240,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Body</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Body.</para>
-          <para> Represents the following element tag in the schema: w:body </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Body. Represents the following element tag in the schema: w:body</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Body" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -174,11 +267,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,10 +294,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DocumentConformance&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> conformance.</para>
-          <para>Represents the following attribute in the schema: w:conformance </para>
-        </summary>
+        <summary>conformance.Represents the following attribute in the schema: w:conformance</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -229,10 +317,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DocumentBackground</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Document Background.</para>
-          <para> Represents the following element tag in the schema: w:background </para>
-        </summary>
+        <summary>Document Background. Represents the following element tag in the schema: w:background</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -260,9 +345,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the MainDocumentPart.
-            </summary>
+        <summary>Loads the DOM from the MainDocumentPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -282,10 +365,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -305,10 +386,8 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.MainDocumentPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the MainDocumentPart associated with this element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the MainDocumentPart associated with this element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.MainDocumentPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -332,9 +411,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the MainDocumentPart.
-            </summary>
+        <summary>Saves the DOM into the MainDocumentPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

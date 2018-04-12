@@ -1,4 +1,4 @@
-﻿<Type Name="RightToLeftText" FullName="DocumentFormat.OpenXml.Wordprocessing.RightToLeftText">
+<Type Name="RightToLeftText" FullName="DocumentFormat.OpenXml.Wordprocessing.RightToLeftText">
   <TypeSignature Language="C#" Value="public class RightToLeftText : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RightToLeftText extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.RightToLeftText" />
@@ -19,11 +19,83 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the RightToLeftText Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:rtl.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the RightToLeftText Class. When the object is serialized out as xml, its qualified name is w:rtl.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **rtl (Right To Left Text)**  
+  
+ This element specifies whether the contents of this run shall have right-to-left characteristics. Specifically, the following behaviors are applied when this element’s val attribute is *true* (or an equivalent):  
+  
+-   Formatting – When the contents of this run are displayed, all characters shall be treated as complex script characters. This means that the values of the bCs element (§17.3.2.2) and the iCs element (§17.3.2.17) shall be use to determine bold and italic formatting, that the cs/cstheme attributes on the rFonts element (§17.3.2.26) shall be used to determine the font face, and the szCs element (§17.3.2.39) shall be used to determine the font size.  
+  
+-   Character Directionality Override – When the contents of this run are displayed, this property acts as a right-to-left override for characters which are classified as follows (using the Unicode Character Database):  
+  
+ *Weak types except European Number, European Number Terminator, Common Number Separator, Arabic Number and (for Hebrew text) European Number Separator when constituting part of a number*  
+  
+ *Neutral types*  
+  
+-   [*Rationale*: This override allows applications to store and utilize higher-level information beyond that implicitly derived from the Unicode Bidirectional algorithm. For example, if the string “first second” appears in a right-to-left paragraph inside a document, the Unicode algorithm would always result in “first second” at display time (since the neutral character is surrounded by strongly classified characters). However, if the whitespace was entered using a right-to-left input method (e.g. a Hebrew keyboard), then that character could be classified as RTL using this property, allowing the display of “second first” in a right-to-left paragraph, since the user explicitly asked for the space in a right-to-left context. *end rationale*]  
+  
+ *This element provides information used to resolve the (Unicode) classifications of individual characters as either L, R, AN or EN. Once this is determined, the line should be displayed subject to the recommendation of the Unicode BiDi algorithm in reordering resolved levels.*  
+  
+ This property shall not be used with strongly left-to-right text. Any behavior under that condition is unspecified. . This property, when off, shall not be used with strong right-to-left text. Any behavior under that condition is unspecified.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then right to left characteristics shall not be applied to the contents of this run.  
+  
+ [*Example*: Consider the following WordprocessingML visual content: “*first second, أولى ثاني*”. This content might appear as follows within its parent paragraph:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t xml:space="preserve">first second, </w:t>  
+  </w:r>  
+  <w:r>  
+    <w:rPr>  
+      <w:rtl/>  
+    </w:rPr>  
+    <w:t>  
+أولى</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:rPr>  
+      <w:rtl/>  
+    </w:rPr>  
+    <w:t xml:space="preserve"> </w:t>  
+  </w:r>  
+  <w:r>  
+    <w:rPr>  
+      <w:rtl/>  
+    </w:rPr>  
+    <w:t>  
+ثاني</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The presence of the rtl element on the second, third, and fourth runs specifies that:  
+  
+-   The formatting on those runs is specified using the complex-script property variants.  
+  
+-   The whitespace character is treated as right-to-left.  
+  
+ Note that the second, third and fourth runs could be joined as one run with the rtl element specified.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +111,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RightToLeftText class.
-            </summary>
+        <summary>Initializes a new instance of the RightToLeftText class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +134,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +156,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

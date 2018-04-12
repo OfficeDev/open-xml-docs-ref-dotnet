@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotBreakConstrainedForcedTable" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable">
+<Type Name="DoNotBreakConstrainedForcedTable" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable">
   <TypeSignature Language="C#" Value="public class DoNotBreakConstrainedForcedTable : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotBreakConstrainedForcedTable extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotBreakConstrainedForcedTable" />
@@ -19,11 +19,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Don't Break Table Rows Around Floating Tables.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotBreakConstrainedForcedTable.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Don't Break Table Rows Around Floating Tables. When the object is serialized out as xml, its qualified name is w:doNotBreakConstrainedForcedTable.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotBreakConstrainedForcedTable (Don't Break Table Rows Around Floating Tables)`  
+  
+ This element specifies whether applications shall allow a table row to be split in two when its contents are displayed under the following circumstances:  
+  
+-   The table row exceeds one page in height (it shall be split into two pages)  
+  
+-   The table row would need to be split in order to accommodate a floating table also on the page (tables which have been set to floating using the tblpPr element (Part 1, §17.4.58))  
+  
+ Typically, assuming the cantSplit property (Part 1, §17.4.6) is not set, a table row which cannot fit on one single page shall be split as needed around any floating table on a page, in order to allow its contents to be fully displayed across two or more pages. This element, when present with a val attribute value of *true* (or equivalent), specifies that table rows which exceed one page in height shall never be split around floating tables in the document, and shall instead be displayed on the first page below the floating table, even if that means that part of the table row is clipped by the edge of the page.  
+  
+ [*Example*: Consider a WordprocessingML document with a long single table row which must be split across two separate pages in the document, in order to accommodate a floating table anchored in the footer, as follows:  
+  
+ 07f3abbf-2ea9-45be-95ad-324925bd4cea  
+  
+ The default presentation of this document forces that row to be split as needed around that floating table.  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotBreakConstrainedForcedTable />  
+</w:compat>  
+```  
+  
+ Then that table row is never split around the floating table, so it is always placed below that floating table on the page, and allowed to flow off the page as needed, resulting in the following output:  
+  
+ 490bcb4d-84ef-49d1-8f8d-21bc02f267e9  
+  
+ This example, while extreme, shows how the row is placed below the floating table, rather than breaking around it. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotBreakConstrainedForcedTable class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotBreakConstrainedForcedTable class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +104,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

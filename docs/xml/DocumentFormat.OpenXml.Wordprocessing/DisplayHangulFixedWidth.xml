@@ -1,4 +1,4 @@
-﻿<Type Name="DisplayHangulFixedWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth">
+<Type Name="DisplayHangulFixedWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth">
   <TypeSignature Language="C#" Value="public class DisplayHangulFixedWidth : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DisplayHangulFixedWidth extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DisplayHangulFixedWidth" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Always Use Fixed Width for Hangul Characters.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:displayHangulFixedWidth.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Always Use Fixed Width for Hangul Characters. When the object is serialized out as xml, its qualified name is w:displayHangulFixedWidth.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `displayHangulFixedWidth (Always Use Fixed Width for Hangul Characters)`  
+  
+ This element specifies whether applications should assume that all characters in the Hangul Syllables Unicode sub range (character values between 0xAC00 and 0xD7FF) are of a single fixed width or shall use the characters widths defined by the font in use (typical for a proportional width font).  
+  
+ Typically, applications shall retrieve the character width for any character in a document from the associated font, allowing each character to be of its own width (a proportional width character). This element, when present with a val attribute value of *true* (or equivalent), specifies that applications shall instead assume a single fixed width for all characters in the Hangul Syllables sub range, by reading the width of Unicode character 0x4E00 from the associated font and using that width for all Hangul characters (or, if that character is not present, the next available character in the font).  
+  
+ [*Example*: Consider a WordprocessingML document with three Hangul characters:  
+  
+ c19ce61c-65d0-482e-b724-147d3a148c6e  
+  
+ The default presentation would have each of those characters using the widths defined by the font (the highlighting indicates that each character has its own width):  
+  
+ 624a6ec5-d67d-472f-b611-461253ad3fb4  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:displayHangulFixedWidth />  
+</w:compat>  
+```  
+  
+ Then all three characters are forced to the fixed width of character 0x4E00 from the font (or, in this case, the next available character), resulting in the characters in the font being forced to that fixed width, which results in the following output:  
+  
+ feaacb26-0583-41a8-835e-8558ab0ea5ee  
+  
+ Notice from the highlighting that the characters have been compressed to the width of the single character and displayed at that fixed width. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DisplayHangulFixedWidth class.
-            </summary>
+        <summary>Initializes a new instance of the DisplayHangulFixedWidth class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

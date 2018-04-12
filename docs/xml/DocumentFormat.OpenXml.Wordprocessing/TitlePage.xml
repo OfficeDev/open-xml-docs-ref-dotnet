@@ -1,4 +1,4 @@
-﻿<Type Name="TitlePage" FullName="DocumentFormat.OpenXml.Wordprocessing.TitlePage">
+<Type Name="TitlePage" FullName="DocumentFormat.OpenXml.Wordprocessing.TitlePage">
   <TypeSignature Language="C#" Value="public class TitlePage : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TitlePage extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TitlePage" />
@@ -19,11 +19,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TitlePage Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:titlePg.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TitlePage Class. When the object is serialized out as xml, its qualified name is w:titlePg.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **titlePg (Different First Page Headers and Footers)**  
+  
+ This element specifies whether the parent section in this document shall have a different header and footer for its first page.  
+  
+ If the val attribute is set to *true*, then the parent section in the document shall use a first page header for the first page in the section. If the val attribute is set to *false*, then the first page in the parent section shall use the odd page header.  
+  
+ This setting does not affect the presence of even and odd page header on all sections, which is specified using the evenAndOddHeaders element (§17.10.1).  
+  
+ If this element is set to *false* and a first page header is specified , then it shall be ignored and only the odd page header shall be displayed. Conversely, if this element is set to *true* and the first page header type is omitted for the given section, then a blank header shall be created as needed (another header type shall not be used in its place).  
+  
+ If this element is omitted, then its value shall be assumed to be *false*.  
+  
+ [*Example*: Consider a section which must have a different first page header. This requirement is specified using the following WordprocessingML:  
+  
+```xml  
+<w:sectPr>  
+  …  <w:titlePg />  
+  …</w:  
+sectPr>  
+```  
+  
+ Since the titlePg property is present (and its default attribute value is *true*), this document now has a different header and footer for its first page. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sectPr (§17.6.17); sectPr (§17.6.18); sectPr (§17.6.19)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +74,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TitlePage class.
-            </summary>
+        <summary>Initializes a new instance of the TitlePage class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

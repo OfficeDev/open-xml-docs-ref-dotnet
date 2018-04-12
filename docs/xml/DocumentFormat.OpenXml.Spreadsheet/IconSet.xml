@@ -1,4 +1,4 @@
-﻿<Type Name="IconSet" FullName="DocumentFormat.OpenXml.Spreadsheet.IconSet">
+<Type Name="IconSet" FullName="DocumentFormat.OpenXml.Spreadsheet.IconSet">
   <TypeSignature Language="C#" Value="public class IconSet : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IconSet extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.IconSet" />
@@ -22,13 +22,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Icon Set.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:iconSet.</para>
-    </summary>
+    <summary>Icon Set. When the object is serialized out as xml, its qualified name is x:iconSet.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ConditionalFormatValueObject &lt;x:cfvo&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **iconSet (Icon Set)**  
+  
+ Describes an icon set conditional formatting rule.  
+  
+ [*Example*:This example demonstrates the "3Arrows" style of icons. The first icon in the set must be shown if the cell's value is less than the 33rd percentile.  The second icon in the set must be shown if the cell's value is less than the 67th percentile, and greater than or equal to the 33rd percentile. The third icon in the set must be shown if the cell's value is greater than or equal to the 67th percentile.  
+  
+```xml  
+<iconSet iconSet="3Arrows">  
+  <cfvo type="percentile" val="0"/>  
+  <cfvo type="percentile" val="33"/>  
+  <cfvo type="percentile" val="67"/>  
+</iconSet>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cfRule (§18.3.1.10)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cfvo (Conditional Format Value Object)|§18.3.1.11|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|iconSet (Icon Set)|The icon set to display.<br /><br /> The possible values for this attribute are defined by the *ST_IconSetType* simple type (§18.18.42).|  
+|percent (Percent)|Indicates whether the thresholds indicate percentile values, instead of number values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|reverse (Reverse Icons)|If '1', reverses the default order of the icons in this icon set.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showValue (Show Value)|Indicates whether to show the values of the cells on which this icon set is applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_IconSet) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the IconSet class.
-            </summary>
+        <summary>Initializes a new instance of the IconSet class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +108,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the IconSet class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the IconSet class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +129,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the IconSet class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the IconSet class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +150,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the IconSet class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the IconSet class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +173,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +200,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.IconSetValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Icon Set.</para>
-          <para>Represents the following attribute in the schema: iconSet </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Icon Set.Represents the following attribute in the schema: iconSet</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,10 +221,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,11 +247,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Percent.</para>
-          <para>Represents the following attribute in the schema: percent </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Percent.Represents the following attribute in the schema: percent</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -254,11 +273,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Reverse Icons.</para>
-          <para>Represents the following attribute in the schema: reverse </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Reverse Icons.Represents the following attribute in the schema: reverse</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -283,11 +299,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Value.</para>
-          <para>Represents the following attribute in the schema: showValue </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Value.Represents the following attribute in the schema: showValue</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="SpacingInWholePoints" FullName="DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints">
+<Type Name="SpacingInWholePoints" FullName="DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints">
   <TypeSignature Language="C#" Value="public class SpacingInWholePoints : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpacingInWholePoints extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SpacingInWholePoints" />
@@ -19,11 +19,73 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Only Expand/Condense Text By Whole Points.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:spacingInWholePoints.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Only Expand/Condense Text By Whole Points. When the object is serialized out as xml, its qualified name is w:spacingInWholePoints.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `spacingInWholePoints (Only Expand/Condense Text By Whole Points)`  
+  
+ This element specifies how applications should apply text expansion/compression defined using the spacing element (Part 1, §17.3.2.35) within a set of run properties.  
+  
+ Typically, as defined in the spacing element, text within runs in a WordprocessingML document can be expanded or compressed in increments of twentieths of a point. This element, when present with a val attribute value of *true* (or equivalent), specifies that the expansion and compression of text shall only be performed in increments of points. Any value which is not equal to an expansion or compression of a whole point shall be rounded down to the nearest whole point when the text is expanded/compressed within the WordprocessingML document.  
+  
+ [*Example*: Consider a WordprocessingML document with three paragraphs of text, each expanded by a varying amount, as follows:  
+  
+```xml  
+<w:p>  
+  …  <w:r>  
+    <w:t>This is text.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  …  <w:r>  
+    <w:rPr>  
+      <w:spacing w:val="20" />  
+    </w:rPr>  
+    <w:t>This is text.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  …  <w:r>  
+    <w:rPr>  
+      <w:spacing w:val="36" />  
+    </w:rPr>  
+    <w:t>This is text.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The default presentation would have each run of text expanded exactly as requested:  
+  
+ 8714a7d7-78f4-44a6-b7a2-cda7b541e14e  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:spacingInWholePoints />  
+</w:compat>  
+```  
+  
+ Then the third line - with an expansion of 1.8 points - would instead be rounded down to the nearest whole number of points when expanded, resulting in the following output:  
+  
+ 24014052-b18e-4d63-9430-397a08e07e49  
+  
+ In the resulting output, the second and third lines are identical, as the third line has a next expansion of exactly one point. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SpacingInWholePoints class.
-            </summary>
+        <summary>Initializes a new instance of the SpacingInWholePoints class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +124,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +146,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

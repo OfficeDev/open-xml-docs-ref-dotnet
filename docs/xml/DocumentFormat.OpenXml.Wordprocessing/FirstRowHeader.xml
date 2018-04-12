@@ -1,4 +1,4 @@
-﻿<Type Name="FirstRowHeader" FullName="DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader">
+<Type Name="FirstRowHeader" FullName="DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader">
   <TypeSignature Language="C#" Value="public class FirstRowHeader : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FirstRowHeader extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader" />
@@ -19,11 +19,37 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>First Row of Data Source Contains Column Names.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:fHdr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>First Row of Data Source Contains Column Names. When the object is serialized out as xml, its qualified name is w:fHdr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **fHdr (First Row of Data Source Contains Column Names)**  
+  
+ This element specifies that a hosting application shall treat the first row of data in the specified external data source as a header row containing the names of each column in the data source, rather than data to populate mapped fields in a merged document. When present, this information shall not change the indices specified in the recipientData elements (§17.14.27), but shall indicate that the first row is not part of the mail merge when it is performed.  
+  
+ If this element is omitted, then the first row of the data source shall not be considered a header row when a mail merge is performed.  
+  
+ [*Example*: Consider a WordprocessingML source document that has been connected to an external data source whose first row of data is not data the hosting application is to populate mapped fields with, but rather contains column names for each column in the data source. This setting on the data source is specified using the following fragment of WordprocessingML:  
+  
+```xml  
+<w:fHdr w:val="on" />  
+```  
+  
+ The fHdr element specifies that the data source's first row is a header row, rather than regular data to be used in the mail merge. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|odso (§17.14.25)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FirstRowHeader class.
-            </summary>
+        <summary>Initializes a new instance of the FirstRowHeader class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +88,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="DocPartType" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartType">
+<Type Name="DocPartType" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartType">
   <TypeSignature Language="C#" Value="public class DocPartType : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocPartType extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DocPartType" />
@@ -19,11 +19,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Entry Type.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:type.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Entry Type. When the object is serialized out as xml, its qualified name is w:type.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **type (Entry Type)**  
+  
+ This element specifies an entry type which shall be applied to the properties of the parent glossary document entry (§17.12.5). Each of these entry types can, based on their values, influence the visibility and behavior of the parent glossary document entry as defined by the associated simple type information.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the properties of a single glossary document entry:  
+  
+```xml  
+<w:docPartPr>  
+  <w:types>  
+    <w:type w:val="bbPlcHdr" />  
+  </w:types>  
+  …</w:docPartPr>  
+```  
+  
+ The type element with a value of *bbPlcHdr* specifies that the parent glossary document entry must be treated as if it was the placeholder text for one or more structured document tags in the document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|types (§17.12.16)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DocPartType) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DocPartType class.
-            </summary>
+        <summary>Initializes a new instance of the DocPartType class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +90,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +138,28 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DocPartValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Type Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Type Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the classification of the document based on the types defined in the referenced simple type definition.  
+  
+ Consider a `WordprocessingML` document which should be classified as an e-mail message. This  classification would be specified using the following `WordprocessingML` in the document settings:  
+  
+```  
+<w:documentType w:val="eMail" />  
+```  
+  
+ The val attribute is equal to `eMail`, specifying that the hosting application may apply e-mail behaviors (if any) to this document.  
+  
+ The possible values for this attribute are defined by the `ST_DocType` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

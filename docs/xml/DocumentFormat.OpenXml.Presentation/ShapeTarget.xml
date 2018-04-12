@@ -1,4 +1,4 @@
-﻿<Type Name="ShapeTarget" FullName="DocumentFormat.OpenXml.Presentation.ShapeTarget">
+<Type Name="ShapeTarget" FullName="DocumentFormat.OpenXml.Presentation.ShapeTarget">
   <TypeSignature Language="C#" Value="public class ShapeTarget : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ShapeTarget extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.ShapeTarget" />
@@ -34,13 +34,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Shape Target.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:spTgt.</para>
-    </summary>
+    <summary>Shape Target. When the object is serialized out as xml, its qualified name is p:spTgt.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>BackgroundAnimation &lt;p:bg&gt;</description></item><item><description>SubShape &lt;p:subSp&gt;</description></item><item><description>OleChartElement &lt;p:oleChartEl&gt;</description></item><item><description>TextElement &lt;p:txEl&gt;</description></item><item><description>GraphicElement &lt;p:graphicEl&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **spTgt (Shape Target)**  
+  
+ The element specifies the shape in which to apply a certain animation to.  
+  
+ [*Example*:  Consider a shape whose id is  which we want to apply a fade animation effect. The \<spTgt> should be used as follows:  
+  
+```xml  
+<p:animEffect transition="in" filter="fade">  
+  <p:cBhvr>  
+    <p:cTn id="7" dur="2000"/>  
+    <p:tgtEl>  
+      <p:spTgt spid="3"/>  
+    </p:tgtEl>  
+  </p:cBhvr>  
+</p:animEffect>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tgtEl (§19.5.81)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bg (Background)|§19.5.10|  
+|graphicEl (Graphic Element)|§19.5.45|  
+|oleChartEl (Embedded Chart Element)|§19.5.52|  
+|subSp (Subshape)|§19.5.77|  
+|txEl (Text Element)|§19.5.91|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|spid (Shape ID)|This attribute specifies the shape identifier.<br /><br /> The possible values for this attribute are defined by the *ST_ShapeID* simple type (§20.1.10.55).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLShapeTargetElement) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -56,9 +97,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ShapeTarget class.
-            </summary>
+        <summary>Initializes a new instance of the ShapeTarget class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,9 +124,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ShapeTarget class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ShapeTarget class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,9 +145,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ShapeTarget class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ShapeTarget class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -131,9 +166,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ShapeTarget class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ShapeTarget class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,11 +186,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.BackgroundAnimation</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Background.</para>
-          <para> Represents the following element tag in the schema: p:bg </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Background. Represents the following element tag in the schema: p:bg</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.BackgroundAnimation" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -183,11 +213,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -207,11 +235,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.GraphicElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Graphic Element.</para>
-          <para> Represents the following element tag in the schema: p:graphicEl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Graphic Element. Represents the following element tag in the schema: p:graphicEl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.GraphicElement" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -234,10 +259,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -257,11 +280,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.OleChartElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OLE Chart Element.</para>
-          <para> Represents the following element tag in the schema: p:oleChartEl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>OLE Chart Element. Represents the following element tag in the schema: p:oleChartEl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.OleChartElement" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -289,11 +309,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape ID.</para>
-          <para>Represents the following attribute in the schema: spid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape ID.Represents the following attribute in the schema: spid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -313,11 +330,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.SubShape</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Subshape.</para>
-          <para> Represents the following element tag in the schema: p:subSp </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Subshape. Represents the following element tag in the schema: p:subSp</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.SubShape" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -340,11 +354,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.TextElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Element.</para>
-          <para> Represents the following element tag in the schema: p:txEl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Element. Represents the following element tag in the schema: p:txEl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.TextElement" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

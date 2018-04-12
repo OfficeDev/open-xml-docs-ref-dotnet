@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotUseHTMLParagraphAutoSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing">
+<Type Name="DoNotUseHTMLParagraphAutoSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing">
   <TypeSignature Language="C#" Value="public class DoNotUseHTMLParagraphAutoSpacing : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotUseHTMLParagraphAutoSpacing extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotUseHTMLParagraphAutoSpacing" />
@@ -19,11 +19,80 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Use Fixed Paragraph Spacing for HTML Auto Setting.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotUseHTMLParagraphAutoSpacing.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Use Fixed Paragraph Spacing for HTML Auto Setting. When the object is serialized out as xml, its qualified name is w:doNotUseHTMLParagraphAutoSpacing.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotUseHTMLParagraphAutoSpacing (Use Fixed Paragraph Spacing for HTML Auto Setting)`  
+  
+ This element specifies whether applications should use a fixed definition when interpreting automatic paragraph spacing defined by a value of *true* (or equivalent) on the beforeAutospacing and/or afterAutospacing attributes on the spacing element (Part 1, §17.3.1.33).  
+  
+ Typically, applications shall interpret these settings to match the behavior of most HTML user agents, mimicking the default spacing above and below an HTML p element without additional spacing information. This element, when present with a val attribute value of *true* (or equivalent), specifies that those two attributes shall result in the following settings for each value:  
+  
+-   beforeAutospacing = 5 points of spacing before  
+  
+-   afterAutospacing =  10 points of spacing after  
+  
+ [*Example*: Consider a WordprocessingML document with a three paragraphs using HTML autospacing, as follows:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:beforeAutospacing="true" w:afterAutospacing="true" />  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph One</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:beforeAutospacing="true" w:afterAutospacing="true" />  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph Two</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:beforeAutospacing="true" w:afterAutospacing="true" />  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph Three</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The default presentation would result in output designed to match that of all common HTML user agents:  
+  
+ 47683023-cf43-400d-b13b-243f772d37cc  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotUseHTMLParagraphAutoSpacing />  
+</w:compat>  
+```  
+  
+ Then the paragraphs has exact spacing of 5 points before and 10 points after, resulting in the following output:  
+  
+ 248e343e-c0fd-40fa-8db9-da02bad6590f  
+  
+ Notice that the paragraphs are more condensed in the second example. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +108,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotUseHTMLParagraphAutoSpacing class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotUseHTMLParagraphAutoSpacing class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +131,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +153,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="Languages" FullName="DocumentFormat.OpenXml.Wordprocessing.Languages">
+<Type Name="Languages" FullName="DocumentFormat.OpenXml.Wordprocessing.Languages">
   <TypeSignature Language="C#" Value="public class Languages : DocumentFormat.OpenXml.Wordprocessing.LanguageType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Languages extends DocumentFormat.OpenXml.Wordprocessing.LanguageType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Languages" />
@@ -19,11 +19,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Languages Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:lang.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Languages Class. When the object is serialized out as xml, its qualified name is w:lang.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lang (Languages for Run Content)**  
+  
+ This element specifies the languages which shall be used to check spelling and grammar (if requested) when processing the contents of this run.  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the languages for the contents of this run shall be automatically determined based on their contents using any method desired.  
+  
+ [*Example*: Consider a run which contains both Latin and complex script characters in its contents. If those contents should be interpreted as French (Canada) and Hebrew, respectively, that requirement would be specified as follows in the resulting WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:lang w:val="fr-CA" w:bidi="he-IL" />  
+  </w:rPr>  
+</w:r>  
+```  
+  
+ The resulting run specifies that any complex script contents must be spell and grammar checked as if they were Hebrew, and any Latin character contents must be spell and grammar checked as if they were French (Canada). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Language) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Languages class.
-            </summary>
+        <summary>Initializes a new instance of the Languages class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +92,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

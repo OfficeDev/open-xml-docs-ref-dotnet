@@ -1,4 +1,4 @@
-﻿<Type Name="GrowOperators" FullName="DocumentFormat.OpenXml.Math.GrowOperators">
+<Type Name="GrowOperators" FullName="DocumentFormat.OpenXml.Math.GrowOperators">
   <TypeSignature Language="C#" Value="public class GrowOperators : DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GrowOperators extends DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.GrowOperators" />
@@ -19,11 +19,48 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Delimiter Grow.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:grow.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Delimiter Grow. When the object is serialized out as xml, its qualified name is m:grow.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **grow (n-ary Grow)**  
+  
+ This element specifies the growth property of n-ary operators. When *0* or *false*, n-ary operators such as integrals and summations do not grow to match the size of their operand height. When *1* or *true*, the n-ary operator grows vertically to match its operand height. If this property is omitted, grow is set to *0*.  
+  
+ When the element is absent, the default value of the property when it is a child of a delimiter object is *1* (meaning that this property is applied) and when it is a child of an n-ary operator object it is *0* (meaning that this property is not applied).  
+  
+ When the element is present and the val attribute is absent, the default of the val attribute is *1* meaning that this property is applied.  
+  
+ [*Example*: The two integrals below demonstrate the difference between grow = *0* and grow = *1*.  
+  
+ The XML that defines nary growth is:  
+  
+```xml  
+<m:naryPr>  
+  <m:chr  m:val="&#8747;"/>  
+  <m:grow m:val="1"/>  
+</m:naryPr>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|dPr (§22.1.2.31); naryPr (§22.1.2.72)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (value)|Specifies a binary value for the property defined by the parent XML element.<br /><br /> A value of *1* or *true* specifies that the property shall be explicitly applied. This is the default value for this attribute, and is implied when the parent element is present.<br /><br /> A value of *0* or *false* specifies that the property shall be explicitly turned off. This is implied when the parent element is not present.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_OnOff) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +76,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GrowOperators class.
-            </summary>
+        <summary>Initializes a new instance of the GrowOperators class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +99,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +121,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

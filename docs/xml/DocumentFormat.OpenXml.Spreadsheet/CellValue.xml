@@ -1,4 +1,4 @@
-﻿<Type Name="CellValue" FullName="DocumentFormat.OpenXml.Spreadsheet.CellValue">
+<Type Name="CellValue" FullName="DocumentFormat.OpenXml.Spreadsheet.CellValue">
   <TypeSignature Language="C#" Value="public class CellValue : DocumentFormat.OpenXml.Spreadsheet.XstringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CellValue extends DocumentFormat.OpenXml.Spreadsheet.XstringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CellValue" />
@@ -19,11 +19,181 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Cell Value.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:v.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Cell Value. When the object is serialized out as xml, its qualified name is x:v.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **v (Cell Value)**  
+  
+ This element expresses the value contained in a cell. If the cell contains a string, then this value is an index into the shared string table, pointing to the actual string value. Otherwise, the value of the cell is expressed directly in this element. Cells containing formulas express the last calculated result of the formula in this element.  
+  
+ For applications not wanting to implement the shared string table, an 'inline string' can be expressed in an \<is> element under \<c> (instead of a \<v> element under \<c>),in the same way a string would be expressed in the shared string table.  [*Note*: See \<is> for an example. *end note*]  
+  
+ [*Example*:In this example cell B4 contains the number "360" and C4 contains the UTC date 22 November 1976, 08:30.  
+  
+```xml  
+<c r="B4">  
+  <v>360</v>  
+</c>  
+<c r="C4" t="d">  
+  <v>1976-11-22T08:30Z</v>  
+</c>  
+  
+```  
+  
+ *end example*]  
+  
+ The possible values for this element are defined by the *ST_Xstring* simple type (§22.9.2.19).  
+  
+|Parent Elements|  
+|---------------------|  
+|c (§18.3.1.4); cell (§18.14.1); nc (§18.11.1.3); oc (§18.11.1.5); tp (§18.15.3)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (ST_Xstring) is located in §A.6.9. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following code example creates a spreadsheet file named "CellValue.xlsx" and writes the text "Microsoft" in the cell A2.  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace CellTypeEx  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\Users\Public\Documents\CellValueEx.xlsx";  
+  
+            // Create a spreadsheet document by supplying the fileName.  
+            SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.  
+                Create(fileName, SpreadsheetDocumentType.Workbook);  
+  
+            // Add a WorkbookPart to the document.  
+            WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();  
+            workbookpart.Workbook = new Workbook();  
+  
+            // Add a WorksheetPart to the WorkbookPart.  
+            WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();  
+            worksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+            // Add Sheets to the Workbook.  
+            Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild<Sheets>(new Sheets());  
+  
+            // Append a new worksheet and associate it with the workbook.  
+            Sheet sheet = new Sheet()  
+            {  
+                Id = spreadsheetDocument.WorkbookPart.  
+                    GetIdOfPart(worksheetPart),  
+                SheetId = 1,  
+                Name = "mySheet"  
+            };  
+  
+            sheets.Append(sheet);  
+            Worksheet worksheet = new Worksheet();  
+            SheetData sheetData = new SheetData();  
+  
+            Row row = new Row() { RowIndex = 2U, Spans = new ListValue<StringValue>() };  
+            Cell cell = new Cell()  
+            {  
+                CellReference = "A2",  
+                DataType = CellValues.String,  
+                CellValue = new CellValue("Microsoft")  
+            };  
+  
+            row.Append(cell);  
+            sheetData.Append(row);  
+            worksheet.Append(sheetData);  
+            worksheetPart.Worksheet = worksheet;  
+            workbookpart.Workbook.Save();  
+  
+            // Close the document.  
+            spreadsheetDocument.Close();  
+  
+            Console.WriteLine("All done.\nPress a key.");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports System  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+  
+Module Module1  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "C:\Users\Public\Documents\CellValueEx.xlsx"  
+  
+        ' Create a spreadsheet document by supplying the fileName.  
+        Dim spreadsheetDocument As SpreadsheetDocument = _  
+            spreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook)  
+  
+        ' Add a WorkbookPart to the document.  
+        Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart()  
+        workbookpart.Workbook = New Workbook()  
+  
+        ' Add a WorksheetPart to the WorkbookPart.  
+        Dim worksheetPart As WorksheetPart = _  
+            workbookpart.AddNewPart(Of WorksheetPart)()  
+        worksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+        ' Add Sheets to the Workbook.  
+        Dim sheets As Sheets = _  
+            spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())  
+  
+        ' Append a new worksheet and associate it with the workbook.  
+        Dim sheet As New Sheet() With { _  
+         .Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), _  
+         .SheetId = 1, _  
+         .Name = "mySheet" _  
+        }  
+  
+        sheets.Append(sheet)  
+        Dim worksheet As New Worksheet()  
+        Dim sheetData As New SheetData()  
+  
+        Dim row As New Row() With { _  
+         .RowIndex = 2UI, _  
+         .Spans = New ListValue(Of StringValue)() _  
+        }  
+        Dim cell As New Cell() With { _  
+         .CellReference = "A2", _  
+         .DataType = CellValues.[String], _  
+         .CellValue = New CellValue("Microsoft") _  
+        }  
+  
+        row.Append(cell)  
+        sheetData.Append(row)  
+        worksheet.Append(sheetData)  
+        worksheetPart.Worksheet = worksheet  
+        workbookpart.Workbook.Save()  
+  
+        ' Close the document.  
+        spreadsheetDocument.Close()  
+  
+        Console.WriteLine("All done." & vbLf & "Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +209,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CellValue class.
-            </summary>
+        <summary>Initializes a new instance of the CellValue class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,10 +273,8 @@
         <Parameter Name="text" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="text">Specifies the text content of the element.</param>
-        <summary>
-            Initializes a new instance of the CellValue class with the specified text content.
-            </summary>
+        <param name="text">Specifies text content of the element.</param>
+        <summary>Initializes a new instance of the CellValue class with the specified text content.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -131,11 +297,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,10 +319,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

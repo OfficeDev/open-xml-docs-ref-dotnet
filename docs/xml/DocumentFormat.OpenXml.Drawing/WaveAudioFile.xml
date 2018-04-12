@@ -1,4 +1,4 @@
-﻿<Type Name="WaveAudioFile" FullName="DocumentFormat.OpenXml.Drawing.WaveAudioFile">
+<Type Name="WaveAudioFile" FullName="DocumentFormat.OpenXml.Drawing.WaveAudioFile">
   <TypeSignature Language="C#" Value="public class WaveAudioFile : DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WaveAudioFile extends DocumentFormat.OpenXml.Drawing.EmbeddedWavAudioFileType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.WaveAudioFile" />
@@ -19,11 +19,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Audio from WAV File.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:wavAudioFile.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Audio from WAV File. When the object is serialized out as xml, its qualified name is a:wavAudioFile.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **wavAudioFile (Audio from WAV File)**  
+  
+ This element specifies the existence of an audio WAV file. This element is specified within the non-visual properties of an object. The audio shall be attached to an object as this is how it is represented within the document. The actual playing of the audio however is done within the timing node list that is specified under the timing element.  
+  
+ [*Example*: Consider the following picture object that has an audio WAV file attached to it.  
+  
+```xml  
+<p:pic>  
+  <p:nvPicPr>  
+    <p:cNvPr id="7" name="Rectangle 6">  
+      <a:hlinkClick r:id="" action="ppaction://media"/>  
+    </p:cNvPr>  
+    <p:cNvPicPr>  
+      <a:picLocks noRot="1"/>  
+    </p:cNvPicPr>  
+    <p:nvPr>  
+      <a:wavAudioFile r:embed="rId2"/>  
+    </p:nvPr>  
+  </p:nvPicPr>  
+  …</p:pic>  
+```  
+  
+ In the above example, we see that there is a single wavAudioFile element attached to this picture. This picture is placed within the document just as a normal picture or shape would be. The id of this picture, namely  this case, is used to refer to this wavAudioFile element from within the timing node list. The Embedded relationship id is used to retrieve the actual audio file for playback purposes. *end example*]  
+  
+ [*Note*: This element is generally used for the purposes of embedding audio files within the document. For linking to generic audio files the audioFile element should be used. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|nvPr (§19.3.1.33)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|embed (Embedded Audio File Relationship ID)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Specifies the identification information for an embedded audio file. This attribute is used to specify the location of an object that resides locally within the file. [*Note*: A list of suggested audio types is provided in §15.2.2. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|name (Sound Name)|Specifies the original name or given short name for the corresponding sound. This is used to distinguish this sound from others by providing a human readable name for the attached sound should the user need to identify the sound among others within the UI.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_EmbeddedWAVAudioFile) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WaveAudioFile class.
-            </summary>
+        <summary>Initializes a new instance of the WaveAudioFile class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +127,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

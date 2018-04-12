@@ -1,4 +1,4 @@
-﻿<Type Name="UseNormalStyleForList" FullName="DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList">
+<Type Name="UseNormalStyleForList" FullName="DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList">
   <TypeSignature Language="C#" Value="public class UseNormalStyleForList : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UseNormalStyleForList extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UseNormalStyleForList" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Automatically Apply List Paragraph Style To Bulleted/Numbered Text.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:useNormalStyleForList.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Automatically Apply List Paragraph Style To Bulleted/Numbered Text. When the object is serialized out as xml, its qualified name is w:useNormalStyleForList.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `useNormalStyleForList (Do Not Automatically Apply List Paragraph Style To Bulleted/Numbered Text)`  
+  
+ This element specifies whether applications shall automatically apply the paragraph style with the styleId attribute *ListParagraph* when numbering is applied to a paragraph currently formatted using the default paragraph style.  
+  
+ Typically, when a paragraph is formatted using the default paragraph style, and numbering is subsequently applied, the paragraph style with the styleId attribute *ListParagraph* when numbering is applied to ensure that paragraph properties are appropriate for a numbered paragraph. This element, when present with a val attribute value of *true* (or equivalent), specifies that no alternate paragraph style shall ever be applied  
+  
+ [*Example*: Consider a WordprocessingML document with five unnumbered paragraphs:  
+  
+ bd1bef1b-cb0c-4196-9ee4-03df8d419869  
+  
+ If numbering is applied to the three center paragraphs, the default presentation would have the *ListParagraph* style applied as well:  
+  
+ f5789f03-081f-49ed-a258-73855616eb99  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:useNormalStyleForList />  
+</w:compat>  
+```  
+  
+ Then the new paragraph style must not be applied, resulting in the following output:  
+  
+ f438ba64-8e6a-4ca7-bf71-a64f9867ed32  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UseNormalStyleForList class.
-            </summary>
+        <summary>Initializes a new instance of the UseNormalStyleForList class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

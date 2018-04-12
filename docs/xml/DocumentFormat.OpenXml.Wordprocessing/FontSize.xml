@@ -1,4 +1,4 @@
-﻿<Type Name="FontSize" FullName="DocumentFormat.OpenXml.Wordprocessing.FontSize">
+<Type Name="FontSize" FullName="DocumentFormat.OpenXml.Wordprocessing.FontSize">
   <TypeSignature Language="C#" Value="public class FontSize : DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontSize extends DocumentFormat.OpenXml.Wordprocessing.HpsMeasureType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FontSize" />
@@ -19,11 +19,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the FontSize Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:sz.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the FontSize Class. When the object is serialized out as xml, its qualified name is w:sz.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **sz (Non-Complex Script Font Size)**  
+  
+ This element specifies the font size which shall be applied to all non complex script characters in the contents of this run when displayed. The font sizes specified by this element’s val attribute are expressed as half-point values.  
+  
+ If this element is not present, the default is to leave the font size at the value applied at the previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then any appropriate font size can be used for non complex script characters.  
+  
+ [*Example*: Consider a run of text which must have an explicit font size of 13.5 points for the non complex script contents of the run. This constraint is specified using the following WordprocessingML:  
+  
+```xml  
+<w:rPr>  
+  <w:sz w:val="27"/>  
+</w:rPr>  
+```  
+  
+ This run explicitly declares that the sz property is *27* half-point for the non-complex script contents of this run, so the text is displayed in 13.5 point font size. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_HpsMeasure) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,10 +67,41 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FontSize class.
-            </summary>
-        <remarks>To be added.</remarks>
+        <summary>Initializes a new instance of the FontSize class.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sz (Font Size)`  
+  
+ This element specifies the font size which shall be applied to all non-complex script characters in the contents of this run when displayed.  
+  
+ If this element is not present, the default value is to leave the value applied at previous level in the style hierarchy. If this element is never applied in the *style hierarchy*, then any appropriate font size may be used for non-complex script characters.  
+  
+ Consider a run of text which shall have an explicit font size of 13.5 points for the non-complex script contents of the run. This constraint is specified using the following WordprocessingML:  
+  
+```  
+<w:rPr>  
+  <w:sz w:val="27"/>  
+</w:rPr>  
+```  
+  
+ This run explicitly declares that the `sz` property is `27` half-point for the non-complex script contents of this run, so the text will be displayed in 13.5 point font size.  
+  
+|Parent Elements|  
+|---------------------|  
+|`rPr`|  
+  
+  The following XML Schema fragment defines the contents of this element:  
+  
+```  
+<complexType name="CT_HpsMeasure">  
+   <attribute name="val" type="ST_HpsMeasure" use="required"/>  
+</complexType>  
+```  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -64,11 +123,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +145,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

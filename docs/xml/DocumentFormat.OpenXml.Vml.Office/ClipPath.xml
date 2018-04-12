@@ -1,4 +1,4 @@
-﻿<Type Name="ClipPath" FullName="DocumentFormat.OpenXml.Vml.Office.ClipPath">
+<Type Name="ClipPath" FullName="DocumentFormat.OpenXml.Vml.Office.ClipPath">
   <TypeSignature Language="C#" Value="public class ClipPath : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClipPath extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Vml.Office.ClipPath" />
@@ -19,11 +19,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Shape Clipping Path.</para>
-      <para> When the object is serialized out as xml, its qualified name is o:clippath.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Shape Clipping Path. When the object is serialized out as xml, its qualified name is o:clippath.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **clippath (Shape Clipping Path)**  
+  
+ This element specifies the path of the clipping polygon for the shape.  
+  
+ [*Example*:  
+  
+```xml  
+<v:rect … wrapcoords="-207 -433 -207 21925 21807 21925 21807 -433 -207 -433" o:clip="t" o:cliptowrap="t">  
+  <o:clippath o:v="m-207,-433r,22358l21807,21925r,-22358l-207,-433xe"/>  
+</v:rect>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|arc (§14.1.2.1); background (Part 1, §17.2.1); curve (§14.1.2.3); group (§14.1.2.7); hdrShapeDefaults (§9.7.2.1); image (§14.1.2.10); line (§14.1.2.12); object (Part 1, §17.3.3.19); oval (§14.1.2.13); pict (§9.2.2.2); pict (§9.5.1); polyline (§14.1.2.15); rect (§14.1.2.16); roundrect (§14.1.2.17); shape (§14.1.2.19); shapeDefaults (§9.7.2.2); shapetype (§14.1.2.20)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|v (Path Definition)|Specifies a string containing the commands that define the shape's path.  This value consists of commands followed by zero or more parameters.  Default is no value.<br /><br /> The following rules apply to path strings:<br /><br /> -   Commas or spaces delimit parameters for each command.  Both "m 0,0" and "m0 0" are acceptable.<br />-   A parameter that is omitted using commas is treated as having a value of zero.  Thus, "c 10,10,0,0,25,13" and "c 10,10,,,25,13" are equivalent.<br />-   Parameterized paths are also allowed.  In this case, the shape shall also have a formulas element (§14.1.2.6) with a list of formulas that are substituted into the path using the @ symbol followed by the number of the formula.  The adj property of the shape contains the input parameters for these formulas.  For example, "moveto @1@4".   The evaluations of the formulas are substituted into the appropriate positions.  @ also serves as a delimiter.<br /><br /> The allowed commands are given below.  An asterisk (*) indicates that the command is allowed to be repeated.  For the *qb* command, the controlpoint parameter is also allowed to be repeated.<br /><br /> Command<br /><br /> Name<br /><br /> Parameters<br /><br /> Description<br /><br /> *m*<br /><br /> moveto<br /><br /> 2<br /><br /> Start a new sub-path at the given (x,y) coordinate.<br /><br /> *l*<br /><br /> lineto<br /><br /> 2\*<br /><br /> Draw a line from the current point to the given (x,y) coordinate which becomes the new current point.  Specifying a number of coordinate pairs forms a polyline.<br /><br /> *c*<br /><br /> curveto<br /><br /> 6\*<br /><br /> Draw a cubic bézier curve from the current point to the coordinate given by the final two parameters.  The control points are given by the first four parameters.<br /><br /> *x*<br /><br /> close<br /><br /> 0<br /><br /> Close the current sub-path by drawing a straight line from the current point to the original moveto point.<br /><br /> *e*<br /><br /> end<br /><br /> 0<br /><br /> End the current set of sub-paths.  A given set of sub-paths (as delimited by end) is filled.  Subsequent sets of sub-paths are filled independently and superimposed on existing ones.<br /><br /> *t*<br /><br /> rmoveto<br /><br /> 2\*<br /><br /> Start a new sub-path at a coordinate relative to the current point, cp (cpx+x, cpy+y).<br /><br /> *r*<br /><br /> rlineto<br /><br /> 2\*<br /><br /> Draw a line from the current point to the given relative coordinate (cpx+x, cpy+y).<br /><br /> *v*<br /><br /> rcurveto<br /><br /> 6\*<br /><br /> Cubic bézier curve using the given coordinate relative to the current point.<br /><br /> *nf*<br /><br /> nofill<br /><br /> 0<br /><br /> The current set of sub-paths (delimited by e) is not filled.<br /><br /> *ns*<br /><br /> nostroke<br /><br /> 0<br /><br /> The current set of sub-paths (delimited by e) is not stroked.<br /><br /> *ae*<br /><br /> angleellipseto<br /><br /> 6\*<br /><br /> Draws a segment of an ellipse as described using these parameters.  A straight line is drawn from the current point to the start point of the segment.  The parameters are: center (x,y), size(w,h), start angle, end angle.<br /><br /> *al*<br /><br /> angleellipse<br /><br /> 6\*<br /><br /> Same as angleellipseto except that there is an implied moveto the starting point of the segment.<br /><br /> *at*<br /><br /> arcto<br /><br /> 8\*<br /><br /> A segment of the ellipse is drawn which starts at the angle defined by the start radius vector and ends at the angle defined by the end vector.  A straight line is drawn from the current point to the start of the arc.  The arc is always drawn in a counterclockwise direction.  The parameters are: left, top, right, bottom, start(x,y), end(x,y).  The first four values define the bounding box of an ellipse.  The last four define two radial vectors.<br /><br /> *ar*<br /><br /> arc<br /><br /> 8\*<br /><br /> Same as arcto except there is an implied moveto the start point of the arc.<br /><br /> *wa*<br /><br /> clockwisearcto<br /><br /> 8\*<br /><br /> Same as arcto but the arc is drawn in a clockwise direction.<br /><br /> *wr*<br /><br /> clockwisearc<br /><br /> 8\*<br /><br /> Same as arc but the arc is drawn in a clockwise direction<br /><br /> *qx*<br /><br /> ellipticalqaudrantx<br /><br /> 2\*<br /><br /> A quarter ellipse is drawn from the current point to the given end point.  The elliptical segment is initially tangential to a line parallel to the x-axis. (i.e. the segment starts out horizontal).  The parameters are: end(x,y).<br /><br /> *qy*<br /><br /> ellipticalquadranty<br /><br /> 2\*<br /><br /> Same as ellipticalquadrantx except that the elliptical segment is initially tangential to a line parallel to the y-axis (i.e. the segment starts out vertical).<br /><br /> *qb*<br /><br /> quadraticbezier<br /><br /> 2+2\*<br /><br /> Defines one or more quadratic bézier curves by means of control points and an end point.  Intermediate (on-curve) points are obtained by interpolation between successive control points as in the OpenType font specification.  The sub-path need not be started in which case the sub-path is closed.  In this case the last point of the sub-path defines the start point of the quadratic bézier.  The parameters are: controlpoint(x,y)\*, end(x,y).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ClipPath) is located in §A.6.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ClipPath class.
-            </summary>
+        <summary>Initializes a new instance of the ClipPath class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +92,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,11 +140,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Path Definition.</para>
-          <para>Represents the following attribute in the schema: o:v </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Path Definition.Represents the following attribute in the schema: o:v</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:o=urn:schemas-microsoft-com:office:office
             </remark>

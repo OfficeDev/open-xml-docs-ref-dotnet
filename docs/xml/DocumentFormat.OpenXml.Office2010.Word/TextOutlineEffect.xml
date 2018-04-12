@@ -1,4 +1,4 @@
-﻿<Type Name="TextOutlineEffect" FullName="DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect">
+<Type Name="TextOutlineEffect" FullName="DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect">
   <TypeSignature Language="C#" Value="public class TextOutlineEffect : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextOutlineEffect extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect" />
@@ -43,14 +43,85 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TextOutlineEffect Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is w14:textOutline.</para>
-    </summary>
+    <summary>Defines the TextOutlineEffect Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is w14:textOutline.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>NoFillEmpty &lt;w14:noFill&gt;</description></item><item><description>SolidColorFillProperties &lt;w14:solidFill&gt;</description></item><item><description>GradientFillProperties &lt;w14:gradFill&gt;</description></item><item><description>PresetLineDashProperties &lt;w14:prstDash&gt;</description></item><item><description>RoundEmpty &lt;w14:round&gt;</description></item><item><description>BevelEmpty &lt;w14:bevel&gt;</description></item><item><description>LineJoinMiterProperties &lt;w14:miter&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.14   textOutline*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/word/2010/wordml  
+  
+ A CT_TextOutlineEffect element that specifies the outline style to be applied to text. By default, text does not have outline. See section 2.2.1 for how this element integrates with ISO/IEC-29500-1.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="textOutline" minOccurs="0" type="CT_TextOutlineEffect"/>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.26   CT_TextOutlineEffect*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/word/2010/wordml  
+  
+ *Referenced by:* textOutline  
+  
+ A complex type that specifies the outline style that can be applied to text. When this element is empty, *bevel* is used as default.  
+  
+ *Child Elements:*  
+  
+ *noFill:* A *CT_Empty* (as specified in [ISO/IEC-29500-1] section A.1) element that specifies that no fill is applied to text.  
+  
+ *solidFill:* A CT_SolidColorFillProperties element that specifies a solid color fill. The text is filled entirely with the specified color.  
+  
+ *gradFill:* A CT_GradientFillProperties element that specifies the gradient fill. A gradient fill is a fill that is characterized by a smooth gradual transition from one color to the next.  
+  
+ *prstDash:* A CT_PresetLineDashProperties element that specifies the type of line dashing scheme to use. By default, a solid line is used.  
+  
+ *round:* A *CT_Empty* (as specified in [ISO/IEC-29500-1] section A.1) element that specifies that lines are connected by round joints.  
+  
+ *bevel:* A *CT_Empty* (as specified in [ISO/IEC-29500-1] section A.1) element that specifies that lines are connected by angle joints.  
+  
+ *miter:* A CT_LineJoinMiterProperties element that specifies that the line joins are mitered.  
+  
+ *Attributes:*  
+  
+ *w:* An optional *ST_LineWidth* (as specified in [ISO/IEC-29500-1] section 20.1.10.35) attribute that specifies the width of the outline. By default, the outline has no width.  
+  
+ *cap:* An optional ST_LineCap attribute that specifies the ending caps for the lines. By default, lines end at endpoint.  
+  
+ *cmpd:* An optional ST_CompoundLine attribute that specifies the compound line type to be used. Normal width single line is used by default.  
+  
+ *algn:* An optional ST_PenAlignment attribute that specifies the alignment. Center pen alignment is used by default.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_TextOutlineEffect">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:group ref="EG_FillProperties" minOccurs="0"/>*  
+  
+ *\<xsd:group ref="EG_LineDashProperties" minOccurs="0"/>*  
+  
+ *\<xsd:group ref="EG_LineJoinProperties" minOccurs="0"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="w" use="optional" type="a:ST_LineWidth"/>*  
+  
+ *\<xsd:attribute name="cap" use="optional" type="ST_LineCap"/>*  
+  
+ *\<xsd:attribute name="cmpd" use="optional" type="ST_CompoundLine"/>*  
+  
+ *\<xsd:attribute name="algn" use="optional" type="ST_PenAlignment"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -66,9 +137,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TextOutlineEffect class.
-            </summary>
+        <summary>Initializes a new instance of the TextOutlineEffect class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +164,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TextOutlineEffect class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TextOutlineEffect class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -118,9 +185,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TextOutlineEffect class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TextOutlineEffect class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,9 +206,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TextOutlineEffect class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TextOutlineEffect class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,10 +231,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> algn.</para>
-          <para>Represents the following attribute in the schema: w14:algn </para>
-        </summary>
+        <summary>algn.Represents the following attribute in the schema: w14:algn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w14=http://schemas.microsoft.com/office/word/2010/wordml
@@ -199,10 +259,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Word.LineCapValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> cap.</para>
-          <para>Represents the following attribute in the schema: w14:cap </para>
-        </summary>
+        <summary>cap.Represents the following attribute in the schema: w14:cap</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w14=http://schemas.microsoft.com/office/word/2010/wordml
@@ -228,11 +285,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -257,10 +312,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Word.CompoundLineValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> cmpd.</para>
-          <para>Represents the following attribute in the schema: w14:cmpd </para>
-        </summary>
+        <summary>cmpd.Represents the following attribute in the schema: w14:cmpd</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w14=http://schemas.microsoft.com/office/word/2010/wordml
@@ -288,10 +340,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> w.</para>
-          <para>Represents the following attribute in the schema: w14:w </para>
-        </summary>
+        <summary>w.Represents the following attribute in the schema: w14:w</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w14=http://schemas.microsoft.com/office/word/2010/wordml
@@ -314,9 +363,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

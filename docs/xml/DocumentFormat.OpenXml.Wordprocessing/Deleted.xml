@@ -1,4 +1,4 @@
-﻿<Type Name="Deleted" FullName="DocumentFormat.OpenXml.Wordprocessing.Deleted">
+<Type Name="Deleted" FullName="DocumentFormat.OpenXml.Wordprocessing.Deleted">
   <TypeSignature Language="C#" Value="public class Deleted : DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Deleted extends DocumentFormat.OpenXml.Wordprocessing.TrackChangeType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Deleted" />
@@ -19,11 +19,97 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Deleted Paragraph.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:del.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Deleted Paragraph. When the object is serialized out as xml, its qualified name is w:del.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `del (Deleted Table Row)`  
+  
+ This element specifies that the parent table row shall be treated as a deleted row whose deletion has been tracked as a revision. This setting shall not imply any revision state about the table cells in this row or their contents (which shall be revision marked independently), and shall only affect the table row itself.  
+  
+ [*Example*: Consider a two row by two column table in which the second row has been marked as deleted using a revision. This requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  …  <w:tr>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:trPr>  
+      <w:del w:id="0" … />  
+    </w:trPr>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+    <w:tc>  
+      <w:p/>  
+    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The del element on the table row properties for the second table row specifies that this row was deleted, and this deletion was tracked as a revision. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `del (Deleted Paragraph)`  
+  
+ This element specifies that the paragraph mark delimiting the end of a paragraph within a WordprocessingML document shall be treated as deleted (i.e. the contents of this paragraph are no longer delimited by this paragraph mark, and are combined with the following paragraph - but those contents shall not automatically be marked as deleted) as part of a tracked revision.  
+  
+ [*Example*: Consider a document consisting of two paragraphs (with each paragraph delimited by a pilcrow ¶), as follows:  
+  
+ 16c5ebec-5836-4d8f-a0d1-c26d5fd28004  
+  
+ If the physical character delimiting the end of the first paragraph is deleted and this change is tracked as a revision, resulting in the following:  
+  
+ fa32b557-b398-44c3-91b0-03343073c70b  
+  
+ This revision is represented using the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:rPr>  
+      <w:del w:id="0" … />  
+    </w:rPr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>This is paragraph one.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t>This is paragraph two.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The del element on the run properties for the first paragraph mark specifies that this paragraph mark was deleted, and this deletion was tracked as a revision. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +125,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Deleted class.
-            </summary>
+        <summary>Initializes a new instance of the Deleted class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +148,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +170,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

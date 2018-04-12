@@ -1,4 +1,4 @@
-﻿<Type Name="GutterAtTop" FullName="DocumentFormat.OpenXml.Wordprocessing.GutterAtTop">
+<Type Name="GutterAtTop" FullName="DocumentFormat.OpenXml.Wordprocessing.GutterAtTop">
   <TypeSignature Language="C#" Value="public class GutterAtTop : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GutterAtTop extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.GutterAtTop" />
@@ -19,11 +19,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Position Gutter At Top of Page.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:gutterAtTop.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Position Gutter At Top of Page. When the object is serialized out as xml, its qualified name is w:gutterAtTop.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `gutterAtTop (Position Gutter At Top of Page)`  
+  
+ This element specifies that a given WordprocessingML document’s gutter shall be positioned at the top of the document’s pages when the document is displayed. A *gutter* is the white space formed by the inner margins of two pages facing one another; such as the white space between the text on pages of a book when the book is opened.  
+  
+ If this element is omitted, then the gutter shall not be positioned at the top of the page. If the mirrorMargins (§17.15.1.57), bookFoldPrinting (§17.15.1.11), bookFoldRevPrinting (§17.15.1.13), or printTwoOnOne (§17.15.1.64) elements are used within a given document, the gutterAtTop element shall not be used. Rather, the gutter shall be positioned automatically as necessary to enable the printing and page layout capabilities of these settings.  
+  
+ [*Example*: Consider a one page WordprocessingML document with a 1,440 twentieths of a point (one inch) top margin and gutter, and a 720 twentieths of a point (one half of an inch) header. Consider also, that the gutter must exist at the top of the document's pages. This requirement is specified using the following WordprocessingML in the section properties:  
+  
+```xml  
+<w:pgMar w:top="1440" … w:header="720" … w:gutter="1440" />  
+```  
+  
+ And the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:gutterAtTop w:val="true" />  
+```  
+  
+ The resulting document's pages would have the gutter positioned as follows:  
+  
+ c122bb20-262b-4458-9809-0927c5d1139c  
+  
+ The gutterAtTop element's val attribute is equal to *true*, specifying that the gutter must appear at the top of each page. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the GutterAtTop class.
-            </summary>
+        <summary>Initializes a new instance of the GutterAtTop class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

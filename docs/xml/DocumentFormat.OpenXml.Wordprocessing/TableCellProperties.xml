@@ -1,4 +1,4 @@
-﻿<Type Name="TableCellProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableCellProperties">
+<Type Name="TableCellProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.TableCellProperties">
   <TypeSignature Language="C#" Value="public class TableCellProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableCellProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableCellProperties" />
@@ -70,13 +70,316 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Table Cell Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tcPr.</para>
-    </summary>
+    <summary>Table Cell Properties. When the object is serialized out as xml, its qualified name is w:tcPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ConditionalFormatStyle &lt;w:cnfStyle&gt;</description></item><item><description>TableCellWidth &lt;w:tcW&gt;</description></item><item><description>GridSpan &lt;w:gridSpan&gt;</description></item><item><description>HorizontalMerge &lt;w:hMerge&gt;</description></item><item><description>VerticalMerge &lt;w:vMerge&gt;</description></item><item><description>TableCellBorders &lt;w:tcBorders&gt;</description></item><item><description>Shading &lt;w:shd&gt;</description></item><item><description>NoWrap &lt;w:noWrap&gt;</description></item><item><description>TableCellMargin &lt;w:tcMar&gt;</description></item><item><description>TextDirection &lt;w:textDirection&gt;</description></item><item><description>TableCellFitText &lt;w:tcFitText&gt;</description></item><item><description>TableCellVerticalAlignment &lt;w:vAlign&gt;</description></item><item><description>HideMark &lt;w:hideMark&gt;</description></item><item><description>CellInsertion &lt;w:cellIns&gt;</description></item><item><description>CellDeletion &lt;w:cellDel&gt;</description></item><item><description>CellMerge &lt;w:cellMerge&gt;</description></item><item><description>TableCellPropertiesChange &lt;w:tcPrChange&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tcPr (Table Cell Properties)**  
+  
+ This element specifies the set of properties which shall be applied a specific table cell. Each unique property is specified by a child element of this element. In any instance where there is a conflict between the table level, table-level exception, or row level properties with a corresponding table cell property, these properties shall overwrite the table or row wide properties.  
+  
+ [*Example*: Consider a table where the cell width overwrites the table width represented in the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblCellMar>  
+      <w:left w:w="0" w:type="dxa"/>  
+    </w:tblCellMar>  
+  </w:tblPr>  
+  …  <w:tr>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:tcMar>  
+          <w:left w:w="720" w:type="dxa"/>  
+        </w:tcMar>  
+      </w:tcPr>  
+      …    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ This table cell has a left cell margin of *720* twentieths of a point (one half inch) as specified in the tcMar element, which overwrites the table level setting of *0* left table cell margin. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tc (§17.4.66)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cellDel (Table Cell Deletion)|§17.13.5.1|  
+|cellIns (Table Cell Insertion)|§17.13.5.2|  
+|cellMerge (Vertically Merged/Split Table Cells)|§17.13.5.3|  
+|cnfStyle (Table Cell Conditional Formatting)|§17.4.8|  
+|gridSpan (Grid Columns Spanned by Current Table Cell)|§17.4.17|  
+|headers (Header Cells Associated With Table Cell)|§17.4.19|  
+|hideMark (Ignore End Of Cell Marker In Row Height Calculation)|§17.4.21|  
+|hMerge (Horizontally Merged Cell)|§17.4.22|  
+|noWrap (Don't Wrap Cell Content)|§17.4.30|  
+|shd (Table Cell Shading)|§17.4.33|  
+|tcBorders (Table Cell Borders)|§17.4.67|  
+|tcFitText (Fit Text Within Cell)|§17.4.68|  
+|tcMar (Single Table Cell Margins)|§17.4.69|  
+|tcPrChange (Revision Information for Table Cell Properties)|§17.13.5.36|  
+|tcW (Preferred Table Cell Width)|§17.4.72|  
+|textDirection (Table Cell Text Flow Direction)|§17.4.73|  
+|vAlign (Table Cell Vertical Alignment)|§17.4.84|  
+|vMerge (Vertically Merged Cell)|§17.4.85|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TcPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tcPr (Table Style Conditional Formatting Table Cell Properties)**  
+  
+ This element specifies the set of table cell properties which shall be applied to all regions within a table which match the conditional formatting type specified on the parent tblStylePr element. These properties are applied in the order specified via the style hierarchy.  
+  
+ [*Example*: Consider a table style which contains conditional formatting for its *firstRow*, defined as follows:  
+  
+```xml  
+<w:style w:type="table" w:styleId="exampleTableStyle">  
+  …  <w:tblStylePr w:type="firstRow">  
+    <w:tcPr>  
+      <w:tcBorders>  
+        <w:top w:val="nil" />  
+        <w:left w:val="nil" />  
+        <w:bottom w:val="nil" />  
+        <w:right w:val="nil" />  
+        <w:insideH w:val="nil" />  
+        <w:insideV w:val="nil" />  
+      </w:tcBorders>  
+    </w:tcPr>  
+    …  </w:tblStylePr>  
+</w:style>  
+```  
+  
+ The tcPr element specified within the tblStylePr element specifies the set of table cell properties which must be applied to all parts of the table which meet the criteria specified by the type value of *firstRow* - all of the header rows of the table. In this example, the single table cell property applied is a set of table cell borders via the tcBorders element (§17.4.67). In this case, these cell borders simply reset any previous cell borders to *nil*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblStylePr (§17.7.6.6)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cellDel (Table Cell Deletion)|§17.13.5.1|  
+|cellIns (Table Cell Insertion)|§17.13.5.2|  
+|cellMerge (Vertically Merged/Split Table Cells)|§17.13.5.3|  
+|cnfStyle (Table Cell Conditional Formatting)|§17.4.8|  
+|gridSpan (Grid Columns Spanned by Current Table Cell)|§17.4.17|  
+|headers (Header Cells Associated With Table Cell)|§17.4.19|  
+|hideMark (Ignore End Of Cell Marker In Row Height Calculation)|§17.4.21|  
+|hMerge (Horizontally Merged Cell)|§17.4.22|  
+|noWrap (Don't Wrap Cell Content)|§17.4.30|  
+|shd (Table Cell Shading)|§17.4.33|  
+|tcBorders (Table Cell Borders)|§17.4.67|  
+|tcFitText (Fit Text Within Cell)|§17.4.68|  
+|tcMar (Single Table Cell Margins)|§17.4.69|  
+|tcPrChange (Revision Information for Table Cell Properties)|§17.13.5.36|  
+|tcW (Preferred Table Cell Width)|§17.4.72|  
+|textDirection (Table Cell Text Flow Direction)|§17.4.73|  
+|vAlign (Table Cell Vertical Alignment)|§17.4.84|  
+|vMerge (Vertically Merged Cell)|§17.4.85|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TcPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tcPr (Style Table Cell Properties)**  
+  
+ This element specifies the set of table cell properties which shall be applied to the table. These properties are not conditional and shall always be applied (although they are applied before all conditional formatting properties).  
+  
+ [*Example*: Consider a table style defined as follows:  
+  
+```xml  
+<w:style w:type="table" w:styleId="exampleTableStyle">  
+  <w:tcPr>  
+    <w:tcFitText/>  
+  </w:tcPr>  
+</w:style>  
+```  
+  
+ The tcPr element specified within the style element specifies the set of table cell properties which must be applied to all parts of the table. In this example, the single table cell property applied is the fit text setting via the tcFitText element (§17.4.68). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cellDel (Table Cell Deletion)|§17.13.5.1|  
+|cellIns (Table Cell Insertion)|§17.13.5.2|  
+|cellMerge (Vertically Merged/Split Table Cells)|§17.13.5.3|  
+|cnfStyle (Table Cell Conditional Formatting)|§17.4.8|  
+|gridSpan (Grid Columns Spanned by Current Table Cell)|§17.4.17|  
+|headers (Header Cells Associated With Table Cell)|§17.4.19|  
+|hideMark (Ignore End Of Cell Marker In Row Height Calculation)|§17.4.21|  
+|hMerge (Horizontally Merged Cell)|§17.4.22|  
+|noWrap (Don't Wrap Cell Content)|§17.4.30|  
+|shd (Table Cell Shading)|§17.4.33|  
+|tcBorders (Table Cell Borders)|§17.4.67|  
+|tcFitText (Fit Text Within Cell)|§17.4.68|  
+|tcMar (Single Table Cell Margins)|§17.4.69|  
+|tcPrChange (Revision Information for Table Cell Properties)|§17.13.5.36|  
+|tcW (Preferred Table Cell Width)|§17.4.72|  
+|textDirection (Table Cell Text Flow Direction)|§17.4.73|  
+|vAlign (Table Cell Vertical Alignment)|§17.4.84|  
+|vMerge (Vertically Merged Cell)|§17.4.85|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TcPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following example creates a table into a word-processing document, and uses the `TableCellProperties` class to specify the width of the table cell.  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Wordprocessing;  
+  
+namespace TableCellPropertiesEx  
+{  
+    class Program  
+    {  
+         // Insert a table into an existing word processing document.  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\users\public\documents\TableCellPropertiesEx.docx";  
+            using (WordprocessingDocument document  
+                = WordprocessingDocument.Open(fileName, true))  
+            {  
+                // Create an empty table.  
+                Table table = new Table();  
+  
+                // Create a TableProperties object and specify its border information.  
+                TableProperties tblProp = new TableProperties(  
+                    new TableBorders(new TopBorder()  
+                        { Val = new EnumValue<BorderValues>(BorderValues.Sawtooth), Size = 24 },  
+                        new BottomBorder()  
+                        { Val = new EnumValue<BorderValues>(BorderValues.Sawtooth), Size = 24 },  
+                        new LeftBorder()  
+                        { Val = new EnumValue<BorderValues>(BorderValues.Sawtooth), Size = 24 },  
+                        new RightBorder()  
+                        { Val = new EnumValue<BorderValues>(BorderValues.Sawtooth), Size = 24 },  
+                        new InsideHorizontalBorder()  
+                        { Val = new EnumValue<BorderValues>(BorderValues.Sawtooth), Size = 24 },  
+                        new InsideVerticalBorder()  
+                        { Val = new EnumValue<BorderValues>(BorderValues.Sawtooth), Size = 24 } )  
+                );  
+  
+                // Append the TableProperties object to the empty table.  
+                table.AppendChild<TableProperties>(tblProp);  
+  
+                // Create a row and a cell.  
+                TableRow tableRow = new TableRow();  
+                TableCell tableCell1 = new TableCell();  
+  
+                // Specify the width property of the table cell.  
+                tableCell1.Append(new TableCellProperties(  
+                    new TableCellWidth() { Type = TableWidthUnitValues.Dxa, Width = "2400" }));  
+  
+                // Write some text in the cell.  
+                tableCell1.Append(new Paragraph(new Run(new Text("Some cell text."))));  
+  
+                // Append the cell to the row.  
+                tableRow.Append(tableCell1);  
+  
+                // Create a second table cell by copying the OuterXml value of the first table cell.  
+                TableCell tableCell2 = new TableCell(tableCell1.OuterXml);  
+  
+                // Append the cell to the row.  
+                tableRow.Append(tableCell2);  
+  
+                // Append the table row to the table.  
+                table.Append(tableRow);  
+  
+                // Append the table to the document.  
+                document.MainDocumentPart.Document.Body.Append(table);  
+            }  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Wordprocessing  
+  
+Module Module1  
+    ' Insert a table into an existing word processing document.  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "C:\users\public\documents\TableCellPropertiesEx.docx"  
+        Using document As WordprocessingDocument = WordprocessingDocument.Open(fileName, True)  
+            ' Create an empty table.  
+            Dim table As New Table()  
+  
+            ' Create a TableProperties object and specify its border information.  
+            Dim tblProp As New TableProperties(New TableBorders(New TopBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Sawtooth), _  
+             .Size = 24 _  
+            }, New BottomBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Sawtooth), _  
+             .Size = 24 _  
+            }, New LeftBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Sawtooth), _  
+             .Size = 24 _  
+            }, New RightBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Sawtooth), _  
+             .Size = 24 _  
+            }, New InsideHorizontalBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Sawtooth), _  
+             .Size = 24 _  
+            }, New InsideVerticalBorder() With { _  
+             .Val = New EnumValue(Of BorderValues)(BorderValues.Sawtooth), _  
+             .Size = 24 _  
+            }))  
+  
+            ' Append the TableProperties object to the empty table.  
+            table.AppendChild(Of TableProperties)(tblProp)  
+  
+            ' Create a row and a cell.  
+            Dim tableRow As New TableRow()  
+            Dim tableCell1 As New TableCell()  
+  
+            ' Specify the width property of the table cell.  
+            tableCell1.Append(New TableCellProperties(New TableCellWidth() With { _  
+             .Type = TableWidthUnitValues.Dxa, _  
+             .Width = "2400" _  
+            }))  
+  
+            ' Write some text in the cell.  
+            tableCell1.Append(New Paragraph(New Run(New Text("Some cell text."))))  
+  
+            ' Append the cell to the row.  
+            tableRow.Append(tableCell1)  
+  
+            ' Create a second table cell by copying the OuterXml value of the first table cell.  
+            Dim tableCell2 As New TableCell(tableCell1.OuterXml)  
+  
+            ' Append the cell to the row.  
+            tableRow.Append(tableCell2)  
+  
+            ' Append the table row to the table.  
+            table.Append(tableRow)  
+  
+            ' Append the table to the document.  
+            document.MainDocumentPart.Document.Body.Append(table)  
+        End Using  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -92,9 +395,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableCellProperties class.
-            </summary>
+        <summary>Initializes a new instance of the TableCellProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -121,9 +422,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableCellProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TableCellProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,9 +443,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableCellProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TableCellProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -167,9 +464,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TableCellProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TableCellProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -192,11 +487,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -216,10 +509,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ConditionalFormatStyle.</para>
-          <para> Represents the following element tag in the schema: w:cnfStyle </para>
-        </summary>
+        <summary>ConditionalFormatStyle. Represents the following element tag in the schema: w:cnfStyle</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -243,10 +533,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.GridSpan</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> GridSpan.</para>
-          <para> Represents the following element tag in the schema: w:gridSpan </para>
-        </summary>
+        <summary>GridSpan. Represents the following element tag in the schema: w:gridSpan</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -270,10 +557,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.HideMark</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> HideMark.</para>
-          <para> Represents the following element tag in the schema: w:hideMark </para>
-        </summary>
+        <summary>HideMark. Represents the following element tag in the schema: w:hideMark</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -297,10 +581,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.HorizontalMerge</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> HorizontalMerge.</para>
-          <para> Represents the following element tag in the schema: w:hMerge </para>
-        </summary>
+        <summary>HorizontalMerge. Represents the following element tag in the schema: w:hMerge</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -324,10 +605,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -347,10 +626,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NoWrap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> NoWrap.</para>
-          <para> Represents the following element tag in the schema: w:noWrap </para>
-        </summary>
+        <summary>NoWrap. Represents the following element tag in the schema: w:noWrap</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -374,10 +650,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Shading</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shading.</para>
-          <para> Represents the following element tag in the schema: w:shd </para>
-        </summary>
+        <summary>Shading. Represents the following element tag in the schema: w:shd</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -401,10 +674,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellBorders</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellBorders.</para>
-          <para> Represents the following element tag in the schema: w:tcBorders </para>
-        </summary>
+        <summary>TableCellBorders. Represents the following element tag in the schema: w:tcBorders</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -428,10 +698,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellFitText</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellFitText.</para>
-          <para> Represents the following element tag in the schema: w:tcFitText </para>
-        </summary>
+        <summary>TableCellFitText. Represents the following element tag in the schema: w:tcFitText</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -455,10 +722,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellMargin</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellMargin.</para>
-          <para> Represents the following element tag in the schema: w:tcMar </para>
-        </summary>
+        <summary>TableCellMargin. Represents the following element tag in the schema: w:tcMar</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -482,10 +746,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellVerticalAlignment.</para>
-          <para> Represents the following element tag in the schema: w:vAlign </para>
-        </summary>
+        <summary>TableCellVerticalAlignment. Represents the following element tag in the schema: w:vAlign</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -509,10 +770,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellWidth</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TableCellWidth.</para>
-          <para> Represents the following element tag in the schema: w:tcW </para>
-        </summary>
+        <summary>TableCellWidth. Represents the following element tag in the schema: w:tcW</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -536,10 +794,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TextDirection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextDirection.</para>
-          <para> Represents the following element tag in the schema: w:textDirection </para>
-        </summary>
+        <summary>TextDirection. Represents the following element tag in the schema: w:textDirection</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -563,10 +818,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.VerticalMerge</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> VerticalMerge.</para>
-          <para> Represents the following element tag in the schema: w:vMerge </para>
-        </summary>
+        <summary>VerticalMerge. Represents the following element tag in the schema: w:vMerge</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

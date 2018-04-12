@@ -1,4 +1,4 @@
-﻿<Type Name="DataField" FullName="DocumentFormat.OpenXml.Office2010.Excel.DataField">
+<Type Name="DataField" FullName="DocumentFormat.OpenXml.Office2010.Excel.DataField">
   <TypeSignature Language="C#" Value="public class DataField : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataField extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.DataField" />
@@ -22,12 +22,65 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the DataField Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is x14:dataField.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the DataField Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:dataField.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.17   dataField*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ A *dataField* element is a *CT_DataField* type element, as specified in section 2.6.25, that specifies extended information about a PivotTable, as specified in [ISO/IEC-29500-1] section 18.10, data field (1) item. See section 2.2.4.4 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="dataField" type="CT_DataField"/>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.25   CT_DataField*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* dataField  
+  
+ This complex type specifies extended information about a *PivotTable* ([ISO/IEC-29500-1] section 18.10) data field (1) item ([ISO/IEC-29500-1] section 18.10.1.22).  
+  
+ *Attributes:*  
+  
+ *pivotShowAs:* An ST_PivotShowAs attribute that specifies the data display format for this *PivotTable* ([ISO/IEC-29500-1] section 18.10) data field (1) item. If this attribute is specified, the *showDataAs* attribute of the ancestor *CT_Datafield* ([ISO/IEC-29500-4] section A.2) element MUST NOT be specified. If this attribute is equal to "percentOfParent", "percentOfRunningTotal", "rankAscending", or "rankDescending", the *baseField* attribute of the ancestor *CT_Datafield* ([ISO/IEC-29500-4] section A.2) element MUST be greater than or equal to 0.  
+  
+ *sourceField:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the zero-based index of the *CT_PivotField* ([ISO/IEC-29500-4] section A.2) element in the list of *CT_PivotField* ([ISO/IEC-29500-4] section A.2) elements specified by the *CT_PivotFields* ([ISO/IEC-29500-4] section A.2) element that this data item summarizes.  
+  
+ If an OLAP measure is summarized in a PivotTable ([ISO/IEC-29500-1] section 18.10) as a data field (1) item ([ISO/IEC-29500-1] section 18.10.1.22) more than one time, data field (1) items ([ISO/IEC-29500-1] section 18.10.1.22) that specify that OLAP measure after the first data field (1) item ([ISO/IEC-29500-1] section 18.10.1.22) that specifies that OLAP measure MUST have a descendant *CT_DataField* element with a *sourceField* specified.  
+  
+ If this attribute is specified, the *CT_PivotField* ([ISO/IEC-29500-4] section A.2) element specified by the *fld* attribute of the ancestor *CT_Datafield* ([ISO/IEC-29500-4] section A.2) element MUST have a descendant CT_PivotField element with an *ignore* attribute equal to "true".  
+  
+ If this attribute is specified, the *CT_CacheField* ([ISO/IEC-29500-4] section A.2) element with a zero-based index in the list of *CT_CacheField* ([ISO/IEC-29500-4] section A.2) elements specified by the *CT_CacheFields* ([ISO/IEC-29500-4] section A.2) element equal to the *fld* attribute of the ancestor *CT_Datafield* ([ISO/IEC-29500-4] section A.2) element that exists in the Pivot Table Cache Definition part ([ISO/IEC-29500-1] section 12.3.12) specified by the *cacheId* attribute of the *CT_PivotTableDefinition* ([ISO/IEC-29500-4] section A.2) element that is the ancestor of this element MUST have a descendant CT_CacheField element. The *CT_CacheHierarchy* ([ISO/IEC-29500-4] section A.2) element specified by the *hierarchy* attribute of that *CT_CacheField* ([ISO/IEC-29500-4] section A.2) element MUST have a descendent CT_CacheHierarchy element with an *ignore* attribute equal to "true". The *CT_PivotHierarchy* ([ISO/IEC-29500-4] section A.2) element with a zero-based index in the list of *CT_PivotHierarchy* ([ISO/IEC-29500-4] section A.2) elements specified by the *CT_PivotHierarchies* ([ISO/IEC-29500-4] section A.2) element in this part that is equal to the zero-based index of that *CT_CacheHierarchy* ([ISO/IEC-29500-4] section A.2) element in the list of *CT_CacheHierarchy* ([ISO/IEC-29500-4] section A.2) elements specified by the *CT_CacheHierarchies* ([ISO/IEC-29500-4] section A.2) element MUST have a descendant CT_PivotHierarchy element.  
+  
+ If this attribute is specified, the *fld* attribute of the ancestor *CT_Datafield* ([ISO/IEC-29500-4] section A.2) element SHOULD\<48> be ignored.  
+  
+ This attribute MUST NOT be specified for non-OLAP PivotTables ([ISO/IEC-29500-1] section 18.10).  
+  
+ *uniqueName:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies the unique name for duplicated OLAP measures. MUST be unique within this part. MUST be less than or equal to 65,535 characters in length.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_DataField">*  
+  
+ *\<xsd:attribute name="pivotShowAs" type="ST_PivotShowAs" use="optional"/>*  
+  
+ *\<xsd:attribute name="sourceField" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\<xsd:attribute name="uniqueName" type="x:ST_Xstring" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DataField class.
-            </summary>
+        <summary>Initializes a new instance of the DataField class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,11 +119,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +141,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -120,10 +167,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.PivotShowAsValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> pivotShowAs.</para>
-          <para>Represents the following attribute in the schema: pivotShowAs </para>
-        </summary>
+        <summary>pivotShowAs.Represents the following attribute in the schema: pivotShowAs</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -149,10 +193,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> sourceField.</para>
-          <para>Represents the following attribute in the schema: sourceField </para>
-        </summary>
+        <summary>sourceField.Represents the following attribute in the schema: sourceField</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -178,10 +219,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> uniqueName.</para>
-          <para>Represents the following attribute in the schema: uniqueName </para>
-        </summary>
+        <summary>uniqueName.Represents the following attribute in the schema: uniqueName</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

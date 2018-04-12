@@ -1,4 +1,4 @@
-﻿<Type Name="NumberingFormat" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingFormat">
+<Type Name="NumberingFormat" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingFormat">
   <TypeSignature Language="C#" Value="public class NumberingFormat : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberingFormat extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NumberingFormat" />
@@ -19,11 +19,122 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Footnote Numbering Format.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:numFmt.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Footnote Numbering Format. When the object is serialized out as xml, its qualified name is w:numFmt.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `numFmt (Numbering Format)`  
+  
+ This element specifies the number format which shall be used to display all numbering at this level in the numbering definition. This information is used to replace the level text string *%x*, where x is a particular one-based level index, with the appropriate value. This value shall be calculated by counting the number of paragraphs at this level since the last restart using the numbering system defined in the val attribute.  
+  
+ When a document has a custom number format specified by the format attribute, it shall use the referenced number format. If the referenced number format cannot be resolved as a number format the consumer shall use the number format specified by the value of the val attribute. If the corresponding value of the val attribute is *custom*, the result is implementation-defined.  
+  
+ If this element is omitted, the level shall be assumed to be of level type *decimal*.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for a numbering level in a numbering definition:  
+  
+```xml  
+<w:lvl w:ilvl="2">  
+  <w:start w:val="1" />  
+  <w:numFmt w:val="lowerRoman" />  
+  <w:lvlRestart w:val="0" />  
+  <w:lvlText w:val="%3)" />  
+  <w:lvlJc w:val="left" />  
+  <w:pPr>  
+    <w:ind w:left="1080" w:hanging="360" />  
+  </w:pPr>  
+  <w:rPr>  
+    <w:rFonts w:hint="default" />  
+  </w:rPr>  
+</w:lvl>  
+```  
+  
+ A numFmt value of *lowerLetter* indicates that a consumer must use lowercase letters for all numbering of this level: a,b,c… *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lvl (§17.9.6); lvl (§17.9.7)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|format (Custom Defined Number Format)|Specifies a custom number format using the syntax defined by the XSLT 1.0 format attribute. This format shall be used for all numbering in the parent object.<br /><br /> [*Example*: A value of *&\#x30A2;* indicates that a consumer must use Katakana numbering. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_String* simple type (§22.9.2.13).|  
+|val (Numbering Format Type)|Specifies the number format that shall be used for all numbering in the parent object.<br /><br /> [*Example*: A value of *lowerLetter* indicates that a consumer must use lowercase letters for each number in this grouping: a,b,c… *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_NumberFormat* simple type (§17.18.59).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_NumFmt) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `numFmt (Endnote Numbering Format)`  
+  
+ This element specifies the numbering format which shall be used to determine the footnote or endnote reference mark value for all automatically numbered footnote and endnote reference marks (those without the suppressRef attribute set).  
+  
+ If this element is omitted, then the numbering format shall be assume to be *decimal*.  
+  
+ [*Example*: Consider the following footnote reference with the number format set to upper case letters:  
+  
+ c9c58ccd-2ea5-4b4b-af92-ca83a0d136e0  
+  
+ This footnote numbering format is specified by the following WordprocessingML:  
+  
+```xml  
+<w:footnotePr>  
+  <w:numFmt w:val="upperLetter" />  
+</w:footnotePr>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|endnotePr (§17.11.4); endnotePr (§17.11.5)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|format (Custom Defined Number Format)|Specifies a custom number format using the syntax defined by the XSLT 1.0 format attribute. This format shall be used for all numbering in the parent object.<br /><br /> [*Example*: A value of *&\#x30A2;* indicates that a consumer must use Katakana numbering. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_String* simple type (§22.9.2.13).|  
+|val (Numbering Format Type)|Specifies the number format that shall be used for all numbering in the parent object.<br /><br /> [*Example*: A value of *lowerLetter* indicates that a consumer must use lowercase letters for each number in this grouping: a,b,c… *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_NumberFormat* simple type (§17.18.59).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_NumFmt) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `numFmt (Footnote Numbering Format)`  
+  
+ This element specifies the numbering format which shall be used to determine the footnote or endnote reference mark value for all automatically numbered footnote and endnote reference marks (those without the suppressRef attribute set).  
+  
+ If this element is omitted, then the numbering format shall be assume to be *decimal*.  
+  
+ [*Example*: Consider the following footnote reference with the number format set to upper case letters:  
+  
+ c9c58ccd-2ea5-4b4b-af92-ca83a0d136e0  
+  
+ This footnote numbering format is specified by the following WordprocessingML:  
+  
+```xml  
+<w:footnotePr>  
+  <w:numFmt w:val="upperLetter" />  
+</w:footnotePr>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|footnotePr (§17.11.12); footnotePr (§17.11.11)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|format (Custom Defined Number Format)|Specifies a custom number format using the syntax defined by the XSLT 1.0 format attribute. This format shall be used for all numbering in the parent object.<br /><br /> [*Example*: A value of *&\#x30A2;* indicates that a consumer must use Katakana numbering. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_String* simple type (§22.9.2.13).|  
+|val (Numbering Format Type)|Specifies the number format that shall be used for all numbering in the parent object.<br /><br /> [*Example*: A value of *lowerLetter* indicates that a consumer must use lowercase letters for each number in this grouping: a,b,c… *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_NumberFormat* simple type (§17.18.59).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_NumFmt) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +150,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NumberingFormat class.
-            </summary>
+        <summary>Initializes a new instance of the NumberingFormat class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +173,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,10 +203,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> format, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:format </para>
-        </summary>
+        <summary>format, this property is only available in Office2010.Represents the following attribute in the schema: w:format</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -122,10 +226,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,12 +252,22 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Numbering Format Type.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Numbering Format Type.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number format that shall be used for all numbering in the parent object.  
+  
+ A value of `lowerLetter` indicates that a consumer shall use lowercase letters for each number in this grouping: `a`, `b`, `c`….  
+  
+ The possible values for this attribute are defined by the `ST_NumberFormat` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

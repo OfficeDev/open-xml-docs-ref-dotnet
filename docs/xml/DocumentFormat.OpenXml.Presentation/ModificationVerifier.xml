@@ -1,4 +1,4 @@
-﻿<Type Name="ModificationVerifier" FullName="DocumentFormat.OpenXml.Presentation.ModificationVerifier">
+<Type Name="ModificationVerifier" FullName="DocumentFormat.OpenXml.Presentation.ModificationVerifier">
   <TypeSignature Language="C#" Value="public class ModificationVerifier : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ModificationVerifier extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.ModificationVerifier" />
@@ -19,11 +19,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ModificationVerifier Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:modifyVerifier.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the ModificationVerifier Class. When the object is serialized out as xml, its qualified name is p:modifyVerifier.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **modifyVerifier (Modification Verifier)**  
+  
+ This element specifies the write protection settings which have been applied to a PresentationML document. *Write protection* refers to a mode in which the document's contents should not be modified, and the document should not be resaved using the same file name.  
+  
+ When present, the application shall require a password to enable modifications to the document.  If the supplied password does not match the hash value in this attribute, then write protection shall be enabled. If this element is omitted, then no write protection shall be applied to the current document. Since this protection does not encrypt the document, malicious applications might circumvent its use.  
+  
+ The password supplied to the algorithm is to be a UTF-16LE encoded string; strings longer than 255 characters are truncated to 255 characters. If there is a leading BOM character (U+FEFF) in the encoded password it is removed before hash calculation. The attributes of this element specify the algorithm to be used to verify the password provided by the user.  
+  
+ [*Example*: Consider a PresentationML document that can only be opened in a write protected state unless a password is provided, in which case the file would be opened in an editable state. This requirement would be specified using the following PresentationML:  
+  
+```xml  
+<p:modifyVerifier p:algorithmName="SHA-512" … p:hashValue="9oN7nWkCAyEZib1RomSJTjmPpCY=" … />   
+```  
+  
+ …In order for the hosting application to enable edits to the document, the hosting application would have to be provided with a password that the hosting application would then hash using the algorithm specified by the algorithm attributes and compare to the value of the hashValue attribute (*9oN7nWkCAyEZib1RomSJTjmPpCY=*).  If the two values matched, the file would be opened in an editable state. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|presentation (§19.2.1.26)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_ModifyVerifier) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ModificationVerifier class.
-            </summary>
+        <summary>Initializes a new instance of the ModificationVerifier class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,10 +95,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> algorithmName, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: algorithmName </para>
-        </summary>
+        <summary>algorithmName, this property is only available in Office2010.Represents the following attribute in the schema: algorithmName</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -96,11 +119,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -125,11 +146,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.CryptAlgorithmClassValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Algorithm Class.</para>
-          <para>Represents the following attribute in the schema: cryptAlgorithmClass </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cryptographic Algorithm Class.Represents the following attribute in the schema: cryptAlgorithmClass</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -154,11 +172,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Hashing Algorithm.</para>
-          <para>Represents the following attribute in the schema: cryptAlgorithmSid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cryptographic Hashing Algorithm.Represents the following attribute in the schema: cryptAlgorithmSid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -183,11 +198,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.CryptAlgorithmValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Algorithm Type.</para>
-          <para>Represents the following attribute in the schema: cryptAlgorithmType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cryptographic Algorithm Type.Represents the following attribute in the schema: cryptAlgorithmType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -212,11 +224,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Provider.</para>
-          <para>Represents the following attribute in the schema: cryptProvider </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cryptographic Provider.Represents the following attribute in the schema: cryptProvider</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -241,11 +250,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.CryptProviderValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Provider Type.</para>
-          <para>Represents the following attribute in the schema: cryptProviderType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cryptographic Provider Type.Represents the following attribute in the schema: cryptProviderType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,11 +276,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Provider Type Extensibility.</para>
-          <para>Represents the following attribute in the schema: cryptProviderTypeExt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cryptographic Provider Type Extensibility.Represents the following attribute in the schema: cryptProviderTypeExt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -299,11 +302,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Provider Type Extensibility Source.</para>
-          <para>Represents the following attribute in the schema: cryptProviderTypeExtSource </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Provider Type Extensibility Source.Represents the following attribute in the schema: cryptProviderTypeExtSource</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -328,11 +328,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Algorithm Extensibility.</para>
-          <para>Represents the following attribute in the schema: algIdExt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cryptographic Algorithm Extensibility.Represents the following attribute in the schema: algIdExt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -357,11 +354,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Algorithm Extensibility Source.</para>
-          <para>Represents the following attribute in the schema: algIdExtSource </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Algorithm Extensibility Source.Represents the following attribute in the schema: algIdExtSource</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -386,11 +380,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Password Hash.</para>
-          <para>Represents the following attribute in the schema: hashData </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Password Hash.Represents the following attribute in the schema: hashData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -418,10 +409,7 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> hashValue, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: hashValue </para>
-        </summary>
+        <summary>hashValue, this property is only available in Office2010.Represents the following attribute in the schema: hashValue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -442,10 +430,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -470,11 +456,8 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Salt for Password Verifier.</para>
-          <para>Represents the following attribute in the schema: saltData </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Salt for Password Verifier.Represents the following attribute in the schema: saltData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -502,10 +485,7 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> saltValue, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: saltValue </para>
-        </summary>
+        <summary>saltValue, this property is only available in Office2010.Represents the following attribute in the schema: saltValue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -531,11 +511,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Iterations to Run Hashing Algorithm.</para>
-          <para>Represents the following attribute in the schema: spinCount </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Iterations to Run Hashing Algorithm.Represents the following attribute in the schema: spinCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -563,10 +540,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> spinValue, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: spinValue </para>
-        </summary>
+        <summary>spinValue, this property is only available in Office2010.Represents the following attribute in the schema: spinValue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

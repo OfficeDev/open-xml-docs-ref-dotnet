@@ -1,4 +1,4 @@
-﻿<Type Name="CategoryFilterException" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException">
+<Type Name="CategoryFilterException" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException">
   <TypeSignature Language="C#" Value="public class CategoryFilterException : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CategoryFilterException extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException" />
@@ -43,14 +43,69 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the CategoryFilterException Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is c15:categoryFilterException.</para>
-    </summary>
+    <summary>Defines the CategoryFilterException Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is c15:categoryFilterException.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>SequenceOfReferences &lt;c15:sqref&gt;</description></item><item><description>ShapeProperties &lt;c15:spPr&gt;</description></item><item><description>Explosion &lt;c15:explosion&gt;</description></item><item><description>InvertIfNegativeBoolean &lt;c15:invertIfNegative&gt;</description></item><item><description>Bubble3D &lt;c15:bubble3D&gt;</description></item><item><description>Marker &lt;c15:marker&gt;</description></item><item><description>DataLabel &lt;c15:dLbl&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.5.100   CT_CategoryFilterException*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chart  
+  
+ *Referenced by:* CT_CategoryFilterExceptions  
+  
+ *CT_CategoryFilterException* is a complex type that contains information about special formatting properties associated with a single data point in a chart series ([ISO/IEC-29500-1] section 21.2).\<161> This complex type is used to save special data point properties of points that are filtered out of the chart series ([ISO/IEC-29500-1] section 21.2). An entry of this type MUST contain exactly one *sqref* element followed by one or more child elements.  
+  
+ *Child Elements:*  
+  
+ *sqref:* A *string* element ([XMLSCHEMA2] section 3.2.1) that specifies the cell reference of the data corresponding to this data point in the chart series ([ISO/IEC-29500-1] section 21.2). This element is required. This reference MUST follow the ABNF grammar rules defined in the Formulas section ([MS-XLSX] section 2.2.2) with the following restrictions:  
+  
+ *MUST follow the single-sheet-reference rule.*  
+  
+ *MUST NOT use the A1-area, A1-relative-column and A1-relative-row rules. MUST use ONLY A1-cell, A1-absolute-column and A1-absolute-row (since a data point in a series can correspond to only one cell, it should not use area references).*  
+  
+ An application can adjust this cell reference when the worksheet layout changes, even when the containing *ext* element ([ISO/IEC-29500-1] section 18.2.7) is not recognized by the application.  
+  
+ *spPr:* A CT_ShapeProperties element ([ISO/IEC-29500-1] section A.4.1) that specifies the formatting (like fill or line properties) to be shown on this data point.  
+  
+ *explosion:* A CT_UnsignedInt element ([ISO/IEC-29500-1] section A.5.1) that specifies the amount this data point shall be moved from the center of the pie in a pie chart series.  
+  
+ *invertIfNegative:* A *CT_Boolean* element (section 2.5.80) that specifies if the invert color should be shown when this data point has a negative value.  
+  
+ *bubble3D:* A *CT_Boolean* element that specifies if this data point has a 3D bubble.  
+  
+ *marker:* A CT_Marker element ([ISO/IEC-29500-1] section A.5.1) that specifies the properties of the line marker associated with this data point.  
+  
+ *dLbl:* A CT_DLbl element ([ISO/IEC-29500-1] section A.5.1) that specifies the properties of the *Datalabel* (section 2.2.1.3) associated with this data point.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_CategoryFilterException">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="sqref" type="xsd:string" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="spPr" type="a:CT_ShapeProperties" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="explosion" type="c:CT_UnsignedInt" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="invertIfNegative" type="c:CT_Boolean" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="bubble3D" type="c:CT_Boolean" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="marker" type="c:CT_Marker" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="dLbl" type="c:CT_DLbl" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.13 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -66,9 +121,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CategoryFilterException class.
-            </summary>
+        <summary>Initializes a new instance of the CategoryFilterException class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,9 +148,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CategoryFilterException class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the CategoryFilterException class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -118,9 +169,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the CategoryFilterException class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the CategoryFilterException class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,9 +190,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the CategoryFilterException class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the CategoryFilterException class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -163,10 +210,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bubble3D.</para>
-          <para> Represents the following element tag in the schema: c15:bubble3D </para>
-        </summary>
+        <summary>Bubble3D. Represents the following element tag in the schema: c15:bubble3D</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -193,11 +237,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -217,10 +259,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> DataLabel.</para>
-          <para> Represents the following element tag in the schema: c15:dLbl </para>
-        </summary>
+        <summary>DataLabel. Represents the following element tag in the schema: c15:dLbl</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -244,10 +283,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Explosion.</para>
-          <para> Represents the following element tag in the schema: c15:explosion </para>
-        </summary>
+        <summary>Explosion. Represents the following element tag in the schema: c15:explosion</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -271,10 +307,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> InvertIfNegativeBoolean.</para>
-          <para> Represents the following element tag in the schema: c15:invertIfNegative </para>
-        </summary>
+        <summary>InvertIfNegativeBoolean. Represents the following element tag in the schema: c15:invertIfNegative</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -298,9 +331,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -321,10 +352,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Marker.</para>
-          <para> Represents the following element tag in the schema: c15:marker </para>
-        </summary>
+        <summary>Marker. Represents the following element tag in the schema: c15:marker</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -348,10 +376,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SequenceOfReferences.</para>
-          <para> Represents the following element tag in the schema: c15:sqref </para>
-        </summary>
+        <summary>SequenceOfReferences. Represents the following element tag in the schema: c15:sqref</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -375,10 +400,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ShapeProperties.</para>
-          <para> Represents the following element tag in the schema: c15:spPr </para>
-        </summary>
+        <summary>ShapeProperties. Represents the following element tag in the schema: c15:spPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

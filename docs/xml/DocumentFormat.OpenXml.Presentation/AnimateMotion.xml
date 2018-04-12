@@ -1,4 +1,4 @@
-﻿<Type Name="AnimateMotion" FullName="DocumentFormat.OpenXml.Presentation.AnimateMotion">
+<Type Name="AnimateMotion" FullName="DocumentFormat.OpenXml.Presentation.AnimateMotion">
   <TypeSignature Language="C#" Value="public class AnimateMotion : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnimateMotion extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.AnimateMotion" />
@@ -34,13 +34,62 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Animate Motion.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:animMotion.</para>
-    </summary>
+    <summary>Animate Motion. When the object is serialized out as xml, its qualified name is p:animMotion.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CommonBehavior &lt;p:cBhvr&gt;</description></item><item><description>ByPosition &lt;p:by&gt;</description></item><item><description>FromPosition &lt;p:from&gt;</description></item><item><description>ToPosition &lt;p:to&gt;</description></item><item><description>RotationCenter &lt;p:rCtr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **animMotion (Animate Motion)**  
+  
+ Animate motion provides an abstracted way to move positioned elements. It provides the ability to specify from/to/by motion as well as to use more detailed path descriptions for motion over polylines or bezier curves.  
+  
+ [*Example*:  Consider animating a shape from its original position to the right.. The \<animMotion> element should be used as follows:  
+  
+```xml  
+<p:animMotion origin="layout" path="M 0  0.25 0 E" pathEditMode="relative">  
+  <p:cBhvr>  
+    <p:cTn id="1" dur="2000" fill="hold"/>  
+    <p:tgtEl>  
+      <p:spTgt spid="1"/>  
+    </p:tgtEl>  
+    <p:attrNameLst>  
+      <p:attrName>ppt_x</p:attrName>  
+      <p:attrName>ppt_y</p:attrName>  
+    </p:attrNameLst>  
+  </p:cBhvr>  
+</p:animMotion>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|childTnLst (§19.5.25); subTnLst (§19.5.78); tnLst (§19.5.87)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|by (By)|§19.5.21|  
+|cBhvr (Common Behavior)|§19.5.22|  
+|from (From)|§19.5.44|  
+|rCtr (Rotation Center)|§19.5.62|  
+|to (To)|§19.5.88|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|origin (Origin)|Specifies what the origin of the motion path is relative to such as the layout of the slide, or the parent.<br /><br /> The possible values for this attribute are defined by the *ST_TLAnimateMotionBehaviorOrigin* simple type (§19.7.25).|  
+|path (Path)|Specifies the path primitive followed by coordinates for the animation motion. The allowed values that are understood within a path are as follows:<br /><br /> M = move to, L = line to, C = curve to, Z=close loop, E=end<br /><br /> UPPERCASE = absolute coords, lowercase = relative coords<br /><br /> Thus total allowed set = {M,L,C,Z,E,m,l,c,z,e)<br /><br /> [*Example*: The following string is a sample path.<br /><br /> path: “M 0 0 L 1 1 c 1 2 3 4 4 4 Z”<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|pathEditMode (Path Edit Mode)|This attribute specifies how the motion path moves when the target element is moved.<br /><br /> The possible values for this attribute are defined by the *ST_TLAnimateMotionPathEditMode* simple type (§19.7.26).|  
+|ptsTypes (Points Types)|This attribute describes the point type of the points in the path attribute. The allowed values that are understood for the ptsTypes attribute are as follows:<br /><br /> A = Auto, F = Corner, T = Straight, S = Smooth<br /><br /> UPPERCASE = Straight Line follows point, lowercase = curve follows point.<br /><br /> Thus, the total allowed set = {A,F,T,S,a,f,t,s}<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|rAng (Relative Angle)|The attribute describes the relative angle of the motion path.<br /><br /> The possible values for this attribute are defined by the *ST_Angle* simple type (§20.1.10.3).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLAnimateMotionBehavior) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -56,9 +105,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AnimateMotion class.
-            </summary>
+        <summary>Initializes a new instance of the AnimateMotion class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,9 +132,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AnimateMotion class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the AnimateMotion class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,9 +153,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AnimateMotion class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the AnimateMotion class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -131,9 +174,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the AnimateMotion class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the AnimateMotion class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,10 +199,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> bounceEnd.</para>
-          <para>Represents the following attribute in the schema: p14:bounceEnd </para>
-        </summary>
+        <summary>bounceEnd.Represents the following attribute in the schema: p14:bounceEnd</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:p14=http://schemas.microsoft.com/office/powerpoint/2010/main
@@ -184,11 +222,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ByPosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ByPosition.</para>
-          <para> Represents the following element tag in the schema: p:by </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ByPosition. Represents the following element tag in the schema: p:by</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ByPosition" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -214,11 +249,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -238,11 +271,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonBehavior</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CommonBehavior.</para>
-          <para> Represents the following element tag in the schema: p:cBhvr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CommonBehavior. Represents the following element tag in the schema: p:cBhvr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CommonBehavior" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -265,11 +295,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.FromPosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FromPosition.</para>
-          <para> Represents the following element tag in the schema: p:from </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>FromPosition. Represents the following element tag in the schema: p:from</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.FromPosition" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -292,10 +319,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -320,11 +345,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.AnimateMotionBehaviorOriginValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> origin.</para>
-          <para>Represents the following attribute in the schema: origin </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>origin.Represents the following attribute in the schema: origin</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -349,11 +371,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> path.</para>
-          <para>Represents the following attribute in the schema: path </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>path.Represents the following attribute in the schema: path</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -378,11 +397,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Presentation.AnimateMotionPathEditModeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> pathEditMode.</para>
-          <para>Represents the following attribute in the schema: pathEditMode </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>pathEditMode.Represents the following attribute in the schema: pathEditMode</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -407,11 +423,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ptsTypes.</para>
-          <para>Represents the following attribute in the schema: ptsTypes </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ptsTypes.Represents the following attribute in the schema: ptsTypes</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -436,11 +449,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> rAng.</para>
-          <para>Represents the following attribute in the schema: rAng </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>rAng.Represents the following attribute in the schema: rAng</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -460,11 +470,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.RotationCenter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> RotationCenter.</para>
-          <para> Represents the following element tag in the schema: p:rCtr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>RotationCenter. Represents the following element tag in the schema: p:rCtr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.RotationCenter" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -487,11 +494,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ToPosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ToPosition.</para>
-          <para> Represents the following element tag in the schema: p:to </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ToPosition. Represents the following element tag in the schema: p:to</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ToPosition" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

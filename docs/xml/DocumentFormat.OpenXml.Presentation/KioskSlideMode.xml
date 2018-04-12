@@ -1,4 +1,4 @@
-﻿<Type Name="KioskSlideMode" FullName="DocumentFormat.OpenXml.Presentation.KioskSlideMode">
+<Type Name="KioskSlideMode" FullName="DocumentFormat.OpenXml.Presentation.KioskSlideMode">
   <TypeSignature Language="C#" Value="public class KioskSlideMode : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KioskSlideMode extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.KioskSlideMode" />
@@ -19,11 +19,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Kiosk Slide Show Mode.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:kiosk.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Kiosk Slide Show Mode. When the object is serialized out as xml, its qualified name is p:kiosk.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **kiosk (Kiosk Slide Show Mode)**  
+  
+ This element specifies that the presentation slide show should be viewed in a full-screen kiosk mode.  A presentation viewed in kiosk mode should have user input disabled and restarts after a specified interval.  
+  
+ [*Example*: Consider the following presentation that is set to be viewed in a looping kiosk mode.  
+  
+```xml  
+<p:presentationPr xmlns:a="" xmlns:r="" xmlns:p="">  
+  <p:showPr loop="1" showNarration="1">  
+    …  
+    <p:kiosk/>  
+    …  
+  </p:showPr>  
+</p:presentationPr>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|showPr (§19.2.1.30)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|restart (Restart Show)|Specifies the time length that the presentation should run until it is to be restarted. That is, the presentation should loop back to the first slide specified in the presentation or custom show.  This value is specified in 1/1000ths of a second and measured from the most recent time the presentation started or restarted.<br /><br /> [*Note*: The counter is reset when a presentation is restarted due to automatic looping at the end of a show, if specified by the loop attribute of showPr. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ShowInfoKiosk) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the KioskSlideMode class.
-            </summary>
+        <summary>Initializes a new instance of the KioskSlideMode class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +96,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,11 +144,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Restart Show.</para>
-          <para>Represents the following attribute in the schema: restart </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Restart Show.Represents the following attribute in the schema: restart</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

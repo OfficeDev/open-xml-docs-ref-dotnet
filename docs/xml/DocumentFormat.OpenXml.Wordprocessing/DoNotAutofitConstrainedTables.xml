@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotAutofitConstrainedTables" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables">
+<Type Name="DoNotAutofitConstrainedTables" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables">
   <TypeSignature Language="C#" Value="public class DoNotAutofitConstrainedTables : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotAutofitConstrainedTables extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotAutofitConstrainedTables" />
@@ -19,11 +19,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not AutoFit Tables To Fit Next To Wrapped Objects.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotAutofitConstrainedTables.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not AutoFit Tables To Fit Next To Wrapped Objects. When the object is serialized out as xml, its qualified name is w:doNotAutofitConstrainedTables.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotAutofitConstrainedTables (Do Not AutoFit Tables To Fit Next To Wrapped Objects)`  
+  
+ This element specifies whether applications shall allow tables to be resized to the remaining available line width when they are using the AutoFit algorithm and part of that line is filled by a shape with a wrapping type with a value of *square* or *tight*.  
+  
+ Typically, a table which is AutoFit and has a preferred width shall have its width reduced in order to allow a floating shape to wrap around its contents within the document, as that shape simply reduces the width of the line and the AutoFit algorithm applies to the remaining line width. This element, when present with a val attribute value of *true* (or equivalent), specifies that tables shall never have any preferred width overridden to allow them to wrap around that floating object, and shall instead be pushed to the next full width line in the document to be displayed.  
+  
+ [*Example*: Consider a WordprocessingML document with a floating shape centered in the document, followed by a table with preferred cell widths of 2.22", as follows:  
+  
+ 01d3284a-80d5-436c-89f1-cb671fc45bc1  
+  
+ The default presentation of this document overrides the preferred cell widths to force the table to fit on the line next to the floating shape with tight wrapping.  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotAutofitConstrainedTables />  
+</w:compat>  
+```  
+  
+ Then that table is not resized, so it cannot fit and must be pushed to the next full width line, resulting in the following output:  
+  
+ 9a1df11a-ed54-4f98-9552-b360d400106e  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +77,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotAutofitConstrainedTables class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotAutofitConstrainedTables class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +100,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +122,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

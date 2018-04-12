@@ -1,4 +1,4 @@
-﻿<Type Name="StyleLabel" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel">
+<Type Name="StyleLabel" FullName="DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel">
   <TypeSignature Language="C#" Value="public class StyleLabel : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StyleLabel extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Diagrams.StyleLabel" />
@@ -34,13 +34,71 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Style Label.</para>
-      <para> When the object is serialized out as xml, its qualified name is dgm:styleLbl.</para>
-    </summary>
+    <summary>Style Label. When the object is serialized out as xml, its qualified name is dgm:styleLbl.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Scene3D &lt;dgm:scene3d&gt;</description></item><item><description>Shape3D &lt;dgm:sp3d&gt;</description></item><item><description>TextProperties &lt;dgm:txPr&gt;</description></item><item><description>Style &lt;dgm:style&gt;</description></item><item><description>ExtensionList &lt;dgm:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **styleLbl (Style Label)**  
+  
+ This element defines the actual style which is applied to a node in a diagram  The style is referenced from within layout node.  The style label contains formatting (without defining color) such as the 3D properties and text properties associated with a shape.  
+  
+ [*Example*:  Consider the following example of a styleLbl in DiagramML:  
+  
+```xml  
+<styleLbl name="node0">  
+<scene3d>  
+<camera prst="orthographicFront"/>  
+<lightRig rig="flat" dir="t"/>  
+</scene3d>  
+<sp3d prstMaterial="flat">  
+<bevelT w="120900" h="88900"/>  
+<bevelB w="88900" h="31750" prst="angle"/>  
+</sp3d>  
+<txPr/>  
+<style>  
+<lnRef idx="0">  
+<scrgbClr r="0" g="0" b="0"/>  
+</lnRef>  
+<fillRef idx="3">  
+<scrgbClr r="0" g="0" b="0"/>  
+</fillRef>  
+<effectRef idx="2">  
+<scrgbClr r="0" g="0" b="0"/>  
+</effectRef>  
+<fontRef idx="minor">  
+<schemeClr val="lt1"/>  
+</fontRef>  
+</style>  
+</styleLbl>  
+```  
+  
+ In this example we see a styleLbl defined which sets 3D properties for the scene, shape 3D properties, line, fill, effect and font properties.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|styleDef (§21.4.5.7)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§21.4.2.13|  
+|scene3d (3-D Scene)|§21.4.5.5|  
+|sp3d (3-D Shape Properties)|§21.4.5.6|  
+|style (Shape Style)|§21.4.2.28|  
+|txPr (Text Properties)|§21.4.5.12|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|name (Style Name)|The name of the style.  This apears as the tooltip in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_StyleLabel) is located in §A.5.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -56,9 +114,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StyleLabel class.
-            </summary>
+        <summary>Initializes a new instance of the StyleLabel class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -85,9 +141,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the StyleLabel class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the StyleLabel class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,9 +162,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the StyleLabel class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the StyleLabel class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -131,9 +183,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the StyleLabel class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the StyleLabel class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -156,11 +206,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -180,11 +228,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: dgm:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: dgm:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram
@@ -207,10 +252,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -235,11 +278,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Style Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Style Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -259,11 +299,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 3-D Scene.</para>
-          <para> Represents the following element tag in the schema: dgm:scene3d </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>3-D Scene. Represents the following element tag in the schema: dgm:scene3d</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.Scene3D" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram
@@ -286,11 +323,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> 3-D Shape Properties.</para>
-          <para> Represents the following element tag in the schema: dgm:sp3d </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>3-D Shape Properties. Represents the following element tag in the schema: dgm:sp3d</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.Shape3D" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram
@@ -313,11 +347,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.Style</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Shape Style.</para>
-          <para> Represents the following element tag in the schema: dgm:style </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Shape Style. Represents the following element tag in the schema: dgm:style</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.Style" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram
@@ -340,11 +371,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Properties.</para>
-          <para> Represents the following element tag in the schema: dgm:txPr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Properties. Represents the following element tag in the schema: dgm:txPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Diagrams.TextProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:dgm = http://schemas.openxmlformats.org/drawingml/2006/diagram

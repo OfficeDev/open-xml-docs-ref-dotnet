@@ -1,4 +1,4 @@
-﻿<Type Name="DoNotVerticallyAlignCellWithShape" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape">
+<Type Name="DoNotVerticallyAlignCellWithShape" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape">
   <TypeSignature Language="C#" Value="public class DoNotVerticallyAlignCellWithShape : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotVerticallyAlignCellWithShape extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotVerticallyAlignCellWithShape" />
@@ -19,11 +19,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Don't Vertically Align Cells Containing Floating Objects.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:doNotVertAlignCellWithSp.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Don't Vertically Align Cells Containing Floating Objects. When the object is serialized out as xml, its qualified name is w:doNotVertAlignCellWithSp.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotVertAlignCellWithSp (Don't Vertically Align Cells Containing Floating Objects)`  
+  
+ This element specifies whether applications shall vertically align the contents of a table cell, even when the contents of that table cell include one or more floating objects. Note that the floating object shall be part of the cell, and simply not displayed over the cell due to its anchoring relative to another part of the document.  
+  
+ Typically, if the alignment of a table cell in a WordprocessingML document is specified, then the entire contents of that cell are aligned as specified [*Example*: The entire contents of the cell are centered vertically and moved right-aligned horizontally at that point. *end example*]. This element, when present with a val attribute value of *true* (or equivalent), specifies that whenever a floating object is present in a table cell, that no vertical alignment shall be applied to the contents of that cell, and the contents of the cell shall instead always be top aligned to the cell's contents.  
+  
+ [*Example*: Consider a WordprocessingML table with two cells, each containing some text and a single floating shape. The first cell is vertically aligned to the bottom of the cell, and the second cell is vertically aligned to the center of the cell.  
+  
+ The default presentation of this document results in each cell (including the extents of the floating objects) being vertically aligned as specified, as follows:  
+  
+ bf637e28-ca62-43d6-8e5b-31ccab7f9672  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotVertAlignCellWithSp />  
+</w:compat>  
+```  
+  
+ Then the presence of a floating object in each cell must result in the vertical alignment setting being ignored (each vertical alignment must be top-aligned relative to the cell), resulting in the following output:  
+  
+ 1eba480c-6ade-484a-adfa-991417759055  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +77,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DoNotVerticallyAlignCellWithShape class.
-            </summary>
+        <summary>Initializes a new instance of the DoNotVerticallyAlignCellWithShape class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +100,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +122,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

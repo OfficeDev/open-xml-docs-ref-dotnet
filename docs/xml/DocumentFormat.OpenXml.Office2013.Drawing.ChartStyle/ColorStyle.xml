@@ -1,4 +1,4 @@
-﻿<Type Name="ColorStyle" FullName="DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle">
+<Type Name="ColorStyle" FullName="DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle">
   <TypeSignature Language="C#" Value="public class ColorStyle : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColorStyle extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.ColorStyle" />
@@ -46,13 +46,83 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ColorStyle Class. The root element of ChartColorStylePart.</para>
-      <para> When the object is serialized out as xml, its qualified name is cs:colorStyle.</para>
-    </summary>
+    <summary>Defines the ColorStyle Class. The root element of ChartColorStylePart. When the object is serialized out as xml, its qualified name is cs:colorStyle.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocumentFormat.OpenXml.Drawing.RgbColorModelPercentage &lt;a:scrgbClr&gt;</description></item><item><description>DocumentFormat.OpenXml.Drawing.RgbColorModelHex &lt;a:srgbClr&gt;</description></item><item><description>DocumentFormat.OpenXml.Drawing.HslColor &lt;a:hslClr&gt;</description></item><item><description>DocumentFormat.OpenXml.Drawing.SystemColor &lt;a:sysClr&gt;</description></item><item><description>DocumentFormat.OpenXml.Drawing.SchemeColor &lt;a:schemeClr&gt;</description></item><item><description>DocumentFormat.OpenXml.Drawing.PresetColor &lt;a:prstClr&gt;</description></item><item><description>ColorStyleVariation &lt;cs:variation&gt;</description></item><item><description>OfficeArtExtensionList &lt;cs:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.64   colorStyle*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chartStyle  
+  
+ The *colorStyle* (section 2.5.91) element\<124>, which is of type *CT_ColorStyle*, specifies the color style for the chart.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="colorStyle" type="CT_ColorStyle"/>*  
+  
+ See section 5.15 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.91   CT_ColorStyle*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chartStyle  
+  
+ *Referenced by:* colorStyle  
+  
+ The complex type specifies colors used to resolve *CT_StyleColor* (section 2.5.92) colors in a *CT_ChartStyle (*section 2.5.102).\<152> The color style consists of a list of colors, a list of variations and a method for iterating the total set of colors.  
+  
+ The total set of colors is all contained colors repeated each time with each variation applied. A color style can contain 6 colors and 7 variations. This yields a total of 42 colors with the first 6 having the first variation applied, the second 6 having the second variation applied and so on. If no variations are present, then the total color set is just the contained colors with no extra variations.  
+  
+ To retrieve a color given an index, a method is applied to map that index into the total set of colors.  
+  
+ *Child Elements:*  
+  
+ *scrgbClr:* A *CT_ScRgbColor* ([ISO/IEC-29500-1] section A.4.1) element that specifies a color using the *red-green-blue (RGB)* color model. See ([ISO/IEC-29500-1] section 20.1.2.3.30).  
+  
+ *srgbClr:* A *CT_SRgbColor* ([ISO/IEC-29500-1] section A.4.1) element that specifies a color using the RGB color model. See ([ISO/IEC-29500-1] section 20.1.2.3.32).  
+  
+ *hslClr:* A *CT_HslColor* ([ISO/IEC-29500-1] section A.4.1) element that specifies a color using the *HSL* color model. See ([ISO/IEC-29500-1] section 20.1.2.3.13).  
+  
+ *sysClr:* A *CT_SystemColor* ([ISO/IEC-29500-1] section A.4.1) element that specifies a color bound to predefined operating system elements. See ([ISO/IEC-29500-1] section 20.1.2.3.33).  
+  
+ *schemeClr:* A *CT_SchemeColor* ([ISO/IEC-29500-1] section A.4.1) element that specifies a color bound to a user's theme. See ([ISO/IEC-29500-1] section 20.1.2.3.29).  
+  
+ *prstClr:* A *CT_PresetColor* ([ISO/IEC-29500-1] section A.4.1) element that specifies a color which is bound to one of a predefined collection of colors. See ([ISO/IEC-29500-1] section 20.1.2.3.22).  
+  
+ *variation:* A CT_ColorStyleVariation element that specifies a variation applied to all colors to create a longer set of colors without having to explicitly list them all.  
+  
+ *extLst:* A *CT_OfficeArtExtensionList* ([ISO/IEC-29500-1] section A.4.1) element that specifies the extension list in which all future extensions of element type *ext* is defined. The extension list, along with corresponding future extensions, is used to extend the storage capabilities of the DrawingML framework. This enables various types of data to be stored natively in the framework.  
+  
+ *Attributes:*  
+  
+ *meth:* An ST_ColorStyleMethod attribute that specifies the method for mapping an index for an element in a chart to the total set of colors contained in this *CT_ColorStyle*.  
+  
+ *id:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the identifier for this *CT_ColorStyle*.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_ColorStyle">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:group ref="a:EG_ColorChoice" minOccurs="1" maxOccurs="unbounded"/>*  
+  
+ *\<xsd:element name="variation" type="CT_ColorStyleVariation" minOccurs="0" maxOccurs="unbounded"/>*  
+  
+ *\<xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="meth" type="ST_ColorStyleMethod" use="required"/>*  
+  
+ *\<xsd:attribute name="id" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.15 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -68,9 +138,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ColorStyle class.
-            </summary>
+        <summary>Initializes a new instance of the ColorStyle class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,9 +165,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ColorStyle class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ColorStyle class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -120,9 +186,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ColorStyle class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ColorStyle class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -143,9 +207,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ColorStyle class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ColorStyle class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,9 +227,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.ChartColorStylePart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ChartColorStylePart associated with this element.
-            </summary>
+        <summary>Gets the ChartColorStylePart associated with this element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -191,11 +251,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -220,10 +278,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -248,9 +303,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the ChartColorStylePart.
-            </summary>
+        <summary>Loads the DOM from the ChartColorStylePart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,9 +323,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -298,10 +349,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> meth.</para>
-          <para>Represents the following attribute in the schema: meth </para>
-        </summary>
+        <summary>meth.Represents the following attribute in the schema: meth</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -326,9 +374,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the ChartColorStylePart.
-            </summary>
+        <summary>Saves the DOM into the ChartColorStylePart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

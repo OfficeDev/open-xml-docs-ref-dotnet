@@ -1,4 +1,4 @@
-﻿<Type Name="Template" FullName="DocumentFormat.OpenXml.Presentation.Template">
+<Type Name="Template" FullName="DocumentFormat.OpenXml.Presentation.Template">
   <TypeSignature Language="C#" Value="public class Template : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Template extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.Template" />
@@ -22,13 +22,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Template Effects.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:tmpl.</para>
-    </summary>
+    <summary>Template Effects. When the object is serialized out as xml, its qualified name is p:tmpl.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TimeNodeList &lt;p:tnLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tmpl (Template Effects)**  
+  
+ This element specifies the "template" effects that are used by the build element. Template effects are used in text builds on the master slide.  They define the rules of what effect should be applied to the 1st level paragraph, 2nd level paragraph, etc.  
+  
+ [*Example*:  Consider a template with a fade in effect applied to it. The \<tmpl> element should be used as follows:  
+  
+```xml  
+<p:timing>  
+  <p:tnLst>  
+ … </p:tnLst>  
+  <p:bldLst>  
+    <p:bldP spid="3" grpId="0" build="p">  
+      <p:tmplLst>  
+        <p:tmpl lvl="1">  
+        </p:tmpl>  
+      </p:tmplLst>  
+    </p:bldP>  
+  </p:bldLst>  
+</p:timing>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tmplLst (§19.5.85)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|tnLst (Time Node List)|§19.5.87|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|lvl (Level)|This attribute describes the paragraph indent level to which this template effect applies.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLTemplate) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Template class.
-            </summary>
+        <summary>Initializes a new instance of the Template class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +112,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Template class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Template class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +133,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Template class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Template class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +154,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Template class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Template class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +177,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +204,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Level.</para>
-          <para>Represents the following attribute in the schema: lvl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Level.Represents the following attribute in the schema: lvl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,10 +225,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -220,11 +246,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.TimeNodeList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Time Node List.</para>
-          <para> Represents the following element tag in the schema: p:tnLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Time Node List. Represents the following element tag in the schema: p:tnLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.TimeNodeList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

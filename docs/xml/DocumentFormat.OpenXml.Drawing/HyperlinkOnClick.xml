@@ -1,4 +1,4 @@
-﻿<Type Name="HyperlinkOnClick" FullName="DocumentFormat.OpenXml.Drawing.HyperlinkOnClick">
+<Type Name="HyperlinkOnClick" FullName="DocumentFormat.OpenXml.Drawing.HyperlinkOnClick">
   <TypeSignature Language="C#" Value="public class HyperlinkOnClick : DocumentFormat.OpenXml.Drawing.HyperlinkType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HyperlinkOnClick extends DocumentFormat.OpenXml.Drawing.HyperlinkType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.HyperlinkOnClick" />
@@ -19,13 +19,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the HyperlinkOnClick Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:hlinkClick.</para>
-    </summary>
+    <summary>Defines the HyperlinkOnClick Class. When the object is serialized out as xml, its qualified name is a:hlinkClick.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>HyperlinkSound &lt;a:snd&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **hlinkClick (Click Hyperlink)**  
+  
+ Specifies the on-click hyperlink information to be applied to a run of text. When the hyperlink text is clicked the link is fetched.  
+  
+ [*Example*: Consider the DrawingML shown below.  
+  
+```xml  
+<p:txBody>  
+  …  <a:p>  
+    <a:r>  
+      <a:rPr …>  
+        <a:hlinkClick r:id="rId2" tooltip="Some Sample Text"/>  
+      </a:rPr>  
+      …      <a:t>Sample Text</a:t>  
+      …    </a:r>  
+  </a:p  
+>  
+  …</p:txBody>  
+```  
+  
+ The above run of text is a hyperlink that points to the resource pointed at by rId2 within this slides relationship file. Additionally this text should display a tooltip when the mouse is hovered over the run of text. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cNvPr (§21.3.2.7); cNvPr (§20.1.2.2.8); cNvPr (§20.2.2.3); cNvPr (§20.5.2.8); cNvPr (§19.3.1.12); defRPr (§21.1.2.3.2); docPr (§20.4.2.5); endParaRPr (§21.1.2.2.3); rPr (§21.1.2.3.9)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Extension List)|§20.1.2.2.15|  
+|snd (Hyperlink Sound)|§20.1.2.2.32|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|action (Action Setting)|Specifies an action that is to be taken when this hyperlink is activated. This can be used to specify a slide to be navigated to or a script of code to be run.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|endSnd (End Sounds)|Specifies if the URL in question should stop all sounds that are playing when it is clicked.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|highlightClick (Highlight Click)|Specifies if this attribute has already been used within this document. That is when a hyperlink has already been visited that this attribute would be utilized so the generating application can determine the color of this text. If this attribute is omitted, then a value of 0 or false is implied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|history (Add Hyperlink to Page History)|Specifies whether to add this  to the history when navigating to it. This allows for the viewing of this presentation without the storing of history information on the viewing machine. If this attribute is omitted, then a value of *1* or *true* is assumed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|id (Drawing Object Hyperlink Target)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Specifies the relationship id that when looked up in this slides relationship file contains the target of this hyperlink. This attribute cannot be omitted.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|invalidUrl (Invalid URL)|Specifies the URL when it has been determined by the generating application that the URL is invalid. That is the generating application can still store the URL but it is known that this URL is not correct.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|tgtFrame (Target Frame)|Specifies the target frame that is to be used when opening this hyperlink. When the hyperlink is activated this attribute is used to determine if a new window is launched for viewing or if an existing one can be used. If this attribute is omitted, than a new window is opened.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|tooltip (Hyperlink Tooltip)|Specifies the tooltip that should be displayed when the hyperlink text is hovered over with the mouse. If this attribute is omitted, than the hyperlink text itself can be displayed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Hyperlink) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -41,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the HyperlinkOnClick class.
-            </summary>
+        <summary>Initializes a new instance of the HyperlinkOnClick class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +116,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the HyperlinkOnClick class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the HyperlinkOnClick class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,9 +137,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the HyperlinkOnClick class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the HyperlinkOnClick class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,9 +158,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the HyperlinkOnClick class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the HyperlinkOnClick class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +181,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,10 +203,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

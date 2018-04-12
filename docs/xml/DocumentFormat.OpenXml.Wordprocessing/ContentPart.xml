@@ -1,4 +1,4 @@
-﻿<Type Name="ContentPart" FullName="DocumentFormat.OpenXml.Wordprocessing.ContentPart">
+<Type Name="ContentPart" FullName="DocumentFormat.OpenXml.Wordprocessing.ContentPart">
   <TypeSignature Language="C#" Value="public class ContentPart : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContentPart extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ContentPart" />
@@ -22,12 +22,96 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ContentPart Class.</para>
-      <para>This class is only available in Office2010.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:contentPart.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the ContentPart Class.This class is only available in Office2010. When the object is serialized out as xml, its qualified name is w:contentPart.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **contentPart (Content Part)**  
+  
+ This element specifies a reference to XML content in a format not defined by /IEC 29500. [*Note*: This part allows the native use of other commonly used interchange formats, such as:  
+  
+-   MathML (http://www.w3.org/TR/MathML2/)  
+  
+-   SMIL (http://www.w3.org/TR/REC-smil/)  
+  
+-   SVG (http://www.w3.org/TR/SVG11/)  
+  
+ *end note*]  
+  
+ The relationship type of the explicit relationship specified by this element shall be *http://schemas.openxmlformats.org/officeDocument/2006/customXml* and have a TargetMode attribute value of *Internal*. If an application cannot process content of the content type specified by the targeted part, then it should continue to process the file. If possible, it should also provide some indication that unknown content was not imported.  
+  
+ [*Example*: Consider a WordprocessingML document which includes the following MathML markup in a part named math1.xml:  
+  
+```xml  
+<mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">  
+  <mml:mi>r</mml:mi>  
+  <mml:mo>=</mml:mo>  
+  <mml:msup>  
+    <mml:mrow>  
+      <mml:mfenced separators="|">  
+        <mml:mrow>  
+          <mml:mi>V</mml:mi>  
+          <mml:mfrac>  
+            <mml:mrow>  
+              <mml:mn>3</mml:mn>  
+            </mml:mrow>  
+            <mml:mrow>  
+              <mml:mn>4</mml:mn>  
+              <mml:mi>π</mml:mi>  
+            </mml:mrow>  
+          </mml:mfrac>  
+        </mml:mrow>  
+      </mml:mfenced>  
+    </mml:mrow>  
+    <mml:mrow>  
+      <mml:mfrac>  
+        <mml:mrow>  
+          <mml:mn>1</mml:mn>  
+        </mml:mrow>  
+        <mml:mrow>  
+          <mml:mn>3</mml:mn>  
+        </mml:mrow>  
+      </mml:mfrac>  
+    </mml:mrow>  
+  </mml:msup>  
+</mml:math>  
+```  
+  
+ The Main Document Part would reference this content as follows:  
+  
+```xml  
+<w:body>  
+  …  <w:p>  
+    <w:r>  
+      <w:contentPart r:id="rId8" />  
+    </w:r>  
+  </w:p>  
+  …</w:body>  
+```  
+  
+ The contentPart element specifies that the content targeted by the relationship with an ID of *rId8* is part of the WordprocessingML document. Examining the contents of the corresponding relationship part item, we can see the targets for that relationship:  
+  
+```xml  
+<Relationships … >  
+  …  <Relationship Id="rId8" TargetMode="Internal" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml" Target="math1.xml" />  
+  …</Relationships>  
+```  
+  
+ The corresponding relationship part item shows that the file to be imported is located next to the main document and is named *math1.xml*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Rel) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +127,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ContentPart class.
-            </summary>
+        <summary>Initializes a new instance of the ContentPart class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,11 +150,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,10 +177,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: r:id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: r:id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
@@ -123,9 +200,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

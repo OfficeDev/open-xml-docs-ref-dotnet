@@ -1,4 +1,4 @@
-﻿<Type Name="WriteProtection" FullName="DocumentFormat.OpenXml.Wordprocessing.WriteProtection">
+<Type Name="WriteProtection" FullName="DocumentFormat.OpenXml.Wordprocessing.WriteProtection">
   <TypeSignature Language="C#" Value="public class WriteProtection : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WriteProtection extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.WriteProtection" />
@@ -19,11 +19,43 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Write Protection.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:writeProtection.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Write Protection. When the object is serialized out as xml, its qualified name is w:writeProtection.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **writeProtection (Write Protection)**  
+  
+ This element specifies the write protection settings which have been applied to a WordprocessingML document. *Write protection* refers to a mode in which the document's contents cannot be edited, and the document cannot be resaved using the same file name. This setting is independent of the documentProtection (§17.15.1.29) element, but like document protection, this setting is not intended as a security feature and can be ignored.  
+  
+ When present, the write protection shall result in one of two write protection behaviors:  
+  
+-   If the password attribute is present, or both attributes are omitted, then the application shall prompt for a password to exit write protection. If the supplied password does not match the hash value in this attribute, then write protection shall be enabled.  
+  
+-   If only the recommended attribute is present, the application should provide user interface recommending that the user open this document in write protected state. If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.  
+  
+ If this element is omitted, then no write protection shall be applied to the current document.  
+  
+ [*Example*: Consider a WordprocessingML document that can be opened but only in a write protected state unless a password is provided, in which case the file would be opened in an editable state. This requirement would be specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:writeProtection w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />   
+```  
+  
+ The writeProtection element is present which specifies that write protection must be turned on for this document. Since the password attribute is equal to  *9oN7nWkCAyEZib1RomSJTjmPpCY=* the given WordprocessingML document can only be opened in a write protected state unless a password which matches the hash value *9oN7nWkCAyEZib1RomSJTjmPpCY=*is provided; in which case the file would be opened in an editable state. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_WriteProtection) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +71,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WriteProtection class.
-            </summary>
+        <summary>Initializes a new instance of the WriteProtection class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,12 +96,34 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Algorithm Extensibility.</para>
-          <para>Represents the following attribute in the schema: w:algIdExt </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Cryptographic Algorithm Extensibility.Represents the following attribute in the schema: w:algIdExt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that a cryptographic algorithm which was not defined by the Office Open XML Standard has been used to generate the hash value stored with this document.  
+  
+ This value, when present, shall be interpreted based on the value of the `algIdExtSource` attribute in order to determine the algorithm used, which shall be application defined. This extensibility affords the fact that with exponentially increasing computing power, documents created in the future will likely need to use as yet undefined hashing algorithms in order to remain secure.  
+  
+ If this value is present, the `cryptAlgorithmClass`, `cryptAlgorithmType`, and `cryptAlgorithmSid` attribute values shall be ignored in favor of the algorithm defined by this attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:algIdExt="0000000A"   
+  w:algIdExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `algIdExt` attribute value of `0000000A` specifies that the algorithm with hex code `A` shall be used as defined by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -97,12 +149,30 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Algorithm Extensibility Source.</para>
-          <para>Represents the following attribute in the schema: w:algIdExtSource </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Algorithm Extensibility Source.Represents the following attribute in the schema: w:algIdExtSource</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the application which defined the algorithm value specified by the `algIdExt` attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:algIdExt="0000000A"   
+  w:algIdExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `algIdExtSource` attribute value of `Contoso` specifies that the algorithm used here was published by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -131,10 +201,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> algorithmName, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:algorithmName </para>
-        </summary>
+        <summary>algorithmName, this property is only available in Office2010.Represents the following attribute in the schema: w:algorithmName</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -160,11 +227,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -189,12 +254,31 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Algorithm Class.</para>
-          <para>Represents the following attribute in the schema: w:cryptAlgorithmClass </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Cryptographic Algorithm Class.Represents the following attribute in the schema: w:cryptAlgorithmClass</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the class of cryptographic algorithm used by this protection. The initial version of the Office Open XML Standard only supports a single version - `hash` - but future versions may expand this as necessary.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptAlgorithmClass` attribute value of `hash` specifies that the algorithm used for the password is a hashing algorithm.  
+  
+ The possible values for this attribute are defined by the `ST_AlgClass` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -220,12 +304,51 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Hashing Algorithm.</para>
-          <para>Represents the following attribute in the schema: w:cryptAlgorithmSid </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Cryptographic Hashing Algorithm.Represents the following attribute in the schema: w:cryptAlgorithmSid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the specific cryptographic hashing algorithm which shall be used along with the `salt` attribute and user-supplied password in order to compute a hash value for comparison.  
+  
+ The possible values for this attribute shall be interpreted as follows:  
+  
+|Value|Algorithm|  
+|-----------|---------------|  
+|`1`|MD2|  
+|`2`|MD4|  
+|`3`|MD5|  
+|`4`|SHA-1|  
+|`5`|MAC|  
+|`6`|RIPEMD|  
+|`7`|RIPEMD-160|  
+|`8`|Undefined. Shall not be used.|  
+|`9`|HMAC|  
+|`10`|Undefined. Shall not be used.|  
+|`11`|Undefined. Shall not be used.|  
+|`12`|SHA-256|  
+|`13`|SHA-384|  
+|`14`|SHA-512|  
+|Any other value|Undefined. Shall not be used.|  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptAlgorithmSid` attribute value of `1` specifies that the SHA-1 hashing algorithm shall be used to generate a hash from the user-defined password.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -251,12 +374,31 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Algorithm Type.</para>
-          <para>Represents the following attribute in the schema: w:cryptAlgorithmType </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Cryptographic Algorithm Type.Represents the following attribute in the schema: w:cryptAlgorithmType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of cryptographic algorithm used by this protection. The initial version of the Office Open XML Standard only supports a single type - `typeAny` - but future versions may expand this as necessary.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptAlgorithmType` attribute value of `typeAny` specifies that any type of algorithm may have been used for the password.  
+  
+ The possible values for this attribute are defined by the `ST_AlgType` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -282,12 +424,31 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Provider.</para>
-          <para>Represents the following attribute in the schema: w:cryptProvider </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Cryptographic Provider.Represents the following attribute in the schema: w:cryptProvider</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the cryptographic provider which was used to generate the hash value stored in this document. If the user provided a cryptographic provider which was not the system's built-in provider, then that provider shall be stored here so it can subsequently be used if available.  
+  
+ If this attribute is omitted, then the built-in cryptographic provider on the system shall be used.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProvider="Samantha'sProvider"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProvider` attribute value of `Samantha'sProvider` specifies that the cryptographic provider with name Samantha's Provider shall be used if available.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -313,12 +474,29 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Provider Type.</para>
-          <para>Represents the following attribute in the schema: w:cryptProviderType </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Cryptographic Provider Type.Represents the following attribute in the schema: w:cryptProviderType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of cryptographic provider to be used.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProviderType="rsaAES"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProviderType` attribute value of `rsaAES` specifies that the cryptographic provider type shall be an Advanced Encryption Standard provider.  
+  
+ The possible values for this attribute are defined by the `ST_CryptProv` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -344,12 +522,34 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cryptographic Provider Type Extensibility.</para>
-          <para>Represents the following attribute in the schema: w:cryptProviderTypeExt </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Cryptographic Provider Type Extensibility.Represents the following attribute in the schema: w:cryptProviderTypeExt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that a cryptographic provider type which was not defined by the Office Open XML Standard has been used to generate the hash value stored with this document.  
+  
+ This value, when present, shall be interpreted based on the value of the `cryptProviderTypeExtSource` attribute in order to determine the provider type used, which shall be application defined. This extensibility affords the fact that with exponentially increasing computing power, documents created in the future will likely need to use as yet undefined cryptographic provider types in order to remain secure.  
+  
+ If this value is present, the `cryptProviderType` attribute value shall be ignored in favor of the provider type defined by this attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProviderTypeExt="00A5691D"   
+  w:cryptProvideTypeExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProviderTypeExt` attribute value of `00A5691D` specifies that the provider type associated with hex code `A5691D` shall be used as defined by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -375,12 +575,30 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Provider Type Extensibility Source.</para>
-          <para>Represents the following attribute in the schema: w:cryptProviderTypeExtSource </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Provider Type Extensibility Source.Represents the following attribute in the schema: w:cryptProviderTypeExtSource</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the application which defined the provider type value specified by the `cryptProviderTypeExt` attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProviderTypeExt="00A5691D"   
+  w:cryptProvideTypeExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProvideTypeExtSource` attribute value of `Contoso` specifies that the provider type used here was published by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -406,12 +624,29 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Iterations to Run Hashing Algorithm.</para>
-          <para>Represents the following attribute in the schema: w:cryptSpinCount </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Iterations to Run Hashing Algorithm.Represents the following attribute in the schema: w:cryptSpinCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number of times the hashing function shall be iteratively run (using each iteration's result as the input for the next iteration) when attempting to compare a user-supplied password with the value stored in the `hash` attribute. Running the algorithm many times increases the cost of exhaustive search attacks correspondingly. Storing this value allows for the number of iterations to be increased over time to accommodate faster hardware (and hence the ability to run more iterations in less time).  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptSpinCount="100000"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptSpinCount` attribute value of `100000` specifies that the hashing function shall be run one hundred thousand times to generate a hash value for comparison with the `hash` attribute.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -437,12 +672,33 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Password Hash.</para>
-          <para>Represents the following attribute in the schema: w:hash </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Password Hash.Represents the following attribute in the schema: w:hash</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the hash value for the password stored with this document. This value shall be compared with the resulting hash value after hashing the user-supplied password using the algorithm specified by the preceding attributes and parent XML element, and if the two values match, the protection shall no longer be enforced.  
+  
+ If this value is omitted, then no password shall be associated with the protection, and it may be turned off without supplying any password.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `hash` attribute value of `9oN7nWkCAyEZib1RomSJTjmPpCY=` specifies that the user-supplied password shall be hashed using the pre-processing defined by the parent element (if any) followed by the SHA-1 algorithm (specified via the `cryptAlgorithmSid` attribute value of `1`) and that the resulting has value must be `9oN7nWkCAyEZib1RomSJTjmPpCY=` for the protection to be disabled.  
+  
+ The possible values for this attribute are defined by the XML Schema `base64Binary` data type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -471,10 +727,7 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> hashValue, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:hashValue </para>
-        </summary>
+        <summary>hashValue, this property is only available in Office2010.Represents the following attribute in the schema: w:hashValue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -497,10 +750,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -525,12 +776,30 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Recommend Write Protection in User Interface.</para>
-          <para>Represents the following attribute in the schema: w:recommended </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Recommend Write Protection in User Interface.Represents the following attribute in the schema: w:recommended</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that applications should provide user interface recommending that the user open this document in write protected state. If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.  
+  
+ If this attribute is omitted, then user interface recommending that the user open this document in write protected state should not be provided. If the `password` attribute is also specified, then this setting shall be ignored.  
+  
+ Consider a WordprocessingML document which specifies that applications shall recommend write protection to this document. This requirement would be specified using the following WordprocessingML in the document settings:  
+  
+```  
+<w:writeProtection w:recommended="true" />  
+```  
+  
+ The `recommended` attribute has a value of `true` specifying that the applications shall hash any password provided, and if it matches this hash value, may only then halt enforcement of write protection.  
+  
+ The possible values for this attribute are defined by the `ST_OnOff` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -556,12 +825,31 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Salt for Password Verifier.</para>
-          <para>Represents the following attribute in the schema: w:salt </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Salt for Password Verifier.Represents the following attribute in the schema: w:salt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the salt which was prepended to the user-supplied password before it was hashed using the hashing algorithm defined by the preceding attribute values to generate the `hash` attribute, and which shall also be prepended to the user-supplied password before attempting to generate a hash value for comparison. A *salt* is a random string which is added to a user-supplied password before it is hashed in order to prevent a malicious party from pre-calculating all possible password/hash combinations and simply using those precalculated values (often referred to as a *dictionary attack*).  
+  
+ If this attribute is omitted, then no salt shall be prepended to the user-supplied password before it is hashed for comparison with the stored hash value.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:salt="ZUdHa+D8F/OAKP3I7ssUnQ=="  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `salt` attribute value of `ZUdHa+D8F/OAKP3I7ssUnQ==` specifies that the user-supplied password shall have this value prepended before it is run through the specified hashing algorithm to generate a resulting hash value for comparison.  
+  
+ The possible values for this attribute are defined by the XML Schema `base64Binary` data type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -590,10 +878,7 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> saltValue, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:saltValue </para>
-        </summary>
+        <summary>saltValue, this property is only available in Office2010.Represents the following attribute in the schema: w:saltValue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -624,10 +909,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> spinCount, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:spinCount </para>
-        </summary>
+        <summary>spinCount, this property is only available in Office2010.Represents the following attribute in the schema: w:spinCount</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

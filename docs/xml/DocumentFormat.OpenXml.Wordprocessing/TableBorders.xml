@@ -1,4 +1,4 @@
-﻿<Type Name="TableBorders" FullName="DocumentFormat.OpenXml.Wordprocessing.TableBorders">
+<Type Name="TableBorders" FullName="DocumentFormat.OpenXml.Wordprocessing.TableBorders">
   <TypeSignature Language="C#" Value="public class TableBorders : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableBorders extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableBorders" />
@@ -43,13 +43,122 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TableBorders Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblBorders.</para>
-    </summary>
+    <summary>Defines the TableBorders Class. When the object is serialized out as xml, its qualified name is w:tblBorders.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TopBorder &lt;w:top&gt;</description></item><item><description>LeftBorder &lt;w:left&gt;</description></item><item><description>StartBorder &lt;w:start&gt;</description></item><item><description>BottomBorder &lt;w:bottom&gt;</description></item><item><description>RightBorder &lt;w:right&gt;</description></item><item><description>EndBorder &lt;w:end&gt;</description></item><item><description>InsideHorizontalBorder &lt;w:insideH&gt;</description></item><item><description>InsideVerticalBorder &lt;w:insideV&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblBorders (Table Borders)**  
+  
+ This element specifies the set of borders for the edges of the current table, using the six border types defined by its child elements.  
+  
+ If the cell spacing for any row is non-zero as specified using the tblCellSpacing element (§17.4.45; §17.4.44; §17.4.46), then there is no border conflict and the table border (or table-level exception border, if one is specified) shall be displayed.  
+  
+ If the cell spacing is zero, then there is a conflict [*Example*: Between the left border of all cells in the first column and the left border of the table. *end example*], which shall be resolved as follows:  
+  
+-   If there is a cell border, then the cell border shall be displayed  
+  
+-   If there is no cell border but there is a table-level exception border on this table row, then the table-level exception border shall be displayed  
+  
+-   If there is no cell or table-level exception border, then the table border shall be displayed  
+  
+ If this element is omitted, then this table shall have the borders specified by the associated table style. If no borders are specified in the style hierarchy, then this table shall not have any table borders.  
+  
+ [*Example*: Consider a table with no associated table style, which defines a set of table borders via direct formatting as follows:  
+  
+ These table borders are specified using the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblW w:w="0" w:type="auto"/>  
+    <w:tblBorders>  
+      <w:top w:val="single" w:sz="4" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:left w:val="single" w:sz="4" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:right w:val="single" w:sz="4" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:insideH w:val="single" w:sz="4" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:insideV w:val="single" w:sz="4" w:space="0" w:color="000000" w:themeColor="text1"/>  
+    </w:tblBorders>  
+    …  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ The tblBorders element specifies the set of table borders applied to the current table. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPr (§17.4.60); tblPr (§17.4.59); tblPr (§17.7.6.4); tblPr (§17.7.6.3)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bottom (Table Bottom Border)|§17.4.4|  
+|end (Table Trailing Edge Border)|§17.4.13|  
+|insideH (Table Inside Horizontal Edges Border)|§17.4.23|  
+|insideV (Table Inside Vertical Edges Border)|§17.4.25|  
+|start (Table Leading Edge Border)|§17.4.37|  
+|top (Table Top Border)|§17.4.77|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblBorders) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblBorders (Table Borders Exceptions)**  
+  
+ This element specifies the set of borders for the edges of the parent table row via a set of table-level property exceptions, using the six border types defined by its child elements.  
+  
+ If the cell spacing for any row is non-zero as specified using the tblCellSpacing element (§17.4.45; §17.4.44; §17.4.46), then there is no border conflict and the table-level exception border shall be displayed.  
+  
+ If the cell spacing is zero, then there is a conflict [*Example*: Between the left border of all cells in the first column and the left border of the table-level exceptions. *end example*], which shall be resolved as follows:  
+  
+-   If there is a cell border, then the cell border shall be displayed  
+  
+-   If there is no cell border, then the table-level exception border shall be displayed  
+  
+ If this element is omitted, then this table shall have the borders specified by the associated table level borders (§17.4.39).  
+  
+ [*Example*: Consider a table in which the final two rows have a set of table-level property exceptions giving them a thicker set of table borders, as follows:  
+  
+ These table borders are specified via a set of table-level property exceptions using the following WordprocessingML:  
+  
+```xml  
+<w:tr>  
+  <w:tblPrEx>  
+    <w:tblBorders>  
+      <w:top w:val="single" w:sz="24" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:left w:val="single" w:sz="24" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:bottom w:val="single" w:sz="24" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:right w:val="single" w:sz="24" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:insideH w:val="single" w:sz="24" w:space="0" w:color="000000" w:themeColor="text1"/>  
+      <w:insideV w:val="single" w:sz="24" w:space="0" w:color="000000" w:themeColor="text1"/>  
+    </w:tblBorders>  
+  </w:tblPrEx>  
+</w:tr>  
+```  
+  
+ The tblBorders element specifies the set of table borders applied to the final two rows in this table as part of the table-level property exceptions. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPrEx (§17.4.61); tblPrEx (§17.4.62)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bottom (Table Bottom Border)|§17.4.4|  
+|end (Table Trailing Edge Border)|§17.4.13|  
+|insideH (Table Inside Horizontal Edges Border)|§17.4.23|  
+|insideV (Table Inside Vertical Edges Border)|§17.4.25|  
+|start (Table Leading Edge Border)|§17.4.37|  
+|top (Table Top Border)|§17.4.77|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblBorders) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -65,9 +174,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableBorders class.
-            </summary>
+        <summary>Initializes a new instance of the TableBorders class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -94,9 +201,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableBorders class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TableBorders class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +222,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TableBorders class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TableBorders class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,9 +243,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TableBorders class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TableBorders class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -162,11 +263,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.BottomBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Bottom Border.</para>
-          <para> Represents the following element tag in the schema: w:bottom </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Bottom Border. Represents the following element tag in the schema: w:bottom</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.BottomBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -192,11 +290,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,10 +317,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.EndBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> EndBorder, this property is only available in Office2010.</para>
-          <para> Represents the following element tag in the schema: w:end </para>
-        </summary>
+        <summary>EndBorder, this property is only available in Office2010. Represents the following element tag in the schema: w:end</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -248,11 +341,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Inside Horizontal Edges Border.</para>
-          <para> Represents the following element tag in the schema: w:insideH </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Inside Horizontal Edges Border. Represents the following element tag in the schema: w:insideH</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.InsideHorizontalBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -275,11 +365,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Inside Vertical Edges Border.</para>
-          <para> Represents the following element tag in the schema: w:insideV </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Inside Vertical Edges Border. Represents the following element tag in the schema: w:insideV</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -302,11 +389,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LeftBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Left Border.</para>
-          <para> Represents the following element tag in the schema: w:left </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Left Border. Represents the following element tag in the schema: w:left</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LeftBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -329,10 +413,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -352,11 +434,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.RightBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Right Border.</para>
-          <para> Represents the following element tag in the schema: w:right </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Right Border. Represents the following element tag in the schema: w:right</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.RightBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -384,10 +463,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StartBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> StartBorder, this property is only available in Office2010.</para>
-          <para> Represents the following element tag in the schema: w:start </para>
-        </summary>
+        <summary>StartBorder, this property is only available in Office2010. Represents the following element tag in the schema: w:start</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -411,11 +487,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TopBorder</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Table Top Border.</para>
-          <para> Represents the following element tag in the schema: w:top </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Table Top Border. Represents the following element tag in the schema: w:top</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.TopBorder" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

@@ -1,4 +1,4 @@
-﻿<Type Name="Relation" FullName="DocumentFormat.OpenXml.Vml.Office.Relation">
+<Type Name="Relation" FullName="DocumentFormat.OpenXml.Vml.Office.Relation">
   <TypeSignature Language="C#" Value="public class Relation : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Relation extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Vml.Office.Relation" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Diagram Relationship.</para>
-      <para> When the object is serialized out as xml, its qualified name is o:rel.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Diagram Relationship. When the object is serialized out as xml, its qualified name is o:rel.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `rel (Diagram Relationship)`  
+  
+ This element specifies a relationship between two diagram nodes.  An optional third node that exists between the primary two can also be included.  The relationship has an implicit order since it describes the source and destination nodes.  
+  
+ [*Example*: In the cycle diagram below, shape 1036 (the shape that is the text box for the text "2") is the first node.  A relationship exists between shape 1036 and shape 1044 (the text box containing "1").  In between those shapes is shape 1038 (the yellow arrow).  
+  
+```xml  
+<o:relationtable v:ext="edit">  
+  <o:rel v:ext="edit" idsrc="#_s1036" iddest="#_s1036"/>  
+  <o:rel v:ext="edit" idsrc="#_s1042" iddest="#_s1036" idcntr="#_s1043"/>  
+  <o:rel v:ext="edit" idsrc="#_s1044" iddest="#_s1042" idcntr="#_s1045"/>  
+  <o:rel v:ext="edit" idsrc="#_s1036" iddest="#_s1044" idcntr="#_s1038"/>  
+</o:relationtable>  
+<v:rect id="_s1036" … >  
+  <v:textbox … ><…>2</…></v:textbox>  
+</v:rect>  
+<v:rect id="_s1044" … >  
+  <v:textbox … ><  
+…>  
+1</…></v:textbox>  
+</v:rect>  
+<v:shape id="_s1038" … />  
+```  
+  
+ 0b87a22d-b657-47f7-a7a0-1e6754384bce  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|relationtable (§14.2.2.25)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Relation) is located in §A.6.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Relation class.
-            </summary>
+        <summary>Initializes a new instance of the Relation class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,11 +104,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Diagram Relationship Center Shape.</para>
-          <para>Represents the following attribute in the schema: idcntr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Diagram Relationship Center Shape.Represents the following attribute in the schema: idcntr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,11 +128,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,11 +155,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Diagram Relationship Destination Shape.</para>
-          <para>Represents the following attribute in the schema: iddest </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Diagram Relationship Destination Shape.Represents the following attribute in the schema: iddest</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,11 +181,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> VML Extension Handling Behavior.</para>
-          <para>Represents the following attribute in the schema: v:ext </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>VML Extension Handling Behavior.Represents the following attribute in the schema: v:ext</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:v=urn:schemas-microsoft-com:vml
             </remark>
@@ -177,10 +204,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -205,11 +230,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Diagram Relationship Source Shape.</para>
-          <para>Represents the following attribute in the schema: idsrc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Diagram Relationship Source Shape.Represents the following attribute in the schema: idsrc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

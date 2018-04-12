@@ -1,4 +1,4 @@
-﻿<Type Name="Break" FullName="DocumentFormat.OpenXml.Math.Break">
+<Type Name="Break" FullName="DocumentFormat.OpenXml.Math.Break">
   <TypeSignature Language="C#" Value="public class Break : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Break extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.Break" />
@@ -19,11 +19,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Break.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:brk.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Break. When the object is serialized out as xml, its qualified name is m:brk.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **brk (Break)**  
+  
+ This element specifies whether there is a line break at the start of a run, or at the start of the Box object, such that the line wraps at the start of the run or box object. These user-defined line breaks occur when the XML tag *\<m:brk/>* is encountered and does not follow a mathematical "order of precedence". If this element is omitted, a manual break is not inserted. In other words, when the element is absent, the default is for the parent structure to not manually break onto the next line. When the element is present and the val attribute is absent, the default of the val attribute is *0* meaning that this property’s parent structure manually breaks onto the next line and is aligned with the beginning of the previous line.  
+  
+ The line may happen to wrap at this point if the mathematical text exceeds the column width. OMML does not specify behaviour for any kind of automatic line breaking. Instead it delegates this functionality to the underlying rendering engine similarly to how it does with the choice of operator spacing and the determination of whether an operator is unary or binary.  
+  
+ [*Example*: The following example includes a manual user-defined line break at the operator emulator:  
+  
+```xml  
+<m:r>   <m:t>a</m:t>  
+</m:r>  
+<m:box>  
+  <m:boxPr>  
+    <m:opEmum:val="1"/>  
+    <m:brk/>  
+  </m:boxPr>  
+  <m:e>  
+    <m:r>  
+      <m:t>==</m:t>  
+    </m:r>  
+  </m:e>  
+</m:box>  
+<m:r>  
+  <m:t>b</m:  
+t>  
+</m:r>  
+```  
+  
+ There is a break on the == symbol so a manual line break occurs right before the == symbol.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|boxPr (§22.1.2.14); rPr (§22.1.2.91)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|alnAt (Index of Operator to Align To)|Specifies the index of the operator on the previous line of mathematical text which shall be used as the alignment point for the current line of mathematical text . A line can be aligned to any operator on the previous line; this attribute specifies exactly which operator shall be the target of that alignment in cases where there are multiple operators. If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.<br /><br /> [*Example*: For example, consider the break in this instance of mathematical text:<br /><br /> The second line could theoretically be aligned to any of the four operators in the previous line.<br /><br /> Specifying an alnAt value of 3 for the second line resolves this ambiguity; the second line is aligned to the third operator in the previous line. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_Integer255* simple type (§22.1.3.6).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ManualBreak) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +87,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Break class.
-            </summary>
+        <summary>Initializes a new instance of the Break class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,12 +112,28 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Index of Operator to Align To.</para>
-          <para>Represents the following attribute in the schema: m:alnAt </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Index of Operator to Align To.Represents the following attribute in the schema: m:alnAt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the index of the operator on the previous line, which shall be used as the alignment point for the current line. A line can be aligned to any operator on the previous line in the equation; this attribute specifies exactly which operator shall be the target of that alignment in cases where there are multiple operators.  
+  
+ For example, consider the break in this equation:  
+  
+ 50489ccd-e509-41b8-9b7a-564b3ff02f68  
+  
+ The second line could theoretically be aligned to any of the four operators in the previous line.  
+  
+ Specifying an `alnAt` value of `3` for the second line resolves this ambiguity; the second line is aligned to the third operator in the previous line.  
+  
+ The possible values for this attribute are defined by the `ST_Integer255` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:m=http://schemas.openxmlformats.org/officeDocument/2006/math
             </remark>
       </Docs>
@@ -95,11 +157,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,10 +179,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,10 +205,7 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Index of Operator to Align To.</para>
-          <para>Represents the following attribute in the schema: m:val </para>
-        </summary>
+        <summary>Index of Operator to Align To.Represents the following attribute in the schema: m:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:m=http://schemas.openxmlformats.org/officeDocument/2006/math

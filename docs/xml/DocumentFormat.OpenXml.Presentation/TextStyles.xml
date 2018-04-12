@@ -1,4 +1,4 @@
-﻿<Type Name="TextStyles" FullName="DocumentFormat.OpenXml.Presentation.TextStyles">
+<Type Name="TextStyles" FullName="DocumentFormat.OpenXml.Presentation.TextStyles">
   <TypeSignature Language="C#" Value="public class TextStyles : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextStyles extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.TextStyles" />
@@ -31,13 +31,59 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TextStyles Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:txStyles.</para>
-    </summary>
+    <summary>Defines the TextStyles Class. When the object is serialized out as xml, its qualified name is p:txStyles.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TitleStyle &lt;p:titleStyle&gt;</description></item><item><description>BodyStyle &lt;p:bodyStyle&gt;</description></item><item><description>OtherStyle &lt;p:otherStyle&gt;</description></item><item><description>ExtensionList &lt;p:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **txStyles (Slide Master Text Styles)**  
+  
+ This element specifies the text styles within a slide master. Within this element is the styling information for title text, the body text and other slide text as well. This element is only for use within the Slide Master and thus sets the text styles for the corresponding presentation slides.  
+  
+ [*Example*: Consider the case where we would like to specify the title text for a master slide.  
+  
+```xml  
+<p:txStyles>  
+  <p:titleStyle>  
+    <a:lvl1pPr algn="ctr" rtl="0" latinLnBrk="0">  
+      <a:spcBef>  
+        <a:spcPct val="0"/>  
+      </a:spcBef>  
+      <a:buNone/>  
+      <a:defRPr sz="4400" kern="1200">  
+        <a:solidFill>  
+          <a:schemeClr val="tx1"/>  
+        </a:solidFill>  
+        <a:latin typeface="+mj-lt"/>  
+        <a:ea typeface="+mj-ea"/>  
+        <a:cs typeface="+mj-cs"/>  
+      </a:defRPr>  
+    </a:lvl1pPr>  
+  </p:titleStyle>  
+</p:txStyles>  
+```  
+  
+ In the above example the title text is set according to the above formatting for all related slides within the presentation. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sldMaster (§19.3.1.42)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bodyStyle (Slide Master Body Text Style)|§19.3.1.5|  
+|extLst (Extension List)|§19.2.1.12|  
+|otherStyle (Slide Master Other Text Style)|§19.3.1.35|  
+|titleStyle (Slide Master Title Text Style)|§19.3.1.49|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SlideMasterTextStyles) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -53,9 +99,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TextStyles class.
-            </summary>
+        <summary>Initializes a new instance of the TextStyles class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +126,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TextStyles class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TextStyles class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,9 +147,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TextStyles class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TextStyles class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,9 +168,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TextStyles class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TextStyles class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +188,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.BodyStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Slide Master Body Text Style.</para>
-          <para> Represents the following element tag in the schema: p:bodyStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Slide Master Body Text Style. Represents the following element tag in the schema: p:bodyStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.BodyStyle" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -180,11 +215,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,11 +237,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: p:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: p:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -231,10 +261,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -254,11 +282,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.OtherStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Slide Master Other Text Style.</para>
-          <para> Represents the following element tag in the schema: p:otherStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Slide Master Other Text Style. Represents the following element tag in the schema: p:otherStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.OtherStyle" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -281,11 +306,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.TitleStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Slide Master Title Text Style.</para>
-          <para> Represents the following element tag in the schema: p:titleStyle </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Slide Master Title Text Style. Represents the following element tag in the schema: p:titleStyle</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.TitleStyle" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main

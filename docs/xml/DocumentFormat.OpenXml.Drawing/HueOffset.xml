@@ -1,4 +1,4 @@
-﻿<Type Name="HueOffset" FullName="DocumentFormat.OpenXml.Drawing.HueOffset">
+<Type Name="HueOffset" FullName="DocumentFormat.OpenXml.Drawing.HueOffset">
   <TypeSignature Language="C#" Value="public class HueOffset : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HueOffset extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.HueOffset" />
@@ -19,11 +19,27 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Hue Offset.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:hueOff.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Hue Offset. When the object is serialized out as xml, its qualified name is a:hueOff.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **hueOff (Hue Offset)**  
+  
+ This element specifies the input color with its hue shifted, but with its saturation and luminance unchanged.  
+  
+|Parent Elements|  
+|---------------------|  
+|hslClr (§20.1.2.3.13); prstClr (§20.1.2.3.22); schemeClr (§20.1.2.3.29); scrgbClr (§20.1.2.3.30); srgbClr (§20.1.2.3.32); sysClr (§20.1.2.3.33)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Angle) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +55,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the HueOffset class.
-            </summary>
+        <summary>Initializes a new instance of the HueOffset class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +78,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +100,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +126,29 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the actual angular value of the shift. The result of the shift must be between 0 and 360 degrees. Shifts resulting in angular values less than 0 will be treated as 0. Shifts resulting in angular values greater than 360 will be treated as 360.  
+  
+ The following increases the hue angular value by 10 degrees.  
+  
+```  
+<a:solidFill>  
+  <a:hslClr hue="0" sat="100000" lum="50000"/>  
+  <a:hueOff val="600000"/>  
+</a:solidFill>  
+```  
+  
+ The possible values for this attribute are defined by the `ST_Angle` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

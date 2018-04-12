@@ -1,4 +1,4 @@
-﻿<Type Name="SortCondition" FullName="DocumentFormat.OpenXml.Office2010.Excel.SortCondition">
+<Type Name="SortCondition" FullName="DocumentFormat.OpenXml.Office2010.Excel.SortCondition">
   <TypeSignature Language="C#" Value="public class SortCondition : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SortCondition extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.SortCondition" />
@@ -22,12 +22,77 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the SortCondition Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is x14:sortCondition.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the SortCondition Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:sortCondition.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.32   sortCondition*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ A *sortCondition* element is a *CT_SortCondition* type element, as specified in section 2.6.61, that specifies a *sort condition* to apply to a range. See section 2.2.4.4, section 2.2.4.6, section 2.2.4.9, and section 2.2.4.11 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="sortCondition" type="CT_SortCondition"/>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.61   CT_SortCondition*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* sortCondition  
+  
+ A complex type that specifies a sort condition to apply to a range.  
+  
+ *Attributes:*  
+  
+ *descending:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies the direction of the *sort*.  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"false"*|*If sortBy is "value", sort in ascending order. If sortBy is "cellColor" or "fontColor", cells in which the cell color or cell font color specified by dxfId occurs are ordered at the top of the range. If sortBy is "icon", cells in which the icon specified by iconSet and iconId occurs are ordered at the top of the range.*|  
+|*"true"*|*If sortBy is "value", sort in descending order. If sortBy is "cellColor" or "fontColor", cells in which the cell color or cell font color specified by dxfId occurs are ordered at the bottom of the range. If sortBy is "icon", cells in which the icon specified by iconSet and iconId occurs are ordered at the bottom of the range.*|  
+  
+ *sortBy:* An *ST_SortBy* ([ISO/IEC-29500-1] section 18.18.72) attribute that specifies how the cells in a range are sorted.  
+  
+ *ref:* An *ST_Ref* ([ISO/IEC-29500-1] section 18.18.62) attribute that specifies the row (2) or column (2) to which this sort condition applies. This value MUST be contained within the *ref* in the *sortState* element that precedes this element. If the *sortState.columnSort* attribute that precedes this element is "false", this value specifies the column (2) to which this sort condition applies and there MUST be only a single column (2) specified by *ref*. If the *sortState.columnSort* attribute that precedes this element is "true", this value specifies the row (2) to which this sort condition applies and there MUST be only a single row (2) specified by *ref*.  
+  
+ *customList:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies a comma-delimited list of strings that specifies a custom *sort order (2)*. The order of strings in the list specifies the sort order (2). When a cell value matches a string in the list, it is sorted ahead of the cell values that match a later string in the list, and so on for each cell in the range. MUST be ignored if *sortBy* is not equal to "value".  
+  
+ *dxfId:* An *ST_DxfId* ([ISO/IEC-29500-1] section 18.18.25) attribute that specifies the format identifier when *sortBy* equals "cellColor" or *sortBy* equals "fontColor". MUST NOT be present if *sortBy* equals "icon" or "value".  
+  
+ *iconSet:* An ST_IconSetType attribute that specifies the icon set when *sortBy* equals "icon". The absence of this attribute means no icon. MUST NOT be present if *sortBy* is not equal to "icon".  
+  
+ *iconId:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the zero-based index of an icon in an icon set. If the icon set specified by *iconSet* has three icons, this value MUST be less than or equal to 2. If the icon set specified by *iconSet* has four icons, this value MUST be less than or equal to 3. If the icon set specified by *iconSet* has five icons, this value MUST be less than or equal to 4. The absence of this attribute means no icon. MUST NOT be present if *sortBy* is not equal to "icon".  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_SortCondition">*  
+  
+ *\<xsd:attribute name="descending" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="sortBy" type="x:ST_SortBy" use="optional" default="value"/>*  
+  
+ *\<xsd:attribute name="ref" type="x:ST_Ref" use="required"/>*  
+  
+ *\<xsd:attribute name="customList" type="x:ST_Xstring" use="optional"/>*  
+  
+ *\<xsd:attribute name="dxfId" type="x:ST_DxfId" use="optional"/>*  
+  
+ *\<xsd:attribute name="iconSet" type="ST_IconSetType" use="optional" default="3Arrows"/>*  
+  
+ *\<xsd:attribute name="iconId" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +108,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SortCondition class.
-            </summary>
+        <summary>Initializes a new instance of the SortCondition class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,11 +131,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,10 +158,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> customList.</para>
-          <para>Represents the following attribute in the schema: customList </para>
-        </summary>
+        <summary>customList.Represents the following attribute in the schema: customList</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -126,10 +184,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> descending.</para>
-          <para>Represents the following attribute in the schema: descending </para>
-        </summary>
+        <summary>descending.Represents the following attribute in the schema: descending</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -155,10 +210,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dxfId.</para>
-          <para>Represents the following attribute in the schema: dxfId </para>
-        </summary>
+        <summary>dxfId.Represents the following attribute in the schema: dxfId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -184,10 +236,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> iconId.</para>
-          <para>Represents the following attribute in the schema: iconId </para>
-        </summary>
+        <summary>iconId.Represents the following attribute in the schema: iconId</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -213,10 +262,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.IconSetTypeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> iconSet.</para>
-          <para>Represents the following attribute in the schema: iconSet </para>
-        </summary>
+        <summary>iconSet.Represents the following attribute in the schema: iconSet</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -237,9 +283,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -265,10 +309,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ref.</para>
-          <para>Represents the following attribute in the schema: ref </para>
-        </summary>
+        <summary>ref.Represents the following attribute in the schema: ref</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -294,10 +335,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SortByValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> sortBy.</para>
-          <para>Represents the following attribute in the schema: sortBy </para>
-        </summary>
+        <summary>sortBy.Represents the following attribute in the schema: sortBy</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

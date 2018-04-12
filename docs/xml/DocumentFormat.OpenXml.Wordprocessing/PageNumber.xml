@@ -1,4 +1,4 @@
-﻿<Type Name="PageNumber" FullName="DocumentFormat.OpenXml.Wordprocessing.PageNumber">
+<Type Name="PageNumber" FullName="DocumentFormat.OpenXml.Wordprocessing.PageNumber">
   <TypeSignature Language="C#" Value="public class PageNumber : DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PageNumber extends DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PageNumber" />
@@ -19,11 +19,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Page Number Block.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:pgNum.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Page Number Block. When the object is serialized out as xml, its qualified name is w:pgNum.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **pgNum (Page Number Block)**  
+  
+ This element specifies the presence of a page number block at the current location in the run content. A *page number block* is a non-editable region of text which shall display the current page using ascending decimal numbers. [*Note*: The page number block is a legacy construct used for compatibility with older word processors, and should not be produced unless it was consumed while reading a document – it is recommended that the PAGENUM field is used in its place. *end note*]  
+  
+ A page number block shall be displayed using ascending decimal numbers, regardless of the languages specified in the parent run’s lang property (§17.3.2.20).  
+  
+ [*Example*: Consider a WordprocessingML run with the following run content:  
+  
+```xml  
+<w:r>  
+  <w:t xml:space="preserve">This is the current page: </w:t>  
+  <w:pgNum />  
+</w:r>  
+```  
+  
+ This run specifies that a page number block must be placed after the text string literal *This is the current page:* in the document. Assuming that this content is on the first page, this run would be displayed as follows:  
+  
+```xml  
+This is the current page: 1  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Empty) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +74,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PageNumber class.
-            </summary>
+        <summary>Initializes a new instance of the PageNumber class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

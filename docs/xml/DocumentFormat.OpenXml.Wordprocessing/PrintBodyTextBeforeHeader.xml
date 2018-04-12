@@ -1,4 +1,4 @@
-﻿<Type Name="PrintBodyTextBeforeHeader" FullName="DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader">
+<Type Name="PrintBodyTextBeforeHeader" FullName="DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader">
   <TypeSignature Language="C#" Value="public class PrintBodyTextBeforeHeader : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintBodyTextBeforeHeader extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PrintBodyTextBeforeHeader" />
@@ -19,11 +19,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Print Body Text before Header/Footer Contents.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:printBodyTextBeforeHeader.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Print Body Text before Header/Footer Contents. When the object is serialized out as xml, its qualified name is w:printBodyTextBeforeHeader.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **printBodyTextBeforeHeader (Print Body Text before Header/Footer Contents)**  
+  
+ This element specifies the order in which the contents of the main document story and any headers and/or footers shall be sent to the printer.  
+  
+ Typically, the contents of a document are sent to the printer as follows:  
+  
+-   First, the contents of headers/footers are sent to the printer  
+  
+-   Finally, the contents of the main document story are sent to the printer  
+  
+ This element, when present with a val attribute value of *true* (or equivalent), specifies that this order shall be reversed, and that the body text shall be sent to the printer before any header/footer text. This reversal allows for the processing of PostScript codes in the text layer in the same order as afforded by some legacy word processing applications.  
+  
+ [*Example*: Consider a WordprocessingML document which is printed. The default resulting print order is the headers and footers for each page, followed by the page contents.  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:printBodyTextBeforeHeader />  
+</w:compat>  
+```  
+  
+ Then this order must be reversed, and the page contents must be printed before the corresponding header and/or footer for each page. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PrintBodyTextBeforeHeader class.
-            </summary>
+        <summary>Initializes a new instance of the PrintBodyTextBeforeHeader class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

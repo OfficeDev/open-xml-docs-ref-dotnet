@@ -1,4 +1,4 @@
-﻿<Type Name="IgnoredError" FullName="DocumentFormat.OpenXml.Spreadsheet.IgnoredError">
+<Type Name="IgnoredError" FullName="DocumentFormat.OpenXml.Spreadsheet.IgnoredError">
   <TypeSignature Language="C#" Value="public class IgnoredError : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IgnoredError extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.IgnoredError" />
@@ -19,11 +19,58 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Ignored Error.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:ignoredError.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Ignored Error. When the object is serialized out as xml, its qualified name is x:ignoredError.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **ignoredError (Ignored Error)**  
+  
+ A single ignored error for a range of cells.  
+  
+ A cell is considered to have an error condition when it meets one of the conditions specified in the attribute descriptions below. [*Example*: If a cell is formatted as text but contains a numeric value, this is considered to be a potential error because the number won't be treated as a number, for example, in calculations. *end example*]  
+  
+ This is simply a guess by the implementing application, and a recommendation to the user. Cells with the errors specified below  might be deliberately defined as such. [*Example*: A cell formatted as text which contains numeric Postal Codes or Order numbers. It is useful to format these cells as text so that leading zeros remain as part of the value instead of being removed. *end example*]  
+  
+ An *\<ignoreError>* element is not written in the file unless the user has specifically reviewed the error and decided to keep the cell state as it is, and no longer wishes to be alerted about it for this cell. This can be helpful for the application to decide which errors should be surfaced to the user vs kept quiet because the user doesn't want these to be surfaced (e.g., because they are legitimate cell states).  
+  
+ [*Example*:This example shows that cells A1 and B2 both contain numbers stored as text, and this error has been reviewed and specifically flagged to be no longer surfaced as an error to the user.  
+  
+```xml  
+<ignoredErrors>  
+  <ignoredError sqref="A1 B2" numberStoredAsText="1"/>  
+</ignoredErrors>  
+```  
+  
+ *end example*]  
+  
+ More than one kind of error can exist on a cell. These flags are not mutually exclusive.  
+  
+|Parent Elements|  
+|---------------------|  
+|ignoredErrors (§18.3.1.51)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|calculatedColumn (Calculated Column)|Ignore errors when cells contain a value different from a calculated column formula. In other words, for a calculated column, a cell in that column is considered to have an error if its formula is different from the calculated column formula, or doesn't contain a formula at all.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|emptyCellReference (Empty Cell Reference)|Ignore errors when formulas refer to empty cells.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|evalError (Evaluation Error)|Ignore errors when cells contain formulas that result in an error.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|formula (Formula)|Ignore errors when a formula in a region of your worksheet differs from other formulas in the same region.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|formulaRange (Formula Range)|Ignore errors when formulas omit certain cells in a region.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|listDataValidation (List Data Validation)|Ignore errors when a cell's value in a Table does not comply with the Data Validation rules specified.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|numberStoredAsText (Number Stored As Text)|Ignore errors when numbers are formatted as text or are preceded by an apostrophe.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sqref (Sequence of References)|Reference to a range of cells that have this ignored error.<br /><br /> The possible values for this attribute are defined by the *ST_Sqref* simple type (§18.18.76).|  
+|twoDigitTextYear (Two Digit Text Year)|Ignore errors when formulas contain text formatted cells with years represented as 2 digits.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|unlockedFormula (Unlocked Formula)|Ignore errors when unlocked cells contain formulas.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_IgnoredError) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +86,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the IgnoredError class.
-            </summary>
+        <summary>Initializes a new instance of the IgnoredError class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,11 +111,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Calculated Column.</para>
-          <para>Represents the following attribute in the schema: calculatedColumn </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Calculated Column.Represents the following attribute in the schema: calculatedColumn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,11 +135,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,11 +162,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Empty Cell Reference.</para>
-          <para>Represents the following attribute in the schema: emptyCellReference </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Empty Cell Reference.Represents the following attribute in the schema: emptyCellReference</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,11 +188,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Evaluation Error.</para>
-          <para>Represents the following attribute in the schema: evalError </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Evaluation Error.Represents the following attribute in the schema: evalError</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -180,11 +214,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula.</para>
-          <para>Represents the following attribute in the schema: formula </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Formula.Represents the following attribute in the schema: formula</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -209,11 +240,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Formula Range.</para>
-          <para>Represents the following attribute in the schema: formulaRange </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Formula Range.Represents the following attribute in the schema: formulaRange</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -238,11 +266,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> List Data Validation.</para>
-          <para>Represents the following attribute in the schema: listDataValidation </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>List Data Validation.Represents the following attribute in the schema: listDataValidation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -262,10 +287,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -290,11 +313,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Number Stored As Text.</para>
-          <para>Represents the following attribute in the schema: numberStoredAsText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Number Stored As Text.Represents the following attribute in the schema: numberStoredAsText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -319,11 +339,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.StringValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sequence of References.</para>
-          <para>Represents the following attribute in the schema: sqref </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Sequence of References.Represents the following attribute in the schema: sqref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -348,11 +365,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Two Digit Text Year.</para>
-          <para>Represents the following attribute in the schema: twoDigitTextYear </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Two Digit Text Year.Represents the following attribute in the schema: twoDigitTextYear</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -377,11 +391,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Unlocked Formula.</para>
-          <para>Represents the following attribute in the schema: unlockedFormula </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Unlocked Formula.Represents the following attribute in the schema: unlockedFormula</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

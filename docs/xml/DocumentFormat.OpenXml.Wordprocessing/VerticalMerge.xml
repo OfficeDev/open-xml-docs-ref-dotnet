@@ -1,4 +1,4 @@
-﻿<Type Name="VerticalMerge" FullName="DocumentFormat.OpenXml.Wordprocessing.VerticalMerge">
+<Type Name="VerticalMerge" FullName="DocumentFormat.OpenXml.Wordprocessing.VerticalMerge">
   <TypeSignature Language="C#" Value="public class VerticalMerge : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VerticalMerge extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.VerticalMerge" />
@@ -19,11 +19,73 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the VerticalMerge Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:vMerge.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the VerticalMerge Class. When the object is serialized out as xml, its qualified name is w:vMerge.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **vMerge (Vertically Merged Cell)**  
+  
+ This element specifies that this cell is part of a vertically merged set of cells in a table. The val attribute on this element determines how this cell is defined with respect to the previous cell in the table (i.e., whether this cell continues the vertical merge or starts a new merged group of cells).  
+  
+ If this element is omitted, then this cell shall not be part of any vertically merged grouping of cells, and any vertically merged group of preceding cells shall be closed. If a vertically merged group of cells do not span the same set of grid columns, then the document is non-conformant.  
+  
+ [*Example*: Consider a table with three rows and two columns with the last column completely vertically merged:  
+  
+ The second cell in the first row starts a vertical merge that is completed in the last cell, resulting in the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  …  <w:tr>  
+    <w:tc>  
+      …    </w:tc>  
+    <w:tc>  
+      …    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:vmerge w:val="restart"/>  
+      </w:tcPr>  
+      …    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:tc>  
+      …    </w:tc>  
+    <w:tc>  
+      …    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:vmerge w:val="continue"/>  
+      </w:tcPr>  
+      …    </w:tc>  
+  </w:tr>  
+  <w:tr>  
+    <w:tc>  
+      …    </w:tc>  
+    <w:tc>  
+      …    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:vmerge w:val="continue"/>  
+      </w:tcPr>  
+      …    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ The vmerge element defines the cells which are vertically merged, and how each cell is merged together. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_VMerge) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +101,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the VerticalMerge class.
-            </summary>
+        <summary>Initializes a new instance of the VerticalMerge class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +124,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +146,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +172,32 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.MergedCellValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Merge Type.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Vertical Merge Type.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies how the table cell is part of a vertically merged region. This determines whether the cell should join onto an existing grouping of merged cells if any exist, or start a new group of merged cells. Refer to the simple type definition for a full description of each type.  
+  
+ If this attribute is omitted, its value shall be assumed to be `continue`.  
+  
+ Consider a table cell where a vertical cell merge begins. This setting is represented as the following WordprocessingML:  
+  
+```  
+<w:tcPr>  
+    <w:vmerge w:val="restart"/>  
+</w:tcPr>  
+```  
+  
+ The attribute value of `restart` specifies that this element shall start a new vertically merged region in this table.  
+  
+ The possible values for this attribute are defined by the `ST_Merge` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

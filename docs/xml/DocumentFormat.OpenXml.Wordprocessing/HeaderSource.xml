@@ -1,4 +1,4 @@
-﻿<Type Name="HeaderSource" FullName="DocumentFormat.OpenXml.Wordprocessing.HeaderSource">
+<Type Name="HeaderSource" FullName="DocumentFormat.OpenXml.Wordprocessing.HeaderSource">
   <TypeSignature Language="C#" Value="public class HeaderSource : DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HeaderSource extends DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.HeaderSource" />
@@ -19,11 +19,47 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Header Definition File Path.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:headerSource.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Header Definition File Path. When the object is serialized out as xml, its qualified name is w:headerSource.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **headerSource (Header Definition File Path)**  
+  
+ This element specifies the location of a file that contains the column header information which shall be used when connecting to an external data source that does not have column header data specified. Specifically, this element specifies a file that corresponds with the aforementioned external data source. [*Note*: Column headers are needed to enable a hosting application to associate external data source's columns to fields via the fieldMapData element (§17.14.15).  
+  
+ If this element is omitted, then the column header definition data is not specified in an external file and shall be retrieved from the primary data source associated with the mail merge.  
+  
+ [*Example*:  Consider a WordprocessingML merged document containing the following WordprocessingML:  
+  
+```xml  
+<w:settings>  
+  …  <w:headerSource r:id="rId2" />  
+  …</w:settings>  
+```  
+  
+ This mail merge's headerSource element specifies via its r:id attribute value of *rId2* that the external data source to be used for the column header information for the given WordprocessingML document is the data source targeted by the relationship whose Id attribute is equal to *rId2*. If we examine the corresponding relationship part item for the setting part, as follows:  
+  
+```xml  
+<Relationships>  
+  <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/mailMergeSource" Target="file:///c:/headerData.txt" TargetMode="External" />  
+</Relationships>  
+```  
+  
+ Since the relationship whose Id attribute value is *rId2* specifies the column header data file path for the data source effectively specifies a file path of *c:\headerData.txt*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Rel) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +75,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the HeaderSource class.
-            </summary>
+        <summary>Initializes a new instance of the HeaderSource class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +98,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +120,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

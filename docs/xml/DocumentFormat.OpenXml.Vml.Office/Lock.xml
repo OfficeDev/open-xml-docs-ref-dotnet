@@ -1,4 +1,4 @@
-﻿<Type Name="Lock" FullName="DocumentFormat.OpenXml.Vml.Office.Lock">
+<Type Name="Lock" FullName="DocumentFormat.OpenXml.Vml.Office.Lock">
   <TypeSignature Language="C#" Value="public class Lock : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Lock extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Vml.Office.Lock" />
@@ -19,11 +19,52 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Lock Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is o:lock.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Lock Class. When the object is serialized out as xml, its qualified name is o:lock.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lock (Shape Protections)**  
+  
+ This element specifies locks against actions that can be effected in the UI of an authoring application or programmatically through an object model.  
+  
+ [*Example*: The following snippet locks the shape's aspect ratio and text from user edits.  
+  
+```xml  
+<v:shape … >  
+  <o:lock v:ext="edit" aspectratio="t" text="t"/>  
+</v:shape>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|arc (§14.1.2.1); background (Part 1, §17.2.1); curve (§14.1.2.3); group (§14.1.2.7); hdrShapeDefaults (§9.7.2.1); image (§14.1.2.10); line (§14.1.2.12); object (Part 1, §17.3.3.19); oval (§14.1.2.13); pict (§9.2.2.2); pict (§9.5.1); polyline (§14.1.2.15); rect (§14.1.2.16); roundrect (§14.1.2.17); shape (§14.1.2.19); shapeDefaults (§9.7.2.2); shapedefaults (§14.2.2.28); shapetype (§14.1.2.20)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|adjusthandles (Handles Lock)|Specifies whether the handles of a shape are locked from being edited.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|aspectratio (Aspect Ratio Lock)|Specifies whether the aspect ratio of a shape is locked from being edited.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|cropping (Cropping Lock)|Specifies whether cropping of a shape is locked from being edited.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|ext (VML Extension Handling Behavior)<br /><br /> Namespace: *urn:schemas-microsoft-com:vml*|Specifies an optional value that indicates how applications that implement VML should interpret extensions not defined as part of the original specification of core VML.<br /><br /> [*Rationale*: This part of the original VML specification is included to assist applications that leverage existing VML support in implementing the Office Open XML Format. *end rationale*]<br /><br /> The possible values for this attribute are defined by the *ST_Ext* simple type (§14.1.3.2).|  
+|grouping (Grouping Lock)|Specifies whether a shape is locked from being grouped.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|position (Position Lock)|Specifies whether the position of a shape is locked from being edited.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|rotation (Rotation Lock)|Specifies whether the rotation of a shape is locked from being edited.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|selection (Selection Lock)|Specifies whether the shape is locked from being selectable in an editor.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|shapetype (AutoShape Type Lock)|Specifies whether the AutoShape type is locked from being edited.  Default is *false*.  If *true*, the type of an AutoShape cannot be changed in a graphical editor.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|text (Text Lock)|Specifies whether the text attached to a shape is locked from being edited.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|ungrouping (Ungrouping Lock)|Specifies whether a grouped shape is locked from being ungrouped.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+|verticies (Vertices Lock)|Specifies whether the vertices of a path are locked from being edited.  Default is *false*.<br /><br /> The possible values for this attribute are defined by the *ST_TrueFalse* simple type (§15.1.2.5).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Lock) is located in §A.6.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +80,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Lock class.
-            </summary>
+        <summary>Initializes a new instance of the Lock class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,11 +105,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Handles Lock.</para>
-          <para>Represents the following attribute in the schema: adjusthandles </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Handles Lock.Represents the following attribute in the schema: adjusthandles</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,11 +131,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Aspect Ratio Lock.</para>
-          <para>Represents the following attribute in the schema: aspectratio </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Aspect Ratio Lock.Represents the following attribute in the schema: aspectratio</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,11 +155,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,11 +182,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cropping Lock.</para>
-          <para>Represents the following attribute in the schema: cropping </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cropping Lock.Represents the following attribute in the schema: cropping</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -180,11 +208,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> VML Extension Handling Behavior.</para>
-          <para>Represents the following attribute in the schema: v:ext </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>VML Extension Handling Behavior.Represents the following attribute in the schema: v:ext</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:v=urn:schemas-microsoft-com:vml
             </remark>
@@ -211,11 +236,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Grouping Lock.</para>
-          <para>Represents the following attribute in the schema: grouping </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Grouping Lock.Represents the following attribute in the schema: grouping</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -235,10 +257,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -263,11 +283,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Position Lock.</para>
-          <para>Represents the following attribute in the schema: position </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Position Lock.Represents the following attribute in the schema: position</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -292,11 +309,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Rotation Lock.</para>
-          <para>Represents the following attribute in the schema: rotation </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Rotation Lock.Represents the following attribute in the schema: rotation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -321,11 +335,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Selection Lock.</para>
-          <para>Represents the following attribute in the schema: selection </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Selection Lock.Represents the following attribute in the schema: selection</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -350,11 +361,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AutoShape Type Lock.</para>
-          <para>Represents the following attribute in the schema: shapetype </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>AutoShape Type Lock.Represents the following attribute in the schema: shapetype</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -379,11 +387,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Lock.</para>
-          <para>Represents the following attribute in the schema: text </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Lock.Represents the following attribute in the schema: text</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -408,11 +413,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Ungrouping Lock.</para>
-          <para>Represents the following attribute in the schema: ungrouping </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Ungrouping Lock.Represents the following attribute in the schema: ungrouping</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -437,11 +439,8 @@
         <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertices Lock.</para>
-          <para>Represents the following attribute in the schema: verticies </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertices Lock.Represents the following attribute in the schema: verticies</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

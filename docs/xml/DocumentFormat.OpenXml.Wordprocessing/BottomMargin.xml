@@ -1,4 +1,4 @@
-﻿<Type Name="BottomMargin" FullName="DocumentFormat.OpenXml.Wordprocessing.BottomMargin">
+<Type Name="BottomMargin" FullName="DocumentFormat.OpenXml.Wordprocessing.BottomMargin">
   <TypeSignature Language="C#" Value="public class BottomMargin : DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BottomMargin extends DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BottomMargin" />
@@ -19,11 +19,134 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Table Cell Bottom Margin Default.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:bottom.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Table Cell Bottom Margin Default. When the object is serialized out as xml, its qualified name is w:bottom.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **bottom (Table Cell Bottom Margin Exception)**  
+  
+ This element specifies the amount of space which shall be left between the bottom extent of the cell contents and the border of a specific table cell within a table. This setting shall override the table cell bottom margin definition specified by the bottom element contained within the table properties (§17.4.5).  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* or *auto* for this element shall be ignored.  
+  
+ If omitted, then this table cell shall use the bottom cell margins defined in the bottom element contained within the table properties (§17.4.5).  
+  
+ [*Example*: Consider a table with two cells in which the first table cell’s bottom margin is specified via an exception to be ten times larger ( vs. ) than the other table cell margins:  
+  
+ This text fills the extents of the cell.  
+  
+ So does this  
+  
+ The first cell in the table would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    <w:tcMar>  
+      <w:bottom w:w="288" w:type="dxa" />  
+    </w:tcMar>  
+  </w:tcPr>  
+</w:tc>  
+```  
+  
+ The first cell in this table has an exception applied to the table cell bottom cell margin setting it to *288* twentieths of a point (). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcMar (§17.4.69)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **bottom (Table Cell Bottom Border)**  
+  
+ This element specifies the border which shall be displayed at the bottom of the current table cell. The appearance of this table cell border in the document shall be determined by the following settings:  
+  
+-   If the net tblCellSpacing element value (§17.4.45;§17.4.44;§17.4.46) applied to the cell is non-zero, then the cell border shall always be displayed  
+  
+-   Otherwise, the display of the border is subject to the conflict resolution algorithm defined by the tcBorders element (§17.4.67) and the tblBorders element (§17.4.40;§17.4.39)  
+  
+ If this element is omitted, then the bottom of this table cell shall not have a cell border, and its border can use the table's border settings as appropriate.  
+  
+ [*Example*: Consider a table in which the first cell in the first row specifies a bottom cell border  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This bottom cell border is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    …    <w:tcBorders>  
+      <w:bottom w:val="thinThickThinSmallGap" w:sz="24" w:space="0" w:color="FF0000"/>  
+    </w:tcBorders>  
+  </w:tcPr>  
+  <w:p/>  
+</w:tc>  
+```  
+  
+ The bottom element specifies a three point border of type *thinThinThickSmallGap*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcBorders (§17.4.67)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **bottom (Table Cell Bottom Margin Default)**  
+  
+ This element specifies the amount of space which shall be left between the bottom extent of the cell contents and the border of all table cells within  the parent table (or table row). This setting can be overridden by the table cell bottom margin definition specified by the bottom element contained within the table cell's properties (§17.4.2).  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* or *auto* for this element shall be ignored.  
+  
+ If this element is omitted, then it shall inherit the table cell margin from the associated table style. If a bottom margin is never specified in the style hierarchy, then this table shall have no bottom cell padding by default (excepting individual cell overrides).  
+  
+ [*Example*: Consider a two by two table in which the default table cell bottom margin is specified to be exactly , as follows (marked with an arrow in the first table cell below):  
+  
+ R1C1  
+  
+ R2C1  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This table property is specified using the following WordprocessingML markup:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblCellMar>  
+      <w:bottom w:w="360" w:type="dxa"/>  
+    </w:tblCellMar>  
+  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ Every cell in the table has a default cell margin setting it to *360* twentieths of a point. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblCellMar (§17.4.42); tblCellMar (§17.4.43)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +162,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BottomMargin class.
-            </summary>
+        <summary>Initializes a new instance of the BottomMargin class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +185,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +207,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

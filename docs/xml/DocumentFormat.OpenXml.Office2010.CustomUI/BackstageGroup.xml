@@ -1,4 +1,4 @@
-﻿<Type Name="BackstageGroup" FullName="DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup">
+<Type Name="BackstageGroup" FullName="DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup">
   <TypeSignature Language="C#" Value="public class BackstageGroup : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BackstageGroup extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.CustomUI.BackstageGroup" />
@@ -31,14 +31,103 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the BackstageGroup Class.</para>
-      <para>This class is available in Office2010 or above.</para>
-      <para> When the object is serialized out as xml, its qualified name is mso14:group.</para>
-    </summary>
+    <summary>Defines the BackstageGroup Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is mso14:group.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PrimaryItem &lt;mso14:primaryItem&gt;</description></item><item><description>TopItemsGroupControls &lt;mso14:topItems&gt;</description></item><item><description>BottomItemsGroupControls &lt;mso14:bottomItems&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.9   CT_BackstageGroup*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/2009/07/customui  
+  
+ *Referenced by:* CT_TaskFormGroupTask, CT_BackstageGroups, CT_SimpleGroups  
+  
+ Specifies a Backstage group control.  
+  
+ *Child Elements:*  
+  
+ *primaryItem:* A *CT_PrimaryItem* element, as specified in section 2.3.60.  
+  
+ *topItems:* A *CT_GroupControls* element, as specified in section 2.3.49.  
+  
+ *bottomItems:* A *CT_GroupControls* element, as specified in section 2.3.49.  
+  
+ *Attributes:*  
+  
+ *id:* An *ST_UniqueID* attribute, as specified in section 2.4.22, that specifies the identifier of a custom control. All custom controls MUST have unique identifiers. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
+  
+ *idQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control. This attribute is used to reference controls or containers created by other Custom UI documents. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
+  
+ *tag:* An *ST_String* attribute, as specified in section 2.4.19, that specifies an arbitrary *string* that provides additional information about this control during callback function calls. If this attribute is omitted, the value defaults to an empty string.  
+  
+ *idMso:* An *ST_ID* attribute, as specified in section 2.4.12, that specifies the identifier of a built-in control. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified.  
+  
+ *insertAfterMso:* An *ST_ID* attribute that specifies the identifier of a built-in control after which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
+  
+ *insertBeforeMso:* An *ST_ID* attribute that specifies the identifier of a built-in control before which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
+  
+ *insertAfterQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control after which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
+  
+ *insertBeforeQ:* An *ST_QID* attribute that specifies the qualified identifier of a control before which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
+  
+ *label:* An *ST_String* attribute that specifies a string that is displayed as the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
+  
+ *getLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
+  
+ *visible:* A *Boolean* attribute that specifies the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
+  
+ *getVisible:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
+  
+ *style:* An *ST_GroupStyle* attribute, as specified in section 2.4.11, that specifies the visual style of this Backstage group control. The *style* and *getStyle* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the Backstage group control defaults to the normal style.  
+  
+ *getStyle:* An *ST_Delegate* attribute, as specified in section 2.4.7, that specifies the name of a callback function that is called to determine the visual style of this Backstage group control. The *style* and *getStyle* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the Backstage group control defaults to the normal style.  
+  
+ *helperText:* An *ST_LongString* attribute, as specified in section 2.4.16, that specifies additional text that explains the functionality of this Backstage group control. The *helperText* and *getHelperText* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the Backstage group control does not display additional text.  
+  
+ *getHelperText:* An *ST_Delegate* attribute that specifies the name of a callback that is called to determine the additional text for this Backstage group control. The *helperText* and *getHelperText* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the Backstage group control does not display additional text.  
+  
+ *showLabel:* A *Boolean* attribute that specifies whether the label for this control will be displayed. The *showLabel* and *getShowLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the label of the control will be displayed.  
+  
+ *getShowLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine whether to display the label of this control. The *showLabel* and *getShowLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the label of the control will be displayed.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_BackstageGroup">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:choice minOccurs="0" maxOccurs="1">*  
+  
+ *\<xsd:element name="primaryItem" type="CT_PrimaryItem" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:choice>*  
+  
+ *\<xsd:element name="topItems" type="CT_GroupControls" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="bottomItems" type="CT_GroupControls" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attributeGroup ref="AG_IDAttributes"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_PositionAttributes"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Label"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_Visible"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_GroupStyle"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_HelperText"/>*  
+  
+ *\<xsd:attributeGroup ref="AG_ShowLabel"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -54,9 +143,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BackstageGroup class.
-            </summary>
+        <summary>Initializes a new instance of the BackstageGroup class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -83,9 +170,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BackstageGroup class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the BackstageGroup class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,9 +191,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BackstageGroup class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the BackstageGroup class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,9 +212,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the BackstageGroup class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the BackstageGroup class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -154,11 +235,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -183,10 +262,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getHelperText.</para>
-          <para>Represents the following attribute in the schema: getHelperText </para>
-        </summary>
+        <summary>getHelperText.Represents the following attribute in the schema: getHelperText</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -212,10 +288,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getLabel.</para>
-          <para>Represents the following attribute in the schema: getLabel </para>
-        </summary>
+        <summary>getLabel.Represents the following attribute in the schema: getLabel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -241,10 +314,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getShowLabel.</para>
-          <para>Represents the following attribute in the schema: getShowLabel </para>
-        </summary>
+        <summary>getShowLabel.Represents the following attribute in the schema: getShowLabel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -270,10 +340,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getStyle.</para>
-          <para>Represents the following attribute in the schema: getStyle </para>
-        </summary>
+        <summary>getStyle.Represents the following attribute in the schema: getStyle</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -299,10 +366,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> getVisible.</para>
-          <para>Represents the following attribute in the schema: getVisible </para>
-        </summary>
+        <summary>getVisible.Represents the following attribute in the schema: getVisible</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -328,10 +392,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> helperText.</para>
-          <para>Represents the following attribute in the schema: helperText </para>
-        </summary>
+        <summary>helperText.Represents the following attribute in the schema: helperText</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -357,10 +418,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -386,10 +444,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> idMso.</para>
-          <para>Represents the following attribute in the schema: idMso </para>
-        </summary>
+        <summary>idMso.Represents the following attribute in the schema: idMso</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -415,10 +470,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> insertAfterMso.</para>
-          <para>Represents the following attribute in the schema: insertAfterMso </para>
-        </summary>
+        <summary>insertAfterMso.Represents the following attribute in the schema: insertAfterMso</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -444,10 +496,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> insertAfterQ.</para>
-          <para>Represents the following attribute in the schema: insertAfterQ </para>
-        </summary>
+        <summary>insertAfterQ.Represents the following attribute in the schema: insertAfterQ</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -473,10 +522,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> insertBeforeMso.</para>
-          <para>Represents the following attribute in the schema: insertBeforeMso </para>
-        </summary>
+        <summary>insertBeforeMso.Represents the following attribute in the schema: insertBeforeMso</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -502,10 +548,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> insertBeforeQ.</para>
-          <para>Represents the following attribute in the schema: insertBeforeQ </para>
-        </summary>
+        <summary>insertBeforeQ.Represents the following attribute in the schema: insertBeforeQ</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -531,10 +574,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> label.</para>
-          <para>Represents the following attribute in the schema: label </para>
-        </summary>
+        <summary>label.Represents the following attribute in the schema: label</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -555,9 +595,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -583,10 +621,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> idQ.</para>
-          <para>Represents the following attribute in the schema: idQ </para>
-        </summary>
+        <summary>idQ.Represents the following attribute in the schema: idQ</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -612,10 +647,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> showLabel.</para>
-          <para>Represents the following attribute in the schema: showLabel </para>
-        </summary>
+        <summary>showLabel.Represents the following attribute in the schema: showLabel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -641,10 +673,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.CustomUI.StyleValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> style.</para>
-          <para>Represents the following attribute in the schema: style </para>
-        </summary>
+        <summary>style.Represents the following attribute in the schema: style</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -670,10 +699,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> tag.</para>
-          <para>Represents the following attribute in the schema: tag </para>
-        </summary>
+        <summary>tag.Represents the following attribute in the schema: tag</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -699,10 +725,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> visible.</para>
-          <para>Represents the following attribute in the schema: visible </para>
-        </summary>
+        <summary>visible.Represents the following attribute in the schema: visible</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

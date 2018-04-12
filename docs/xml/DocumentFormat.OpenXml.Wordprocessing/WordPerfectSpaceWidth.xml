@@ -1,4 +1,4 @@
-﻿<Type Name="WordPerfectSpaceWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth">
+<Type Name="WordPerfectSpaceWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth">
   <TypeSignature Language="C#" Value="public class WordPerfectSpaceWidth : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WordPerfectSpaceWidth extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.WordPerfectSpaceWidth" />
@@ -19,11 +19,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Space width.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:wpSpaceWidth.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Space width. When the object is serialized out as xml, its qualified name is w:wpSpaceWidth.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **wpSpaceWidth (Use Specific Space Width)**  
+  
+ (The terms *ascent* and *descent* are used as defined in /IEC 14496-22:2007.)  
+  
+ This element specifies that applications should perform determine the width of the space character for all proportional fonts used in this document using the calculation specified below.  
+  
+ Typically, applications calculate the width of a whitespace character dynamically to optimize for the output device. This element, when present with a val attribute value of *true* (or equivalent), specifies that applications should instead use the following algorithm to determine the width of a whitespace character:  
+  
+ where  
+  
+-   is the width of a space character  
+  
+-   is the ascent for the font  
+  
+-   is the descent for the font  
+  
+ [*Example*: Consider a WordprocessingML document with this compatibility setting turned on:  
+  
+```xml  
+<w:compat>  
+  <w:suppressTopSpacingWP />  
+</w:compat>  
+```  
+  
+ If the font applied to a run specified an ascent value of 8 points and a descent value of 2 points, each space in that run would have a width of three and one-third points. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +77,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WordPerfectSpaceWidth class.
-            </summary>
+        <summary>Initializes a new instance of the WordPerfectSpaceWidth class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +100,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +122,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

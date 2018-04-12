@@ -1,4 +1,4 @@
-﻿<Type Name="Level" FullName="DocumentFormat.OpenXml.Wordprocessing.Level">
+<Type Name="Level" FullName="DocumentFormat.OpenXml.Wordprocessing.Level">
   <TypeSignature Language="C#" Value="public class Level : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Level extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Level" />
@@ -55,13 +55,137 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Numbering Level Definition.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:lvl.</para>
-    </summary>
+    <summary>Numbering Level Definition. When the object is serialized out as xml, its qualified name is w:lvl.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>StartNumberingValue &lt;w:start&gt;</description></item><item><description>NumberingFormat &lt;w:numFmt&gt;</description></item><item><description>LevelRestart &lt;w:lvlRestart&gt;</description></item><item><description>ParagraphStyleIdInLevel &lt;w:pStyle&gt;</description></item><item><description>IsLegalNumberingStyle &lt;w:isLgl&gt;</description></item><item><description>LevelSuffix &lt;w:suff&gt;</description></item><item><description>LevelText &lt;w:lvlText&gt;</description></item><item><description>LevelPictureBulletId &lt;w:lvlPicBulletId&gt;</description></item><item><description>LegacyNumbering &lt;w:legacy&gt;</description></item><item><description>LevelJustification &lt;w:lvlJc&gt;</description></item><item><description>PreviousParagraphProperties &lt;w:pPr&gt;</description></item><item><description>NumberingSymbolRunProperties &lt;w:rPr&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lvl (Numbering Level Override Definition)**  
+  
+ This element specifies the appearance and behavior of a specific numbering level within a given numbering level definition override defined using the lvlOverride element (§17.9.9).  
+  
+ A numbering level override definition is identical to a numbering level definition, except for the fact that it is defined as part of a numbering definition instance using the num element (§17.9.16) rather than as part of an abstract numbering definition using the abstractNum element (§17.9.1).  
+  
+ [*Example*: Consider a numbering definition instance which inherits its information from the abstract numbering definition with abstractNumId of *4*, but should use a different set of properties for level *0* of the numbering definition. The resulting WordprocessingML would look like:  
+  
+```xml  
+<w:num w:numId="6">  
+  <w:abstractNumId w:val="4" />  
+  <w:lvlOverride w:ilvl="0">  
+    <w:lvl w:ilvl="0">  
+      <w:start w:val="4" />  
+      <w:lvlText w:val="%1)" />  
+      <w:lvlJc w:val="left" />  
+      <w:pPr>  
+        <w:ind w:left="360" w:hanging="360" />  
+      </w:pPr>  
+    </w:lvl>  
+  </w:lvlOverride>  
+</w:num>  
+```  
+  
+ This numbering definition instance overrides level *0* of the list with the specified numbering level override definition, replacing those in the abstract numbering level definition. *end example*]  
+  
+ [*Note*: The ability to set level overrides optimizes use of numbering in WordprocessingML as it prevents writing out redundant abstract numbering definitions if numbering sets only slightly differ.  
+  
+ Consider using WordprocessingML to create two numbered sets that only differ only in the appearance and style of the first numbering level. Both could use the same abstract numbering definition as long as each references a different numbering definition instance with one of the numbering definition instances leveraging a level override for the first numbering level. Below is WordprocessingML that illustrates this:  
+  
+```xml  
+<w:num w:numId="5">  
+  <w:abstractNumId w:val="4" />  
+</w:num>  
+<w:num w:numId="6">  
+  <w:abstractNumId w:val="4" />  
+  <w:lvlOverride w:ilvl="0">  
+    <w:lvl w:ilvl="0">  
+      <w:start w:val="4" />  
+      <w:lvlText w:val="%1)" />  
+      <w:lvlJc w:val="left" />  
+      <w:pPr>  
+        <w:ind w:left="360" w:hanging="360" />  
+      </w:pPr>  
+    </w:lvl>  
+  </w:lvlOverride>  
+</w:num>  
+```  
+  
+ *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lvlOverride (§17.9.9)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|isLgl (Display All Levels Using Arabic Numerals)|§17.9.4|  
+|legacy (Legacy Numbering Level Properties)|§17.9.5|  
+|lvlJc (Justification)|§17.9.8|  
+|lvlPicBulletId (Picture Numbering Symbol Definition Reference)|§17.9.10|  
+|lvlRestart (Restart Numbering Level Symbol)|§17.9.11|  
+|lvlText (Numbering Level Text)|§17.9.12|  
+|numFmt (Numbering Format)|§17.9.18|  
+|pPr (Numbering Level Associated Paragraph Properties)|§17.9.23|  
+|pStyle (Paragraph Style's Associated Numbering Level)|§17.9.24|  
+|rPr (Numbering Symbol Run Properties)|§17.9.25|  
+|start (Starting Value)|§17.9.26|  
+|suff (Content Between Numbering Symbol and Paragraph Text)|§17.9.29|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Lvl) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lvl (Numbering Level Definition)**  
+  
+ This element specifies the appearance and behavior of a numbering level within a given abstract numbering definition. A numbering level contains a set of properties for the display of the numbering for a given numbering level within an abstract numbering definition.  
+  
+ A numbering level definition is identical to a numbering level override definition, except for the fact that it is defined as part of a numbering definition instance using the  abstractNum element (§17.9.1) rather than as part of an abstract numbering definition using the num element (§17.9.16).  
+  
+ [*Example*: Consider the WordprocessingML below:  
+  
+```xml  
+<w:abstractNum w:abstractNumId="4">  
+  <w:nsid w:val="1DE04504" />  
+  <w:multiLevelType w:val="hybridMultilevel" />  
+  <w:lvl w:ilvl="0" w:tplc="">  
+    …  </w:lvl>  
+  <w:lvl w:ilvl="1" w:tplc="04090019">  
+    …  </w:lvl>  
+  <w:lvl w:ilvl="2" w:tplc="04090019">  
+    …  </w:lvl>  
+  <w:lvl w:ilvl="3" w:tplc="">  
+    …  </w:lvl>  
+  …</w:abstractNum>  
+```  
+  
+ This example shows that any paragraph whose numbering properties use the ilvl elements with the attribute val set equal to *0*, *1*, *2*, or *3* has the appearance and behavior of their first four numbered levels specified by the lvl elements given above (assuming that no level overrides have been specified). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|abstractNum (§17.9.1)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|isLgl (Display All Levels Using Arabic Numerals)|§17.9.4|  
+|legacy (Legacy Numbering Level Properties)|§17.9.5|  
+|lvlJc (Justification)|§17.9.8|  
+|lvlPicBulletId (Picture Numbering Symbol Definition Reference)|§17.9.10|  
+|lvlRestart (Restart Numbering Level Symbol)|§17.9.11|  
+|lvlText (Numbering Level Text)|§17.9.12|  
+|numFmt (Numbering Format)|§17.9.18|  
+|pPr (Numbering Level Associated Paragraph Properties)|§17.9.23|  
+|pStyle (Paragraph Style's Associated Numbering Level)|§17.9.24|  
+|rPr (Numbering Symbol Run Properties)|§17.9.25|  
+|start (Starting Value)|§17.9.26|  
+|suff (Content Between Numbering Symbol and Paragraph Text)|§17.9.29|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Lvl) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -77,9 +201,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Level class.
-            </summary>
+        <summary>Initializes a new instance of the Level class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -106,9 +228,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Level class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Level class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,9 +249,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Level class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Level class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -152,9 +270,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Level class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Level class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -177,11 +293,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -201,11 +315,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Display All Levels Using Arabic Numerals.</para>
-          <para> Represents the following element tag in the schema: w:isLgl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Display All Levels Using Arabic Numerals. Represents the following element tag in the schema: w:isLgl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.IsLegalNumberingStyle" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -228,11 +339,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Legacy Numbering Level Properties.</para>
-          <para> Represents the following element tag in the schema: w:legacy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Legacy Numbering Level Properties. Represents the following element tag in the schema: w:legacy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LegacyNumbering" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -260,11 +368,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Numbering Level.</para>
-          <para>Represents the following attribute in the schema: w:ilvl </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Numbering Level.Represents the following attribute in the schema: w:ilvl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -286,11 +391,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LevelJustification</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Justification.</para>
-          <para> Represents the following element tag in the schema: w:lvlJc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Justification. Represents the following element tag in the schema: w:lvlJc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LevelJustification" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -313,11 +415,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Picture Numbering Symbol Definition Reference.</para>
-          <para> Represents the following element tag in the schema: w:lvlPicBulletId </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Picture Numbering Symbol Definition Reference. Represents the following element tag in the schema: w:lvlPicBulletId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LevelPictureBulletId" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -340,11 +439,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LevelRestart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Restart Numbering Level Symbol.</para>
-          <para> Represents the following element tag in the schema: w:lvlRestart </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Restart Numbering Level Symbol. Represents the following element tag in the schema: w:lvlRestart</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LevelRestart" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -367,11 +463,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LevelSuffix</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Content Between Numbering Symbol and Paragraph Text.</para>
-          <para> Represents the following element tag in the schema: w:suff </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Content Between Numbering Symbol and Paragraph Text. Represents the following element tag in the schema: w:suff</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LevelSuffix" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -394,11 +487,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.LevelText</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Numbering Level Text.</para>
-          <para> Represents the following element tag in the schema: w:lvlText </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Numbering Level Text. Represents the following element tag in the schema: w:lvlText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.LevelText" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -421,10 +511,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -444,11 +532,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingFormat</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Numbering Format.</para>
-          <para> Represents the following element tag in the schema: w:numFmt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Numbering Format. Represents the following element tag in the schema: w:numFmt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.NumberingFormat" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -471,10 +556,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingSymbolRunProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Numbering Symbol Run Properties.</para>
-          <para> Represents the following element tag in the schema: w:rPr </para>
-        </summary>
+        <summary>Numbering Symbol Run Properties. Represents the following element tag in the schema: w:rPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -498,10 +580,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleIdInLevel</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Paragraph Style's Associated Numbering Level.</para>
-          <para> Represents the following element tag in the schema: w:pStyle </para>
-        </summary>
+        <summary>Paragraph Style's Associated Numbering Level. Represents the following element tag in the schema: w:pStyle</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -525,10 +604,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Numbering Level Associated Paragraph Properties.</para>
-          <para> Represents the following element tag in the schema: w:pPr </para>
-        </summary>
+        <summary>Numbering Level Associated Paragraph Properties. Represents the following element tag in the schema: w:pPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -552,11 +628,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Starting Value.</para>
-          <para> Represents the following element tag in the schema: w:start </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Starting Value. Represents the following element tag in the schema: w:start</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.StartNumberingValue" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -584,11 +657,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Template Code.</para>
-          <para>Represents the following attribute in the schema: w:tplc </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Template Code.Represents the following attribute in the schema: w:tplc</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -615,11 +685,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Tentative Numbering.</para>
-          <para>Represents the following attribute in the schema: w:tentative </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Tentative Numbering.Represents the following attribute in the schema: w:tentative</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

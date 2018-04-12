@@ -1,4 +1,4 @@
-﻿<Type Name="Kinsoku" FullName="DocumentFormat.OpenXml.Wordprocessing.Kinsoku">
+<Type Name="Kinsoku" FullName="DocumentFormat.OpenXml.Wordprocessing.Kinsoku">
   <TypeSignature Language="C#" Value="public class Kinsoku : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Kinsoku extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Kinsoku" />
@@ -19,11 +19,93 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Kinsoku Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:kinsoku.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Kinsoku Class. When the object is serialized out as xml, its qualified name is w:kinsoku.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **kinsoku (Use East Asian Typography Rules for First and Last Character per Line)**  
+  
+ This element specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall be applied to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph.  
+  
+ If these rules are set on the current paragraph, then the following rules are applied to the all first and last characters in the paragraph except the first and last character in the paragraph. By default, the following settings are used for kinsoku paragraphs:  
+  
+ Chinese (Simplified)  
+  
+-   Cannot start a line:!%),.:;>?]}¢¨°·ˇˉ―‖’”…‰′″›℃∶、。〃〉》」』】〕〗〞︶︺︾﹀﹄﹚﹜﹞！＂％＇），．：；？］｀｜｝～￠  
+  
+ *(Unicode character values: U+0021, U+0025, U+0029, U+002C, U+002E, U+003A, U+003B, U+003E, U+003F, U+005D, U+007D, U+00A2, U+00A8, U+00B0, U+00B7, U+02C7, U+02C9, U+2015, U+2016, U+2019, U+201D, U+2026, U+2030, U+2032, U+2033, U+203A, U+2103, U+2236, U+3001, U+3002, U+3003, U+3009, U+300B, U+300D, U+300F, U+3011, U+3015, U+3017, U+301E, U+FE36, U+FE3A, U+FE3E, U+FE40, U+FE44, U+FE5A, U+FE5C, U+FE5E, U+FF01, U+FF02, U+FF05, U+FF07, U+FF09, U+FF0C, U+FF0E, U+FF1A, U+FF1B, U+FF1F, U+FF3D, U+FF40, U+FF5C, U+FF5D, U+FF5E, and U+FFE0, respectively)*  
+  
+-   Cannot end a line:$([{£¥·‘“〈《「『【〔〖〝﹙﹛﹝＄（．［｛￡￥  
+  
+ *(Unicode character values: U+0024, U+0028, U+005B, U+007B, U+00A3, U+00A5, U+00B7, U+2018, U+201C, U+3008, U+300A, U+300C, U+300E, U+3010, U+3014, U+3016, U+301D, U+FE59, U+FE5B, U+FE5D, U+FF04, U+FF08, U+FF0E, U+FF3B, U+FF5B, U+FFE1, and U+FFE5, respectively)*  
+  
+ Chinese (Traditional)  
+  
+-   Cannot start a line:!),.:;?]}¢·–—’”•‥…‧′╴、。〉》」』】〕〞︰︱︳︴︶︸︺︼︾﹀﹂﹄﹏﹐﹑﹒﹔﹕﹖﹗﹚﹜﹞！），．：；？］｜｝､  
+  
+ *(Unicode character values: U+0021, U+0029, U+002C, U+002E, U+003A, U+003B, U+003F, U+005D, U+007D, U+00A2, U+00B7, U+2013, U+2014, U+2019, U+201D, U+2022, U+2025, U+2026, U+2027, U+2032, U+2574, U+3001, U+3002, U+3009, U+300B, U+300D, U+300F, U+3011, U+3015, U+301E, U+FE30, U+FE31, U+FE33, U+FE34, U+FE36, U+FE38, U+FE3A, U+FE3C, U+FE3E, U+FE40, U+FE42, U+FE44, U+FE4F, U+FE50, U+FE51, U+FE52, U+FE54, U+FE55, U+FE56, U+FE57, U+FE5A, U+FE5C, U+FE5E, U+FF01, U+FF09, U+FF0C, U+FF0E, U+FF1A, U+FF1B, U+FF1F, U+FF3D, U+FF5C, U+FF5D, and U+FF64, respectively)*  
+  
+-   Cannot end a line:([{£¥‘“‵〈《「『【〔〝︵︷︹︻︽︿﹁﹃﹙﹛﹝（｛  
+  
+ *(Unicode character values: U+0028, U+005B, U+007B, U+00A3, U+00A5, U+2018, U+201C, U+2035, U+3008, U+300A, U+300C, U+300E, U+3010, U+3014, U+301D, U+FE35, U+FE37, U+FE39, U+FE3B, U+FE3D, U+FE3F, U+FE41, U+FE43, U+FE59, U+FE5B, U+FE5D, U+FF08, and U+FF5B, respectively)*  
+  
+ Japanese  
+  
+-   Cannot start a line:!%),.:;?]}¢°’”‰′″℃、。々〉》」』】〕゛゜ゝゞ・ヽヾ！％），．：；？］｝｡｣､･ﾞﾟ￠  
+  
+ *(Unicode character values: U+0021, U+0025, U+0029, U+002C, U+002E, U+003A, U+003B, U+003F, U+005D, U+007D, U+00A2, U+00B0, U+2019, U+201D, U+2030, U+2032, U+2033, U+2103, U+3001, U+3002, U+3005, U+3009, U+300B, U+300D, U+300F, U+3011, U+3015, U+309B, U+309C, U+309D, U+309E, U+30FB, U+30FD, U+30FE, U+FF01, U+FF05, U+FF09, U+FF0C, U+FF0E, U+FF1A, U+FF1B, U+FF1F, U+FF3D, U+FF5D, U+FF61, U+FF63, U+FF64, U+FF65, U+FF9E, U+FF9F, and U+FFE0, respectively)*  
+  
+-   Cannot end a line:$([\\{£¥‘“〈《「『【〔＄（［｛｢￡￥  
+  
+ *(Unicode character values: U+0024, U+0028, U+005B, U+005C, U+007B, U+00A3, U+00A5, U+2018, U+201C, U+3008, U+300A, U+300C, U+300E, U+3010, U+3014, U+FF04, U+FF08, U+FF3B, U+FF5B, U+FF62, U+FFE1, and U+FFE5, respectively)*  
+  
+ Korean  
+  
+-   Cannot start a line:!%),.:;?]}¢°’”′″℃〉》」』】〕！％），．：；？］｝￠  
+  
+ *(Unicode character values: U+0021, U+0025, U+0029, U+002C, U+002E, U+003A, U+003B, U+003F, U+005D, U+007D, U+00A2, U+00B0, U+2019, U+201D, U+2032, U+2033, U+2103, U+3009, U+300B, U+300D, U+300F, U+3011, U+3015, U+FF01, U+FF05, U+FF09, U+FF0C, U+FF0E, U+FF1A, U+FF1B, U+FF1F, U+FF3D, U+FF5D, and U+FFE0, respectively)*  
+  
+-   Cannot end a line:$([\\{£¥‘“〈《「『【〔＄（［｛￡￥￦  
+  
+ *(Unicode character values: U+0024, U+0028, U+005B, U+005C, U+007B, U+00A3, U+00A5, U+2018, U+201C, U+3008, U+300A, U+300C, U+300E, U+3010, U+3014, U+FF04, U+FF08, U+FF3B, U+FF5B, U+FFE1, U+FFE5, and U+FFE6, respectively)*  
+  
+ If the strictFirstAndLastChars property (§17.15.1.82) is set in the Document Settings part, then the following settings supersede the defaults for Japanese:  
+  
+-   Cannot start a line:!%),.:;?]}¢°’”‰′″℃、。々〉》」』】〕ぁぃぅぇぉっゃゅょゎ゛゜ゝゞァィゥェォッャュョヮヵヶ・ーヽヾ！％），．：；？］｝｡｣､･ｧｨｩｪｫｬｭｮｯｰﾞﾟ￠  
+  
+ *(Unicode character values: U+0021, U+0025, U+0029, U+002C, U+002E, U+003A, U+003B, U+003F, U+005D, U+007D, U+00A2, U+00B0, U+2019, U+201D, U+2030, U+2032, U+2033, U+2103, U+3001, U+3002, U+3005, U+3009, U+300B, U+300D, U+300F, U+3011, U+3015, U+3041, U+3043, U+3045, U+3047, U+3049, U+3063, U+3083, U+3085, U+3087, U+308E, U+309B, U+309C, U+309D, U+309E, U+30A1, U+30A3, U+30A5, U+30A7, U+30A9, U+30C3, U+30E3, U+30E5, U+30E7, U+30EE, U+30F5, U+30F6, U+30FB, U+30FC, U+30FD, U+30FE, U+FF01, U+FF05, U+FF09, U+FF0C, U+FF0E, U+FF1A, U+FF1B, U+FF1F, U+FF3D, U+FF5D, U+FF61, U+FF63, U+FF64, U+FF65, U+FF67, U+FF68, U+FF69, U+FF6A, U+FF6B, U+FF6C, U+FF6D, U+FF6E, U+FF6F, U+FF70, U+FF9E, U+FF9F, and U+FFE0, respectively)*  
+  
+-   Cannot end a line:$([\\{£¥‘“〈《「『【〔＄（［｛｢￡￥  
+  
+ *(Unicode character values: U+0024, U+0028, U+005B, U+005C, U+007B, U+00A3, U+00A5, U+2018, U+201C, U+3008, U+300A, U+300C, U+300E, U+3010, U+3014, U+FF04, U+FF08, U+FF3B, U+FF5B, U+FF62, U+FFE1, and U+FFE5, respectively)*  
+  
+ If the noLineBreaksBefore property (§17.15.1.59) is set in the Document Settings part, then the characters it specifies cannot begin a line for the specified language. If the noLineBreaksAfter property (§17.15.1.58) is set in the Document Settings part, then the characters it specifies cannot end a line for the specified language. In both cases, those settings shall supersede the defaults specified above.  
+  
+ [*Example*: Consider a document with a paragraph which should not use the kinsoku line breaking properties. This paragraph would define the following WordprocessingML:  
+  
+```xml  
+<w:pPr>  
+  <w:kinsoku w:val="off" />  
+</w:pPr>  
+```  
+  
+ This paragraph would now be exempt from any kinsoku line breaking rules, and the characters specified above are allowed to begin and end lines as they normally would. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +121,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Kinsoku class.
-            </summary>
+        <summary>Initializes a new instance of the Kinsoku class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +144,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +166,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

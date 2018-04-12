@@ -1,4 +1,4 @@
-﻿<Type Name="WidthBeforeTableRow" FullName="DocumentFormat.OpenXml.Wordprocessing.WidthBeforeTableRow">
+<Type Name="WidthBeforeTableRow" FullName="DocumentFormat.OpenXml.Wordprocessing.WidthBeforeTableRow">
   <TypeSignature Language="C#" Value="public class WidthBeforeTableRow : DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WidthBeforeTableRow extends DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.WidthBeforeTableRow" />
@@ -19,11 +19,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the WidthBeforeTableRow Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:wBefore.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the WidthBeforeTableRow Class. When the object is serialized out as xml, its qualified name is w:wBefore.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **wBefore (Preferred Width Before Table Row)**  
+  
+ This element specifies the preferred width for the total number of grid columns before this table row as specified in the gridAfter element (§17.4.14). This preferred width is used as part of the table layout algorithm specified by the tblLayout element (§17.4.53; §17.4.54) - full description of the algorithm in the ST_TblLayout simple type (§17.18.87).  
+  
+ All widths in a table are considered preferred because:  
+  
+-   The table shall satisfy the shared columns as specified by the tblGrid element (§17.4.49)  
+  
+-   Two or more widths can have conflicting values for the width of the same grid column  
+  
+-   The table layout algorithm (§17.18.87) might require a preference to be overridden  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* for this element shall be calculated relative to the text extents of the page (page width excluding margins).  
+  
+ If this element is omitted, then the cell width shall be of type *auto*.  
+  
+ [*Example*: Consider a WordprocessingML table row defined as follows:  
+  
+```xml  
+<w:tr>  
+  <w:trPr>  
+    <w:gridBefore w:val="1"/>  
+    <w:wBefore w:type="dxa" w:w="1440"/>  
+  </w:trPr>  
+  …</w:tr>  
+```  
+  
+ This table specifies that it has a preferred table width of *1440* twentieths of a point (one inch) for the grid column before the start of the row. The resulting table would therefore be sized such that that grid column is one inch whenever possible, for example the second row in this table:  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11); trPr (§17.4.83)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +82,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WidthBeforeTableRow class.
-            </summary>
+        <summary>Initializes a new instance of the WidthBeforeTableRow class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +105,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +127,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

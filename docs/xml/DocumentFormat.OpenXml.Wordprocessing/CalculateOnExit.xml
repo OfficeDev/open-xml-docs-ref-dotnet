@@ -1,4 +1,4 @@
-﻿<Type Name="CalculateOnExit" FullName="DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit">
+<Type Name="CalculateOnExit" FullName="DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit">
   <TypeSignature Language="C#" Value="public class CalculateOnExit : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CalculateOnExit extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.CalculateOnExit" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Recalculate Fields When Current Field Is Modified.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:calcOnExit.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Recalculate Fields When Current Field Is Modified. When the object is serialized out as xml, its qualified name is w:calcOnExit.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **calcOnExit (Recalculate Fields When Current Field Is Modified)**  
+  
+ This element specifies that the current contents of all fields within the current WordprocessingML document shall be recalculated from their field codes when the contents of the parent form field are modified. [*Note*: It is at the discretion of an application to determine the scope of a single modification, for example, when the user moves the insertion point in a user interface, or after each keystroke, etc. *end note*]  
+  
+ If this element is omitted, then modification of the contents of the current field shall not result in all fields in the current document being recalculated.  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the contents of two fields in a document:  
+  
+```xml  
+<w:bookmarkStart w:name="Text1" … />  
+<w:fldSimple w:instr="FORMFIELDTEXT">  
+  <w:ffData>  
+    <w:calcOnExit/>  
+    …  </w:ffData>  
+  <w:r>  
+    <w:t>1</w:t>  
+  </w:r>  
+</w:fldSimple>  
+<w:bookmarkEnd … />  
+<w:fldSimple w:instr="=Text1+10">  
+  <w:r>  
+    <w:t>11</w:t>  
+  </w:r>  
+</w:fldSimple>  
+```  
+  
+ The first field above (the text form field) has a current value of *1*, but also has the calcOnExit element present (therefore inheriting its default attribute value of *true*). This means that if the value of this form field is changed to *10*, that all fields in the document must automatically be updated, resulting in the second field's value being automatically changed to *20*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|ffData (§17.16.17)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CalculateOnExit class.
-            </summary>
+        <summary>Initializes a new instance of the CalculateOnExit class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

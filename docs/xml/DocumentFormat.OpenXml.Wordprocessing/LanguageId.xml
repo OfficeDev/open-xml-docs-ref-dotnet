@@ -1,4 +1,4 @@
-﻿<Type Name="LanguageId" FullName="DocumentFormat.OpenXml.Wordprocessing.LanguageId">
+<Type Name="LanguageId" FullName="DocumentFormat.OpenXml.Wordprocessing.LanguageId">
   <TypeSignature Language="C#" Value="public class LanguageId : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LanguageId extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LanguageId" />
@@ -19,11 +19,102 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Language ID for Phonetic Guide.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:lid.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Language ID for Phonetic Guide. When the object is serialized out as xml, its qualified name is w:lid.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lid (Language ID for Phonetic Guide)**  
+  
+ This element specifies the language which shall be used for this phonetic guide.  
+  
+ [*Example*: Consider a run of phonetic guide text which is using Japanese as it language. This constraint is specified using the following WordprocessingML:  
+  
+```xml  
+<w:rubyPr>  
+  …  <w:lid w:val="ja-JP"/>  
+  …</w:rubyPr>  
+```  
+  
+ The lid property is *ja-JP* for the phonetic guide, so the phonetic guide is specified to be Japanese. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rubyPr (§17.3.3.28)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Language Code)|Specifies an identifier for a specific language.<br /><br /> This code is interpreted in the context of the parent XML element.<br /><br /> [*Example*: Consider an object which must specify the English(Canada) language. That object would use an identifier of *en-CA* to specify this language. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_Lang* simple type (§22.9.2.6).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Lang) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lid (Date Picker Language ID)**  
+  
+ This element specifies the language ID which shall be used for displaying a calendar for the current date picker structured document tag, if a user interface is present for the structured document tag.  
+  
+ If this element is omitted, then the language ID shall be the language ID of the run contents of the parent structured document tag.  
+  
+ [*Example*: Consider the following structured document tag properties:  
+  
+```xml  
+<w:sdtPr>  
+  <w:date w:fullDate="2006-01-01T06:30:00Z">  
+    <w:lid w:val="ja-JP"/>  
+  </w:date>  
+</w:sdtPr>  
+```  
+  
+ The calendar language ID for a calendar which can be displayed in the document must be the default calendar format for the Japanese (Japan) language format (*ja-JP*). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|date (§17.5.2.7)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Language Code)|Specifies an identifier for a specific language.<br /><br /> This code is interpreted in the context of the parent XML element.<br /><br /> [*Example*: Consider an object which must specify the English(Canada) language. That object would use an identifier of *en-CA* to specify this language. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_Lang* simple type (§22.9.2.6).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Lang) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lid (Merge Field Name Language ID)**  
+  
+ This element specifies the language ID for the language which was used to generate the merge field name which was associated with a given column in the data source, as specified by the fieldMapData element (§17.14.15). This element specifies that when this field mapping is processed by an application, it shall interpret the merge field name as the name for the specified language.  
+  
+ If this element is omitted, then the mapped field names specified in the current document can be interpreted using any method desired by the consuming application (i.e. no language data is included with the field mapping information).  
+  
+ [*Example*: Consider the following WordprocessingML fragment for a field mapping for a document to be merged to an external data source. If the merge field name stored in the file corresponds with the U.S. English version of the merge field names, that information would be stored as follows:  
+  
+```xml  
+<w:fieldMapData>  
+  <w:name w:val="Title" />  
+  <w:mappedName w:val="Courtesy Title" />  
+  <w:column w:val="3" />  
+  <w:lid w:val="en-US" />  
+  …</w:fieldMapData>  
+```  
+  
+ The lid element specifies that the mapping of the data contained in the fourth column of external data source named *Title* to the WordprocessingML of 'Courtesy Title', must be associated with the U.S. English language as specified by the val attribute equal to *en-US*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fieldMapData (§17.14.15)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Language Code)|Specifies an identifier for a specific language.<br /><br /> This code is interpreted in the context of the parent XML element.<br /><br /> [*Example*: Consider an object which must specify the English(Canada) language. That object would use an identifier of *en-CA* to specify this language. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_Lang* simple type (§22.9.2.6).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Lang) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +130,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LanguageId class.
-            </summary>
+        <summary>Initializes a new instance of the LanguageId class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +153,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +175,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,11 +201,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Language Code.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Language Code.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

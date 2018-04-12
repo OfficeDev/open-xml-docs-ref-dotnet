@@ -1,4 +1,4 @@
-﻿<Type Name="TruncateFontHeightsLikeWordPerfect" FullName="DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect">
+<Type Name="TruncateFontHeightsLikeWordPerfect" FullName="DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect">
   <TypeSignature Language="C#" Value="public class TruncateFontHeightsLikeWordPerfect : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TruncateFontHeightsLikeWordPerfect extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TruncateFontHeightsLikeWordPerfect" />
@@ -19,11 +19,45 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Emulate WordPerfect 6.x Font Height Calculation.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:truncateFontHeightsLikeWP6.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Emulate WordPerfect 6.x Font Height Calculation. When the object is serialized out as xml, its qualified name is w:truncateFontHeightsLikeWP6.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **truncateFontHeightsLikeWP6 (Use Truncated Integer Division For Font Calculation)**  
+  
+ This element specifies that applications should perform a specific method of calculation when converting font heights, specified in points using the sz (Part 1, §17.3.2.38) and szCs (Part 1, §17.3.2.39) elements, into pixels. This algorithm often results in a smaller than typical visual appearance of text for a given point size.  
+  
+ Typically, applications convert points to pixels using any approximate mathematical conversion mechanism (often, rounded integer division). This element, when present with a val attribute value of *true* (or equivalent), specifies that applications should use truncated integer division when performing this conversion (any non-integer value is truncated to determine the integer value resulting from the conversions).  
+  
+ [*Example*: If this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:truncateFontHeightsLikeWP6 />  
+</w:compat>  
+```  
+  
+ Then applications shall use truncated integer division when calculating the height of characters.  
+  
+ For example, if the conversion is done as follows:  
+  
+ where:  
+  
+ Converting a 14 point font on a 96 dpi device results in. If this setting is on, the result is truncated and the font is displayed using 18 pixels, even though 19 would be closer to the actual value. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +73,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TruncateFontHeightsLikeWordPerfect class.
-            </summary>
+        <summary>Initializes a new instance of the TruncateFontHeightsLikeWordPerfect class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +96,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +118,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

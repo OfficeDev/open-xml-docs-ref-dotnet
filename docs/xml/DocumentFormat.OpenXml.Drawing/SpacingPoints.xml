@@ -1,4 +1,4 @@
-﻿<Type Name="SpacingPoints" FullName="DocumentFormat.OpenXml.Drawing.SpacingPoints">
+<Type Name="SpacingPoints" FullName="DocumentFormat.OpenXml.Drawing.SpacingPoints">
   <TypeSignature Language="C#" Value="public class SpacingPoints : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpacingPoints extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.SpacingPoints" />
@@ -19,11 +19,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Spacing Points.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:spcPts.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Spacing Points. When the object is serialized out as xml, its qualified name is a:spcPts.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **spcPts (Spacing Points)**  
+  
+ This element specifies the amount of white space that is to be used between lines and paragraphs in the form of a text point size. The size is specified using points where 100 is equal to 1 point font and 1200 is equal to 12 point.  
+  
+ [*Example*: Consider the DrawingML shown below.  
+  
+```xml  
+<p:txBody>  
+  …  <a:p>  
+    <a:pPr …>  
+      <a:spcBef>  
+        <a:spcPts val="1400"/>  
+      </a:spcBef>  
+    </a:pPr>  
+    …    <a:t>  
+Sample Text</a:t>  
+    …  </a:p  
+>  
+  …</p:txBody>  
+```  
+  
+ The above paragraph of text is formatted to have a spacing before the paragraph text. This spacing is a size of 14 points due to val="1400". *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|lnSpc (§21.1.2.2.5); spcAft (§21.1.2.2.9); spcBef (§21.1.2.2.10)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Value)|Specifies the size of the white space in point size. Whole points are specified in increments of 100 starting with 100 being a point size of 1. For instance a font point size of 12 would be 1200 and a font point size of 12.5 would be 1250.<br /><br /> The possible values for this attribute are defined by the *ST_TextSpacingPoint* simple type (§20.1.10.78).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextSpacingPoint) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +78,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SpacingPoints class.
-            </summary>
+        <summary>Initializes a new instance of the SpacingPoints class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +101,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +123,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +149,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the size of the white space in point size. Whole points are specified in increments of 100, starting with 100 being a point size of 1. For example, a font point size of 12 would be 1200, and a font point size of 12.5 would be 1250.  
+  
+ The possible values for this attribute are defined by the `ST_TextSpacingPoint` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

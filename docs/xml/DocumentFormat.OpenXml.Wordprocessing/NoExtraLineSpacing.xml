@@ -1,4 +1,4 @@
-﻿<Type Name="NoExtraLineSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing">
+<Type Name="NoExtraLineSpacing" FullName="DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing">
   <TypeSignature Language="C#" Value="public class NoExtraLineSpacing : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NoExtraLineSpacing extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NoExtraLineSpacing" />
@@ -19,11 +19,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Do Not Center Content on Lines With Exact Line Height.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:noExtraLineSpacing.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Do Not Center Content on Lines With Exact Line Height. When the object is serialized out as xml, its qualified name is w:noExtraLineSpacing.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `noExtraLineSpacing (Do Not Center Content on Lines With Exact Line Height)`  
+  
+ This element specifies whether an exact line height using the spacing element (Part 1, §17.3.1.33) in the paragraph’s properties, each line shall not be automatically centered within the given amount of line spacing.  
+  
+ Typically, if the exact amount of spacing allotted to a line via the paragraph properties exceeds the amount of space required by that line, then the line of text shall be automatically centered when the text of the document is displayed. This element, when present with a val attribute value of *true* (or equivalent), specifies thatall additional spacing shall instead be placed below the normal layout of the line of text.  
+  
+ [*Example*: Consider a WordprocessingML document with a line with an exact height of 32 points:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:line="640" w:lineRule="exact" />  
+  </w:pPr>  
+  <w:r>  
+    <w:t>This is text on a line that's exactly 32 points high.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ The default presentation would have the resulting text centered on that line:  
+  
+ cf76fd3b-0dfd-4ed0-bcb6-a965c628cc66  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:noExtraLineSpacing />  
+</w:compat>  
+```  
+  
+ Then all line spacing is added after the text, resulting in the following output:  
+  
+ 7dcf02f0-69f0-4a12-94a2-d5cb0ed4225d  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +88,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NoExtraLineSpacing class.
-            </summary>
+        <summary>Initializes a new instance of the NoExtraLineSpacing class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +111,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +133,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="HidePlaceholder" FullName="DocumentFormat.OpenXml.Math.HidePlaceholder">
+<Type Name="HidePlaceholder" FullName="DocumentFormat.OpenXml.Math.HidePlaceholder">
   <TypeSignature Language="C#" Value="public class HidePlaceholder : DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HidePlaceholder extends DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.HidePlaceholder" />
@@ -19,11 +19,55 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Hide Placeholders (Matrix).</para>
-      <para> When the object is serialized out as xml, its qualified name is m:plcHide.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Hide Placeholders (Matrix). When the object is serialized out as xml, its qualified name is m:plcHide.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **plcHide (Hide Placeholders (Matrix))**  
+  
+ This element specifies the Hide Placeholders property on a matrix m. When this property is on, placeholders do not appear in the matrix. If this element is omitted, placeholders do appear such that the locations where text can be inserted are made visible. In other words, when the element is absent, the default value of the property is *0* meaning that this property is not applied.  
+  
+ When the element is present and the val attribute is absent, the default of the val attribute is *1* meaning that this property is applied.  
+  
+ [*Example*: The following two examples of matrices show the hidden (right matrix) and visible (left matrix) states of placeholders. The key difference between the placeholders in these matrices is that the left matrix contains visual representations for each placeholder in the matrix while the right matrix does not. However, the contents of each matrix remain the same between these two examples:  
+  
+ The plcHide element does not specify how a placeholder should be visually represented. It only specifies whether placeholders should or should not be visualized. The above example (left) is only one possible visual representation.  
+  
+ In the matrix described by the XML below, placeholders will be hidden:  
+  
+```xml  
+<m:mPr>  
+  <m:plcHide  m:val="1"/>  
+  <m:mcs>  
+    <m:mc>  
+      <m:mcPr>  
+        <m:mcJc m:val="center"/>  
+        <m:count  m:val="3"/>  
+      </m:mcPr>  
+    </m:mc>  
+  </m:mcs>  
+</m:mPr>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mPr (§22.1.2.68)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (value)|Specifies a binary value for the property defined by the parent XML element.<br /><br /> A value of *1* or *true* specifies that the property shall be explicitly applied. This is the default value for this attribute, and is implied when the parent element is present.<br /><br /> A value of *0* or *false* specifies that the property shall be explicitly turned off. This is implied when the parent element is not present.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_OnOff) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +83,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the HidePlaceholder class.
-            </summary>
+        <summary>Initializes a new instance of the HidePlaceholder class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +106,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +128,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

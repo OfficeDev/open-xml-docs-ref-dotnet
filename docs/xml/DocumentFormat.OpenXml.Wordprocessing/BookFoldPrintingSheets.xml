@@ -1,4 +1,4 @@
-﻿<Type Name="BookFoldPrintingSheets" FullName="DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets">
+<Type Name="BookFoldPrintingSheets" FullName="DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets">
   <TypeSignature Language="C#" Value="public class BookFoldPrintingSheets : DocumentFormat.OpenXml.Wordprocessing.NonNegativeShortType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BookFoldPrintingSheets extends DocumentFormat.OpenXml.Wordprocessing.NonNegativeShortType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BookFoldPrintingSheets" />
@@ -19,11 +19,50 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Number of Pages Per Booklet.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:bookFoldPrintingSheets.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Number of Pages Per Booklet. When the object is serialized out as xml, its qualified name is w:bookFoldPrintingSheets.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `bookFoldPrintingSheets (Number of Pages Per Booklet)`  
+  
+ This element shall be used in conjunction with the bookFoldPrinting (§17.15.1.11) and bookFoldRevPrinting (§17.15.1.13) elements to specify the number of pages to be included in each booklet when printing a series of signatures. Signatures are printed *sheets*, which depict several pages of a document that are to be folded and bound with other signatures to form a booklet. Booklets can be bound together to form a book like publication.  
+  
+ If this element is omitted, then its default behavior shall be to print the contents of the content on a single sheet. A *sheet* is a single piece of paper which is folded and cut to produce a book.  
+  
+ [*Example*: Consider a four page WordprocessingML document is printed as a set of two signatures to be compiled into a single booklet. This setting would be specified using the following WordprocessingML fragment in the document settings part:  
+  
+```xml  
+<w:bookFoldPrinting w:val=“true” />  
+<w:bookFoldPrintingSheets w:val="4" />  
+```  
+  
+ The bookFoldPrintingSheets element's val attribute specifies that *4* pages must be included in each booklet. Since each signature contains two pages and are printed such that the signatures can be placed back to back, with top the bottom of each sheet aligned, and folded such that the booklet is created, a booklet containing four pages distributed over two signatures can be created.  
+  
+ This setting is depicted visually using the illustration below (gray shading represents a page):  
+  
+ First Printed Signature  
+  
+ baf82662-3578-40ca-95f4-da905dca3300  
+  
+ Second Printed Signature  
+  
+ 4b57d27f-a513-44b6-829a-60dbe45958df  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +78,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BookFoldPrintingSheets class.
-            </summary>
+        <summary>Initializes a new instance of the BookFoldPrintingSheets class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +101,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +123,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

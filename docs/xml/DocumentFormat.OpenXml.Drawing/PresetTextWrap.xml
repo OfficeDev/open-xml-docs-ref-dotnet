@@ -1,4 +1,4 @@
-﻿<Type Name="PresetTextWrap" FullName="DocumentFormat.OpenXml.Drawing.PresetTextWrap">
+<Type Name="PresetTextWrap" FullName="DocumentFormat.OpenXml.Drawing.PresetTextWrap">
   <TypeSignature Language="C#" Value="public class PresetTextWrap : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PresetTextWrap extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.PresetTextWrap" />
@@ -22,13 +22,85 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Preset Text Warp.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:prstTxWarp.</para>
-    </summary>
+    <summary>Preset Text Warp. When the object is serialized out as xml, its qualified name is a:prstTxWarp.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>AdjustValueList &lt;a:avLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `prstTxWarp (Preset Text Warp)`  
+  
+ This element specifies when a preset geometric shape should be used to transform a piece of text. This operation is known formally as a text warp. The generating application should be able to render all preset geometries enumerated in the ST_TextShapeType list.  
+  
+ [*Example*: Consider the case where the user wishes to accent a piece of text by warping it's shape. For this to occur a preset shape is chosen from the ST_TextShapeType list and applied to the entire body of text.  
+  
+```xml  
+<p:sp>  
+  <p:txBody>  
+    <a:bodyPr wrap="none" rtlCol="0">  
+      <a:prstTxWarp prst="textInflate">  
+      </a:prstTxWarp>  
+      <a:spAutoFit/>  
+    </a:bodyPr>  
+    <a:lstStyle/>  
+    <a:p>  
+…      <a:t>Sample Text</a:t>  
+…    </a:p>  
+  </p:txBody>  
+</p:sp>  
+```  
+  
+ 8cf1df7f-8848-4e4c-a167-ed264eec5f58  
+  
+ The resulting text that has now had the Inflate text warp applied to it is shown above. *end example*]  
+  
+ Using any of the presets listed under the ST_TextShapeType list below it is possible to apply a text warp to a run of DrawingML text via the following steps.  
+  
+ If you look at any of the text warps in the file format you notice that each consists of two paths. This corresponds to a top path (first one specified) and a bottom path (second one specified). Now the top path and the bottom path represent the top line and base line that the text needs to be warped to. This is done in the following way:  
+  
+ *Compute the rectangle that the unwarped text resides in. (tightest possible rectangle around text, no white space except for “space characters”)*  
+  
+ *Take each of the quadratic and cubic Bezier curves that are used to calculate the original character and change their end points and control points by the following method…*  
+  
+ *Move a vertical line horizontally along the original text rectangle and find the horizontal percentage that a given end point or control point lives at. (.5 for the middle for instance)*  
+  
+ *Now do the same thing for this point vertically. Find the vertical percentage that this point lives at with the top and bottom of this text rectangle being the respective top and bottom bounds. (0.0 and 1.0 respectively)*  
+  
+ *Now that we have the percentages for a given point in a Bezier equation we can map that to the new point in the warped text environment.*  
+  
+ *Going back to the top and bottom paths specified in the file format we can take these and flatten them out to a straight arc (top and bottom might be different lengths)*  
+  
+ *After they are straight we can measure them both horizontally to find the same percentage point that we found within the original text rectangle. (0.5 let’s say)*  
+  
+ *So then we measure 50% along the top path and 50% along the bottom path, putting the paths back to their original curvy shapes.*  
+  
+ *Once we have these two points we can draw a line between them that serves as our vertical line in the original text rectangle [Note: This might not be truly vertical as 50% on the top does not always line up with 50% on the bottom. end note]*  
+  
+ *Taking this new line we then follow it from top to bottom the vertical percentage amount that we got from step 4.*  
+  
+ *This is then the new point that should be used in place of the old point in the original text rectangle.*  
+  
+ *We then continue doing these same steps for each of the end points and control points within the body of text. (is applied to a whole body of text only)*  
+  
+ [*Note*: Horizxontal percentages begin at 0.0 and continue to 1.0, left to right. Vertical percentages begin at 0.0 and continue to 1.0, top to bottom. *end note*]  
+  
+ [*Note*: Since this is a shape it does have both a shape coordinate system and a path coordinate system. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bodyPr (§21.1.2.1.1)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|avLst (List of Shape Adjust Values)|§20.1.9.5|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_PresetTextShape) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +116,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PresetTextWrap class.
-            </summary>
+        <summary>Initializes a new instance of the PresetTextWrap class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +143,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PresetTextWrap class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PresetTextWrap class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +164,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PresetTextWrap class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PresetTextWrap class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +185,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PresetTextWrap class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PresetTextWrap class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +205,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.AdjustValueList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Adjust Value List.</para>
-          <para> Represents the following element tag in the schema: a:avLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Adjust Value List. Represents the following element tag in the schema: a:avLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.AdjustValueList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -171,11 +232,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -195,10 +254,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -223,12 +280,42 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextShapeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Preset Warp Shape.</para>
-          <para>Represents the following attribute in the schema: prst </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Preset Warp Shape.Represents the following attribute in the schema: prst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the preset geometry that will be used for a shape warp on a piece of text. This preset can have any of the values in the enumerated list for `ST_TextShapeType`. This attribute is required in order for a text warp to be rendered.  
+  
+ Consider the sample DrawingML below.  
+  
+```  
+<p:sp>  
+  <p:txBody>  
+    <a:bodyPr wrap="none" rtlCol="0">  
+      <a:prstTxWarp prst="textInflate">  
+      </a:prstTxWarp>  
+      <a:spAutoFit/>  
+    </a:bodyPr>  
+    <a:lstStyle/>  
+    <a:p>  
+    …  
+      <a:t>Sample Text</a:t>  
+    …   
+    </a:p>  
+  </p:txBody>  
+</p:sp>  
+```  
+  
+ In the above example, a preset text shape geometry has been used to define the warping shape. The shape utilized here is the sun shape.  
+  
+ The possible values for this attribute are defined by the `ST_TextShapeType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

@@ -1,4 +1,4 @@
-﻿<Type Name="WordWrap" FullName="DocumentFormat.OpenXml.Wordprocessing.WordWrap">
+<Type Name="WordWrap" FullName="DocumentFormat.OpenXml.Wordprocessing.WordWrap">
   <TypeSignature Language="C#" Value="public class WordWrap : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WordWrap extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.WordWrap" />
@@ -19,11 +19,39 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the WordWrap Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:wordWrap.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the WordWrap Class. When the object is serialized out as xml, its qualified name is w:wordWrap.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **wordWrap (Allow Line Breaking At Character Level)**  
+  
+ This element specifies whether a consumer shall break text which exceeds the text extents of a line by breaking the word across two lines (breaking on the character level) or by moving the word to the following line (breaking on the word level). [*Note*: Applications are discouraged from breaking text when it would change the semantics or appearance of the content. *end note*]  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this paragraph shall break words in space-delimited languages at the word level, not the character level when it is displayed.  
+  
+ [*Example*: Consider a paragraph whose first line ends with the word *world*, where the text extents for that line would normally fall between the letter o and the letter r. If this element is omitted, a producer would normally move the entire word *world* to the following line, since the word does not fit within the first line's text extents. However, if this document should allow words to be broken at the character level, that constraint would be specified as follows:  
+  
+```xml  
+<w:pPr>  
+  <w:wordWrap w:val="off" />  
+</w:pPr>  
+```  
+  
+ The resulting paragraph specifies that wordWrap is turned *off*, therefore the word "world" would be broken into two lines between the exact two characters (o and r) that match the text extents. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +67,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WordWrap class.
-            </summary>
+        <summary>Initializes a new instance of the WordWrap class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +90,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +112,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

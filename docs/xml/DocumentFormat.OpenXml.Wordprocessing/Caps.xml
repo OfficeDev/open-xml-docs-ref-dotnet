@@ -1,4 +1,4 @@
-﻿<Type Name="Caps" FullName="DocumentFormat.OpenXml.Wordprocessing.Caps">
+<Type Name="Caps" FullName="DocumentFormat.OpenXml.Wordprocessing.Caps">
   <TypeSignature Language="C#" Value="public class Caps : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Caps extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.Caps" />
@@ -19,11 +19,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the Caps Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:caps.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the Caps Class. When the object is serialized out as xml, its qualified name is w:caps.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **caps (Display All Characters As Capital Letters)**  
+  
+ This element specifies that any lowercase characters in this text run shall be formatted for display only as their capital letter character equivalents. This property does not affect any non-alphabetic character in this run, and does not change the Unicode character for lowercase text, only the method in which it is displayed.  
+  
+ This formatting property is a *toggle property* (§17.7.3).  
+  
+ If this element is not present, the default value is to leave the formatting applied at previous level in the *style hierarchy*. If this element is never applied in the style hierarchy, then the characters are not formatted as capital letters.  
+  
+ This element shall not be present with the smallCaps (§17.3.2.33) property on the same run, since they are mutually exclusive in terms of appearance.  
+  
+ [*Example*: Consider the words *Hello World*, which must be displayed in all capital letters in a document. This constraint is specified as follows in the WordprocessingML:  
+  
+```xml  
+<w:r>  
+  <w:rPr>  
+    <w:caps w:val="true" />  
+  </w:rPr>  
+  <w:t>Hello World</w:t>  
+</w:r>  
+```  
+  
+ This run displays as *HELLO WORLD*, even though the lowercase characters are used in the run contents due to the use of the caps element. If this property is removed, the original character forms is displayed (they are not lost). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§17.3.1.29); rPr (§17.3.1.30); rPr (§17.5.2.28); rPr (§17.9.25); rPr (§17.7.9.1); rPr (§17.7.5.4); rPr (§17.3.2.28); rPr (§17.5.2.27); rPr (§17.7.6.2); rPr (§17.3.2.27)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +74,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Caps class.
-            </summary>
+        <summary>Initializes a new instance of the Caps class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

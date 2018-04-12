@@ -1,4 +1,4 @@
-﻿<Type Name="WebExtensionStoreReference" FullName="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference">
+<Type Name="WebExtensionStoreReference" FullName="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference">
   <TypeSignature Language="C#" Value="public class WebExtensionStoreReference : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebExtensionStoreReference extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference" />
@@ -25,14 +25,66 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the WebExtensionStoreReference Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is we:reference.</para>
-    </summary>
+    <summary>Defines the WebExtensionStoreReference Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is we:reference.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>OfficeArtExtensionList &lt;we:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.2.5   CT_OsfWebExtensionReference*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/webextensions/webextension/2010/11  
+  
+ *Referenced by:* CT_OsfWebExtensionReferenceList, CT_OsfWebExtension  
+  
+ This element specifies the reference to an office app. The reference is used to identify the provider location and version of the extension.  
+  
+ *Child Elements:*  
+  
+ *extLst:* A *CT_OfficeArtExtensionList* element ([ISO/IEC-29500-1] section A.4.1) that specifies a list of extensions for an office app. This element MAY be ignored.  
+  
+ *Attributes:*  
+  
+ *id:* A string attribute ([XMLSCHEMA2] section 3.2.1) that specifies the identifier associated with the office app within a catalog provider. The identifier MUST be unique within a catalog provider.  
+  
+ *version:* A string attribute ([XMLSCHEMA2] section 3.2.1) that specifies the version of the office app.  
+  
+ *store:* A string attribute ([XMLSCHEMA2] section 3.2.1) that specifies the instance of the marketplace where the office app is stored.  
+  
+ *storeType:* A string attribute ([XMLSCHEMA2] section 3.2.1) that specifies the type of marketplace that the store attribute identifies. Default is "SPCatalog" (Corporate Catalog).  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*OMEX*|*Specifies that the store type is Office.com.*|  
+|*SPCatalog*|*Specifies that the store type is SharePoint corporate catalog.*|  
+|*SPApp*|*Specifies that the store type is a SharePoint app.*|  
+|*Exchange*|*Specifies that the store type is an Exchange server.*|  
+|*FileSystem*|*Specifies that the store type is a file system share.*|  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_OsfWebExtensionReference">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="id" type="xsd:string" use="required"/>*  
+  
+ *\<xsd:attribute name="version" type="xsd:string" use="required"/>*  
+  
+ *\<xsd:attribute name="store" type="xsd:string"/>*  
+  
+ *\<xsd:attribute name="storeType" type="xsd:string" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -48,9 +100,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the WebExtensionStoreReference class.
-            </summary>
+        <summary>Initializes a new instance of the WebExtensionStoreReference class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -77,9 +127,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the WebExtensionStoreReference class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the WebExtensionStoreReference class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -100,9 +148,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the WebExtensionStoreReference class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the WebExtensionStoreReference class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,9 +169,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the WebExtensionStoreReference class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the WebExtensionStoreReference class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -148,11 +192,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -177,10 +219,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: id </para>
-        </summary>
+        <summary>id.Represents the following attribute in the schema: id</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -201,9 +240,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -224,10 +261,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OfficeArtExtensionList.</para>
-          <para> Represents the following element tag in the schema: we:extLst </para>
-        </summary>
+        <summary>OfficeArtExtensionList. Represents the following element tag in the schema: we:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -256,10 +290,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> store.</para>
-          <para>Represents the following attribute in the schema: store </para>
-        </summary>
+        <summary>store.Represents the following attribute in the schema: store</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -285,10 +316,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> storeType.</para>
-          <para>Represents the following attribute in the schema: storeType </para>
-        </summary>
+        <summary>storeType.Represents the following attribute in the schema: storeType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -314,10 +342,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> version.</para>
-          <para>Represents the following attribute in the schema: version </para>
-        </summary>
+        <summary>version.Represents the following attribute in the schema: version</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

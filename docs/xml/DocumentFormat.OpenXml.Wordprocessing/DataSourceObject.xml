@@ -1,4 +1,4 @@
-﻿<Type Name="DataSourceObject" FullName="DocumentFormat.OpenXml.Wordprocessing.DataSourceObject">
+<Type Name="DataSourceObject" FullName="DocumentFormat.OpenXml.Wordprocessing.DataSourceObject">
   <TypeSignature Language="C#" Value="public class DataSourceObject : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataSourceObject extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DataSourceObject" />
@@ -43,13 +43,63 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Office Data Source Object Settings.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:odso.</para>
-    </summary>
+    <summary>Office Data Source Object Settings. When the object is serialized out as xml, its qualified name is w:odso.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>UdlConnectionString &lt;w:udl&gt;</description></item><item><description>DataSourceTableName &lt;w:table&gt;</description></item><item><description>SourceReference &lt;w:src&gt;</description></item><item><description>ColumnDelimiter &lt;w:colDelim&gt;</description></item><item><description>MailMergeSource &lt;w:type&gt;</description></item><item><description>FirstRowHeader &lt;w:fHdr&gt;</description></item><item><description>FieldMapData &lt;w:fieldMapData&gt;</description></item><item><description>RecipientDataReference &lt;w:recipientData&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **odso (Office Data Source Object Settings)**  
+  
+ This element specifies a group of additional settings for the mail merge information which comprise an extension to the standard settings stored with a mail merge which performs two functions:  
+  
+-   First, it provides additional information about the mail merge data source, specifically: information about how to map the columns in the data source to *MERGEFIELD* fields and information about records which shall be included and excluded when creating merged documents, and column delimiters used in text data sources. This information can be used regardless of the value of the dataType element (§17.14.10) when it is present.  
+  
+-   Second, it provides an alternate set of connection information which should be used when the dataType element (§17.14.10) specifies a value of *native*. This alternate connection string provides additional connection information for applications which choose to support the ODSO connection string syntax. If the dataType element (§17.14.10) specifies that the data type of the current mail merge is not *native*, then the second group of settings specified within this element shall be ignored in favor of their non-ODSO equivalents.  
+  
+ [*Example*: Consider the WordprocessingML for a source document whose mail merge includes mail merge information including ODSO settings as follows:  
+  
+```xml  
+<w:odso>  
+  <w:udl w:val="…" />  
+  <w:table w:val="Sheet1$" />  
+  <w:src r:id="rId1" />  
+  <w:colDelim w:val="9" />  
+  <w:fHdr w:val="1" />  
+  <w:fieldMapData>  
+    <w:type w:val="dbColumn" />  
+    <w:name w:val="Title" />  
+    <w:mappedName w:val="Courtesy Title" />  
+    <w:lid w:val="en-US" />  
+  </w:fieldMapData>  
+  <w:recipientData r:id="rId2" />  
+  …</w:odso>  
+```  
+  
+ The odso element and its child elements provide all of the information specified above that is needed to carry out a mail merge with the current document. This includes alternate connection information using the udl, table, and src elements, and additional mail merge information in the other child elements. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|colDelim (Column Delimiter for Data Source)|§17.14.5|  
+|fHdr (First Row of Data Source Contains Column Names)|§17.14.14|  
+|fieldMapData (External Data Source to Merge Field Mapping)|§17.14.15|  
+|recipientData (Reference to Inclusion/Exclusion Data for Data Source)|§17.14.28|  
+|src (ODSO Data Source File Path)|§17.14.30|  
+|table (Data Source Table Name)|§17.14.31|  
+|type (ODSO Data Source Type)|§17.14.32|  
+|udl (UDL Connection String)|§17.14.34|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Odso) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -65,9 +115,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DataSourceObject class.
-            </summary>
+        <summary>Initializes a new instance of the DataSourceObject class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -94,9 +142,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataSourceObject class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DataSourceObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,9 +163,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataSourceObject class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DataSourceObject class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -140,9 +184,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DataSourceObject class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DataSourceObject class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,11 +207,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -189,10 +229,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.ColumnDelimiter</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Column Delimiter for Data Source.</para>
-          <para> Represents the following element tag in the schema: w:colDelim </para>
-        </summary>
+        <summary>Column Delimiter for Data Source. Represents the following element tag in the schema: w:colDelim</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -216,10 +253,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DataSourceTableName</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Source Table Name.</para>
-          <para> Represents the following element tag in the schema: w:table </para>
-        </summary>
+        <summary>Data Source Table Name. Represents the following element tag in the schema: w:table</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -243,10 +277,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.FirstRowHeader</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> First Row of Data Source Contains Column Names.</para>
-          <para> Represents the following element tag in the schema: w:fHdr </para>
-        </summary>
+        <summary>First Row of Data Source Contains Column Names. Represents the following element tag in the schema: w:fHdr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -270,10 +301,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -293,10 +322,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.MailMergeSource</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ODSO Data Source Type.</para>
-          <para> Represents the following element tag in the schema: w:type </para>
-        </summary>
+        <summary>ODSO Data Source Type. Represents the following element tag in the schema: w:type</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -320,10 +346,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.SourceReference</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ODSO Data Source File Path.</para>
-          <para> Represents the following element tag in the schema: w:src </para>
-        </summary>
+        <summary>ODSO Data Source File Path. Represents the following element tag in the schema: w:src</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -347,10 +370,7 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.UdlConnectionString</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> UDL Connection String.</para>
-          <para> Represents the following element tag in the schema: w:udl </para>
-        </summary>
+        <summary>UDL Connection String. Represents the following element tag in the schema: w:udl</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

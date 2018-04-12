@@ -1,4 +1,4 @@
-﻿<Type Name="MatchSource" FullName="DocumentFormat.OpenXml.Wordprocessing.MatchSource">
+<Type Name="MatchSource" FullName="DocumentFormat.OpenXml.Wordprocessing.MatchSource">
   <TypeSignature Language="C#" Value="public class MatchSource : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MatchSource extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MatchSource" />
@@ -19,11 +19,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Keep Source Formatting on Import.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:matchSrc.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Keep Source Formatting on Import. When the object is serialized out as xml, its qualified name is w:matchSrc.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **matchSrc (Keep Source Formatting on Import)**  
+  
+ This element specifies if any style definitions present in the imported content shall be overridden by identical styles present in the host WordprocessingML document. If this element's val attribute is *true*, then any style exists in both the imported content and main document shall be maintained on the imported content by redefining the style name and/or ID as needed. Conversely, if this element's val attribute is false, any style which exists in both the imported content and main document shall apply the style form the main document in place of the style in the imported content.  
+  
+ If this element is omitted, then styles from the main document shall override identical styles from the imported content.  
+  
+ [*Example*: Consider a WordprocessingML document consisting of contents which contains an external content import anchor in the appropriate location:  
+  
+```xml  
+<w:body>  
+  <w:altChunk r:id="altChunk1">  
+    <w:altChunkPr>  
+      <w:matchSrc w:val="true" />  
+    </w:altChunkPr>  
+  </w:altChunk>  
+  <w:p/>  
+  <w:sectPr>  
+    …  </w:sectPr>  
+</w:body>  
+```  
+  
+ The matchSrc element has a val attribute value of *true*, which specifies that conflicting styles must be maintained when importing the specified content. For example, if the *Heading 1* style was defined in both places, then applications must ensure that the resulting document does not lose either instance of its formatting as appropriate. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|altChunkPr (§17.17.2.2)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +74,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MatchSource class.
-            </summary>
+        <summary>Initializes a new instance of the MatchSource class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +97,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +119,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

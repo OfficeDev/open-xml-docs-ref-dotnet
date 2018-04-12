@@ -1,4 +1,4 @@
-﻿<Type Name="PivotCacheDefinition" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotCacheDefinition">
+<Type Name="PivotCacheDefinition" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotCacheDefinition">
   <TypeSignature Language="C#" Value="public class PivotCacheDefinition : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotCacheDefinition extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.PivotCacheDefinition" />
@@ -52,13 +52,96 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>PivotCache Definition. The root element of PivotTableCacheDefinitionPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:pivotCacheDefinition.</para>
-    </summary>
+    <summary>PivotCache Definition. The root element of PivotTableCacheDefinitionPart. When the object is serialized out as xml, its qualified name is x:pivotCacheDefinition.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CacheSource &lt;x:cacheSource&gt;</description></item><item><description>CacheFields &lt;x:cacheFields&gt;</description></item><item><description>CacheHierarchies &lt;x:cacheHierarchies&gt;</description></item><item><description>Kpis &lt;x:kpis&gt;</description></item><item><description>TupleCache &lt;x:tupleCache&gt;</description></item><item><description>CalculatedItems &lt;x:calculatedItems&gt;</description></item><item><description>CalculatedMembers &lt;x:calculatedMembers&gt;</description></item><item><description>Dimensions &lt;x:dimensions&gt;</description></item><item><description>MeasureGroups &lt;x:measureGroups&gt;</description></item><item><description>Maps &lt;x:maps&gt;</description></item><item><description>PivotCacheDefinitionExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **pivotCacheDefinition (PivotCache Definition)**  
+  
+ *Represents the pivotCacheDefinition part. This part defines each field in the source data, including the name, the string resources of the instance data (for shared items), and information about the type of data that appears in the field.*  
+  
+ *[Example:*  
+  
+```xml  
+<pivotCacheDefinition xmlns="…" xmlns:r="…" r:id="rId1" refreshedBy="AnonUser"  refreshedDate="2006-05-22T10:07:16Z" createdVersion="3" refreshedVersion="3"   minRefreshableVersion="3" recordCount="182">  
+  <cacheSource type="worksheet">  
+    <worksheetSource name="Table1"/>  
+  </cacheSource>  
+  <cacheFields count="28">  
+    <cacheField name="Customer Name" numFmtId="0">  
+    <cacheField name="Postal Code" numFmtId="0">  
+      <sharedItems/>  
+    </cacheField>  
+    <cacheField name="Product Category" numFmtId="0">  
+      <sharedItems count="1">  
+        <s v="Bikes"/>  
+      </sharedItems>  
+    </cacheField>  
+    <cacheField name="Year" numFmtId="0">  
+      <sharedItems count="1">  
+        <s v="2001"/>  
+      </sharedItems>  
+    </cacheField>  
+    <cacheField name="Quarter" numFmtId="0">  
+      <sharedItems containsSemiMixedTypes="0" containsString="0"         containsNumber="1" containsInteger="1" minValue="3" maxValue="3"         count="1">  
+        <n v="3"/>  
+      </sharedItems>  
+    </cacheField>  
+  </cacheField  
+s>  
+</pivotCacheDefinition>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|Root element of SpreadsheetML Pivot Table Cache Definition part|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|cacheFields (PivotCache Fields)|§18.10.1.4|  
+|cacheHierarchies (PivotCache Hierarchies)|§18.10.1.5|  
+|cacheSource (PivotCache Source Description)|§18.10.1.7|  
+|calculatedItems (Calculated Items)|§18.10.1.9|  
+|calculatedMembers (Calculated Members)|§18.10.1.11|  
+|dimensions (OLAP Dimensions)|§18.10.1.25|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|kpis (OLAP KPIs)|§18.10.1.48|  
+|maps (OLAP Measure Group)|§18.10.1.52|  
+|measureGroups (OLAP Measure Groups)|§18.10.1.54|  
+|tupleCache (Tuple Cache)|§18.10.1.94|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|backgroundQuery (Background Query)|Specifies a boolean value that indicates whether the application should query and retrieve records asynchronously from the cache.<br /><br /> A value of *1* or *true* indicates the application will retrieve records asynchronously from the cache.<br /><br /> A value of *0* or *false* indicates the application will retrieve records synchronously.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|createdVersion (PivotCache Created Version)|Specifies the version of the application that created the cache.  This attribute is application-dependent.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|enableRefresh (Enable PivotCache Refresh)|Specifies a boolean value that indicates whether the end-user can refresh the cache. This attribute depends on whether the application exposes a method for allowing end-users control over refreshing the cache via the user interface.<br /><br /> A value of *1* or *true* indicates the end-user can refresh the cache.<br /><br /> A value of *0* or *false* indicates the end-user cannot refresh the cache.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|id (Relationship Identifier)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Specifies the unique identifier that corresponds to the related *pivotCacheRecords* part. See (§18.10.1.68) for more information.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|invalid (Invalid Cache)|Specifies a boolean value that indicates whether the cache needs to be refreshed.<br /><br /> A value of *1* or *true* indicates the cache needs to be refreshed.<br /><br /> A value of *0* or *false* indicates the cache does not need to be refreshed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|minRefreshableVersion (Minimum Version Required for Refresh)|Specifies the earliest version of the application that is required to refresh the cache. This attribute is application-dependent.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|missingItemsLimit (Missing Items Limit)|Specifies the number of unused items to allow before discarding unused items.  This attribute is application-dependent. The application shall specify a threshold for unused items.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|optimizeMemory (Optimize Cache for Memory)|Specifies a boolean value that indicates whether the application will apply optimizations to the cache to reduce memory usage.  This attribute is application-dependent. This application shall define its own cache optimization methods. The application shall also decide whether to expose cache optimization status via the user interface or an object model.<br /><br /> A value of *1* or *true* indicates the application will apply optimizations to the cache.<br /><br /> A value of *0* or *false* indicates the application will not apply optimizations to the cache.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|recordCount (PivotCache Record Count)|Specifies the number of records in the cache.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|refreshedBy (Last Refreshed By)|Specifies the name of the end-user who last refreshed the cache. This attribute is application-dependent and is specified by applications that track and store the identity of the current user. This attribute also depends on whether the application exposes mechanisms via the user interface whereby the end-user can refresh the cache.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|refreshedDateIso (PivotCache Last Refreshed Date ISO)|Specifies the date when the cache was last refreshed. This attribute depends on whether the application exposes mechanisms via the user interface whereby the end-user can refresh the cache.<br /><br /> If refreshedDateIso and refreshedDate are both present, refreshedDateIso shall take precedence.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *dateTime* datatype.|  
+|refreshedVersion (PivotCache Last Refreshed Version)|Specifies the version of the application that last refreshed the cache.  This attribute depends on whether the application exposes mechanisms via the user interface whereby the end-user can refresh the cache.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|refreshOnLoad (Refresh On Load)|Specifies a boolean value that indicates whether the application will refresh the cache when the workbook has been opened.<br /><br /> A value of *1* or *true* indicates that application will refresh the cache when the workbook is loaded.<br /><br /> A value of *0* or *false* indicates the application will not automatically refresh cached data. The end user shall trigger refresh of the cache manually via the application user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|saveData (Save Pivot Records)|Specifies a boolean value that indicates whether the pivot records are saved with the cache.<br /><br /> A value of *1* or *true* indicates pivot records are saved in the cache.<br /><br /> A value of *0* or *false* indicates are not saved in the cache.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|supportAdvancedDrill (Supports Attribute Drilldown)|Specifies whether the cache's data source supports attribute drilldown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|supportSubquery (Supports Subqueries)|Specifies whether the cache's data source supports subqueries.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|tupleCache (Stores Cache for OLAP Functions)|Specifies a boolean value that indicates whether the PivotCache is used store information for OLAP sheet data functions.<br /><br /> A value of *1* or *true* indicates information about OLAP sheet data functions are stored in the cache.<br /><br /> A value of *0* or *false* indicates the PivotCache does not contain information about OLAP sheet data functions.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|upgradeOnRefresh (Upgrade PivotCache on Refresh)|Specifies a boolean value that indicates whether the cache is scheduled for version upgrade. This attribute depends on whether the application exposes mechanisms via the user interface whereby the cache might be upgraded.<br /><br /> A value of *1* or *true* indicates the cache is scheduled for upgrade.<br /><br /> A value of *0* or *false* indicates the cache is not scheduled for upgrade.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PivotCacheDefinition) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -74,9 +157,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PivotCacheDefinition class.
-            </summary>
+        <summary>Initializes a new instance of the PivotCacheDefinition class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -103,9 +184,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotCacheDefinition class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PivotCacheDefinition class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -126,9 +205,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotCacheDefinition class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PivotCacheDefinition class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -149,9 +226,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PivotCacheDefinition class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PivotCacheDefinition class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,11 +251,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> backgroundQuery.</para>
-          <para>Represents the following attribute in the schema: backgroundQuery </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>backgroundQuery.Represents the following attribute in the schema: backgroundQuery</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,11 +272,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CacheFields</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CacheFields.</para>
-          <para> Represents the following element tag in the schema: x:cacheFields </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CacheFields. Represents the following element tag in the schema: x:cacheFields</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CacheFields" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -227,11 +296,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CacheHierarchies</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CacheHierarchies.</para>
-          <para> Represents the following element tag in the schema: x:cacheHierarchies </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CacheHierarchies. Represents the following element tag in the schema: x:cacheHierarchies</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CacheHierarchies" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -254,11 +320,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CacheSource</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CacheSource.</para>
-          <para> Represents the following element tag in the schema: x:cacheSource </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CacheSource. Represents the following element tag in the schema: x:cacheSource</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CacheSource" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -281,11 +344,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CalculatedItems</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CalculatedItems.</para>
-          <para> Represents the following element tag in the schema: x:calculatedItems </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CalculatedItems. Represents the following element tag in the schema: x:calculatedItems</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CalculatedItems" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -308,11 +368,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CalculatedMembers</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CalculatedMembers.</para>
-          <para> Represents the following element tag in the schema: x:calculatedMembers </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CalculatedMembers. Represents the following element tag in the schema: x:calculatedMembers</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CalculatedMembers" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -338,11 +395,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -367,11 +422,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> createdVersion.</para>
-          <para>Represents the following attribute in the schema: createdVersion </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>createdVersion.Represents the following attribute in the schema: createdVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -391,11 +443,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Dimensions</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Dimensions.</para>
-          <para> Represents the following element tag in the schema: x:dimensions </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Dimensions. Represents the following element tag in the schema: x:dimensions</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Dimensions" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -423,11 +472,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> enableRefresh.</para>
-          <para>Represents the following attribute in the schema: enableRefresh </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>enableRefresh.Represents the following attribute in the schema: enableRefresh</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -452,11 +498,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> id.</para>
-          <para>Represents the following attribute in the schema: r:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>id.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
             </remark>
@@ -483,11 +526,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> invalid.</para>
-          <para>Represents the following attribute in the schema: invalid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>invalid.Represents the following attribute in the schema: invalid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -512,11 +552,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> tupleCache.</para>
-          <para>Represents the following attribute in the schema: tupleCache </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>tupleCache.Represents the following attribute in the schema: tupleCache</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -536,11 +573,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Kpis</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Kpis.</para>
-          <para> Represents the following element tag in the schema: x:kpis </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Kpis. Represents the following element tag in the schema: x:kpis</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Kpis" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -568,10 +602,7 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> refreshedDateIso.</para>
-          <para>Represents the following attribute in the schema: refreshedDateIso </para>
-        </summary>
+        <summary>refreshedDateIso.Represents the following attribute in the schema: refreshedDateIso</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -596,9 +627,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the PivotTableCacheDefinitionPart.
-            </summary>
+        <summary>Loads the DOM from the PivotTableCacheDefinitionPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -618,10 +647,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -641,11 +668,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Maps</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maps.</para>
-          <para> Represents the following element tag in the schema: x:maps </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maps. Represents the following element tag in the schema: x:maps</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Maps" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -668,11 +692,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.MeasureGroups</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> MeasureGroups.</para>
-          <para> Represents the following element tag in the schema: x:measureGroups </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>MeasureGroups. Represents the following element tag in the schema: x:measureGroups</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.MeasureGroups" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -700,11 +721,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> minRefreshableVersion.</para>
-          <para>Represents the following attribute in the schema: minRefreshableVersion </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>minRefreshableVersion.Represents the following attribute in the schema: minRefreshableVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -729,11 +747,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> missingItemsLimit.</para>
-          <para>Represents the following attribute in the schema: missingItemsLimit </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>missingItemsLimit.Represents the following attribute in the schema: missingItemsLimit</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -758,11 +773,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> optimizeMemory.</para>
-          <para>Represents the following attribute in the schema: optimizeMemory </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>optimizeMemory.Represents the following attribute in the schema: optimizeMemory</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -782,10 +794,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PivotCacheDefinitionExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PivotCacheDefinitionExtensionList.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
+        <summary>PivotCacheDefinitionExtensionList. Represents the following element tag in the schema: x:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -809,10 +818,8 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.PivotTableCacheDefinitionPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the PivotTableCacheDefinitionPart associated with this element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the PivotTableCacheDefinitionPart associated with this element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.PivotTableCacheDefinitionPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -837,11 +844,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> recordCount.</para>
-          <para>Represents the following attribute in the schema: recordCount </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>recordCount.Represents the following attribute in the schema: recordCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -866,11 +870,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> refreshedBy.</para>
-          <para>Represents the following attribute in the schema: refreshedBy </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>refreshedBy.Represents the following attribute in the schema: refreshedBy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -895,11 +896,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> refreshedDate.</para>
-          <para>Represents the following attribute in the schema: refreshedDate </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>refreshedDate.Represents the following attribute in the schema: refreshedDate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -924,11 +922,8 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> refreshedVersion.</para>
-          <para>Represents the following attribute in the schema: refreshedVersion </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>refreshedVersion.Represents the following attribute in the schema: refreshedVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -953,11 +948,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> refreshOnLoad.</para>
-          <para>Represents the following attribute in the schema: refreshOnLoad </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>refreshOnLoad.Represents the following attribute in the schema: refreshOnLoad</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -981,9 +973,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the PivotTableCacheDefinitionPart.
-            </summary>
+        <summary>Saves the DOM into the PivotTableCacheDefinitionPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1008,11 +998,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> saveData.</para>
-          <para>Represents the following attribute in the schema: saveData </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>saveData.Represents the following attribute in the schema: saveData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1037,11 +1024,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> supportAdvancedDrill.</para>
-          <para>Represents the following attribute in the schema: supportAdvancedDrill </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>supportAdvancedDrill.Represents the following attribute in the schema: supportAdvancedDrill</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1066,11 +1050,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> supportSubquery.</para>
-          <para>Represents the following attribute in the schema: supportSubquery </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>supportSubquery.Represents the following attribute in the schema: supportSubquery</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1090,11 +1071,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TupleCache</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TupleCache.</para>
-          <para> Represents the following element tag in the schema: x:tupleCache </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TupleCache. Represents the following element tag in the schema: x:tupleCache</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.TupleCache" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -1122,11 +1100,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> upgradeOnRefresh.</para>
-          <para>Represents the following attribute in the schema: upgradeOnRefresh </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>upgradeOnRefresh.Represents the following attribute in the schema: upgradeOnRefresh</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

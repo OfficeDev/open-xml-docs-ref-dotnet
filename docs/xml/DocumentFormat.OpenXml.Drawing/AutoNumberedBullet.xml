@@ -1,4 +1,4 @@
-﻿<Type Name="AutoNumberedBullet" FullName="DocumentFormat.OpenXml.Drawing.AutoNumberedBullet">
+<Type Name="AutoNumberedBullet" FullName="DocumentFormat.OpenXml.Drawing.AutoNumberedBullet">
   <TypeSignature Language="C#" Value="public class AutoNumberedBullet : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutoNumberedBullet extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.AutoNumberedBullet" />
@@ -19,11 +19,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Auto-Numbered Bullet.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:buAutoNum.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Auto-Numbered Bullet. When the object is serialized out as xml, its qualified name is a:buAutoNum.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `buAutoNum (Auto-Numbered Bullet)`  
+  
+ This element specifies that automatic numbered bullet points should be applied to a paragraph. These are not just numbers used as bullet points but instead automatically assigned numbers that are based on both buAutoNum attributes and paragraph level.  
+  
+ [*Example*: Consider the DrawingML content shown below.  
+  
+ a4da6a2b-7c2f-4b48-8302-24b6d6799acd  
+  
+```xml  
+<p:txBody>  
+  …  <a:p>  
+    <a:pPr …>  
+      <a:buAutoNum type="arabicPeriod"/>  
+    </a:pPr>  
+    …    <a:t>Bullet 1</a:t>  
+    …  </a:p>  
+  <a:p>  
+    <a:pPr lvl="1"…>  
+      <a:buAutoNum type="arabicPeriod"/>  
+    </a:pPr>  
+    …    <a:t>Bullet 2</a:t>  
+    …  </a:p>  
+  <a:p>  
+    <a:pPr …>  
+      <a:buAutoNum type="arabicPeriod"/>  
+    </a:pPr>  
+    …    <a:t>Bullet 3</a:t>  
+    …  </a:p>  
+  …</p:txBody>  
+```  
+  
+ For the above text there are a total of three bullet points. Two of which are at lvl="0" and one at lvl="1". Due to this breakdown of levels, the numbering sequence that should be automatically applied is 1, 1, 2 as is shown in the picture above. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|defPPr (§21.1.2.2.2); lvl1pPr (§21.1.2.4.13); lvl2pPr (§21.1.2.4.14); lvl3pPr (§21.1.2.4.15); lvl4pPr (§21.1.2.4.16); lvl5pPr (§21.1.2.4.17); lvl6pPr (§21.1.2.4.18); lvl7pPr (§21.1.2.4.19); lvl8pPr (§21.1.2.4.20); lvl9pPr (§21.1.2.4.21); pPr (§21.1.2.2.7)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|startAt (Start Numbering At)|Specifies the number that starts a given sequence of automatically numbered bullets. When the numbering is alphabetical, the number should map to the appropriate letter. For instance 1 maps to 'a', 2 to 'b' and so on. If the numbers are larger than 26, then multiple letters should be used. For instance 27 should be represented as 'aa' and similarly 53 should be 'aaa'.<br /><br /> The possible values for this attribute are defined by the *ST_TextBulletStartAtNum* simple type (§20.1.10.63).|  
+|type (Bullet Autonumbering Type)|Specifies the numbering scheme that is to be used. This allows for the describing of formats other than strictly numbers. For instance, a set of bullets can be represented by a series of Roman numerals instead of the standard 1,2,3,etc. number set.<br /><br /> The possible values for this attribute are defined by the *ST_TextAutonumberScheme* simple type (§20.1.10.61).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextAutonumberBullet) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AutoNumberedBullet class.
-            </summary>
+        <summary>Initializes a new instance of the AutoNumberedBullet class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +112,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +134,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +160,20 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Start Numbering At.</para>
-          <para>Represents the following attribute in the schema: startAt </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Start Numbering At.Represents the following attribute in the schema: startAt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number that will start number for a given sequence of automatically numbered bullets. When the numbering is alphabetical, the number should map to the appropriate letter. For instance `1` will map to `a`, `2` to `b` and so on. If the numbers are larger than 26, then multiple letters should be used. For instance `27` should be represented as `aa` and similarly `53` should be `aaa`.  
+  
+ The possible values for this attribute are defined by the `ST_TextBulletStartAtNum` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Type">
@@ -145,12 +197,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Bullet Autonumbering Type.</para>
-          <para>Represents the following attribute in the schema: type </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Bullet Autonumbering Type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the numbering scheme that is to be used. This allows for the describing of formats other than strictly numbers. For instance a set of bullets may need to be represented by a series of Roman numerals instead of the standard `1,2,3` number set.  
+  
+ The possible values for this attribute are defined by the `ST_TextAutonumberScheme` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

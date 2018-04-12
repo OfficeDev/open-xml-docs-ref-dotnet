@@ -1,4 +1,4 @@
-﻿<Type Name="ColorScheme" FullName="DocumentFormat.OpenXml.Drawing.ColorScheme">
+<Type Name="ColorScheme" FullName="DocumentFormat.OpenXml.Drawing.ColorScheme">
   <TypeSignature Language="C#" Value="public class ColorScheme : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColorScheme extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.ColorScheme" />
@@ -58,13 +58,146 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the ColorScheme Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:clrScheme.</para>
-    </summary>
+    <summary>Defines the ColorScheme Class. When the object is serialized out as xml, its qualified name is a:clrScheme.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Dark1Color &lt;a:dk1&gt;</description></item><item><description>Light1Color &lt;a:lt1&gt;</description></item><item><description>Dark2Color &lt;a:dk2&gt;</description></item><item><description>Light2Color &lt;a:lt2&gt;</description></item><item><description>Accent1Color &lt;a:accent1&gt;</description></item><item><description>Accent2Color &lt;a:accent2&gt;</description></item><item><description>Accent3Color &lt;a:accent3&gt;</description></item><item><description>Accent4Color &lt;a:accent4&gt;</description></item><item><description>Accent5Color &lt;a:accent5&gt;</description></item><item><description>Accent6Color &lt;a:accent6&gt;</description></item><item><description>Hyperlink &lt;a:hlink&gt;</description></item><item><description>FollowedHyperlinkColor &lt;a:folHlink&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **clrScheme (Color Scheme)**  
+  
+ This element defines a set of colors which are referred to as a color scheme.  The color scheme is responsible for defining a list of twelve colors.  The twelve colors consist of six accent colors, two dark colors, two light colors and a color for each of a hyperlink and followed hyperlink.  
+  
+ The Color Scheme Color elements appear in a sequence.  The following listing shows the index value and corresponding Color Name.  
+  
+ Sequence Index  
+  
+ Element (Color) Name  
+  
+ 0  
+  
+ dk1 (Dark 1)  
+  
+ 1  
+  
+ lt1 (Light 1)  
+  
+ 2  
+  
+ dk2 (Dark 2)  
+  
+ 3  
+  
+ lt2 (Light 2)  
+  
+ 4  
+  
+ accent1 (Accent 1)  
+  
+ 5  
+  
+ accent2 (Accent 2)  
+  
+ 6  
+  
+ accent3 (Accent 3)  
+  
+ 7  
+  
+ accent4 (Accent 4)  
+  
+ 8  
+  
+ accent5 (Accent 5)  
+  
+ 9  
+  
+ accent6 (Accent 6)  
+  
+ 10  
+  
+ hlink (Hyperlink)  
+  
+ 11  
+  
+ folHlink (Followed Hyperlink)  
+  
+ [*Example*:  Consider the following example of a color scheme defined in DrawingML:  
+  
+```xml  
+<clrScheme name="sample">  
+  <dk1>  
+    <sysClr val="windowText"/>  
+  </dk1>  
+  <lt1>  
+    <sysClr val="window"/>  
+  </lt1>  
+  <dk2>  
+    <srgbClr val="04617B"/>  
+  </dk2>  
+  <lt2>  
+    <srgbClr val="DBF5F9"/>  
+  </lt2>  
+  <accent1>  
+    <srgbClr val="0F6FC6"/>  
+  </accent1>  
+  <accent2>  
+    <srgbClr val="009DD9"/>  
+  </accent2>  
+  <accent3>  
+    <srgbClr val="0BD0D9"/>  
+  </accent3>  
+  <accent4>  
+    <srgbClr val="10CF9B"/>  
+  </accent4>  
+  <accent5>  
+    <srgbClr val="7CCA62"/>  
+  </accent5>  
+  <accent6>  
+    <srgbClr val="A5C249"/>  
+  </accent6>  
+  <hlink>  
+    <srgbClr val="FF9800"/>  
+  </hlink>  
+  <folHlink>  
+    <srgbClr val="F45511"/>  
+  </folHlink>  
+</clrScheme>  
+```  
+  
+ In this example, are defined the 12 theme colors in the sample color scheme.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|extraClrScheme (§20.1.6.4); themeElements (§20.1.6.10); themeOverride (§20.1.6.12)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|accent1 (Accent 1)|§20.1.4.1.1|  
+|accent2 (Accent 2)|§20.1.4.1.2|  
+|accent3 (Accent 3)|§20.1.4.1.3|  
+|accent4 (Accent 4)|§20.1.4.1.4|  
+|accent5 (Accent 5)|§20.1.4.1.5|  
+|accent6 (Accent 6)|§20.1.4.1.6|  
+|dk1 (Dark 1)|§20.1.4.1.9|  
+|dk2 (Dark 2)|§20.1.4.1.10|  
+|extLst (Extension List)|§20.1.2.2.15|  
+|folHlink (Followed Hyperlink)|§20.1.4.1.15|  
+|hlink (Hyperlink)|§20.1.4.1.19|  
+|lt1 (Light 1)|§20.1.4.1.22|  
+|lt2 (Light 2)|§20.1.4.1.23|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|name (Name)|The common name for this color scheme.  This name can show up in the user interface in a list of color schemes.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ColorScheme) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -80,9 +213,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ColorScheme class.
-            </summary>
+        <summary>Initializes a new instance of the ColorScheme class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -109,9 +240,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ColorScheme class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ColorScheme class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -132,9 +261,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ColorScheme class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ColorScheme class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,9 +282,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ColorScheme class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ColorScheme class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -177,11 +302,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Accent1Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Accent 1.</para>
-          <para> Represents the following element tag in the schema: a:accent1 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Accent 1. Represents the following element tag in the schema: a:accent1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Accent1Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -204,11 +326,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Accent2Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Accent 2.</para>
-          <para> Represents the following element tag in the schema: a:accent2 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Accent 2. Represents the following element tag in the schema: a:accent2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Accent2Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -231,11 +350,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Accent3Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Accent 3.</para>
-          <para> Represents the following element tag in the schema: a:accent3 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Accent 3. Represents the following element tag in the schema: a:accent3</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Accent3Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -258,11 +374,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Accent4Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Accent 4.</para>
-          <para> Represents the following element tag in the schema: a:accent4 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Accent 4. Represents the following element tag in the schema: a:accent4</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Accent4Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -285,11 +398,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Accent5Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Accent 5.</para>
-          <para> Represents the following element tag in the schema: a:accent5 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Accent 5. Represents the following element tag in the schema: a:accent5</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Accent5Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -312,11 +422,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Accent6Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Accent 6.</para>
-          <para> Represents the following element tag in the schema: a:accent6 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Accent 6. Represents the following element tag in the schema: a:accent6</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Accent6Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -342,11 +449,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -366,11 +471,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Dark1Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Dark 1.</para>
-          <para> Represents the following element tag in the schema: a:dk1 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Dark 1. Represents the following element tag in the schema: a:dk1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Dark1Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -393,11 +495,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Dark2Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Dark 2.</para>
-          <para> Represents the following element tag in the schema: a:dk2 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Dark 2. Represents the following element tag in the schema: a:dk2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Dark2Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -420,11 +519,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: a:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ExtensionList. Represents the following element tag in the schema: a:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -447,11 +543,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Followed Hyperlink.</para>
-          <para> Represents the following element tag in the schema: a:folHlink </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Followed Hyperlink. Represents the following element tag in the schema: a:folHlink</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.FollowedHyperlinkColor" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -474,11 +567,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Hyperlink</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hyperlink.</para>
-          <para> Represents the following element tag in the schema: a:hlink </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hyperlink. Represents the following element tag in the schema: a:hlink</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Hyperlink" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -501,11 +591,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Light1Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Light 1.</para>
-          <para> Represents the following element tag in the schema: a:lt1 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Light 1. Represents the following element tag in the schema: a:lt1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Light1Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -528,11 +615,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Light2Color</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Light 2.</para>
-          <para> Represents the following element tag in the schema: a:lt2 </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Light 2. Represents the following element tag in the schema: a:lt2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Light2Color" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -555,10 +639,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -583,11 +665,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

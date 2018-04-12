@@ -1,4 +1,4 @@
-﻿<Type Name="CharacterSpacingControl" FullName="DocumentFormat.OpenXml.Wordprocessing.CharacterSpacingControl">
+<Type Name="CharacterSpacingControl" FullName="DocumentFormat.OpenXml.Wordprocessing.CharacterSpacingControl">
   <TypeSignature Language="C#" Value="public class CharacterSpacingControl : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CharacterSpacingControl extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.CharacterSpacingControl" />
@@ -19,11 +19,37 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Character-Level Whitespace Compression.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:characterSpacingControl.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Character-Level Whitespace Compression. When the object is serialized out as xml, its qualified name is w:characterSpacingControl.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **characterSpacingControl (Character-Level Whitespace Compression)**  
+  
+ This element specifies how full-width characters in the current WordprocessingML document should be compressed to remove additional whitespace when the contents of this document are displayed, specifically by specifying the set(s) of characters which can be compressed to remove additional whitespace. [*Note*: The behavior of this element is functionally identical to the  *text-justify-trim* property. *end note*]  
+  
+ If this element is omitted, then the default value shall be *dontCompress*.  
+  
+ [*Example*: Consider the WordprocessingML below:  
+  
+```xml  
+<w:characterSpacingControl w:val="doNotCompress" />  
+```  
+  
+ The characterSpacingControl element has a val attribute value of *doNotCompress*, which specifies that no character compression shall be applied to any character when the document is displayed. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_CharacterSpacing) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the CharacterSpacingControl class.
-            </summary>
+        <summary>Initializes a new instance of the CharacterSpacingControl class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +88,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +136,28 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CharacterSpacingValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Value.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Value.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the sets of characters which should be compressed when the contents of this document are displayed.  
+  
+ Consider a WordprocessingML document for which only full-width punctuation characters shall have their white space compression applied. This requirement would be specified using the following WordprocessingML:  
+  
+```  
+<w:characterSpacingControl w:val="compressPunctuation"/>  
+```  
+  
+ The `val` attribute value of `compressPunctuation` specifies that character compression shall be applied to full-width punctuation characters only when the document is displayed.  
+  
+ The possible values for this attribute are defined by the `ST_CharacterSpacing` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

@@ -1,4 +1,4 @@
-﻿<Type Name="PivotSelection" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotSelection">
+<Type Name="PivotSelection" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotSelection">
   <TypeSignature Language="C#" Value="public class PivotSelection : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotSelection extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.PivotSelection" />
@@ -22,13 +22,71 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>PivotTable Selection.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:pivotSelection.</para>
-    </summary>
+    <summary>PivotTable Selection. When the object is serialized out as xml, its qualified name is x:pivotSelection.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>PivotArea &lt;x:pivotArea&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `pivotSelection (PivotTable Selection)`  
+  
+ A collection of PivotTable structure selections. A PivotTable structure selection is a way of specifying what cells in the PivotTable are selected. Instead of specifying cell addresses in a sqref, a particular area or structure within the PivotTable is specified. In this way there is semantic meaning regarding what is selected, rather than simply a list of cell or ranges contained in the selection. Typically fields on the row or column axis are selected.  
+  
+ [*Example*:For example, the innermost field (Product SubCategory) is selected in this PivotTable:  
+  
+ 69bf0087-c567-4d34-88db-014e53f7bae8  
+  
+ The corresponding pivotSelection XML should look like this:  
+  
+```xml  
+<pivotSelection pane="bottomRight" showHeader="1" axis="axisRow" dimension="2"  activeRow="11" activeCol="1" previousRow="11" previousCol="1" click="1"   r:id="rId1">  
+  <pivotArea dataOnly="0" labelOnly="1" fieldPosition="0">  
+    <references count="1">  
+      <reference field="9" count="0"/>  
+    </references>  
+  </pivotArea>  
+</pivotSelection>  
+```  
+  
+ axis indicates that this selection is on the row axis, dimension indicates the field level within the row axis that is selected (zero-based index), activeCol and activeRow respectively indicate where in the grid the selection is located, and reference field indicates to which particular field the selection corresponds.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sheetView (§18.3.1.87)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pivotArea (Pivot Area)|§18.3.1.68|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|activeCol (Active Column)|The column (zero-based) of active cell for structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|activeRow (Active Row)|The row (zero-based) of active cell for structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|axis (Axis)|Axis of the PivotTable on which this selection lies.<br /><br /> The possible values for this attribute are defined by the *ST_Axis* simple type (§18.18.1).|  
+|click (Click Count)|Number of clicks for this structure selection. For some selection combinations, subsequent clicks on the same target area cycles the actual selection through some variances. Therefore number of clicks on the selection shall be recorded, if it is desirable to restore this state of the selection cycle on load.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|count (Selection Count)|Number of selections for the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|data (Data Selection)|Flag indicating whether the structure selection is for data only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dimension (Dimension)|Indicates the field level within the axis that is selected (zero-based index).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|extendable (Extendable)|Flag indicating whether the structure selection can have additional selections added to it.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|id (Relationship Id)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Relationship Id pointing to the particular PivotTable Part corresponding to this selection.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|label (Label)|Flag indicating whether the structure selection is for labels only (e.g., a grand total row is selected).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|max (Maximum)|The maximum line the structure selection contains.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|min (Minimum)|The minimum line the structure selection contains.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|pane (Pane)|The pane to which this PivotTable structure selection belongs.<br /><br /> The possible values for this attribute are defined by the *ST_Pane* simple type (§18.18.52).|  
+|previousCol (Previous Column Selection)|1-based index to the column immediately left of the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|previousRow (Previous Row)|1-based index to the row immediately above the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|showHeader (Show Header)|Flag indicating whether selection toggle from data only to header only to both is enabled. *False* means disabled.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|start (Start)|The line the structure selection begins (zero-based). This is the line clicked to initiate the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PivotSelection) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +102,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PivotSelection class.
-            </summary>
+        <summary>Initializes a new instance of the PivotSelection class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +129,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotSelection class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the PivotSelection class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +150,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the PivotSelection class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the PivotSelection class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +171,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the PivotSelection class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the PivotSelection class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -146,11 +196,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Active Column.</para>
-          <para>Represents the following attribute in the schema: activeCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Active Column.Represents the following attribute in the schema: activeCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,11 +222,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Active Row.</para>
-          <para>Represents the following attribute in the schema: activeRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Active Row.Represents the following attribute in the schema: activeRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,11 +248,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Axis.</para>
-          <para>Represents the following attribute in the schema: axis </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Axis.Represents the following attribute in the schema: axis</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -233,11 +274,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Click Count.</para>
-          <para>Represents the following attribute in the schema: click </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Click Count.Represents the following attribute in the schema: click</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -260,11 +298,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -289,11 +325,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Selection Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Selection Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -318,11 +351,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Selection.</para>
-          <para>Represents the following attribute in the schema: data </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Selection.Represents the following attribute in the schema: data</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -347,11 +377,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Dimension.</para>
-          <para>Represents the following attribute in the schema: dimension </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Dimension.Represents the following attribute in the schema: dimension</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -376,11 +403,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Extendable.</para>
-          <para>Represents the following attribute in the schema: extendable </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Extendable.Represents the following attribute in the schema: extendable</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -405,11 +429,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relationship Id.</para>
-          <para>Represents the following attribute in the schema: r:id </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relationship Id.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
             </remark>
@@ -436,11 +457,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Label.</para>
-          <para>Represents the following attribute in the schema: label </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Label.Represents the following attribute in the schema: label</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -460,10 +478,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -488,11 +504,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Maximum.</para>
-          <para>Represents the following attribute in the schema: max </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Maximum.Represents the following attribute in the schema: max</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -517,11 +530,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Minimum.</para>
-          <para>Represents the following attribute in the schema: min </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Minimum.Represents the following attribute in the schema: min</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -546,11 +556,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PaneValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Pane.</para>
-          <para>Represents the following attribute in the schema: pane </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Pane.Represents the following attribute in the schema: pane</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -570,11 +577,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PivotArea</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Pivot Area.</para>
-          <para> Represents the following element tag in the schema: x:pivotArea </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Pivot Area. Represents the following element tag in the schema: x:pivotArea</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.PivotArea" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -602,11 +606,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Column Selection.</para>
-          <para>Represents the following attribute in the schema: previousCol </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Previous Column Selection.Represents the following attribute in the schema: previousCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -631,11 +632,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Row.</para>
-          <para>Represents the following attribute in the schema: previousRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Previous Row.Represents the following attribute in the schema: previousRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -660,11 +658,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Show Header.</para>
-          <para>Represents the following attribute in the schema: showHeader </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Show Header.Represents the following attribute in the schema: showHeader</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -689,11 +684,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Start.</para>
-          <para>Represents the following attribute in the schema: start </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Start.Represents the following attribute in the schema: start</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

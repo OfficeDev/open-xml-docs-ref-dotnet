@@ -1,4 +1,4 @@
-﻿<Type Name="DataValidations" FullName="DocumentFormat.OpenXml.Spreadsheet.DataValidations">
+<Type Name="DataValidations" FullName="DocumentFormat.OpenXml.Spreadsheet.DataValidations">
   <TypeSignature Language="C#" Value="public class DataValidations : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataValidations extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.DataValidations" />
@@ -22,13 +22,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the DataValidations Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:dataValidations.</para>
-    </summary>
+    <summary>Defines the DataValidations Class. When the object is serialized out as xml, its qualified name is x:dataValidations.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DataValidation &lt;x:dataValidation&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **dataValidations (Data Validations)**  
+  
+ This collection expresses all data validation information for cells in a sheet which have data validation features applied.  
+  
+ Data validation is used to specify constraints on the data that can be entered into a cell. Additional UI can be provided to help the user select values (e.g., a dropdown control on the cell or hover text when the cell is active), and to help the user understand why a particular entry was disallowed (e.g., alerts and messages).  
+  
+ Various data types can be selected, and logical operators (e.g., greater than, less than, equal to, etc) can be used. Additionally, instead of specifying an explicit set of values that are permitted, a cell or range reference can be used.  
+  
+ An input message can be specified to help the user know what kind of value is expected, and a warning message (and warning type) can be specified to alert the user when they've entered data which is not permitted based on the data validations specified in the worksheet.  
+  
+ [*Example*:  
+  
+```xml  
+<dataValidations count="1">  
+  <dataValidation type="whole" errorStyle="warning" operator="greaterThan"    showInputMessage="1" showErrorMessage="1" errorTitle="Invalid Data"     error="The value must be a whole number greater than 0."     promptTitle="Whole Number"     prompt="Please enter a whole number greater than 0." sqref="A1">  
+    <formula1>0</formula1>  
+  </dataValidation>  
+</dataValidations>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|worksheet (§18.3.1.99)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|dataValidation (Data Validation)|§18.3.1.32|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|count (Data Validation Item Count)|The expected number of data validation items for this worksheet.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|disablePrompts (Disable Prompts)|A boolean value indicating whether all input prompts for the worksheet are disabled.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|xWindow (Top Left Corner (X Coodrinate))|The x-coordinate (relative to window) of top-left corner of the data validation input prompt (textbox). This is per sheet, not per cell. Units in pixels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|yWindow (Top Left Corner (Y Coordinate))|The y-coordinate (relative to window) of top-left corner of the data validation input prompt (textbox). This is per sheet, not per cell. Units in pixels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_DataValidations) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +87,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DataValidations class.
-            </summary>
+        <summary>Initializes a new instance of the DataValidations class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +114,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataValidations class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DataValidations class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +135,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DataValidations class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DataValidations class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +156,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DataValidations class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DataValidations class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +179,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +206,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Data Validation Item Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Data Validation Item Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,11 +232,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Disable Prompts.</para>
-          <para>Represents the following attribute in the schema: disablePrompts </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Disable Prompts.Represents the following attribute in the schema: disablePrompts</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -226,10 +253,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -254,11 +279,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Left Corner (X Coodrinate).</para>
-          <para>Represents the following attribute in the schema: xWindow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Left Corner (X Coodrinate).Represents the following attribute in the schema: xWindow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -283,11 +305,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Top Left Corner (Y Coordinate).</para>
-          <para>Represents the following attribute in the schema: yWindow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Top Left Corner (Y Coordinate).Represents the following attribute in the schema: yWindow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

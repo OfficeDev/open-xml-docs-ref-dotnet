@@ -1,4 +1,4 @@
-﻿<Type Name="FieldChar" FullName="DocumentFormat.OpenXml.Wordprocessing.FieldChar">
+<Type Name="FieldChar" FullName="DocumentFormat.OpenXml.Wordprocessing.FieldChar">
   <TypeSignature Language="C#" Value="public class FieldChar : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FieldChar extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FieldChar" />
@@ -28,13 +28,90 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Complex Field Character.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:fldChar.</para>
-    </summary>
+    <summary>Complex Field Character. When the object is serialized out as xml, its qualified name is w:fldChar.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FieldData &lt;w:fldData&gt;</description></item><item><description>FormFieldData &lt;w:ffData&gt;</description></item><item><description>NumberingChange &lt;w:numberingChange&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **fldChar (Complex Field Character)**  
+  
+ This element specifies the presence of a complex field character at the current location in the parent run. A *complex field character* is a special character which delimits the start and end of a complex field or separates its field codes from its current field result.  
+  
+ A complex field is defined via the use of the two required complex field characters: a *start character*, which specifies the beginning of a complex field within the document content; and an *end character*, which specifies the end of a complex field. This syntax allows multiple fields to be embedded (or "nested") within each other in a document.  
+  
+ As well, because a complex field can specify both its field codes and its current result within the document, these two items are separated by the optional *separator character*, which defines the end of the field codes and the beginning of the field contents. The omission of this character shall be used to specify that the contents of the field are entirely field codes (i.e. the field has no result).  
+  
+ [*Example*: Consider the following complex field definition within a WordprocessingML document:  
+  
+```xml  
+<w:r>  
+  <w:fldChar w:fldCharType="begin" />  
+</w:r>  
+<w:r>  
+  <w:instrText>AUTHOR</w:instrText>  
+</w:r>  
+<w:r>  
+  <w:fldChar w:fldCharType="separate" />  
+</w:r>  
+<w:r>  
+  <w:t>Rex Jaeschke</w:t>  
+</w:r>  
+<w:r>  
+  <w:fldChar w:fldCharType="end" />  
+</w:r>  
+```  
+  
+ The three fldChar elements specify:  
+  
+-   The beginning of the field, using the type attribute value of *start*  
+  
+-   The separator between the field codes and the current field results, using the type attribute value of *separate*  
+  
+-   The end of the field, using the type attribute value of *end*  
+  
+ *end example*]  
+  
+ If a complex field character is located in an inappropriate location in a WordprocessingML document, then its presence shall be ignored and no field shall be present in the resulting document when displayed. Also, if a complex field is not closed before the end of a document story, then no field shall be generated and each individual run shall be processed as if the field characters did not exist (i.e. the contents of all field code run content shall not be displayed, and the field results shall be displayed as literal text).  
+  
+ [*Example*: Consider the following WordprocessingML document:  
+  
+```xml  
+<w:body>  
+  <w:p>  
+    <w:r>  
+      <w:fldChar w:fldCharType="start" />  
+    </w:r>  
+    <w:r>  
+      <w:instrText>AUTHOR</w:instrText>  
+    </w:r>  
+    <w:r>  
+      <w:fldChar w:fldCharType="separate" />  
+    </w:r>  
+    <w:r>  
+      <w:t>Rex Jaeschke</w:t>  
+    </w:r>  
+  </w:p>  
+</w:body>  
+```  
+  
+ The complex field is technically incorrect since no end character exists in the main document story. The resulting content must be interpreted as though no field characters exist, resulting in only the literal text *Rex Jaeschke* being displayed in the document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|ffData (Form Field Properties)|§17.16.17|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FldChar) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,9 +127,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FieldChar class.
-            </summary>
+        <summary>Initializes a new instance of the FieldChar class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +154,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FieldChar class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the FieldChar class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -102,9 +175,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FieldChar class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the FieldChar class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -125,9 +196,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the FieldChar class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the FieldChar class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,11 +219,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -179,11 +246,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Result Invalidated.</para>
-          <para>Represents the following attribute in the schema: w:dirty </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Result Invalidated.Represents the following attribute in the schema: w:dirty</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -210,11 +274,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.FieldCharValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Character Type.</para>
-          <para>Represents the following attribute in the schema: w:fldCharType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Character Type.Represents the following attribute in the schema: w:fldCharType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -236,11 +297,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.FieldData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom Field Data.</para>
-          <para> Represents the following element tag in the schema: w:fldData </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Custom Field Data. Represents the following element tag in the schema: w:fldData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.FieldData" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -268,11 +326,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Field Should Not Be Recalculated.</para>
-          <para>Represents the following attribute in the schema: w:fldLock </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Field Should Not Be Recalculated.Represents the following attribute in the schema: w:fldLock</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -294,11 +349,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.FormFieldData</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Form Field Properties.</para>
-          <para> Represents the following element tag in the schema: w:ffData </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Form Field Properties. Represents the following element tag in the schema: w:ffData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.FormFieldData" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -321,10 +373,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -344,11 +394,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingChange</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Previous Numbering Field Properties.</para>
-          <para> Represents the following element tag in the schema: w:numberingChange </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Previous Numbering Field Properties. Represents the following element tag in the schema: w:numberingChange</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.NumberingChange" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

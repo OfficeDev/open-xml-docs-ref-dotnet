@@ -1,4 +1,4 @@
-﻿<Type Name="MailSubject" FullName="DocumentFormat.OpenXml.Wordprocessing.MailSubject">
+<Type Name="MailSubject" FullName="DocumentFormat.OpenXml.Wordprocessing.MailSubject">
   <TypeSignature Language="C#" Value="public class MailSubject : DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailSubject extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MailSubject" />
@@ -19,11 +19,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Merged E-mail or Fax Subject Line.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:mailSubject.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Merged E-mail or Fax Subject Line. When the object is serialized out as xml, its qualified name is w:mailSubject.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **mailSubject (Merged E-mail or Fax Subject Line)**  
+  
+ This element specifies the text which shall appear in the subject line of the e-mails or faxes that result after the actions of a mail merge have imported external data into fields within a merged WordprocessingML document whose destination, as specified in the destination element (§17.14.21), is *email* or *fax*.  
+  
+ If this element is omitted, then no subject line text shall be associated with each merged document produced via a mail merge using the specified mail merge data. If the destination element (§17.14.11) specifies that the merged document destination is not *email* or *fax*, this element shall be ignored.  
+  
+ [*Example*: Consider a merged WordprocessingML document containing fields and the following WordprocessingML as part of its mail merge data:  
+  
+```xml  
+<w:mailMerge>  
+  …  <w:destination w:val="email" />  
+  <w:mailSubject w:val="Example Subject Line" />  
+  …</w:mailMerge>  
+```  
+  
+ The mailSubject element specifies that after the specified external data has been imported into the specified fields in the merged document, each record merged must result in a single e-mail message, each with their subject line reading *Example Subject Line*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MailSubject class.
-            </summary>
+        <summary>Initializes a new instance of the MailSubject class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +113,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

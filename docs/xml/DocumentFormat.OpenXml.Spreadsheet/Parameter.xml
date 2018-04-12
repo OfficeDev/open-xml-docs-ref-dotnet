@@ -1,4 +1,4 @@
-﻿<Type Name="Parameter" FullName="DocumentFormat.OpenXml.Spreadsheet.Parameter">
+<Type Name="Parameter" FullName="DocumentFormat.OpenXml.Spreadsheet.Parameter">
   <TypeSignature Language="C#" Value="public class Parameter : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Parameter extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Parameter" />
@@ -19,11 +19,46 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Parameter Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:parameter.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Parameter Properties. When the object is serialized out as xml, its qualified name is x:parameter.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **parameter (Parameter Properties)**  
+  
+ This element stores properties about any parameters used with external data connections.  Parameters are used to change the query executed externally and cause different data to be retrieved into the workbook.  The type of parameter used – see ST_parameterType (§18.18.54) – determines whether the user is prompted for a value before data is refreshed, or the value is pulled from a cell in the workbook, or whether the same value should be used until explicitly changed in the data connection.  Parameters are permitted for ODBC and web queries.  
+  
+ *[Example:*  
+  
+ Data connectivity can use a number of different technologies. The following is an example of XML defining a connection to a Microsoft Access database, with a parameter based on the value in cell C1 on the first sheet.  
+  
+```xml  
+<connection id="1" name="Connection" type="1" refreshedVersion="2"  background="1" saveData="1">  
+  <dbPr connection="DSN=MS Access     Database;DBQ=C:\Desktop\db1.mdb;DefaultDir=C:\Desktop;DriverId=25;FIL=MS     Access;MaxBufferSize=2048;PageTimeout=5;" command="SELECT Table1.Field1,     Table1.Field2_x000d__x000a_FROM `C:\Desktop\db1`.Table1     Table1_x000d__x000a_WHERE (Table1.Field2=?)"/>  
+  <parameters count="1">  
+    <parameter name="user specified value" sqlType="4" parameterType="cell"       cell="Sheet1!$C$1"/>  
+  </parameters>  
+</connection>  
+```  
+  
+ *end example]*  
+  
+ Note that the command string in the dbPr element contains a "?" character.  This character serves as a parameter marker.  
+  
+ [*Note*: Data connectivity can use a number of different technologies. One example of potential values stored in this attribute can be found at: http://msdn.microsoft.com/library/default.asp?url=/library/en-us/odbc/htm/odbcstatement_parameters.asp *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|parameters (§18.13.7)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Parameter) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +74,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Parameter class.
-            </summary>
+        <summary>Initializes a new instance of the Parameter class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,11 +99,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Boolean.</para>
-          <para>Represents the following attribute in the schema: boolean </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Boolean.Represents the following attribute in the schema: boolean</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -95,11 +125,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Reference.</para>
-          <para>Represents the following attribute in the schema: cell </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Reference.Represents the following attribute in the schema: cell</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,11 +149,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,11 +176,8 @@
         <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Double.</para>
-          <para>Represents the following attribute in the schema: double </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Double.Represents the following attribute in the schema: double</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -180,11 +202,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Integer.</para>
-          <para>Represents the following attribute in the schema: integer </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Integer.Represents the following attribute in the schema: integer</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,10 +223,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -232,11 +249,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Parameter Name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Parameter Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -261,11 +275,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ParameterValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Parameter Type.</para>
-          <para>Represents the following attribute in the schema: parameterType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Parameter Type.Represents the following attribute in the schema: parameterType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -290,11 +301,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Parameter Prompt String.</para>
-          <para>Represents the following attribute in the schema: prompt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Parameter Prompt String.Represents the following attribute in the schema: prompt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -319,11 +327,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Refresh on Change.</para>
-          <para>Represents the following attribute in the schema: refreshOnChange </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Refresh on Change.Represents the following attribute in the schema: refreshOnChange</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -348,11 +353,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> SQL Data Type.</para>
-          <para>Represents the following attribute in the schema: sqlType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>SQL Data Type.Represents the following attribute in the schema: sqlType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -377,11 +379,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> String.</para>
-          <para>Represents the following attribute in the schema: string </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>String.Represents the following attribute in the schema: string</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

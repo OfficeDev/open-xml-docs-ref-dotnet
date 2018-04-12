@@ -1,4 +1,4 @@
-﻿<Type Name="Literal" FullName="DocumentFormat.OpenXml.Math.Literal">
+<Type Name="Literal" FullName="DocumentFormat.OpenXml.Math.Literal">
   <TypeSignature Language="C#" Value="public class Literal : DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Literal extends DocumentFormat.OpenXml.Math.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Math.Literal" />
@@ -19,11 +19,71 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Literal.</para>
-      <para> When the object is serialized out as xml, its qualified name is m:lit.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Literal. When the object is serialized out as xml, its qualified name is m:lit.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lit (Literal)**  
+  
+ This element specifies that the characters in the run are literal; that is, they are to be interpreted literally and not be built up based on any implied mathematical meaning. This is especially useful for operators or other special characters  that signal a need for build up to an OMML reader. These characters are often encountered during a given instance of mathematical text when presented in a 1-dimensional linear format, such as the linear format defined by Unicode Technical Note #28 (Sargent 2006).  
+  
+ When the element is absent, the default value of the property is *0* meaning that this property is not applied.  
+  
+ When the element is present and the val attribute is absent, the default of the val attribute is *1* meaning that this property is applied.  
+  
+ [*Example*: In the following XML, the + operator is treated literally and does not receive proper binary spacing:  
+  
+```xml  
+<m:r>a</m:r>  
+<m:r>  
+  <m:rPr>  
+    <m:lit/>  
+  </m:rPr>  
+  <m:t>+</m:t>  
+</m:r>  
+<m:r>  
+  <m:t>b</m:t>  
+</m:r>  
+```  
+  
+ As another example, consider the following Office Open XML Math markup:  
+  
+```xml  
+<m:r>  
+    <m:t>a</m:t>   
+</m:r>  
+<m:r>  
+    <m:rPr>  
+        <m:lit/>   
+    </m:rPr>  
+    <m:t>/</m:t>   
+</m:r>  
+<m:r>  
+    <m:t>b</m:t>   
+</m:r>  
+```  
+  
+ This would be displayed as: . If built up, it would normally be converted to ; however, the presence of this element specifies that the solidus should be treated literally, resulting in .  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rPr (§22.1.2.91)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (value)|Specifies a binary value for the property defined by the parent XML element.<br /><br /> A value of *1* or *true* specifies that the property shall be explicitly applied. This is the default value for this attribute, and is implied when the parent element is present.<br /><br /> A value of *0* or *false* specifies that the property shall be explicitly turned off. This is implied when the parent element is not present.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_OnOff) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +99,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Literal class.
-            </summary>
+        <summary>Initializes a new instance of the Literal class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +122,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +144,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

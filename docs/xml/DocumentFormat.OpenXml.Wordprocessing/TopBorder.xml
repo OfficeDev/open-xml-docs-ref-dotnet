@@ -1,4 +1,4 @@
-﻿<Type Name="TopBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.TopBorder">
+<Type Name="TopBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.TopBorder">
   <TypeSignature Language="C#" Value="public class TopBorder : DocumentFormat.OpenXml.Wordprocessing.BorderType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TopBorder extends DocumentFormat.OpenXml.Wordprocessing.BorderType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TopBorder" />
@@ -19,11 +19,240 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Paragraph Border Above Identical Paragraphs.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:top.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Paragraph Border Above Identical Paragraphs. When the object is serialized out as xml, its qualified name is w:top.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `top (Paragraph Border Above Identical Paragraphs)`  
+  
+ This element specifies the  border which shall be displayed above a set of paragraphs which have the same set of paragraph border settings.  
+  
+ To determine if any two adjoining paragraphs shall have an individual top and bottom border or a between border, the set of borders on the two adjoining paragraphs are compared. If the border information on those two paragraphs is identical for all possible paragraphs borders, then the between border is displayed. Otherwise, the final paragraph shall use its bottom border and the following paragraph shall use its top border, respectively. If this border specifies a space attribute, that value determines the space above the text (ignoring any spacing above) which should be left before this border is drawn, specified in points.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then no between border shall be applied above identical paragraphs.  
+  
+ [*Example*: Consider the following two paragraphs' WordprocessingML definition:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>First paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="0" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Second paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+```  
+  
+ Since the paragraph border is different between the two paragraphs (the bottom space value goes from *1* to *0*), paragraph two uses its top border, which is located one point above the text in that paragraph. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pBdr (§17.3.1.24)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `top (Table Cell Top Border)`  
+  
+ This element specifies the border which shall be displayed at the top of the current table cell. The appearance of this table cell border in the document shall be determined by the following settings:  
+  
+-   If the net tblCellSpacing element value (§17.4.45;§17.4.44;§17.4.46) applied to the cell is non-zero, then the cell border shall always be displayed  
+  
+-   Otherwise, the display of the border is subject to the conflict resolution algorithm defined by the tcBorders element (§17.4.67) and the tblBorders element (§17.4.40;§17.4.39)  
+  
+ If this element is omitted, then the top of this table cell shall not have a cell border, and its border can use the table's border settings as appropriate.  
+  
+ [*Example*: Consider a table in which the first cell in the first row specifies a top cell border , as follows:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This top cell border is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    …    <w:tcBorders>  
+      <w:top w:val="thinThickThinSmallGap" w:sz="24" w:space="0" w:color="FF0000"/>  
+    </w:tcBorders>  
+  </w:tcPr>  
+  <w:p/>  
+</w:tc>  
+```  
+  
+ The top element specifies a three point border of type *thinThinThickSmallGap*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcBorders (§17.4.67)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `top (Table Top Border)`  
+  
+ This element specifies the border which shall be displayed at the top of the current table. The appearance of this table border in the document shall be determined by the following settings:  
+  
+-   The display of the border is subject to the conflict resolution algorithm defined by the tcBorders element (§17.4.67) and the tblBorders element (§17.4.40;§17.4.39)  
+  
+ If this element is omitted, then the top of this table shall have the border specified by the associated table style. If no top border is specified in the style hierarchy, then this table shall not have a top border.  
+  
+ [*Example*: Consider a table in which the table properties specifies a top table border, as follows:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This top table border is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblBorders>  
+      <w:top w:val="thinThickThinMediumGap" w:sz="24" w:space="0" w:color="D0D0D0" w:themeColor="accent3" w:themeTint="99"/>  
+    </w:tblBorders>  
+  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ The top element specifies a three point top table border of type *thinThinThickMediumGap*. *end example*].  
+  
+|Parent Elements|  
+|---------------------|  
+|tblBorders (§17.4.39); tblBorders (§17.4.40)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `top (Top Border)`  
+  
+ This element specifies the presentation and display of the page border displayed at the top of each page in this section.  
+  
+ [*Example*: Consider a section in which all pages must have a top border consisting of a repeated image of balloons, like this:  
+  
+ 5cba059f-89ed-4087-86ae-32fc8ff26a57  
+  
+ This border would result in the following WordprocessingML:  
+  
+```xml  
+<w:sectPr>  
+  …  <w:pgBorders>  
+    <w:top w:val="balloons3Colors" …/>  
+  </w:pgBorders>  
+  …</w:sectPr>  
+```  
+  
+ Because the page only has a border at the top, only the top element is specified within the set of page borders. *end example*]  
+  
+ When a document has a top border that is relative to the page edges (using an offsetFrom attribute value of *page* on pgBorders), it shall span the top edge of the page at the location defined by its properties, stopping when:  
+  
+-   It intersects with the corresponding left or right page border (if one is specified)  
+  
+-   It reaches the edge of the page.  
+  
+ [*Example*: In the example above, no left or right border was specified in the WordprocessingML, so a consumer must draw the border from one edge of the page to the other. *end example*]  
+  
+ When a document has a top border that is relative to the text (using the offsetFrom attribute value of *text* on pgBorders), it shall only span the necessary width to satisfy the requirement of spanning the width of the text.  
+  
+ When a document has custom border art specified by attributes topLeft, topRight, and/or id, it shall use the corresponding relationship part item as an image for the top left corner, top right corner, and/or top border, respectively. If the corresponding relationship part item cannot be resolved the consumer shall use the border specified by the value of the val attribute. If the corresponding value of the val attribute cannot be resolved no top left corner, top right corner, or top border is present when the page is displayed.  
+  
+ When a document has a custom border art specified by attribute id without specifying either attributes topRight and/or topLeft, the top border as resolved by the corresponding relationship part item of attribute id shall span to the corners not specified by topRight and/or topLeft attributes.  
+  
+|Parent Elements|  
+|---------------------|  
+|pgBorders (§17.6.10)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TopPageBorder) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `top (Top Border for HTML div)`  
+  
+ This element specifies the border which shall be displayed at the top of the boundaries of the current HTML *div* object.  
+  
+ If this element is omitted, then this HTML *div* object shall not have a top border.  
+  
+ [*Example*: Consider a simple HTML document defined as follows:  
+  
+```xml  
+<html>  
+  <body>  
+    <div style=" border-left-style:solid; border-right-style:groove; border-right-width:1px; border-top-style:dashed; border-top-width:3px; border-bottom-style:outset; border-bottom-width:3px">  
+      <p>paragraph of text</p>  
+    </div>  
+  </body>  
+</html>  
+```  
+  
+ This HTML would therefore normally appear as follows (image scaled appropriately):  
+  
+ 80f86de9-0ded-4cb3-8002-c4d4140efec0  
+  
+ Now, when this document is saved in the WordprocessingML format, the information stored on the *div* elements is stored in the web setting part as follows:  
+  
+```xml  
+<w:divs>  
+  <w:div w:id="1785730240">  
+    …    <w:divBdr>  
+      <w:top w:val="dashed" w:sz="18" w:space="7" w:color="auto" />  
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="auto" />  
+      <w:bottom w:val="outset" w:sz="18" w:color="auto" />  
+      <w:right w:val="threeDEngrave" w:sz="6" w:color="auto" />  
+    </w:divBdr>  
+  </w:div>  
+</w:divs>  
+```  
+  
+ The top element specifies border information about the top border for the single HTML *div* structure in the document; in this case, a 2.25 point bottom border of type *dashed*. The initial 3 pixel border was converted to 2.25 points using the following logic:  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|divBdr (§17.15.2.7)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +268,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TopBorder class.
-            </summary>
+        <summary>Initializes a new instance of the TopBorder class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +291,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +313,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

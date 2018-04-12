@@ -1,4 +1,4 @@
-﻿<Type Name="IgnoreMixedContent" FullName="DocumentFormat.OpenXml.Wordprocessing.IgnoreMixedContent">
+<Type Name="IgnoreMixedContent" FullName="DocumentFormat.OpenXml.Wordprocessing.IgnoreMixedContent">
   <TypeSignature Language="C#" Value="public class IgnoreMixedContent : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IgnoreMixedContent extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.IgnoreMixedContent" />
@@ -19,11 +19,37 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Ignore Mixed Content When Validating Custom XML Markup.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:ignoreMixedContent.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Ignore Mixed Content When Validating Custom XML Markup. When the object is serialized out as xml, its qualified name is w:ignoreMixedContent.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **ignoreMixedContent (Ignore Mixed Content When Validating Custom XML Markup)**  
+  
+ This element specifies that applications should ignore all text content which is not contained within a leaf custom XML markup element when validating the contents of the custom XML markup in this document against one or more attached custom XML schema(s). A *leaf element* is a custom XML element which has no child custom XML elements (it is a leaf in the custom XML tree).  
+  
+ If this element is omitted, then text content in leaf elements shall not be ignored when validating the custom XML markup against one or more custom XML schema(s).  
+  
+ [*Example*: Consider a WordprocessingML document which should not have its custom XML content validated even by applications which support this operation. This requirement is specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:doNotValidateAgainstSchema w:val="true" />  
+```  
+  
+ The doNotValidateAgainstSchema element's val attribute has a value of *true* specifying that the custom XML markup in this document must not be validated. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +65,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the IgnoreMixedContent class.
-            </summary>
+        <summary>Initializes a new instance of the IgnoreMixedContent class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +88,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +110,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

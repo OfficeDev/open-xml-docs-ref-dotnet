@@ -1,4 +1,4 @@
-﻿<Type Name="UnhideWhenUsed" FullName="DocumentFormat.OpenXml.Wordprocessing.UnhideWhenUsed">
+<Type Name="UnhideWhenUsed" FullName="DocumentFormat.OpenXml.Wordprocessing.UnhideWhenUsed">
   <TypeSignature Language="C#" Value="public class UnhideWhenUsed : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UnhideWhenUsed extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UnhideWhenUsed" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Remove Semi-Hidden Property When Style Is Used.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:unhideWhenUsed.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Remove Semi-Hidden Property When Style Is Used. When the object is serialized out as xml, its qualified name is w:unhideWhenUsed.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **unhideWhenUsed (Remove Semi-Hidden Property When Style Is Used)**  
+  
+ This element specifies whether the semiHidden property (§17.7.4.16) shall be removed when this style is used by the content of the document. If this element is set, then an application shall ensure that even if the semiHidden element is specified on a style, that this property is removed when the document is resaved if the style is referenced by any content in the document.  
+  
+ If this element is omitted, then the style shall not automatically lose the semi-hidden property when it is used in the document contents.  
+  
+ [*Example*: Consider a style with a primary name of *Test Paragraph Style* that should not be displayed in the main user interface until it is used. This requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:style … w:styleId="TestStyle">  
+  <w:name w:val="Test Paragraph Style"/>  
+  <w:semiHidden/>  
+  <w:unhideWhenUsed/>  
+  …</w:style>  
+```  
+  
+ The unhideWhenUsed element specifies that this style definition should not be displayed in any main user interface associated with an application which processes this document until it is referenced by document content. If a paragraph was added to the document which referenced this style:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:pStyle w:val="TestStyle"/>  
+  </w:pPr>  
+  …</w:p>  
+```  
+  
+ This style is now referenced by the document's contents and would have the semiHidden element removed on save. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the UnhideWhenUsed class.
-            </summary>
+        <summary>Initializes a new instance of the UnhideWhenUsed class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

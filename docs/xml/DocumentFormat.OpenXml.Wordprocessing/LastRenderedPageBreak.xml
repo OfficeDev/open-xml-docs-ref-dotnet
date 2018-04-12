@@ -1,4 +1,4 @@
-﻿<Type Name="LastRenderedPageBreak" FullName="DocumentFormat.OpenXml.Wordprocessing.LastRenderedPageBreak">
+<Type Name="LastRenderedPageBreak" FullName="DocumentFormat.OpenXml.Wordprocessing.LastRenderedPageBreak">
   <TypeSignature Language="C#" Value="public class LastRenderedPageBreak : DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LastRenderedPageBreak extends DocumentFormat.OpenXml.Wordprocessing.EmptyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LastRenderedPageBreak" />
@@ -19,11 +19,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Position of Last Calculated Page Break.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:lastRenderedPageBreak.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Position of Last Calculated Page Break. When the object is serialized out as xml, its qualified name is w:lastRenderedPageBreak.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lastRenderedPageBreak (Position of Last Calculated Page Break)**  
+  
+ This element specifies that this position delimited the end of a page when this document was last saved by an application which paginates its content.  
+  
+ [*Guidance*: This element must be used by applications to specify the locations of page breaks within a document when it is saved as WordprocessingML, in order to allow other applications (e.g. assistive software) to utilize this information when reading the document. *end guidance*]  
+  
+ [*Example*: Consider a run which consists of the text *This is the end of the page*, where the word *end* was the last word on a page. If the application saving this file had paginated this content, that information can be saved with the file as follows:  
+  
+```xml  
+<w:r>  
+  <w:t>This is the end</w:t>  
+  <w:lastRenderedPageBreak/>  
+  <w:t xml:space="preserve"> of the page</w:t>  
+</w:r>  
+```  
+  
+ The lastRenderedPageBreak element indicates that there was a page break resulting from pagination of this content, which occurred between the word *end* and the word *of*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|r (§22.1.2.87); r (§17.3.2.25)|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Empty) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LastRenderedPageBreak class.
-            </summary>
+        <summary>Initializes a new instance of the LastRenderedPageBreak class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +92,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +114,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

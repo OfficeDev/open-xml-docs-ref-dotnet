@@ -1,4 +1,4 @@
-﻿<Type Name="MovingPeriodState" FullName="DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState">
+<Type Name="MovingPeriodState" FullName="DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState">
   <TypeSignature Language="C#" Value="public class MovingPeriodState : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MovingPeriodState extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState" />
@@ -22,12 +22,69 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the MovingPeriodState Class.</para>
-      <para>This class is only available in Office2013.</para>
-      <para> When the object is serialized out as xml, its qualified name is x15:movingPeriodState.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the MovingPeriodState Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is x15:movingPeriodState.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.66   movingPeriodState*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ A *CT_MovingPeriodState* element (section 2.6.140) that specifies the current state of the moving period associated with a Pivot Filter ([ISO/IEC-29500-1] section 18.10.1.33) specified by the *CT_PivotFilter* element ([ISO/IEC-29500-4] section A.2). This element MUST exist only if the *type* attribute of the parent *filter* element is one of the following:  
+  
+|||  
+|-|-|  
+|*Enumeration Value*|*Description*|  
+|*dateBetween (Date Between)*|*Indicates the "between" filter for date values.*|  
+|*dateEqual (Date Equals)*|*Indicates the "equals" filter for date values.*|  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="movingPeriodState" type="CT_MovingPeriodState"/>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.140   CT_MovingPeriodState*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ *Referenced by:* movingPeriodState, CT_TimelineState  
+  
+ The *CT_MovingPeriodState* complex type specifies the current state of a moving period associated with the filter criteria of a *Timeline* (section 2.3.5) or a Pivot Filter ([ISO/IEC-29500-1] section 18.10.1.33).  
+  
+ *Attributes:*  
+  
+ *referenceDateBegin:* A *dateTime* attribute ([XMLSCHEMA2] section 3.2.7) that specifies the date when the filter criteria of a *Timeline* or a Pivot Filter was last advanced.  
+  
+ *referencePeriod:* An *ST_MovingPeriodStep* attribute (section 2.7.27) that specifies the granularity of the interval at the end of which the filter criteria of a *Timeline* or a Pivot Filter will be advanced.  
+  
+ *referenceMultiple:* An *unsignedInt* attribute ([XMLSCHEMA2] section 3.3.22) that specifies the number of times the interval specified by *referencePeriod* attribute will be multiplied to get the actual period at the end of which the filter criteria of a *Timeline* or a Pivot Filter will be advanced. This value MUST be equal to one.  
+  
+ *movingPeriod:* An *ST_MovingPeriodStep* attribute that specifies the granularity of the duration by which the filter criteria of a *Timeline* or a Pivot Filter will be advanced.  
+  
+ *movingMultiple:* An *unsignedInt* attribute ([XMLSCHEMA2] section 3.3.22) that specifies the number of times the duration specified by the *movingPeriod* attribute will be multiplied to get the actual duration by which the filter criteria of a *Timeline* or a Pivot Filter will be advanced. This value MUST be equal to one.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_MovingPeriodState">*  
+  
+ *\<xsd:attribute name="referenceDateBegin" type="xsd:dateTime" use="required"/>*  
+  
+ *\<xsd:attribute name="referencePeriod" type="ST_MovingPeriodStep" use="required"/>*  
+  
+ *\<xsd:attribute name="referenceMultiple" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="movingPeriod" type="ST_MovingPeriodStep" use="required"/>*  
+  
+ *\<xsd:attribute name="movingMultiple" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -43,9 +100,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MovingPeriodState class.
-            </summary>
+        <summary>Initializes a new instance of the MovingPeriodState class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -68,11 +123,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -92,9 +145,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -120,10 +171,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> movingMultiple.</para>
-          <para>Represents the following attribute in the schema: movingMultiple </para>
-        </summary>
+        <summary>movingMultiple.Represents the following attribute in the schema: movingMultiple</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -149,10 +197,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodStep&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> movingPeriod.</para>
-          <para>Represents the following attribute in the schema: movingPeriod </para>
-        </summary>
+        <summary>movingPeriod.Represents the following attribute in the schema: movingPeriod</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -178,10 +223,7 @@
         <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> referenceDateBegin.</para>
-          <para>Represents the following attribute in the schema: referenceDateBegin </para>
-        </summary>
+        <summary>referenceDateBegin.Represents the following attribute in the schema: referenceDateBegin</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -207,10 +249,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> referenceMultiple.</para>
-          <para>Represents the following attribute in the schema: referenceMultiple </para>
-        </summary>
+        <summary>referenceMultiple.Represents the following attribute in the schema: referenceMultiple</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -236,10 +275,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodStep&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> referencePeriod.</para>
-          <para>Represents the following attribute in the schema: referencePeriod </para>
-        </summary>
+        <summary>referencePeriod.Represents the following attribute in the schema: referencePeriod</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

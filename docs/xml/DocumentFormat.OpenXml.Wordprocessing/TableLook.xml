@@ -1,4 +1,4 @@
-﻿<Type Name="TableLook" FullName="DocumentFormat.OpenXml.Wordprocessing.TableLook">
+<Type Name="TableLook" FullName="DocumentFormat.OpenXml.Wordprocessing.TableLook">
   <TypeSignature Language="C#" Value="public class TableLook : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableLook extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableLook" />
@@ -19,11 +19,101 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TableLook Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:tblLook.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the TableLook Class. When the object is serialized out as xml, its qualified name is w:tblLook.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblLook (Table Style Conditional Formatting Settings Exception)**  
+  
+ This element specifies the components of the conditional formatting of the referenced table style (if one exists) which shall be applied to the set of table rows with the current table-level property exceptions. A table style can specify up to six different optional conditional formats [*Example*: Different formatting for first column. *end example*], which then can be applied or omitted from individual table rows in the parent table.  
+  
+ The default setting is to apply the row and column banding formatting, but not the first row, last row, first column, or last column formatting.  
+  
+ [*Example*: Consider a table which must use the following conditional formatting properties from the referenced table style:  
+  
+-   First row conditional formatting  
+  
+-   Last row conditional formatting  
+  
+-   No row banding formatting  
+  
+-   No column banding formatting  
+  
+ The resulting WordprocessingML would be specified as follows:  
+  
+```xml  
+<w:tblPrEx>  
+  <w:tblLook w:firstRow="true" w:lastRow="true" w:noHBand="true"  w:noVBand="true" />  
+</w:tblPrEx>  
+```  
+  
+ The tblLook element specifies which components of the table style are applied to the current table. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPrEx (§17.4.61); tblPrEx (§17.4.62)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|firstColumn (First Column)|Specifies that the first column conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|firstRow (First Row)|Specifies that the first row conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|lastColumn (Last Column)|Specifies that the last column conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|lastRow (Last Row)|Specifies that the last row conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|noHBand (No Horizontal Banding)|Specifies that the horizontal banding conditional formatting shall not be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|noVBand (No Vertical Banding)|Specifies that the vertical banding conditional formatting shall not be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblLook) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tblLook (Table Style Conditional Formatting Settings)**  
+  
+ This element specifies the components of the conditional formatting of the referenced table style (if one exists) which shall be applied to the current table. A table style can specify up to six different optional conditional formats [*Example*: Different formatting for first column. *end example*], which then can be applied or omitted from individual tables in the document.  
+  
+ The default setting is to apply the row and column banding formatting, but not the first row, last row, first column, or last column formatting.  
+  
+ [*Example*: Consider a table which must use the following conditional formatting properties from the referenced table style:  
+  
+-   First row conditional formatting  
+  
+-   Last row conditional formatting  
+  
+-   No row banding formatting  
+  
+-   No column banding formatting  
+  
+ The resulting WordprocessingML would be specified as follows:  
+  
+```xml  
+<w:tblPr>  
+  <w:tblLook  w:firstRow="true" w:lastRow="true" w:noHBand="true" w:noVBand="true" />  
+</w:tblPr>  
+```  
+  
+ The tblLook element specifies which components of the table style are applied to the current table. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblPr (§17.4.60); tblPr (§17.4.59); tblPr (§17.7.6.4); tblPr (§17.7.6.3)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|firstColumn (First Column)|Specifies that the first column conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|firstRow (First Row)|Specifies that the first row conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|lastColumn (Last Column)|Specifies that the last column conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|lastRow (Last Row)|Specifies that the last row conditional formatting shall be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|noHBand (No Horizontal Banding)|Specifies that the horizontal banding conditional formatting shall not be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|noVBand (No Vertical Banding)|Specifies that the vertical banding conditional formatting shall not be applied to the table.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TblLook) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +129,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TableLook class.
-            </summary>
+        <summary>Initializes a new instance of the TableLook class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +152,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,10 +182,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:firstColumn </para>
-        </summary>
+        <summary>firstColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:firstColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -130,10 +213,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstRow, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:firstRow </para>
-        </summary>
+        <summary>firstRow, this property is only available in Office2010.Represents the following attribute in the schema: w:firstRow</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -164,10 +244,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lastColumn, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:lastColumn </para>
-        </summary>
+        <summary>lastColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:lastColumn</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -198,10 +275,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lastRow, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:lastRow </para>
-        </summary>
+        <summary>lastRow, this property is only available in Office2010.Represents the following attribute in the schema: w:lastRow</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -224,10 +298,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -255,10 +327,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> noHBand, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:noHBand </para>
-        </summary>
+        <summary>noHBand, this property is only available in Office2010.Represents the following attribute in the schema: w:noHBand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -289,10 +358,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> noVBand, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:noVBand </para>
-        </summary>
+        <summary>noVBand, this property is only available in Office2010.Represents the following attribute in the schema: w:noVBand</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -320,10 +386,7 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

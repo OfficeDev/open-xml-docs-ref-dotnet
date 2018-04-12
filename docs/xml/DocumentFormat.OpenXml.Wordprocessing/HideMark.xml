@@ -1,4 +1,4 @@
-﻿<Type Name="HideMark" FullName="DocumentFormat.OpenXml.Wordprocessing.HideMark">
+<Type Name="HideMark" FullName="DocumentFormat.OpenXml.Wordprocessing.HideMark">
   <TypeSignature Language="C#" Value="public class HideMark : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HideMark extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.HideMark" />
@@ -19,11 +19,53 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the HideMark Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:hideMark.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the HideMark Class. When the object is serialized out as xml, its qualified name is w:hideMark.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `hideMark (Ignore End Of Cell Marker In Row Height Calculation)`  
+  
+ This element specifies whether the end of cell glyph shall influence the height of the given table row in the table. If it is specified, then only printing characters in this cell shall be used to determine the row height.  
+  
+ [*Rationale*: Typically, the height of a table row is determined by the height of all glyphs in all cells in that row, including the non-printing end of cell glyph characters. However, if these characters are not formatted, they are always created with the document default style properties. This means that the height of a table row cannot ever be reduced below the size of the end of cell marker glyph without manually formatting each paragraph in that run.  
+  
+ In a typical document, this behavior is desirable as it prevents table rows from 'disappearing' if they have no content. However, if a table row is being used as a border (for example, by shading its cells or putting an image in them), then this behavior makes it impossible to have a virtual border that is reasonably small without formatting each cell's content directly. This setting specifies that the end of cell glyph shall be ignored for this cell, allowing it to collapse to the height of its contents without formatting each cell's end of cell marker, which would have the side effect of formatting any text ever entered into that cell. *end rationale*]  
+  
+ If this element is omitted, then the end of cell marker shall be included in the determination of the height of this row.  
+  
+ [*Example*: Consider the following WordprocessingML table:  
+  
+ dab91b88-87c9-4073-83c9-299f9f470940  
+  
+ Notice that the only printing content in this table row is displayed using 5 point font, yet the row height is influenced by the end of cell markers in the empty cells.  
+  
+ If each cell in the second row in this table was set to exclude the table cell from this calculation, using the following WordprocessingML:  
+  
+```xml  
+<w:tcPr>  
+  <w:hideMark/>  
+</w:tcPr>  
+```  
+  
+ The resulting table must exclude the cell markers from the row height calculation:  
+  
+ 5bcf5b33-3518-41a4-ac1f-5b68022650fd  
+  
+ The hideMark element specified that each cell marker was excluded, resulting in the row height being defined by the actual run contents. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +81,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the HideMark class.
-            </summary>
+        <summary>Initializes a new instance of the HideMark class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +104,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +126,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="MoveTo" FullName="DocumentFormat.OpenXml.Drawing.MoveTo">
+<Type Name="MoveTo" FullName="DocumentFormat.OpenXml.Drawing.MoveTo">
   <TypeSignature Language="C#" Value="public class MoveTo : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MoveTo extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.MoveTo" />
@@ -22,13 +22,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Move Path To.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:moveTo.</para>
-    </summary>
+    <summary>Move Path To. When the object is serialized out as xml, its qualified name is a:moveTo.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Point &lt;a:pt&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **moveTo (Move Path To)**  
+  
+ This element specifies a set of new coordinates to move the shape cursor to. This element is only used for drawing a custom geometry. When this element is utilized the pt element is used to specify a new set of shape coordinates that the shape cursor should be moved to. This does not draw a line or curve to this new position from the old position but simply move the cursor to a new starting position. It is only when a path drawing element such as lnTo is used that a portion of the path is drawn.  
+  
+ [*Example*: Consider the case where a user wishes to begin drawing a custom geometry not at the default starting coordinates of x=0 , y=0 but at coordinates further inset into the shape coordinate space. The following DrawingML would specify such a case.  
+  
+```xml  
+<a:custGeom>  
+  <a:pathLst>  
+    <a:path w="2824222" h="590309">  
+      <a:moveTo>  
+        <a:pt x="0" y="428263"/>  
+      </a:moveTo>  
+      <a:lnTo>  
+        <a:pt x="1620455" y="590309"/>  
+      </a:lnTo>  
+      <a:lnTo>  
+        <a:pt x="2824222" y="173620"/>  
+      </a:lnTo>  
+      <a:lnTo>  
+        <a:pt x="1562582" y="0"/>  
+      </a:lnTo>  
+      <a:close/>  
+    </a:path>  
+  </a:pathLst>  
+</a:custGeom>  
+```  
+  
+ Notice the moveTo element advances the y coordinates before any actual lines are drawn. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|path (§20.1.9.15)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pt (Shape Path Point)|§20.1.9.20|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Path2DMoveTo) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +88,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the MoveTo class.
-            </summary>
+        <summary>Initializes a new instance of the MoveTo class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +115,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the MoveTo class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the MoveTo class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +136,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the MoveTo class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the MoveTo class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +157,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the MoveTo class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the MoveTo class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +180,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,10 +202,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -191,11 +223,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.Point</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Move end point.</para>
-          <para> Represents the following element tag in the schema: a:pt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Move end point. Represents the following element tag in the schema: a:pt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.Point" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main

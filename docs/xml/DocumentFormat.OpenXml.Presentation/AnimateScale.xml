@@ -1,4 +1,4 @@
-﻿<Type Name="AnimateScale" FullName="DocumentFormat.OpenXml.Presentation.AnimateScale">
+<Type Name="AnimateScale" FullName="DocumentFormat.OpenXml.Presentation.AnimateScale">
   <TypeSignature Language="C#" Value="public class AnimateScale : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnimateScale extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.AnimateScale" />
@@ -31,13 +31,56 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Animate Scale.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:animScale.</para>
-    </summary>
+    <summary>Animate Scale. When the object is serialized out as xml, its qualified name is p:animScale.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>CommonBehavior &lt;p:cBhvr&gt;</description></item><item><description>ByPosition &lt;p:by&gt;</description></item><item><description>FromPosition &lt;p:from&gt;</description></item><item><description>ToPosition &lt;p:to&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **animScale (Animate Scale)**  
+  
+ This animation element is responsible for animating the scale of an object. When animating the scale, the element shall scale around the reference point of the element and the positioning system used should be consistent with the one used for motion paths. When animating the width and height of an element, all of the width/height animation values are calculated first then the scale animations are applied on top of that. So for example, an animation from 0 to 100 of the width with a concurrent scale from 100% to 200% would result in the element appearing to scale from 0 to 200.  
+  
+ [*Example*:  Consider trying to emphasize a shape by scaling it larger by 150%. The \<animScale> element should be used as follows:  
+  
+```xml  
+<p:childTnLst>  
+  <p:animScale>  
+    <p:cBhvr>  
+      <p:cTn id="6" dur="2000" fill="hold"/>  
+      <p:tgtEl>  
+        <p:spTgt spid="5"/>  
+      </p:tgtEl>  
+    </p:cBhvr>  
+    <p:by x="150000" y="150000"/>  
+  </p:animScale>  
+</p:childTnLst>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|childTnLst (§19.5.25); subTnLst (§19.5.78); tnLst (§19.5.87)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|by (By)|§19.5.21|  
+|cBhvr (Common Behavior)|§19.5.22|  
+|from (From)|§19.5.44|  
+|to (To)|§19.5.88|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|zoomContents (Zoom Content)|This attribute specifies whether to zoom the contents of an object when doing a scaling animation.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TLAnimateScaleBehavior) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -53,9 +96,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the AnimateScale class.
-            </summary>
+        <summary>Initializes a new instance of the AnimateScale class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +123,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AnimateScale class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the AnimateScale class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,9 +144,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the AnimateScale class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the AnimateScale class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,9 +165,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the AnimateScale class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the AnimateScale class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,10 +190,7 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> bounceEnd.</para>
-          <para>Represents the following attribute in the schema: p14:bounceEnd </para>
-        </summary>
+        <summary>bounceEnd.Represents the following attribute in the schema: p14:bounceEnd</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:p14=http://schemas.microsoft.com/office/powerpoint/2010/main
@@ -181,11 +213,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ByPosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ByPosition.</para>
-          <para> Represents the following element tag in the schema: p:by </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ByPosition. Represents the following element tag in the schema: p:by</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ByPosition" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -211,11 +240,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -235,11 +262,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.CommonBehavior</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CommonBehavior.</para>
-          <para> Represents the following element tag in the schema: p:cBhvr </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>CommonBehavior. Represents the following element tag in the schema: p:cBhvr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.CommonBehavior" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -262,11 +286,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.FromPosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FromPosition.</para>
-          <para> Represents the following element tag in the schema: p:from </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>FromPosition. Represents the following element tag in the schema: p:from</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.FromPosition" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -289,10 +310,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -312,11 +331,8 @@
         <ReturnType>DocumentFormat.OpenXml.Presentation.ToPosition</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ToPosition.</para>
-          <para> Represents the following element tag in the schema: p:to </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ToPosition. Represents the following element tag in the schema: p:to</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Presentation.ToPosition" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:p = http://schemas.openxmlformats.org/presentationml/2006/main
@@ -344,11 +360,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> zoomContents.</para>
-          <para>Represents the following attribute in the schema: zoomContents </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>zoomContents.Represents the following attribute in the schema: zoomContents</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

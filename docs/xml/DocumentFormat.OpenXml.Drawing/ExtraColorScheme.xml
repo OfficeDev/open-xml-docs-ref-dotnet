@@ -1,4 +1,4 @@
-﻿<Type Name="ExtraColorScheme" FullName="DocumentFormat.OpenXml.Drawing.ExtraColorScheme">
+<Type Name="ExtraColorScheme" FullName="DocumentFormat.OpenXml.Drawing.ExtraColorScheme">
   <TypeSignature Language="C#" Value="public class ExtraColorScheme : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExtraColorScheme extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.ExtraColorScheme" />
@@ -25,13 +25,80 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Extra Color Scheme.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:extraClrScheme.</para>
-    </summary>
+    <summary>Extra Color Scheme. When the object is serialized out as xml, its qualified name is a:extraClrScheme.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ColorScheme &lt;a:clrScheme&gt;</description></item><item><description>ColorMap &lt;a:clrMap&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **extraClrScheme (Extra Color Scheme)**  
+  
+ This element defines an auxiliary color scheme, which includes both a color scheme and color mapping.  This is mainly used for backward compatibility concerns and roundtrips information required by earlier versions.  
+  
+ [*Example*:  Consider the following example of an extra color scheme in use in DrawingML:  
+  
+```xml  
+<extraClrScheme>  
+  <clrScheme name="extraColorSchemeSample">  
+    <dk1>  
+      <sysClr val="windowText"/>  
+    </dk1>  
+    <lt1>  
+      <sysClr val="window"/>  
+    </lt1>  
+    <dk2>  
+      <srgbClr val="04617B"/>  
+    </dk2>  
+    <lt2>  
+      <srgbClr val="DBF5F9"/>  
+    </lt2>  
+    <accent1>  
+      <srgbClr val="0F6FC6"/>  
+    </accent1>  
+    <accent2>  
+      <srgbClr val="009DD9"/>  
+    </accent2>  
+    <accent3>  
+      <srgbClr val="0BD0D9"/>  
+    </accent3>  
+    <accent4>  
+      <srgbClr val="10CF9B"/>  
+    </accent4>  
+    <accent5>  
+      <srgbClr val="7CCA62"/>  
+    </accent5>  
+    <accent6>  
+      <srgbClr val="A5C249"/>  
+    </accent6>  
+    <hlink>  
+      <srgbClr val="FF9800"/>  
+    </hlink>  
+    <folHlink>  
+      <srgbClr val="F45511"/>  
+    </folHlink>  
+  </clrScheme>  
+  <clrMap bg1="lt1" tx1="dk1" bg2="lt2" tx2="dk2" accent1="accent1"   accent2="accent2" accent3="accent3" accent4="accent4" accent5="accent5"  accent6="accent6" hlink="hlink" folHlink="folHlink"/>  
+</extraClrScheme>  
+```  
+  
+ In this example, the extra color scheme contains a color scheme and a color map for that color scheme.  *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|extraClrSchemeLst (§20.1.6.5)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|clrMap (Color Map)|§20.1.6.1|  
+|clrScheme (Color Scheme)|§20.1.6.2|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_ColorSchemeAndMapping) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -47,9 +114,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ExtraColorScheme class.
-            </summary>
+        <summary>Initializes a new instance of the ExtraColorScheme class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -76,9 +141,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ExtraColorScheme class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ExtraColorScheme class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -99,9 +162,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ExtraColorScheme class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ExtraColorScheme class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,9 +183,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ExtraColorScheme class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ExtraColorScheme class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,11 +206,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -171,11 +228,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ColorMap</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ColorMap.</para>
-          <para> Represents the following element tag in the schema: a:clrMap </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ColorMap. Represents the following element tag in the schema: a:clrMap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ColorMap" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -198,11 +252,8 @@
         <ReturnType>DocumentFormat.OpenXml.Drawing.ColorScheme</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ColorScheme.</para>
-          <para> Represents the following element tag in the schema: a:clrScheme </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>ColorScheme. Represents the following element tag in the schema: a:clrScheme</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Drawing.ColorScheme" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
@@ -225,10 +276,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

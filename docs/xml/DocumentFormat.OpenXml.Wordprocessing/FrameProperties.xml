@@ -1,4 +1,4 @@
-﻿<Type Name="FrameProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.FrameProperties">
+<Type Name="FrameProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.FrameProperties">
   <TypeSignature Language="C#" Value="public class FrameProperties : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FrameProperties extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FrameProperties" />
@@ -19,11 +19,80 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the FrameProperties Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:framePr.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Defines the FrameProperties Class. When the object is serialized out as xml, its qualified name is w:framePr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **framePr (Text Frame Properties)**  
+  
+ This element specifies information about the current paragraph with regard to *text frames*. *Text frames* are paragraphs of text in a document which are positioned in a separate region or frame in the document, and can be positioned with a specific size and position relative to non-frame paragraphs in the current document.  
+  
+ The first piece of information specified by the framePr element is that the current paragraph is actually part of a text frame in the document. This information is specified simply by the presence of the framePr element in paragraph's properties. If the framePr element is omitted, the paragraph shall not be part of any text frame in the document.  
+  
+ The second piece of information concerns the set of paragraphs which are part of the current text frame in the document. This is determined based on the attributes on the framePr element. If the set of attribute values specified on two adjacent paragraphs is identical, then those two paragraphs shall be considered to be part of the same text frame and rendered within the same frame in the document.  
+  
+ [*Example*: Consider a document in which the following two paragraphs are located adjacent to one another:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="811" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph One</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="810" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph Two.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ These two paragraphs, although each is a part of a text frame due to the presence of the framePr element, are different text frames because of the differing h value - *810* vs. *811*. *end example*]  
+  
+ The positioning of the frame relative to the properties stored on its attribute values shall be calculated relative to the next paragraphs in the document which is itself not part of a text frame.  
+  
+ [*Example*: Consider a document in which the following three paragraphs are located adjacent to one another:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="811" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph One</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="811" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph Two.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p/>  
+```  
+  
+ The first two paragraphs form a single text frame, which is anchored using its attribute values relative to the first non-frame paragraph following it (the third paragraph in the example). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FramePr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +108,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FrameProperties class.
-            </summary>
+        <summary>Initializes a new instance of the FrameProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,11 +133,8 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Lock Frame Anchor to Paragraph.</para>
-          <para>Represents the following attribute in the schema: w:anchorLock </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Lock Frame Anchor to Paragraph.Represents the following attribute in the schema: w:anchorLock</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -95,11 +159,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -124,11 +186,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drop Cap Frame.</para>
-          <para>Represents the following attribute in the schema: w:dropCap </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drop Cap Frame.Represents the following attribute in the schema: w:dropCap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -155,11 +214,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Frame Height.</para>
-          <para>Represents the following attribute in the schema: w:h </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Frame Height.Represents the following attribute in the schema: w:h</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -186,11 +242,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Frame Height Type.</para>
-          <para>Represents the following attribute in the schema: w:hRule </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Frame Height Type.Represents the following attribute in the schema: w:hRule</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -217,11 +270,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Frame Horizontal Positioning Base.</para>
-          <para>Represents the following attribute in the schema: w:hAnchor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Frame Horizontal Positioning Base.Represents the following attribute in the schema: w:hAnchor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -248,11 +298,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Horizontal Frame Padding.</para>
-          <para>Represents the following attribute in the schema: w:hSpace </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Horizontal Frame Padding.Represents the following attribute in the schema: w:hSpace</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -279,11 +326,8 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Drop Cap Vertical Height in Lines.</para>
-          <para>Represents the following attribute in the schema: w:lines </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Drop Cap Vertical Height in Lines.Represents the following attribute in the schema: w:lines</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -305,10 +349,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -333,11 +375,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Frame Vertical Positioning Base.</para>
-          <para>Represents the following attribute in the schema: w:vAnchor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Frame Vertical Positioning Base.Represents the following attribute in the schema: w:vAnchor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -364,11 +403,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Vertical Frame Padding.</para>
-          <para>Represents the following attribute in the schema: w:vSpace </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Vertical Frame Padding.Represents the following attribute in the schema: w:vSpace</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -395,11 +431,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Frame Width.</para>
-          <para>Represents the following attribute in the schema: w:w </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Frame Width.Represents the following attribute in the schema: w:w</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -426,11 +459,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Text Wrapping Around Frame.</para>
-          <para>Represents the following attribute in the schema: w:wrap </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Text Wrapping Around Frame.Represents the following attribute in the schema: w:wrap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -457,11 +487,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Absolute Horizontal Position.</para>
-          <para>Represents the following attribute in the schema: w:x </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Absolute Horizontal Position.Represents the following attribute in the schema: w:x</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -488,11 +515,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relative Horizontal Position.</para>
-          <para>Represents the following attribute in the schema: w:xAlign </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relative Horizontal Position.Represents the following attribute in the schema: w:xAlign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -519,11 +543,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Absolute Vertical Position.</para>
-          <para>Represents the following attribute in the schema: w:y </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Absolute Vertical Position.Represents the following attribute in the schema: w:y</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
@@ -550,11 +571,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Relative Vertical Position.</para>
-          <para>Represents the following attribute in the schema: w:yAlign </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Relative Vertical Position.Represents the following attribute in the schema: w:yAlign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>

@@ -1,4 +1,4 @@
-﻿<Type Name="XmlProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.XmlProperties">
+<Type Name="XmlProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.XmlProperties">
   <TypeSignature Language="C#" Value="public class XmlProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.XmlProperties" />
@@ -22,13 +22,37 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Column XML Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:xmlPr.</para>
-    </summary>
+    <summary>Column XML Properties. When the object is serialized out as xml, its qualified name is x:xmlPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **xmlPr (Column XML Properties)**  
+  
+ This element represents the column properties for single cell XML tables.  
+  
+|Parent Elements|  
+|---------------------|  
+|xmlCellPr (§18.5.2.3)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|mapId (XML Map Id)|An integer representing the ID of the XML map this table field is associated with.<br /><br /> The XML map is defined in the xml maps part, and the Map element should have the corresponding *id*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|xmlDataType (XML Data Type)|An enumeration indicating which XML data type is used by this column.<br /><br /> The possible values for this attribute are defined by the *ST_XmlDataType* simple type (§18.18.93).|  
+|xpath (XPath)|A string representing the XML path to the element this column is associated with.<br /><br /> The spreadsheet application should support XPath limited to the following:<br /><br /> -   The XPath is an absolute path to a simple-content element or      attribute<br /><br /> *[Example:*<br /><br /> "/ns1:root/ns1:row/ns1:column1" is supported if 'column1' is a child-most node, but not "/ns1:root/ns1:row" for the same document since 'row' is not a child.<br /><br /> *end example]*<br /><br /> -   The XPath does not express axes, but uses the default child axes<br /><br /> *[Example:*<br /><br /> "/ns1:root/ns1:row" is supported but not "/ns1:root/child::ns1:row<br /><br /> *end example]*<br /><br /> -   An optional filter can be expressed at the end of the xpath<br /><br /> *[Example:*<br /><br /> "/ns1:root/ns1:row/ns1:column1[@foo='abc']" is supported but not "/ns1:root/ns1:row[@foo='abc']/ns1:column1"<br /><br /> *end example]*<br /><br /> -   The filter can only contain a single expression comparing a named attribute to a specific value<br />-   Filters are only supported on XPaths that resolve to a simple-content element (not attributes)<br />-   The named attribute shall be defined as an attribute of the simple-content element<br />-   The attribute name shall be preceded by the short-hand (@) symbol representing the axes 'attribute'<br /><br /> *[Example:*<br /><br /> "/ns1:root/ns1:row/ns1:column1[@foo='abc']" is supported not "/ns1:root/ns1:row/ns1:column1[attribute::foo='abc']"<br /><br /> *end example]*<br /><br /> -   An arbitrary amount of white-space can be embedded between filter tokens<br /><br /> *[Example:*<br /><br /> "/ns1:root/ns1:row/ns1:column1[ @ foo='abc']" is permitted<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_XmlPr) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the XmlProperties class.
-            </summary>
+        <summary>Initializes a new instance of the XmlProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +95,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the XmlProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the XmlProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +116,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the XmlProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the XmlProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +137,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the XmlProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the XmlProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +160,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -168,11 +182,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Future Feature Data Storage Area.</para>
-          <para> Represents the following element tag in the schema: x:extLst </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Future Feature Data Storage Area. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -195,10 +206,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -223,12 +232,22 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> XML Map Id.</para>
-          <para>Represents the following attribute in the schema: mapId </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>XML Map Id.Represents the following attribute in the schema: mapId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ An integer representing the ID of the XML map this table field is associated with.  
+  
+ The XML map will be defined in the xml maps part, and the `Map` element should have the corresponding ID.  
+  
+ The possible values for this attribute are defined by the XML Schema `unsignedInt` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="XmlDataType">
@@ -252,12 +271,20 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.XmlDataValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> XML Data Type.</para>
-          <para>Represents the following attribute in the schema: xmlDataType </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>XML Data Type.Represents the following attribute in the schema: xmlDataType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ An enumeration indicating which XML data type is used by this column.  
+  
+ The possible values for this attribute are defined by the `ST_XmlDataType` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="XPath">
@@ -281,12 +308,48 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> XPath.</para>
-          <para>Represents the following attribute in the schema: xpath </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>XPath.Represents the following attribute in the schema: xpath</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ A string representing the XML path to the element this column is associated with.  
+  
+ The spreadsheet application should support XPath limited to the following:  
+  
+-   The XPath is an absolute path to a simple-content element or      attribute.  
+  
+     For example, `/ns1:root/ns1:row/ns1:column1` is supported if `column1` is a child-most node, but not `/ns1:root/ns1:row` for the same document since `row` is not a child.  
+  
+-   The XPath does not express axes, but uses the default child axes.  
+  
+     For example, `/ns1:root/ns1:row` is supported but not `/ns1:root/child::ns1:row`.  
+  
+-   An optional filter can be expressed at the end of the xpath.  
+  
+     For example, `/ns1:root/ns1:row/ns1:column1[@foo='abc']` is supported but not `/ns1:root/ns1:row[@foo='abc']/ns1:column1`.  
+  
+-   The filter can only contain a single expression comparing a named attribute to a specific value.  
+  
+-   Filters are only supported on XPaths that resolve to a simple-content element (not attributes).  
+  
+-   The named attribute must be defined as an attribute of the simple-content element.  
+  
+-   The attribute name must be preceded by the shorthand (`@`) symbol representing the axes `attribute`.  
+  
+     For example, `/ns1:root/ns1:row/ns1:column1[@foo='abc']` is supported not `/ns1:root/ns1:row/ns1:column1[attribute::foo='abc']`.  
+  
+-   An arbitrary amount of white space can be embedded between filter tokens.  
+  
+     For example, `/ns1:root/ns1:row/ns1:column1[ @ foo='abc']` is valid.  
+  
+ The possible values for this attribute are defined by the `ST_Xstring` simple type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
   </Members>

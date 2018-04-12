@@ -1,4 +1,4 @@
-﻿<Type Name="BottomMarginDiv" FullName="DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv">
+<Type Name="BottomMarginDiv" FullName="DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv">
   <TypeSignature Language="C#" Value="public class BottomMarginDiv : DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BottomMarginDiv extends DocumentFormat.OpenXml.Wordprocessing.SignedTwipsMeasureType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BottomMarginDiv" />
@@ -19,11 +19,67 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Bottom Margin for HTML div.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:marBottom.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Bottom Margin for HTML div. When the object is serialized out as xml, its qualified name is w:marBottom.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `marBottom (Bottom Margin for HTML div)`  
+  
+ This element specifies the margin which shall be displayed at the bottom of the boundaries of the current HTML *div* object.  
+  
+ If this element is omitted, then this HTML *div* object shall not have a bottom margin.  
+  
+ [*Example*: Consider a simple HTML document defined as follows:  
+  
+```xml  
+<html>  
+  <body>  
+    <div style="margin-top:100px; margin-left:200px; margin-right:50px; margin-bottom:100px">  
+      <p>paragraph of text</p>  
+    </div>  
+    <p>another paragraph of text</p>  
+  </body>  
+</html>  
+```  
+  
+ This HTML would therefore normally appear as follows (image scaled appropriately):  
+  
+ 1f606ea1-f21b-4fcc-9a56-340362b95647  
+  
+ Now, when this document is saved in the WordprocessingML format, the information stored on the *div* elements is stored in the web setting part as follows:  
+  
+```xml  
+<w:divs>  
+  <w:div w:id="1785730240">  
+    <w:marLeft w:val="3000" />  
+    <w:marRight w:val="750" />  
+    <w:marTop w:val="1500" />  
+    <w:marBottom w:val="1500" />  
+  </w:div>  
+</w:divs>  
+```  
+  
+ The marBottom element specifies margin information about the bottom margin for the single HTML *div* structure in the document; in this case, a 75 point bottom margin. The initial 100 pixel margin was converted to 75 points using the following logic:  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|div (§17.15.2.6)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Positive or Negative Value in Twentieths of a Point)|Specifies a positive or negative measurement in twentieths of a point (equivalent to 1/1440th of an inch).<br /><br /> The contents of this measurement shall be interpreted based on the context of the parent XML element.<br /><br /> [*Example*: Consider an attribute value of -*720* whose type is ST_SignedTwipsMeasure. This attribute value specifies a value of negative one-half of an inch or -36 points (-*720* twentieths of a point = -36 points = ). *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_SignedTwipsMeasure* simple type (§17.18.81).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SignedTwipsMeasure) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +95,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BottomMarginDiv class.
-            </summary>
+        <summary>Initializes a new instance of the BottomMarginDiv class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +118,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +140,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

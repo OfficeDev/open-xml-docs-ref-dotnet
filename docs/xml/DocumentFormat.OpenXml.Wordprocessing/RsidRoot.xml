@@ -1,4 +1,4 @@
-﻿<Type Name="RsidRoot" FullName="DocumentFormat.OpenXml.Wordprocessing.RsidRoot">
+<Type Name="RsidRoot" FullName="DocumentFormat.OpenXml.Wordprocessing.RsidRoot">
   <TypeSignature Language="C#" Value="public class RsidRoot : DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RsidRoot extends DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.RsidRoot" />
@@ -19,11 +19,57 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Original Document Revision Save ID.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:rsidRoot.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Original Document Revision Save ID. When the object is serialized out as xml, its qualified name is w:rsidRoot.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **rsidRoot (Original Document Revision Save ID)**  
+  
+ This element specifies the revision save ID which was associated with the first editing session for this document. [*Note*: This information must be identical between any number of copies of the same document, as they all originate from the same original editing session. Applications can use this information as desired. *end note*]  
+  
+ If this element is omitted, then the original document revision save ID is unknown.  
+  
+ [*Example*: Consider the following fragments from two WordprocessingML documents' document settings:  
+  
+ Document 1  
+  
+ Document  2  
+  
+```xml  
+<w:rsids>  
+  <w:rsidRoot w:val="00464813"/>  
+  <w:rsid w:val="00455AAB" />  
+  <w:rsid w:val="00464813" />  
+  <w:rsid w:val="00996E03" />  
+</w:rsids>  
+<w:rsids>  
+  <w:rsidRoot w:val="00464813"/>  
+    <w:rsid w:val="00455AAB" />  
+    <w:rsid w:val="00464813" />  
+    <w:rsid w:val="00473403" />  
+    <w:rsid w:val="0048414E" />  
+</w:rsids>  
+```  
+  
+ The rsidRoot element's val attribute has a value of *00464813* for both documents, indicating that these documents, although they are now separate, originated from the same document. This information can be used as desired. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rsids (§17.15.1.72)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|val (Long Hexadecimal Number Value)|Specifies a number value specified as a four digit hexadecimal number), whose contents of this decimal number are interpreted based on the context of the parent XML element.<br /><br /> [*Example*: Consider the following value for an attribute of simple type ST_LongHexNumber: *00BE2C6C*.<br /><br /> This value is permitted, as it contains four hexadecimal digits, each an encoding of an octet of the actual decimal number value. It can therefore be interpreted as desired in the context of the parent XML element, *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_LongHexNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RsidRoot class.
-            </summary>
+        <summary>Initializes a new instance of the RsidRoot class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +108,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +130,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

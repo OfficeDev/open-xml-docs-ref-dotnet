@@ -1,4 +1,4 @@
-﻿<Type Name="RowFields" FullName="DocumentFormat.OpenXml.Spreadsheet.RowFields">
+<Type Name="RowFields" FullName="DocumentFormat.OpenXml.Spreadsheet.RowFields">
   <TypeSignature Language="C#" Value="public class RowFields : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RowFields extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.RowFields" />
@@ -22,13 +22,54 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the RowFields Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:rowFields.</para>
-    </summary>
+    <summary>Defines the RowFields Class. When the object is serialized out as xml, its qualified name is x:rowFields.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>Field &lt;x:field&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `rowFields (Row Fields)`  
+  
+ Represents the collection of row fields for the PivotTable.  
+  
+ 9f0c6ced-6d18-44b9-a17f-2f23ce1ccaf7  
+  
+ In the image above, the blue field is a row field. A PivotTable report that has more than one row field has one inner row field (Sport, in the example below), the one closest to the data area. Any other row fields are outer row fields (Region, in the example below). Items in the outermost row field are displayed only once, but items in the rest of the row fields are repeated as needed.  
+  
+ *[Example:*  
+  
+ 0eb5a230-055d-41cc-aa2b-9e675f9a4a40  
+  
+ In the image above, Region is an outer row field. Sport is an inner row field.  
+  
+```xml  
+<rowFields count="2">  
+  <field x="7"/>  
+  <field x="8"/>  
+</rowFields>   
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pivotTableDefinition (§18.10.1.73)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|field (Field)|§18.10.1.29|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|count (Repeated Items Count)|Specifies the number of repeated items in the collection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_RowFields) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +85,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RowFields class.
-            </summary>
+        <summary>Initializes a new instance of the RowFields class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +112,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RowFields class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the RowFields class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +133,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RowFields class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the RowFields class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +154,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the RowFields class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the RowFields class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +177,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,12 +204,20 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Repeated Items Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Repeated Items Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number of repeated items in the collection.  
+  
+ The possible values for this attribute are defined by the XML Schema `unsignedInt` data type.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="LocalName">
@@ -197,10 +236,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

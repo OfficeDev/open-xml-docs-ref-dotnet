@@ -1,4 +1,4 @@
-﻿<Type Name="PrintTwoOnOne" FullName="DocumentFormat.OpenXml.Wordprocessing.PrintTwoOnOne">
+<Type Name="PrintTwoOnOne" FullName="DocumentFormat.OpenXml.Wordprocessing.PrintTwoOnOne">
   <TypeSignature Language="C#" Value="public class PrintTwoOnOne : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintTwoOnOne extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.PrintTwoOnOne" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Print Two Pages Per Sheet.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:printTwoOnOne.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Print Two Pages Per Sheet. When the object is serialized out as xml, its qualified name is w:printTwoOnOne.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `printTwoOnOne (Print Two Pages Per Sheet)`  
+  
+ This element specifies whether two pages should be printed on one sheet of paper when this document is printed. Specifically, this element specifies that each page displayed for the contents in a given WordprocessingML document should be the page size specified in the section settings divided in half with two top margins originating from the bisector of the page, and bottom margins instantiated at the top and bottom of each page.  
+  
+ If this element is omitted, then pages should be displayed and printed as one per sheet.  
+  
+ [*Example*: Consider a one section document with a 2,160 twentieths of a point (one and a half inch) top margin, and 1,440 twentieths of a point (one inch) bottom, right, and left margins surrounding the document editing canvas (represented by the gray shaded area in diagrams below). This page setup is represented in WordprocessingML using the following fragment:  
+  
+```xml  
+<w:pgMar w:header="0" w:top="2160" w:right="1440" w:bottom="1440" w:left="1440" />  
+```  
+  
+ The resulting printed pages would appear as follows:  
+  
+ 7d72f5f7-6b19-4751-b078-290f878e8754  
+  
+ If a document should be displayed and printed as though two pages were printed on a single sheeting, this requirement would be specified using the following WordprocessingML:  
+  
+```xml  
+<w:printTwoOnOne w:val="true" />  
+```  
+  
+ The printTwoOnOne element's val attribute is equal to *true* specifying that pages should be printed two to a sheet, resulting in the following printout given these page margins:  
+  
+ 965c5560-0e18-4adb-b5e8-7ec50b8f5a88  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the PrintTwoOnOne class.
-            </summary>
+        <summary>Initializes a new instance of the PrintTwoOnOne class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

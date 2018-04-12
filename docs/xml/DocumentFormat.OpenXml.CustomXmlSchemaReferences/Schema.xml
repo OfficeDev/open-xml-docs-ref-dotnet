@@ -1,4 +1,4 @@
-﻿<Type Name="Schema" FullName="DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema">
+<Type Name="Schema" FullName="DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema">
   <TypeSignature Language="C#" Value="public class Schema : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Schema extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.CustomXmlSchemaReferences.Schema" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Custom XML Schema Reference.</para>
-      <para> When the object is serialized out as xml, its qualified name is sl:schema.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Custom XML Schema Reference. When the object is serialized out as xml, its qualified name is sl:schema.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **schema (Custom XML Schema Reference)**  
+  
+ This element specifies the properties associated with a single XML namespace, for which all known XML schemas shall be loaded in order to validate the custom XML markup stored within this document. These properties can be used appropriately to locate custom XML schema(s) for use with the document. /IEC 29500 does not require any particular XML schema language.  
+  
+ [*Note:* Some examples of XML schema languages that might be used to implement Custom XML Mappings include:  
+  
+-   W3C XML Schema - http://www.w3.org/XML/Schema  
+  
+-   RELAX NG – /IEC 19757-2  
+  
+-   Schematron – /IEC 19757-3  
+  
+-   – /IEC 19757-4  
+  
+ *end note*]  
+  
+ [*Example*: Consider a WordprocessingML document which contains custom XML markup in the *http://www.example.com* namespace. The following content would be displayed in the document's schema library data:  
+  
+```xml  
+<sl:schemaLibrary>  
+  <sl:schema sl:uri="http://www.example.com" sl:schemaLocation="c:\example.xsd" />  
+</sl:schemaLibrary>  
+```  
+  
+ The schema element contains the properties for this one XML namespace: in this case, a namespace  of *http://www.example.com* and a file location of *c:\example.xsd*. *end example*]  
+  
+ [*Note*: This element is not intended to reintroduce transitional schema into the strict conformance class. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|schemaLibrary (§23.2.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Schema) is located in §A.7. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Schema class.
-            </summary>
+        <summary>Initializes a new instance of the Schema class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,12 +150,30 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Resource File Location.</para>
-          <para>Represents the following attribute in the schema: sl:manifestLocation </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Resource File Location.Represents the following attribute in the schema: sl:manifestLocation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the location of a resource file which should be downloaded and parsed when this document is loaded. The format and contents of this resource file are application-defined.  
+  
+ Consider a WordprocessingML document which contains custom XML markup in the `http://www.contoso.com` namespace, which is associated with a resource file located at `http://www.contoso.com/resource.xml`. The following content would be displayed in the document's schema library data:  
+  
+```  
+<w:schemaLibrary>  
+  <w:schema w:uri="http://www.contoso.com" w:manifestLocation= "http://www.contoso.com/resource.xml" />  
+</w:schemaLibrary>  
+```  
+  
+ The `manifestLocation` attribute contains `http://www.contoso.com/manifest.xml` which is the location of a resource file that may be downloaded for use when this namespace is used.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` data type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:sl=http://schemas.openxmlformats.org/schemaLibrary/2006/main
             </remark>
       </Docs>
@@ -147,12 +199,30 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom XML Schema Location.</para>
-          <para>Represents the following attribute in the schema: sl:schemaLocation </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Custom XML Schema Location.Represents the following attribute in the schema: sl:schemaLocation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the location of the XML schema file which should be downloaded and parsed when this document is loaded.  
+  
+ Consider a WordprocessingML document which contains custom XML markup in the `http://www.contoso.com` namespace, which is defined by an XML schema located at `c:\contoso.xsd`. The following content would be displayed in the document's schema library data:  
+  
+```  
+<w:schemaLibrary>  
+  <w:schema w:uri="http://www.contoso.com" w:schemaLocation= "c:\contoso.xsd" />  
+</w:schemaLibrary>  
+```  
+  
+ The `schemaLocation` attribute contains `c:\contoso.xsd` which is the location of the XML schema file used when this namespace is used.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` data type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:sl=http://schemas.openxmlformats.org/schemaLibrary/2006/main
             </remark>
       </Docs>
@@ -178,12 +248,37 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Custom XML Schema Namespace.</para>
-          <para>Represents the following attribute in the schema: sl:uri </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Custom XML Schema Namespace.Represents the following attribute in the schema: sl:uri</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the target namespace for the XML Schema associated with this schema reference.  
+  
+ Consider the following content for custom XML namespace data:  
+  
+```  
+…  
+<w:schema w:uri="http://www.contoso.com/schema1" />  
+<w:schema w:uri="http://www.contoso.com/schema2" />  
+…  
+```  
+  
+ The `uri` attribute specifies the target namespace of each XML schema reference:  
+  
+-   `http://www.contoso.com/schema1`  
+  
+-   `http://www.contoso.com/schema2`  
+  
+ Applications may then locate and use a schema for these namespaces using any means available.  
+  
+ The possible values for this attribute are defined by the XML Schema `string` data type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:sl=http://schemas.openxmlformats.org/schemaLibrary/2006/main
             </remark>
       </Docs>

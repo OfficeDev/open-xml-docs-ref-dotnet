@@ -1,4 +1,4 @@
-﻿<Type Name="Workbook" FullName="DocumentFormat.OpenXml.Spreadsheet.Workbook">
+<Type Name="Workbook" FullName="DocumentFormat.OpenXml.Spreadsheet.Workbook">
   <TypeSignature Language="C#" Value="public class Workbook : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Workbook extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Workbook" />
@@ -73,13 +73,185 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Workbook. The root element of WorkbookPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:workbook.</para>
-    </summary>
+    <summary>Workbook. The root element of WorkbookPart. When the object is serialized out as xml, its qualified name is x:workbook.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>FileVersion &lt;x:fileVersion&gt;</description></item><item><description>FileSharing &lt;x:fileSharing&gt;</description></item><item><description>WorkbookProperties &lt;x:workbookPr&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2013.ExcelAc.AbsolutePath &lt;x15ac:absPath&gt;</description></item><item><description>WorkbookProtection &lt;x:workbookProtection&gt;</description></item><item><description>BookViews &lt;x:bookViews&gt;</description></item><item><description>Sheets &lt;x:sheets&gt;</description></item><item><description>FunctionGroups &lt;x:functionGroups&gt;</description></item><item><description>ExternalReferences &lt;x:externalReferences&gt;</description></item><item><description>DefinedNames &lt;x:definedNames&gt;</description></item><item><description>CalculationProperties &lt;x:calcPr&gt;</description></item><item><description>OleSize &lt;x:oleSize&gt;</description></item><item><description>CustomWorkbookViews &lt;x:customWorkbookViews&gt;</description></item><item><description>PivotCaches &lt;x:pivotCaches&gt;</description></item><item><description>WebPublishing &lt;x:webPublishing&gt;</description></item><item><description>FileRecoveryProperties &lt;x:fileRecoveryPr&gt;</description></item><item><description>WebPublishObjects &lt;x:webPublishObjects&gt;</description></item><item><description>WorkbookExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **workbook (Workbook)**  
+  
+ The workbook element is the top level element. It contains elements and attributes that encompass the data content of the workbook. The workbook's child elements each have their own subclause references, and these are shown in the child elements table below. A partial list of the workbook's structures that these elements represent are:  
+  
+-   Sheets: represents the collection of worksheets in the workbook. The sheets are the central structure within a workbook, and contain the text, numbers, dates, formulas, and other elements of a workbook.  
+  
+-   Views: SpreadsheetML defines a collection of Workbook views that define basic window dimensions and position of the workbook if it is ever displayed by a spreadsheet application. It also defines a collection of Custom Workbook Views that allows SpreadsheetML to describe one or more views of the data within a workbook.  
+  
+-   Properties: the workbook has several property collection that store basic workbook settings, such as the date system to use, file protection settings, calculation settings, and smart tag behaviors.  
+  
+-   Names:  words or strings of characters that represent cells, ranges of cells, formulas, or constant values.  
+  
+ *[Example:*  
+  
+```xml  
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/5/main" mlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">  
+  <fileVersion lastEdited="4" lowestEdited="4" rupBuild="4017"/>  
+  <workbookPr dateCompatibility="false" vbName="ThisWorkbook" defaultThemeVersion="123820"/>  
+  <bookViews>  
+    <workbookView xWindow="120" yWindow="45" windowWidth="15135"      windowHeight="7650" activeTab="4"/>  
+  </bookViews>  
+  <sheets>  
+    <sheet name="Sheet1" sheetId="1" r:id="rId1"/>  
+    <sheet name="Sheet2" sheetId="2" r:id="rId2"/>  
+    <sheet name="Sheet5" sheetId="3" r:id="rId3"/>  
+    <sheet name="Chart1" sheetId="4" type="chartsheet" r:id="rId4"/>  
+  </sheets>  
+  <definedNames>  
+    <definedName name="MyDefinedName">Sheet3!$A$1:$C$12</definedName>  
+  </definedNames>  
+  <calcPr calcId="122211" calcMode="autoNoTable" refMode="R1C1" iterate="1"    fullPrecision="0"/>  
+  <customWorkbookViews>  
+    <customWorkbookView name="CustomView1"       guid="{CE6681F1-E999-414D-8446-68A031534B57}" maximized="1" xWindow="1"       yWindow="1" windowWidth="1024" windowHeight="547" activeSheetId="1"/>  
+  </customWorkbookViews>  
+  <pivotCaches>  
+    <pivotCache cacheId="0" r:id="rId8"/>  
+  </pivotCaches>  
+  <smartTagPr embed="1" show="noIndicator"/>  
+  <smartTagTypes>  
+    <smartTagType namespaceUri="urn:schemas-openxmlformats-org:office:smarttags"       name="date"/>  
+  </smartTagTypes>  
+  <webPublishing codePage="1252"/>  
+</workbook>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|Root element of SpreadsheetML Workbook part|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bookViews (Workbook Views)|§18.2.1|  
+|calcPr (Calculation Properties)|§18.2.2|  
+|customWorkbookViews (Custom Workbook Views)|§18.2.4|  
+|definedNames (Defined Names)|§18.2.6|  
+|externalReferences (External References)|§18.2.9|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|fileRecoveryPr (File Recovery Properties)|§18.2.11|  
+|fileSharing (File Sharing)|§18.2.12|  
+|fileVersion (File Version)|§18.2.13|  
+|functionGroups (Function Groups)|§18.2.15|  
+|oleSize (Embedded Object Size)|§18.2.16|  
+|pivotCaches (PivotCaches)|§18.2.18|  
+|sheets (Sheets)|§18.2.20|  
+|smartTagPr (Smart Tag Properties)|§18.2.21|  
+|smartTagTypes (Smart Tag Types)|§18.2.23|  
+|webPublishing (Web Publishing Properties)|§18.2.24|  
+|webPublishObjects (Web Publish Objects)|§18.2.26|  
+|workbookPr (Workbook Properties)|§18.2.28|  
+|workbookProtection (Workbook Protection)|§18.2.29|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Workbook) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following code example opens an existing spreadsheet document and adds a new worksheet, named "mySheet," and associates it with the workbook.  
+  
+```csharp  
+using System;  
+using System.Linq;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace WorkbookEx  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\Users\Public\Documents\WorkbookEx.xlsx";  
+            // Open an existing spreadsheet document for editing.  
+            using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(fileName, true))  
+            {  
+                // Add a blank WorksheetPart.  
+                WorksheetPart newWorksheetPart = spreadSheet.WorkbookPart.AddNewPart<WorksheetPart>();  
+                newWorksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+                // Create a Sheets object in the Workbook.  
+                Sheets sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild<Sheets>();  
+                string relationshipId = spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart);  
+  
+                // Create a unique ID for the new worksheet.  
+                uint sheetId = 1;  
+                if (sheets.Elements<Sheet>().Count() > 0)  
+                {  
+                    sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;  
+                }  
+  
+                // Give the new worksheet a name.  
+                string sheetName = "mySheet" + sheetId;  
+  
+                // Append the new worksheet and associate it with the workbook.  
+                Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };  
+                sheets.Append(sheet);  
+            }  
+            Console.WriteLine("All done. Press a key.");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```  
+Imports System.Linq  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+Module Module1  
+    Sub Main()  
+        Dim fileName As String = "C:\Users\Public\Documents\WorkbookEx.xlsx"  
+        ' Open an existing spreadsheet document for editing.  
+        Dim spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, True)  
+        Using (spreadSheet)  
+            ' Add a blank WorksheetPart.  
+            Dim newWorksheetPart As WorksheetPart = spreadSheet.WorkbookPart.AddNewPart(Of WorksheetPart)()  
+            newWorksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+            ' Create a Sheets object.  
+            Dim sheets As Sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()  
+            Dim relationshipId As String = spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart)  
+  
+            ' Get a unique ID for the new worksheet.  
+            Dim sheetId As UInteger = 1  
+            If (sheets.Elements(Of Sheet).Count > 0) Then  
+                sheetId = sheets.Elements(Of Sheet).Select(Function(s) s.SheetId.Value).Max + 1  
+            End If  
+  
+            ' Give the new worksheet a name.  
+            Dim sheetName As String = ("mySheet" + sheetId.ToString())  
+  
+            ' Append the new worksheet and associate it with the workbook.  
+            Dim sheet As Sheet = New Sheet  
+            sheet.Id = relationshipId  
+            sheet.SheetId = sheetId  
+            sheet.Name = sheetName  
+            sheets.Append(sheet)  
+        End Using  
+        Console.WriteLine("All done. Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -95,9 +267,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Workbook class.
-            </summary>
+        <summary>Initializes a new instance of the Workbook class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -124,9 +294,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Workbook class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the Workbook class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -147,9 +315,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the Workbook class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the Workbook class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -170,9 +336,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the Workbook class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the Workbook class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,10 +361,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2013.ExcelAc.AbsolutePath</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> AbsolutePath, this property is only available in Office2013.</para>
-          <para> Represents the following element tag in the schema: x15ac:absPath </para>
-        </summary>
+        <summary>AbsolutePath, this property is only available in Office2013. Represents the following element tag in the schema: x15ac:absPath</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -224,10 +385,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.BookViews</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> BookViews.</para>
-          <para> Represents the following element tag in the schema: x:bookViews </para>
-        </summary>
+        <summary>BookViews. Represents the following element tag in the schema: x:bookViews</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -251,10 +409,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CalculationProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CalculationProperties.</para>
-          <para> Represents the following element tag in the schema: x:calcPr </para>
-        </summary>
+        <summary>CalculationProperties. Represents the following element tag in the schema: x:calcPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -281,11 +436,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,10 +463,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ConformanceClass&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> conformance.</para>
-          <para>Represents the following attribute in the schema: conformance </para>
-        </summary>
+        <summary>conformance.Represents the following attribute in the schema: conformance</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -334,10 +484,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookViews</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> CustomWorkbookViews.</para>
-          <para> Represents the following element tag in the schema: x:customWorkbookViews </para>
-        </summary>
+        <summary>CustomWorkbookViews. Represents the following element tag in the schema: x:customWorkbookViews</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -361,10 +508,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.DefinedNames</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> DefinedNames.</para>
-          <para> Represents the following element tag in the schema: x:definedNames </para>
-        </summary>
+        <summary>DefinedNames. Represents the following element tag in the schema: x:definedNames</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -388,10 +532,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExternalReferences</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExternalReferences.</para>
-          <para> Represents the following element tag in the schema: x:externalReferences </para>
-        </summary>
+        <summary>ExternalReferences. Represents the following element tag in the schema: x:externalReferences</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -415,10 +556,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.FileSharing</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FileSharing.</para>
-          <para> Represents the following element tag in the schema: x:fileSharing </para>
-        </summary>
+        <summary>FileSharing. Represents the following element tag in the schema: x:fileSharing</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -442,10 +580,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.FileVersion</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FileVersion.</para>
-          <para> Represents the following element tag in the schema: x:fileVersion </para>
-        </summary>
+        <summary>FileVersion. Represents the following element tag in the schema: x:fileVersion</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -469,10 +604,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.FunctionGroups</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> FunctionGroups.</para>
-          <para> Represents the following element tag in the schema: x:functionGroups </para>
-        </summary>
+        <summary>FunctionGroups. Represents the following element tag in the schema: x:functionGroups</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -500,9 +632,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the WorkbookPart.
-            </summary>
+        <summary>Loads the DOM from the WorkbookPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -522,10 +652,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -545,10 +673,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.OleSize</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> OleSize.</para>
-          <para> Represents the following element tag in the schema: x:oleSize </para>
-        </summary>
+        <summary>OleSize. Represents the following element tag in the schema: x:oleSize</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -572,10 +697,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PivotCaches</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> PivotCaches.</para>
-          <para> Represents the following element tag in the schema: x:pivotCaches </para>
-        </summary>
+        <summary>PivotCaches. Represents the following element tag in the schema: x:pivotCaches</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -603,9 +725,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the WorkbookPart.
-            </summary>
+        <summary>Saves the DOM into the WorkbookPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -625,10 +745,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Sheets</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Sheets.</para>
-          <para> Represents the following element tag in the schema: x:sheets </para>
-        </summary>
+        <summary>Sheets. Represents the following element tag in the schema: x:sheets</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -652,10 +769,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.WebPublishing</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WebPublishing.</para>
-          <para> Represents the following element tag in the schema: x:webPublishing </para>
-        </summary>
+        <summary>WebPublishing. Represents the following element tag in the schema: x:webPublishing</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -679,10 +793,8 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WorkbookPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the WorkbookPart associated with this element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the WorkbookPart associated with this element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.WorkbookPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -702,10 +814,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WorkbookProperties.</para>
-          <para> Represents the following element tag in the schema: x:workbookPr </para>
-        </summary>
+        <summary>WorkbookProperties. Represents the following element tag in the schema: x:workbookPr</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -729,10 +838,7 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.WorkbookProtection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> WorkbookProtection.</para>
-          <para> Represents the following element tag in the schema: x:workbookProtection </para>
-        </summary>
+        <summary>WorkbookProtection. Represents the following element tag in the schema: x:workbookProtection</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

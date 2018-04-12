@@ -1,4 +1,4 @@
-﻿<Type Name="ReadModeInkLockDown" FullName="DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown">
+<Type Name="ReadModeInkLockDown" FullName="DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown">
   <TypeSignature Language="C#" Value="public class ReadModeInkLockDown : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReadModeInkLockDown extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ReadModeInkLockDown" />
@@ -19,11 +19,41 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Freeze Document Layout.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:readModeInkLockDown.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Freeze Document Layout. When the object is serialized out as xml, its qualified name is w:readModeInkLockDown.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **readModeInkLockDown (Freeze Document Layout)**  
+  
+ This element specifies the exact set of page and text sizing parameters which shall be used to display the contents of a WordprocessingML document. [*Rationale*: This setting is typically used for documents that have been annotated using ink. This setting freezes the document's presentation such that the ink annotations must exist at the same position of the WordprocessingML document irrespective of the monitor on which the WordprocessingML document is rendered. *end rationale*]  
+  
+ This element shall only affect the display of WordprocessingML documents as follows:  
+  
+-   When the actualPage attribute is specified with a value of *true*, the given WordprocessingML document's pages shall be rendered as they would normally be displayed. The resulting pages can have their magnification setting changed as desired. All other attributes shall be ignored.  
+  
+-   When the actualPage attribute is specified with a value of *false*, the given WordprocessingML document's pages shall be rendered as *virtual pages* when loaded by a conforming hosting application irrespective of the given WordprocessingML document's view (§17.15.1.92). *Virtual pages* are pages with no correlation with the printed layout of a given WordprocessingML document that have been scaled by a conforming hosting application to improve the readability of a given WordprocessingML document when it is displayed. Specifically, the w and h attributes specify the width and height of the virtual pages, and the fontSz attribute specifies the scaling to be applied to text within the given WordprocessingML document.  
+  
+ [*Example*: Consider a WordprocessingML document that must be displayed using virtual pageswhen its contents are displayed. This state is specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:readModeInkLockDown w:w="692" w:h="986" w:fontSz="95" w:actualPg="0"/>   
+```  
+  
+ The readModeInkLockDown element has w and h attribute values which specify the width and height of the virtual pages to be used to render the given WordprocessingML document. Finally, the fontSz attribute specifies the scaling to be applied to text within the given WordprocessingML document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_ReadingModeInkLockDown) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +69,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ReadModeInkLockDown class.
-            </summary>
+        <summary>Initializes a new instance of the ReadModeInkLockDown class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +92,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,12 +119,30 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Font Size Scaling.</para>
-          <para>Represents the following attribute in the schema: w:fontSz </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Font Size Scaling.Represents the following attribute in the schema: w:fontSz</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the percentage that text in a given WordprocessingML document shall be scaled by before it is displayed on a virtual page. The attribute's value stores the percentage specified as an integer whose units correspond to the percentage that text runs shall be scaled to (for example, `200` means a scale of 200%).  
+  
+ This attribute shall only be used if the `actualPage` attribute equals `off`, `0`, or `false`.  
+  
+ Consider a WordprocessingML document that shall be displayed using virtual pages. This state is specified using the following WordprocessingML in the document settings:  
+  
+```  
+<w:readModeInkLockDown w:w="692" w:h="986" w:fontSz="95" w:actualPg="0" />  
+```  
+  
+ The `fontSz` attribute is equal to `95` specifying that the text in the WordprocessingML document shall be displayed at 95% of its normal size when it is displayed on a virtual page.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -124,12 +168,30 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Virtual Page Height.</para>
-          <para>Represents the following attribute in the schema: w:h </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Virtual Page Height.Represents the following attribute in the schema: w:h</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the height of the virtual pages which shall be used in this document. This value is specified in pixels.  
+  
+ This attribute shall only be used if the `actualPage` attribute equals `off`, `0`, or `false`.  
+  
+ Consider a WordprocessingML document that shall be displayed using virtual pages. This state is specified using the following WordprocessingML in the document settings:  
+  
+```  
+<w:readModeInkLockDown w:w="692" w:h="986" w:fontSz="95" w:actualPg="0" />  
+```  
+  
+ The `h` attribute is equal to `986` specifying that virtual pages in this document shall be 986 pixels high.  
+  
+ The possible values for this attribute are defined by the `ST_PixelsMeasure` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -150,10 +212,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -178,12 +238,30 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Use Actual Pages, Not Virtual Pages.</para>
-          <para>Represents the following attribute in the schema: w:actualPg </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Use Actual Pages, Not Virtual Pages.Represents the following attribute in the schema: w:actualPg</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies if applications shall render this WordprocessingML document with actual pages, not virtual pages. Actual pages are pages rendered as they will be printed.  
+  
+ A value of `true` specifies that the given WordprocessingML document's pages will be rendered as they are printed, and the `w`, `h`, and `fontSz` attributes shall be ignored. A value of `false` specifies that the given WordprocessingML document's pages shall be rendered as virtual pages using the other attributes on this element.  
+  
+ Consider a WordprocessingML document that shall be displayed using virtual pages. This state is specified using the following WordprocessingML in the document settings:  
+  
+```  
+<w:readModeInkLockDown w:w="692" w:h="986" w:fontSz="95" w:actualPg="0" />  
+```  
+  
+ The `actualPage` attribute is equal to `0` specifying that the given WordprocessingML document shall be rendered by conforming hosting applications using virtual pages.  
+  
+ The possible values for this attribute are defined by the `ST_OnOff` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>
@@ -209,12 +287,30 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Virtual Page Width.</para>
-          <para>Represents the following attribute in the schema: w:w </para>
-        </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Virtual Page Width.Represents the following attribute in the schema: w:w</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the width of the virtual pages which shall be used in this document. This value is specified in pixels.  
+  
+ This attribute shall only be used if the actualPage attribute equals `off`, `0`, or `false`.  
+  
+ Consider a WordprocessingML document that shall be displayed using virtual pages. This state is specified using the following WordprocessingML in the document settings:  
+  
+```  
+<w:readModeInkLockDown w:w="692" w:h="986" w:fontSz="95" w:actualPg="0" />  
+```  
+  
+ The `w` attribute is equal to `692` specifying that virtual pages in this document shall be 692 pixels wide.  
+  
+ The possible values for this attribute are defined by the `ST_PixelsMeasure` simple type.  
+  
+ ]]></format>
+        </remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
             </remark>
       </Docs>

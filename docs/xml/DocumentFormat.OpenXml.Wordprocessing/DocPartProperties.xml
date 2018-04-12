@@ -1,4 +1,4 @@
-﻿<Type Name="DocPartProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartProperties">
+<Type Name="DocPartProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.DocPartProperties">
   <TypeSignature Language="C#" Value="public class DocPartProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocPartProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DocPartProperties" />
@@ -40,13 +40,49 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Glossary Document Entry Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:docPartPr.</para>
-    </summary>
+    <summary>Glossary Document Entry Properties. When the object is serialized out as xml, its qualified name is w:docPartPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>DocPartName &lt;w:name&gt;</description></item><item><description>StyleId &lt;w:style&gt;</description></item><item><description>Category &lt;w:category&gt;</description></item><item><description>DocPartTypes &lt;w:types&gt;</description></item><item><description>Behaviors &lt;w:behaviors&gt;</description></item><item><description>Description &lt;w:description&gt;</description></item><item><description>DocPartId &lt;w:guid&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **docPartPr (Glossary Document Entry Properties)**  
+  
+ This element specifies the set of properties which shall be applied to the parent glossary document entry. These properties define its name, categorization, and behaviors.  
+  
+ [*Example*: Consider the WordprocessingML fragment for a glossary document entry containing a single run, defined as follows:  
+  
+```xml  
+<w:docPart>  
+  <w:docPartPr>  
+    <w:name w:val="Sample Entry" />  
+    …  </w:docPartPr>  
+  …</w:docPart>  
+```  
+  
+ The docPartPr element specifies the set of properties which have been specified for the parent glossary document entry, the only one visible above being the entry's name of *Sample Entry*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|docPart (§17.12.5)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|behaviors (Entry Insertion Behaviors)|§17.12.2|  
+|category (Entry Categorization)|§17.12.3|  
+|description (Description for Entry)|§17.12.4|  
+|guid (Entry ID)|§17.12.11|  
+|name (Entry Name)|§17.12.13|  
+|style (Associated Paragraph Style Name)|§17.12.14|  
+|types (Entry Types)|§17.12.16|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_DocPartPr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -62,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the DocPartProperties class.
-            </summary>
+        <summary>Initializes a new instance of the DocPartProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -91,9 +125,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DocPartProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the DocPartProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -114,9 +146,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the DocPartProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the DocPartProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,9 +167,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the DocPartProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the DocPartProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -159,11 +187,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Behaviors</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Entry Insertion Behaviors.</para>
-          <para> Represents the following element tag in the schema: w:behaviors </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Entry Insertion Behaviors. Represents the following element tag in the schema: w:behaviors</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Behaviors" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -186,11 +211,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Category</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Entry Categorization.</para>
-          <para> Represents the following element tag in the schema: w:category </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Entry Categorization. Represents the following element tag in the schema: w:category</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Category" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -216,11 +238,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -240,11 +260,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Description</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Description for Entry.</para>
-          <para> Represents the following element tag in the schema: w:description </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Description for Entry. Represents the following element tag in the schema: w:description</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Description" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -267,11 +284,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DocPartId</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Entry ID.</para>
-          <para> Represents the following element tag in the schema: w:guid </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Entry ID. Represents the following element tag in the schema: w:guid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.DocPartId" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -294,11 +308,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DocPartName</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Entry Name.</para>
-          <para> Represents the following element tag in the schema: w:name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Entry Name. Represents the following element tag in the schema: w:name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.DocPartName" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -321,11 +332,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.DocPartTypes</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Entry Types.</para>
-          <para> Represents the following element tag in the schema: w:types </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Entry Types. Represents the following element tag in the schema: w:types</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.DocPartTypes" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -348,10 +356,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -371,11 +377,8 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleId</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Associated Paragraph Style Name.</para>
-          <para> Represents the following element tag in the schema: w:style </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Associated Paragraph Style Name. Represents the following element tag in the schema: w:style</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.StyleId" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main

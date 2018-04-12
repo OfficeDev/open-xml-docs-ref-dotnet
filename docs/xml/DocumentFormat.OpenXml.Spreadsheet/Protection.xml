@@ -1,4 +1,4 @@
-﻿<Type Name="Protection" FullName="DocumentFormat.OpenXml.Spreadsheet.Protection">
+<Type Name="Protection" FullName="DocumentFormat.OpenXml.Spreadsheet.Protection">
   <TypeSignature Language="C#" Value="public class Protection : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Protection extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Protection" />
@@ -19,11 +19,32 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Protection.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:protection.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Protection. When the object is serialized out as xml, its qualified name is x:protection.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **protection (Protection Properties)**  
+  
+ Contains protection properties associated with the cell. Each cell has protection properties that can be set. The cell protection properties do not take effect unless the sheet has been protected.  
+  
+|Parent Elements|  
+|---------------------|  
+|dxf (§18.8.14); ndxf (§18.11.1.4); odxf (§18.11.1.6); xf (§18.8.45)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|hidden (Hidden Cell)|A boolean value indicating if the cell is hidden. When the cell is hidden and the sheet on which the cell resides is protected, then the cell value is displayed in the cell grid location, but the contents of the cell will not be displayed in the formula bar. This is true for all types of cell content, including formula, text, or numbers.<br /><br /> Therefore the cell A4 can contain a formula "=SUM(A1:A3)", but if the cell protection property of A4 is marked as hidden, and the sheet is protected, then the cell should display the calculated result [*Example*:  "6" *end example*], but will not display the formula used to calculate the result.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|locked (Cell Locked)|A boolean value indicating if the cell is locked. When cells are marked as "locked" and the sheet is protected, then the options specified in the Sheet Part's sheetProtection element (§18.3.1.85) are prohibited for these cells.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CellProtection) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +60,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the Protection class.
-            </summary>
+        <summary>Initializes a new instance of the Protection class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +83,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,11 +110,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Hidden Cell.</para>
-          <para>Represents the following attribute in the schema: hidden </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Hidden Cell.Represents the following attribute in the schema: hidden</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,10 +131,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,11 +157,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Cell Locked.</para>
-          <para>Represents the following attribute in the schema: locked </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Cell Locked.Represents the following attribute in the schema: locked</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

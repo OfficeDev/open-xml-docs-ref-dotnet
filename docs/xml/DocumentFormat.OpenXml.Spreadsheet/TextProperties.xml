@@ -1,4 +1,4 @@
-﻿<Type Name="TextProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.TextProperties">
+<Type Name="TextProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.TextProperties">
   <TypeSignature Language="C#" Value="public class TextProperties : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextProperties extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.TextProperties" />
@@ -22,13 +22,67 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the TextProperties Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:textPr.</para>
-    </summary>
+    <summary>Defines the TextProperties Class. When the object is serialized out as xml, its qualified name is x:textPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>TextFields &lt;x:textFields&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **textPr (Text Import Settings)**  
+  
+ This element contains all of the text import settings.  
+  
+ *[Example: Here's an example of the XML for a text connection:*  
+  
+```xml  
+<connection id="1" name="text data" type="6" refreshedVersion="3" background="1"  saveData="1">  
+  <textPr prompt="0" characterSet="437" sourceFile="C:\Desktop\text data.txt"     delimiter="|">  
+    <textFields count="5">  
+      <textField/>  
+      <textField type="text" position="7"/>  
+      <textField type="text" position="28"/>  
+      <textField position="36"/>  
+      <textField type="text" position="41"/>  
+    </textFields>  
+  </textPr>  
+</connection>  
+```  
+  
+ *example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|connection (§18.13.1)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|textFields (Fields)|§18.13.11|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|characterSet (Character Set)|Name of the character set associated with the text file. Values for this attribute are restricted to the names and aliases listed in the IANA CHARACTER SETS listing found at http://www.iana.org/assignments/character-sets.<br /><br /> [*Note*: When reading this value, if a system does not support a particular character set, the application is allowed to decide what is the best course of fallback action. *end note*]<br /><br /> If this attribute is not present then the codePage attribute are used.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|comma (Comma is Delimiter)|Flag indicating whether to treat comma characters as field delimiters.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|consecutive (Consecutive Delimiters)|Flag indicating whether consecutive delimiters should be treated as just one delimiter.  If this flag is *true* than it's possible or even likely that some rows will return more fields than others, and these fields will always fill cells in the worksheet from left to right.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|decimal (Decimal Separator)|The decimal separator character. This and the thousands attribute are used only when data in the text file contains decimal and thousands separators that are different from those used on the computer, due to a different language setting being used.<br /><br /> The following table shows the results when you import text into a spreadsheet application using various separators. Numeric results are displayed in the rightmost column.<br /><br /> System decimal separator<br /><br /> System thousands separator<br /><br /> Text file decimal separator value<br /><br /> Text file thousands Separator value<br /><br /> Text imported<br /><br /> Cell value (data type)<br /><br /> Period<br /><br /> Comma<br /><br /> Comma<br /><br /> Period<br /><br /> 123.123,45<br /><br /> 123,123.45 (numeric)<br /><br /> Period<br /><br /> Comma<br /><br /> Comma<br /><br /> Comma<br /><br /> 123.123,45<br /><br /> 123.123,45 (text)<br /><br /> Comma<br /><br /> Period<br /><br /> Comma<br /><br /> Period<br /><br /> 123,123.45<br /><br /> 123,123.45 (numeric)<br /><br /> Period<br /><br /> Comma<br /><br /> Period<br /><br /> Comma<br /><br /> 123 123.45<br /><br /> 123 123.45 (text)<br /><br /> Period<br /><br /> Comma<br /><br /> Period<br /><br /> Space<br /><br /> 123 123.45<br /><br /> 123,123.45 (numeric)<br /><br /> Strings values of this attribute are expected to be one character in length.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|delimited (Delimited File)|*true* if the file is Tab or character delimited.  *false* if the file should be parsed according to fixed length fields.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|delimiter (Custom Delimiter)|User-specified character to be treated as a field delimiter.  Only single characters are supported.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|fileType (File Type)|Ignorable attribute with enum value that defined by *ST_FileType*. Determines the kind of character set to use during import.<br /><br /> Only one of fileType and characterSet or codePage shall be specified for a textPr.<br /><br /> The possible values for this attribute are defined by the *ST_FileType* simple type (§18.18.29).|  
+|firstRow (First Row)|Indicates at what row of the file to start the data import.  All unsignedInt values are permitted, although it's possible that firstRow is higher than the number of rows in the text file, in which case no data is imported.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|prompt (Prompt for File Name)|Flag indicating whether the user wants to be prompted for the file name on refresh.  If *false*, then the user is not prompted.  If *true* or not present, then the user is prompted.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|qualifier (Qualifier)|Character used as the text string qualifier.<br /><br /> The possible values for this attribute are defined by the *ST_Qualifier* simple type (§18.18.61).|  
+|semicolon (Semicolon is Delimiter)|Flag indicating whether to treat semicolon characters as field delimiters.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sourceFile (Source File Name)|Path to the text file to use to import external data. Can be expressed in  or system-specific file path notation.<br /><br /> [*Note*: Applications can decide what forms of  they support, and whether system-specific file path notations are supported. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|space (Space is Delimiter)|Flag indicating whether to treat space characters as field delimiters.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|tab (Tab as Delimiter)|Flag indicating whether to treat tab characters as field delimiters.  If *false*, then tabs will not be used as delimiters.  If *true* or not present, then they are used as delimiters.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|thousands (Thousands Separator)|The thousands separator character.  This and the decimal attribute are used only when data in the text file contains decimal and thousands separators that are different from those used on the computer, due to a different language setting being used.  Please refer to the decimal attribute description above for a Table describing the behavior.<br /><br /> Strings values of this attribute are expected to be one character in length.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextPr) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +98,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the TextProperties class.
-            </summary>
+        <summary>Initializes a new instance of the TextProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +125,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TextProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the TextProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +146,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the TextProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the TextProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +167,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the TextProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the TextProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +190,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +217,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> codePage.</para>
-          <para>Represents the following attribute in the schema: codePage </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>codePage.Represents the following attribute in the schema: codePage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,11 +243,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> comma.</para>
-          <para>Represents the following attribute in the schema: comma </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>comma.Represents the following attribute in the schema: comma</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -231,11 +269,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> consecutive.</para>
-          <para>Represents the following attribute in the schema: consecutive </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>consecutive.Represents the following attribute in the schema: consecutive</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -260,11 +295,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> decimal.</para>
-          <para>Represents the following attribute in the schema: decimal </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>decimal.Represents the following attribute in the schema: decimal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -289,11 +321,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> delimited.</para>
-          <para>Represents the following attribute in the schema: delimited </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>delimited.Represents the following attribute in the schema: delimited</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -318,11 +347,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> delimiter.</para>
-          <para>Represents the following attribute in the schema: delimiter </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>delimiter.Represents the following attribute in the schema: delimiter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -347,11 +373,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.FileTypeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> fileType.</para>
-          <para>Represents the following attribute in the schema: fileType </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>fileType.Represents the following attribute in the schema: fileType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -376,11 +399,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstRow.</para>
-          <para>Represents the following attribute in the schema: firstRow </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>firstRow.Represents the following attribute in the schema: firstRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -400,10 +420,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -428,11 +446,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> prompt.</para>
-          <para>Represents the following attribute in the schema: prompt </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>prompt.Represents the following attribute in the schema: prompt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -457,11 +472,8 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.QualifierValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> qualifier.</para>
-          <para>Represents the following attribute in the schema: qualifier </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>qualifier.Represents the following attribute in the schema: qualifier</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -486,11 +498,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> semicolon.</para>
-          <para>Represents the following attribute in the schema: semicolon </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>semicolon.Represents the following attribute in the schema: semicolon</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -515,11 +524,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> sourceFile.</para>
-          <para>Represents the following attribute in the schema: sourceFile </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>sourceFile.Represents the following attribute in the schema: sourceFile</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -544,11 +550,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> space.</para>
-          <para>Represents the following attribute in the schema: space </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>space.Represents the following attribute in the schema: space</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -573,11 +576,8 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> tab.</para>
-          <para>Represents the following attribute in the schema: tab </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>tab.Represents the following attribute in the schema: tab</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -602,10 +602,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> characterSet.</para>
-          <para>Represents the following attribute in the schema: characterSet </para>
-        </summary>
+        <summary>characterSet.Represents the following attribute in the schema: characterSet</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -626,11 +623,8 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TextFields</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> TextFields.</para>
-          <para> Represents the following element tag in the schema: x:textFields </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>TextFields. Represents the following element tag in the schema: x:textFields</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.TextFields" />.</value>
         <remarks>To be added.</remarks>
         <remark>
             xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
@@ -658,11 +652,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> thousands.</para>
-          <para>Represents the following attribute in the schema: thousands </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>thousands.Represents the following attribute in the schema: thousands</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

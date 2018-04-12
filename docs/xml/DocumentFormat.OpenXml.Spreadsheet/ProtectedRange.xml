@@ -1,4 +1,4 @@
-﻿<Type Name="ProtectedRange" FullName="DocumentFormat.OpenXml.Spreadsheet.ProtectedRange">
+<Type Name="ProtectedRange" FullName="DocumentFormat.OpenXml.Spreadsheet.ProtectedRange">
   <TypeSignature Language="C#" Value="public class ProtectedRange : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProtectedRange extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.ProtectedRange" />
@@ -19,11 +19,35 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Protected Range.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:protectedRange.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Protected Range. When the object is serialized out as xml, its qualified name is x:protectedRange.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **protectedRange (Protected Range)**  
+  
+ A specified range to be protected. Ranges listed here are protected only when the sheet protection is ON and the cell is flagged as being locked. If no password is specified here, then read/write permissions are automatically given to all users, regardless of additional security descriptor information. In other words, the security descriptor information (specific types of access) at the user level is only applied if a password for this range is specified.  
+  
+ When a password is to be hashed and stored in this element, it shall be hashed as defined below, starting from a UTF-16LE encoded string value. If there is a leading BOM character (U+FEFF) in the encoded password it is removed before hash calculation.  
+  
+ When a password is specified, then users not listed specifically as having access should be prompted with a password. If that user supplies the correct password, then they can edit the range or cell in question. This protection is optional and can be ignored by applications that choose not to support this functionality.  
+  
+|Parent Elements|  
+|---------------------|  
+|protectedRanges (§18.3.1.72)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|securityDescriptor (Security Descriptor)|§18.3.1.77|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_ProtectedRange) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +63,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ProtectedRange class.
-            </summary>
+        <summary>Initializes a new instance of the ProtectedRange class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -66,10 +88,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> algorithmName.</para>
-          <para>Represents the following attribute in the schema: algorithmName </para>
-        </summary>
+        <summary>algorithmName.Represents the following attribute in the schema: algorithmName</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -93,11 +112,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -122,10 +139,7 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> hashValue.</para>
-          <para>Represents the following attribute in the schema: hashValue </para>
-        </summary>
+        <summary>hashValue.Represents the following attribute in the schema: hashValue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -146,10 +160,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,11 +186,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> name.</para>
-          <para>Represents the following attribute in the schema: name </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,11 +212,8 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> password.</para>
-          <para>Represents the following attribute in the schema: password </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>password.Represents the following attribute in the schema: password</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -232,10 +238,7 @@
         <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> saltValue.</para>
-          <para>Represents the following attribute in the schema: saltValue </para>
-        </summary>
+        <summary>saltValue.Represents the following attribute in the schema: saltValue</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -261,11 +264,8 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> securityDescriptor.</para>
-          <para>Represents the following attribute in the schema: securityDescriptor </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>securityDescriptor.Represents the following attribute in the schema: securityDescriptor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -290,11 +290,8 @@
         <ReturnType>DocumentFormat.OpenXml.ListValue&lt;DocumentFormat.OpenXml.StringValue&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> sqref.</para>
-          <para>Represents the following attribute in the schema: sqref </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>sqref.Represents the following attribute in the schema: sqref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ListValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -319,10 +316,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> spinCount.</para>
-          <para>Represents the following attribute in the schema: spinCount </para>
-        </summary>
+        <summary>spinCount.Represents the following attribute in the schema: spinCount</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

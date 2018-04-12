@@ -1,4 +1,4 @@
-﻿<Type Name="RowItems" FullName="DocumentFormat.OpenXml.Spreadsheet.RowItems">
+<Type Name="RowItems" FullName="DocumentFormat.OpenXml.Spreadsheet.RowItems">
   <TypeSignature Language="C#" Value="public class RowItems : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RowItems extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.RowItems" />
@@ -22,13 +22,60 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the RowItems Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:rowItems.</para>
-    </summary>
+    <summary>Defines the RowItems Class. When the object is serialized out as xml, its qualified name is x:rowItems.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>RowItem &lt;x:i&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **rowItems (Row Items)**  
+  
+ Represents the collection of items in row axis of the PivotTable.  
+  
+ *[Example: In the SpreadsheetML example below, the item values are found in cells B10:B13. For example "Bikes" is in B10, and corresponds to the first \<i> element below.*  
+  
+```xml  
+<rowItems count="4">  
+  <i>  
+    <x/>  
+  </i>  
+  <i r="1">  
+    <x/>  
+  </i>  
+  <i r="1">  
+    <x v="1"/>  
+  </i>  
+  <i t="grand">  
+    <x/>  
+  </i>  
+</rowItems>   
+```  
+  
+ Looking at the layout of the PivotTable in this example, "Bikes" is the first (and only) item value in the first row, in cell B10. In the XML defining the PivotTable row item values, the first *\<i>* element corresponds to the first row. There is a single index element *\<x>*. The first (and only) *\<x>* element corresponds to the first field on the row axis, namely "Product Category", and an index value of "0" indicates that the 0th item in the items collection for that *pivotField* definition is how to obtain the item value. Note that "Bikes" isn't explicitly listed as a value here, but instead the 0th item is an index to this field's shared items collection in the pivotCacheDefinition part.  
+  
+ For the second row there are two item values, one item value (Bikes) from the first field in that row (Product Category) and one item value (Mountain Bikes) from the second field in that row (Product Subcategory). In the PivotTable, the first item value "Bikes" is hidden from view. In the XML for this example, the second *\<i>* element expresses both item values for this row. The first item value "Bikes" is expressed implicitly, because the value of *@r* on the second *\<i>* element is '1', indicating that the first item value from the previous row is reused again as the first item value for the current row. The second item value is expressed explicitly via the *\<x>* element under the second *\<i>* element. The index of '0' indicates that the 0th item in the *\<pivotField>* element for that field is how to obtain the item value. Note again that the 0th item is itself an index into this field's shared items collection in the pivotCacheDefinition part.  
+  
+ The item values for the third row can be discovered in a similar way. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pivotTableDefinition (§18.10.1.73)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|i (Row Items)|§18.10.1.44|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|count (Items in a Row Count)|Specifies the number of items in the row axis of the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_rowItems) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +91,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the RowItems class.
-            </summary>
+        <summary>Initializes a new instance of the RowItems class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +118,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RowItems class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the RowItems class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +139,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the RowItems class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the RowItems class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +160,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the RowItems class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the RowItems class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +183,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,11 +210,8 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Items in a Row Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
-        <value>To be added.</value>
+        <summary>Items in a Row Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -197,10 +231,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

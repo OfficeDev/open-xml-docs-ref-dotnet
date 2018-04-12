@@ -1,4 +1,4 @@
-﻿<Type Name="NumberingFormats" FullName="DocumentFormat.OpenXml.Spreadsheet.NumberingFormats">
+<Type Name="NumberingFormats" FullName="DocumentFormat.OpenXml.Spreadsheet.NumberingFormats">
   <TypeSignature Language="C#" Value="public class NumberingFormats : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberingFormats extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.NumberingFormats" />
@@ -22,13 +22,611 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the NumberingFormats Class.</para>
-      <para> When the object is serialized out as xml, its qualified name is x:numFmts.</para>
-    </summary>
+    <summary>Defines the NumberingFormats Class. When the object is serialized out as xml, its qualified name is x:numFmts.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>NumberingFormat &lt;x:numFmt&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `numFmts (Number Formats)`  
+  
+ This element defines the number formats in this workbook, consisting of a sequence of numFmt records, where each numFmt record defines a particular number format, indicating how to format and render the numeric value of a cell.  
+  
+ [*Example*:  
+  
+ This cell is formatting as US currency:  
+  
+ 7fc8d8ee-f580-4e43-98d0-91cf9abd8243  
+  
+ The XML expressing this format shows that the formatId is "166" and the decoded formatCode is *$#,##0.00*  
+  
+```xml  
+<numFmts count="1">  
+  <numFmt numFmtId="166" formatCode="&quot;$&quot;#,##0.00"/>  
+</numFmts>  
+```  
+  
+ *end example*]  
+  
+ `Number Format Codes`  
+  
+ Up to four sections of format codes can be specified. The format codes, separated by semicolons, define the formats for positive numbers, negative numbers, zero values, and text, in that order. If only two sections are specified, the first is used for positive numbers and zeros, and the second is used for negative numbers. If only one section is specified, it is used for all numbers. To skip a section, the ending semicolon for that section shall be written.  
+  
+ 9e00b419-894b-4a01-aba5-c8c92db922a6  
+  
+ The first section, "Format for positive numbers", is the format code that applies to the cell when the cell value contains a positive number.  
+  
+ The second section, "Format for negative numbers", is the format code that applies to the cell when the cell value contains a negative number.  
+  
+ The third section, "Format for zeros", is the format code that applies to the cell when the cell value is zero.  
+  
+ The fourth, and last, section, "Format for text", is the format code that applies to the cell when the cell value is text.  
+  
+ The & (ampersand) text operator is used to join, or concatenate, two values.  
+  
+ The following table describes the different symbols that are available for use in custom number formats.  
+  
+ Format symbol  
+  
+ Description and result  
+  
+ 0  
+  
+ Digit placeholder. [*Example*: If the value 8.9 is to be displayed as 8.90, use the format #.00 *end example*]  
+  
+ \#  
+  
+ Digit placeholder. This symbol follows the same rules as the 0 symbol. However, the application shall not display extra zeros when the number typed has fewer digits on either side of the decimal than there are # symbols in the format. [*Example*: If the custom format is #.##, and 8.9 is in the cell, the number 8.9 is displayed. *end example*]  
+  
+ ?  
+  
+ Digit placeholder. This symbol follows the same rules as the 0 symbol. However, the application shall put a space for insignificant zeros on either side of the decimal point so that decimal points are aligned in the column. [*Example*: The custom format 0.0? aligns the decimal points for the numbers 8.9 and  a column. *end example*]  
+  
+ . (period)  
+  
+ Decimal point.  
+  
+ %  
+  
+ Percentage. If the cell contains a number between 0 and 1, and the custom format 0% is used, the  application shall multiply the number by 100 and add the percentage symbol in the cell.  
+  
+ , (comma)  
+  
+ Thousands separator. The application shall separate thousands by commas if the format contains a comma that is enclosed by number signs (#) or by zeros. A comma that follows a placeholder scales the number by one thousand. [*Example*: If the format is #.0,, and the cell value is 12,200,000 then the number 12.2 is displayed. *end example*]  
+  
+ E- E+ e- e+  
+  
+ Scientific format. The application shall display a number to the right of the "E" symbol that corresponds to the number of places that the decimal point was moved. [*Example*: If the format is 0.00E+00, and the value 12,200,000 is in the cell, the number 1.22E+07 is displayed. If the number format is #0.0E+0, then the number 12.2E+6 is displayed. *end example*]  
+  
+ $-+/():space  
+  
+ Displays the symbol. If it is desired to display a character that differs from one of these symbols, precede the character with a backslash (\\). Alternatively, enclose the character in quotation marks. [*Example*: If the number format is (000), and the value 12 is in the cell, the number (012) is displayed. *end example*]  
+  
+ \  
+  
+ Displays the next character in the format. The application shall not display the backslash. [*Example*: If the number format is 0\\!, and the value 3 is in the cell, the value 3! is displayed. *end example*]  
+  
+ \*  
+  
+ Repeats the next character in the format enough times to fill the column to its current width. There shall not be more than one asterisk in one section of the format. If more than one asterisk appears in one section of the format, all but the last asterisk shall be ignored. [*Example*: if the number format is 0*x, and the value 3 is in the cell, the value 3xxxxxx is displayed. The number of x characters that are displayed in the cell varies based on the width of the column. *end example*]  
+  
+ _ (underline)  
+  
+ Skips the width of the next character. This is useful for lining up negative and positive values in different cells of the same column. [*Example*: The number format _(0.0\_);(0.0) aligns the numbers 2.3 and  the column even though the negative number is enclosed by parentheses. *end example*]  
+  
+ "text"  
+  
+ Displays whatever text is inside the quotation marks. [*Example*: The format 0.00 "dollars" displays 1.23 dollars when the value 1.23 is in the cell. *end example*]  
+  
+ @  
+  
+ Text placeholder. If text is typed in the cell, the text from the cell is placed in the format where the at symbol (@) appears. [*Example*: If the number format is "Bob "@" Smith" (including quotation marks), and the value "John" is in the cell, the value Bob John Smith is displayed. *end example*]  
+  
+ `Text and spacing`  
+  
+ *Display both text and numbers*  
+  
+ To display both text and numbers in a cell, enclose the text characters in double quotation marks (" ") or precede a single character with a backslash (\\).  Single quotation marks shall not be used to denote text. Characters inside double quotes, or immediately following backslash shall never be interpreted as part of the format code lexicon; instead they shall always be treated as literal strings. Remember to include the characters in the appropriate section of the format codes. [*Example*:  Use the format $0.00" Surplus";$-0.00" Shortage" to display a positive amount as "$125.74 Surplus" and a negative amount as "$-125.74 Shortage." *end example*]  
+  
+ The following characters are displayed without the use of quotation marks.  
+  
+ $  
+  
+ Dollar sign  
+  
+ \-  
+  
+ Minus sign  
+  
+ \+  
+  
+ Plus sign  
+  
+ /  
+  
+ Slash mark  
+  
+ (  
+  
+ Left parenthesis  
+  
+ )  
+  
+ Right parenthesis  
+  
+ :  
+  
+ Colon  
+  
+ !  
+  
+ Exclamation point  
+  
+ ^  
+  
+ Circumflex accent (caret)  
+  
+ &  
+  
+ Ampersand  
+  
+ '  
+  
+ Apostrophe  
+  
+ ~  
+  
+ Tilde  
+  
+ {  
+  
+ Left curly bracket  
+  
+ }  
+  
+ Right curly bracket  
+  
+ \<  
+  
+ Less-than sign  
+  
+ >  
+  
+ Greater-than sign  
+  
+ =  
+  
+ Equal sign  
+  
+ Space character  
+  
+ *Include a section for text entry*  
+  
+ If included, a text section shall be the last section in the number format. Include an "at" sign (@) in the section, precisely where the cell’s text value should be displayed. If the @ character is omitted from the text section, text typed in the cell will not be displayed. To always display specific text characters with the typed text, enclose the additional text in double quotation marks (" "). [*Example*: If “June” is typed into the cell, and the text format is "gross receipts for "@ , then the cell will display “gross receipts for June”. *end example*]  
+  
+ If the format does not include a text section, text entered in a cell is not affected by the format code.  
+  
+ *Add spaces*  
+  
+ To create a space that is the width of a character in a number format, include an underscore, followed by the character. [*Example*:  When an underscore is followed with a right parenthesis, such as _), positive numbers line up correctly with negative numbers that are enclosed in parentheses because positive numbers are displayed with a blank space after them exactly the width of the right parenthesis character.  *end example*]  
+  
+ *Repeat characters*  
+  
+ To repeat the next character in the format to fill the column width, include an asterisk (\*) in the number format. [*Example*:  Use 0*- to include enough dashes after a number to fill the cell, or use *0 before any format to include leading zeros.  *end example*]  
+  
+ `Decimal places, spaces, colors, and conditions`  
+  
+ *Include decimal places and significant digits*  
+  
+ To format fractions or numbers with decimal points, include the following digit placeholders in a section. If a number has more digits to the right of the decimal point than there are placeholders in the format, the number rounds to as many decimal places as there are placeholders. If there are more digits to the left of the decimal point than there are placeholders, the extra digits are displayed. If the format contains only number signs (#) to the left of the decimal point, numbers less than 1 begin with a decimal point.  
+  
+ \# (number sign) displays only significant digits and does not display insignificant zeros.  
+  
+ 0 (zero) displays insignificant zeros if a number has fewer digits than there are zeros in the format.  
+  
+ ? (question mark) adds spaces for insignificant zeros on either side of the decimal point so that decimal points align when they are formatted with a fixed-width font, such as Courier New. ? can also be used for fractions that have varying numbers of digits.  
+  
+ To display  
+  
+ As  
+  
+ Use this code  
+  
+ 1234.59  
+  
+ 1234.6  
+  
+ \####.#  
+  
+ 8.9  
+  
+ 8.900  
+  
+ \#.000  
+  
+ .631  
+  
+ 0.6  
+  
+ 0.#  
+  
+ 121234.568  
+  
+ 12.01234.57  
+  
+ \#.0#  
+  
+ 44.398102.652.8  
+  
+ 44.398102.65    2.8(with aligned decimals)  
+  
+ ???.???  
+  
+ 5.255.3  
+  
+ 5 1/45 3/10(with aligned fractions)  
+  
+ \# ???/???  
+  
+ *Display a thousands separator*  
+  
+ To display a comma as a thousands separator or to scale a number by a multiple of 1,000, include a comma in the number format.  
+  
+ To display  
+  
+ As  
+  
+ Use this code  
+  
+ 12000  
+  
+ 12,000  
+  
+ \#,###  
+  
+ 12000  
+  
+ 12  
+  
+ \#,  
+  
+ 12200000  
+  
+ 12.2  
+  
+ 0.0,,  
+  
+ *Specify colors*  
+  
+ To set the text color for a section of the format, use the name of one of the following eight colors in square brackets in the section. The color code shall be the first item in the section.  
+  
+ [Black]  
+  
+ [Blue]  
+  
+ [Cyan]  
+  
+ [Green]  
+  
+ [Magenta]  
+  
+ [Red]  
+  
+ [White]  
+  
+ [Yellow]  
+  
+ Instead of using the name of the color, the color index can be used, like this [Color3] for Red. Numeric indexes for color are restircted to the range from 1 to 56, which reference by index to the legacy color palette.  
+  
+ [*Note*: the default legacy color palette values are listed in §18.8.27.  In the format codes, [Color1] refers to the color associated with indexed="8", or black (by default), [Color2] refers to the color associated with indexed="9", or white (by default), and so on up to [Color56] referring to the color associated with indexed="63". If the color palette has been customized from default values, then the colors associated with these indexes will reflect those customizations.  
+  
+ *Specify conditions*  
+  
+ To set number formats that are applied only if a number meets a specified condition, enclose the condition in square brackets. The condition consists of a comparison operator and a value. Comparison operators include: = Equal to; > Greater than; \< Less than; >= Greater than or equal to, <= Less than or equal to, and <> Not equal to. [*Example*:  The following format displays numbers that are less than or equal to  a red font and numbers that are greater than  a blue font.  
+  
+```xml  
+[Red][<=100];[Blue][>100]  
+```  
+  
+ *end example*]  
+  
+ If the cell value does not meet any of the criteria, then pound signs ("#") are displayed across the width of the cell.  
+  
+ `Currency, percentages, and scientific notation`  
+  
+ *Include currency symbols*  
+  
+ To include currency symbols, place the currency symbol in the location it should when displayed.  
+  
+ *Display percentages*  
+  
+ To display numbers as a percentage of 100 — [*Example*:  To display .08 as 8% or 2.8 as 280%  *end example*]— include the percent sign (%) in the number format.  
+  
+ *Display scientific notations*  
+  
+ To display numbers in scientific format, use exponent codes in a section — [*Example*:  E-, E+, e-, or e+. *end example*]  
+  
+ If a format contains a zero (0) or number sign (#) to the right of an exponent code, the application displays the number in scientific format and inserts an "E" or "e". The number of zeros or number signs to the right of a code determines the number of digits in the exponent. "E-" or "e-" places a minus sign by negative exponents. "E+" or "e+" places a minus sign by negative exponents and a plus sign by positive exponents.  
+  
+ `Dates and times`  
+  
+ *Display days, months, and years*  
+  
+ To display  
+  
+ As  
+  
+ Use this code  
+  
+ Months  
+  
+ 1–12  
+  
+ m  
+  
+ Months  
+  
+ 01–12  
+  
+ mm  
+  
+ Months  
+  
+ Jan–Dec  
+  
+ mmm  
+  
+ Months  
+  
+ January–December  
+  
+ mmmm  
+  
+ Months  
+  
+ J–D  
+  
+ mmmmm  
+  
+ Days  
+  
+ 1–31  
+  
+ d  
+  
+ Days  
+  
+ 01–31  
+  
+ dd  
+  
+ Days  
+  
+ Sun–Sat  
+  
+ ddd  
+  
+ Days  
+  
+ Sunday–Saturday  
+  
+ dddd  
+  
+ Years  
+  
+ 00–99  
+  
+ yy  
+  
+ Years  
+  
+ date-base minimum value –9999  
+  
+ yyyy  
+  
+ See §18.17.4.1 for detail on possible date bases.  
+  
+ *Month versus minutes*  
+  
+ If  "m" or "mm" code is used immediately after the "h" or "hh" code (for hours) or immediately before the "ss" code (for seconds), the application shall display minutes instead of the month.  
+  
+ *Display hours, minutes, and seconds*  
+  
+ To display  
+  
+ As  
+  
+ Use this code  
+  
+ Hours  
+  
+ 0–23  
+  
+ h  
+  
+ Hours  
+  
+ 00–23  
+  
+ hh  
+  
+ Minutes  
+  
+ 0–59  
+  
+ m  
+  
+ Minutes  
+  
+ 00–59  
+  
+ mm  
+  
+ Seconds  
+  
+ 0–59  
+  
+ s  
+  
+ Seconds  
+  
+ 00–59  
+  
+ ss  
+  
+ Time  
+  
+ h AM/PM  
+  
+ Time  
+  
+ h:mm AM/PM  
+  
+ Time  
+  
+ 4:36:03 P  
+  
+ h:mm:ss A/P  
+  
+ Time  
+  
+ 4:36:03.75  
+  
+ h:mm:ss.00  
+  
+ Elapsed time (hours and minutes)  
+  
+ 1:02  
+  
+ [h\]:mm  
+  
+ Elapsed time (minutes and seconds)  
+  
+ 62:16  
+  
+ [mm\]:ss  
+  
+ Elapsed time (seconds and hundredths)  
+  
+ 3735.80  
+  
+ [ss].00  
+  
+ *Minutes versus month*  
+  
+ The "m" or "mm" code shall appear immediately after the "h" or "hh" code or immediately before the "ss" code; otherwise, these will display as the month instead of minutes.  
+  
+ *AM and PM*  
+  
+ If the format contains AM or PM, the hour is based on the 12-hour clock, where "AM" or "A" indicates times from  until  and "PM" or "P" indicates times from  until midnight. Otherwise, the hour is based on the 24-hour clock.  
+  
+ *Illegal date and time values*  
+  
+ Cells formatted with a date or time format and which contain date or time values which do not meet the requirements specified shall show the pound sign ("#") across the width of the cell.  
+  
+ `International Considerations`  
+  
+ Format Code  
+  
+ Description  
+  
+ r  
+  
+ ja-jp/zh-tw only.  
+  
+ When loading in ja-jp locale, code becomes "ee".  
+  
+ When loading in zh-tw locale, code becomes "e".  
+  
+ rr  
+  
+ ja-jp/zh-tw only.  
+  
+ When loading in ja-jp locale, code becomes "gggee".  
+  
+ When loading in zh-tw locale, code becomes "e".  
+  
+ g  
+  
+ When loading in ja-jp locale: Single Roman character emperor reign  
+  
+ When loading in zh-tw (Taiwan only) locale: treat same as "gg".  
+  
+ gg  
+  
+ When loading in ja-jp locale: Single Kanji character emperor reign  
+  
+ When loading in zh-tw locale: Last era short name (since 1911)  
+  
+ ggg  
+  
+ When loading in ja-jp locale: Tow Kanji character emperor reign  
+  
+ When loading in zh-tw locale: Last era long name (since 1911)  
+  
+ e  
+  
+ When loading in ja-jp locale: Era year  
+  
+ When lading in zh-tw (Taiwan only) locale: Era year since 1912. If preceded by “g”, “gg”, or “ggg” then year of 1912, and years before 1912 are special, otherwise years before 1912 are Gregorian.  
+  
+ OTHER locales: becomes "yyyy"  
+  
+ ee  
+  
+ When loading in ja-jp locale: Era year w/ leading zero  
+  
+ When loading in zh-tw (Taiwan only) locale: Era year since 1911  
+  
+ OTHER locales: becomes "yy"  
+  
+ b2  
+  
+ Hijri calander  
+  
+ b1  
+  
+ Gregorian calendar  
+  
+ [$USD-409]  
+  
+ Specifies currency and locale/date system/number system information.  
+  
+ Syntax is [$\<Currency String>-\<language info>]. Currency string is a string to use as a currency symbol. Language info is a 32-bit value entered in hexidecimal format.  
+  
+ Language info format (byte 3 is most significant byte):  
+  
+ Bytes 0,1: 16-bit Language ID (LID).  
+  
+ Byte 2: Calendar type. High bit indicates that input is parsed using specified calendar.  
+  
+ Byte 3: Number system type. High bit indicates that input is parsed using specified number system.  
+  
+ Special language info values:  
+  
+ 0xf800: System long date format  
+  
+ 0xf400: System time format  
+  
+|Parent Elements|  
+|---------------------|  
+|styleSheet (§18.8.39)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|numFmt (Number Format)|§18.8.30|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|count (Number Format Count)|Count of number format elements.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_NumFmts) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -44,9 +642,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the NumberingFormats class.
-            </summary>
+        <summary>Initializes a new instance of the NumberingFormats class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -73,9 +669,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NumberingFormats class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the NumberingFormats class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -96,9 +690,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the NumberingFormats class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the NumberingFormats class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -119,9 +711,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the NumberingFormats class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the NumberingFormats class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,11 +734,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,10 +761,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> Number Format Count.</para>
-          <para>Represents the following attribute in the schema: count </para>
-        </summary>
+        <summary>Number Format Count.Represents the following attribute in the schema: count</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -197,9 +782,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

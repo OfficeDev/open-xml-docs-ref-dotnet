@@ -1,4 +1,4 @@
-﻿<Type Name="FormControlProperties" FullName="DocumentFormat.OpenXml.Office2010.Excel.FormControlProperties">
+<Type Name="FormControlProperties" FullName="DocumentFormat.OpenXml.Office2010.Excel.FormControlProperties">
   <TypeSignature Language="C#" Value="public class FormControlProperties : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormControlProperties extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.FormControlProperties" />
@@ -28,13 +28,181 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Defines the FormControlProperties Class. The root element of ControlPropertiesPart.</para>
-      <para> When the object is serialized out as xml, its qualified name is x14:formControlPr.</para>
-    </summary>
+    <summary>Defines the FormControlProperties Class. The root element of ControlPropertiesPart. When the object is serialized out as xml, its qualified name is x14:formControlPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>ListItems &lt;x14:itemLst&gt;</description></item><item><description>ExtensionList &lt;x14:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.34   formControlPr*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ A *formControlPr* element is a *CT_FormControlPr* type element, as specified in section 2.6.65, that specifies properties of form control objects. This element is the root element of the control properties part, as specified in section 2.1.1.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="formControlPr" type="CT_FormControlPr"/>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.65   CT_FormControlPr*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* formControlPr  
+  
+ A complex type that stores a form control’s properties.  
+  
+ *Child Elements:*  
+  
+ *itemLst:* A *CT_ListItems* element, as specified in section 2.6.64, that specifies a list of items to populate a list box or drop-down form control.  
+  
+ *extLst:* A *CT_ExtensionList* element, as specified in [ISO/IEC-29500-4] section A.2, that specifies future extensibility for this element.  
+  
+ *Attributes:*  
+  
+ *objectType:* An ST_ObjectType attribute that specifies the form control object type.  
+  
+ *checked:* An ST_Checked attribute that specifies whether a check box is selected or a radio button is selected. This attribute only applies to check box and radio button form controls.  
+  
+ *colored:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether a drop-down object has a color applied to it. This attribute only applies to drop-down form controls.  
+  
+ *dropLines:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the number of lines in the drop-down before scroll bars are added. This attribute only applies to drop-down form controls. This value MUST be at least 0 and at most 30000.  
+  
+ *dropStyle:* An ST_DropStyle attribute that specifies the style of the drop-down. This attribute only applies to drop-down form controls.  
+  
+ *dx:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the width of the scroll bar in pixels. This attribute only applies to list boxes, scroll bars, spin boxes and drop-downs\<55>.  
+  
+ *firstButton:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the object is the first button in a set of radio buttons. This attribute only applies to radio button form controls.  
+  
+ *fmlaGroup:* An *ST_Formula* ([ISO/IEC-29500-1] section 18.18.35) attribute that specifies the cell an object in a group box is linked to. This attribute overrides the attribute *fmlaLink* for any radio buttons within a group box. This attribute only applies to group box form controls. The application can chose to remove and not save this element and use the attribute *fmlaLink* of the first radio button in the group. This attribute MUST be a cell reference (see [ISO/IEC-29500-1] section 18.17.2.3).  
+  
+ *fmlaLink:* An *ST_Formula* ([ISO/IEC-29500-1] section 18.18.35) attribute that specifies the cell the object is linked to. This attribute only applies to check boxes, radio buttons, scroll bars, spin boxes, drop-downs and list boxes. The value in the linked cell and the index of the selected item in the object are linked together. This link is ignored if the form control allows multiple selections. This attribute MUST be a cell reference (see [ISO/IEC-29500-1] section 18.17.2.3).  
+  
+ *fmlaRange:* An *ST_Formula* ([ISO/IEC-29500-1] section 18.18.35) attribute that specifies the range of source data cells. This is used to populate a list box or a drop-down form control\<56>. This attribute only applies to list box and drop-down form controls. This attribute MUST be a cell reference (see [ISO/IEC-29500-1] section 18.17.2.3).  
+  
+ *fmlaTxbx:* An *ST_Formula* ([ISO/IEC-29500-1] section 18.18.35) attribute that specifies the source data cell that the form control object’s data is linked to. Any cell range MAY be specified but only the first cell in the range is considered. This attribute applies only to label and edit box form controls. This attribute MUST be a cell reference (see [ISO/IEC-29500-1] section 18.17.2.3).  
+  
+ *horiz:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the scroll bar is horizontal. This attribute only applies to scroll bar form controls.  
+  
+ *inc:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the change in the current value of a scroll bar or a spin box form control as a result of on an increment click. If present, it MUST be at least 0 and at most 30000. This attribute applies only to scroll bar or spin box form controls.  
+  
+ *justLastX:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the last line in text is justified when in an East Asian alignment\<57>.  
+  
+ *lockText:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the object’s text is locked. This attribute applies only to button, radio button, check box and label form controls.  
+  
+ *max:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the maximum value generated by the scroll bar (when scrolled all the way down) or by the spin box. It MUST be at least 0 and at most 30000. This attribute only applies to scroll bars and spin boxes.  
+  
+ *min:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the minimum value generated by the scroll bar (when scrolled all the way up) or by the spin box. It MUST be at least 0 and at most 30000. This attribute only applies to scroll bars and spin box.  
+  
+ *multiSel:* A *string* ([XMLSCHEMA2] section 3.2.1) attribute that specifies the indices of selected items as a comma-delimited list. The list indices are one-based. This attribute is valid only if the attribute *selType* has the value "multi". This attribute applies only to list box form controls.  
+  
+ *noThreeD:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether 3-D effects are disabled. This attribute only applies to check box, radio button, group box, scroll bar, drop-down, list box, and spin box form controls.  
+  
+ *noThreeD2:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether 3-D effects are disabled. This element is used for drop-downs and list boxes\<58>.  
+  
+ *page:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the number of items to move the scroll bar or spin box on a page click. It MUST be at least 0 and at most 30000\<59>.  
+  
+ *sel:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the index of the selected item. The list indices are one-based. If set to a value of 0, no items are selected. This attribute applies only to list box and drop-down form controls.  
+  
+ *seltype:* An ST_SelType attribute that specifies the selection type for the list box. This attribute applies only to list box form controls.  
+  
+ *textHAlign:* An ST_TextHAlign attribute that specifies the horizontal text alignment for the object\<60>.  
+  
+ *textVAlign:* An ST_TextVAlign attribute that specifies the vertical text alignment for the object\<61>.  
+  
+ *val:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the number of top rows (2) currently hidden in the scroll bar. If omitted, the value is assumed to be 0. Those rows (2) are hidden but still accessible by clicking the scroll bar buttons. The number of top hidden rows (2) can change as the user interacts with the scroll bar. This attribute only applies to scroll bar, spin box, list box, and drop-down form controls.  
+  
+ *widthMin:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the smallest width allowed for the drop-down box window in screen pixels. This attribute only applies for drop-down form controls.  
+  
+ *editVal:* An ST_EditValidation attribute that specifies how the edit box content is validated if the application chooses to validate it. This attribute only applies to edit box form controls.  
+  
+ *multiLine:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the form control is multiline. This attribute only applies to edit box form controls. This attribute only works when the form control is run in a dialog box.  
+  
+ *verticalBar:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the control has a vertical scroll bar. This attribute only applies to edit box form controls. This attribute only works when the form control is run in a dialog box.  
+  
+ *passwordEdit:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the edit box control stores a password. In this case the control will display * for every character on it. This attribute only applies to edit box form controls. This attribute only works when the control is run in a dialog box.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_FormControlPr">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="itemLst" type="CT_ListItems" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="extLst" type="x:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="objectType" type="ST_ObjectType" use="optional"/>*  
+  
+ *\<xsd:attribute name="checked" type="ST_Checked" use="optional"/>*  
+  
+ *\<xsd:attribute name="colored" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="dropLines" type="xsd:unsignedInt" use="optional" default="8"/>*  
+  
+ *\<xsd:attribute name="dropStyle" type="ST_DropStyle" use="optional"/>*  
+  
+ *\<xsd:attribute name="dx" type="xsd:unsignedInt" use="optional" default="80"/>*  
+  
+ *\<xsd:attribute name="firstButton" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="fmlaGroup" type="x:ST_Formula" use="optional"/>*  
+  
+ *\<xsd:attribute name="fmlaLink" type="x:ST_Formula" use="optional"/>*  
+  
+ *\<xsd:attribute name="fmlaRange" type="x:ST_Formula" use="optional"/>*  
+  
+ *\<xsd:attribute name="fmlaTxbx" type="x:ST_Formula" use="optional"/>*  
+  
+ *\<xsd:attribute name="horiz" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="inc" type="xsd:unsignedInt" use="optional" default="1"/>*  
+  
+ *\<xsd:attribute name="justLastX" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="lockText" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="max" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\<xsd:attribute name="min" type="xsd:unsignedInt" use="optional" default="0"/>*  
+  
+ *\<xsd:attribute name="multiSel" type="xsd:string" use="optional"/>*  
+  
+ *\<xsd:attribute name="noThreeD" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="noThreeD2" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="page" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\<xsd:attribute name="sel" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\<xsd:attribute name="seltype" type="ST_SelType" use="optional" default="single"/>*  
+  
+ *\<xsd:attribute name="textHAlign" type="ST_TextHAlign" use="optional" default="left"/>*  
+  
+ *\<xsd:attribute name="textVAlign" type="ST_TextVAlign" use="optional" default="top"/>*  
+  
+ *\<xsd:attribute name="val" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\<xsd:attribute name="widthMin" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\<xsd:attribute name="editVal" type="ST_EditValidation" use="optional"/>*  
+  
+ *\<xsd:attribute name="multiLine" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="verticalBar" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="passwordEdit" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -50,9 +218,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the FormControlProperties class.
-            </summary>
+        <summary>Initializes a new instance of the FormControlProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -79,9 +245,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FormControlProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the FormControlProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -102,9 +266,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the FormControlProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the FormControlProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -125,9 +287,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the FormControlProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the FormControlProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -152,10 +312,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.CheckedValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> checked.</para>
-          <para>Represents the following attribute in the schema: checked </para>
-        </summary>
+        <summary>checked.Represents the following attribute in the schema: checked</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -179,11 +336,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -208,10 +363,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> colored.</para>
-          <para>Represents the following attribute in the schema: colored </para>
-        </summary>
+        <summary>colored.Represents the following attribute in the schema: colored</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -232,9 +384,7 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.ControlPropertiesPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the ControlPropertiesPart associated with this element.
-            </summary>
+        <summary>Gets the ControlPropertiesPart associated with this element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -260,10 +410,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dropLines.</para>
-          <para>Represents the following attribute in the schema: dropLines </para>
-        </summary>
+        <summary>dropLines.Represents the following attribute in the schema: dropLines</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -289,10 +436,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DropStyleValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dropStyle.</para>
-          <para>Represents the following attribute in the schema: dropStyle </para>
-        </summary>
+        <summary>dropStyle.Represents the following attribute in the schema: dropStyle</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -318,10 +462,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.EditValidationValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> editVal.</para>
-          <para>Represents the following attribute in the schema: editVal </para>
-        </summary>
+        <summary>editVal.Represents the following attribute in the schema: editVal</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -342,10 +483,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.ExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ExtensionList.</para>
-          <para> Represents the following element tag in the schema: x14:extLst </para>
-        </summary>
+        <summary>ExtensionList. Represents the following element tag in the schema: x14:extLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -374,10 +512,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> firstButton.</para>
-          <para>Represents the following attribute in the schema: firstButton </para>
-        </summary>
+        <summary>firstButton.Represents the following attribute in the schema: firstButton</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -403,10 +538,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> fmlaGroup.</para>
-          <para>Represents the following attribute in the schema: fmlaGroup </para>
-        </summary>
+        <summary>fmlaGroup.Represents the following attribute in the schema: fmlaGroup</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -432,10 +564,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> fmlaLink.</para>
-          <para>Represents the following attribute in the schema: fmlaLink </para>
-        </summary>
+        <summary>fmlaLink.Represents the following attribute in the schema: fmlaLink</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -461,10 +590,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> fmlaRange.</para>
-          <para>Represents the following attribute in the schema: fmlaRange </para>
-        </summary>
+        <summary>fmlaRange.Represents the following attribute in the schema: fmlaRange</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -490,10 +616,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> fmlaTxbx.</para>
-          <para>Represents the following attribute in the schema: fmlaTxbx </para>
-        </summary>
+        <summary>fmlaTxbx.Represents the following attribute in the schema: fmlaTxbx</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -519,10 +642,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> horiz.</para>
-          <para>Represents the following attribute in the schema: horiz </para>
-        </summary>
+        <summary>horiz.Represents the following attribute in the schema: horiz</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -548,10 +668,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> inc.</para>
-          <para>Represents the following attribute in the schema: inc </para>
-        </summary>
+        <summary>inc.Represents the following attribute in the schema: inc</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -577,10 +694,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> justLastX.</para>
-          <para>Represents the following attribute in the schema: justLastX </para>
-        </summary>
+        <summary>justLastX.Represents the following attribute in the schema: justLastX</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -601,10 +715,7 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.ListItems</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> ListItems.</para>
-          <para> Represents the following element tag in the schema: x14:itemLst </para>
-        </summary>
+        <summary>ListItems. Represents the following element tag in the schema: x14:itemLst</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -632,9 +743,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>
-            Loads the DOM from the ControlPropertiesPart.
-            </summary>
+        <summary>Loads the DOM from the ControlPropertiesPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -654,9 +763,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
+        <summary>Gets the local name of the element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -682,10 +789,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> lockText.</para>
-          <para>Represents the following attribute in the schema: lockText </para>
-        </summary>
+        <summary>lockText.Represents the following attribute in the schema: lockText</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -711,10 +815,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> max.</para>
-          <para>Represents the following attribute in the schema: max </para>
-        </summary>
+        <summary>max.Represents the following attribute in the schema: max</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -740,10 +841,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> min.</para>
-          <para>Represents the following attribute in the schema: min </para>
-        </summary>
+        <summary>min.Represents the following attribute in the schema: min</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -769,10 +867,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> widthMin.</para>
-          <para>Represents the following attribute in the schema: widthMin </para>
-        </summary>
+        <summary>widthMin.Represents the following attribute in the schema: widthMin</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -798,10 +893,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> multiLine.</para>
-          <para>Represents the following attribute in the schema: multiLine </para>
-        </summary>
+        <summary>multiLine.Represents the following attribute in the schema: multiLine</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -827,10 +919,7 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> multiSel.</para>
-          <para>Represents the following attribute in the schema: multiSel </para>
-        </summary>
+        <summary>multiSel.Represents the following attribute in the schema: multiSel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -856,10 +945,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> noThreeD.</para>
-          <para>Represents the following attribute in the schema: noThreeD </para>
-        </summary>
+        <summary>noThreeD.Represents the following attribute in the schema: noThreeD</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -885,10 +971,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> noThreeD2.</para>
-          <para>Represents the following attribute in the schema: noThreeD2 </para>
-        </summary>
+        <summary>noThreeD2.Represents the following attribute in the schema: noThreeD2</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -914,10 +997,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.ObjectTypeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> objectType.</para>
-          <para>Represents the following attribute in the schema: objectType </para>
-        </summary>
+        <summary>objectType.Represents the following attribute in the schema: objectType</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -943,10 +1023,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> page.</para>
-          <para>Represents the following attribute in the schema: page </para>
-        </summary>
+        <summary>page.Represents the following attribute in the schema: page</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -972,10 +1049,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> passwordEdit.</para>
-          <para>Represents the following attribute in the schema: passwordEdit </para>
-        </summary>
+        <summary>passwordEdit.Represents the following attribute in the schema: passwordEdit</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1000,9 +1074,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>
-            Saves the DOM into the ControlPropertiesPart.
-            </summary>
+        <summary>Saves the DOM into the ControlPropertiesPart.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1027,10 +1099,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> dx.</para>
-          <para>Represents the following attribute in the schema: dx </para>
-        </summary>
+        <summary>dx.Represents the following attribute in the schema: dx</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1056,10 +1125,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> sel.</para>
-          <para>Represents the following attribute in the schema: sel </para>
-        </summary>
+        <summary>sel.Represents the following attribute in the schema: sel</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1085,10 +1151,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.SelectionTypeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> seltype.</para>
-          <para>Represents the following attribute in the schema: seltype </para>
-        </summary>
+        <summary>seltype.Represents the following attribute in the schema: seltype</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1114,10 +1177,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.TextHorizontalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> textHAlign.</para>
-          <para>Represents the following attribute in the schema: textHAlign </para>
-        </summary>
+        <summary>textHAlign.Represents the following attribute in the schema: textHAlign</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1143,10 +1203,7 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.TextVerticalAlignmentValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> textVAlign.</para>
-          <para>Represents the following attribute in the schema: textVAlign </para>
-        </summary>
+        <summary>textVAlign.Represents the following attribute in the schema: textVAlign</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1172,10 +1229,7 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1201,10 +1255,7 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> verticalBar.</para>
-          <para>Represents the following attribute in the schema: verticalBar </para>
-        </summary>
+        <summary>verticalBar.Represents the following attribute in the schema: verticalBar</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

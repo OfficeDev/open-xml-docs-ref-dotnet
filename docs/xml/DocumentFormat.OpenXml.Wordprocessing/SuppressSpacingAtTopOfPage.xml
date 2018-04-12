@@ -1,4 +1,4 @@
-﻿<Type Name="SuppressSpacingAtTopOfPage" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage">
+<Type Name="SuppressSpacingAtTopOfPage" FullName="DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage">
   <TypeSignature Language="C#" Value="public class SuppressSpacingAtTopOfPage : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SuppressSpacingAtTopOfPage extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SuppressSpacingAtTopOfPage" />
@@ -19,11 +19,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Ignore Minimum Line Height for First Line on Page.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:suppressSpacingAtTopOfPage.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Ignore Minimum Line Height for First Line on Page. When the object is serialized out as xml, its qualified name is w:suppressSpacingAtTopOfPage.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `suppressSpacingAtTopOfPage (Ignore Minimum Line Height for First Line on Page)`  
+  
+ This element specifies whether the minimum line height specified using the spacing element (Part 1, §17.3.1.33) with a lineRule attribute value of *atLeast* shall be ignored for the first line on each page.  
+  
+ Typically, if a minimum line height has been specified using the spacing element, then all lines within that paragraph have the necessary line spacing added to them in order to meet this constraint. This element, when present with a val attribute value of *true* (or equivalent), specifies that no additional spacing shall be added above the first line on each page as a result of this line spacing requirements - the top of the text characters on the first line shall be at the top edge of the page.  
+  
+ [*Example*: Consider a WordprocessingML document whose first paragraph has a line spacing setting requiring at least 25 points of space per line:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:line="500" w:lineRule="atLeast" />  
+  </w:pPr>  
+  …</w:p>  
+```  
+  
+ The default presentation would have the necessary amount of space added between each line such that all lines in the paragraph are centered within 25 points of spacing (highlighting has been added to the image below in order to illustrate the additional spacing above the first line):  
+  
+ 31b26951-6886-4373-82a2-5a18b935e074  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:suppressSpacingAtTopOfPage />  
+</w:compat>  
+```  
+  
+ Then no additional line spacing must be added above the first line on the page (although all other lines are unaffected), resulting in the following output:  
+  
+ 9c49e171-a0a9-473c-9b8f-d8901d6911c4  
+  
+ However, if this line spacing constraint was exactly 25 points, then this setting would have no effect:  
+  
+ 31b26951-6886-4373-82a2-5a18b935e074  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the SuppressSpacingAtTopOfPage class.
-            </summary>
+        <summary>Initializes a new instance of the SuppressSpacingAtTopOfPage class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +112,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +134,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -1,4 +1,4 @@
-﻿<Type Name="BuildList" FullName="DocumentFormat.OpenXml.Presentation.BuildList">
+<Type Name="BuildList" FullName="DocumentFormat.OpenXml.Presentation.BuildList">
   <TypeSignature Language="C#" Value="public class BuildList : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildList extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.BuildList" />
@@ -31,13 +31,52 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Build List.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:bldLst.</para>
-    </summary>
+    <summary>Build List. When the object is serialized out as xml, its qualified name is p:bldLst.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>BuildParagraph &lt;p:bldP&gt;</description></item><item><description>BuildDiagram &lt;p:bldDgm&gt;</description></item><item><description>BuildOleChart &lt;p:bldOleChart&gt;</description></item><item><description>BuildGraphics &lt;p:bldGraphic&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `bldLst (Build List)`  
+  
+ This element specifies the list of graphic elements to build. This refers to how the different sub-shapes or sub-components of a object are displayed. The different objects that can have build properties are text, diagrams, and charts.  
+  
+ [*Example*:  Consider animating a pie chart but based on category as shown below:  
+  
+ 843ae218-5d49-41ab-b217-20452b6f21d6  
+  
+ The \<bldList> element should be used as follows:  
+  
+```xml  
+<p:bldLst>  
+  <p:bldGraphic spid="1" grpId="0">  
+    <p:bldSub>  
+      <a:bldChart bld="category"/>  
+    </p:bldSub>  
+  </p:bldGraphic>  
+</p:bldLst>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|timing (§19.3.1.48)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|bldDgm (Build Diagram)|§19.5.12|  
+|bldGraphic (Build Graphics)|§19.5.13|  
+|bldOleChart (Build Embedded Chart)|§19.5.15|  
+|bldP (Build Paragraph)|§19.5.16|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_BuildList) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -53,9 +92,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the BuildList class.
-            </summary>
+        <summary>Initializes a new instance of the BuildList class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -82,9 +119,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BuildList class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the BuildList class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -105,9 +140,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the BuildList class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the BuildList class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -128,9 +161,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the BuildList class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the BuildList class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,11 +184,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -177,10 +206,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

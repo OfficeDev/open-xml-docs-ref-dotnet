@@ -1,4 +1,4 @@
-﻿<Type Name="ParagraphProperties" FullName="DocumentFormat.OpenXml.Drawing.ParagraphProperties">
+<Type Name="ParagraphProperties" FullName="DocumentFormat.OpenXml.Drawing.ParagraphProperties">
   <TypeSignature Language="C#" Value="public class ParagraphProperties : DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParagraphProperties extends DocumentFormat.OpenXml.Drawing.TextParagraphPropertiesType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.ParagraphProperties" />
@@ -19,13 +19,63 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Text Paragraph Properties.</para>
-      <para> When the object is serialized out as xml, its qualified name is a:pPr.</para>
-    </summary>
+    <summary>Text Paragraph Properties. When the object is serialized out as xml, its qualified name is a:pPr.</summary>
     <remarks>
-             The following table lists the possible child types:
-             <list type="bullet"><item><description>LineSpacing &lt;a:lnSpc&gt;</description></item><item><description>SpaceBefore &lt;a:spcBef&gt;</description></item><item><description>SpaceAfter &lt;a:spcAft&gt;</description></item><item><description>BulletColorText &lt;a:buClrTx&gt;</description></item><item><description>BulletColor &lt;a:buClr&gt;</description></item><item><description>BulletSizeText &lt;a:buSzTx&gt;</description></item><item><description>BulletSizePercentage &lt;a:buSzPct&gt;</description></item><item><description>BulletSizePoints &lt;a:buSzPts&gt;</description></item><item><description>BulletFontText &lt;a:buFontTx&gt;</description></item><item><description>BulletFont &lt;a:buFont&gt;</description></item><item><description>NoBullet &lt;a:buNone&gt;</description></item><item><description>AutoNumberedBullet &lt;a:buAutoNum&gt;</description></item><item><description>CharacterBullet &lt;a:buChar&gt;</description></item><item><description>PictureBullet &lt;a:buBlip&gt;</description></item><item><description>TabStopList &lt;a:tabLst&gt;</description></item><item><description>DefaultRunProperties &lt;a:defRPr&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `pPr (Text Paragraph Properties)`  
+  
+ This element contains all paragraph level text properties for the containing paragraph. These paragraph properties should override any and all conflicting properties that are associated with the paragraph in question.  
+  
+ [*Example*: Consider the DrawingML shown below.  
+  
+```xml  
+<a:p>  
+  <a:pPr marL="0" algn="ctr">  
+    <a:buNone/>  
+  </a:pPr>  
+  …  <a:t>  
+Some Text</a:t>  
+  …</a:p>  
+```  
+  
+ The paragraph described above is formatting with a left margin of 0 and has all of text runs contained within it centered about the horizontal median of the bounding box for the text body. *end example*]  
+  
+ [*Note*: To resolve conflicting paragraph properties the linear hierarchy of paragraph properties should be examined starting first with the pPr element. The rule here is that properties that are defined at a level closer to the actual text should take precedence. That is if there is a conflicting property between the pPr and lvl1pPr elements then the pPr property should take precedence because in the property hierarchy it is closer to the actual text being represented. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fld (§21.1.2.2.4); p (§21.1.2.2.6)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|buAutoNum (Auto-Numbered Bullet)|§21.1.2.4.1|  
+|buBlip (Picture Bullet)|§21.1.2.4.2|  
+|buChar (Character Bullet)|§21.1.2.4.3|  
+|buClr (Color Specified)|§21.1.2.4.4|  
+|buClrTx (Follow Text)|§21.1.2.4.5|  
+|buFont (Specified)|§21.1.2.4.6|  
+|buFontTx (Follow text)|§21.1.2.4.7|  
+|buNone (No Bullet)|§21.1.2.4.8|  
+|buSzPct (Bullet Size Percentage)|§21.1.2.4.9|  
+|buSzPts (Bullet Size Points)|§21.1.2.4.10|  
+|buSzTx (Bullet Size Follows Text)|§21.1.2.4.11|  
+|defRPr (Default Text Run Properties)|§21.1.2.3.2|  
+|extLst (Extension List)|§20.1.2.2.15|  
+|lnSpc (Line Spacing)|§21.1.2.2.5|  
+|spcAft (Space After)|§21.1.2.2.9|  
+|spcBef (Space Before)|§21.1.2.2.10|  
+|tabLst (Tab List)|§21.1.2.2.14|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TextParagraphProperties) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -41,9 +91,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ParagraphProperties class.
-            </summary>
+        <summary>Initializes a new instance of the ParagraphProperties class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -70,9 +118,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ParagraphProperties class with the specified child elements.
-            </summary>
+        <summary>Initializes a new instance of the ParagraphProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -93,9 +139,7 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>
-            Initializes a new instance of the ParagraphProperties class with the specified child elements.
-             </summary>
+        <summary>Initializes a new instance of the ParagraphProperties class with the specified child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -116,9 +160,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the ParagraphProperties class from outer XML.
-            </summary>
+        <summary>Initializes a new instance of the ParagraphProperties class from outer XML.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -141,11 +183,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,10 +205,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

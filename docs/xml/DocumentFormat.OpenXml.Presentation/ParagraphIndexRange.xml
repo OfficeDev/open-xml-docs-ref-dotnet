@@ -1,4 +1,4 @@
-﻿<Type Name="ParagraphIndexRange" FullName="DocumentFormat.OpenXml.Presentation.ParagraphIndexRange">
+<Type Name="ParagraphIndexRange" FullName="DocumentFormat.OpenXml.Presentation.ParagraphIndexRange">
   <TypeSignature Language="C#" Value="public class ParagraphIndexRange : DocumentFormat.OpenXml.Presentation.IndexRangeType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParagraphIndexRange extends DocumentFormat.OpenXml.Presentation.IndexRangeType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.ParagraphIndexRange" />
@@ -19,11 +19,51 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Paragraph Text Range.</para>
-      <para> When the object is serialized out as xml, its qualified name is p:pRg.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Paragraph Text Range. When the object is serialized out as xml, its qualified name is p:pRg.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **pRg (Paragraph Text Range)**  
+  
+ This element specifies a text range to animate based on starting and ending paragraph number.  
+  
+ [*Example*: Consider an animation entrance of the first 3 text paragraphs. The \<pRg> element should be used as follows:  
+  
+```xml  
+<p:animEffect transition="in" filter="checkerboard(across)">  
+  <p:cBhvr>  
+    <p:cTn id="12" dur="500"/>  
+    <p:tgtEl>  
+      <p:spTgt spid="3">  
+        <p:txEl>  
+          <p:pRg st="0" end="2"/>  
+        </p:txEl>  
+      </p:spTgt>  
+    </p:tgtEl>  
+  </p:cBhvr>  
+</p:animEffect>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|txEl (§19.5.91)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|end (End)|This attribute defines the end of the index range.<br /><br /> The possible values for this attribute are defined by the *ST_Index* simple type (§19.7.3).|  
+|st (Start)|This attribute defines the start of the index range.<br /><br /> The possible values for this attribute are defined by the *ST_Index* simple type (§19.7.3).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_IndexRange) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +79,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the ParagraphIndexRange class.
-            </summary>
+        <summary>Initializes a new instance of the ParagraphIndexRange class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +102,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +124,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

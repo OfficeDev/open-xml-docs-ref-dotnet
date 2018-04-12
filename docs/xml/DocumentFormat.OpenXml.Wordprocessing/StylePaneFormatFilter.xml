@@ -1,4 +1,4 @@
-﻿<Type Name="StylePaneFormatFilter" FullName="DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter">
+<Type Name="StylePaneFormatFilter" FullName="DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter">
   <TypeSignature Language="C#" Value="public class StylePaneFormatFilter : DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StylePaneFormatFilter extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter" />
@@ -19,11 +19,61 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Suggested Filtering for List of Document Styles.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:stylePaneFormatFilter.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Suggested Filtering for List of Document Styles. When the object is serialized out as xml, its qualified name is w:stylePaneFormatFilter.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **stylePaneFormatFilter (Suggested Filtering for List of Document Styles)**  
+  
+ This element specifies a set of suggested filters which should be applied to the list of document styles in this application if the styles are displayed in a user interface.  
+  
+ If this element is omitted, then all settings defined by this element are turned off.  
+  
+ [*Example*: Consider a document with the following value in its document settings:  
+  
+```xml  
+<w:stylePaneFormatFilter w:customStyles="true" w:top3HeadingStyles="true" />  
+```  
+  
+ The stylePaneFormatFilter element's settings specify two suggested filter options for the list of document styles:  
+  
+-   Only custom styles should be shown  
+  
+-   Heading styles with a styleId of *Heading1* to *Heading3* should always be displayed in the list  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|allStyles (Display All Styles)|Specifies that all styles present in the Styles part should be displayed in the list of document styles.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|alternateStyleNames (Use the Alternate Style Name)|Specifies that primary names for styles should not be shown if an alternate name using the name element (§17.7.4.9) exists.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|clearFormatting (Display Styles to Remove Formatting)|Specifies that a style should be present which removes all formatting and styles from text.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|customStyles (Display Only Custom Styles)|Specifies that only styles with the customStyle attribute should be displayed in the list of document styles.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|directFormattingOnNumbering (Display Direct Formatting on Numbering Data)|Specifies that all unique forms of direct formatting of numbering data should be displayed in the list of document styles as though they were each a unique style.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|directFormattingOnParagraphs (Display Paragraph Level Direct Formatting)|Specifies that all unique forms of paragraph-level direct formatting should be displayed in the list of document styles as though they were each a unique style.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|directFormattingOnRuns (Display Run Level Direct Formatting)|Specifies that all unique forms of run-level direct formatting should be displayed in the list of document styles as though they were each a unique style.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|directFormattingOnTables (Display Direct Formatting on Tables)|Specifies that all unique forms of direct formatting of tables should be displayed in the list of document styles as though they were each a unique style.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|headingStyles (Display Heading Styles)|Specifies that heading styles (styles with a styleId of *Heading1* to *Heading9*) should be displayed in the list of document styles when the previous style is used in the document and/or is present in the Styles part.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|latentStyles (Display Latent Styles)|Specifies that all latent styles should be displayed in the list of document styles.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|numberingStyles (Display Numbering Styles)|Specifies that numbering styles should be displayed in the list of document styles.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|stylesInUse (Display Styles in Use)|Specifies that only styles used in the document should be displayed in the list of document styles.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|tableStyles (Display Table Styles)|Specifies that table styles should be displayed in the list of document styles.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|top3HeadingStyles (Display Heading 1 through 3)|Specifies that heading styles with a styleId of *Heading1* to *Heading3* should always be displayed in the list of document styles.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+|visibleStyles (Only Show Visible Styles)|Specifies that styles should only be shown if the semiHidden element (§17.7.4.16) is false and the hidden element (§17.7.4.4) is false.<br /><br /> The possible values for this attribute are defined by the *ST_OnOff* simple type (§22.9.2.7).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_StylePaneFilter) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +89,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the StylePaneFormatFilter class.
-            </summary>
+        <summary>Initializes a new instance of the StylePaneFormatFilter class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -69,10 +117,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> allStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:allStyles </para>
-        </summary>
+        <summary>allStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:allStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -103,10 +148,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> alternateStyleNames, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:alternateStyleNames </para>
-        </summary>
+        <summary>alternateStyleNames, this property is only available in Office2010.Represents the following attribute in the schema: w:alternateStyleNames</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -137,10 +179,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> clearFormatting, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:clearFormatting </para>
-        </summary>
+        <summary>clearFormatting, this property is only available in Office2010.Represents the following attribute in the schema: w:clearFormatting</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -166,11 +205,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -198,10 +235,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> customStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:customStyles </para>
-        </summary>
+        <summary>customStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:customStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -232,10 +266,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> directFormattingOnNumbering, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:directFormattingOnNumbering </para>
-        </summary>
+        <summary>directFormattingOnNumbering, this property is only available in Office2010.Represents the following attribute in the schema: w:directFormattingOnNumbering</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -266,10 +297,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> directFormattingOnParagraphs, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:directFormattingOnParagraphs </para>
-        </summary>
+        <summary>directFormattingOnParagraphs, this property is only available in Office2010.Represents the following attribute in the schema: w:directFormattingOnParagraphs</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -300,10 +328,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> directFormattingOnRuns, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:directFormattingOnRuns </para>
-        </summary>
+        <summary>directFormattingOnRuns, this property is only available in Office2010.Represents the following attribute in the schema: w:directFormattingOnRuns</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -334,10 +359,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> directFormattingOnTables, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:directFormattingOnTables </para>
-        </summary>
+        <summary>directFormattingOnTables, this property is only available in Office2010.Represents the following attribute in the schema: w:directFormattingOnTables</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -368,10 +390,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> headingStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:headingStyles </para>
-        </summary>
+        <summary>headingStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:headingStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -402,10 +421,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> latentStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:latentStyles </para>
-        </summary>
+        <summary>latentStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:latentStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -428,10 +444,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -459,10 +473,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> numberingStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:numberingStyles </para>
-        </summary>
+        <summary>numberingStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:numberingStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -493,10 +504,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> stylesInUse, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:stylesInUse </para>
-        </summary>
+        <summary>stylesInUse, this property is only available in Office2010.Represents the following attribute in the schema: w:stylesInUse</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -527,10 +535,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> tableStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:tableStyles </para>
-        </summary>
+        <summary>tableStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:tableStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -561,10 +566,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> top3HeadingStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:top3HeadingStyles </para>
-        </summary>
+        <summary>top3HeadingStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:top3HeadingStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -592,10 +594,7 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> val.</para>
-          <para>Represents the following attribute in the schema: w:val </para>
-        </summary>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -626,10 +625,7 @@
         <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-          <para> visibleStyles, this property is only available in Office2010.</para>
-          <para>Represents the following attribute in the schema: w:visibleStyles </para>
-        </summary>
+        <summary>visibleStyles, this property is only available in Office2010.Represents the following attribute in the schema: w:visibleStyles</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

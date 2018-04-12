@@ -1,4 +1,4 @@
-﻿<Type Name="LinkStyles" FullName="DocumentFormat.OpenXml.Wordprocessing.LinkStyles">
+<Type Name="LinkStyles" FullName="DocumentFormat.OpenXml.Wordprocessing.LinkStyles">
   <TypeSignature Language="C#" Value="public class LinkStyles : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinkStyles extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LinkStyles" />
@@ -19,11 +19,40 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>
-      <para>Automatically Update Styles From Document Template.</para>
-      <para> When the object is serialized out as xml, its qualified name is w:linkStyles.</para>
-    </summary>
-    <remarks>To be added.</remarks>
+    <summary>Automatically Update Styles From Document Template. When the object is serialized out as xml, its qualified name is w:linkStyles.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **linkStyles (Automatically Update Styles From Document Template)**  
+  
+ This element specifies that styles in the given document shall be updated to match the styles in the attached template specified using the attachedTemplate element (§17.15.1.6) when the document is opened by a hosting application. This setting enables the styles contained in documents with attached templates to stay synchronized with the styles used in the attached template.  
+  
+ If this element is omitted, then styles shall not be updated based on the document template regardless of its availability. If the attached template cannot be located or is not a valid file, then this setting should be silently ignored.  
+  
+ [*Example*: Consider a WordprocessingML document which should always update its styles with those defined in the document's attached template. This requirement would be specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:settings>  
+  <w:linkStyles w:val="true" />  
+  <w:attachedTemplate r:id="rId10" />  
+  …</w:settings>  
+```  
+  
+ The linkStyles element has a val attribute value of *true*, specifying that applications should attempt to locate the document template referenced by the relationship specified in the attachedTemplate element and update the document's styles with the styles from that template. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -39,9 +68,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the LinkStyles class.
-            </summary>
+        <summary>Initializes a new instance of the LinkStyles class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -64,11 +91,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            Creates a duplicate of this node.  
-            </summary>
-        <returns>Returns the cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -88,10 +113,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

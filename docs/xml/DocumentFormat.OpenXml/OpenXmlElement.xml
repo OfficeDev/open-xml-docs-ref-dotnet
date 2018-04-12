@@ -1,4 +1,4 @@
-﻿<Type Name="OpenXmlElement" FullName="DocumentFormat.OpenXml.OpenXmlElement">
+<Type Name="OpenXmlElement" FullName="DocumentFormat.OpenXml.OpenXmlElement">
   <TypeSignature Language="C#" Value="public abstract class OpenXmlElement : ICloneable, System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit OpenXmlElement extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt;, class System.Collections.IEnumerable, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.OpenXmlElement" />
@@ -21,12 +21,119 @@
     </Interface>
   </Interfaces>
   <Docs>
+    <summary>Represents a base class that all elements in an Office Open XML document derive from.                          Represents a base class for all elements in an Office Open XML document.</summary>
     <summary>
             Represents a base class for all elements in an Office Open XML document.
             </summary>
     <remarks>
-            Annotations will not be cloned when calling .Clone() and .CloneNode(bool).
-            </remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Annotations will not be cloned when calling .Clone() and .CloneNode(bool)  
+  
+   
+  
+## Examples  
+ The following code example shows how to access elements at the same level in a word-processing document. The test file used in the example contains the text “OpenXml Element.”  
+  
+```csharp  
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Wordprocessing;  
+  
+namespace OpenXmlElement  
+{  
+    class Program  
+    {  
+        // This code example shows how to access elements at the same level    
+        // in a word-processing document.   
+        // The example is using a file that contains the text "OpenXml Element."  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\Users\Public\Documents\AccessElementsSameLevel.docx";  
+            using (WordprocessingDocument wordprocessingDocument =   
+                WordprocessingDocument.Open(fileName, false))  
+            {  
+                // Create a Body object.  
+                DocumentFormat.OpenXml.Wordprocessing.Body body =  
+                    wordprocessingDocument.MainDocumentPart.Document.Body;  
+  
+                // Create a Paragraph object.  
+                DocumentFormat.OpenXml.Wordprocessing.Paragraph firstParagraph =  
+                    body.Elements<Paragraph>().FirstOrDefault();  
+  
+                // Get the first child of an OpenXmlElement.  
+                 DocumentFormat.OpenXml.OpenXmlElement firstChild = firstParagraph.FirstChild;  
+                IEnumerable<Run> elementsAfter =  
+                    firstChild.ElementsAfter().Where(c => c is Run).Cast<Run>();  
+  
+                // Get the Run elements after the specified element.  
+                Console.WriteLine("Run elements after the first child are: ");  
+                foreach (DocumentFormat.OpenXml.Wordprocessing.Run run in elementsAfter)  
+                {  
+                    Console.WriteLine(run.InnerText);  
+                }  
+                Console.ReadKey();  
+            }  
+        }  
+    }  
+}  
+// Output:  
+// Run elements after the first child are:  
+// OpenXml  
+//  Element  
+  
+```  
+  
+```vb  
+Imports System  
+Imports System.Collections.Generic  
+Imports System.Linq  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Wordprocessing  
+  
+Module Module1  
+    ' This code example shows how to access elements at the same level    
+    ' in a word-processing document.   
+    ' The example is using a file that contains the text "OpenXml Element."  
+    Sub Main()  
+        Dim fileName As String = "C:\Users\Public\Documents\AccessElementsSameLevel.docx"  
+        Using wordprocessingDocument As WordprocessingDocument = _  
+    wordprocessingDocument.Open(fileName, False)  
+            ' Create a Body object.  
+            Dim body As DocumentFormat.OpenXml.Wordprocessing.Body = _  
+    wordprocessingDocument.MainDocumentPart.Document.Body  
+  
+            ' Create a Paragraph object.  
+            Dim firstParagraph As DocumentFormat.OpenXml.Wordprocessing.Paragraph = _  
+    body.Elements(Of Paragraph)().FirstOrDefault()  
+  
+            ' Get the first child of an OpenXmlElement.  
+            Dim firstChild As DocumentFormat.OpenXml.OpenXmlElement = _  
+                firstParagraph.FirstChild  
+            Dim elementsAfter As IEnumerable(Of Run) = _  
+                firstChild.ElementsAfter().Where(Function(c) TypeOf c Is Run).Cast(Of Run)()  
+  
+            ' Get the Run elements before/after the specified element.  
+            Console.WriteLine("Run elements after the first child are: ")  
+            For Each run As DocumentFormat.OpenXml.Wordprocessing.Run In elementsAfter  
+                Console.WriteLine(run.InnerText)  
+            Next  
+            Console.ReadKey()  
+        End Using  
+    End Sub  
+End Module  
+' Output:  
+' Run elements after the first child are:  
+' OpenXml  
+'  Element  
+  
+```  
+  
+ ]]></format>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -42,9 +149,7 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>
-            Initializes a new instance of the OpenXmlElement class.
-            </summary>
+        <summary>Initializes a new instance of the OpenXmlElement class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -65,9 +170,7 @@
       </Parameters>
       <Docs>
         <param name="outerXml">The outer XML of the element.</param>
-        <summary>
-            Initializes a new instance of the OpenXmlElement class using the supplied outer XML of the element.
-            </summary>
+        <summary>Initializes a new instance of the OpenXmlElement class using the supplied outer XML of the element.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -90,10 +193,8 @@
         <Parameter Name="annotation" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="annotation">The annotation to add to the current OpenXmlElement element.</param>
-        <summary>
-            Adds an object to the current OpenXmlElement element's list of annotations.
-            </summary>
+        <param name="annotation">The annotation to add to this OpenXmlElement.</param>
+        <summary>Adds an object to the current OpenXmlElement element's list of annotations.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -117,11 +218,9 @@
         <Parameter Name="uri" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="prefix">The prefix.</param>
-        <param name="uri">The uri.</param>
-        <summary>
-            Adds a namepace declaration to the current node.
-            </summary>
+        <param name="prefix">The Prefix</param>
+        <param name="uri">The Uri</param>
+        <summary>Adds a namepace declaration to the current node.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">Thrown if the prefix is already used in the current node.</exception>
       </Docs>
@@ -148,9 +247,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Enumerates all of the current element's ancestors.
-            </summary>
+        <summary>Enumerates all of the current element's ancestors.</summary>
         <returns>An IEnumerable object that contains a list of the current OpenXmlElement element's ancestors.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -185,9 +282,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">The element type.</typeparam>
-        <summary>
-            Enumerates only the current element's ancestors that have the specified type.
-            </summary>
+        <summary>Enumerates only the current element's ancestors that have the specified type.</summary>
         <returns>An IEnumerable object that contains a list of the current OpenXmlElement element's ancestors.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -211,9 +306,7 @@
       </Parameters>
       <Docs>
         <param name="type">The type of the annotation to retrieve.</param>
-        <summary>
-            Get the first annotation object of the specified type from the current OpenXmlElement element.
-            </summary>
+        <summary>Get the first annotation object of the specified type from the current OpenXmlElement element.</summary>
         <returns>The first annotation object with the specified type.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -243,9 +336,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">The type of the annotation to retrieve.</typeparam>
-        <summary>
-            Get the first annotation object of the specified type from the current OpenXmlElement element.
-            </summary>
+        <summary>Get the first annotation object of the specified type from the current OpenXmlElement element.</summary>
         <returns>The first annotation object of the specified type.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -273,10 +364,8 @@
         <Parameter Name="type" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="type">The type of the annotations to retrieve.</param>
-        <summary>
-            Gets a collection of annotations with the specified type for the current OpenXmlElement element.
-            </summary>
+        <param name="type">The Type of the annotations to retrieve.</param>
+        <summary>Gets a collection of annotations with the specified type for the current OpenXmlElement element.</summary>
         <returns>An IEnumerable(T) object that contains the annotations for the current OpenXmlElement element.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -311,9 +400,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">The type of the annotations to retrieve.</typeparam>
-        <summary>
-            Gets a collection of annotations with the specified type for the current OpenXmlElement element.
-            </summary>
+        <summary>Gets a collection of annotations with the specified type for the current OpenXmlElement element.</summary>
         <returns>An IEnumerable(T) object that contains the annotations for current OpenXmlElement element.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -343,10 +430,8 @@
         </Parameter>
       </Parameters>
       <Docs>
-        <param name="newChildren">The array of OpenXmlElement elements to be appended.</param>
-        <summary>
-            Appends each element from an array of elements to the end of the current element's list of child elements.
-            </summary>
+        <param name="newChildren">The OpenXmlElement's to be appended.</param>
+        <summary>Appends each element from an array of elements to the end of the current element's list of child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -369,10 +454,8 @@
         <Parameter Name="newChildren" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
       </Parameters>
       <Docs>
-        <param name="newChildren">The list that contains the OpenXmlElement elements to be appended.</param>
-        <summary>
-            Appends each element from a list of elements to the end of the current element's list of child elements.
-            </summary>
+        <param name="newChildren">The OpenXmlElement's to be appended.</param>
+        <summary>Appends each element from a list of elements to the end of the current element's list of child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -403,11 +486,9 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newChild">The OpenXmlElement element to append.</param>
-        <summary>
-            Appends the specified element to the end of the current element's list of child nodes.
-            </summary>
-        <returns>The OpenXmlElement element that was appended. </returns>
+        <param name="newChild">The OpenXmlElement to append.</param>
+        <summary>Appends the specified element to the end of the current element's list of child nodes.</summary>
+        <returns>The OpenXmlElement element that was appended.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -427,10 +508,8 @@
         <ReturnType>DocumentFormat.OpenXml.OpenXmlElementList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets all the child nodes of the current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets all the child nodes of the current element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.OpenXmlElementList" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -451,9 +530,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Clears all of the attributes, including both known attributes and extended attributes.
-            </summary>
+        <summary>Clears all of the attributes, including both known attributes and extended attributes.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -477,14 +554,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Creates a duplicate of the current node.
-            </summary>
+        <summary>Creates a duplicate of the current node.</summary>
         <returns>The cloned node.</returns>
         <remarks>
-            Cloning an OpenXmlNode copies all attributes and their values, including those generated by the XML processor to represent defaulted attributes. This method recursively clones the node and the subtree underneath it.
-            Cloning is equivalent to calling CloneNode(true).
-            </remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Cloning an OpenXmlNode copies all attributes and their values, including those generated by the XML processor to represent defaulted attributes. This method recursively clones the node and the subtree underneath it. Clone is equivalent to calling CloneNode(true).  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
@@ -506,11 +585,9 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
-        <summary>
-            When overridden in a derived class, creates a duplicate of the node.
-            </summary>
-        <returns>The cloned node. </returns>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>When overridden in a derived class, creates a duplicate of the node.</summary>
+        <returns>The cloned node.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -536,9 +613,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Enumerates all of the current element's descendants.
-            </summary>
+        <summary>Enumerates all of the current element's descendants.</summary>
         <returns />
         <remarks>To be added.</remarks>
       </Docs>
@@ -573,9 +648,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">The element type.</typeparam>
-        <summary>
-            Enumerate all of the current element's descendants of type T.
-            </summary>
+        <summary>Enumerate all of the current element's descendants of type T.</summary>
         <returns />
         <remarks>To be added.</remarks>
       </Docs>
@@ -597,9 +670,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Enumerates all of the current element's children.
-            </summary>
+        <summary>Enumerates all of the current element's children.</summary>
         <returns />
         <remarks>To be added.</remarks>
       </Docs>
@@ -629,9 +700,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">The element type.</typeparam>
-        <summary>
-            Enumerates only the current element's children that have the specified type.
-            </summary>
+        <summary>Enumerates only the current element's children that have the specified type.</summary>
         <returns />
         <remarks>To be added.</remarks>
       </Docs>
@@ -658,9 +727,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Enumerates all of the sibling elements that follow the current element and have the same parent as the current element.
-            </summary>
+        <summary>Enumerates all of the sibling elements that follow the current element and have the same parent as the current element.</summary>
         <returns>An IEnumerable object that contains a list of OpenXmlElement elements.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -687,9 +754,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Enumerates all of the sibling elements that precede the current element and have the same parent as the current element.
-            </summary>
+        <summary>Enumerates all of the sibling elements that precede the current element and have the same parent as the current element.</summary>
         <returns>An IEnumerable object that contains a list of OpenXmlElement elements.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -710,10 +775,8 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlAttribute&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets all extended attributes (attributes not defined in the schema) of the current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets all extended attributes (attributes not defined in the schema) of the current element.</summary>
+        <value>Returns <see cref="T:System.Collections.Generic.IList`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -733,11 +796,8 @@
         <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the first child of the OpenXmlElement element.
-            Returns null (Nothing in Visual Basic) if there is no such OpenXmlElement element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the first child of the OpenXmlElement element.             Returns null (Nothing in Visual Basic) if there is no such OpenXmlElement element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.OpenXmlElement" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -763,9 +823,7 @@
       <Docs>
         <param name="localName">The tag name.</param>
         <param name="namespaceUri">The namespace URI.</param>
-        <summary>
-            Gets an Open XML attribute with the specified tag name and namespace URI.
-            </summary>
+        <summary>Gets an Open XML attribute with the specified tag name and namespace URI.</summary>
         <returns>Returns a clone of the OpenXmlAttribute with local name equal to "localName" and namespace URI equal to "namespaceUri".</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">When the "localName" is empty.</exception>
@@ -789,11 +847,16 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Gets a list that contains a copy of all the attributes.
-            </summary>
+        <summary>Gets a list that contains a copy of all the attributes.</summary>
         <returns>A list of attributes. Return an empty list if there are no attributes.</returns>
-        <remarks>The returned list is a non-live copy.</remarks>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The returned list is a copy, non-live.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
@@ -816,10 +879,8 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Returns an enumerator that iterates through the child collection.
-            </summary>
-        <returns>An IEnumerator object that can be used to iterate through the child collection. </returns>
+        <summary>Returns an enumerator that iterates through the child collection.</summary>
+        <returns>An IEnumerator object that can be used to iterate through the child collection.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -848,9 +909,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">Type of element.</typeparam>
-        <summary>
-            Finds the first child element in type T.
-            </summary>
+        <summary>Finds the first child element in type T.</summary>
         <returns />
         <remarks>To be added.</remarks>
       </Docs>
@@ -871,10 +930,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets a value indicating whether the current element has any attributes.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets a boolean value that indicates whether the current element has any attributes.</summary>
+        <value>Returns <see cref="T:System.Boolean" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -894,10 +951,8 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets a value indicating whether the current element has any child elements.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets a value that indicates whether the current element has any child elements.</summary>
+        <value>Returns <see cref="T:System.Boolean" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -917,10 +972,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the concatenated values of the node and all of its children.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the concatenated values of the node and all of its children.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -940,10 +993,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the markup that represents only the child elements of the current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets or sets the markup that represents only the child elements of the current element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -975,11 +1026,9 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newChild">The OpenXmlElement element to insert.</param>
-        <param name="refChild">The reference OpenXmlElement element. newChild is placed after refChild. </param>
-        <summary>
-            Inserts the specified element immediately after the specified reference element.
-            </summary>
+        <param name="newChild">The OpenXmlElement to insert.</param>
+        <param name="refChild">The OpenXmlElement that is the reference node. The newChild is placed after the refChild.</param>
+        <summary>Inserts the specified element immediately after the specified reference element.</summary>
         <returns>The OpenXmlElement element that was inserted.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1011,10 +1060,8 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newElement">The new element to insert.</param>
-        <summary>
-            Inserts the specified element immediately after the current element.
-            </summary>
+        <param name="newElement">The new element to be inserted as a sibling.</param>
+        <summary>Inserts the specified element immediately after the current element.</summary>
         <returns>The inserted element.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when the "newElement" parameter is a null reference.</exception>
@@ -1049,13 +1096,18 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newChild">The OpenXmlElement element to insert.</param>
-        <param name="index">The zero-based index where the element is to be inserted.</param>
-        <summary>
-            Inserts the specified element at the specified index in the current element's list of child elements.
-            </summary>
+        <param name="newChild">The OpenXmlElement to be inserted.</param>
+        <param name="index">The zero-based index at which element should be inserted.</param>
+        <summary>Inserts the specified element at the specified index in the current element's list of child elements.</summary>
         <returns>The OpenXmlElement element that was inserted.</returns>
-        <remarks>Returns null if newChild equals null.</remarks>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ No change if the (newChild == null). Just return null.  
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InsertBefore&lt;T&gt;">
@@ -1086,11 +1138,9 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newChild">The OpenXmlElement element to insert.</param>
-        <param name="refChild">The reference OpenXmlElement element. newChild is placed before refChild.</param>
-        <summary>
-            Inserts the specified element immediately before the specified reference element.
-            </summary>
+        <param name="newChild">The OpenXmlElement to insert.</param>
+        <param name="refChild">The OpenXmlElement that is the reference node. The newChild is placed before this OpenXmlElement.</param>
+        <summary>Inserts the specified element immediately before the specified reference element.</summary>
         <returns>The OpenXmlElement element that was inserted.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1122,10 +1172,8 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newElement">The new element to insert.</param>
-        <summary>
-            Inserts the specified element immediately before the current element.
-            </summary>
+        <param name="newElement">The new element to be inserted as a sibling.</param>
+        <summary>Inserts the specified element immediately before the current element.</summary>
         <returns>The inserted element.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when the "newElement" parameter is a null reference.</exception>
@@ -1152,9 +1200,7 @@
       </Parameters>
       <Docs>
         <param name="element">The element to compare for order.</param>
-        <summary>
-            Determines if the current element appears after a specified element in document order.
-            </summary>
+        <summary>Determines if the current element appears after a specified element in document order.</summary>
         <returns>Returns true if the current element appears after the specified element in document order; otherwise returns false.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1179,9 +1225,7 @@
       </Parameters>
       <Docs>
         <param name="element">The element to compare for order.</param>
-        <summary>
-            Determines if the current element appears before a specified element in document order.
-            </summary>
+        <summary>Determines if the current element appears before a specified element in document order.</summary>
         <returns>Returns true if the current element appears before the specified element in document order; otherwise returns false.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1202,11 +1246,8 @@
         <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the last child of the OpenXmlElement element.
-            Returns null (Nothing in Visual Basic) if there is no such OpenXmlElement element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the last child of the OpenXmlElement element.             Returns null (Nothing in Visual Basic) if there is no such OpenXmlElement element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.OpenXmlElement" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1226,10 +1267,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the local name of the current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the local name of the current element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1252,10 +1291,8 @@
         <Parameter Name="prefix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="prefix">The prefix to resolve.</param>
-        <summary>
-            Resolves the namespace prefix in the context of the current node.
-            </summary>
+        <param name="prefix">The prefix to be resolved</param>
+        <summary>Resolves the namespace prefix in the context of the current node.</summary>
         <returns>The resolved namespace. Returns null (Nothing in Visual Basic) if the prefix cannot be resolved.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1280,9 +1317,7 @@
       </Parameters>
       <Docs>
         <param name="namespaceUri">The namespace uri.</param>
-        <summary>
-            Finds the corresponding prefix for a namespace uri in the current element scope.
-            </summary>
+        <summary>Finds the corresponding prefix for a namespace uri in the current element scope.</summary>
         <returns>The corresponding prefix. Returns null (Nothing in Visual Basic) if no prefix is found.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1303,9 +1338,7 @@
         <ReturnType>DocumentFormat.OpenXml.MarkupCompatibilityAttributes</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets or sets the markup compatibility attributes. Returns null if no markup compatibility attributes are defined for the current element.
-            </summary>
+        <summary>Sets the markup compatibility attributes. Returns null if no markup compatibility attributes are defined for the current element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1326,9 +1359,7 @@
         <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.String&gt;&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets all the namespace declarations defined in the current element. Returns an empty enumerator if there is no namespace declaration.
-            </summary>
+        <summary>Gets all the namespace declarations defined in the current element. Returns an empty enumerator if there is no namespace declaration.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1349,9 +1380,7 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the namespace URI of the current element.
-            </summary>
+        <summary>Gets the namespace URI of the current element.</summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1373,10 +1402,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Gets the OpenXmlElement element that immediately follows the current OpenXmlElement element.
-            Returns null (Nothing in Visual Basic) if there is no next OpenXmlElement element.
-            </summary>
+        <summary>Gets the OpenXmlElement element that immediately follows the current OpenXmlElement element.              Returns null (Nothing in Visual Basic) if there is no next OpenXmlElement element.</summary>
         <returns>The OpenXmlElement element that immediately follows the current OpenXmlElement element.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1406,10 +1432,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <summary>
-            Gets the OpenXmlElement element with the specified type that follows the current OpenXmlElement element.
-            Returns null (Nothing in Visual Basic) if there is no next OpenXmlElement.
-            </summary>
+        <summary>Gets the OpenXmlElement element with the specified type that follows the current OpenXmlElement element.              Returns null (Nothing in Visual Basic) if there is no next OpenXmlElement.</summary>
         <returns>The OpenXmlElement element with the specified type that follows the current OpenXmlElement element.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1430,10 +1453,8 @@
         <ReturnType>DocumentFormat.OpenXml.OpenXmlElementContext</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the OpenXmlEementContext of the current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the OpenXmlEementContext of the current element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.OpenXmlElementContext" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1453,10 +1474,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the markup that represents the current element and all of its child elements.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the markup that represents the current element and all of its child elements.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1476,10 +1495,8 @@
         <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the parent element of the current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the parent element of the current element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.OpenXmlElement" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1499,10 +1516,8 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the namespace prefix of current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the namespace prefix of current element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1533,10 +1548,8 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newChild">The OpenXmlElement element to add.</param>
-        <summary>
-            Inserts the specified element at the beginning of the current element's list of child elements.
-            </summary>
+        <param name="newChild">The OpenXmlElement to add.</param>
+        <summary>Inserts the specified element at the beginning of the current element's list of child elements.</summary>
         <returns>The OpenXmlElement element that was added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1558,10 +1571,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Gets the OpenXmlElement element that immediately precedes the current OpenXmlElement element.
-            Returns null (Nothing in Visual Basic ) if there is no preceding OpenXmlElement element.
-            </summary>
+        <summary>Gets the OpenXmlElement element that immediately precedes the current OpenXmlElement element.              Returns null (Nothing in Visual Basic ) if there is no preceding OpenXmlElement element.</summary>
         <returns>The OpenXmlElement element that immediately precedes the current OpenXmlElement element.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1591,10 +1601,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <summary>
-            Gets the OpenXmlElement element with the specified type that precedes the current OpenXmlElement.
-            Returns null (Nothing in Visual Basic) if there is no preceding OpenXmlElement element.
-            </summary>
+        <summary>Gets the OpenXmlElement element with the specified type that precedes the current OpenXmlElement.              Returns null (Nothing in Visual Basic) if there is no preceding OpenXmlElement element.</summary>
         <returns>The OpenXmlElement element with the specified type that precedes the current OpenXmlElement element.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1616,9 +1623,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Removes the current element from its parent.
-            </summary>
+        <summary>Removes the current element from its parent.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">Thrown when the parent is a null reference.</exception>
       </Docs>
@@ -1640,9 +1645,7 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>
-            Removes all of the current element's child elements.
-            </summary>
+        <summary>Removes all of the current element's child elements.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1671,9 +1674,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <summary>
-            Remove all of the current element's child elements that are of type T.
-            </summary>
+        <summary>Remove all of the current element's child elements that are of type T.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1695,10 +1696,8 @@
         <Parameter Name="type" Type="System.Type" />
       </Parameters>
       <Docs>
-        <param name="type">The type of the annotations to remove.</param>
-        <summary>
-            Removes the annotations of the specified type from the current OpenXmlElement element.
-            </summary>
+        <param name="type">The Type of the annotations to remove.</param>
+        <summary>Removes the annotations of the specified type from the current OpenXmlElement element.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1727,9 +1726,7 @@
       <Parameters />
       <Docs>
         <typeparam name="T">The type of the annotations to remove.</typeparam>
-        <summary>
-            Removes the annotations with the specified type from the current OpenXmlElement element.
-            </summary>
+        <summary>Removes the annotations with the specified type from the current OpenXmlElement element.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1755,9 +1752,7 @@
       <Docs>
         <param name="localName">The local name of the attribute.</param>
         <param name="namespaceUri">The namesapce URI of the attribute.</param>
-        <summary>
-            Removes the attribute from the current element.
-            </summary>
+        <summary>Removes the attribute from the current element.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the localName is empty.</exception>
       </Docs>
@@ -1789,11 +1784,9 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="oldChild">The child element to remove. </param>
-        <summary>
-            Removes the specified child element from the current element's list of child elements.
-            </summary>
-        <returns>The element that was removed. </returns>
+        <param name="oldChild">The element being removed.</param>
+        <summary>Removes the specified child element from the current element's list of child elements.</summary>
+        <returns>The element that was removed.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1816,10 +1809,9 @@
         <Parameter Name="prefix" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="prefix"></param>
-        <summary>
-            Removes the namespace declaration for the specified prefix. Removes nothing if there is no prefix.
-            </summary>
+        <param name="prefix">
+        </param>
+        <summary>Removes the namespace declaration for the specified prefix. Removes nothing if there is no prefix.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1851,11 +1843,9 @@
       </Parameters>
       <Docs>
         <typeparam name="T">To be added.</typeparam>
-        <param name="newChild">The new child element to put in the list.</param>
-        <param name="oldChild">The child element to replace in the list.</param>
-        <summary>
-            Replaces a child element with another child element in the current element's list of child elements.
-            </summary>
+        <param name="newChild">The new OpenXmlElement to put in the child list.</param>
+        <param name="oldChild">The OpenXmlElement being replaced in the list.</param>
+        <summary>Replaces a child element with another child element in the current element's list of child elements.</summary>
         <returns>The OpenXmlElement element that was replaced.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1879,11 +1869,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlAttribute">The attribute to be set on the element.</param>
-        <summary>
-            Sets an attribute to the specified element.
-            If the attribute is a known attribute, the value of the attribute is set.
-            If the attribute is an extended attribute, the 'openxmlAttribute' is added to the extended attributes list.
-            </summary>
+        <summary>Sets an attribute to the specified element.             If the attribute is a known attribute, the value of the attribute is set.             If the attribute is an extended attribute, the 'openxmlAttribute' is added to the extended attributes list.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">Thrown when the LocalName of the "openxmlAttribute" parameter is null or empty.</exception>
         <exception cref="T:System.InvalidOperationException">Thrown when an attempt to set a namespace declaration is made.</exception>
@@ -1909,11 +1895,7 @@
       </Parameters>
       <Docs>
         <param name="openXmlAttributes">The attributes to be set on the element.</param>
-        <summary>
-            Sets a number of attributes to the element.
-            If an attribute is a known attribute, the value of the attribute is set.
-            If an attribute is an extended attribute, the 'openxmlAttribute' is added to the extended attributes list.
-            </summary>
+        <summary>Sets a number of attributes to the element.             If an attribute is a known attribute, the value of the attribute is set.             If an attribute is an extended attribute, the 'openxmlAttribute' is added to the extended attributes list.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1937,7 +1919,7 @@
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
-        <returns>To be added.</returns>
+        <returns>Returns <see cref="T:System.Collections.IEnumerator" />.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1959,10 +1941,8 @@
         <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
       </Parameters>
       <Docs>
-        <param name="xmlWriter">The XmlWriter to which to save the current node. </param>
-        <summary>
-            Saves the current node to the specified XmlWriter.
-            </summary>
+        <param name="xmlWriter">The XmlWriter to which you want to save.</param>
+        <summary>Saves the current node to the specified XmlWriter.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -1982,10 +1962,8 @@
         <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>
-            Gets the qualified name of the current element.
-            </summary>
-        <value>To be added.</value>
+        <summary>Gets the qualified name of the current element.</summary>
+        <value>Returns <see cref="T:System.Xml.XmlQualifiedName" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
