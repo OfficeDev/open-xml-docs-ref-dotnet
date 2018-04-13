@@ -1,0 +1,383 @@
+﻿<Type Name="SheetFormatProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties">
+  <TypeSignature Language="C#" Value="public class SheetFormatProperties : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SheetFormatProperties extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties" />
+  <TypeSignature Language="VB.NET" Value="Public Class SheetFormatProperties&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type SheetFormatProperties = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Dialog Sheet Format Properties. When the object is serialized out as xml, its qualified name is x:sheetFormatPr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **sheetFormatPr (Sheet Format Properties)**  
+  
+ Sheet formatting properties.  
+  
+|Parent Elements|  
+|---------------------|  
+|dialogsheet (§18.3.1.34); worksheet (§18.3.1.99)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|baseColWidth (Base Column Width)|Specifies the number of characters of the maximum digit width of the normal style's font. This value does not include margin padding or extra padding for gridlines. It is only the number of characters.<br /><br /> See defaultColWidth description in this section for details on calculating this value.<br /><br /> See the col element description, particularly the width attribute description, for more information on what is meant by "maximum digit width".<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|customHeight (Custom Height)|'True' if defaultRowHeight value has been manually set, or is different from the default value.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultColWidth (Default Column Width)|Default column width measured as the number of characters of the maximum digit width of the normal style's font.<br /><br /> If the user has not set this manually, then it can be calculated:<br /><br /> defaultColWidth = baseColumnWidth + {margin padding (2 pixels on each side, totalling 4 pixels)} + {gridline (1pixel)}<br /><br /> If the user has set this manually, then there is no calculation, and simply a value is specified.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|defaultRowHeight (Default Row Height)|Default row height measured in point size. Optimization so we don't have to write the height on all rows. This can be written out if most rows have custom height, to achieve the optimization.<br /><br /> When the row height of all rows in a sheet is the default value, then that value is written here, and customHeight is not set. If a few rows have a different height, that information is written directly on each row. However, if most or all of the rows in the sheet have the same height, but that height isn't the default height, then that height value should be written here (as an optimization), and the customHeight flag should also be set. In this case, all rows having this height do not need to express the height, only rows whose height differs from this value need to be explicitly expressed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|outlineLevelCol (Column Outline Level)|Highest number of outline levels for columns in this sheet. These values shall be in synch with the actual sheet outline levels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|outlineLevelRow (Maximum Outline Row)|Highest number of outline level for rows in this sheet. These values shall be in synch with the actual sheet outline levels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|thickBottom (Thick Bottom Border)|'True' if rows have a thick bottom border by default.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|thickTop (Thick Top Border)|'True' if rows have a thick top border by default.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|zeroHeight (Hidden By Default)|'True' if rows are hidden by default. This setting is an optimization used when most rows of the sheet are hidden. In this case, instead of writing out every row and specifying hidden, it is much shorter to only write out the rows that are not hidden, and specify here that rows are hidden by default, and only not hidden if specified.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SheetFormatPr) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SheetFormatProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the SheetFormatProperties class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseColumnWidth">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value BaseColumnWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value BaseColumnWidth" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.BaseColumnWidth" />
+      <MemberSignature Language="VB.NET" Value="Public Property BaseColumnWidth As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.BaseColumnWidth : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.BaseColumnWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "baseColWidth")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Base Column Width.Represents the following attribute in the schema: baseColWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="sheetFormatProperties.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomHeight">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue CustomHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue CustomHeight" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.CustomHeight" />
+      <MemberSignature Language="VB.NET" Value="Public Property CustomHeight As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.CustomHeight : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.CustomHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "customHeight")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Custom Height.Represents the following attribute in the schema: customHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultColumnWidth">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue DefaultColumnWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue DefaultColumnWidth" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.DefaultColumnWidth" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultColumnWidth As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.DefaultColumnWidth : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.DefaultColumnWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "defaultColWidth")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Default Column Width.Represents the following attribute in the schema: defaultColWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRowHeight">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue DefaultRowHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue DefaultRowHeight" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.DefaultRowHeight" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultRowHeight As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.DefaultRowHeight : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.DefaultRowHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "defaultRowHeight")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Default Row Height.Represents the following attribute in the schema: defaultRowHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DyDescent">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue DyDescent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue DyDescent" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.DyDescent" />
+      <MemberSignature Language="VB.NET" Value="Public Property DyDescent As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.DyDescent : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.DyDescent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(55, "dyDescent")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>dyDescent.Represents the following attribute in the schema: x14ac:dyDescent</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:x14ac=http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutlineLevelColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.ByteValue OutlineLevelColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.ByteValue OutlineLevelColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.OutlineLevelColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property OutlineLevelColumn As ByteValue" />
+      <MemberSignature Language="F#" Value="member this.OutlineLevelColumn : DocumentFormat.OpenXml.ByteValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.OutlineLevelColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "outlineLevelCol")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Column Outline Level.Represents the following attribute in the schema: outlineLevelCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutlineLevelRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.ByteValue OutlineLevelRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.ByteValue OutlineLevelRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.OutlineLevelRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property OutlineLevelRow As ByteValue" />
+      <MemberSignature Language="F#" Value="member this.OutlineLevelRow : DocumentFormat.OpenXml.ByteValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.OutlineLevelRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "outlineLevelRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Maximum Outline Row.Represents the following attribute in the schema: outlineLevelRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThickBottom">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ThickBottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ThickBottom" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.ThickBottom" />
+      <MemberSignature Language="VB.NET" Value="Public Property ThickBottom As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ThickBottom : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.ThickBottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "thickBottom")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Thick Bottom Border.Represents the following attribute in the schema: thickBottom</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThickTop">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ThickTop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ThickTop" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.ThickTop" />
+      <MemberSignature Language="VB.NET" Value="Public Property ThickTop As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ThickTop : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.ThickTop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "thickTop")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Thick Top Border.Represents the following attribute in the schema: thickTop</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZeroHeight">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ZeroHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ZeroHeight" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.ZeroHeight" />
+      <MemberSignature Language="VB.NET" Value="Public Property ZeroHeight As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ZeroHeight : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties.ZeroHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "zeroHeight")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hidden By Default.Represents the following attribute in the schema: zeroHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

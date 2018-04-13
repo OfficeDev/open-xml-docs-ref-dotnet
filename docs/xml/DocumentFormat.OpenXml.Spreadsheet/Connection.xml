@@ -1,0 +1,892 @@
+﻿<Type Name="Connection" FullName="DocumentFormat.OpenXml.Spreadsheet.Connection">
+  <TypeSignature Language="C#" Value="public class Connection : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Connection extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Connection" />
+  <TypeSignature Language="VB.NET" Value="Public Class Connection&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type Connection = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.OlapProperties))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.TextProperties))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.Parameters))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.ConnectionExtensionList))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Connection. When the object is serialized out as xml, its qualified name is x:connection.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **connection (Connection)**  
+  
+ This element contains both the definition of how to get at an external data source as well as information describing how the connection is used within the workbook.  Specific constructs in a worksheet, such as OLAP formulas, QueryTables, or PivotTables make use of information in the connection to retrieve or refresh data based on default events or the user's explicit request.  
+  
+|Parent Elements|  
+|---------------------|  
+|connections (§18.13.2)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|dbPr (Database Properties)|§18.13.3|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|olapPr (OLAP Properties)|§18.13.5|  
+|parameters (Query Parameters)|§18.13.7|  
+|textPr (Text Import Settings)|§18.13.12|  
+|webPr (Web Query Properties)|§18.13.13|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|background (Background Refresh)|Indicates whether the connection can be refreshed in the background (asynchronously).  *true* if preferred usage of the connection is to refresh asynchronously in the background; *false* if preferred usage of the connection is to refresh synchronously in the foreground.<br /><br /> This flag should be intentionally ignored in specific cases.<br /><br /> [*Example*: An example of when the flag would be ignored is in the case of a connection to OLAP data on Microsoft SQL Server Analysis Services, where the connection is used by both a PivotTable and also by CUBE functions within the workbook.  That connection will always be refreshed synchronously by the PivotTable and will always be refreshed asynchronously by the CUBE functions. *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|credentials (Reconnection Method)|Specifies the authentication method to be used when establishing (or re-establishing) the connection.<br /><br /> The possible values for this attribute are defined by the *ST_CredMethod* simple type (§18.18.16).|  
+|deleted (Deleted Connection)|Indicates whether the associated workbook connection has been deleted.  *true* if the connection has been deleted; otherwise, *false*.<br /><br /> Deleted connections contain only the attributes name and deleted=*true*, all other information is removed from the SpreadsheetML file.<br /><br /> If a new connection is created with the same name as a deleted connection, then the deleted connection is overwritten by the new connection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|description (Connection Description)|Specifies the user description for this connection.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|id (Connection Id)|Specifies The unique identifier of this connection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|interval (Automatic Refresh Interval)|Specifies the number of minutes between automatic refreshes of the connection.  When this attribute is not present, the connection is not automatically refreshed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|keepAlive (Keep Connection Open)|*true* when the spreadsheet application should make efforts to keep the connection open.  When *false*, the application should close the connection after retrieving the information.  This corresponds to the MaintainConnection property of a PivotCache object.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|minRefreshableVersion (Minimum Version Required for Refresh)|For compatibility with legacy spreadsheet applications.  This represents the minimum version # that is required to be able to correctly refresh the data connection.  This attribute applies to connections that are used by a QueryTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|name (Connection Name)|Specifies the name of the connection.  Each connection shall have a unique name.<br /><br /> When a connection has been marked as deleted and then a new connection is added with the same name, the deleted connection is replaced with the new connection.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|new (New Connection)|*true* if the connection has not been refreshed for the first time; otherwise, *false*.  This state can happen when the user saves the file before a query has finished returning.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|odcFile (Connection File)|Specifies the full path to external connection file from which this connection was created.  If a connection fails during an attempt to refresh data, and reconnectionMethod=*1*, then the spreadsheet application will try again using information from the external connection file instead of the connection object embedded within the workbook.<br /><br /> This is a benefit for data source and spreadsheetML document manageability.  If the definition in the external connection file is changed (e.g., because of a database server name change), then the workbooks that made use of that connection will fail to connect with their internal connection information, and reload the new connection information from this file.<br /><br /> This attribute is cleared by the spreadsheet application when the user manually edits the connection definition within the workbook. Can be expressed in  or system-specific file path notation.<br /><br /> [*Note*: Applications can decide what forms of  they support, and whether system-specific file path notations are supported. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|onlyUseConnectionFile (Only Use Connection File)|Indicates whether the spreadsheet application should always and only use the connection information in the external connection file indicated by the odcFile attribute when the connection is refreshed.<br /><br /> If *false*, then the spreadsheet application should follow the procedure indicated by the reconnectionMethod attribute described below.<br /><br /> Applies only to OLE DB and ODBC connections, this attribute is  ignored for other types of connections.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|reconnectionMethod (Reconnection Method)|Specifies what the spreadsheet application should do when a connection fails.<br /><br /> The values are as follows:<br /><br /> *1 = As required*: On refresh use the existing connection information. If the existing information cannot be used to establish a connection, get updated connection information, if available from the external connection file.<br /><br /> *2 = Always*: On every refresh get updated connection information from the external connection file, if available, and use that instead of the existing connection information.  In this case the data refresh will fail if the external connection file is unavailable.<br /><br /> *3 = Never*: Never get updated connection information from the external connection file even if it is available and even if the existing connection information cannot be used.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|refreshedVersion (Last Refresh Version)|For backward compatibility purposes, this attribute indicates the version of the spreadsheet application that last refreshed the connection.<br /><br /> This attribute applies to connections that are used by a query table.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|refreshOnLoad (Refresh on Open)|*true* if this connection should be refreshed when opening the file; otherwise, *false*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|saveData (Save Data)|*true* if the external data fetched over the connection to populate a table is to be saved with the workbook; otherwise, *false*.<br /><br /> This exists for data security purposes - if no external data is saved in (or "cached") in the workbook, then current user credentials can be required every time to retrieve the relevant data, and people won't see the data the workbook author had last been using before saving the file.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|savePassword (Save Password)|*true* if the password is to be saved as part of the connection string; otherwise, False.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|singleSignOnId (SSO Id)|Identifier for Single Sign On (SSO) used for authentication between an intermediate spreadsheetML server and the external data source.<br /><br /> [*Note*: Data connectivity can use a number of different technologies. One example of potential values stored in this attribute can be found at: http://msdn.microsoft.com/library/default.asp?url=/library/en-us/spptsdk/html/cSSOReturnCodes_SV01001109.asp *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|sourceFile (Source Database File)|Used when the external data source is file-based. When a connection to such a data source fails, the spreadsheet application attempts to connect directly to this file. Can be expressed in  or system-specific file path notation.<br /><br /> [*Note*: Applications can decide what forms of  they support, and whether system-specific file path notations are supported. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|type (Database Source Type)|Specifies the data source type.<br /><br /> Values are as follows:<br /><br /> 1. ODBC-based source<br /><br /> 2. DAO-based source<br /><br /> 3. File based database source<br /><br /> 4. Web query<br /><br /> 5. OLE DB-based source<br /><br /> 6. Text-based source<br /><br /> 7.  record set<br /><br /> 8. DSP<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Connection) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Connection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.Connection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the Connection class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Connection (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.Connection.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.Connection : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.Connection" Usage="new DocumentFormat.OpenXml.Spreadsheet.Connection childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the Connection class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Connection (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.Connection.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.Connection : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.Connection" Usage="new DocumentFormat.OpenXml.Spreadsheet.Connection childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the Connection class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Connection (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.Connection.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.Connection : string -&gt; DocumentFormat.OpenXml.Spreadsheet.Connection" Usage="new DocumentFormat.OpenXml.Spreadsheet.Connection outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the Connection class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Background { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Background" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Background" />
+      <MemberSignature Language="VB.NET" Value="Public Property Background As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Background : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Background" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "background")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>background.Represents the following attribute in the schema: background</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.Connection.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="connection.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.ConnectionExtensionList ConnectionExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.ConnectionExtensionList ConnectionExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.ConnectionExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionExtensionList As ConnectionExtensionList" />
+      <MemberSignature Language="F#" Value="member this.ConnectionExtensionList : DocumentFormat.OpenXml.Spreadsheet.ConnectionExtensionList with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.ConnectionExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ConnectionExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ConnectionExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionFile">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue ConnectionFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue ConnectionFile" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.ConnectionFile" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionFile As StringValue" />
+      <MemberSignature Language="F#" Value="member this.ConnectionFile : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.ConnectionFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "odcFile")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>odcFile.Represents the following attribute in the schema: odcFile</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CredentialsMethodValues&gt; Credentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.CredentialsMethodValues&gt; Credentials" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Credentials" />
+      <MemberSignature Language="VB.NET" Value="Public Property Credentials As EnumValue(Of CredentialsMethodValues)" />
+      <MemberSignature Language="F#" Value="member this.Credentials : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CredentialsMethodValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "credentials")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CredentialsMethodValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>credentials.Represents the following attribute in the schema: credentials</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DatabaseProperties">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties DatabaseProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties DatabaseProperties" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.DatabaseProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Property DatabaseProperties As DatabaseProperties" />
+      <MemberSignature Language="F#" Value="member this.DatabaseProperties : DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.DatabaseProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DatabaseProperties. Represents the following element tag in the schema: x:dbPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleted">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Deleted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Deleted" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Deleted" />
+      <MemberSignature Language="VB.NET" Value="Public Property Deleted As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Deleted : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Deleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "deleted")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>deleted.Represents the following attribute in the schema: deleted</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Description" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Description" />
+      <MemberSignature Language="VB.NET" Value="Public Property Description As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Description : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "description")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>description.Represents the following attribute in the schema: description</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Id" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Id : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "id")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>id.Represents the following attribute in the schema: id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interval">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Interval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Interval" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Interval" />
+      <MemberSignature Language="VB.NET" Value="Public Property Interval As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Interval : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Interval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "interval")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>interval.Represents the following attribute in the schema: interval</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue KeepAlive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue KeepAlive" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.KeepAlive" />
+      <MemberSignature Language="VB.NET" Value="Public Property KeepAlive As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.KeepAlive : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.KeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "keepAlive")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>keepAlive.Represents the following attribute in the schema: keepAlive</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRefreshableVersion">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.ByteValue MinRefreshableVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.ByteValue MinRefreshableVersion" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.MinRefreshableVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinRefreshableVersion As ByteValue" />
+      <MemberSignature Language="F#" Value="member this.MinRefreshableVersion : DocumentFormat.OpenXml.ByteValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.MinRefreshableVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minRefreshableVersion")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>minRefreshableVersion.Represents the following attribute in the schema: minRefreshableVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Name" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Name : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="New">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue New { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue New" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.New" />
+      <MemberSignature Language="VB.NET" Value="Public Property New As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.New : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.New" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "new")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>new.Represents the following attribute in the schema: new</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OlapProperties">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.OlapProperties OlapProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.OlapProperties OlapProperties" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.OlapProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Property OlapProperties As OlapProperties" />
+      <MemberSignature Language="F#" Value="member this.OlapProperties : DocumentFormat.OpenXml.Spreadsheet.OlapProperties with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.OlapProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.OlapProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>OlapProperties. Represents the following element tag in the schema: x:olapPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.OlapProperties" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlyUseConnectionFile">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue OnlyUseConnectionFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue OnlyUseConnectionFile" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.OnlyUseConnectionFile" />
+      <MemberSignature Language="VB.NET" Value="Public Property OnlyUseConnectionFile As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.OnlyUseConnectionFile : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.OnlyUseConnectionFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "onlyUseConnectionFile")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>onlyUseConnectionFile.Represents the following attribute in the schema: onlyUseConnectionFile</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.Parameters Parameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.Parameters Parameters" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Parameters" />
+      <MemberSignature Language="VB.NET" Value="Public Property Parameters As Parameters" />
+      <MemberSignature Language="F#" Value="member this.Parameters : DocumentFormat.OpenXml.Spreadsheet.Parameters with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Parameters</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Parameters. Represents the following element tag in the schema: x:parameters</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Parameters" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="ReconnectionMethod">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ReconnectionMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ReconnectionMethod" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.ReconnectionMethod" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReconnectionMethod As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ReconnectionMethod : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.ReconnectionMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "reconnectionMethod")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>reconnectionMethod.Represents the following attribute in the schema: reconnectionMethod</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshedVersion">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.ByteValue RefreshedVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.ByteValue RefreshedVersion" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.RefreshedVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property RefreshedVersion As ByteValue" />
+      <MemberSignature Language="F#" Value="member this.RefreshedVersion : DocumentFormat.OpenXml.ByteValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.RefreshedVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "refreshedVersion")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>refreshedVersion.Represents the following attribute in the schema: refreshedVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshOnLoad">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue RefreshOnLoad { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue RefreshOnLoad" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.RefreshOnLoad" />
+      <MemberSignature Language="VB.NET" Value="Public Property RefreshOnLoad As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.RefreshOnLoad : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.RefreshOnLoad" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "refreshOnLoad")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>refreshOnLoad.Represents the following attribute in the schema: refreshOnLoad</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveData">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SaveData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SaveData" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.SaveData" />
+      <MemberSignature Language="VB.NET" Value="Public Property SaveData As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SaveData : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.SaveData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "saveData")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>saveData.Represents the following attribute in the schema: saveData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePassword">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SavePassword { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SavePassword" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.SavePassword" />
+      <MemberSignature Language="VB.NET" Value="Public Property SavePassword As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SavePassword : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.SavePassword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "savePassword")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>savePassword.Represents the following attribute in the schema: savePassword</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleSignOnId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue SingleSignOnId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue SingleSignOnId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.SingleSignOnId" />
+      <MemberSignature Language="VB.NET" Value="Public Property SingleSignOnId As StringValue" />
+      <MemberSignature Language="F#" Value="member this.SingleSignOnId : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.SingleSignOnId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "singleSignOnId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>singleSignOnId.Represents the following attribute in the schema: singleSignOnId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceFile">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue SourceFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue SourceFile" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.SourceFile" />
+      <MemberSignature Language="VB.NET" Value="Public Property SourceFile As StringValue" />
+      <MemberSignature Language="F#" Value="member this.SourceFile : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.SourceFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "sourceFile")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>sourceFile.Represents the following attribute in the schema: sourceFile</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextProperties">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.TextProperties TextProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.TextProperties TextProperties" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.TextProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Property TextProperties As TextProperties" />
+      <MemberSignature Language="F#" Value="member this.TextProperties : DocumentFormat.OpenXml.Spreadsheet.TextProperties with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.TextProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TextProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>TextProperties. Represents the following element tag in the schema: x:textPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.TextProperties" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Type" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.Type" />
+      <MemberSignature Language="VB.NET" Value="Public Property Type As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Type : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebQueryProperties">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties WebQueryProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties WebQueryProperties" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Connection.WebQueryProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Property WebQueryProperties As WebQueryProperties" />
+      <MemberSignature Language="F#" Value="member this.WebQueryProperties : DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Connection.WebQueryProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WebQueryProperties. Represents the following element tag in the schema: x:webPr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,320 @@
+﻿<Type Name="LevelOverride" FullName="DocumentFormat.OpenXml.Wordprocessing.LevelOverride">
+  <TypeSignature Language="C#" Value="public class LevelOverride : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LevelOverride extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.LevelOverride" />
+  <TypeSignature Language="VB.NET" Value="Public Class LevelOverride&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type LevelOverride = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Wordprocessing.Level))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Numbering Level Definition Override. When the object is serialized out as xml, its qualified name is w:lvlOverride.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **lvlOverride (Numbering Level Definition Override)**  
+  
+ This element specifies an optional override which shall be applied in place of zero or more levels from the abstract numbering definition for a given numbering definition instance. Each instance of this element is used to override the appearance and behavior of a given numbering level definition within the given abstract numbering definition.  
+  
+ [*Example*: Consider a numbering definition instance which inherits its information from the abstract numbering definition with abstractNumId of 4, but wishes to use a different set of properties for level *0* and level *1* of the numbering definition. The resulting WordprocessingML would look like:  
+  
+```xml  
+<w:num w:numId="6">  
+  <w:abstractNumId w:val="4" />  
+  <w:lvlOverride w:ilvl="0">  
+    <w:lvl w:ilvl="0">  
+      <w:start w:val="4" />  
+      <w:lvlText w:val="%1)" />  
+      <w:lvlJc w:val="left" />  
+      <w:pPr>  
+        <w:ind w:left="360" w:hanging="360" />  
+      </w:pPr>  
+    </w:lvl>  
+  </w:lvlOverride>  
+  <w:lvlOverride w:ilvl="1">  
+    <w:lvl w:ilvl="1">  
+      <w:start w:val="5" />  
+      <w:lvlText w:val="%Test)" />  
+      <w:lvlJc w:val="left" />  
+      <w:pPr>  
+        <w:ind w:left="360" w:hanging="360" />  
+      </w:pPr>  
+    </w:lvl>  
+  </w:lvlOverride>  
+</w:num>  
+```  
+  
+ *end example*]  
+  
+ [*Note*: The ability to set level overrides optimizes use of numbering in WordprocessingML as it prevents writing out redundant abstract numbering definitions if numbering sets only slightly differ.  
+  
+ Consider using WordprocessingML to create two numbered sets that only differ only in the appearance and style of the first numbering level. Both could use the same abstract numbering definition as long as each references a different numbering definition instance with one of the numbering definition instances leveraging a level override for the first numbering level. Below is WordprocessingML that illustrates this:  
+  
+```xml  
+<w:num w:numId="5">  
+  <w:abstractNumId w:val="4" />  
+</w:num>  
+<w:num w:numId="6">  
+  <w:abstractNumId w:val="4" />  
+  <w:lvlOverride w:ilvl="0">  
+    <w:lvl w:ilvl="0">  
+      <w:start w:val="4" />  
+      <w:lvlText w:val="%1)" />  
+      <w:lvlJc w:val="left" />  
+      <w:pPr>  
+        <w:ind w:left="360" w:hanging="360" />  
+      </w:pPr>  
+    </w:lvl>  
+  </w:lvlOverride>  
+</w:num>  
+```  
+  
+ *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|num (§17.9.16)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|lvl (Numbering Level Override Definition)|§17.9.6|  
+|startOverride (Numbering Level Starting Value Override)|§17.9.27|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_NumLvl) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LevelOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the LevelOverride class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LevelOverride (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Wordprocessing.LevelOverride : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Wordprocessing.LevelOverride" Usage="new DocumentFormat.OpenXml.Wordprocessing.LevelOverride childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the LevelOverride class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LevelOverride (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Wordprocessing.LevelOverride : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Wordprocessing.LevelOverride" Usage="new DocumentFormat.OpenXml.Wordprocessing.LevelOverride childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the LevelOverride class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LevelOverride (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Wordprocessing.LevelOverride : string -&gt; DocumentFormat.OpenXml.Wordprocessing.LevelOverride" Usage="new DocumentFormat.OpenXml.Wordprocessing.LevelOverride outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the LevelOverride class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="levelOverride.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Wordprocessing.Level Level { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Wordprocessing.Level Level" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.Level" />
+      <MemberSignature Language="VB.NET" Value="Public Property Level As Level" />
+      <MemberSignature Language="F#" Value="member this.Level : DocumentFormat.OpenXml.Wordprocessing.Level with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.LevelOverride.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Level</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Numbering Level Override Definition. Represents the following element tag in the schema: w:lvl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.Level" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LevelIndex">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value LevelIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value LevelIndex" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.LevelIndex" />
+      <MemberSignature Language="VB.NET" Value="Public Property LevelIndex As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.LevelIndex : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.LevelOverride.LevelIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "ilvl")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Numbering Level ID.Represents the following attribute in the schema: w:ilvl</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.LevelOverride.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartOverrideNumberingValue">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue StartOverrideNumberingValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue StartOverrideNumberingValue" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.LevelOverride.StartOverrideNumberingValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property StartOverrideNumberingValue As StartOverrideNumberingValue" />
+      <MemberSignature Language="F#" Value="member this.StartOverrideNumberingValue : DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.LevelOverride.StartOverrideNumberingValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Numbering Level Starting Value Override. Represents the following element tag in the schema: w:startOverride</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Wordprocessing.StartOverrideNumberingValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:w = http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

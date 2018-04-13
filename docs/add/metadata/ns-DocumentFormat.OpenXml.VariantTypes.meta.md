@@ -1,0 +1,3 @@
+---
+uid: DocumentFormat.OpenXml.VariantTypes
+---

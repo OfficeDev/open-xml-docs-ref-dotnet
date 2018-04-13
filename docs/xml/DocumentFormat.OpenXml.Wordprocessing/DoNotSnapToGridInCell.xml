@@ -1,0 +1,137 @@
+﻿<Type Name="DoNotSnapToGridInCell" FullName="DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell">
+  <TypeSignature Language="C#" Value="public class DoNotSnapToGridInCell : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoNotSnapToGridInCell extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell" />
+  <TypeSignature Language="VB.NET" Value="Public Class DoNotSnapToGridInCell&#xA;Inherits OnOffType" />
+  <TypeSignature Language="F#" Value="type DoNotSnapToGridInCell = class&#xA;    inherit OnOffType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.OnOffType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Do Not Snap to Document Grid in Table Cells with Objects. When the object is serialized out as xml, its qualified name is w:doNotSnapToGridInCell.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `doNotSnapToGridInCell (Do Not Snap to Document Grid in Table Cells with Objects)`  
+  
+ This element specifies whether a document grid defined using the docGrid element (Part 1, §17.6.5) shall be applied to the contents of table cells in that section which also contain floating objects. Note that the floating object shall be part of the cell, and simply not displayed over the cell due to its anchoring relative to another part of the document.  
+  
+ Typically, if a floating object is present in a table cell, then that setting shall have no impact on whether East Asian text in that cell is snapped to the document grid (as text is always snapped to the grid). This element, when present with a val attribute value of *true* (or equivalent), specifies that whenever a floating object is present in a table cell, that the cell's contents shall not be snapped to the document grid.  
+  
+ [*Example*: Consider a WordprocessingML document consisting of a single section, whose document grid settings specify that each page must be exactly 10 characters wide, as follows:  
+  
+```xml  
+<w:sectPr>  
+  <w:docGrid w:type="snapTOCars" w:charSpace="146636" />  
+</w:sectPr>  
+```  
+  
+ If this document contains a table with a single cell, containing some text and a single floating shape, the contents of the cell are still snapped to the 10 characters per line character grid, as follows:  
+  
+ f7c5a849-bf48-4c9c-8988-a3a21cfcb219  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:doNotSnapToGridInCell />  
+</w:compat>  
+```  
+  
+ Then the presence of a floating object in each cell must result in the document grid setting being ignored, resulting in the following output:  
+  
+ 9979810f-fe84-4223-9bfc-7896a8d951be  
+  
+ The additional character pitch was still added to each character on the line, but those characters are no longer snapped to the document grid. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DoNotSnapToGridInCell ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the DoNotSnapToGridInCell class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="doNotSnapToGridInCell.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.DoNotSnapToGridInCell.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

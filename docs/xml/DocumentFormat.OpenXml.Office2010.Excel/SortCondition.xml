@@ -1,0 +1,344 @@
+﻿<Type Name="SortCondition" FullName="DocumentFormat.OpenXml.Office2010.Excel.SortCondition">
+  <TypeSignature Language="C#" Value="public class SortCondition : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SortCondition extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.SortCondition" />
+  <TypeSignature Language="VB.NET" Value="Public Class SortCondition&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type SortCondition = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the SortCondition Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:sortCondition.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.32   sortCondition*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ A *sortCondition* element is a *CT_SortCondition* type element, as specified in section 2.6.61, that specifies a *sort condition* to apply to a range. See section 2.2.4.4, section 2.2.4.6, section 2.2.4.9, and section 2.2.4.11 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="sortCondition" type="CT_SortCondition"/>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.61   CT_SortCondition*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* sortCondition  
+  
+ A complex type that specifies a sort condition to apply to a range.  
+  
+ *Attributes:*  
+  
+ *descending:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies the direction of the *sort*.  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"false"*|*If sortBy is "value", sort in ascending order. If sortBy is "cellColor" or "fontColor", cells in which the cell color or cell font color specified by dxfId occurs are ordered at the top of the range. If sortBy is "icon", cells in which the icon specified by iconSet and iconId occurs are ordered at the top of the range.*|  
+|*"true"*|*If sortBy is "value", sort in descending order. If sortBy is "cellColor" or "fontColor", cells in which the cell color or cell font color specified by dxfId occurs are ordered at the bottom of the range. If sortBy is "icon", cells in which the icon specified by iconSet and iconId occurs are ordered at the bottom of the range.*|  
+  
+ *sortBy:* An *ST_SortBy* ([ISO/IEC-29500-1] section 18.18.72) attribute that specifies how the cells in a range are sorted.  
+  
+ *ref:* An *ST_Ref* ([ISO/IEC-29500-1] section 18.18.62) attribute that specifies the row (2) or column (2) to which this sort condition applies. This value MUST be contained within the *ref* in the *sortState* element that precedes this element. If the *sortState.columnSort* attribute that precedes this element is "false", this value specifies the column (2) to which this sort condition applies and there MUST be only a single column (2) specified by *ref*. If the *sortState.columnSort* attribute that precedes this element is "true", this value specifies the row (2) to which this sort condition applies and there MUST be only a single row (2) specified by *ref*.  
+  
+ *customList:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies a comma-delimited list of strings that specifies a custom *sort order (2)*. The order of strings in the list specifies the sort order (2). When a cell value matches a string in the list, it is sorted ahead of the cell values that match a later string in the list, and so on for each cell in the range. MUST be ignored if *sortBy* is not equal to "value".  
+  
+ *dxfId:* An *ST_DxfId* ([ISO/IEC-29500-1] section 18.18.25) attribute that specifies the format identifier when *sortBy* equals "cellColor" or *sortBy* equals "fontColor". MUST NOT be present if *sortBy* equals "icon" or "value".  
+  
+ *iconSet:* An ST_IconSetType attribute that specifies the icon set when *sortBy* equals "icon". The absence of this attribute means no icon. MUST NOT be present if *sortBy* is not equal to "icon".  
+  
+ *iconId:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the zero-based index of an icon in an icon set. If the icon set specified by *iconSet* has three icons, this value MUST be less than or equal to 2. If the icon set specified by *iconSet* has four icons, this value MUST be less than or equal to 3. If the icon set specified by *iconSet* has five icons, this value MUST be less than or equal to 4. The absence of this attribute means no icon. MUST NOT be present if *sortBy* is not equal to "icon".  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_SortCondition">*  
+  
+ *\<xsd:attribute name="descending" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="sortBy" type="x:ST_SortBy" use="optional" default="value"/>*  
+  
+ *\<xsd:attribute name="ref" type="x:ST_Ref" use="required"/>*  
+  
+ *\<xsd:attribute name="customList" type="x:ST_Xstring" use="optional"/>*  
+  
+ *\<xsd:attribute name="dxfId" type="x:ST_DxfId" use="optional"/>*  
+  
+ *\<xsd:attribute name="iconSet" type="ST_IconSetType" use="optional" default="3Arrows"/>*  
+  
+ *\<xsd:attribute name="iconId" type="xsd:unsignedInt" use="optional"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SortCondition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the SortCondition class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="sortCondition.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue CustomList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue CustomList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.CustomList" />
+      <MemberSignature Language="VB.NET" Value="Public Property CustomList As StringValue" />
+      <MemberSignature Language="F#" Value="member this.CustomList : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.CustomList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "customList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>customList.Represents the following attribute in the schema: customList</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Descending">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Descending { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Descending" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.Descending" />
+      <MemberSignature Language="VB.NET" Value="Public Property Descending As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Descending : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.Descending" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "descending")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>descending.Represents the following attribute in the schema: descending</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value FormatId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value FormatId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.FormatId" />
+      <MemberSignature Language="VB.NET" Value="Public Property FormatId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.FormatId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.FormatId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dxfId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>dxfId.Represents the following attribute in the schema: dxfId</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value IconId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value IconId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.IconId" />
+      <MemberSignature Language="VB.NET" Value="Public Property IconId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.IconId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.IconId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "iconId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>iconId.Represents the following attribute in the schema: iconId</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconSet">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.IconSetTypeValues&gt; IconSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Office2010.Excel.IconSetTypeValues&gt; IconSet" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.IconSet" />
+      <MemberSignature Language="VB.NET" Value="Public Property IconSet As EnumValue(Of IconSetTypeValues)" />
+      <MemberSignature Language="F#" Value="member this.IconSet : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.IconSetTypeValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.IconSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "iconSet")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.IconSetTypeValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>iconSet.Represents the following attribute in the schema: iconSet</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reference">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Reference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Reference" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.Reference" />
+      <MemberSignature Language="VB.NET" Value="Public Property Reference As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Reference : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.Reference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "ref")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ref.Represents the following attribute in the schema: ref</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortBy">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SortByValues&gt; SortBy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.SortByValues&gt; SortBy" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.SortCondition.SortBy" />
+      <MemberSignature Language="VB.NET" Value="Public Property SortBy As EnumValue(Of SortByValues)" />
+      <MemberSignature Language="F#" Value="member this.SortBy : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SortByValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.SortCondition.SortBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "sortBy")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SortByValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>sortBy.Represents the following attribute in the schema: sortBy</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

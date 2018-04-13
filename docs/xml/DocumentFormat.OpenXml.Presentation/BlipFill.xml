@@ -1,0 +1,362 @@
+﻿<Type Name="BlipFill" FullName="DocumentFormat.OpenXml.Presentation.BlipFill">
+  <TypeSignature Language="C#" Value="public class BlipFill : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BlipFill extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.BlipFill" />
+  <TypeSignature Language="VB.NET" Value="Public Class BlipFill&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type BlipFill = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Drawing.Blip))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Drawing.SourceRectangle))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Drawing.Tile))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Drawing.Stretch))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Picture Fill. When the object is serialized out as xml, its qualified name is p:blipFill.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `blipFill (Picture Fill)`  
+  
+ This element specifies the kind of picture fill that the picture object has. Because a picture has a picture fill already by default, it is possible to have two fills specified for a picture object. An example of this is shown below.  
+  
+ [*Example*: Consider the picture below that has a blip fill applied to it. The image used to fill this picture object has transparent pixels instead of white pixels.  
+  
+```xml  
+<p:pic>  
+  …  
+  <p:blipFill>  
+    <a:blip r:embed="rId2"/>  
+    <a:stretch>  
+      <a:fillRect/>  
+    </a:stretch>  
+  </p:blipFill>  
+  …  
+</p:pic>  
+```  
+  
+ 39044a2c-3deb-446e-9312-ae2d18f55aef  
+  
+ The above picture object is shown as an example of this fill type. *end example*]  
+  
+ [*Example*: Consider now the same picture object but with an additional gradient fill applied within the shape properties portion of the picture.  
+  
+```xml  
+<p:pic>  
+  …  
+  <p:blipFill>  
+    <a:blip r:embed="rId2"/>  
+    <a:stretch>  
+      <a:fillRect/>  
+    </a:stretch>  
+  </p:blipFill>  
+  <p:spPr>  
+    <a:gradFill>  
+      <a:gsLst>  
+        <a:gs pos="0">  
+          <a:schemeClr val="tx2">  
+            <a:shade val="50000"/>  
+          </a:schemeClr>  
+        </a:gs>  
+        <a:gs pos="39999">  
+          <a:schemeClr val="tx2">  
+            <a:tint val="20000"/>  
+          </a:schemeClr>  
+        </a:gs>  
+        <a:gs pos="70000">  
+          <a:srgbClr val="C4D6EB"/>  
+        </a:gs>  
+        <a:gs pos="100000">  
+          <a:schemeClr val="bg1"/>  
+        </a:gs>  
+      </a:gsLst>  
+    </a:gradFill>  
+  </p:spPr>  
+  …  
+</p:pic>  
+```  
+  
+ 6e16c8e1-bbbd-45d0-9b21-026570dec4d6  
+  
+ The above picture object is shown as an example of this double fill type. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pic (§19.3.1.37)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|blip (Blip)|§20.1.8.13|  
+|srcRect (Source Rectangle)|§20.1.8.55|  
+|stretch (Stretch)|§20.1.8.56|  
+|tile (Tile)|§20.1.8.58|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|dpi (DPI Setting)<br /><br /> Namespace: *.../drawingml/2006/main*|Specifies the DPI (dots per inch) used to calculate the size of the blip. If not present or zero, the DPI in the blip is used.<br /><br /> [*Note*: This attribute is primarily used to keep track of the picture quality within a document. There are different levels of quality needed for print than on-screen viewing and thus a need to track this information. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|rotWithShape (Rotate With Shape)<br /><br /> Namespace: *.../drawingml/2006/main*|Specifies that the fill should rotate with the shape. That is, when the shape that has been filled with a picture and the containing shape (say a rectangle) is transformed with a rotation then the fill is transformed with the same rotation.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_BlipFillProperties) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BlipFill ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.BlipFill.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the BlipFill class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BlipFill (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.BlipFill.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Presentation.BlipFill : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Presentation.BlipFill" Usage="new DocumentFormat.OpenXml.Presentation.BlipFill childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the BlipFill class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BlipFill (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.BlipFill.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Presentation.BlipFill : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Presentation.BlipFill" Usage="new DocumentFormat.OpenXml.Presentation.BlipFill childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the BlipFill class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BlipFill (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.BlipFill.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Presentation.BlipFill : string -&gt; DocumentFormat.OpenXml.Presentation.BlipFill" Usage="new DocumentFormat.OpenXml.Presentation.BlipFill outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the BlipFill class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Blip">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Drawing.Blip Blip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Drawing.Blip Blip" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.BlipFill.Blip" />
+      <MemberSignature Language="VB.NET" Value="Public Property Blip As Blip" />
+      <MemberSignature Language="F#" Value="member this.Blip : DocumentFormat.OpenXml.Drawing.Blip with get, set" Usage="DocumentFormat.OpenXml.Presentation.BlipFill.Blip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Drawing.Blip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Blip. Represents the following element tag in the schema: a:blip</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.BlipFill.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="blipFill.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dpi">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Dpi { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Dpi" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.BlipFill.Dpi" />
+      <MemberSignature Language="VB.NET" Value="Public Property Dpi As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Dpi : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Presentation.BlipFill.Dpi" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dpi")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DPI Setting.Represents the following attribute in the schema: dpi</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.BlipFill.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Presentation.BlipFill.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateWithShape">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue RotateWithShape { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue RotateWithShape" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.BlipFill.RotateWithShape" />
+      <MemberSignature Language="VB.NET" Value="Public Property RotateWithShape As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.RotateWithShape : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Presentation.BlipFill.RotateWithShape" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "rotWithShape")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Rotate With Shape.Represents the following attribute in the schema: rotWithShape</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceRectangle">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Drawing.SourceRectangle SourceRectangle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Drawing.SourceRectangle SourceRectangle" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.BlipFill.SourceRectangle" />
+      <MemberSignature Language="VB.NET" Value="Public Property SourceRectangle As SourceRectangle" />
+      <MemberSignature Language="F#" Value="member this.SourceRectangle : DocumentFormat.OpenXml.Drawing.SourceRectangle with get, set" Usage="DocumentFormat.OpenXml.Presentation.BlipFill.SourceRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Drawing.SourceRectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Source Rectangle. Represents the following element tag in the schema: a:srcRect</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

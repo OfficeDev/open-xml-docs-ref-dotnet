@@ -1,0 +1,515 @@
+﻿<Type Name="DataBar" FullName="DocumentFormat.OpenXml.Office2010.Excel.DataBar">
+  <TypeSignature Language="C#" Value="public class DataBar : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataBar extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.DataBar" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataBar&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type DataBar = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.Excel.ConditionalFormattingValueObject), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.Excel.FillColor), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.Excel.BorderColor), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.Excel.NegativeFillColor), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.Excel.NegativeBorderColor), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.Excel.BarAxisColor), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the DataBar Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:dataBar.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.6.30   CT_DataBar*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* CT_CfRule  
+  
+ A complex type that specifies a data bar used in conditional formatting.  
+  
+ *Child Elements:*  
+  
+ *cfvo:* A *CT_Cfvo* element (section 2.6.26) that specifies the cell values corresponding to the min/max length of the data bar. If there exist *CT_Cfvo* ([ISO/IEC-29500-4] section A.2) elements in this sheet (1) that are child elements of a *CT_DataBar* ([ISO/IEC-29500-4] section A.2) element that is a child of a *CT_CfRule* ([ISO/IEC-29500-4] section A.2) element that is a parent of a *CT_ExtensionList* ([ISO/IEC-29500-4] section A.2) element with a child *CT_Extension* ([ISO/IEC-29500-4] section A.2) element that has a child *ST_Guid* ([ISO/IEC-29500-4] section A.2) element equal to the *id* attribute of this complex type’s parent *CT_CfRule* element (section 2.6.27), those *CT_Cfvo* elements SHOULD\<49> be ignored. The first child *CT_Cfvo* element specifies the *condition* corresponding to the min length of the data bar. The second child *CT_Cfvo* element specifies the condition corresponding to the max length of the data bar.  
+  
+ *fillColor:* A *CT_Color* ([ISO/IEC-29500-4] section A.2) element that specifies the fill color of the data bar. This element MUST exist if and only if the *priority* attribute of the *CT_CfRule* that is a parent of this complex type exists.  
+  
+ *borderColor:* A *CT_Color* element that specifies the border color of the data bar. This element MUST exist if and only if *border* equals "true".  
+  
+ *negativeFillColor:* A *CT_Color* element that specifies the negative fill color of the data bar. This element MUST exist if and only if *negativeBarColorSameAsPositive* equals "false".  
+  
+ *negativeBorderColor:* A *CT_Color* element that specifies the negative border color of the data bar. This element MUST exist if and only if *negativeBarBorderColorSameAsPositive* equals "false" and *border* equals "true".  
+  
+ *axisColor:* A *CT_Color* element that specifies the axis color of the data bar. This element MUST exist if and only if *axisPosition* does not equal "none".  
+  
+ *Attributes:*  
+  
+ *minLength:* An *unsignedIn*t ([XMLSCHEMA2] section 3.3.22) attribute that specifies the length of the shortest data bar in this conditional formatting range, expressed as a percentage of the width of the cell containing the data bar. MUST be greater than or equal to zero and less than or equal to *maxLength*. If, in this same worksheet part, there exists a *CT_ExtensionList* element that is a descendent of a *CT_CfRule* with a child *CT_Extension* element with the child *ST_Guid* element equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element, and the *minLength* attribute of this element is zero ("0") and the *maxLength* attribute of this element is "100", the *minLength* attribute of the *CT_DataBar* element that is a descendent of the *CT_CfRule* element that is a parent of the *CT_ExtensionList* element that is a parent of the *CT_Extension* element with the child *ST_Guid* element equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element MUST be "10". If in this same worksheet part there exists an *CT_ExtensionList* element that is a descendent of a *CT_CfRule* with a child *CT_Extension* element with the child *ST_Guid* element equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element, and the *minLength* attribute of this element is not zero ("0") or the *maxLength* attribute of this element is not "100", the *minLength* attribute of the *CT_DataBar* element that is a descendent of the *CT_CfRule* element that is a parent of the *CT_ExtensionList* element that is a parent of the *CT_Extension* element with the child *ST_Guid* element that is equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element MUST be equal to this complex type’s *minLength*.  
+  
+ *maxLength:* An *unsignedInt* attribute that specifies the length of the longest data bar in this conditional formatting range, expressed as a percentage of the width of the cell being formatted. MUST be greater than or equal to *minLength* and less than or equal to 100. If in this same worksheet part there exists a *CT_ExtensionList* element that is a descendent of a *CT_CfRule* with a child *CT_Extension* element with the child *ST_Guid* element equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element, and the *minLength* attribute of this element is zero ("0") and the *maxLength* attribute of this element is "100", the *maxLength* attribute of the *CT_DataBar* element that is a descendent of the *CT_CfRule* element that is a parent of the *CT_ExtensionList* element that is a parent of the *CT_Extension* element with the child *ST_Guid* element that is equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element MUST be "90". If, in this same worksheet part, there exists a *CT_ExtensionList* element that is a descendent of a *CT_CfRule* with a child *CT_Extension* element with the child *ST_Guid* element equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element, and the *minLength* attribute of this element is not zero ("0") or the *maxLength* attribute of this element is not "100", the *maxLength* attribute of the *CT_DataBar* element that is a descendent of the *CT_CfRule* element that is a parent of the *CT_ExtensionList* element that is a parent of the *CT_Extension* element with the child *ST_Guid* element that is equal to the *id* attribute of the *CT_CfRule* element that is a parent of this element MUST be equal to this record’s *maxLength*.  
+  
+ *showValue:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the cells in the conditional formatting range display both the data bar and the numeric value or only the data bar. The following table describes its possible values.  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"false"*|*Only the data bar is displayed in the cell.*|  
+|*"true"*|*Both the data bar and the numeric value are displayed in the cell.*|  
+  
+ *border:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the data bar has a border.  
+  
+ *gradient:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the data bar has a gradient fill. The following table describes its possible values.  
+  
+|||  
+|-|-|  
+|*Value*|*Meaning*|  
+|*"false"*|*The data bar fill is a solid color.*|  
+|*"true"*|*The data bar fill is a gradient.*|  
+  
+ *direction:* An *ST_DataBarDirection* attribute section 2.7.7) that specifies the direction of the data bar.  
+  
+ *negativeBarColorSameAsPositive:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the data bar has a negative bar color that is different from the positive bar color.  
+  
+ *negativeBarBorderColorSameAsPositive:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the data bar has a negative border color that is different from the positive border color.  
+  
+ *axisPosition:* An *ST_DataBarAxisPosition* attribute (section 2.7.8) that specifies the axis position for the data bar.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_DataBar">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="cfvo" type="CT_Cfvo" minOccurs="2" maxOccurs="2"/>*  
+  
+ *\<xsd:element name="fillColor" type="x:CT_Color" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="borderColor" type="x:CT_Color" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="negativeFillColor" type="x:CT_Color" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="negativeBorderColor" type="x:CT_Color" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="axisColor" type="x:CT_Color" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="minLength" type="xsd:unsignedInt" use="optional" default="10"/>*  
+  
+ *\<xsd:attribute name="maxLength" type="xsd:unsignedInt" use="optional" default="90"/>*  
+  
+ *\<xsd:attribute name="showValue" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="border" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="gradient" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="direction" type="ST_DataBarDirection" use="optional" default="context"/>*  
+  
+ *\<xsd:attribute name="negativeBarColorSameAsPositive" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="negativeBarBorderColorSameAsPositive" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="axisPosition" type="ST_DataBarAxisPosition" use="optional" default="automatic"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.DataBar.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the DataBar class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBar (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.DataBar.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Excel.DataBar : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Office2010.Excel.DataBar" Usage="new DocumentFormat.OpenXml.Office2010.Excel.DataBar childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the DataBar class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBar (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.DataBar.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Excel.DataBar : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Office2010.Excel.DataBar" Usage="new DocumentFormat.OpenXml.Office2010.Excel.DataBar childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the DataBar class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBar (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.DataBar.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Excel.DataBar : string -&gt; DocumentFormat.OpenXml.Office2010.Excel.DataBar" Usage="new DocumentFormat.OpenXml.Office2010.Excel.DataBar outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the DataBar class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisPosition">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DataBarAxisPositionValues&gt; AxisPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Office2010.Excel.DataBarAxisPositionValues&gt; AxisPosition" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.AxisPosition" />
+      <MemberSignature Language="VB.NET" Value="Public Property AxisPosition As EnumValue(Of DataBarAxisPositionValues)" />
+      <MemberSignature Language="F#" Value="member this.AxisPosition : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DataBarAxisPositionValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.AxisPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "axisPosition")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DataBarAxisPositionValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>axisPosition.Represents the following attribute in the schema: axisPosition</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Border">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Border { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Border" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.Border" />
+      <MemberSignature Language="VB.NET" Value="Public Property Border As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Border : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.Border" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "border")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>border.Represents the following attribute in the schema: border</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.DataBar.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="dataBar.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DataBarDirectionValues&gt; Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Office2010.Excel.DataBarDirectionValues&gt; Direction" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.Direction" />
+      <MemberSignature Language="VB.NET" Value="Public Property Direction As EnumValue(Of DataBarDirectionValues)" />
+      <MemberSignature Language="F#" Value="member this.Direction : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DataBarDirectionValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "direction")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.DataBarDirectionValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>direction.Represents the following attribute in the schema: direction</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gradient">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Gradient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Gradient" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.Gradient" />
+      <MemberSignature Language="VB.NET" Value="Public Property Gradient As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Gradient : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.Gradient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "gradient")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>gradient.Represents the following attribute in the schema: gradient</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value MaxLength" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.MaxLength" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxLength As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.MaxLength : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "maxLength")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>maxLength.Represents the following attribute in the schema: maxLength</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinLength">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value MinLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value MinLength" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.MinLength" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinLength As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.MinLength : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.MinLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minLength")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>minLength.Represents the following attribute in the schema: minLength</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NegativeBarBorderColorSameAsPositive">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue NegativeBarBorderColorSameAsPositive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue NegativeBarBorderColorSameAsPositive" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.NegativeBarBorderColorSameAsPositive" />
+      <MemberSignature Language="VB.NET" Value="Public Property NegativeBarBorderColorSameAsPositive As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.NegativeBarBorderColorSameAsPositive : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.NegativeBarBorderColorSameAsPositive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "negativeBarBorderColorSameAsPositive")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>negativeBarBorderColorSameAsPositive.Represents the following attribute in the schema: negativeBarBorderColorSameAsPositive</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NegativeBarColorSameAsPositive">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue NegativeBarColorSameAsPositive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue NegativeBarColorSameAsPositive" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.NegativeBarColorSameAsPositive" />
+      <MemberSignature Language="VB.NET" Value="Public Property NegativeBarColorSameAsPositive As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.NegativeBarColorSameAsPositive : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.NegativeBarColorSameAsPositive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "negativeBarColorSameAsPositive")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>negativeBarColorSameAsPositive.Represents the following attribute in the schema: negativeBarColorSameAsPositive</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowValue">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowValue" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.DataBar.ShowValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowValue As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowValue : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.DataBar.ShowValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showValue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>showValue.Represents the following attribute in the schema: showValue</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

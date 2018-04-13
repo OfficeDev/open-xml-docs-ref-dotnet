@@ -1,0 +1,518 @@
+﻿<Type Name="WebExtension" FullName="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension">
+  <TypeSignature Language="C#" Value="public class WebExtension : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebExtension extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension" />
+  <TypeSignature Language="VB.NET" Value="Public Class WebExtension&#xA;Inherits OpenXmlPartRootElement" />
+  <TypeSignature Language="F#" Value="type WebExtension = class&#xA;    inherit OpenXmlPartRootElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlPartRootElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the WebExtension Class. The root element of WebExtensionPart. When the object is serialized out as xml, its qualified name is we:webextension.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.1.1   webextension*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/webextensions/webextension/2010/11  
+  
+ A *CT_OsfWebExtension* element (section 2.2.7) that specifies an office app document part [ISO/IEC-29500-1].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="webextension" type="CT_OsfWebExtension"/>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.2.7   CT_OsfWebExtension*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/webextensions/webextension/2010/11  
+  
+ *Referenced by:* webextension  
+  
+ This is the root element of an office app document part.  
+  
+ *Child Elements:*  
+  
+ *reference:* A *CT_OsfWebExtensionReference* element (section 2.2.5) that specifies the primary reference to an office app.  
+  
+ *alternateReferences:* A *CT_OsfWebExtensionReferenceList* element (section 2.2.6) that specifies a list of *CT_OsfWebExtensionReference* elements (section 2.2.5). The first of these *alternateReferences* is used if the office app could not be located using the primary reference.  
+  
+ *properties:* A *CT_OsfWebExtensionPropertyBag* element (section 2.2.2) that contains a set of office app custom properties.  
+  
+ *bindings:* A *CT_OsfWebExtensionBindingList* element (section 2.2.4) that specifies a list of office app bindings.  
+  
+ *snapshot:* A *CT_Blip* element ([ISO/IEC-29500-1] section 20.1.8.13) that specifies a static image used to render the contents of the office app when it is not active.  
+  
+ *extLst:* A *CT_OfficeArtExtensionList* element ([ISO/IEC-29500-1] section A.4.1) that specifies a list of extensions for an office app. This element MAY be ignored.  
+  
+ *Attributes:*  
+  
+ *id:* A string attribute ([XMLSCHEMA2] section 3.2.1). This attribute uniquely identifies the office app instance in the current document.  
+  
+ *frozen:* A Boolean attribute ([XMLSCHEMA2] section 3.2.2) that specifies whether the user can interact with the office app or not.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_OsfWebExtension">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="reference" type="CT_OsfWebExtensionReference"/>*  
+  
+ *\<xsd:element name="alternateReferences" type="CT_OsfWebExtensionReferenceList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="properties" type="CT_OsfWebExtensionPropertyBag"/>*  
+  
+ *\<xsd:element name="bindings" type="CT_OsfWebExtensionBindingList"/>*  
+  
+ *\<xsd:element name="snapshot" type="a:CT_Blip" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="id" type="xsd:string" use="required"/>*  
+  
+ *\<xsd:attribute name="frozen" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the WebExtension class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebExtension (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension" Usage="new DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the WebExtension class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebExtension (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension" Usage="new DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the WebExtension class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebExtension (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension : string -&gt; DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension" Usage="new DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the WebExtension class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="webExtension.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fronzen">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Fronzen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Fronzen" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Fronzen" />
+      <MemberSignature Language="VB.NET" Value="Public Property Fronzen As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Fronzen : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Fronzen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "frozen")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>frozen.Represents the following attribute in the schema: frozen</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Id" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Id : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "id")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>id.Represents the following attribute in the schema: id</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Load(DocumentFormat.OpenXml.Packaging.WebExtensionPart)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Load (openXmlPart As WebExtensionPart)" />
+      <MemberSignature Language="F#" Value="override this.Load : DocumentFormat.OpenXml.Packaging.WebExtensionPart -&gt; unit" Usage="webExtension.Load openXmlPart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="openXmlPart" Type="DocumentFormat.OpenXml.Packaging.WebExtensionPart" />
+      </Parameters>
+      <Docs>
+        <param name="openXmlPart">Specifies the part to be loaded.</param>
+        <summary>Loads the DOM from the WebExtensionPart.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OfficeArtExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList OfficeArtExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList OfficeArtExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.OfficeArtExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property OfficeArtExtensionList As OfficeArtExtensionList" />
+      <MemberSignature Language="F#" Value="member this.OfficeArtExtensionList : DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.OfficeArtExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.OfficeArtExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>OfficeArtExtensionList. Represents the following element tag in the schema: we:extLst</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:we = http://schemas.microsoft.com/office/webextensions/webextension/2010/11
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class DocumentFormat.OpenXml.Packaging.WebExtensionPart openXmlPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Save(DocumentFormat.OpenXml.Packaging.WebExtensionPart)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (openXmlPart As WebExtensionPart)" />
+      <MemberSignature Language="F#" Value="override this.Save : DocumentFormat.OpenXml.Packaging.WebExtensionPart -&gt; unit" Usage="webExtension.Save openXmlPart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="openXmlPart" Type="DocumentFormat.OpenXml.Packaging.WebExtensionPart" />
+      </Parameters>
+      <Docs>
+        <param name="openXmlPart">Specifies the part to save to.</param>
+        <summary>Saves the DOM into the WebExtensionPart.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Snapshot">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot Snapshot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot Snapshot" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Snapshot" />
+      <MemberSignature Language="VB.NET" Value="Public Property Snapshot As Snapshot" />
+      <MemberSignature Language="F#" Value="member this.Snapshot : DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.Snapshot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.Snapshot</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Snapshot. Represents the following element tag in the schema: we:snapshot</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:we = http://schemas.microsoft.com/office/webextensions/webextension/2010/11
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="WebExtensionBindingList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList WebExtensionBindingList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList WebExtensionBindingList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionBindingList" />
+      <MemberSignature Language="VB.NET" Value="Public Property WebExtensionBindingList As WebExtensionBindingList" />
+      <MemberSignature Language="F#" Value="member this.WebExtensionBindingList : DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionBindingList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionBindingList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WebExtensionBindingList. Represents the following element tag in the schema: we:bindings</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:we = http://schemas.microsoft.com/office/webextensions/webextension/2010/11
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="WebExtensionPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WebExtensionPart WebExtensionPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.WebExtensionPart WebExtensionPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WebExtensionPart As WebExtensionPart" />
+      <MemberSignature Language="F#" Value="member this.WebExtensionPart : DocumentFormat.OpenXml.Packaging.WebExtensionPart" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WebExtensionPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WebExtensionPart associated with this element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebExtensionPropertyBag">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag WebExtensionPropertyBag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag WebExtensionPropertyBag" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionPropertyBag" />
+      <MemberSignature Language="VB.NET" Value="Public Property WebExtensionPropertyBag As WebExtensionPropertyBag" />
+      <MemberSignature Language="F#" Value="member this.WebExtensionPropertyBag : DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionPropertyBag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionPropertyBag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WebExtensionPropertyBag. Represents the following element tag in the schema: we:properties</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:we = http://schemas.microsoft.com/office/webextensions/webextension/2010/11
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="WebExtensionReferenceList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList WebExtensionReferenceList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList WebExtensionReferenceList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionReferenceList" />
+      <MemberSignature Language="VB.NET" Value="Public Property WebExtensionReferenceList As WebExtensionReferenceList" />
+      <MemberSignature Language="F#" Value="member this.WebExtensionReferenceList : DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionReferenceList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionReferenceList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WebExtensionReferenceList. Represents the following element tag in the schema: we:alternateReferences</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:we = http://schemas.microsoft.com/office/webextensions/webextension/2010/11
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="WebExtensionStoreReference">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference WebExtensionStoreReference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference WebExtensionStoreReference" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionStoreReference" />
+      <MemberSignature Language="VB.NET" Value="Public Property WebExtensionStoreReference As WebExtensionStoreReference" />
+      <MemberSignature Language="F#" Value="member this.WebExtensionStoreReference : DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference with get, set" Usage="DocumentFormat.OpenXml.Office2013.WebExtension.WebExtension.WebExtensionStoreReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.WebExtension.WebExtensionStoreReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WebExtensionStoreReference. Represents the following element tag in the schema: we:reference</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:we = http://schemas.microsoft.com/office/webextensions/webextension/2010/11
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

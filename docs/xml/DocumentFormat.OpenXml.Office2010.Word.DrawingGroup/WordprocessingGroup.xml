@@ -1,0 +1,243 @@
+﻿<Type Name="WordprocessingGroup" FullName="DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup">
+  <TypeSignature Language="C#" Value="public class WordprocessingGroup : DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroupType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WordprocessingGroup extends DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroupType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup" />
+  <TypeSignature Language="VB.NET" Value="Public Class WordprocessingGroup&#xA;Inherits WordprocessingGroupType" />
+  <TypeSignature Language="F#" Value="type WordprocessingGroup = class&#xA;    inherit WordprocessingGroupType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroupType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the WordprocessingGroup Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is wpg:wgp.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.3.30   wgp*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/word/2010/wordprocessingGroup  
+  
+ *Referenced by:* CT_WordprocessingCanvas  
+  
+ A CT_WordprocessingGroup element that specifies a group in WordprocessingML. See 2.2.7 for more details about how this element is integrated with the Open XML file formats as specified in [ISO/IEC-29500-1].  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="wgp" type="CT_WordprocessingGroup"/>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.5.78   CT_WordprocessingGroup*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/word/2010/wordprocessingGroup  
+  
+ *Referenced by:* CT_WordprocessingGroup, wgp, CT_WordprocessingCanvas  
+  
+ This complex type defines the data that represents a group of graphical objects in WordprocessingML.  
+  
+ *Child Elements:*  
+  
+ *cNvPr:* A *CT_NonVisualDrawingProps* element ([ISO/IEC-29500-1] section A.4.1) that specifies the non-visual properties of the current *CT_WordprocessingGroup*. This element MUST NOT be present when the *CT_WordprocessingGroup* is contained directly by a *graphicData* (Graphic Object Data) element as specified in [ISO/IEC-29500-1] section 20.1.2.2.17. This element MUST be present when the *CT_WordprocessingGroup* is not contained directly by a *graphicData* element as specified in [ISO/IEC-29500-1] section 20.1.2.2.17.  
+  
+ *cNvGrpSpPr:* A *CT_NonVisualGroupDrawingShapeProps* element ([ISO/IEC-29500-1] section A.4.1) that specifies the non-visual group properties of the current *CT_WordprocessingGroup*.  
+  
+ *grpSpPr:* A *CT_GroupShapeProperties* element ([ISO/IEC-29500-1] section A.4.1) that specifies the properties that are common across all shapes in the current *CT_WordprocessingGroup*. If there are any conflicting properties between the group shape properties and shape properties, the individual shape properties SHOULD\<141> take precedence.  
+  
+ *wps:wsp:* A CT_WordprocessingShape element that specifies a shape that is a child of the current *CT_WordprocessingGroup*.  
+  
+ *grpSp:* A CT_WordprocessingGroup element that specifies a group that is a child of the current *CT_WordprocessingGroup*.  
+  
+ *graphicFrame:* A CT_GraphicFrame element that specifies a graphical object that is a child of the current *CT_WordprocessingGroup*.\<142>  
+  
+ *pic:pic:* A *CT_Picture* element ([ISO/IEC-29500-1] section A.4.2) that specifies a picture that is a child of the current *CT_WordprocessingGroup*.  
+  
+ *w14:contentPart:* A CT_WordContentPart element that specifies a content part that is a child of the current *CT_WordprocessingGroup*.  
+  
+ *extLst:* A *CT_OfficeArtExtensionList* element ([ISO/IEC-29500-1] section A.4.1) to hold future extensions to the parent element of this *extLst* element.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_WordprocessingGroup">*  
+  
+ *\<xsd:sequence minOccurs="1" maxOccurs="1">*  
+  
+ *\<xsd:element name="cNvPr" type="a:CT_NonVisualDrawingProps" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="cNvGrpSpPr" type="a:CT_NonVisualGroupDrawingShapeProps" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="grpSpPr" type="a:CT_GroupShapeProperties" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:choice minOccurs="0" maxOccurs="unbounded">*  
+  
+ *\<xsd:element ref="wps:wsp"/>*  
+  
+ *\<xsd:element name="grpSp" type="CT_WordprocessingGroup"/>*  
+  
+ *\<xsd:element name="graphicFrame" type="CT_GraphicFrame"/>*  
+  
+ *\<xsd:element ref="pic:pic"/>*  
+  
+ *\<xsd:element ref="w14:contentPart"/>*  
+  
+ *\</xsd:choice>*  
+  
+ *\<xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WordprocessingGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the WordprocessingGroup class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WordprocessingGroup (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup" Usage="new DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the WordprocessingGroup class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WordprocessingGroup (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup" Usage="new DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the WordprocessingGroup class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WordprocessingGroup (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup : string -&gt; DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup" Usage="new DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the WordprocessingGroup class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="wordprocessingGroup.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2010.Word.DrawingGroup.WordprocessingGroup.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

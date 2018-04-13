@@ -1,0 +1,693 @@
+﻿<Type Name="PivotSelection" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotSelection">
+  <TypeSignature Language="C#" Value="public class PivotSelection : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotSelection extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.PivotSelection" />
+  <TypeSignature Language="VB.NET" Value="Public Class PivotSelection&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type PivotSelection = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.PivotArea))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>PivotTable Selection. When the object is serialized out as xml, its qualified name is x:pivotSelection.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `pivotSelection (PivotTable Selection)`  
+  
+ A collection of PivotTable structure selections. A PivotTable structure selection is a way of specifying what cells in the PivotTable are selected. Instead of specifying cell addresses in a sqref, a particular area or structure within the PivotTable is specified. In this way there is semantic meaning regarding what is selected, rather than simply a list of cell or ranges contained in the selection. Typically fields on the row or column axis are selected.  
+  
+ [*Example*:For example, the innermost field (Product SubCategory) is selected in this PivotTable:  
+  
+ 69bf0087-c567-4d34-88db-014e53f7bae8  
+  
+ The corresponding pivotSelection XML should look like this:  
+  
+```xml  
+<pivotSelection pane="bottomRight" showHeader="1" axis="axisRow" dimension="2"  activeRow="11" activeCol="1" previousRow="11" previousCol="1" click="1"   r:id="rId1">  
+  <pivotArea dataOnly="0" labelOnly="1" fieldPosition="0">  
+    <references count="1">  
+      <reference field="9" count="0"/>  
+    </references>  
+  </pivotArea>  
+</pivotSelection>  
+```  
+  
+ axis indicates that this selection is on the row axis, dimension indicates the field level within the row axis that is selected (zero-based index), activeCol and activeRow respectively indicate where in the grid the selection is located, and reference field indicates to which particular field the selection corresponds.  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|sheetView (§18.3.1.87)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|pivotArea (Pivot Area)|§18.3.1.68|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|activeCol (Active Column)|The column (zero-based) of active cell for structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|activeRow (Active Row)|The row (zero-based) of active cell for structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|axis (Axis)|Axis of the PivotTable on which this selection lies.<br /><br /> The possible values for this attribute are defined by the *ST_Axis* simple type (§18.18.1).|  
+|click (Click Count)|Number of clicks for this structure selection. For some selection combinations, subsequent clicks on the same target area cycles the actual selection through some variances. Therefore number of clicks on the selection shall be recorded, if it is desirable to restore this state of the selection cycle on load.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|count (Selection Count)|Number of selections for the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|data (Data Selection)|Flag indicating whether the structure selection is for data only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dimension (Dimension)|Indicates the field level within the axis that is selected (zero-based index).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|extendable (Extendable)|Flag indicating whether the structure selection can have additional selections added to it.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|id (Relationship Id)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Relationship Id pointing to the particular PivotTable Part corresponding to this selection.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|label (Label)|Flag indicating whether the structure selection is for labels only (e.g., a grand total row is selected).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|max (Maximum)|The maximum line the structure selection contains.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|min (Minimum)|The minimum line the structure selection contains.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|pane (Pane)|The pane to which this PivotTable structure selection belongs.<br /><br /> The possible values for this attribute are defined by the *ST_Pane* simple type (§18.18.52).|  
+|previousCol (Previous Column Selection)|1-based index to the column immediately left of the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|previousRow (Previous Row)|1-based index to the row immediately above the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|showHeader (Show Header)|Flag indicating whether selection toggle from data only to header only to both is enabled. *False* means disabled.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|start (Start)|The line the structure selection begins (zero-based). This is the line clicked to initiate the structure selection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PivotSelection) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the PivotSelection class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotSelection (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.PivotSelection : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.PivotSelection" Usage="new DocumentFormat.OpenXml.Spreadsheet.PivotSelection childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the PivotSelection class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotSelection (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.PivotSelection : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.PivotSelection" Usage="new DocumentFormat.OpenXml.Spreadsheet.PivotSelection childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the PivotSelection class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotSelection (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.PivotSelection : string -&gt; DocumentFormat.OpenXml.Spreadsheet.PivotSelection" Usage="new DocumentFormat.OpenXml.Spreadsheet.PivotSelection outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the PivotSelection class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ActiveColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ActiveColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.ActiveColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActiveColumn As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ActiveColumn : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.ActiveColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "activeCol")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Column.Represents the following attribute in the schema: activeCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ActiveRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ActiveRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.ActiveRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActiveRow As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ActiveRow : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.ActiveRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "activeRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Row.Represents the following attribute in the schema: activeRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axis">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt; Axis { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt; Axis" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Axis" />
+      <MemberSignature Language="VB.NET" Value="Public Property Axis As EnumValue(Of PivotTableAxisValues)" />
+      <MemberSignature Language="F#" Value="member this.Axis : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Axis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "axis")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Axis.Represents the following attribute in the schema: axis</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Click { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Click" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Click" />
+      <MemberSignature Language="VB.NET" Value="Public Property Click As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Click : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Click" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "click")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Click Count.Represents the following attribute in the schema: click</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="pivotSelection.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Count { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Count" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Count" />
+      <MemberSignature Language="VB.NET" Value="Public Property Count As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Count : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "count")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Selection Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Data { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Data" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Data" />
+      <MemberSignature Language="VB.NET" Value="Public Property Data As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Data : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Data Selection.Represents the following attribute in the schema: data</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dimension">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Dimension { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Dimension" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Dimension" />
+      <MemberSignature Language="VB.NET" Value="Public Property Dimension As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Dimension : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Dimension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dimension")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Dimension.Represents the following attribute in the schema: dimension</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extendable">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Extendable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Extendable" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Extendable" />
+      <MemberSignature Language="VB.NET" Value="Public Property Extendable As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Extendable : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Extendable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "extendable")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Extendable.Represents the following attribute in the schema: extendable</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Id" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Id : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(19, "id")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Relationship Id.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Label" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Label" />
+      <MemberSignature Language="VB.NET" Value="Public Property Label As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Label : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "label")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Label.Represents the following attribute in the schema: label</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Max">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Max { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Max" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Max" />
+      <MemberSignature Language="VB.NET" Value="Public Property Max As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Max : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Max" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "max")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Maximum.Represents the following attribute in the schema: max</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Min">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Min { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Min" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Min" />
+      <MemberSignature Language="VB.NET" Value="Public Property Min As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Min : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Min" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "min")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Minimum.Represents the following attribute in the schema: min</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pane">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PaneValues&gt; Pane { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.PaneValues&gt; Pane" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Pane" />
+      <MemberSignature Language="VB.NET" Value="Public Property Pane As EnumValue(Of PaneValues)" />
+      <MemberSignature Language="F#" Value="member this.Pane : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PaneValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Pane" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pane")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PaneValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Pane.Represents the following attribute in the schema: pane</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PivotArea">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.PivotArea PivotArea { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.PivotArea PivotArea" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.PivotArea" />
+      <MemberSignature Language="VB.NET" Value="Public Property PivotArea As PivotArea" />
+      <MemberSignature Language="F#" Value="member this.PivotArea : DocumentFormat.OpenXml.Spreadsheet.PivotArea with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.PivotArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PivotArea</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Pivot Area. Represents the following element tag in the schema: x:pivotArea</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.PivotArea" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value PreviousColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value PreviousColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.PreviousColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property PreviousColumn As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.PreviousColumn : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.PreviousColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "previousCol")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Previous Column Selection.Represents the following attribute in the schema: previousCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value PreviousRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value PreviousRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.PreviousRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property PreviousRow As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.PreviousRow : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.PreviousRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "previousRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Previous Row.Represents the following attribute in the schema: previousRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHeader">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowHeader" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.ShowHeader" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowHeader As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowHeader : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.ShowHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showHeader")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Header.Represents the following attribute in the schema: showHeader</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Start { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Start" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Start" />
+      <MemberSignature Language="VB.NET" Value="Public Property Start As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Start : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotSelection.Start" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "start")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Start.Represents the following attribute in the schema: start</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

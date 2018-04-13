@@ -1,0 +1,870 @@
+﻿<Type Name="MetadataType" FullName="DocumentFormat.OpenXml.Spreadsheet.MetadataType">
+  <TypeSignature Language="C#" Value="public class MetadataType : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetadataType extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.MetadataType" />
+  <TypeSignature Language="VB.NET" Value="Public Class MetadataType&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type MetadataType = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Metadata Type Information. When the object is serialized out as xml, its qualified name is x:metadataType.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **metadataType (Metadata Type Information)**  
+  
+ This element represents information about metadata on cells - it defines a specific set of behaviors that the metadata shall adhere to when subject to other spreadsheet operations.  
+  
+ In general, many of these attributes represent operations that can be performed on a cell that allow the metadata to remain associated with the cell.  Operations that are set to 0 or false, will cause the metadata to be disassociated from the cell when that operation is performed.  
+  
+|Parent Elements|  
+|---------------------|  
+|metadataTypes (§18.9.11)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|adjust (Adjust Metadata)|A Boolean flag indicating that metadata corresponding to a particular cell needs to be notified when that cell's location is changed.<br /><br /> [*Note*: This is included in the file format for future extensibility.*end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|assign (Metadata Formula Assignment)|A Boolean flag indicating whether metadata is propagated by formula assignment operation.  True when metadata should be propagated by assignment, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|cellMeta (Cell Metadata)|A Boolean flag indicating whether metadata is cell metadata.  True when the metadata is cell metadata, false otherwise - in the false case it is considered to be value metadata.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearAll (Metadata Clear All)|A Boolean flag indicating whether metadata survives a "Clear: All" operation.  True if the metadata persists after a clear all, false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearComments (Metadata Clear Comments)|A Boolean flag indicating whether metadata remains after comments have been cleared from the cell.  True if the metadata persists after Clear:Comments, false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearContents (Metadata Clear Contents)|A Boolean flag indicating whether metadata remains after the contents of a cell are removed.  True if metadata persists after a "Clear: Contents" action, false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|clearFormats (Metadata Clear Formats)|A Boolean flag indicating whether metadata remains after formatting is removed from a cell.  True if metadata persists after a "Clear: Formats", false otherwise.<br /><br /> The Clear operations can be implemented by the run time application to provide an easy way to allow users to delete everything from a cell (Clear: All), remove only comments (Clear: Comments), only remove formats (Clear: Formats), or only remove the contents but leave the comments and formatting (Clear: Contents).  Note these operations can also be performed by the user manually deleting each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|coerce (Metadata Coercion)|A Boolean flag indicating whether value metadata can be removed when this metadata data type is coerced to another data type.  True if the value metadata is removed upon coercion, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|copy (Metadata Copy)|A Boolean flag indicating whether metadata is copied with a cell.  True if the metadata is copied to other cells when this cell is copied, false otherwise.<br /><br /> This shall be set to *true* if the paste attributes for the *metadataType* are going to be used.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|delete (Metadata Cell Value Delete)|A Boolean flag indicating whether metadata survives deletion of a cell value.  True when the metadata persists after the deletion of a cell value, false otherwise.<br /><br /> This attribute is equivalent to the *clearContents* attribute.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|edit (Metadata Edit)|A Boolean flag indicating whether metadata survives the editing of the cell's value.  True if the metadata remains unchanged after the cell's value edit, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|ghostCol (Metadata Ghost Column)|A Boolean flag indicating whether metadata is copied to/from a ghost column.  True when the metadata is copied to/from a ghost column, false otherwise.<br /><br /> A ghost column is a single column that exists for the row header.  It is not displayed to the end user.  It is used to store default formatting for an entire row (i.e. the row gets the formatting for the corresponding cell in the ghost column).  For instance, when an entire row is selected and a cell color is applied, this is stored once for the cell in the ghost column instead of for each cell in the row.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|ghostRow (Metadata Ghost Row)|A Boolean flag indicating whether metadata is copied to/from a ghost row.  True when the metadata is copied to/from a ghost row, false otherwise.<br /><br /> A ghost row is a single row that exists for the column header.  It is not displayed to the end user.  It is used to store default formatting for an entire column (i.e. the column gets the formatting for the corresponding cell in the ghost row).  For instance, when an entire column is selected and a cell color is applied, this is stored once for the cell in the ghost row instead of for each cell in the column.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|merge (Metadata Merge)|A Boolean flag indicating whether metadata survives cell merge.  True if the metadata persists after a cell merge, false otherwise.<br /><br /> It is up to the spreadsheet application on how to deal with conflicts when two cells that each have metadata are merged.  The guidance here is to treat it the same as a 'regular' cell merge with the default behavior being that the data in the upper left cell wins.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|minSupportedVersion (Minimum Supported Version)|The earliest version of the spreadsheet application that supports this metadata type.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|name (Metadata Type Name)|Represents the name of this particular metadata type.  This name shall be unique amongst all other *metadataTypes*.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|pasteAll (Metadata Paste All)|A Boolean flag indicating whether metadata is populated to a new cell by "Paste: All".  True when the metadata is populated on a Paste:All, false otherwise.  Paste:All and regular paste should be implemented so that they are equivalent by the spreadsheet application.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteBorders (Metadata Paste Borders)|A Boolean flag indicating whether metadata is populated with Paste: Borders.  True when the metadata is populated when only borders are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: The spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteColWidths (Metadata Paste Column Widths)|A Boolean flag indicating whether metadata is populated by Paste: Column Widths.  True if the metadata is populated when only column widths are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteComments (Metadata Paste Comments)|A Boolean flag indicating whether metadata is populated by Paste: Comments.  True when metadata is populated when only comments are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteDataValidation (Metadata Paste Data Validation)|A Boolean flag indicating whether metadata is populated by Paste: Validation.  True when metadata is populated when only data validation is pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteFormats (Metadata Paste Formats)|A Boolean flag indicating whether metadata is populated by Paste Special: Formats.  True when metadata is populated when only formatting is pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteFormulas (Metadata Paste Formulas)|A Boolean flag indicating whether metadata is populated by Paste: Formulas.  True when the metadata is populated when only formulas are pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteNumberFormats (Metadata Paste Number Formats)|A Boolean flag indicating whether metadata is populated with Paste: Number Formats.  True when metadata is populated when only number formatting is pasted, false otherwise.<br /><br /> The *copy* flag shall be set to *true* for this paste behavior to be respected.<br /><br /> [*Note*: the spreadsheet application can implement special pasting behavior, such as pasting everything from a cell (paste all/normal paste), pasting only borders, pasting only comments, or pasting only any other specific cell property. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|pasteValues (Metadata Paste Special Values)|A Boolean flag indicating whether metadata is populated by Paste: Values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|rowColShift (Metadata Insert Delete)|A Boolean flag indicating whether metadata survives shifting due to row/column insertion/deletion.  True if the metadata persists after the cell has been shifted, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|splitAll (Metadata Split All)|A Boolean flag indicating whether a merged cell split action has its metadata copied to all of the resulting cells.  True if the metadata is copied to all new cells resulting from a split, false otherwise.<br /><br /> If *splitFirst* is also set to *true*, *splitAll* wins - that is all the cells shall have the metadata copied to them.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|splitFirst (Meatadata Split First)|A Boolean flag indicating whether when a merged cell is split its metadata is copied to only the first resulting cell.  True when the metadata from a split cell is only copied to the first resulting cell, false otherwise.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_MetadataType) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.MetadataType.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the MetadataType class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Adjust">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Adjust { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Adjust" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Adjust" />
+      <MemberSignature Language="VB.NET" Value="Public Property Adjust As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Adjust : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Adjust" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "adjust")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Adjust Metadata.Represents the following attribute in the schema: adjust</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assign">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Assign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Assign" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Assign" />
+      <MemberSignature Language="VB.NET" Value="Public Property Assign As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Assign : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Assign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "assign")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Formula Assignment.Represents the following attribute in the schema: assign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellMeta">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue CellMeta { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue CellMeta" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.CellMeta" />
+      <MemberSignature Language="VB.NET" Value="Public Property CellMeta As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.CellMeta : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.CellMeta" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "cellMeta")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cell Metadata.Represents the following attribute in the schema: cellMeta</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearAll">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ClearAll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ClearAll" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearAll" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClearAll As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ClearAll : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "clearAll")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Clear All.Represents the following attribute in the schema: clearAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearComments">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ClearComments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ClearComments" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearComments" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClearComments As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ClearComments : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearComments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "clearComments")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Clear Comments.Represents the following attribute in the schema: clearComments</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearContents">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ClearContents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ClearContents" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearContents" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClearContents As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ClearContents : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearContents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "clearContents")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Clear Contents.Represents the following attribute in the schema: clearContents</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ClearFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ClearFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClearFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ClearFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.ClearFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "clearFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Clear Formats.Represents the following attribute in the schema: clearFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.MetadataType.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="metadataType.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Coerce">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Coerce { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Coerce" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Coerce" />
+      <MemberSignature Language="VB.NET" Value="Public Property Coerce As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Coerce : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Coerce" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "coerce")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Coercion.Represents the following attribute in the schema: coerce</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Copy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Copy" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Copy" />
+      <MemberSignature Language="VB.NET" Value="Public Property Copy As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Copy : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Copy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "copy")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Copy.Represents the following attribute in the schema: copy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Delete { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Delete" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Delete" />
+      <MemberSignature Language="VB.NET" Value="Public Property Delete As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Delete : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Delete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "delete")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Cell Value Delete.Represents the following attribute in the schema: delete</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Edit">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Edit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Edit" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Edit" />
+      <MemberSignature Language="VB.NET" Value="Public Property Edit As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Edit : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Edit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "edit")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Edit.Represents the following attribute in the schema: edit</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GhostColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue GhostColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue GhostColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.GhostColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property GhostColumn As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.GhostColumn : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.GhostColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "ghostCol")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Ghost Column.Represents the following attribute in the schema: ghostCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GhostRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue GhostRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue GhostRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.GhostRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property GhostRow As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.GhostRow : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.GhostRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "ghostRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Ghost Row.Represents the following attribute in the schema: ghostRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Merge { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Merge" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Merge" />
+      <MemberSignature Language="VB.NET" Value="Public Property Merge As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Merge : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Merge" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "merge")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Merge.Represents the following attribute in the schema: merge</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinSupportedVersion">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value MinSupportedVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value MinSupportedVersion" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.MinSupportedVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinSupportedVersion As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.MinSupportedVersion : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.MinSupportedVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minSupportedVersion")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Minimum Supported Version.Represents the following attribute in the schema: minSupportedVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Name" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Name : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Type Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteAll">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteAll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteAll" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteAll" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteAll As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteAll : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteAll")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste All.Represents the following attribute in the schema: pasteAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteBorders">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteBorders { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteBorders" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteBorders" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteBorders As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteBorders : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteBorders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteBorders")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Borders.Represents the following attribute in the schema: pasteBorders</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteColWidths">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteColWidths { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteColWidths" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteColWidths" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteColWidths As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteColWidths : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteColWidths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteColWidths")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Column Widths.Represents the following attribute in the schema: pasteColWidths</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteComments">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteComments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteComments" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteComments" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteComments As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteComments : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteComments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteComments")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Comments.Represents the following attribute in the schema: pasteComments</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteDataValidation">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteDataValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteDataValidation" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteDataValidation" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteDataValidation As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteDataValidation : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteDataValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteDataValidation")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Data Validation.Represents the following attribute in the schema: pasteDataValidation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Formats.Represents the following attribute in the schema: pasteFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteFormulas">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteFormulas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteFormulas" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteFormulas" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteFormulas As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteFormulas : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteFormulas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteFormulas")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Formulas.Represents the following attribute in the schema: pasteFormulas</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteNumberFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteNumberFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteNumberFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteNumberFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteNumberFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteNumberFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteNumberFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteNumberFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Number Formats.Represents the following attribute in the schema: pasteNumberFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasteValues">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PasteValues { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PasteValues" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteValues" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasteValues As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PasteValues : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.PasteValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pasteValues")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Paste Special Values.Represents the following attribute in the schema: pasteValues</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowColumnShift">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue RowColumnShift { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue RowColumnShift" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.RowColumnShift" />
+      <MemberSignature Language="VB.NET" Value="Public Property RowColumnShift As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.RowColumnShift : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.RowColumnShift" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "rowColShift")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Insert Delete.Represents the following attribute in the schema: rowColShift</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SplitAll">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SplitAll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SplitAll" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.SplitAll" />
+      <MemberSignature Language="VB.NET" Value="Public Property SplitAll As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SplitAll : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.SplitAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "splitAll")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Metadata Split All.Represents the following attribute in the schema: splitAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SplitFirst">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SplitFirst { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SplitFirst" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MetadataType.SplitFirst" />
+      <MemberSignature Language="VB.NET" Value="Public Property SplitFirst As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SplitFirst : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MetadataType.SplitFirst" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "splitFirst")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Meatadata Split First.Represents the following attribute in the schema: splitFirst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

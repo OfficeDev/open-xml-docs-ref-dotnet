@@ -1,0 +1,175 @@
+﻿<Type Name="BasedOn" FullName="DocumentFormat.OpenXml.Wordprocessing.BasedOn">
+  <TypeSignature Language="C#" Value="public class BasedOn : DocumentFormat.OpenXml.Wordprocessing.String253Type" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BasedOn extends DocumentFormat.OpenXml.Wordprocessing.String253Type" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BasedOn" />
+  <TypeSignature Language="VB.NET" Value="Public Class BasedOn&#xA;Inherits String253Type" />
+  <TypeSignature Language="F#" Value="type BasedOn = class&#xA;    inherit String253Type" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.String253Type</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Parent Style ID. When the object is serialized out as xml, its qualified name is w:basedOn.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **basedOn (Parent Style ID)**  
+  
+ This element specifies the style ID of the parent style from which this style inherits in the style inheritance. The *style inheritance* refers to a set of styles which inherit from one another to produce the resulting set of properties for a single style. The val attribute of this element specifies the styleId attribute for the parent style in the style inheritance.  
+  
+ If this element is omitted, then this style shall not be based on any other style in the current document (i.e. this element is the root of the style inheritance for a style). If no style in the current document specifies the styleId present in the val attribute, then this element shall be ignored (i.e. this element is the root of the style inheritance for a style).  
+  
+ If a style with this styleId is present, then it shall be subject to the following restrictions:  
+  
+-   If the current style is a table style, then the parent style shall also be a table style, or this element shall be ignored.  
+  
+-   If the current style is a paragraph style, then the parent style shall also be a paragraph style, or this element shall be ignored.  
+  
+-   If the current style is a character style, then the parent style shall also be a character style, or this element shall be ignored.  
+  
+-   If the current style is a numbering style, then this element shall be ignored.  
+  
+ [*Example*: Consider three WordprocessingML character styles defined as follows:  
+  
+-   A character style with a styleId value of *Strong* whose properties consist of the bold property  
+  
+-   A character style with a styleId value of *Underline* whose properties consist of the underline property  
+  
+-   A character style with a styleId value of *Emphasis* whose properties consist of the italics property  
+  
+ Each of these character styles defines a single character formatting property. If the basedOn values for each element were defined as follows:  
+  
+```xml  
+<w:style w:styleId="Strong">  
+  <w:basedOn w:val="Underline"/>  
+  …  <w:rPr>  
+    <w:b/>  
+  </w:rPr>  
+</w:style>  
+<w:style w:styleId="Underline">  
+  <w:basedOn w:val="Emphasis"/>  
+  …  <w:rPr>  
+    <w:u/>  
+  </w:rPr>  
+</w:style>  
+<w:style w:styleId="Emphasis">  
+  …  <w:rPr>  
+    <w:i/>  
+  </w:rPr>  
+</w:style>  
+```  
+  
+ The *Strong* style is based on the *Underline* style which is in turn based on the *Emphasis* style. This means that the actual definition of the *Strong* style would be as follows:  
+  
+-   Bold  
+  
+-   Underline (inherited from *Underline*)  
+  
+-   Italics (inherited from *Emphasis*)  
+  
+ The style chain for the *Strong* style would be defined as follows:  
+  
+-   *Emphasis*  
+  
+-   *Underline*  
+  
+-   *Strong*  
+  
+ Similarly, the style chain for the *Underline* style would be defined as follows:  
+  
+-   *Emphasis*  
+  
+-   *Underline*  
+  
+ In each case, the style chain is the list of all styles which are combined in order to produce the entire set of properties for any given style. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BasedOn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.BasedOn.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the BasedOn class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.BasedOn.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="basedOn.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.BasedOn.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.BasedOn.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

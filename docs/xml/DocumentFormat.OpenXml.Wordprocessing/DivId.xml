@@ -1,0 +1,204 @@
+﻿<Type Name="DivId" FullName="DocumentFormat.OpenXml.Wordprocessing.DivId">
+  <TypeSignature Language="C#" Value="public class DivId : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DivId extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DivId" />
+  <TypeSignature Language="VB.NET" Value="Public Class DivId&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type DivId = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the DivId Class. When the object is serialized out as xml, its qualified name is w:divId.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **divId (Associated HTML div ID)**  
+  
+ This element specifies that this paragraph should be located within the specified HTML *div* tag when this document is saved in HTML format. This ID is then used to look up the associated div stored in the divs (§17.15.2.8) element. [*Note*: This element is used to preserve the fidelity of existing HTML documents when saved in the WordprocessingML format. *end note*].  
+  
+ If the paragraph does not specify this element, then any *div* referenced by the previous paragraph is closed, and this paragraph shall not belong to any *div* when saved as HTML. If this specified id does not exist in the collection of *div*s the current document, then any *div* referenced by the previous paragraph is closed, and this paragraph shall not belong to any *div* when saved as HTML.  
+  
+ [*Example*: Consider the following WordprocessingML paragraph fragment:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:divId w:val="1512645511" />   
+  </w:pPr>  
+</w:p>  
+```  
+  
+ This paragraph specifies that it belongs to the HTML *div* with id *1512645511*, stored in the divs element. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **divId (Associated HTML div ID)**  
+  
+ This element specifies the HTML div information which is associated with the current table row. This information, stored in the Web Settings part, is used to associate one or more table rows with a particular HTML *div* element. [*Note*: This property is used when saving an HTML document into the WordprocessingML format in order to prevent a loss of all HTML *div* information, so that the document can later be saved back into HTML format and have the stored information replaced, since the HTML *div* can store formatting properties on arbitrary regions. *end note*]  
+  
+ In order to determine the associated HTML *div* properties, the value of the val attribute on this element is used to look up an associated div element (§17.15.2.8) whose id attribute matches this value.  
+  
+ If this table row does not have a divId element present, then this table row shall not have any associated HTML div information. If this element is present, but the val attribute specifies an id value which does not have an associated div element, then this element is ignored.  
+  
+ [*Example*: Consider an HTML document defined as follows:  
+  
+```xml  
+<html>  
+  <body>  
+    <div style="…">  
+      <table>  
+        <tr>  
+          <td>R1C1</td>  
+           …        </tr>  
+      </table>  
+      <p>  
+        …      </p>  
+    </div>  
+    …  </body>  
+</html>  
+```  
+  
+ This HTML document specifies a div spanning the table and the first paragraph. If this document is saved into WordprocessingML, then both the rows of the table and the paragraph must have a divId which points at the same div information in the web settings part:  
+  
+```xml  
+<w:trPr>  
+  …  <w:divId w:val="1102603671"/>  
+</w:trPr>  
+```  
+  
+ The val attribute then points at a div element which stores the associated *div* properties:  
+  
+```xml  
+<w:divs>  
+  <w:div w:id="1102603671">  
+    …  </w:div>  
+</w:divs>  
+```  
+  
+ This specifies that this table's rows are part of a single HTML *div*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11); trPr (§17.4.83)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_DecimalNumber) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DivId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.DivId.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the DivId class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.DivId.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="divId.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.DivId.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.DivId.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Val">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Val { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Val" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.DivId.Val" />
+      <MemberSignature Language="VB.NET" Value="Public Property Val As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Val : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.DivId.Val" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "val")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

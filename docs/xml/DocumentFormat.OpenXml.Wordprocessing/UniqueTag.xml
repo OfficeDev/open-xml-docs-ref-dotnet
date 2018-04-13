@@ -1,0 +1,155 @@
+﻿<Type Name="UniqueTag" FullName="DocumentFormat.OpenXml.Wordprocessing.UniqueTag">
+  <TypeSignature Language="C#" Value="public class UniqueTag : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UniqueTag extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.UniqueTag" />
+  <TypeSignature Language="VB.NET" Value="Public Class UniqueTag&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type UniqueTag = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Unique Value for Record. When the object is serialized out as xml, its qualified name is w:uniqueTag.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **uniqueTag (Unique Value for Record)**  
+  
+ This element specifies the contents of a given record within the specified external data source, in the column containing unique data for every record within the external data source. given external data source. This element is used in conjunction with the column (§17.14.6) element to maintain a relationship between the records within an external data source and a given merged WordprocessingML document.  
+  
+ The contents of this attribute shall be the base64-encoded value of the unique tag value as specified by the data source.  
+  
+ [*Note*: This information is necessary as part of a mail merge as records can be added or deleted from external data sources, and a means must be provided to maintain record-specific inclusion or exclusion data using the active element (§17.14.1) and the affected external data record when the WordprocessingML document is reconnected to the external data source irrespective of the ordering of the records within the external data source. *end note*]  
+  
+ [*Example*: Consider the following WordprocessingML fragment for the information about a single record in a source document for a mail merge:  
+  
+```xml  
+<w:recipientData>  
+  <w:active w:val="0" />  
+  <w:column w:val="12" />   
+  <w:uniqueTag>258865469</w:uniqueTag>  
+</w:recipientData>  
+```  
+  
+ The external data record associated with this information is specified via the column in the external data source corresponding to the column element with a val attribute equal to *12*, which contains a row whose value in this column has a value corresponding to the uniqueTag element with a val attribute equal to *258865469*. This record is not imported into the merged WordprocessingML document as the active (§17.14.1) element associated with the given external data record has a val attribute equal to *0*.  
+  
+ In other words, when the specified external data source is connected to, the record within the thirteenth column of the external data source that has the contents *258865469*, and not populate mapped fields in a merged document with data from that record. *end example*]  
+  
+ The possible values for this element are defined by the W3C XML Schema *base64Binary* datatype.  
+  
+|Parent Elements|  
+|---------------------|  
+|recipientData (§17.14.27)|  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueTag ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.UniqueTag.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the UniqueTag class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.UniqueTag.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="uniqueTag.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.UniqueTag.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.UniqueTag.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Val">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Base64BinaryValue Val { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Base64BinaryValue Val" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.UniqueTag.Val" />
+      <MemberSignature Language="VB.NET" Value="Public Property Val As Base64BinaryValue" />
+      <MemberSignature Language="F#" Value="member this.Val : DocumentFormat.OpenXml.Base64BinaryValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.UniqueTag.Val" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "val")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>val.Represents the following attribute in the schema: w:val</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

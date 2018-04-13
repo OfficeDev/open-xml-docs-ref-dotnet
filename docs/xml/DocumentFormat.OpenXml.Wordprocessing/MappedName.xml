@@ -1,0 +1,132 @@
+﻿<Type Name="MappedName" FullName="DocumentFormat.OpenXml.Wordprocessing.MappedName">
+  <TypeSignature Language="C#" Value="public class MappedName : DocumentFormat.OpenXml.Wordprocessing.StringType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MappedName extends DocumentFormat.OpenXml.Wordprocessing.StringType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MappedName" />
+  <TypeSignature Language="VB.NET" Value="Public Class MappedName&#xA;Inherits StringType" />
+  <TypeSignature Language="F#" Value="type MappedName = class&#xA;    inherit StringType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.StringType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Predefined Merge Field Name. When the object is serialized out as xml, its qualified name is w:mappedName.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **mappedName (Predefined Merge Field Name)**  
+  
+ This element specifies the predefined WordprocessingML *MERGEFIELD* field name which shall be mapped to the column number specified by the column element (§17.14.6) within this field mapping. [*Guidance*: This element allows the current column from the specified data source to be mapped to a predefined field name, allowing applications to have one standard set of field names to use regardless of the data source column names, for example, to create the address formats to place into an *ADDRESSBLOCK* field. *end guidance*]  
+  
+ If this element is omitted, then the current data source column mapping shall not have a predefined merge field name mapped to its contents, and shall only be referenced via the data source column name specified by the name element (§17.14.24) when referenced by one or more *MERGEFIELD* fields. If the application does not have a predefined merge field whose name matches the name specified using the val attribute, then this element can be ignored.  
+  
+ [*Example*: Consider the following WordprocessingML fragment, representing two columns from an external data source which have been mapped to the built-in fields *First Name* and *Last Name*, respectively:  
+  
+```xml  
+<w:fieldMapData>  
+  <w:column w:val="0" />  
+  <w:name w:val="Column Name A" />  
+  <w:mappedName w:val="First Name" />  
+  …  
+</w:fieldMapData>  
+<w:fieldMapData>  
+  <w:column w:val="1" />  
+  <w:name w:val="Column Name B" />  
+  <w:mappedName w:val="Last Name" />  
+  …  
+</w:fieldMapData>  
+```  
+  
+ The first and second columns, specified by the column element values of *0* and *1* respectively, specify that the predefined WordprocessingML field names *First Name* and *Last Name* are mapped to the columns of the external data source, and the data source names for those columns are *Column Name A* and *Column Name B*, respectively.  
+  
+ Therefore, if *MERGEFIELD* fields calling for *First Name* and *Last Name* are inserted in a WordprocessingML document connected to the external data source with the field mappings specified above, when the mail merge takes place, the data from the first and second column populates the fields calling for *First Name* and *Last Name* data within the merged WordprocessingML document. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fieldMapData (§17.14.15)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_String) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MappedName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.MappedName.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the MappedName class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.MappedName.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="mappedName.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.MappedName.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.MappedName.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

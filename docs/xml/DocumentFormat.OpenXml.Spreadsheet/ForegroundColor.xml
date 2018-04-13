@@ -1,0 +1,117 @@
+﻿<Type Name="ForegroundColor" FullName="DocumentFormat.OpenXml.Spreadsheet.ForegroundColor">
+  <TypeSignature Language="C#" Value="public class ForegroundColor : DocumentFormat.OpenXml.Spreadsheet.ColorType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ForegroundColor extends DocumentFormat.OpenXml.Spreadsheet.ColorType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.ForegroundColor" />
+  <TypeSignature Language="VB.NET" Value="Public Class ForegroundColor&#xA;Inherits ColorType" />
+  <TypeSignature Language="F#" Value="type ForegroundColor = class&#xA;    inherit ColorType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Spreadsheet.ColorType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Foreground Color. When the object is serialized out as xml, its qualified name is x:fgColor.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **fgColor (Foreground Color)**  
+  
+ Foreground color of the cell fill pattern. Cell fill patterns operate with two colors: a background color and a foreground color. These combine together to make a patterned cell fill.  
+  
+|Parent Elements|  
+|---------------------|  
+|patternFill (§18.8.32)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|auto (Automatic)|A boolean value indicating the color is automatic and system color dependent.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|indexed (Index)|Indexed color value. Only used for backwards compatibility. References a color in indexedColors.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|rgb (Alpha Red Green Blue Color Value)|Standard Alpha Red Green Blue color value (ARGB).<br /><br /> The possible values for this attribute are defined by the *ST_UnsignedIntHex* simple type (§18.18.86).|  
+|theme (Theme Color)|A zero-based index into the *\<clrScheme>* collection (§20.1.6.2), referencing a particular *\<sysClr>* or *\<srgbClr>* value expressed in the Theme part.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|tint (Tint)|Specifies the tint value applied to the color.<br /><br /> If tint is supplied, then it is applied to the  value of the color to determine the final color applied.<br /><br /> The tint value is stored as a double from -1.0 .. 1.0, where -1.0 means 100% darken and 1.0 means 100% lighten. Also, 0.0 means no change.<br /><br /> In loading the  value, it is converted to HLS where HLS values are (0..HLSMAX), where HLSMAX is currently 255.<br /><br /> [*Example*:<br /><br /> Here are some examples of how to apply tint to color:<br /><br /> **If (tint < 0)**<br /><br /> Lum’ = Lum * (1.0 + tint)<br /><br /> For example: Lum = 200; tint = -0.5; Darken 50%<br /><br /> Lum‘ = 200 * (0.5) => 100<br /><br /> For example:  Lum = 200; tint = -1.0; Darken 100% (make black)<br /><br /> Lum‘ = 200 * (1.0-1.0) => 0<br /><br /> **If (tint > 0)**<br /><br /> Lum‘ = Lum * (1.0-tint) + (HLSMAX – HLSMAX * (1.0-tint))<br /><br /> For example: Lum = 100; tint = 0.75; Lighten 75%<br /><br /> Lum‘      = 100 * (1-.75)  + (HLSMAX – HLSMAX*(1-.75))<br /><br /> = 100 * .25 + (255 – 255 * .25)<br /><br /> = 25 + (255 – 63) = 25 + 192 = 217<br /><br /> For example: Lum = 100; tint = 1.0; Lighten 100% (make white)<br /><br /> Lum‘      = 100 * (1-1)  + (HLSMAX – HLSMAX\*(1-1))<br /><br /> = 100 * 0 + (255 – 255 * 0)<br /><br /> = 0 + (255 – 0) = 255<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Color) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ForegroundColor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.ForegroundColor.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the ForegroundColor class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.ForegroundColor.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="foregroundColor.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.ForegroundColor.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.ForegroundColor.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

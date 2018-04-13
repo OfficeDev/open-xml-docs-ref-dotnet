@@ -1,0 +1,174 @@
+﻿<Type Name="InsideVerticalBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder">
+  <TypeSignature Language="C#" Value="public class InsideVerticalBorder : DocumentFormat.OpenXml.Wordprocessing.BorderType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InsideVerticalBorder extends DocumentFormat.OpenXml.Wordprocessing.BorderType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder" />
+  <TypeSignature Language="VB.NET" Value="Public Class InsideVerticalBorder&#xA;Inherits BorderType" />
+  <TypeSignature Language="F#" Value="type InsideVerticalBorder = class&#xA;    inherit BorderType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.BorderType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Table Inside Vertical Edges Border. When the object is serialized out as xml, its qualified name is w:insideV.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `insideV (Table Inside Vertical Edges Border)`  
+  
+ This element specifies the border which shall be displayed on all vertical table cell borders which are not on an outmost edge of the parent table (all horizontal borders which are not the leftmost or rightmost border). The appearance of this table cell border in the document shall be determined by the following settings:  
+  
+-   The display of the border on interior edges is subject to the conflict resolution algorithm defined by the tcBorders element (§17.4.67) and the tblBorders element (§17.4.40;§17.4.39)  
+  
+ If this element is omitted, then the inside vertical borders of this table shall have the border specified by the associated table style. If no inside vertical edge border is specified in the style hierarchy, then those cells in this table shall not have an inside vertical edge border.  
+  
+ [*Example*: Consider a table in which the table specifies a border on all interior horizontal and vertical edges, as follows:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This interior horizontal cell border is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblPr>  
+  <w:tblBorders>  
+    <w:insideH w:val="doubleWave" w:sz="6" w:space="0" w:color="92D050"/>  
+    <w:insideV w:val="doubleWave" w:sz="6" w:space="0" w:color="92D050"/>  
+  </w:tblBorders>  
+  …</w:tblPr>  
+```  
+  
+ The insideV element specifies a ¾ point border of type *doubleWave* on all interior vertical edges. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblBorders (§17.4.39); tblBorders (§17.4.40)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `insideV (Table Cell Inside Vertical Edges Border)`  
+  
+ This element specifies the border which shall be displayed on all interior vertical edges of the current group of table cells. [*Note*: Although individual table cells have no concept of an internal edge, which would render this property useless in most cases, it is used to determine the cell borders to apply to a specific group of cells as part of table conditional formatting in a table style, for example, the inside vertical edges on the set of cells in the header row. *end note*]  
+  
+ The appearance of this table cell border in the document shall be determined by the following settings:  
+  
+-   If the net tblCellSpacing element value (§17.4.45;§17.4.44;§17.4.46) applied to the cell is non-zero, then the cell border shall always be displayed  
+  
+-   Otherwise, the display of the border is subject to the conflict resolution algorithm defined by the tcBorders element (§17.4.67) and the tblBorders element (§17.4.40;§17.4.39)  
+  
+ If this element is omitted, then the specified conditional formatting on the table shall not change the current set of internal edge borders on its set of table cells (i.e. their current setting shall remain unchanged).  
+  
+ [*Example*: Consider a table in which the conditional formatting on the header row in the associated table style  specifies a double line red cell border for all internal vertical lines as follows:  
+  
+ e2e00747-68cc-44ad-b249-807684eabeba  
+  
+ This inner vertical edge cell border is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tblStylePr w:type="firstRow">  
+  <w:tcPr>  
+    <w:tcBorders>  
+      <w:insideV w:val="double" w:sz="4" w:space="0" w:color="FF0000"/>  
+    </w:tcBorders>  
+  </w:tcPr>  
+</w:tblStylePr>  
+```  
+  
+ The insideV element specifies a ¼ point border of type *double*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcBorders (§17.4.67)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InsideVerticalBorder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the InsideVerticalBorder class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="insideVerticalBorder.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.InsideVerticalBorder.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

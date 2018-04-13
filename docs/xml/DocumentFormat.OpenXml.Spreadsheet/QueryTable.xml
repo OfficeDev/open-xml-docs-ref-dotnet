@@ -1,0 +1,903 @@
+﻿<Type Name="QueryTable" FullName="DocumentFormat.OpenXml.Spreadsheet.QueryTable">
+  <TypeSignature Language="C#" Value="public class QueryTable : DocumentFormat.OpenXml.OpenXmlPartRootElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryTable extends DocumentFormat.OpenXml.OpenXmlPartRootElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.QueryTable" />
+  <TypeSignature Language="VB.NET" Value="Public Class QueryTable&#xA;Inherits OpenXmlPartRootElement" />
+  <TypeSignature Language="F#" Value="type QueryTable = class&#xA;    inherit OpenXmlPartRootElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlPartRootElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.QueryTableExtensionList))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Query Table. The root element of QueryTablePart. When the object is serialized out as xml, its qualified name is x:queryTable.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **queryTable (Query Table)**  
+  
+ This element specifies all the relevant properties for a query table, one query table element is stored for each query table object in the spreadsheetML document.  
+  
+|Parent Elements|  
+|---------------------|  
+|Root element of SpreadsheetML Query Table part|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|queryTableRefresh (QueryTable Refresh Information)|§18.12.6|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|adjustColumnWidth (Adjust Column Width On Refresh)|Specifies whether to automatically adjust column widths on refresh to fit the data retrieved.  *true* if column widths should be adjusted.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|applyAlignmentFormats (Apply Alignment Formats)|If *true* apply legacy table autoformat alignment properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|applyBorderFormats (Apply Border Formats)|If *true* apply legacy table autoformat border properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|applyFontFormats (Apply Font Formats)|If *true* apply legacy table autoformat font properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|applyNumberFormats (Apply Number Formats)|If *true* apply legacy table autoformat number format properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|applyPatternFormats (Apply Pattern Formats)|If *true* apply legacy table autoformat pattern properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|applyWidthHeightFormats (Apply Width / Height Formats)|If *true* apply legacy table autoformat width/height properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|autoFormatId (Auto Format Id)|Identifies which legacy table autoformat to apply.<br /><br /> Annex D contains a listing of the supported PivotTable AutoFormats, example formatting, and a sample workbook with each of those AutoFormats applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|backgroundRefresh (Background Refresh)|Specifies whether or not the query table shall try to refresh data in the background.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|connectionId (Connection Id)|Specifies the ID number of the external data connection to use to refresh data in the query table.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|disableEdit (Disable Edit)|Specifies whether the connection element  used with this query table shall be editable.  If *true*, then the connection is not editable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|disableRefresh (Disable Refresh)|Specifies whether the query table shall be refreshable.  If *true*, then then query table is not refreshable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|fillFormulas (Fill Adjacent Formulas)|Specifies whether or not formulas in columns adjacent to the query table should be filled down whenever the query table is refreshed.  This is helpful since the number of rows returned by a query table refresh operation can vary.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|firstBackgroundRefresh (First Background Refresh)|Specifies whether or not data has ever been refreshed for this query table.  If the very first background data refresh had not completed at the time the file was saved, this attribute is set to *true*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|growShrinkType (Grow Shrink Type)|Specifies the type of behavior expected for dealing with a variable number of rows of data in the query table between refresh operations.<br /><br /> The meaning of the possible values of this attribute {*insertClear*, *insertDelete*, *overwriteClear*} are explained in detail in the definition of the simple type.<br /><br /> The possible values for this attribute are defined by the *ST_GrowShrinkType* simple type (§18.18.39).|  
+|headers (First Row Column Titles)|Specifies whether or not the query table has first row with column titles.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|intermediate (Intermediate)|Specifies whether this query table is in an intermediate state, having been defined but not fully formed and populated with data.<br /><br /> In this state, fields and ranges of the query table can be unknown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|name (QueryTable Name)|Specifies the name of the query table.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|preserveFormatting (Preserve Formatting On Refresh)|Specifies whether the application should try to preserve formatting in the query table and copy this formatting to any new rows of data.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|refreshOnLoad (Refresh On Load)|Specifies whether the query table shall refresh its data automatically when the spreadsheetML document is loaded or opened.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|removeDataOnSave (Remove Data On Save)|Specifies whether the query table shall remove all data from the worksheet before the spreadsheetML document is saved.<br /><br /> This is very helpful for situations where people who have different permissions to view data want to share the same spreadsheetML document.  All data from the last user is removed, and new users re-query the external data sources with their own credentials.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|rowNumbers (Row Numbers)|Specifies whether the query table shall include a first column of row numbers.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_QueryTable) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.QueryTable.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the QueryTable class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryTable (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.QueryTable.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.QueryTable : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.QueryTable" Usage="new DocumentFormat.OpenXml.Spreadsheet.QueryTable childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the QueryTable class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryTable (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.QueryTable.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.QueryTable : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.QueryTable" Usage="new DocumentFormat.OpenXml.Spreadsheet.QueryTable childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the QueryTable class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryTable (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.QueryTable.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.QueryTable : string -&gt; DocumentFormat.OpenXml.Spreadsheet.QueryTable" Usage="new DocumentFormat.OpenXml.Spreadsheet.QueryTable outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the QueryTable class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdjustColumnWidth">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AdjustColumnWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AdjustColumnWidth" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.AdjustColumnWidth" />
+      <MemberSignature Language="VB.NET" Value="Public Property AdjustColumnWidth As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AdjustColumnWidth : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.AdjustColumnWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "adjustColumnWidth")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>adjustColumnWidth.Represents the following attribute in the schema: adjustColumnWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyAlignmentFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyAlignmentFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyAlignmentFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyAlignmentFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyAlignmentFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyAlignmentFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyAlignmentFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "applyAlignmentFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Apply Alignment Formats.Represents the following attribute in the schema: applyAlignmentFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyBorderFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyBorderFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyBorderFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyBorderFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyBorderFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyBorderFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyBorderFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "applyBorderFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Apply Border Formats.Represents the following attribute in the schema: applyBorderFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyFontFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyFontFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyFontFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyFontFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyFontFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyFontFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyFontFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "applyFontFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Apply Font Formats.Represents the following attribute in the schema: applyFontFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyNumberFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyNumberFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyNumberFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyNumberFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyNumberFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyNumberFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyNumberFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "applyNumberFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Apply Number Formats.Represents the following attribute in the schema: applyNumberFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyPatternFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyPatternFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyPatternFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyPatternFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyPatternFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyPatternFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyPatternFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "applyPatternFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Apply Pattern Formats.Represents the following attribute in the schema: applyPatternFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyWidthHeightFormats">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyWidthHeightFormats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyWidthHeightFormats" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyWidthHeightFormats" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyWidthHeightFormats As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyWidthHeightFormats : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.ApplyWidthHeightFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "applyWidthHeightFormats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Apply Width / Height Formats.Represents the following attribute in the schema: applyWidthHeightFormats</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormatId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value AutoFormatId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value AutoFormatId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.AutoFormatId" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoFormatId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.AutoFormatId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.AutoFormatId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "autoFormatId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Auto Format Id.Represents the following attribute in the schema: autoFormatId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundRefresh">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue BackgroundRefresh { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue BackgroundRefresh" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.BackgroundRefresh" />
+      <MemberSignature Language="VB.NET" Value="Public Property BackgroundRefresh As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.BackgroundRefresh : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.BackgroundRefresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "backgroundRefresh")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>backgroundRefresh.Represents the following attribute in the schema: backgroundRefresh</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.QueryTable.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="queryTable.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ConnectionId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ConnectionId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.ConnectionId" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ConnectionId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.ConnectionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "connectionId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>connectionId.Represents the following attribute in the schema: connectionId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableEdit">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DisableEdit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DisableEdit" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.DisableEdit" />
+      <MemberSignature Language="VB.NET" Value="Public Property DisableEdit As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DisableEdit : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.DisableEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "disableEdit")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>disableEdit.Represents the following attribute in the schema: disableEdit</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableRefresh">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DisableRefresh { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DisableRefresh" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.DisableRefresh" />
+      <MemberSignature Language="VB.NET" Value="Public Property DisableRefresh As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DisableRefresh : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.DisableRefresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "disableRefresh")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>disableRefresh.Represents the following attribute in the schema: disableRefresh</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillFormulas">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue FillFormulas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue FillFormulas" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.FillFormulas" />
+      <MemberSignature Language="VB.NET" Value="Public Property FillFormulas As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.FillFormulas : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.FillFormulas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "fillFormulas")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>fillFormulas.Represents the following attribute in the schema: fillFormulas</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstBackgroundRefresh">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue FirstBackgroundRefresh { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue FirstBackgroundRefresh" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.FirstBackgroundRefresh" />
+      <MemberSignature Language="VB.NET" Value="Public Property FirstBackgroundRefresh As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.FirstBackgroundRefresh : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.FirstBackgroundRefresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "firstBackgroundRefresh")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>firstBackgroundRefresh.Represents the following attribute in the schema: firstBackgroundRefresh</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GrowShrinkType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GrowShrinkValues&gt; GrowShrinkType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.GrowShrinkValues&gt; GrowShrinkType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.GrowShrinkType" />
+      <MemberSignature Language="VB.NET" Value="Public Property GrowShrinkType As EnumValue(Of GrowShrinkValues)" />
+      <MemberSignature Language="F#" Value="member this.GrowShrinkType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GrowShrinkValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.GrowShrinkType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "growShrinkType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GrowShrinkValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>growShrinkType.Represents the following attribute in the schema: growShrinkType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Headers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Headers" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.Headers" />
+      <MemberSignature Language="VB.NET" Value="Public Property Headers As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Headers : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "headers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>headers.Represents the following attribute in the schema: headers</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intermediate">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Intermediate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Intermediate" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.Intermediate" />
+      <MemberSignature Language="VB.NET" Value="Public Property Intermediate As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Intermediate : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.Intermediate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "intermediate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>intermediate.Represents the following attribute in the schema: intermediate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (DocumentFormat.OpenXml.Packaging.QueryTablePart openXmlPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class DocumentFormat.OpenXml.Packaging.QueryTablePart openXmlPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.QueryTable.Load(DocumentFormat.OpenXml.Packaging.QueryTablePart)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Load (openXmlPart As QueryTablePart)" />
+      <MemberSignature Language="F#" Value="override this.Load : DocumentFormat.OpenXml.Packaging.QueryTablePart -&gt; unit" Usage="queryTable.Load openXmlPart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="openXmlPart" Type="DocumentFormat.OpenXml.Packaging.QueryTablePart" />
+      </Parameters>
+      <Docs>
+        <param name="openXmlPart">Specifies the part to be loaded.</param>
+        <summary>Loads the DOM from the QueryTablePart.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Name" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Name : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveFormatting">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PreserveFormatting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PreserveFormatting" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.PreserveFormatting" />
+      <MemberSignature Language="VB.NET" Value="Public Property PreserveFormatting As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PreserveFormatting : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.PreserveFormatting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "preserveFormatting")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>preserveFormatting.Represents the following attribute in the schema: preserveFormatting</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryTableExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.QueryTableExtensionList QueryTableExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.QueryTableExtensionList QueryTableExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.QueryTableExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property QueryTableExtensionList As QueryTableExtensionList" />
+      <MemberSignature Language="F#" Value="member this.QueryTableExtensionList : DocumentFormat.OpenXml.Spreadsheet.QueryTableExtensionList with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.QueryTableExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.QueryTableExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>QueryTableExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryTablePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.QueryTablePart QueryTablePart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.QueryTablePart QueryTablePart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.QueryTablePart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property QueryTablePart As QueryTablePart" />
+      <MemberSignature Language="F#" Value="member this.QueryTablePart : DocumentFormat.OpenXml.Packaging.QueryTablePart" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.QueryTablePart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.QueryTablePart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the QueryTablePart associated with this element.</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.QueryTablePart" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryTableRefresh">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh QueryTableRefresh { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh QueryTableRefresh" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.QueryTableRefresh" />
+      <MemberSignature Language="VB.NET" Value="Public Property QueryTableRefresh As QueryTableRefresh" />
+      <MemberSignature Language="F#" Value="member this.QueryTableRefresh : DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.QueryTableRefresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>QueryTableRefresh. Represents the following element tag in the schema: x:queryTableRefresh</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshOnLoad">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue RefreshOnLoad { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue RefreshOnLoad" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.RefreshOnLoad" />
+      <MemberSignature Language="VB.NET" Value="Public Property RefreshOnLoad As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.RefreshOnLoad : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.RefreshOnLoad" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "refreshOnLoad")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>refreshOnLoad.Represents the following attribute in the schema: refreshOnLoad</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDataOnSave">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue RemoveDataOnSave { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue RemoveDataOnSave" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.RemoveDataOnSave" />
+      <MemberSignature Language="VB.NET" Value="Public Property RemoveDataOnSave As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.RemoveDataOnSave : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.RemoveDataOnSave" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "removeDataOnSave")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>removeDataOnSave.Represents the following attribute in the schema: removeDataOnSave</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowNumbers">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue RowNumbers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue RowNumbers" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.QueryTable.RowNumbers" />
+      <MemberSignature Language="VB.NET" Value="Public Property RowNumbers As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.RowNumbers : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.QueryTable.RowNumbers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "rowNumbers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>rowNumbers.Represents the following attribute in the schema: rowNumbers</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (DocumentFormat.OpenXml.Packaging.QueryTablePart openXmlPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class DocumentFormat.OpenXml.Packaging.QueryTablePart openXmlPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.QueryTable.Save(DocumentFormat.OpenXml.Packaging.QueryTablePart)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (openXmlPart As QueryTablePart)" />
+      <MemberSignature Language="F#" Value="override this.Save : DocumentFormat.OpenXml.Packaging.QueryTablePart -&gt; unit" Usage="queryTable.Save openXmlPart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="openXmlPart" Type="DocumentFormat.OpenXml.Packaging.QueryTablePart" />
+      </Parameters>
+      <Docs>
+        <param name="openXmlPart">Specifies the part to save to.</param>
+        <summary>Saves the DOM into the QueryTablePart.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

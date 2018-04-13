@@ -1,0 +1,163 @@
+﻿<Type Name="SubDocumentReference" FullName="DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference">
+  <TypeSignature Language="C#" Value="public class SubDocumentReference : DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SubDocumentReference extends DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference" />
+  <TypeSignature Language="VB.NET" Value="Public Class SubDocumentReference&#xA;Inherits RelationshipType" />
+  <TypeSignature Language="F#" Value="type SubDocumentReference = class&#xA;    inherit RelationshipType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.RelationshipType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Anchor for Subdocument Location. When the object is serialized out as xml, its qualified name is w:subDoc.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `subDoc (Anchor for Subdocument Location)`  
+  
+ This element specifies a location within a master document for the insertion of the contents of a specified subdocument. The specified subdocument's contents should appear at the specified location within the master document as needed, but shall remain part of the separate file specified by the subdocument location. The location of the subdocument shall be specified by the relationship whose Id attribute matches the id attribute on this element.  
+  
+ If the relationship type of the relationship specified by this element is not http://schemas.openxmlformats.org/officeDocument/2006/subDocument, is not present, or does not have a TargetMode attribute value of *External*, then the document shall be considered non-conformant.  
+  
+ When a subdocument is displayed at the specified location within the master document, the following logic determines how the styles and formatting of the subdocument and associated master document shall be handled:  
+  
+-   All direct formatting in the subdocument is retained.  
+  
+-   For each style in each subdocument:  
+  
+ *If a style with the same styleId attribute value exists in the master document, display the contents of the subdocument using the style in the master document.*  
+  
+ *Otherwise, import the style into the master document and display the content using the original style.*  
+  
+ *If a subsequent subdocument also contains a style with the same styleId attribute value, the latter’s style is ignored and the content is displayed using the version of the style imported into the master document.*  
+  
+ [*Example*: Consider a book consisting of three chapters, two of which have been divided into subdocuments as follows (the red rectangle indicates the bounds of each subdocument's contents):  
+  
+ 35b1894c-1477-4693-aeec-f0baccc69f21  
+  
+ The resulting master document would consist of its own WordprocessingML content as well as subdocument anchors in the appropriate locations:  
+  
+```xml  
+<w:body>  
+  <w:p>  
+    …    <w:r>  
+      <w:t>My Book</w:t>  
+    </w:r>  
+  </w:p>  
+  <w:p>  
+    <w:r>  
+      <w:t>Once upon a time…</w:t>  
+    </w:r>  
+  </w:p>  
+  <w:p>  
+    <w:subDoc r:id="subDocRel1" />  
+  </w:p>  
+  <w:p>  
+    <w:subDoc r:id="subDocRel2" />  
+  </w:p>  
+  <w:sectPr>  
+    …  </w:sectPr>  
+</w:body>  
+```  
+  
+ The two subDoc elements specify that the subdocuments targeted by the relationships with an ID of subDocRel1 and subDocRel2 must be imported in that order after the content of the first two paragraphs of content. Examining the contents of the corresponding relationship part item, we can see the targets for those relationships:  
+  
+```xml  
+<Relationships … >  
+  …  <Relationship Id="subDocRel1" TargetMode="External" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/subDocument" Target="Chapter1.docx" />  
+  <Relationship Id="subDocRel2" TargetMode="External" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/subDocument" Target="Chapter2.docx" />  
+  …</Relationships>  
+```  
+  
+ The corresponding relationship part item shows that the two files to be imported are located in the same location as the current file and name *Chapter1.docx* and *Chapter2.docx* respectively. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bdo (§17.3.2.3); customXml (§17.5.1.3); dir (§17.3.2.8); fldSimple (§17.16.19); hyperlink (§17.16.22); p (§17.3.1.22); sdtContent (§17.5.2.36); smartTag (§17.5.1.9)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Rel) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SubDocumentReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the SubDocumentReference class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="subDocumentReference.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.SubDocumentReference.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

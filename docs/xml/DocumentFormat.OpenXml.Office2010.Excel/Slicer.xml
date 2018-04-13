@@ -1,0 +1,544 @@
+﻿<Type Name="Slicer" FullName="DocumentFormat.OpenXml.Office2010.Excel.Slicer">
+  <TypeSignature Language="C#" Value="public class Slicer : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Slicer extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2010.Excel.Slicer" />
+  <TypeSignature Language="VB.NET" Value="Public Class Slicer&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type Slicer = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.Excel.ExtensionList), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the Slicer Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:slicer.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.6.68   CT_Slicer*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
+  
+ *Referenced by:* CT_Slicers  
+  
+ A complex type that specifies a slicer view, as specified in section 2.3.2.2, in this worksheet.  
+  
+ *Child Elements:*  
+  
+ *extLst:* A *CT_ExtensionList* element, a specified in [ISO/IEC-29500-4] section A.2, that specifies future extensibility for this element.  
+  
+ *Attributes:*  
+  
+ *name:* An *ST_Xstring* attribute, as specified in [ISO/IEC-29500-1] section 22.9.2.19, that specifies the name of the slicer view. MUST be a unique case-insensitive name within the scope of this workbook. The length of this attribute MUST be greater than or equal to 1 character and MUST be less than or equal to 32767 characters.  
+  
+ *cache:* An *ST_Xstring* attribute that specifies the name of the slicer cache, as specified in section 2.3.2.1, that this slicer view is associated with. There MUST be a *CT_SlicerCacheDefinition* element, as specified in section 2.6.70, within this workbook with the *name* attribute equal to the value of this attribute.  
+  
+ *caption:* An *ST_Xstring* attribute that specifies the caption of the slicer view. If this string exists, the length MUST be greater than or equal to 1 character.  
+  
+ *startItem:* An *unsignedInt* attribute, as specified in [XMLSCHEMA2] section 3.3.22, that specifies the zero-based index of the first slicer item, as specified in section 2.3.2.1.6, displayed by the slicer view.  
+  
+ *columnCount:* An *unsignedInt* attribute that specifies the number of columns (2) in the slicer view. MUST be greater than or equal to 1 and MUST be less than or equal to 20000.  
+  
+ *showCaption:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the caption is displayed.  
+  
+ *level:* An *unsignedInt* attribute that specifies the OLAP level of the OLAP hierarchy of the slicer source data used by this slicer view.  
+  
+ If the slicer source data is OLAP, the value MUST be greater than or equal to 0 and MUST be less than *count* of the CT_OlapSlicerCacheLevelsData element specified by the CT_SlicerCacheDefinition element specified by *cache*. If the OLAP hierarchy has an *OLAP All level*, the value MUST NOT be 0.  
+  
+ If the slicer source data is non-OLAP, this attribute MUST NOT exist.  
+  
+ *style:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies the slicer style of the slicer view. If this field (1) exists, this string MUST match the *name* attribute of a CT_SlicerStyle element within this workbook or MUST be equal to one of the built-in slicer style names:  
+  
+||  
+|-|  
+|*Built-in slicer style names*|  
+|*SlicerStyleLight1*|  
+|*SlicerStyleLight2*|  
+|*SlicerStyleLight3*|  
+|*SlicerStyleLight4*|  
+|*SlicerStyleLight5*|  
+|*SlicerStyleLight6*|  
+|*SlicerStyleOther1*|  
+|*SlicerStyleOther2*|  
+|*SlicerStyleDark1*|  
+|*SlicerStyleDark2*|  
+|*SlicerStyleDark3*|  
+|*SlicerStyleDark4*|  
+|*SlicerStyleDark5*|  
+|*SlicerStyleDark6*|  
+  
+ *lockedPosition:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the slicer view is locked.  
+  
+ *rowHeight:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the row (2) height of the slicer view in *English Metric Units (EMUs)*.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_Slicer">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="extLst" type="x:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="name" type="x:ST_Xstring" use="required"/>*  
+  
+ *\<xsd:attribute name="cache" type="x:ST_Xstring" use="required"/>*  
+  
+ *\<xsd:attribute name="caption" type="x:ST_Xstring" use="optional"/>*  
+  
+ *\<xsd:attribute name="startItem" type="xsd:unsignedInt" use="optional" default="0"/>*  
+  
+ *\<xsd:attribute name="columnCount" type="xsd:unsignedInt" use="optional" default="1"/>*  
+  
+ *\<xsd:attribute name="showCaption" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="level" type="xsd:unsignedInt" use="optional" default="0"/>*  
+  
+ *\<xsd:attribute name="style" type="x:ST_Xstring" use="optional"/>*  
+  
+ *\<xsd:attribute name="lockedPosition" type="xsd:boolean" use="optional" default="false"/>*  
+  
+ *\<xsd:attribute name="rowHeight" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Slicer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.Slicer.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the Slicer class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Slicer (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.Slicer.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Excel.Slicer : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Office2010.Excel.Slicer" Usage="new DocumentFormat.OpenXml.Office2010.Excel.Slicer childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the Slicer class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Slicer (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.Slicer.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Excel.Slicer : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Office2010.Excel.Slicer" Usage="new DocumentFormat.OpenXml.Office2010.Excel.Slicer childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the Slicer class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Slicer (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.Slicer.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2010.Excel.Slicer : string -&gt; DocumentFormat.OpenXml.Office2010.Excel.Slicer" Usage="new DocumentFormat.OpenXml.Office2010.Excel.Slicer outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the Slicer class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cache">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Cache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Cache" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.Cache" />
+      <MemberSignature Language="VB.NET" Value="Public Property Cache As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Cache : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.Cache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "cache")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>cache.Represents the following attribute in the schema: cache</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Caption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Caption" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.Caption" />
+      <MemberSignature Language="VB.NET" Value="Public Property Caption As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Caption : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "caption")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>caption.Represents the following attribute in the schema: caption</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2010.Excel.Slicer.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="slicer.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnCount">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ColumnCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ColumnCount" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.ColumnCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property ColumnCount As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ColumnCount : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.ColumnCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "columnCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>columnCount.Represents the following attribute in the schema: columnCount</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2010.Excel.ExtensionList ExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2010.Excel.ExtensionList ExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.ExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtensionList As ExtensionList" />
+      <MemberSignature Language="F#" Value="member this.ExtensionList : DocumentFormat.OpenXml.Office2010.Excel.ExtensionList with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.ExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.ExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ExtensionList. Represents the following element tag in the schema: x14:extLst</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x14 = http://schemas.microsoft.com/office/spreadsheetml/2009/9/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Level { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Level" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.Level" />
+      <MemberSignature Language="VB.NET" Value="Public Property Level As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Level : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "level")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>level.Represents the following attribute in the schema: level</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockedPosition">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue LockedPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue LockedPosition" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.LockedPosition" />
+      <MemberSignature Language="VB.NET" Value="Public Property LockedPosition As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.LockedPosition : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.LockedPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "lockedPosition")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>lockedPosition.Represents the following attribute in the schema: lockedPosition</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Name" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Name : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>name.Represents the following attribute in the schema: name</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowHeight">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value RowHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value RowHeight" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.RowHeight" />
+      <MemberSignature Language="VB.NET" Value="Public Property RowHeight As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.RowHeight : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.RowHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "rowHeight")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>rowHeight.Represents the following attribute in the schema: rowHeight</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCaption">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowCaption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowCaption" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.ShowCaption" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowCaption As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowCaption : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.ShowCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showCaption")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>showCaption.Represents the following attribute in the schema: showCaption</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartItem">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value StartItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value StartItem" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.StartItem" />
+      <MemberSignature Language="VB.NET" Value="Public Property StartItem As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.StartItem : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.StartItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "startItem")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>startItem.Represents the following attribute in the schema: startItem</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Style" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2010.Excel.Slicer.Style" />
+      <MemberSignature Language="VB.NET" Value="Public Property Style As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Style : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2010.Excel.Slicer.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "style")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>style.Represents the following attribute in the schema: style</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

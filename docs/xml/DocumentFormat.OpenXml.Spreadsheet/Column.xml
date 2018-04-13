@@ -1,0 +1,471 @@
+﻿<Type Name="Column" FullName="DocumentFormat.OpenXml.Spreadsheet.Column">
+  <TypeSignature Language="C#" Value="public class Column : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Column extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.Column" />
+  <TypeSignature Language="VB.NET" Value="Public Class Column&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type Column = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Column Width and Formatting. When the object is serialized out as xml, its qualified name is x:col.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **col (Column Width & Formatting)**  
+  
+ Defines column width and column formatting for one or more columns of the worksheet.  
+  
+ [*Example*:This example shows that column 5 (E) has width and style information applied.  
+  
+```xml  
+<col min="5" max="5" width="9.140625" style="3"/>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|cols (§18.3.1.17)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|bestFit (Best Fit Column Width)|Flag indicating if the specified column(s) is set to 'best fit'. 'Best fit' is set to *true* under these conditions:<br /><br /> -   The column width has never been manually set by the user,<br />-   The column width is not the default width<br />-   'Best fit' means that when numbers are typed into a cell contained in a 'best fit' column, the column width should automatically resize to display the number. [*Note*: In best fit cases, column width must not be made smaller, only larger. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|collapsed (Collapsed)|Flag indicating if the outlining of the affected column(s) is in the collapsed state. See description of row collapsed and outlinePr element's summaryBelow and summaryRight attributes for detailed information.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|customWidth (Custom Width)|Flag indicating that the column width for the affected column(s) is different from the default or has been manually set.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hidden (Hidden Columns)|Flag indicating if the affected column(s) are hidden on this worksheet.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|max (Maximum Column)|Last column affected by this 'column info' record.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|min (Minimum Column)|First column affected by this 'column info' record.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|outlineLevel (Outline Level)|Outline level of affected column(s).  Range is 0 to 7. See description of outlinePr element's summaryBelow and summaryRight attributes for detailed information.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
+|phonetic (Show Phonetic Information)|Flag indicating if the phonetic information should be displayed by default for the affected column(s) of the worksheet.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|style (Style)|Default style for the affected column(s).  Affects cells not yet allocated in the column(s). In other words, this style applies to new columns.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|width (Column Width)|Column width measured as the number of characters of the maximum digit width of the numbers 0, 1, 2, …, 9 as rendered in the normal style's font. There are 4 pixels of margin padding (two on each side), plus 1 pixel padding for the gridlines.<br /><br /> width = Truncate([{Number of Characters} * {Maximum Digit Width} + {5 pixel padding}]/{Maximum Digit Width}\*256)/256<br /><br /> [*Example*: Using the Calibri font as an example, the maximum digit width of 11 point font size is 7 pixels (at 96 dpi). In fact, each digit is the same width for this font. Therefore, if the cell width is 8 characters wide, the value of this attribute must be Truncate([8\*7+5]/7\*256)/256 = 8.7109375. *end example*]<br /><br /> To translate the value of width in the file into the column width value at runtime (expressed in terms of pixels), use this calculation:<br /><br /> =Truncate(((256 * {width} + Truncate(128/{Maximum Digit Width}))/256)\*{Maximum Digit Width})<br /><br /> [*Example*: Using the same example as above, the calculation would be Truncate(((256\*8.7109375+Truncate(128/7))/256)\*7) = 61 pixels. *end example*]<br /><br /> To translate from pixels to character width, use this calculation:<br /><br /> =Truncate(({pixels}-5)/{Maximum Digit Width} * 100+0.5)/100<br /><br /> [*Example*: Using the example above, the calculation would be Truncate((61-5)/7\*100+0.5)/100 = 8 characters. *end example*]<br /><br /> [*Note*: when wide borders are applied, part of the left/right border must overlap with the 2 pixel padding on each side. Wide borders do not affect the width calculation of the column. *end note*]<br /><br /> [*Note*: When the sheet is in the mode to view formulas instead of values, the pixel width of the column is doubled. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_Col) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following example opens a spreadsheet document for read-only access. By using the worksheet name and the cell name, it gets the column name and displays it.  
+  
+```csharp  
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+using System.Text.RegularExpressions;  
+  
+namespace ColumnEx  
+{  
+    class Program  
+    {  
+        // Given a document name, a worksheet name, and a cell name, gets the column of the cell.  
+        static void Main(string[] args)  
+        {  
+            string docName = @"C:\Users\Public\Documents\ColumnEx.xlsx";  
+            string worksheetName = "Sheet1";  
+            string cellName = "B2";  
+  
+            // Open the document as read-only.  
+            using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, false))  
+            {  
+                IEnumerable<Sheet> sheets =  
+                    document.WorkbookPart.Workbook.Descendants<Sheet>()  
+                    .Where(s => s.Name == worksheetName);  
+                WorksheetPart worksheetPart = (WorksheetPart)document  
+                    .WorkbookPart.GetPartById(sheets.First().Id);  
+  
+                // Get the column name for the specified cell.  
+                // Create a regular expression to match the column name portion of the cell name.  
+                Regex regex = new Regex("[A-Za-z]+");  
+                Match match = regex.Match(cellName);  
+                Console.WriteLine("{0} {1}","The column is:", match.Value);  
+                Console.ReadKey();  
+            }  
+        }  
+    }  
+}  
+//  Output:  
+// The column is: B  
+  
+```  
+  
+```vb  
+Imports System.Collections.Generic  
+Imports System.Linq  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+Imports System.Text.RegularExpressions  
+  
+Module Module1  
+    ' Given a document name, a worksheet name, and a cell name, gets the column of the cell.  
+    Sub Main(ByVal args As String())  
+        Dim docName As String = "C:\Users\Public\Documents\ColumnEx.xlsx"  
+        Dim worksheetName As String = "Sheet1"  
+        Dim cellName As String = "B2"  
+  
+        ' Open the document as read-only.  
+        Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, False)  
+            Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)().Where(Function(s) s.Name = worksheetName)  
+            Dim worksheetPart As WorksheetPart = DirectCast(document.WorkbookPart.GetPartById(sheets.First().Id), WorksheetPart)  
+  
+            ' Get the column name for the specified cell.  
+            ' Create a regular expression to match the column name portion of the cell name.  
+            Dim regex As New Regex("[A-Za-z]+")  
+            Dim match As Match = regex.Match(cellName)  
+            Console.WriteLine("{0} {1}", "The column is:", match.Value)  
+            Console.ReadKey()  
+        End Using  
+    End Sub  
+End Module  
+' Output:  
+' The column is: B  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Column ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.Column.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the Column class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BestFit">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue BestFit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue BestFit" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.BestFit" />
+      <MemberSignature Language="VB.NET" Value="Public Property BestFit As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.BestFit : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.BestFit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "bestFit")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Best Fit Column Width.Represents the following attribute in the schema: bestFit</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.Column.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="column.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapsed">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Collapsed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Collapsed" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.Collapsed" />
+      <MemberSignature Language="VB.NET" Value="Public Property Collapsed As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Collapsed : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.Collapsed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "collapsed")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Collapsed.Represents the following attribute in the schema: collapsed</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomWidth">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue CustomWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue CustomWidth" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.CustomWidth" />
+      <MemberSignature Language="VB.NET" Value="Public Property CustomWidth As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.CustomWidth : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.CustomWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "customWidth")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Custom Width.Represents the following attribute in the schema: customWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hidden">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Hidden { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Hidden" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.Hidden" />
+      <MemberSignature Language="VB.NET" Value="Public Property Hidden As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Hidden : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.Hidden" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "hidden")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hidden Columns.Represents the following attribute in the schema: hidden</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Max">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Max { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Max" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.Max" />
+      <MemberSignature Language="VB.NET" Value="Public Property Max As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Max : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.Max" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "max")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Maximum Column.Represents the following attribute in the schema: max</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Min">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Min { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Min" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.Min" />
+      <MemberSignature Language="VB.NET" Value="Public Property Min As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Min : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.Min" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "min")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Minimum Column.Represents the following attribute in the schema: min</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutlineLevel">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.ByteValue OutlineLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.ByteValue OutlineLevel" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.OutlineLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Property OutlineLevel As ByteValue" />
+      <MemberSignature Language="F#" Value="member this.OutlineLevel : DocumentFormat.OpenXml.ByteValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.OutlineLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "outlineLevel")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Outline Level.Represents the following attribute in the schema: outlineLevel</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Phonetic">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Phonetic { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Phonetic" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.Phonetic" />
+      <MemberSignature Language="VB.NET" Value="Public Property Phonetic As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Phonetic : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.Phonetic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "phonetic")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Phonetic Information.Represents the following attribute in the schema: phonetic</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Style" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.Style" />
+      <MemberSignature Language="VB.NET" Value="Public Property Style As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Style : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "style")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Style.Represents the following attribute in the schema: style</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue Width" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.Column.Width" />
+      <MemberSignature Language="VB.NET" Value="Public Property Width As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.Width : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.Column.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "width")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Column Width.Represents the following attribute in the schema: width</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,397 @@
+﻿<Type Name="MergeCells" FullName="DocumentFormat.OpenXml.Spreadsheet.MergeCells">
+  <TypeSignature Language="C#" Value="public class MergeCells : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MergeCells extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.MergeCells" />
+  <TypeSignature Language="VB.NET" Value="Public Class MergeCells&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type MergeCells = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.MergeCell))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the MergeCells Class. When the object is serialized out as xml, its qualified name is x:mergeCells.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **mergeCells (Merge Cells)**  
+  
+ This collection expresses all the merged cells in the sheet.  
+  
+ [*Example*:  
+  
+ This example shows that three ranges are merged. The formatting and content for the merged range is always stored in the top left cell.  
+  
+```xml  
+<mergeCells>  
+  <mergeCell ref="C2:F2"/>  
+  <mergeCell ref="B19:C20"/>  
+  <mergeCell ref="E19:G19"/>  
+</mergeCells>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|worksheet (§18.3.1.99)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|mergeCell (Merged Cell)|§18.3.1.54|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|count (Count)|A count of merged cell collections.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_MergeCells) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+   
+  
+## Examples  
+ The following code example merges two adjacent cells in an existing spreadsheet. After you run the example, take a look at the file and notice the merged cells.  
+  
+```csharp  
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+using System.Text.RegularExpressions;  
+  
+namespace MergeCellsEx  
+{  
+    class Program  
+    {  
+        // Merge two adjacent cells in a worksheet.  
+        // Notice that after the merge, only the content from one cell is preserved.  
+        static void Main(string[] args)  
+        {  
+            string docName = @"C:\Users\Public\Documents\MergeCellsEx.xlsx";  
+            string sheetName = "mySheet";  
+            string cell1Name = "A2";  
+            string cell2Name = "B2";  
+  
+            using (SpreadsheetDocument document = SpreadsheetDocument.Open(docName, true))  
+            {  
+                Worksheet worksheet = GetWorksheet(document, sheetName);  
+                // Create Spreadsheet cells.  
+                CreateSpreadsheetCell(worksheet, cell1Name);  
+                CreateSpreadsheetCell(worksheet, cell2Name);  
+                MergeCells mergeCells;  
+  
+                if (worksheet.Elements<MergeCells>().Count() > 0)  
+                    mergeCells = worksheet.Elements<MergeCells>().First();  
+                else  
+                {  
+                    mergeCells = new MergeCells();  
+  
+                    // Insert a MergeCells object into the specified position.  
+                    if (worksheet.Elements<CustomSheetView>().Count() > 0)  
+                         worksheet.InsertAfter(mergeCells, worksheet.Elements<CustomSheetView>().First());  
+                    else  
+                        worksheet.InsertAfter(mergeCells, worksheet.Elements<SheetData>().First());  
+                }  
+  
+                // Create the merged cell and append it to the MergeCells collection.  
+                MergeCell mergeCell = new MergeCell() { Reference =   
+                    new StringValue(cell1Name + ":" + cell2Name) };  
+                mergeCells.Append(mergeCell);  
+                worksheet.Save();  
+            }  
+            Console.WriteLine("The two cells are now merged.\nPress a key.");  
+            Console.ReadKey();  
+        }  
+  
+        // Get the specified worksheet.  
+        private static Worksheet GetWorksheet(SpreadsheetDocument document, string worksheetName)  
+        {  
+            IEnumerable<Sheet> sheets = document.WorkbookPart.Workbook  
+                .Descendants<Sheet>().Where(s => s.Name == worksheetName);  
+            WorksheetPart worksheetPart = (WorksheetPart)document.WorkbookPart  
+                .GetPartById(sheets.First().Id);  
+            return worksheetPart.Worksheet;  
+        }  
+  
+        // Create a spreadsheet cell.   
+        private static void CreateSpreadsheetCell(Worksheet worksheet, string cellName)  
+        {  
+            string columnName = GetColumnName(cellName);  
+            uint rowIndex = 2;  
+            IEnumerable<Row> rows = worksheet.Descendants<Row>().Where(r => r  
+                .RowIndex.Value == rowIndex);  
+            Row row = rows.First();  
+            IEnumerable<Cell> cells = row.Elements<Cell>().Where(c => c.CellReference  
+                .Value == cellName);  
+        }  
+  
+        // Parse the cell name to get the column name.  
+        private static string GetColumnName(string cellName)  
+        {  
+            // Create a regular expression to match the column name portion of the cell name.  
+            Regex regex = new Regex("[A-Za-z]+");  
+            Match match = regex.Match(cellName);  
+            return match.Value;  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports System.Collections.Generic  
+Imports System.Linq  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+Imports System.Text.RegularExpressions  
+  
+Module Module1  
+    ' Merge two adjacent cells in a worksheet.  
+    ' Notice that after the merge, only the content from one cell is preserved.  
+    Sub Main(ByVal args As String())  
+        Dim docName As String = "C:\Users\Public\Documents\MergeCellsEx.xlsx"  
+        Dim sheetName As String = "mySheet"  
+        Dim cell1Name As String = "A2"  
+        Dim cell2Name As String = "B2"  
+  
+        Using document As SpreadsheetDocument = SpreadsheetDocument.Open(docName, True)  
+            Dim worksheet As Worksheet = GetWorksheet(document, sheetName)  
+            ' Create Spreadsheet cells.  
+            CreateSpreadsheetCell(worksheet, cell1Name)  
+            CreateSpreadsheetCell(worksheet, cell2Name)  
+            Dim mergeCells As MergeCells  
+  
+            If worksheet.Elements(Of MergeCells)().Count() > 0 Then  
+                mergeCells = worksheet.Elements(Of MergeCells)().First()  
+            Else  
+                mergeCells = New MergeCells()  
+  
+                ' Insert a MergeCells object into the specified position.  
+                If worksheet.Elements(Of CustomSheetView)().Count() > 0 Then  
+                    worksheet.InsertAfter(mergeCells, worksheet.Elements(Of CustomSheetView)().First())  
+                Else  
+                    worksheet.InsertAfter(mergeCells, worksheet.Elements(Of SheetData)().First())  
+                End If  
+            End If  
+  
+            ' Create the merged cell and append it to the MergeCells collection.  
+            Dim mergeCell As New MergeCell() With { _  
+             .Reference = New StringValue(cell1Name & ":" & cell2Name) _  
+            }  
+            mergeCells.Append(mergeCell)  
+            worksheet.Save()  
+        End Using  
+        Console.WriteLine("The two cells are now merged." & vbLf & "Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+  
+    ' Get the specified worksheet.  
+    Private Function GetWorksheet(ByVal document As SpreadsheetDocument, ByVal worksheetName As String) As Worksheet  
+        Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)().Where(Function(s) s.Name = worksheetName)  
+        Dim worksheetPart As WorksheetPart = DirectCast(document.WorkbookPart.GetPartById(sheets.First().Id), WorksheetPart)  
+        Return worksheetPart.Worksheet  
+    End Function  
+  
+    ' Create a spreadsheet cell.   
+    Private Sub CreateSpreadsheetCell(ByVal worksheet As Worksheet, ByVal cellName As String)  
+        Dim columnName As String = GetColumnName(cellName)  
+        Dim rowIndex As UInteger = 2  
+        Dim rows As IEnumerable(Of Row) = worksheet.Descendants(Of Row)().Where(Function(r) r.RowIndex.Value = rowIndex)  
+        Dim row As Row = rows.First()  
+        Dim cells As IEnumerable(Of Cell) = row.Elements(Of Cell)().Where(Function(c) c.CellReference.Value = cellName)  
+    End Sub  
+  
+    ' Parse the cell name to get the column name.  
+    Private Function GetColumnName(ByVal cellName As String) As String  
+        ' Create a regular expression to match the column name portion of the cell name.  
+        Dim regex As New Regex("[A-Za-z]+")  
+        Dim match As Match = regex.Match(cellName)  
+        Return match.Value  
+    End Function  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MergeCells ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.MergeCells.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the MergeCells class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MergeCells (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.MergeCells.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.MergeCells : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.MergeCells" Usage="new DocumentFormat.OpenXml.Spreadsheet.MergeCells childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the MergeCells class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MergeCells (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.MergeCells.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.MergeCells : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.MergeCells" Usage="new DocumentFormat.OpenXml.Spreadsheet.MergeCells childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the MergeCells class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MergeCells (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.MergeCells.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.MergeCells : string -&gt; DocumentFormat.OpenXml.Spreadsheet.MergeCells" Usage="new DocumentFormat.OpenXml.Spreadsheet.MergeCells outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the MergeCells class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.MergeCells.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="mergeCells.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Count { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Count" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MergeCells.Count" />
+      <MemberSignature Language="VB.NET" Value="Public Property Count As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Count : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.MergeCells.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "count")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.MergeCells.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.MergeCells.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,148 @@
+﻿<Type Name="BetweenBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.BetweenBorder">
+  <TypeSignature Language="C#" Value="public class BetweenBorder : DocumentFormat.OpenXml.Wordprocessing.BorderType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BetweenBorder extends DocumentFormat.OpenXml.Wordprocessing.BorderType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BetweenBorder" />
+  <TypeSignature Language="VB.NET" Value="Public Class BetweenBorder&#xA;Inherits BorderType" />
+  <TypeSignature Language="F#" Value="type BetweenBorder = class&#xA;    inherit BorderType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.BorderType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Paragraph Border Between Identical Paragraphs. When the object is serialized out as xml, its qualified name is w:between.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **between (Paragraph Border Between Identical Paragraphs)**  
+  
+ This element specifies the border which shall be displayed between each paragraph in a set of paragraphs which have the same set of paragraph border settings.  
+  
+ To determine if any two adjoining paragraphs should have a between border or an individual top and bottom border, the set of borders on the two adjoining paragraphs are compared. If the border information on those two paragraphs is identical for all possible paragraphs borders, then the between border is displayed. Otherwise, each paragraph shall use its bottom and top border, respectively. If this border specifies a space attribute, that value is ignored - this border is always located at the bottom of each paragraph with an identical following paragraph, taking into account any space after the line pitch.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then no between border shall be applied between identical paragraphs.  
+  
+ [*Example*: Consider the following two paragraphs' WordprocessingML definition:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>First paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="0" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Second paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+```  
+  
+ Since the bottom paragraph border is different between the two paragraphs (the bottom space value goes from *1* to *0*), these paragraphs do not use the between border, and instead paragraph one uses its bottom border, and paragraph two uses its top border. If those values were identical, then paragraph one would have a between border below it, and paragraph two would have no top border. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pBdr (§17.3.1.24)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BetweenBorder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.BetweenBorder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the BetweenBorder class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.BetweenBorder.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="betweenBorder.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.BetweenBorder.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.BetweenBorder.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

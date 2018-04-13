@@ -1,0 +1,1484 @@
+﻿<Type Name="SpreadsheetDocument" FullName="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument">
+  <TypeSignature Language="C#" Value="public class SpreadsheetDocument : DocumentFormat.OpenXml.Packaging.OpenXmlPackage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpreadsheetDocument extends DocumentFormat.OpenXml.Packaging.OpenXmlPackage" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" />
+  <TypeSignature Language="VB.NET" Value="Public Class SpreadsheetDocument&#xA;Inherits OpenXmlPackage" />
+  <TypeSignature Language="F#" Value="type SpreadsheetDocument = class&#xA;    inherit OpenXmlPackage" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Defines SpreadsheetDocument - an OpenXmlPackage represents a Spreadsheet document.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ The following example creates a basic Excel document, a workbook with one worksheet. After you run the code example, take a look at the created file, “SpreadsheetDocumentEx.xlsx,” and notice the worksheet named "mySheet.”  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace SpreadsheetDocumentEx  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"c:\Users\Public\Documents\SpreadsheetDocumentEx.xlsx";  
+  
+            // Create a spreadsheet document by supplying the file name.  
+            SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.  
+                Create(fileName, SpreadsheetDocumentType.Workbook);  
+  
+            // Add a WorkbookPart to the document.  
+            WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();  
+            workbookpart.Workbook = new Workbook();  
+  
+            // Add a WorksheetPart to the WorkbookPart.  
+            WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();  
+            worksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+            // Add Sheets to the Workbook.  
+            Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.  
+                AppendChild<Sheets>(new Sheets());  
+  
+            // Append a new worksheet and associate it with the workbook.  
+            Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.  
+                GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };  
+            sheets.Append(sheet);  
+  
+            // Close the document.  
+            spreadsheetDocument.Close();  
+  
+            Console.WriteLine("The spreadsheet document has been created.\nPress a key.");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+Module Module1  
+    Sub Main()  
+        ' Create a spreadsheet document by supplying the file name.  
+        Dim fileName As String = "c:\Users\Public\Documents\SpreadsheetDocumentEx.xlsx"  
+        Dim spreadsheetDocument As SpreadsheetDocument = _  
+      spreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook)  
+  
+        ' Add a WorkbookPart to the document.  
+        Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart  
+        workbookpart.Workbook = New Workbook  
+  
+        ' Add a WorksheetPart to the WorkbookPart.  
+        Dim worksheetPart As WorksheetPart = workbookpart.AddNewPart(Of WorksheetPart)()  
+        worksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+        ' Add Sheets to the Workbook.  
+        Dim sheets As Sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())  
+  
+        ' Append a new worksheet and associate it with the workbook.  
+        Dim sheet As Sheet = New Sheet  
+        sheet.Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart)  
+        sheet.SheetId = 1  
+        sheet.Name = "mySheet"  
+        sheets.Append(sheet)  
+        workbookpart.Workbook.Save()  
+  
+        ' Close the document.  
+        spreadsheetDocument.Close()  
+  
+        Console.WriteLine("The spreadsheet document has been created." +  
+                          ControlChars.Lf + "Press a key.")  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SpreadsheetDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Creates a SpreadsheetDocument.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCoreFilePropertiesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart AddCoreFilePropertiesPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart AddCoreFilePropertiesPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddCoreFilePropertiesPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddCoreFilePropertiesPart () As CoreFilePropertiesPart" />
+      <MemberSignature Language="F#" Value="member this.AddCoreFilePropertiesPart : unit -&gt; DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart" Usage="spreadsheetDocument.AddCoreFilePropertiesPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Addd a CoreFilePropertiesPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added CoreFilePropertiesPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomFilePropertiesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart AddCustomFilePropertiesPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart AddCustomFilePropertiesPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddCustomFilePropertiesPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddCustomFilePropertiesPart () As CustomFilePropertiesPart" />
+      <MemberSignature Language="F#" Value="member this.AddCustomFilePropertiesPart : unit -&gt; DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart" Usage="spreadsheetDocument.AddCustomFilePropertiesPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Addd a CustomFilePropertiesPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added CustomFilePropertiesPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDigitalSignatureOriginPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart AddDigitalSignatureOriginPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart AddDigitalSignatureOriginPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddDigitalSignatureOriginPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddDigitalSignatureOriginPart () As DigitalSignatureOriginPart" />
+      <MemberSignature Language="F#" Value="member this.AddDigitalSignatureOriginPart : unit -&gt; DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart" Usage="spreadsheetDocument.AddDigitalSignatureOriginPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Addd a DigitalSignatureOriginPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added DigitalSignatureOriginPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddExtendedFilePropertiesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart AddExtendedFilePropertiesPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart AddExtendedFilePropertiesPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddExtendedFilePropertiesPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddExtendedFilePropertiesPart () As ExtendedFilePropertiesPart" />
+      <MemberSignature Language="F#" Value="member this.AddExtendedFilePropertiesPart : unit -&gt; DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart" Usage="spreadsheetDocument.AddExtendedFilePropertiesPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Addd a ExtendedFilePropertiesPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added ExtendedFilePropertiesPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNewPart&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T AddNewPart&lt;T&gt; (string contentType, string id) where T : DocumentFormat.OpenXml.Packaging.OpenXmlPart;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T AddNewPart&lt;(class DocumentFormat.OpenXml.Packaging.OpenXmlPart) T&gt;(string contentType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddNewPart``1(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function AddNewPart(Of T As OpenXmlPart) (contentType As String, id As String) As T" />
+      <MemberSignature Language="F#" Value="override this.AddNewPart : string * string -&gt; 'T (requires 'T :&gt; DocumentFormat.OpenXml.Packaging.OpenXmlPart)" Usage="spreadsheetDocument.AddNewPart (contentType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>DocumentFormat.OpenXml.Packaging.OpenXmlPart</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">The class of the part.</typeparam>
+        <param name="contentType">The content type of the part. Must match the defined content type if the part is fixed content type.</param>
+        <param name="id">The relationship id. The id will be automaticly generated if this param is null.</param>
+        <summary>Adds a new part of type <paramref name="T" />.</summary>
+        <returns>The added part.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Mainly used for adding not-fixed content type part - ImagePart, VideoPart, AudioPart, etc  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">When the part is not allowed to be referenced by this part.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">When the part is fixed content type and the passed in contentType does not match the defined content type.</exception>
+        <exception cref="T:System.ArgumentNullException">Thrown when "contentType" is null reference.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddQuickAccessToolbarCustomizationsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart AddQuickAccessToolbarCustomizationsPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart AddQuickAccessToolbarCustomizationsPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddQuickAccessToolbarCustomizationsPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddQuickAccessToolbarCustomizationsPart () As QuickAccessToolbarCustomizationsPart" />
+      <MemberSignature Language="F#" Value="member this.AddQuickAccessToolbarCustomizationsPart : unit -&gt; DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart" Usage="spreadsheetDocument.AddQuickAccessToolbarCustomizationsPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Adds a QuickAccessToolbarCustomizationsPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added QuickAccessToolbarCustomizationsPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRibbonAndBackstageCustomizationsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart AddRibbonAndBackstageCustomizationsPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart AddRibbonAndBackstageCustomizationsPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddRibbonAndBackstageCustomizationsPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddRibbonAndBackstageCustomizationsPart () As RibbonAndBackstageCustomizationsPart" />
+      <MemberSignature Language="F#" Value="member this.AddRibbonAndBackstageCustomizationsPart : unit -&gt; DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart" Usage="spreadsheetDocument.AddRibbonAndBackstageCustomizationsPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Adds a RibbonAndBackstageCustomizationsPart to the SpreadsheetDocument, this part is only available in Office2010.</summary>
+        <returns>The newly added RibbonExtensibilityPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRibbonExtensibilityPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart AddRibbonExtensibilityPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart AddRibbonExtensibilityPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddRibbonExtensibilityPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddRibbonExtensibilityPart () As RibbonExtensibilityPart" />
+      <MemberSignature Language="F#" Value="member this.AddRibbonExtensibilityPart : unit -&gt; DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart" Usage="spreadsheetDocument.AddRibbonExtensibilityPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Adds a RibbonExtensibilityPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added RibbonExtensibilityPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart (DocumentFormat.OpenXml.Packaging.ThumbnailPartType partType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart(valuetype DocumentFormat.OpenXml.Packaging.ThumbnailPartType partType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddThumbnailPart(DocumentFormat.OpenXml.Packaging.ThumbnailPartType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddThumbnailPart (partType As ThumbnailPartType) As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.AddThumbnailPart : DocumentFormat.OpenXml.Packaging.ThumbnailPartType -&gt; DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="spreadsheetDocument.AddThumbnailPart partType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ThumbnailPartType" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The type of the ThumbnailPart</param>
+        <summary>Adds a ThumbnailPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added ThumbnailPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddThumbnailPart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddThumbnailPart (contentType As String) As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.AddThumbnailPart : string -&gt; DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="spreadsheetDocument.AddThumbnailPart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the ThumbnailPart</param>
+        <summary>Addd a ThumbnailPart to the SpreadsheetDocument.</summary>
+        <returns>The newly added ThumbnailPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddWebExTaskpanesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart AddWebExTaskpanesPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart AddWebExTaskpanesPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddWebExTaskpanesPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddWebExTaskpanesPart () As WebExTaskpanesPart" />
+      <MemberSignature Language="F#" Value="member this.AddWebExTaskpanesPart : unit -&gt; DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart" Usage="spreadsheetDocument.AddWebExTaskpanesPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Adds a WebExTaskpanesPart to the SpreadsheetDocument, this part is only available in Office2013.</summary>
+        <returns>The newly added WebExTaskpanesPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddWorkbookPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WorkbookPart AddWorkbookPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.WorkbookPart AddWorkbookPart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.AddWorkbookPart" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddWorkbookPart () As WorkbookPart" />
+      <MemberSignature Language="F#" Value="member this.AddWorkbookPart : unit -&gt; DocumentFormat.OpenXml.Packaging.WorkbookPart" Usage="spreadsheetDocument.AddWorkbookPart " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WorkbookPart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Created the WorkbookPart and add it to this document.</summary>
+        <returns>The newly added WorkbookPart.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeDocumentType">
+      <MemberSignature Language="C#" Value="public void ChangeDocumentType (DocumentFormat.OpenXml.SpreadsheetDocumentType newType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ChangeDocumentType(valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType newType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.ChangeDocumentType(DocumentFormat.OpenXml.SpreadsheetDocumentType)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ChangeDocumentType (newType As SpreadsheetDocumentType)" />
+      <MemberSignature Language="F#" Value="member this.ChangeDocumentType : DocumentFormat.OpenXml.SpreadsheetDocumentType -&gt; unit" Usage="spreadsheetDocument.ChangeDocumentType newType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newType" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
+      </Parameters>
+      <Docs>
+        <param name="newType">The new type of the document.</param>
+        <summary>Changes the document type.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The WorkbookPart will be changed.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CoreFilePropertiesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart CoreFilePropertiesPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart CoreFilePropertiesPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CoreFilePropertiesPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CoreFilePropertiesPart As CoreFilePropertiesPart" />
+      <MemberSignature Language="F#" Value="member this.CoreFilePropertiesPart : DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CoreFilePropertiesPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CoreFilePropertiesPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the CoreFilePropertiesPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create (System.IO.Packaging.Package package, DocumentFormat.OpenXml.SpreadsheetDocumentType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create(class System.IO.Packaging.Package package, valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create(System.IO.Packaging.Package,DocumentFormat.OpenXml.SpreadsheetDocumentType)" />
+      <MemberSignature Language="F#" Value="static member Create : System.IO.Packaging.Package * DocumentFormat.OpenXml.SpreadsheetDocumentType -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create (package, type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified OpenXml package</param>
+        <param name="type">The type of the SpreadsheetDocument.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "package" is not opened with Write access.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create (System.IO.Stream stream, DocumentFormat.OpenXml.SpreadsheetDocumentType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create(class System.IO.Stream stream, valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create(System.IO.Stream,DocumentFormat.OpenXml.SpreadsheetDocumentType)" />
+      <MemberSignature Language="F#" Value="static member Create : System.IO.Stream * DocumentFormat.OpenXml.SpreadsheetDocumentType -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create (stream, type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The IO stream on which to open the package.</param>
+        <param name="type">The type of the SpreadsheetDocument.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "stream" is not opened with Write access.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create (string path, DocumentFormat.OpenXml.SpreadsheetDocumentType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create(string path, valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create(System.String,DocumentFormat.OpenXml.SpreadsheetDocumentType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (path As String, type As SpreadsheetDocumentType) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member Create : string * DocumentFormat.OpenXml.SpreadsheetDocumentType -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create (path, type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target Package for the OpenXmlPackage.</param>
+        <param name="type">The type of the SpreadsheetDocument.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create (System.IO.Packaging.Package package, DocumentFormat.OpenXml.SpreadsheetDocumentType type, bool autoSave);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create(class System.IO.Packaging.Package package, valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType type, bool autoSave) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create(System.IO.Packaging.Package,DocumentFormat.OpenXml.SpreadsheetDocumentType,System.Boolean)" />
+      <MemberSignature Language="F#" Value="static member Create : System.IO.Packaging.Package * DocumentFormat.OpenXml.SpreadsheetDocumentType * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create (package, type, autoSave)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
+        <Parameter Name="autoSave" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified OpenXml package.</param>
+        <param name="type">The type of the SpreadsheetDocument.</param>
+        <param name="autoSave">Whether to auto save the created document.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "package" is not opened with Write access.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create (System.IO.Stream stream, DocumentFormat.OpenXml.SpreadsheetDocumentType type, bool autoSave);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create(class System.IO.Stream stream, valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType type, bool autoSave) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create(System.IO.Stream,DocumentFormat.OpenXml.SpreadsheetDocumentType,System.Boolean)" />
+      <MemberSignature Language="F#" Value="static member Create : System.IO.Stream * DocumentFormat.OpenXml.SpreadsheetDocumentType * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create (stream, type, autoSave)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
+        <Parameter Name="autoSave" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The IO stream on which to create the SpreadsheetDocument.</param>
+        <param name="type">The type of the SpreadsheetDocument.</param>
+        <param name="autoSave">Whether to auto save the created document.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "stream" is not opened with Write access.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create (string path, DocumentFormat.OpenXml.SpreadsheetDocumentType type, bool autoSave);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Create(string path, valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType type, bool autoSave) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create(System.String,DocumentFormat.OpenXml.SpreadsheetDocumentType,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (path As String, type As SpreadsheetDocumentType, autoSave As Boolean) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member Create : string * DocumentFormat.OpenXml.SpreadsheetDocumentType * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Create (path, type, autoSave)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="type" Type="DocumentFormat.OpenXml.SpreadsheetDocumentType" />
+        <Parameter Name="autoSave" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target SpreadsheetDocument.</param>
+        <param name="type">The type of the SpreadsheetDocument.</param>
+        <param name="autoSave">Whether to auto save the created document.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClone">
+      <MemberSignature Language="C#" Value="protected override DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone (System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone(class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CreateClone(System.IO.Packaging.Package)" />
+      <MemberSignature Language="F#" Value="override this.CreateClone : System.IO.Packaging.Package -&gt; DocumentFormat.OpenXml.Packaging.OpenXmlPackage" Usage="spreadsheetDocument.CreateClone package" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified instance of Package.</param>
+        <summary>
+            Creates a new instance of OpenXmlPackage on the specified instance
+            of Package.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClone">
+      <MemberSignature Language="C#" Value="protected override DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CreateClone(System.IO.Stream)" />
+      <MemberSignature Language="F#" Value="override this.CreateClone : System.IO.Stream -&gt; DocumentFormat.OpenXml.Packaging.OpenXmlPackage" Usage="spreadsheetDocument.CreateClone stream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The stream on which the concrete OpenXml package will be created.</param>
+        <summary>
+            Creates a new OpenXmlPackage on the given stream.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClone">
+      <MemberSignature Language="C#" Value="protected override DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage CreateClone(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CreateClone(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateClone (path As String) As OpenXmlPackage" />
+      <MemberSignature Language="F#" Value="override this.CreateClone : string -&gt; DocumentFormat.OpenXml.Packaging.OpenXmlPackage" Usage="spreadsheetDocument.CreateClone path" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target OpenXml package.</param>
+        <summary>
+            Creates a new OpenXml package on the given file.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromTemplate">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument CreateFromTemplate (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument CreateFromTemplate(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CreateFromTemplate(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateFromTemplate (path As String) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member CreateFromTemplate : string -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CreateFromTemplate path" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the template.</param>
+        <summary>
+            Creates an editable SpreadsheetDocument from a template, opened on
+            a MemoryStream with expandable capacity.
+            </summary>
+        <returns>The new SpreadsheetDocument based on and linked to the template.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomFilePropertiesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart CustomFilePropertiesPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart CustomFilePropertiesPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CustomFilePropertiesPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CustomFilePropertiesPart As CustomFilePropertiesPart" />
+      <MemberSignature Language="F#" Value="member this.CustomFilePropertiesPart : DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.CustomFilePropertiesPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CustomFilePropertiesPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the CustomFilePropertiesPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DigitalSignatureOriginPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart DigitalSignatureOriginPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart DigitalSignatureOriginPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.DigitalSignatureOriginPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DigitalSignatureOriginPart As DigitalSignatureOriginPart" />
+      <MemberSignature Language="F#" Value="member this.DigitalSignatureOriginPart : DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.DigitalSignatureOriginPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.DigitalSignatureOriginPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the DigitalSignatureOriginPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.SpreadsheetDocumentType DocumentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype DocumentFormat.OpenXml.SpreadsheetDocumentType DocumentType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.DocumentType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DocumentType As SpreadsheetDocumentType" />
+      <MemberSignature Language="F#" Value="member this.DocumentType : DocumentFormat.OpenXml.SpreadsheetDocumentType" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.DocumentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.SpreadsheetDocumentType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the type of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedFilePropertiesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart ExtendedFilePropertiesPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart ExtendedFilePropertiesPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.ExtendedFilePropertiesPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ExtendedFilePropertiesPart As ExtendedFilePropertiesPart" />
+      <MemberSignature Language="F#" Value="member this.ExtendedFilePropertiesPart : DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.ExtendedFilePropertiesPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ExtendedFilePropertiesPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the ExtendedFilePropertiesPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcDocument">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument (System.Xml.Linq.XDocument document);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument(class System.Xml.Linq.XDocument document) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument(System.Xml.Linq.XDocument)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromFlatOpcDocument (document As XDocument) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcDocument : System.Xml.Linq.XDocument -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument document" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.Linq.XDocument" />
+      </Parameters>
+      <Docs>
+        <param name="document">The document in Flat OPC format.</param>
+        <summary>
+            Creates a new editable instance of SpreadsheetDocument from an <see cref="T:System.Xml.Linq.XDocument" />
+            in Flat OPC format, opened on a <see cref="T:System.IO.MemoryStream" />.
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcDocument">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument (System.Xml.Linq.XDocument document, System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument(class System.Xml.Linq.XDocument document, class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument(System.Xml.Linq.XDocument,System.IO.Packaging.Package)" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcDocument : System.Xml.Linq.XDocument * System.IO.Packaging.Package -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument (document, package)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.Linq.XDocument" />
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="document">The workbook in Flat OPC format.</param>
+        <param name="package">The specified instance of Package.</param>
+        <summary>
+            Creates a new instance of SpreadsheetDocument from a workbook
+            in Flat OPC format on the specified instance of Package.
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcDocument">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument (System.Xml.Linq.XDocument document, System.IO.Stream stream, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument(class System.Xml.Linq.XDocument document, class System.IO.Stream stream, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument(System.Xml.Linq.XDocument,System.IO.Stream,System.Boolean)" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcDocument : System.Xml.Linq.XDocument * System.IO.Stream * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument (document, stream, isEditable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.Linq.XDocument" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="document">The workbook in Flat OPC format.</param>
+        <param name="stream">The stream on which the SpreadsheetDocument will be created.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>
+            Creates a new instance of SpreadsheetDocument from a workbook
+            in Flat OPC format.
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcDocument">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument (System.Xml.Linq.XDocument document, string path, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcDocument(class System.Xml.Linq.XDocument document, string path, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument(System.Xml.Linq.XDocument,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromFlatOpcDocument (document As XDocument, path As String, isEditable As Boolean) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcDocument : System.Xml.Linq.XDocument * string * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcDocument (document, path, isEditable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.Linq.XDocument" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="document">The workbook in Flat OPC format.</param>
+        <param name="path">The path and file name of the target SpreadsheetDocument.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>
+            Creates a new instance of SpreadsheetDocument from a workbook
+            in Flat OPC format.
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcString">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromFlatOpcString (text As String) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcString : string -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString text" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">The string in Flat OPC format.</param>
+        <summary>
+            Creates a new instance of SpreadsheetDocument from a string
+            in Flat OPC format on a <see cref="T:System.IO.MemoryStream" /> with expandable
+            capacity.
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcString">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString (string text, System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString(string text, class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString(System.String,System.IO.Packaging.Package)" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcString : string * System.IO.Packaging.Package -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString (text, package)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="text">The string in Flat OPC format.</param>
+        <param name="package">The <see cref="T:System.IO.Packaging.Package" /> of the target SpreadsheetDocument.</param>
+        <summary>
+            Creates a new instance of SpreadsheetDocument from a string
+            in Flat OPC format.
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcString">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString (string text, System.IO.Stream stream, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString(string text, class System.IO.Stream stream, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString(System.String,System.IO.Stream,System.Boolean)" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcString : string * System.IO.Stream * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString (text, stream, isEditable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="text">The string in Flat OPC format.</param>
+        <param name="stream">The <see cref="T:System.IO.Stream" /> on which the SpreadsheetDocument will be created.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>
+            Creates a new instance of SpreadsheetDocument from a string
+            in Flat OPC format on a
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFlatOpcString">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString (string text, string path, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument FromFlatOpcString(string text, string path, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString(System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromFlatOpcString (text As String, path As String, isEditable As Boolean) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member FromFlatOpcString : string * string * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.FromFlatOpcString (text, path, isEditable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="text">The string in Flat OPC format.</param>
+        <param name="path">The path and file name of the target SpreadsheetDocument.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>
+            Creates a new instance of SpreadsheetDocument from a string
+            in Flat OPC format.
+            </summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open (System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open(class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.IO.Packaging.Package)" />
+      <MemberSignature Language="F#" Value="static member Open : System.IO.Packaging.Package -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open package" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified OpenXml package</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "package" is null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "package" is not opened with Read (ReadWrite) access.</exception>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">Thrown when the package is not valid Open XML SpreadsheetDocument.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open (System.IO.Packaging.Package package, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open(class System.IO.Packaging.Package package, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.IO.Packaging.Package,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberSignature Language="F#" Value="static member Open : System.IO.Packaging.Package * DocumentFormat.OpenXml.Packaging.OpenSettings -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open (package, openSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="package">The specified OpenXml package.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the spcified package.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when package is a null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "package" is not opened with Read (ReadWrite) access.</exception>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">Thrown when the package is not a valid Open XML document.</exception>
+        <exception cref="T:System.ArgumentException">Thrown when specified to process the markup compatibility but the given target FileFormatVersion is incorrect.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open (System.IO.Stream stream, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open(class System.IO.Stream stream, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.IO.Stream,System.Boolean)" />
+      <MemberSignature Language="F#" Value="static member Open : System.IO.Stream * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open (stream, isEditable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The IO stream on which to open the package.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "stream" is not opened with Read (ReadWrite) access.</exception>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">Thrown when the package is not valid Open XML SpreadsheetDocument.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open (string path, bool isEditable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open(string path, bool isEditable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Open (path As String, isEditable As Boolean) As SpreadsheetDocument" />
+      <MemberSignature Language="F#" Value="static member Open : string * bool -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open (path, isEditable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target Package for the OpenXmlPackage.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">Thrown when the package is not valid Open XML SpreadsheetDocument.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open (System.IO.Stream stream, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open(class System.IO.Stream stream, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.IO.Stream,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberSignature Language="F#" Value="static member Open : System.IO.Stream * bool * DocumentFormat.OpenXml.Packaging.OpenSettings -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open (stream, isEditable, openSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The IO stream on which to open the SpreadsheetDocument.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the IO stream.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "stream" is null reference.</exception>
+        <exception cref="T:System.IO.IOException">Thrown when "stream" is not opened with Read (ReadWrite) access.</exception>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">Thrown when the package is not valid Open XML SpreadsheetDocument.</exception>
+        <exception cref="T:System.ArgumentException">Thrown when specified to process the markup compatibility but the given target FileFormatVersion is incorrect.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open (string path, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class DocumentFormat.OpenXml.Packaging.SpreadsheetDocument Open(string path, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(System.String,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberSignature Language="F#" Value="static member Open : string * bool * DocumentFormat.OpenXml.Packaging.OpenSettings -&gt; DocumentFormat.OpenXml.Packaging.SpreadsheetDocument" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open (path, isEditable, openSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.SpreadsheetDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target SpreadsheetDocument.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>Creates a new instance of the SpreadsheetDocument class from the specified file.</summary>
+        <returns>A new instance of SpreadsheetDocument.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when "path" is null reference.</exception>
+        <exception cref="T:DocumentFormat.OpenXml.Packaging.OpenXmlPackageException">Thrown when the package is not valid Open XML SpreadsheetDocument.</exception>
+        <exception cref="T:System.ArgumentException">Thrown when specified to process the markup compatibility but the given target FileFormatVersion is incorrect.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenClone">
+      <MemberSignature Language="C#" Value="protected override DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone (System.IO.Stream stream, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone(class System.IO.Stream stream, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.OpenClone(System.IO.Stream,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberSignature Language="F#" Value="override this.OpenClone : System.IO.Stream * bool * DocumentFormat.OpenXml.Packaging.OpenSettings -&gt; DocumentFormat.OpenXml.Packaging.OpenXmlPackage" Usage="spreadsheetDocument.OpenClone (stream, isEditable, openSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="stream">The stream on which the cloned OpenXml package will be opened.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>
+            Opens the cloned OpenXml package on the given stream.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenClone">
+      <MemberSignature Language="C#" Value="protected override DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone (string path, bool isEditable, DocumentFormat.OpenXml.Packaging.OpenSettings openSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class DocumentFormat.OpenXml.Packaging.OpenXmlPackage OpenClone(string path, bool isEditable, class DocumentFormat.OpenXml.Packaging.OpenSettings openSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.OpenClone(System.String,System.Boolean,DocumentFormat.OpenXml.Packaging.OpenSettings)" />
+      <MemberSignature Language="F#" Value="override this.OpenClone : string * bool * DocumentFormat.OpenXml.Packaging.OpenSettings -&gt; DocumentFormat.OpenXml.Packaging.OpenXmlPackage" Usage="spreadsheetDocument.OpenClone (path, isEditable, openSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.OpenXmlPackage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="isEditable" Type="System.Boolean" />
+        <Parameter Name="openSettings" Type="DocumentFormat.OpenXml.Packaging.OpenSettings" />
+      </Parameters>
+      <Docs>
+        <param name="path">The path and file name of the target OpenXml package.</param>
+        <param name="isEditable">In ReadWrite mode. False for Read only mode.</param>
+        <param name="openSettings">The advanced settings for opening a document.</param>
+        <summary>
+            Opens the cloned OpenXml package on the given file.
+            </summary>
+        <returns>A new instance of OpenXmlPackage.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuickAccessToolbarCustomizationsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart QuickAccessToolbarCustomizationsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart QuickAccessToolbarCustomizationsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.QuickAccessToolbarCustomizationsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property QuickAccessToolbarCustomizationsPart As QuickAccessToolbarCustomizationsPart" />
+      <MemberSignature Language="F#" Value="member this.QuickAccessToolbarCustomizationsPart : DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.QuickAccessToolbarCustomizationsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.QuickAccessToolbarCustomizationsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the QuickAccessToolbarCustomizationsPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RibbonAndBackstageCustomizationsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart RibbonAndBackstageCustomizationsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart RibbonAndBackstageCustomizationsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.RibbonAndBackstageCustomizationsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RibbonAndBackstageCustomizationsPart As RibbonAndBackstageCustomizationsPart" />
+      <MemberSignature Language="F#" Value="member this.RibbonAndBackstageCustomizationsPart : DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.RibbonAndBackstageCustomizationsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonAndBackstageCustomizationsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the RibbonAndBackstageCustomizationsPart of the SpreadsheetDocument, only available in Office2010.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RibbonExtensibilityPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart RibbonExtensibilityPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart RibbonExtensibilityPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.RibbonExtensibilityPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RibbonExtensibilityPart As RibbonExtensibilityPart" />
+      <MemberSignature Language="F#" Value="member this.RibbonExtensibilityPart : DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.RibbonExtensibilityPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.RibbonExtensibilityPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the RibbonExtensibilityPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart ThumbnailPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart ThumbnailPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.ThumbnailPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ThumbnailPart As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.ThumbnailPart : DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.ThumbnailPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the ThumbnailPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToFlatOpcDocument">
+      <MemberSignature Language="C#" Value="public override System.Xml.Linq.XDocument ToFlatOpcDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.Linq.XDocument ToFlatOpcDocument() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.ToFlatOpcDocument" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToFlatOpcDocument () As XDocument" />
+      <MemberSignature Language="F#" Value="override this.ToFlatOpcDocument : unit -&gt; System.Xml.Linq.XDocument" Usage="spreadsheetDocument.ToFlatOpcDocument " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XDocument</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Converts an OpenXml package in OPC format to an <see cref="T:System.Xml.Linq.XDocument" />
+            in Flat OPC format.
+            </summary>
+        <returns>The OpenXml package in Flat OPC format.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebExTaskpanesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart WebExTaskpanesPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart WebExTaskpanesPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WebExTaskpanesPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WebExTaskpanesPart As WebExTaskpanesPart" />
+      <MemberSignature Language="F#" Value="member this.WebExTaskpanesPart : DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WebExTaskpanesPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WebExTaskpanesPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WebExTaskpanesPart of the SpreadsheetDocument, only available in Office2013.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkbookPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WorkbookPart WorkbookPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.WorkbookPart WorkbookPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WorkbookPart As WorkbookPart" />
+      <MemberSignature Language="F#" Value="member this.WorkbookPart : DocumentFormat.OpenXml.Packaging.WorkbookPart" Usage="DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.WorkbookPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WorkbookPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WorkbookPart of the SpreadsheetDocument.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

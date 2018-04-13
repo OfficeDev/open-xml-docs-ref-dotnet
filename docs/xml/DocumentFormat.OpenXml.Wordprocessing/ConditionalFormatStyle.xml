@@ -1,0 +1,634 @@
+﻿<Type Name="ConditionalFormatStyle" FullName="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle">
+  <TypeSignature Language="C#" Value="public class ConditionalFormatStyle : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConditionalFormatStyle extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle" />
+  <TypeSignature Language="VB.NET" Value="Public Class ConditionalFormatStyle&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type ConditionalFormatStyle = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the ConditionalFormatStyle Class. When the object is serialized out as xml, its qualified name is w:cnfStyle.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cnfStyle (Paragraph Conditional Formatting)**  
+  
+ This element specifies the set of conditional table style formatting properties which have been applied to this paragraph, if this paragraph is contained within a table cell. [*Note*: This property is an optimization which can be used by consumers to determine if a given property on a paragraph is the result of the table style properties vs. direct formatting on the paragraph itself. *end note*]  
+  
+ If this property is specified on a paragraph which is not contained within a table cell, then its contents shall be ignored when reading the contents of the document.  
+  
+ [*Example*: Consider a paragraph in the top right corner of a table with a table style applied and where the table is formatted as left to right. This paragraph would need to specify the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:cnfStyle w:firstRow="true" w:lastColumn="true" w:firstRowLastColumn="true" />  
+    …  
+  </w:pPr>  
+  …  
+</w:p>  
+```  
+  
+ This paragraph specifies that it has the conditional properties from the table style for the first column, first row, and the top right corner of the parent table by setting the appropriate attributes. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Cnf) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cnfStyle (Table Row Conditional Formatting)**  
+  
+ This element specifies the set of conditional table style formatting properties which have been applied to this table row. [*Note*: This property is an optimization which is used by consumers to determine if a given property on a table row is the result of the table style conditional formatting properties vs. direct formatting on the table cell itself. It specifies the components of the conditional formatting in the table style applied to this cell, so that the table's conditional formatting can be applied after the document is displayed without having the table style properties override the style hierarchy. *end note*]  
+  
+ If this element is omitted, then its value shall be assumed to be zero for all entries in the bit mask.  
+  
+ [*Example*: Consider a table row in the top of a table with a table style applied. This table cell would need to specify the following WordprocessingML to express that fact:  
+  
+```xml  
+<w:tr>  
+  <w:trPr>  
+    <w:cnfStyle w:firstRow="true" />  
+    …  
+  </w:trPr>  
+  …  
+</w:tr>  
+```  
+  
+ This table row specifies that it has the conditional properties from the table style for the first row of the parent table by setting the appropriate attribute value. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|trPr (§17.4.82); trPr (§17.7.6.10); trPr (§17.7.6.11); trPr (§17.4.83)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Cnf) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **cnfStyle (Table Cell Conditional Formatting)**  
+  
+ This element specifies the set of conditional table style formatting properties which have been applied to this table cell. [*Note*: This property is an optimization which is used by consumers to determine if a given property on a table cell is the result of the table style conditional formatting properties vs. direct formatting on the table cell itself. It specifies the components of the conditional formatting in the table style applied to this cell, so that the table's conditional formatting can be applied after the document is displayed without having the table style properties override the style hierarchy. *end note*]  
+  
+ If this element is omitted, then its value shall be assumed to be zero for all entries in the bit mask.  
+  
+ [*Example*: Consider a table cell in the top right corner of a table with a table style applied and where the table is formatted as left to right. This table cell would need to specify the following WordprocessingML to express that fact:  
+  
+```xml  
+<w:tc>  
+  <w:tcPr>  
+    <w:cnfStyle w:firstRow="true" w:lastColumn="true" w:firstRowLastColumn="true" />  
+    …  
+  </w:tcPr>  
+  …  
+</w:tc>  
+```  
+  
+ This table cell specifies that it has the conditional properties from the table style for the first column, first row, and the top right corner of the parent table by setting the appropriate attributes. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Cnf) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConditionalFormatStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the ConditionalFormatStyle class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="conditionalFormatStyle.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvenHorizontalBand">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue EvenHorizontalBand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue EvenHorizontalBand" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.EvenHorizontalBand" />
+      <MemberSignature Language="VB.NET" Value="Public Property EvenHorizontalBand As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.EvenHorizontalBand : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.EvenHorizontalBand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "evenHBand")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>evenHBand, this property is only available in Office2010.Represents the following attribute in the schema: w:evenHBand</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="EvenVerticalBand">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue EvenVerticalBand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue EvenVerticalBand" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.EvenVerticalBand" />
+      <MemberSignature Language="VB.NET" Value="Public Property EvenVerticalBand As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.EvenVerticalBand : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.EvenVerticalBand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "evenVBand")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>evenVBand, this property is only available in Office2010.Represents the following attribute in the schema: w:evenVBand</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue FirstColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue FirstColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property FirstColumn As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.FirstColumn : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "firstColumn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>firstColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:firstColumn</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue FirstRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue FirstRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property FirstRow As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.FirstRow : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "firstRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>firstRow, this property is only available in Office2010.Represents the following attribute in the schema: w:firstRow</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstRowFirstColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue FirstRowFirstColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue FirstRowFirstColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstRowFirstColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property FirstRowFirstColumn As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.FirstRowFirstColumn : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstRowFirstColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "firstRowFirstColumn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>firstRowFirstColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:firstRowFirstColumn</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstRowLastColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue FirstRowLastColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue FirstRowLastColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstRowLastColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property FirstRowLastColumn As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.FirstRowLastColumn : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.FirstRowLastColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "firstRowLastColumn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>firstRowLastColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:firstRowLastColumn</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LastColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue LastColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue LastColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property LastColumn As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.LastColumn : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "lastColumn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>lastColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:lastColumn</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LastRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue LastRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue LastRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property LastRow As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.LastRow : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "lastRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>lastRow, this property is only available in Office2010.Represents the following attribute in the schema: w:lastRow</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LastRowFirstColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue LastRowFirstColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue LastRowFirstColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastRowFirstColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property LastRowFirstColumn As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.LastRowFirstColumn : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastRowFirstColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "lastRowFirstColumn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>lastRowFirstColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:lastRowFirstColumn</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LastRowLastColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue LastRowLastColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue LastRowLastColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastRowLastColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property LastRowLastColumn As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.LastRowLastColumn : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LastRowLastColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "lastRowLastColumn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>lastRowLastColumn, this property is only available in Office2010.Represents the following attribute in the schema: w:lastRowLastColumn</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OddHorizontalBand">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue OddHorizontalBand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue OddHorizontalBand" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.OddHorizontalBand" />
+      <MemberSignature Language="VB.NET" Value="Public Property OddHorizontalBand As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.OddHorizontalBand : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.OddHorizontalBand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "oddHBand")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>oddHBand, this property is only available in Office2010.Represents the following attribute in the schema: w:oddHBand</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="OddVerticalBand">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue OddVerticalBand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue OddVerticalBand" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.OddVerticalBand" />
+      <MemberSignature Language="VB.NET" Value="Public Property OddVerticalBand As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.OddVerticalBand : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.OddVerticalBand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "oddVBand")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>oddVBand, this property is only available in Office2010.Represents the following attribute in the schema: w:oddVBand</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Val">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Val { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Val" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.Val" />
+      <MemberSignature Language="VB.NET" Value="Public Property Val As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Val : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle.Val" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "val")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Conditional Formatting Bit Mask.Represents the following attribute in the schema: w:val</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the set of conditional formatting properties that have been applied to this object.  
+  
+ These properties are expressed using a string serialization of a binary bitmask for each of the following properties (reading from the first character position right):  
+  
+-   First Row - Is this the first row of the table?  
+  
+-   Last Row - Is this the last row of the table?  
+  
+-   First Column - Does this belong to the first column of the table?  
+  
+-   Last Column - Does this belong to the last column of the table?  
+  
+-   Band 1 Vertical - Does this belong to a column which should receive Band 1 formatting? This property specifies whether the cell should receive the formatting specified for odd-numbered columns (1, 3, 5, and so on).  
+  
+-   Band 2 Vertical - Does this belong to a column which should receive Band 2 formatting? This property specifies whether the cell should receive the formatting specified for even-numbered columns (2, 4, 6, and so on).  
+  
+-   Band 1 Horizontal - Does this receive Band 1 formatting? This property specifies whether the cell should receive the formatting specified for odd-numbered rows (1, 3, 5, and so on).  
+  
+-   Band 2 Horizontal - Does this receive Band 2 formatting? This property specifies whether the cell should receive the formatting specified for even-numbered rows (2, 4, 6, and so on).  
+  
+-   NE Cell - Is this part of the top-right corner of the table?  
+  
+-   NW Cell - Is this part of the top-left corner of the table?  
+  
+-   SE Cell - Is this part of the bottom-right corner of the table?  
+  
+-   SW Cell -  Is this part of the bottom-left corner of the table?  
+  
+ For each of these properties, a value of `1` in the specified character position in the string means that the value is `true`; and a value of `0` means `false`. All the values must be specified.  
+  
+ Consider a paragraph in the top-right corner of a table with a table style applied. This paragraph would need to specify the following WordprocessingML:  
+  
+```  
+<w:p>  
+  <w:pPr>  
+    <w:cnfStyle w:val="101000000100" />  
+    ...  
+  </w:pPr>  
+  ...  
+</w:p>  
+```  
+  
+ This paragraph specifies that it has the conditional properties from the table style for the first column, first row, and NW corner of the parent table by setting the appropriate bits in the `val` attribute.  
+  
+ The possible values for this attribute are defined by the `ST_Cnf` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,528 @@
+﻿<Type Name="CellFormula" FullName="DocumentFormat.OpenXml.Spreadsheet.CellFormula">
+  <TypeSignature Language="C#" Value="public class CellFormula : DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CellFormula extends DocumentFormat.OpenXml.OpenXmlLeafTextElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CellFormula" />
+  <TypeSignature Language="VB.NET" Value="Public Class CellFormula&#xA;Inherits OpenXmlLeafTextElement" />
+  <TypeSignature Language="F#" Value="type CellFormula = class&#xA;    inherit OpenXmlLeafTextElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafTextElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Formula. When the object is serialized out as xml, its qualified name is x:f.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **f (Formula)**  
+  
+ Formula for the cell. The formula expression is contained in the character node of this element.  
+  
+ [*Example*:  
+  
+```xml  
+<f>  
+SUM(C4:E4)</f>  
+```  
+  
+ *end example*]  
+  
+ The possible values for the t attribute are defined by the simple type *ST_CellFormulaType*, and are as follows:  
+  
+ Value  
+  
+ Description  
+  
+ array (Array formula)  
+  
+ Array formula. An array formula is a single formula, applied across a range of one or more cells. An array formula can return multiple results from one single calculation, the results spanning the cells in which it is contained (§18.17.2.7).  
+  
+ dataTable (Table formula)  
+  
+ Data table. A *data table* is a range of cells that shows how changing certain values in one or more formulas affects the results of those formulas. A data table provides a shortcut for calculating multiple versions in one operation, and a way to include the results of all of the different variations in a sheet.  
+  
+ Both one- and two-input variable data tables can be created (see attribute dt2D).[*Example*: A one-input variable data table might be used to calculate how different interest rates affect a monthly mortgage payment, while a two-input variable data table might be used to calculate how different interest rates and loan terms will affect the mortgage payment. *end example*]  
+  
+ In a one-input variable data table, values are listed either down a column (column-oriented) or across a row (row-oriented) (see attribute dtr).  
+  
+ Formulas that are used in a one-input variable data table shall refer to an input cell (see attribute r1), the cell in which each input value from a data table is substituted. Any cell on a worksheet can be the input cell. Although the input cell does not need to be part of the data table, the formulas in data tables shall refer to that input cell.  
+  
+ Two-input variable data tables use only one formula with two lists of input values. The formula shall refer to two input cells (see attributes r1 and r2).  
+  
+ The top-left cell in the data table is called the *master cell*.  
+  
+ *[Guidance: It is recommended that Spreadsheet applications recalculate data tables whenever a worksheet is recalculated. end guidance]*  
+  
+ normal (Normal formula)  
+  
+ Normal cell formula (§18.17).  
+  
+ shared (Shared formula)  
+  
+ Shared formula. If a cell contains the same formula as another cell, the “shared” value can be used for the t attribute and the si attribute can be used to refer to the cell containing the formula. Two formulas are considered to be the same when their respective representations in R1C1-reference notation, are the same.  
+  
+|Parent Elements|  
+|---------------------|  
+|c (§18.3.1.4); nc (§18.11.1.3); oc (§18.11.1.5)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|aca (Always Calculate Array)|Only applies to array formulas. *true* indicates that the entire array shall be calculated in full. If *false* the individual cells of the array shall be calculated as needed. The *aca* value shall be ignored unless the value of the corresponding t attribute is array.<br /><br /> [*Note*: The primary case where an array formula must be calculated in part instead of in full is when some cells in the array depend on other cells that are semi-calculated, e.g., contains the function =(). *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|bx (Assigns Value to Name)|Specifies that this formula assigns a value to a name.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|ca (Calculate Cell)|Indicates that this formula needs to be recalculated the next time calculation is performed. [*Example*: This is always set on volatile functions, like =(), and circular references. *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|del1 (Input 1 Deleted)|Whether the first input cell for data table has been deleted. Applies to data table formula only. Written on master cell of data table formula only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|del2 (Input 2 Deleted)|Whether the second input cell for data table has been deleted. Applies to data table formula only. Written on master cell of data table formula only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dt2D (Data Table 2-D)|Data table is two-dimentional. Only applies to the data tables function. Written on master cell of data table formula only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dtr (Data Table Row)|*true* if one-dimentional data table is a row, otherwise it's a column. Only applies to the data tables function. Written on master cell of data table formula only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|r1 (Data Table Cell 1)|First input cell for data table. Only applies to the data tables array function "TABLE()". Written on master cell of data table formula only.<br /><br /> The possible values for this attribute are defined by the *ST_CellRef* simple type (§18.18.7).|  
+|r2 (Input Cell 2)|Second input cell for data table when dt2D is '1'. Only applies to the data tables array function "TABLE()".Written on master cell of data table formula only.<br /><br /> The possible values for this attribute are defined by the *ST_CellRef* simple type (§18.18.7).|  
+|ref (Range of Cells)|Range of cells which the formula applies to. Only required for shared formula, array formula or data table. Only written on the master formula, not subsequent formulas belonging to the same shared group, array, or data table.<br /><br /> The possible values for this attribute are defined by the *ST_Ref* simple type (§18.18.62).|  
+|si (Shared Group Index)|Optional attribute to optimize load performance by sharing formulas.<br /><br /> When a formula is a shared formula (t value is *shared*) then this value indicates the group to which this particular cell's formula belongs. The first formula in a group of shared formulas is saved in the f element. This is considered the 'master' formula cell. Subsequent cells sharing this formula need not have the formula written in their f element. Instead, the attribute si value for a particular cell is used to figure what the formula expression should be based on the cell's relative location to the master formula cell.<br /><br /> A cell is shared only when si is used and t is *shared*. The formula expression for a cell that is specified to be part of a shared formula (and is not the master) shall be ignored, and the master formula shall override.<br /><br /> If a master cell of a shared formula range specifies that a particular cell is part of the shared formula range, and that particular cell does not use the si and t attributes to indicate that it is shared, then the particular cell's formula shall override the shared master formula. If this cell occurs in the middle of a range of shared formula cells, the earlier and later formulas shall continue sharing the master formula, and the cell in question shall not share the formula of the master cell formula.<br /><br /> Loading and handling of a cell and formula using an si attribute and whose t value is *shared*, located outside the range specified in the master cell associated with the si group, is implementation defined.<br /><br /> Master cell references on the same sheet shall not overlap with each other.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|t (Formula Type)|Type of formula.<br /><br /> The possible values for this attribute are defined by the *ST_CellFormulaType* simple type (§18.18.6).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CellFormula) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CellFormula ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CellFormula.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the CellFormula class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CellFormula (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CellFormula.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (text As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.CellFormula : string -&gt; DocumentFormat.OpenXml.Spreadsheet.CellFormula" Usage="new DocumentFormat.OpenXml.Spreadsheet.CellFormula text" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">Specifies text content of the element.</param>
+        <summary>Initializes a new instance of the CellFormula class with the specified text content.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlwaysCalculateArray">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AlwaysCalculateArray { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AlwaysCalculateArray" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.AlwaysCalculateArray" />
+      <MemberSignature Language="VB.NET" Value="Public Property AlwaysCalculateArray As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AlwaysCalculateArray : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.AlwaysCalculateArray" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "aca")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Always Calculate Array.Represents the following attribute in the schema: aca</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bx">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Bx { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Bx" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.Bx" />
+      <MemberSignature Language="VB.NET" Value="Public Property Bx As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Bx : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.Bx" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "bx")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Assigns Value to Name.Represents the following attribute in the schema: bx</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalculateCell">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue CalculateCell { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue CalculateCell" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.CalculateCell" />
+      <MemberSignature Language="VB.NET" Value="Public Property CalculateCell As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.CalculateCell : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.CalculateCell" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "ca")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Calculate Cell.Represents the following attribute in the schema: ca</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CellFormula.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="cellFormula.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTable2D">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DataTable2D { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DataTable2D" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.DataTable2D" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataTable2D As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DataTable2D : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.DataTable2D" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dt2D")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Data Table 2-D.Represents the following attribute in the schema: dt2D</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTableRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DataTableRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DataTableRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.DataTableRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataTableRow As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DataTableRow : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.DataTableRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dtr")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Data Table Row.Represents the following attribute in the schema: dtr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormulaType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CellFormulaValues&gt; FormulaType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.CellFormulaValues&gt; FormulaType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.FormulaType" />
+      <MemberSignature Language="VB.NET" Value="Public Property FormulaType As EnumValue(Of CellFormulaValues)" />
+      <MemberSignature Language="F#" Value="member this.FormulaType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CellFormulaValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.FormulaType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "t")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CellFormulaValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Formula Type.Represents the following attribute in the schema: t</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Input1Deleted">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Input1Deleted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Input1Deleted" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.Input1Deleted" />
+      <MemberSignature Language="VB.NET" Value="Public Property Input1Deleted As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Input1Deleted : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.Input1Deleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "del1")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Input 1 Deleted.Represents the following attribute in the schema: del1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Input2Deleted">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Input2Deleted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Input2Deleted" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.Input2Deleted" />
+      <MemberSignature Language="VB.NET" Value="Public Property Input2Deleted As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Input2Deleted : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.Input2Deleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "del2")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Input 2 Deleted.Represents the following attribute in the schema: del2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="R1">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue R1 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue R1" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.R1" />
+      <MemberSignature Language="VB.NET" Value="Public Property R1 As StringValue" />
+      <MemberSignature Language="F#" Value="member this.R1 : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.R1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "r1")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Data Table Cell 1.Represents the following attribute in the schema: r1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="R2">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue R2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue R2" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.R2" />
+      <MemberSignature Language="VB.NET" Value="Public Property R2 As StringValue" />
+      <MemberSignature Language="F#" Value="member this.R2 : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.R2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "r2")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Input Cell 2.Represents the following attribute in the schema: r2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reference">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Reference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Reference" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.Reference" />
+      <MemberSignature Language="VB.NET" Value="Public Property Reference As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Reference : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.Reference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "ref")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Range of Cells.Represents the following attribute in the schema: ref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SharedIndex">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value SharedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value SharedIndex" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.SharedIndex" />
+      <MemberSignature Language="VB.NET" Value="Public Property SharedIndex As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.SharedIndex : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.SharedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "si")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shared Group Index.Represents the following attribute in the schema: si</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Space">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.SpaceProcessingModeValues&gt; Space { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.SpaceProcessingModeValues&gt; Space" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellFormula.Space" />
+      <MemberSignature Language="VB.NET" Value="Public Property Space As EnumValue(Of SpaceProcessingModeValues)" />
+      <MemberSignature Language="F#" Value="member this.Space : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.SpaceProcessingModeValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellFormula.Space" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(1, "space")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.SpaceProcessingModeValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Content Contains Significant Whitespace.Represents the following attribute in the schema: xml:space</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:xml=http://www.w3.org/XML/1998/namespace
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

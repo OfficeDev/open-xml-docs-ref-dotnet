@@ -1,0 +1,582 @@
+﻿<Type Name="FrameProperties" FullName="DocumentFormat.OpenXml.Wordprocessing.FrameProperties">
+  <TypeSignature Language="C#" Value="public class FrameProperties : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FrameProperties extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FrameProperties" />
+  <TypeSignature Language="VB.NET" Value="Public Class FrameProperties&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type FrameProperties = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the FrameProperties Class. When the object is serialized out as xml, its qualified name is w:framePr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **framePr (Text Frame Properties)**  
+  
+ This element specifies information about the current paragraph with regard to *text frames*. *Text frames* are paragraphs of text in a document which are positioned in a separate region or frame in the document, and can be positioned with a specific size and position relative to non-frame paragraphs in the current document.  
+  
+ The first piece of information specified by the framePr element is that the current paragraph is actually part of a text frame in the document. This information is specified simply by the presence of the framePr element in paragraph's properties. If the framePr element is omitted, the paragraph shall not be part of any text frame in the document.  
+  
+ The second piece of information concerns the set of paragraphs which are part of the current text frame in the document. This is determined based on the attributes on the framePr element. If the set of attribute values specified on two adjacent paragraphs is identical, then those two paragraphs shall be considered to be part of the same text frame and rendered within the same frame in the document.  
+  
+ [*Example*: Consider a document in which the following two paragraphs are located adjacent to one another:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="811" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph One</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="810" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph Two.</w:t>  
+  </w:r>  
+</w:p>  
+```  
+  
+ These two paragraphs, although each is a part of a text frame due to the presence of the framePr element, are different text frames because of the differing h value - *810* vs. *811*. *end example*]  
+  
+ The positioning of the frame relative to the properties stored on its attribute values shall be calculated relative to the next paragraphs in the document which is itself not part of a text frame.  
+  
+ [*Example*: Consider a document in which the following three paragraphs are located adjacent to one another:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="811" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph One</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:framePr w:w="2191" w:h="811" w:hRule="exact" w:hSpace="180" w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Paragraph Two.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p/>  
+```  
+  
+ The first two paragraphs form a single text frame, which is anchored using its attribute values relative to the first non-frame paragraph following it (the third paragraph in the example). *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_FramePr) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the FrameProperties class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnchorLock">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue AnchorLock { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue AnchorLock" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.AnchorLock" />
+      <MemberSignature Language="VB.NET" Value="Public Property AnchorLock As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.AnchorLock : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.AnchorLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "anchorLock")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Lock Frame Anchor to Paragraph.Represents the following attribute in the schema: w:anchorLock</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="frameProperties.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropCap">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues&gt; DropCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues&gt; DropCap" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.DropCap" />
+      <MemberSignature Language="VB.NET" Value="Public Property DropCap As EnumValue(Of DropCapLocationValues)" />
+      <MemberSignature Language="F#" Value="member this.DropCap : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.DropCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "dropCap")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Drop Cap Frame.Represents the following attribute in the schema: w:dropCap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Height" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Height" />
+      <MemberSignature Language="VB.NET" Value="Public Property Height As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Height : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "h")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Frame Height.Represents the following attribute in the schema: w:h</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HeightType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues&gt; HeightType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues&gt; HeightType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.HeightType" />
+      <MemberSignature Language="VB.NET" Value="Public Property HeightType As EnumValue(Of HeightRuleValues)" />
+      <MemberSignature Language="F#" Value="member this.HeightType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.HeightType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "hRule")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Frame Height Type.Represents the following attribute in the schema: w:hRule</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalPosition">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues&gt; HorizontalPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues&gt; HorizontalPosition" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.HorizontalPosition" />
+      <MemberSignature Language="VB.NET" Value="Public Property HorizontalPosition As EnumValue(Of HorizontalAnchorValues)" />
+      <MemberSignature Language="F#" Value="member this.HorizontalPosition : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.HorizontalPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "hAnchor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Frame Horizontal Positioning Base.Represents the following attribute in the schema: w:hAnchor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalSpace">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue HorizontalSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue HorizontalSpace" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.HorizontalSpace" />
+      <MemberSignature Language="VB.NET" Value="Public Property HorizontalSpace As StringValue" />
+      <MemberSignature Language="F#" Value="member this.HorizontalSpace : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.HorizontalSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "hSpace")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Horizontal Frame Padding.Represents the following attribute in the schema: w:hSpace</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Lines">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value Lines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value Lines" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Lines" />
+      <MemberSignature Language="VB.NET" Value="Public Property Lines As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.Lines : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Lines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "lines")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Drop Cap Vertical Height in Lines.Represents the following attribute in the schema: w:lines</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalPosition">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues&gt; VerticalPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues&gt; VerticalPosition" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.VerticalPosition" />
+      <MemberSignature Language="VB.NET" Value="Public Property VerticalPosition As EnumValue(Of VerticalAnchorValues)" />
+      <MemberSignature Language="F#" Value="member this.VerticalPosition : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.VerticalPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "vAnchor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Frame Vertical Positioning Base.Represents the following attribute in the schema: w:vAnchor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalSpace">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue VerticalSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue VerticalSpace" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.VerticalSpace" />
+      <MemberSignature Language="VB.NET" Value="Public Property VerticalSpace As StringValue" />
+      <MemberSignature Language="F#" Value="member this.VerticalSpace : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.VerticalSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "vSpace")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Vertical Frame Padding.Represents the following attribute in the schema: w:vSpace</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Width" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Width" />
+      <MemberSignature Language="VB.NET" Value="Public Property Width As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Width : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "w")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Frame Width.Represents the following attribute in the schema: w:w</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrap">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues&gt; Wrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues&gt; Wrap" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Wrap" />
+      <MemberSignature Language="VB.NET" Value="Public Property Wrap As EnumValue(Of TextWrappingValues)" />
+      <MemberSignature Language="F#" Value="member this.Wrap : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Wrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "wrap")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Text Wrapping Around Frame.Represents the following attribute in the schema: w:wrap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue X" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.X" />
+      <MemberSignature Language="VB.NET" Value="Public Property X As StringValue" />
+      <MemberSignature Language="F#" Value="member this.X : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "x")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Absolute Horizontal Position.Represents the following attribute in the schema: w:x</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="XAlign">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues&gt; XAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues&gt; XAlign" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.XAlign" />
+      <MemberSignature Language="VB.NET" Value="Public Property XAlign As EnumValue(Of HorizontalAlignmentValues)" />
+      <MemberSignature Language="F#" Value="member this.XAlign : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.XAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "xAlign")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Relative Horizontal Position.Represents the following attribute in the schema: w:xAlign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Y" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Y" />
+      <MemberSignature Language="VB.NET" Value="Public Property Y As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Y : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "y")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Absolute Vertical Position.Represents the following attribute in the schema: w:y</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="YAlign">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues&gt; YAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues&gt; YAlign" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FrameProperties.YAlign" />
+      <MemberSignature Language="VB.NET" Value="Public Property YAlign As EnumValue(Of VerticalAlignmentValues)" />
+      <MemberSignature Language="F#" Value="member this.YAlign : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.FrameProperties.YAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "yAlign")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Relative Vertical Position.Represents the following attribute in the schema: w:yAlign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

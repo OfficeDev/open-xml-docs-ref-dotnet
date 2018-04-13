@@ -1,0 +1,717 @@
+﻿<Type Name="NumberingChange" FullName="DocumentFormat.OpenXml.Wordprocessing.NumberingChange">
+  <TypeSignature Language="C#" Value="public class NumberingChange : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberingChange extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.NumberingChange" />
+  <TypeSignature Language="VB.NET" Value="Public Class NumberingChange&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type NumberingChange = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Previous Paragraph Numbering Properties. When the object is serialized out as xml, its qualified name is w:numberingChange.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `numberingChange (Previous Numbering Field Properties)`  
+  
+ This element specifies the previous state of the numbering displayed by a *LISTNUM* field (Part 1, §17.16.5.33) within a WordprocessingML document when additional *LISTNUM* fields are added and revisions are being tracked.  
+  
+ [*Rationale*: The legacy numbering mechanism provided by the *LISTNUM* field relies on the presence of fields in the run content of the document, rather than being a paragraph property (as numbering typically is represented). For this reason, these fields must store their previous state as a unique revision type on the field character of the numbering field. *end rationale*]  
+  
+ If this element is supplied for a field which is not of type *LISTNUM* as defined by its field codes (Part 1, §17.16.5), then this property shall be ignored.  
+  
+ [*Example*: Consider the following paragraph containing a single *LISTNUM* field, as follows:  
+  
+ 5ccbfcbb-0568-4f98-b9e6-bc9b07df5295  
+  
+ If another *LISTNUM* field is added before it in the document, resulting in its evaluation to a different number, as follows:  
+  
+ 5df1502e-4833-48c7-aa49-517de8059a13  
+  
+ This revision to the field result would be stored as follows in the WordprocessingML:  
+  
+```xml  
+<w:fldChar w:fldCharType="begin">  
+  <w:numberingChange w:id="0" … w:original="1." />  
+</w:fldChar>  
+<w:r>  
+  <w:instrText>LISTNUM</w:instrText>  
+</w:r>  
+<w:fldChar w:fldCharType="separate"/>  
+<w:r>  
+  <w:t>2.</w:t>  
+</w:r>  
+<w:fldChar w:fldCharType="end" />  
+```  
+  
+ The numberingChange element specifies that the numbering resulting from this *LISTNUM* field was modified and this change was tracked as a revision. The previous numbering result of *1.* is cached in the original attribute. *end example*]  
+  
+ For numbering fields, the original attribute shall specify the previous numbering displayed by the parent *LISTNUM* field within a WordprocessingML document. This information is a performance-enhancing cache of the state of the numbering before the revision to allow applications to show the previous state without having to recalculate all of the *LISTNUM* fields in the document.  
+  
+ If this attribute is omitted, then no previous numbering value is implied and applications can choose to calculate this value, or display no previous numbering value.  
+  
+ [*Example*: Consider the following paragraph containing a single *LISTNUM* field with a revision, as follows:  
+  
+ 5df1502e-4833-48c7-aa49-517de8059a13  
+  
+ This revision to the field result would be stored as follows in the WordprocessingML:  
+  
+```xml  
+<w:fldChar w:fldCharType="begin">  
+  <w:numberingChange w:id="0" … w:original="1." />  
+</w:fldChar>  
+```  
+  
+ The original attribute specifies that the previous numbering value of the field was *1.* *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fldChar (Part 1, §17.16.18)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChangeNumbering) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `numberingChange (Previous Paragraph Numbering Properties)`  
+  
+ This element specifies the previous state of the numbering on a paragraph when revisions are being tracked.  
+  
+ [*Rationale*: This mechanism is simply used to provide storage for revisions to numbering produced by legacy word processing applications, and applications are encouraged to use the pPrChange element to store these changes as changes to the paragraph properties instead. *end rationale*]  
+  
+ [*Example*: Consider the following list using Arabic numerals as the numbering, as follows:  
+  
+ f1e61028-5796-4a3c-aaeb-f786fa603b64  
+  
+ Consider a revision where the numbering definition is changed from Arabic numerals to Roman numerals, as follows:  
+  
+ e9f215fe-31e8-463c-a9b7-1f97d607869b  
+  
+ This revision to the numbering definition would be stored as follows in the WordprocessingML:  
+  
+```xml  
+<w:p>  
+<w:pPr>  
+<w:numPr>  
+<w:ilvl w:val="0" />  
+<w:numId w:val="1" />  
+<w:numberingChange w:id="0" … w:original="%1:1:0:." />  
+</w:numPr>  
+</w:pPr>  
+<w:r>  
+<w:t>one</w:t>  
+</w:r>  
+</w:p>  
+<w:p>  
+<w:pPr>  
+<w:numPr>  
+<w:ilvl w:val="0" />  
+<w:numId w:val="1" />  
+<w:numberingChange w:id="1" … w:original="%1:2:0:." />  
+</w:numPr>  
+</w:pPr>  
+<w:r>  
+<w:t>two</w:t>  
+</w:r>  
+</w:p>  
+<w:p>  
+<w:pPr>  
+<w:numPr>  
+<w:ilvl w:val="0" />  
+<w:numId w:val="1" />  
+<w:numberingChange w:id="2" … w:original="%1:3:0:." />  
+</w:numPr>  
+</w:pPr>  
+<w:r>  
+<w:t>three</w:t>  
+</w:r>  
+</w:p>  
+```  
+  
+ The numberingChange element specifies that the numbering definition was modified and this change was tracked as a revision. The previous Arabic numeral numbering definition is cached in the original attribute. *end example*]  
+  
+ For paragraph numbering, the original attribute shall specify the previous numbering definition for an individual paragraph of text within a WordprocessingML document while revisions are being tracked.  
+  
+ The value of original is represented as separate numbering level definitions defined as follows:  
+  
+```xml  
+<%[numbering level]:[nfc value]:[numbering format]:[separator]>[repeat if more than one level]  
+```  
+  
+ where  
+  
+-   *numbering level* – The level for which the numbering definition is defined  
+  
+-   *nfc value* – The value of the numbering style at the specific numbering level  
+  
+-   *numbering format* – The nfc value of the numbering format, as referenced in the table below.  
+  
+-   *separator* – The separator used to separate the numbering level definitions  
+  
+ The numbering format values are mapped as follows:  
+  
+ nfc Value  
+  
+ ST_NumberFormat enumeration equivalent  
+  
+ *0*  
+  
+ *decimal*  
+  
+ *1*  
+  
+ *upperRoman*  
+  
+ *2*  
+  
+ *lowerRoman*  
+  
+ *3*  
+  
+ *upperLetter*  
+  
+ *4*  
+  
+ *lowerLetter*  
+  
+ *5*  
+  
+ *ordinal*  
+  
+ *6*  
+  
+ *cardinalText*  
+  
+ *7*  
+  
+ *ordinalText*  
+  
+ *8*  
+  
+ *hex*  
+  
+ *9*  
+  
+ *chicago*  
+  
+ *10*  
+  
+ *ideographDigital*  
+  
+ *11*  
+  
+ *japaneseCounting*  
+  
+ *12*  
+  
+ *Aiueo*  
+  
+ *13*  
+  
+ *Iroha*  
+  
+ *14*  
+  
+ *decimalFullWidth*  
+  
+ *15*  
+  
+ *decimalHalfWidth*  
+  
+ *16*  
+  
+ *japaneseLegal*  
+  
+ *17*  
+  
+ *japaneseDigitalTenThousand*  
+  
+ *18*  
+  
+ *decimalEnclosedCircle*  
+  
+ *19*  
+  
+ *decimalFullWidth2*  
+  
+ *20*  
+  
+ *aiueoFullWidth*  
+  
+ *21*  
+  
+ *irohaFullWidth*  
+  
+ *22*  
+  
+ *decimalZero*  
+  
+ *23*  
+  
+ *bullet*  
+  
+ *24*  
+  
+ *ganada*  
+  
+ *25*  
+  
+ *chosung*  
+  
+ *26*  
+  
+ *decimalEnclosedFullstop*  
+  
+ *27*  
+  
+ *decimalEnclosedParen*  
+  
+ *28*  
+  
+ *decimalEnclosedCircleChinese*  
+  
+ *29*  
+  
+ *ideographEnclosedCircle*  
+  
+ *30*  
+  
+ *ideographTraditional*  
+  
+ *31*  
+  
+ *ideographZodiac*  
+  
+ *32*  
+  
+ *ideographZodiacTraditional*  
+  
+ *33*  
+  
+ *taiwaneseCounting*  
+  
+ *34*  
+  
+ *ideographLegalTraditional*  
+  
+ *35*  
+  
+ *taiwaneseCountingThousand*  
+  
+ *36*  
+  
+ *taiwaneseDigital*  
+  
+ *37*  
+  
+ *chineseCounting*  
+  
+ *38*  
+  
+ *chineseLegalSimplified*  
+  
+ *39*  
+  
+ *chineseCountingThousand*  
+  
+ *40*  
+  
+ Application-defined. Can be ignored.  
+  
+ *41*  
+  
+ *koreanDigital*  
+  
+ *42*  
+  
+ *koreanCounting*  
+  
+ *43*  
+  
+ *koreanLegal*  
+  
+ *44*  
+  
+ *koreanDigital2*  
+  
+ *45*  
+  
+ *hebrew1*  
+  
+ *46*  
+  
+ *arabicAlpha*  
+  
+ *47*  
+  
+ *hebrew2*  
+  
+ *48*  
+  
+ *arabicAbjad*  
+  
+ *49*  
+  
+ *hindiVowels*  
+  
+ *50*  
+  
+ *hindiConsonants*  
+  
+ *51*  
+  
+ *hindiNumbers*  
+  
+ *52*  
+  
+ *hindiCounting*  
+  
+ *53*  
+  
+ *thaiLetters*  
+  
+ *54*  
+  
+ *thaiNumbers*  
+  
+ *55*  
+  
+ *thaiCounting*  
+  
+ *56*  
+  
+ *vietnameseCounting*  
+  
+ *57*  
+  
+ *numberInDash*  
+  
+ *58*  
+  
+ *russianLower*  
+  
+ *59*  
+  
+ *russianUpper*  
+  
+ *60* or above  
+  
+ Application-defined. Can be ignored.  
+  
+ [*Example*: Consider the following numbered paragraph where the numbering definition has changed while revisions are being tracked, as follows:  
+  
+ 1295cca3-f9de-4aec-9347-8baae6e0f1b0  
+  
+ This revision to the numbered paragraph would be stored as follows in the WordprocessingML:  
+  
+```xml  
+<w:numPr>  
+  …  
+  <w:numberingChange … w:original="%1:1:0:.%2:1:2:.%3:1:0:." />  
+</w:numPr>  
+```  
+  
+ In the above example there are three levels in the original numbering definition, thus three numbering level definitions are needed to represent the original numbering definition.  
+  
+ The first level is specified by *%1*, and says that it was number value *1* in the nfc format *0* (*arabic*).  
+  
+ The original attribute specifies that the previous numbering definition was made up of three levels whose value was *1.i.1..* *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|numPr (Part 1, §17.3.1.19)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_TrackChangeNumbering) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NumberingChange ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.NumberingChange.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the NumberingChange class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Author">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Author { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Author" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Author" />
+      <MemberSignature Language="VB.NET" Value="Public Property Author As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Author : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Author" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "author")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>author.Represents the following attribute in the schema: w:author</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the author for an annotation within a WordprocessingML document.  
+  
+ If this attribute is omitted, then no author shall be associated with the parent annotation type.  
+  
+ Consider a comment represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" w:author="Example Author">  
+  …  
+</w:…>  
+```  
+  
+ The `author` attribute specifies that the author of the current annotation is `Example Author`, which may be used as desired.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.NumberingChange.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="numberingChange.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Date">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DateTimeValue Date { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DateTimeValue Date" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Date" />
+      <MemberSignature Language="VB.NET" Value="Public Property Date As DateTimeValue" />
+      <MemberSignature Language="F#" Value="member this.Date : DocumentFormat.OpenXml.DateTimeValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Date" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "date")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>date.Represents the following attribute in the schema: w:date</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DateTimeValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the date information for an annotation within a WordprocessingML document. The use of this information is outside of the scope of the Office Open XML Standard.  
+  
+ If this attribute is omitted, then no date information shall be associated with the parent annotation type.  
+  
+ Consider a comment represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" w:date="2006-01-01T10:00:00">  
+  …  
+</w:…>  
+```  
+  
+ The `date` attribute specifies that the date of the current annotation is January 1, 2006 at 10:00 A.M., which may be used as desired.  
+  
+ The possible values for this attribute are defined by the `ST_DateTime` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Id" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Id : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "id")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Annotation Identifier.Represents the following attribute in the schema: w:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies a unique identifier for an annotation within a WordprocessingML document. The restrictions on the `id` attribute, if any, are defined by the parent XML element.  
+  
+ If this attribute is omitted, then the document is non-conformant.  
+  
+ Consider an annotation represented using the following WordprocessingML fragment:  
+  
+```  
+<w:… w:id="1" … >  
+  …  
+</w:…>  
+```  
+  
+ The `id` attribute specifies that the ID of the current annotation is `1`. This value is used to uniquely identify this annotation within the document content.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.NumberingChange.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.NumberingChange.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Original">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Original { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Original" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Original" />
+      <MemberSignature Language="VB.NET" Value="Public Property Original As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Original : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.NumberingChange.Original" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "original")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>original.Represents the following attribute in the schema: w:original</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the previous numbering displayed by the parent numbering change revision. Its format is specified by the parent element.  
+  
+ If this attribute is omitted, then no previous numbering value is implied and applications may choose to calculate this value, or display no previous numbering value.  
+  
+ Consider the following paragraph containing a single `LISTNUM` field with a revision, as follows:  
+  
+ ddc9aaa8-1d06-4343-a6c7-a5140256a85d  
+  
+ This revision to the field result would be stored as follows in the WordprocessingML:  
+  
+```  
+<w:fldChar w:type="begin">  
+  <w:numberingChange w:id="0" … w:original="1." />  
+</w:fldChar>  
+```  
+  
+ The `original` attribute specifies that the previous numbering value of the field was `1`.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

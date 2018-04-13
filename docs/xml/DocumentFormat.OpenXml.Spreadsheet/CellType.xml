@@ -1,0 +1,516 @@
+﻿<Type Name="CellType" FullName="DocumentFormat.OpenXml.Spreadsheet.CellType">
+  <TypeSignature Language="C#" Value="public abstract class CellType : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CellType extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CellType" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class CellType&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type CellType = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.CellFormula))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.CellValue))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.InlineString))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.ExtensionList))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the CellType class.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following table lists the possible child types:CellFormula \<x:f>CellValue \<x:v>InlineString \<x:is>ExtensionList \<x:extLst>  
+  
+   
+  
+## Examples  
+ The following example creates a spreadsheet document and adds the text "Microsoft" to the cell A2 by using the `CellType` class.  
+  
+```csharp  
+using System;  
+using DocumentFormat.OpenXml;  
+using DocumentFormat.OpenXml.Packaging;  
+using DocumentFormat.OpenXml.Spreadsheet;  
+  
+namespace CellTypeEx  
+{    
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string fileName = @"C:\Users\Public\Documents\CellTypeEx.xlsx";  
+  
+             // Create a spreadsheet document by supplying the fileName.  
+            SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.  
+                Create(fileName, SpreadsheetDocumentType.Workbook);  
+  
+            // Add a WorkbookPart to the document.  
+            WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();  
+            workbookpart.Workbook = new Workbook();  
+  
+            // Add a WorksheetPart to the WorkbookPart.  
+            WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();  
+            worksheetPart.Worksheet = new Worksheet(new SheetData());  
+  
+            // Add Sheets to the Workbook.  
+            Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild<Sheets>(new Sheets());  
+  
+            // Append a new worksheet and associate it with the workbook.  
+            Sheet sheet = new Sheet()  
+            {  
+                Id = spreadsheetDocument.WorkbookPart.  
+                    GetIdOfPart(worksheetPart),  
+                SheetId = 1,  
+                Name = "mySheet"  
+            };  
+  
+            sheets.Append(sheet);  
+            Worksheet worksheet = new Worksheet();  
+            SheetData sheetData = new SheetData();  
+  
+            Row row = new Row() { RowIndex = 2U, Spans = new ListValue<StringValue>() };   
+            CellType cT = new Cell() { CellReference = "A2", DataType = CellValues.String,   
+                CellValue = new CellValue("Microsoft") };  
+            Console.WriteLine(cT.InnerText);  
+  
+            row.Append(cT);  
+            sheetData.Append(row);  
+            worksheet.Append(sheetData);             
+            worksheetPart.Worksheet = worksheet;             
+            workbookpart.Workbook.Save();  
+  
+            // Close the document.  
+            spreadsheetDocument.Close();  
+  
+            System.Console.WriteLine("All done");  
+            System.Console.ReadKey();  
+  
+        }  
+     }  
+ }  
+  
+```  
+  
+```vb  
+Imports System  
+Imports DocumentFormat.OpenXml  
+Imports DocumentFormat.OpenXml.Packaging  
+Imports DocumentFormat.OpenXml.Spreadsheet  
+  
+Module Module1  
+    Sub Main(ByVal args As String())  
+        Dim fileName As String = "C:\Users\Public\Documents\CellTypeEx.xlsx"  
+  
+        ' Create a spreadsheet document by supplying the fileName.  
+        Dim spreadsheetDocument As SpreadsheetDocument = spreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook)  
+  
+        ' Add a WorkbookPart to the document.  
+        Dim workbookpart As WorkbookPart = spreadsheetDocument.AddWorkbookPart()  
+        workbookpart.Workbook = New Workbook()  
+  
+        ' Add a WorksheetPart to the WorkbookPart.  
+        Dim worksheetPart As WorksheetPart = workbookpart.AddNewPart(Of WorksheetPart)()  
+        worksheetPart.Worksheet = New Worksheet(New SheetData())  
+  
+        ' Add Sheets to the Workbook.  
+        Dim sheets As Sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(Of Sheets)(New Sheets())  
+  
+        ' Append a new worksheet and associate it with the workbook.  
+        Dim sheet As New Sheet() With { _  
+         .Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), _  
+         .SheetId = 1, _  
+         .Name = "mySheet" _  
+        }  
+  
+        sheets.Append(sheet)  
+        Dim worksheet As New Worksheet()  
+        Dim sheetData As New SheetData()  
+  
+        Dim row As New Row() With { _  
+         .RowIndex = 2UI, _  
+         .Spans = New ListValue(Of StringValue)() _  
+        }  
+        Dim cT As CellType = New Cell() With { _  
+         .CellReference = "A2", _  
+         .DataType = CellValues.[String], _  
+         .CellValue = New CellValue("Microsoft") _  
+        }  
+        Console.WriteLine(cT.InnerText)  
+  
+        row.Append(cT)  
+        sheetData.Append(row)  
+        worksheet.Append(sheetData)  
+        worksheetPart.Worksheet = worksheet  
+        workbookpart.Workbook.Save()  
+  
+        ' Close the document.  
+        spreadsheetDocument.Close()  
+  
+        System.Console.WriteLine("All done")  
+        System.Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CellType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CellType.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the CellType class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CellType (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CellType.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.CellType : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.CellType" Usage="new DocumentFormat.OpenXml.Spreadsheet.CellType childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the CellType class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CellType (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CellType.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.CellType : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.CellType" Usage="new DocumentFormat.OpenXml.Spreadsheet.CellType childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the CellType class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CellType (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CellType.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.CellType : string -&gt; DocumentFormat.OpenXml.Spreadsheet.CellType" Usage="new DocumentFormat.OpenXml.Spreadsheet.CellType outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the CellType class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellFormula">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.CellFormula CellFormula { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.CellFormula CellFormula" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.CellFormula" />
+      <MemberSignature Language="VB.NET" Value="Public Property CellFormula As CellFormula" />
+      <MemberSignature Language="F#" Value="member this.CellFormula : DocumentFormat.OpenXml.Spreadsheet.CellFormula with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.CellFormula" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CellFormula</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Formula. Represents the following element tag in the schema: x:f</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CellFormula" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CellMetaIndex">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value CellMetaIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value CellMetaIndex" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.CellMetaIndex" />
+      <MemberSignature Language="VB.NET" Value="Public Property CellMetaIndex As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.CellMetaIndex : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.CellMetaIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "cm")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cell Metadata Index.Represents the following attribute in the schema: cm</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellReference">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue CellReference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue CellReference" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.CellReference" />
+      <MemberSignature Language="VB.NET" Value="Public Property CellReference As StringValue" />
+      <MemberSignature Language="F#" Value="member this.CellReference : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.CellReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "r")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Reference.Represents the following attribute in the schema: r</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellValue">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.CellValue CellValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.CellValue CellValue" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.CellValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property CellValue As CellValue" />
+      <MemberSignature Language="F#" Value="member this.CellValue : DocumentFormat.OpenXml.Spreadsheet.CellValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.CellValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.CellValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cell Value. Represents the following element tag in the schema: x:v</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.CellValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CellValues&gt; DataType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.CellValues&gt; DataType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.DataType" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataType As EnumValue(Of CellValues)" />
+      <MemberSignature Language="F#" Value="member this.DataType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CellValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "t")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CellValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cell Data Type.Represents the following attribute in the schema: t</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.ExtensionList ExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.ExtensionList ExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.ExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtensionList As ExtensionList" />
+      <MemberSignature Language="F#" Value="member this.ExtensionList : DocumentFormat.OpenXml.Spreadsheet.ExtensionList with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.ExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Future Feature Data Storage Area. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="InlineString">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.InlineString InlineString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.InlineString InlineString" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.InlineString" />
+      <MemberSignature Language="VB.NET" Value="Public Property InlineString As InlineString" />
+      <MemberSignature Language="F#" Value="member this.InlineString : DocumentFormat.OpenXml.Spreadsheet.InlineString with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.InlineString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.InlineString</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Rich Text Inline. Represents the following element tag in the schema: x:is</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.InlineString" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPhonetic">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowPhonetic { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowPhonetic" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.ShowPhonetic" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowPhonetic As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowPhonetic : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.ShowPhonetic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "ph")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Phonetic.Represents the following attribute in the schema: ph</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StyleIndex">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value StyleIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value StyleIndex" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.StyleIndex" />
+      <MemberSignature Language="VB.NET" Value="Public Property StyleIndex As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.StyleIndex : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.StyleIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "s")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Style Index.Represents the following attribute in the schema: s</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueMetaIndex">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ValueMetaIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ValueMetaIndex" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CellType.ValueMetaIndex" />
+      <MemberSignature Language="VB.NET" Value="Public Property ValueMetaIndex As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ValueMetaIndex : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CellType.ValueMetaIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "vm")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Value Metadata Index.Represents the following attribute in the schema: vm</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

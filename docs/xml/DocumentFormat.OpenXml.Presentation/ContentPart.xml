@@ -1,0 +1,409 @@
+﻿<Type Name="ContentPart" FullName="DocumentFormat.OpenXml.Presentation.ContentPart">
+  <TypeSignature Language="C#" Value="public class ContentPart : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContentPart extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Presentation.ContentPart" />
+  <TypeSignature Language="VB.NET" Value="Public Class ContentPart&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type ContentPart = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.PowerPoint.NonVisualContentPartProperties), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.PowerPoint.Transform2D), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2010.PowerPoint.ExtensionListModify), DocumentFormat.OpenXml.FileFormatVersions.Office2010 | DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the ContentPart Class.This class is only available in Office2010. When the object is serialized out as xml, its qualified name is p:contentPart.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **contentPart (Content Part)**  
+  
+ This element specifies a reference to XML content in a format not defined by /IEC 29500. [*Note*: This part allows the native use of other commonly used interchange formats, such as:  
+  
+-   MathML (http://www.w3.org/TR/MathML2/)  
+  
+-   SMIL (http://www.w3.org/TR/REC-smil/)  
+  
+-   SVG (http://www.w3.org/TR/SVG11/)  
+  
+ *end note*]  
+  
+ The relationship type of the explicit relationship specified by this element shall be http://schemas.openxmlformats.org/officeDocument/2006/customXml and have a TargetMode attribute value of *Internal*. If an application cannot process content of the content type specified by the targeted part, then it should continue to process the file. If possible, it should also provide some indication that unknown content was not imported.  
+  
+ [*Note*: For better interoperability, only standard XML formats should be used. *end note*]  
+  
+ [*Example*: Consider a PresentationML document which includes the following SMIL markup in a part named smil1.xml:  
+  
+```xml  
+<!--   
+            Copyright: Copyright 1998-2001 W3C (MIT, INRIA, Keio), All Rights Reserved.  
+See http://www.w3.org/Consortium/Legal/.  
+Author: Aaron Cohen (Intel)  
+           Version:   
+            Module: Animation Module  
+           Feature: animation  
+         File Name: animation-add-BE-05.smil  
+  Media Components: none  
+ Expected Behavior: Nine red rectangles numbered 1 to 9 shrink to squares  
+                    over 2s as follows:  
+                    at 2s #1 shrinks.  
+                    at 5s #2 shrinks, 1s after #1 completes  
+                    at 8s #3 shrinks.  
+                    #4 shrinks when it is clicked on.  
+                    #5 shrinks 1s after it is clicked on.  
+                    #6 shrinks 2s after it is clicked on.  
+                    #7 shrinks when the accesskey '1' is pressed.  
+                    #8 should be shrunk from 0s since it's wallclock time is in the past.  
+                    #9 will not shrink unless a  call causes it to begin.  
+-->  
+<smil xmlns="http://www.w3.org/2001/SMIL20/Language">  
+  <head>  
+    <layout>  
+      <root-layout width="640" height="480" backgroundColor="white"/>  
+      <region id="whole" width="640" height="480" z-index="0"/>  
+      <region id="rect1" top="50px" left="90px" height="50px" width="30px" backgroundColor="red" z-index="1"/>  
+      <region id="rect2" top="50px" left="234px" height="50px" width="30px" backgroundColor="red" z-index="1"/>  
+      <region id="rect4" top="160px" left="90px" height="50px" width="30px" backgroundColor="transparent" z-index="1"/>  
+      <region id="rect5" top="160px" left="234px" height="50px" width="30px" backgroundColor="transparent" z-index="1"/>  
+      <region id="rect6" top="160px" left="380px" height="50px" width="30px" backgroundColor="transparent" z-index="1"/>  
+      <region id="rect7" top="270px" left="90px" height="50px" width="30px" backgroundColor="red" z-index="1"/>  
+      <region id="rect8" top="270px" left="234px" height="50px" width="30px" backgroundColor="red" z-index="1"/>  
+      <region id="rect9" top="270px" left="380px" height="50px" width="30px" backgroundColor="red" z-index="1"/>  
+    </layout>  
+  </head>  
+<!-- Copyright 1998-2001 W3C (MIT, INRIA, Keio), All Rights Reserved.  
+See http://www.w3.org/Consortium/Legal/. -->  
+  <body>  
+    <par dur="indefinite">  
+      <img src="../images/animation-timing-BE-05.jpg" region="whole"/>  
+      <animate id="anim1" targetElement="rect1" attributeName="height" from="50" to="25" begin="2s" dur="2s" fill="freeze"/>  
+      <animate id="anim2" targetElement="rect2" attributeName="height" from="50" to="25" begin="anim1.end+1s" dur="2s" fill="freeze"/>  
+      <brush id="brush4" color="red" region="rect4" height="50px" width="30px"/>  
+      <animate id="anim4" targetElement="brush4" attributeName="height" from="50" to="25" begin="brush4.activateEvent" dur="2s" fill="freeze"/>  
+      <brush id="brush5" color="red" region="rect5" height="50px" width="30px"/>  
+      <animate id="anim5" targetElement="brush5" attributeName="height" from="50" to="25" begin="brush5.activateEvent+1s" dur="2s" fill="freeze"/>  
+      <brush id="brush6" color="red" region="rect6" height="50px" width="30px"/>  
+      <animate id="anim6a" targetElement="brush6" attributeName="width" repeatCount="3" from="30" to="30" begin="brush6.activateEvent" dur="1s" fill="freeze"/>  
+      <animate id="anim6b" targetElement="brush6" attributeName="height" from="50" to="25" begin="anim6a.repeat(2)" dur="2s" fill="freeze"/>  
+      <animate id="anim7" targetElement="rect7" attributeName="height" from="50" to="25" begin="accesskey(1)" dur="2s" fill="freeze"/>  
+      <animate id="anim8" targetElement="rect8" attributeName="height" from="50" to="25" begin="wallclock(2000-01-01T00:00:00Z)" dur="2s" fill="freeze"/>  
+      <animate id="anim9" targetElement="rect9" attributeName="width" from="30" to="30" begin="indefinite" dur="1s" fill="freeze"/>  
+    </par>  
+  </body>  
+</smil>  
+```  
+  
+ A Slide Part would reference this content as follows:  
+  
+```xml  
+<p:spTree>  
+  …  <p:contentPart r:id="smil01"/>  
+  …</p:spTree>  
+```  
+  
+ The contentPart element specifies that the content targeted by the relationship with an ID of *smil01* is part of the PresentationML document. Examining the contents of the corresponding relationship part item, we can see the targets for that relationship:  
+  
+```xml  
+<Relationships … >  
+  …  <Relationship Id="smil01" TargetMode="Internal" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml" Target="smil1.xml" />  
+  …</Relationships>  
+```  
+  
+ The corresponding relationship part item shows that the SMIL content is located next to the slide and is named *smil1.xml*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|grpSp (§19.3.1.22); spTree (§19.3.1.45)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Rel) is located in §A.3. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.ContentPart.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the ContentPart class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentPart (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.ContentPart.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Presentation.ContentPart : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Presentation.ContentPart" Usage="new DocumentFormat.OpenXml.Presentation.ContentPart childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the ContentPart class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentPart (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.ContentPart.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Presentation.ContentPart : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Presentation.ContentPart" Usage="new DocumentFormat.OpenXml.Presentation.ContentPart childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the ContentPart class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentPart (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.ContentPart.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Presentation.ContentPart : string -&gt; DocumentFormat.OpenXml.Presentation.ContentPart" Usage="new DocumentFormat.OpenXml.Presentation.ContentPart outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the ContentPart class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BwMode">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues&gt; BwMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues&gt; BwMode" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.ContentPart.BwMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property BwMode As EnumValue(Of BlackWhiteModeValues)" />
+      <MemberSignature Language="F#" Value="member this.BwMode : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Presentation.ContentPart.BwMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(49, "bwMode")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>bwMode.Represents the following attribute in the schema: p14:bwMode</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:p14=http://schemas.microsoft.com/office/powerpoint/2010/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Presentation.ContentPart.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="contentPart.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionListModify">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2010.PowerPoint.ExtensionListModify ExtensionListModify { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2010.PowerPoint.ExtensionListModify ExtensionListModify" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.ContentPart.ExtensionListModify" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtensionListModify As ExtensionListModify" />
+      <MemberSignature Language="F#" Value="member this.ExtensionListModify : DocumentFormat.OpenXml.Office2010.PowerPoint.ExtensionListModify with get, set" Usage="DocumentFormat.OpenXml.Presentation.ContentPart.ExtensionListModify" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2010.PowerPoint.ExtensionListModify</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ExtensionListModify. Represents the following element tag in the schema: p14:extLst</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:p14 = http://schemas.microsoft.com/office/powerpoint/2010/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Id" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.ContentPart.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Id : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Presentation.ContentPart.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(19, "id")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>id.Represents the following attribute in the schema: r:id</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.ContentPart.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Presentation.ContentPart.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NonVisualContentPartProperties">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2010.PowerPoint.NonVisualContentPartProperties NonVisualContentPartProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2010.PowerPoint.NonVisualContentPartProperties NonVisualContentPartProperties" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.ContentPart.NonVisualContentPartProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Property NonVisualContentPartProperties As NonVisualContentPartProperties" />
+      <MemberSignature Language="F#" Value="member this.NonVisualContentPartProperties : DocumentFormat.OpenXml.Office2010.PowerPoint.NonVisualContentPartProperties with get, set" Usage="DocumentFormat.OpenXml.Presentation.ContentPart.NonVisualContentPartProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2010.PowerPoint.NonVisualContentPartProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>NonVisualContentPartProperties. Represents the following element tag in the schema: p14:nvContentPartPr</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:p14 = http://schemas.microsoft.com/office/powerpoint/2010/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform2D">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2010.PowerPoint.Transform2D Transform2D { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2010.PowerPoint.Transform2D Transform2D" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Presentation.ContentPart.Transform2D" />
+      <MemberSignature Language="VB.NET" Value="Public Property Transform2D As Transform2D" />
+      <MemberSignature Language="F#" Value="member this.Transform2D : DocumentFormat.OpenXml.Office2010.PowerPoint.Transform2D with get, set" Usage="DocumentFormat.OpenXml.Presentation.ContentPart.Transform2D" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2010.PowerPoint.Transform2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Transform2D. Represents the following element tag in the schema: p14:xfrm</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:p14 = http://schemas.microsoft.com/office/powerpoint/2010/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

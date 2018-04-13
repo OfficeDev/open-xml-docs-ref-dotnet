@@ -1,0 +1,452 @@
+﻿<Type Name="SpacingBetweenLines" FullName="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines">
+  <TypeSignature Language="C#" Value="public class SpacingBetweenLines : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpacingBetweenLines extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines" />
+  <TypeSignature Language="VB.NET" Value="Public Class SpacingBetweenLines&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type SpacingBetweenLines = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the SpacingBetweenLines Class. When the object is serialized out as xml, its qualified name is w:spacing.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **spacing (Spacing Between Lines and Above/Below Paragraph)**  
+  
+ This element specifies the inter-line and inter-paragraph spacing which shall be applied to the contents of this paragraph when it is displayed by a consumer.  
+  
+ If this element is omitted on a given paragraph, each of its values is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then the paragraph shall have no spacing applied to its lines, or above and below its contents.  
+  
+ [*Example*: Consider the following WordprocessingML paragraph:  
+  
+```xml  
+<w:pPr>  
+  <w:spacing w:after="200" w:line="276" w:lineRule="auto" />   
+</w:pPr>  
+```  
+  
+ This paragraph specifies that it must have at least *200* twentieths of a point after the last line in each paragraph, and that the spacing in each line should be automatically calculated based on a 1.15 times (*276* divided by *240*) the normal single spacing calculation. *end example*]  
+  
+ When determining the spacing between any two paragraphs, a consumer shall use the maximum of the inter-line spacing in each paragraph, the spacing after the first paragraph and the spacing before the second paragraph to determine the net spacing between the paragraphs.  
+  
+ [*Example*: Consider two consecutive single-spaced paragraphs in a document, the first of which specifies spacing below of 12 points, the second of which specifies spacing above of 4 points. These constraints are expressed using the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:after="240" />   
+  </w:pPr>  
+  …  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:before="80" />   
+  </w:pPr>  
+  …  
+</w:p>  
+```  
+  
+ The resulting spacing between the first and second paragraph is 12 points, since that is the largest spacing requested between the two paragraphs. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pPr (§17.3.1.26); pPr (§17.3.1.25); pPr (§17.7.5.2); pPr (§17.7.6.1); pPr (§17.9.23); pPr (§17.7.8.2)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Spacing) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpacingBetweenLines ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the SpacingBetweenLines class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="After">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue After { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue After" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.After" />
+      <MemberSignature Language="VB.NET" Value="Public Property After As StringValue" />
+      <MemberSignature Language="F#" Value="member this.After : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.After" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "after")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Spacing Below Paragraph.Represents the following attribute in the schema: w:after</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterAutoSpacing">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue AfterAutoSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue AfterAutoSpacing" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.AfterAutoSpacing" />
+      <MemberSignature Language="VB.NET" Value="Public Property AfterAutoSpacing As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.AfterAutoSpacing : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.AfterAutoSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "afterAutospacing")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Automatically Determine Spacing Below Paragraph.Represents the following attribute in the schema: w:afterAutospacing</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterLines">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value AfterLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value AfterLines" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.AfterLines" />
+      <MemberSignature Language="VB.NET" Value="Public Property AfterLines As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.AfterLines : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.AfterLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "afterLines")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Spacing Below Paragraph in Line Units.Represents the following attribute in the schema: w:afterLines</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Before">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Before { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Before" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.Before" />
+      <MemberSignature Language="VB.NET" Value="Public Property Before As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Before : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.Before" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "before")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Spacing Above Paragraph.Represents the following attribute in the schema: w:before</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt64Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeAutoSpacing">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue BeforeAutoSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue BeforeAutoSpacing" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.BeforeAutoSpacing" />
+      <MemberSignature Language="VB.NET" Value="Public Property BeforeAutoSpacing As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.BeforeAutoSpacing : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.BeforeAutoSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "beforeAutospacing")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Automatically Determine Spacing Above Paragraph.Represents the following attribute in the schema: w:beforeAutospacing</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies whether a consumer shall automatically determine the spacing before this paragraph based on its contents.  
+  
+ This automatic spacing shall match the spacing which would be applied to the paragraph in an HTML document where no explicit spacing before/after is specified.  
+  
+ If this attribute is specified, then any value in before or `beforeLines` is ignored, and the spacing is automatically determined by the consumer.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (in other words, that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then automatic spacing is turned off (not applied).  
+  
+ Consider a paragraph in a document whose spacing above shall automatically be determined by the consumer based on the paragraph's contents. This constraint would be specified by the following WordprocessingML:  
+  
+```  
+<w:pPr>  
+  <w:spacing … w:beforeAutospacing="on" />  
+</w:pPr>  
+```  
+  
+ The resulting paragraph shall have the spacing above its first line determined automatically by the consumer to match an HTML document as specified.  
+  
+ The possible values for this attribute are defined by the `ST_OnOff` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeLines">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value BeforeLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value BeforeLines" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.BeforeLines" />
+      <MemberSignature Language="VB.NET" Value="Public Property BeforeLines As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.BeforeLines : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.BeforeLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "beforeLines")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Spacing Above Paragraph IN Line Units.Represents the following attribute in the schema: w:beforeLines</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the spacing that should be added before the first line in this paragraph in the document in line units.  
+  
+ The value of this attribute is specified in hundredths of a line.  
+  
+ If the `beforeAutoSpacing` attribute is also specified, then this attribute value is ignored. If this setting is never specified in the style hierarchy, then its value shall be zero (if needed).  
+  
+ Consider the following WordprocessingML paragraph:  
+  
+```  
+<w:p>  
+  <w:pPr>  
+    <w:spacing w:beforeLines="100" />   
+  </w:pPr>  
+  ...  
+</w:p>  
+```  
+  
+ This paragraph shall have a minimum spacing above its first line of 1 line, although the actual spacing may be determined by the inter-line spacing or the spacing below the preceding paragraph, if either are greater.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="spacingBetweenLines.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Line">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Line { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Line" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.Line" />
+      <MemberSignature Language="VB.NET" Value="Public Property Line As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Line : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.Line" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "line")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Spacing Between Lines in Paragraph.Represents the following attribute in the schema: w:line</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ This attribute specifies the amount of vertical spacing between lines of text within this paragraph.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (in other words, that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then no line spacing shall be applied to lines within this paragraph.  
+  
+ If the value of the `lineRule` attribute is either `atLeast` or `exactly`, then the value of this attribute shall be interpreted as twentieths of a point. When the value of the `lineRule` attribute is either `atLeast` or `exactly`, the text shall be positioned as follows within that line height:  
+  
+-   When the line height is too small, the text shall be positioned at the bottom of the line (in other words, clipped from the top down).  
+  
+-   When the line height is too large, the text shall be centered in the available space.  
+  
+ If the value of the `lineRule` attribute is `auto`, then the value of the line attribute shall be interpreted as 240ths of a line, in the manner described by the simple type's values.  
+  
+ Consider the following WordprocessingML paragraph which should have an inter-line spacing of 1.15 times the line height. This constraint would be specified using the following WordprocessingML:  
+  
+```  
+<w:pPr>  
+  <w:spacing w:line="276" w:lineRule="auto" />  
+</w:pPr>  
+```  
+  
+ The `lineRule` attribute value of `auto` specifies that the value of the `line` attribute is to be interpreted in 240ths of a single line height, which means that the net spacing is 276/240 lines, or 1.15 lines, tall.  
+  
+ The possible values for this attribute are defined by the `ST_SignedTwipsMeasure` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LineRule">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues&gt; LineRule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues&gt; LineRule" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.LineRule" />
+      <MemberSignature Language="VB.NET" Value="Public Property LineRule As EnumValue(Of LineSpacingRuleValues)" />
+      <MemberSignature Language="F#" Value="member this.LineRule : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.LineRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "lineRule")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Type of Spacing Between Lines.Represents the following attribute in the schema: w:lineRule</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

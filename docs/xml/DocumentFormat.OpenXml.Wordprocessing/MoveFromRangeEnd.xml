@@ -1,0 +1,153 @@
+﻿<Type Name="MoveFromRangeEnd" FullName="DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd">
+  <TypeSignature Language="C#" Value="public class MoveFromRangeEnd : DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MoveFromRangeEnd extends DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd" />
+  <TypeSignature Language="VB.NET" Value="Public Class MoveFromRangeEnd&#xA;Inherits MarkupRangeType" />
+  <TypeSignature Language="F#" Value="type MoveFromRangeEnd = class&#xA;    inherit MarkupRangeType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.MarkupRangeType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the MoveFromRangeEnd Class. When the object is serialized out as xml, its qualified name is w:moveFromRangeEnd.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `moveFromRangeEnd (Move Source Location Container - End)`  
+  
+ This element specifies the end of a region whose move source contents are part of a single named move. When a move source is stored as a revision in a WordprocessingML document, two pieces of information shall be stored about that move source:  
+  
+-   A set of pieces of content which were moved - both inline-level content (§17.13.5.22) and paragraphs (§17.13.5.21)  
+  
+-   A move source container (or "bookmark") which specifies that all content within it which marked as a move source is part of a single named move. The name attribute on the move container links a group of move source content with the corresponding group of move destination content.  
+  
+ This element defines the end of the latter piece of the move revision data - the container. The id attribute on this element shall be used to link this element with the corresponding start of a move source container in the document.  
+  
+ The following restrictions are applied to the use of this element:  
+  
+-   If this element occurs without a corresponding moveFromRangeStart element (§17.13.5.24) with a matching id attribute value, then the document is non-conformant.  
+  
+-   If this element and its paired end occur without a matching move destination container (§17.13.5.28; §17.13.5.27), then the document is non-conformant.  
+  
+-   If multiple move source containers surround the same text, the document is non-conformant.  
+  
+ [*Example*: Consider a WordprocessingML document in which the first paragraph contains two sentences, and the first sentence is moved before the second sentence, and this move is tracked as a revision, as follows (in this image, green underline indicates the move destination and the green strikethrough indicates the move source location):  
+  
+ 4c2c8ad0-125b-4366-9944-476217a4bb4d  
+  
+ This document has the sentence *Some moved text.* moved to the first sentence in the document. This revision is represented using the following WordprocessingML:  
+  
+```xml  
+<w:p>  
+  <w:moveToRangeStart w:id="0" … w:name="move1" />  
+  <w:moveTo w:id="1" … >  
+    <w:r>  
+      <w:t>Some moved text.</w:t>  
+    </w:r>  
+  </w:moveTo>  
+  <w:moveToRangeEnd w:id="0" />  
+  <w:r>  
+    <w:t xml:space="preserve">Some text.</w:t>  
+  </w:r>  
+  <w:moveFromRangeStart w:id="2" … w:name="move1" />  
+  <w:moveFrom w:id="3" … >  
+    <w:r>  
+      <w:t>Some moved text.</w:t>  
+    </w:r>  
+  </w:moveFrom>  
+  <w:moveFromRangeEnd w:id="2" />  
+</w:p>  
+```  
+  
+ The moveFromRangeEnd element specifies the end of the move source container within which all moved content is part of the move named *move1*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|bdo (§17.3.2.3); body (§17.2.2); comment (§17.13.4.2); customXml (§17.5.1.6); customXml (§17.5.1.4); customXml (§17.5.1.5); customXml (§17.5.1.3); deg (§22.1.2.26); del (§17.13.5.14); den (§22.1.2.28); dir (§17.3.2.8); docPartBody (§17.12.6); e (§22.1.2.32); endnote (§17.11.2); fldSimple (§17.16.19); fName (§22.1.2.37); footnote (§17.11.10); ftr (§17.10.3); hdr (§17.10.4); hyperlink (§17.16.22); ins (§17.13.5.18); lim (§22.1.2.52); moveFrom (§17.13.5.22); moveTo (§17.13.5.25); num (§22.1.2.75); oMath (§22.1.2.77); p (§17.3.1.22); rt (§17.3.3.24); rubyBase (§17.3.3.27); sdtContent (§17.5.2.34); sdtContent (§17.5.2.33); sdtContent (§17.5.2.35); sdtContent (§17.5.2.36); smartTag (§17.5.1.9); sub (§22.1.2.112); sup (§22.1.2.114); tbl (§17.4.38); tc (§17.4.66); tr (§17.4.79)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_MarkupRange) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MoveFromRangeEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the MoveFromRangeEnd class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="moveFromRangeEnd.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.MoveFromRangeEnd.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

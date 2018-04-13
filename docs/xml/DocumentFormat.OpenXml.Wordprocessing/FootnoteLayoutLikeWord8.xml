@@ -1,0 +1,183 @@
+﻿<Type Name="FootnoteLayoutLikeWord8" FullName="DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8">
+  <TypeSignature Language="C#" Value="public class FootnoteLayoutLikeWord8 : DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FootnoteLayoutLikeWord8 extends DocumentFormat.OpenXml.Wordprocessing.OnOffType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8" />
+  <TypeSignature Language="VB.NET" Value="Public Class FootnoteLayoutLikeWord8&#xA;Inherits OnOffType" />
+  <TypeSignature Language="F#" Value="type FootnoteLayoutLikeWord8 = class&#xA;    inherit OnOffType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.OnOffType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Emulate Word 6.x/95/97 Footnote Placement. When the object is serialized out as xml, its qualified name is w:footnoteLayoutLikeWW8.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `footnoteLayoutLikeWW8 (Ignore Page Break from Continuous Section Break)`  
+  
+ This element specifies that applications should override the default behaviour for a continuous section break when one or more footnotes are present on the page with the footnote. This override typically results in text being displayed on the same page as a continuous section break (after the break, which would normally move all following text to the next page).  
+  
+ Typically, applications render a continuous section break as a page break when one or more footnoteRef elements (Part 1, §17.11.13) occur on that page before the break, as described in Part 1, §17.18.77. This element, when present with a val attribute value of *true* (or equivalent), specifies that applications should allow any paragraph after the section break that contains no footnoteRef elements (Part 1, §17.11.13) to be displayed on the same page. If the resulting content reaches the page extents, the section’s page break is ignored.  
+  
+ [*Example*: Consider a WordprocessingML document with two footnotes contained in two sections, separated by a continuous section break:  
+  
+```xml  
+<w:p>  
+  <w:r>  
+    <w:t xml:space="preserve">Here is the first paragraph in the first section.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t>Here is the second paragraph in the first section.</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:rPr>  
+      <w:rStyle w:val="FootnoteReference" />  
+    </w:rPr>  
+<w:footnoteReference w:id="2" />  
+    </w:r>  
+</w:p>  
+<w:p/>  
+<w:p>  
+  <w:pPr>  
+    <w:sectPr>  
+      …  
+    </w:sectPr>  
+  </w:pPr>  
+  </w:p>  
+<w:p>  
+  <w:r>  
+    <w:t>Here is the first paragraph in the second section.</w:t>  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t xml:space="preserve">Here is the second paragraph in the second section.</w:t>  
+  </w:r>  
+  <w:r>  
+    <w:rPr>  
+      <w:rStyle w:val="FootnoteReference" />  
+      </w:rPr>  
+<w:footnoteReference w:id="3" />  
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:r>  
+    <w:t xml:space="preserve">Here is the third paragraph in the second section. </w:t>  
+    </w:r>  
+</w:p>  
+<w:sectPr>  
+  <w:type w:val="continuous" />  
+    …  
+</w:sectPr>  
+```  
+  
+ The default rendering of such a document results in the continuous section break as a page break, resulting in the following two page document:  
+  
+ 6763e52b-4864-4ec9-83e1-3225d3d1a6e8  
+  
+ However, if this compatibility setting is turned on:  
+  
+```xml  
+<w:compat>  
+  <w:footnoteLayoutLikeWW8 />  
+</w:compat>  
+```  
+  
+ Then the first paragraph following the section break (not having any footnote references) is displayed on the same page, despite the section break, resulting in the following output:  
+  
+ 081d61eb-c3c2-4bdc-954e-abe83f892ad0  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|compat (Part 1, §17.15.1.21)|  
+  
+ This element’s content model is defined by the common boolean property definition in Part 1, §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FootnoteLayoutLikeWord8 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the FootnoteLayoutLikeWord8 class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="footnoteLayoutLikeWord8.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.FootnoteLayoutLikeWord8.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

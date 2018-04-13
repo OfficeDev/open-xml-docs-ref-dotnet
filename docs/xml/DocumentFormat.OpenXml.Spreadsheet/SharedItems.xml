@@ -1,0 +1,636 @@
+﻿<Type Name="SharedItems" FullName="DocumentFormat.OpenXml.Spreadsheet.SharedItems">
+  <TypeSignature Language="C#" Value="public class SharedItems : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SharedItems extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.SharedItems" />
+  <TypeSignature Language="VB.NET" Value="Public Class SharedItems&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type SharedItems = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.MissingItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.NumberItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.BooleanItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.ErrorItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.StringItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.DateTimeItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the SharedItems Class. When the object is serialized out as xml, its qualified name is x:sharedItems.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **sharedItems (Shared Items)**  
+  
+ Represents the collection of unique items for a field in the PivotCacheDefinition. The sharedItems complex type stores data type and formatting information about the data in a field. Items in the PivotCacheDefinition can be shared in order to reduce the redundancy of those values that are referenced in multiple places across all the PivotTable parts. [*Example*: A value might be part of a filter, it might appear on a row or column axis, and will appear in the pivotCacheRecords definition as well. However, because of the performance cost of creating the optimized shared items, items are only shared if they are actually in use in the PivotTable. Therefore, depending on user actions on the PivotTable layout, the pivotCacheDefinition and underlying PivotCacheRecords part can be updated. *end example*]  
+  
+ If there are no shared items, then field values are stored directly in the pivotCacheRecords part.  
+  
+ *[Example:*  
+  
+```xml  
+<sharedItems count="1">  
+  <s v="[Customer].[Customer Geography].[Country].&amp;[United States]"     c="United States"/>  
+</sharedItems>  
+```  
+  
+ *end example]*  
+  
+ The following attributes are not required or used if there are no items in sharedItems.  
+  
+-   containsBlank  
+  
+-   containsSemiMixedTypes  
+  
+-   containsMixedTypes  
+  
+-   longText  
+  
+ The following attributes are not used unless there is more than one item in sharedItems or the one and only item is not a blank item.  If the first item is a blank item the data type the field cannot be verified.  
+  
+-   containsNumber  
+  
+-   containsDates  
+  
+-   containsString  
+  
+-   containsInteger  
+  
+ The following attributes can be omitted without loss of functionality.  
+  
+-   containsNonDate  
+  
+-   count  
+  
+ The following attributes are not required and can be omitted.  However, refreshing the PivotTable could produce different groupings than before.  
+  
+-   maxDate  
+  
+-   minDate  
+  
+-   maxValue  
+  
+-   minValue  
+  
+ Applications should ensure  that “date” attributes are not mixed with “value” attributes.  
+  
+|Parent Elements|  
+|---------------------|  
+|cacheField (§18.10.1.3)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|b (Boolean)|§18.10.1.2|  
+|d (Date Time)|§18.10.1.21|  
+|e (Error Value)|§18.10.1.27|  
+|m (No Value)|§18.10.1.50|  
+|n (Numeric)|§18.10.1.60|  
+|s (Character Value)|§18.10.1.85|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|containsBlank (Contains Blank)|Specifies a boolean value that indicates whether this field contains a blank value.<br /><br /> A value of *1* or *true* indicates this field contains one or more blank values.<br /><br /> A value of *0* or *false* indicates this field does not contain blank values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|containsDate (Contains Date)|Specifies a boolean value that indicates that the field contains at least one date.<br /><br /> A value of *1* or *true* indicates the field contains at least one date value.<br /><br /> A value of *0* or *false* indicates the field does not contain any date values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|containsInteger (Contains Integer)|Specifies a boolean value that indicates whether this field contains integer values.<br /><br /> A value of *1* or *true* indicates this field contains integer values.<br /><br /> A value of *0* or *false* indicates non-integer or mixed values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|containsMixedTypes (Contains Mixed Data Types)|Specifies a boolean value that indicates whether this field contains more than one data type.<br /><br /> A value of *1* or *true* indicates this field contains more than one data type.<br /><br /> A value of *0* or *false* indicates contains only one data type. The field can still contain blank values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|containsNonDate (Contains Non Date)|Specifies a boolean value that indicates that the field contains at least one value that is not a date.<br /><br /> A value of *1* or *true* indicates the field contains at least one non-date values.<br /><br /> A value of *0* or *false* indicates this field contains no date fields.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|containsNumber (Contains Numbers)|Specifies a boolean value that indicates whether this field contains numeric values.<br /><br /> A value of *1* or *true* indicates this field contains at least one numeric value.<br /><br /> A value of *0* or *false* indicates this field contains no numeric values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|containsSemiMixedTypes (Contains Semi Mixed Data Types)|Specifies a boolean value that indicates that this field contains text values. The field can also contain a mix of other data type and blank values.<br /><br /> A value of *1* or *true* indicates at least one text value, and can also contain a mix of other data types and blank values.<br /><br /> A value of *0* or *false* indicates the field does not have a mix of text and other values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|containsString (Contains String)|Specifies a boolean value that indicates whether this field contains a text value.<br /><br /> A value of *1* or *true* indicates this field contains at least one text value.<br /><br /> A value of *0* or *false* indicates this field does not contain any text values.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|count (Shared Items Count)|Specifies the number of shared items to load for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|longText (Long Text)|Specifies a boolean value that indicates whether this field contains a long text value. A string is considered long if it is over 255 characters.<br /><br /> A value of *1* or *true* indicates the value contains more than 255 characters of text.<br /><br /> A value of *0* or *false* indicates the value contains less than 255 characters.<br /><br /> [*Note*: This is used as many legacy spreadsheet application support a limit of 255 characters for text values. *end note*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|maxDate (Maximum Date Time Value)|Specifies the maximum date/time value found in a date field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *dateTime* datatype.|  
+|maxValue (Maximum Numeric Value)|Specifies the maximum numeric value found in a numeric field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|minDate (Minimum Date Time)|Specifies the minimum date/time value found in a date field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *dateTime* datatype.|  
+|minValue (Minimum Numeric Value)|Specifies the minimum numeric value found in a numeric field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_SharedItems) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SharedItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.SharedItems.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the SharedItems class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SharedItems (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.SharedItems.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.SharedItems : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.SharedItems" Usage="new DocumentFormat.OpenXml.Spreadsheet.SharedItems childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the SharedItems class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SharedItems (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.SharedItems.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.SharedItems : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.SharedItems" Usage="new DocumentFormat.OpenXml.Spreadsheet.SharedItems childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the SharedItems class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SharedItems (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.SharedItems.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.SharedItems : string -&gt; DocumentFormat.OpenXml.Spreadsheet.SharedItems" Usage="new DocumentFormat.OpenXml.Spreadsheet.SharedItems outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the SharedItems class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.SharedItems.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="sharedItems.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsBlank">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsBlank { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsBlank" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsBlank" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsBlank As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsBlank : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsBlank" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsBlank")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains Blank.Represents the following attribute in the schema: containsBlank</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsDate">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsDate" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsDate" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsDate As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsDate : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsDate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains Date.Represents the following attribute in the schema: containsDate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsInteger">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsInteger { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsInteger" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsInteger" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsInteger As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsInteger : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsInteger" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsInteger")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains Integer.Represents the following attribute in the schema: containsInteger</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsMixedTypes">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsMixedTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsMixedTypes" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsMixedTypes" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsMixedTypes As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsMixedTypes : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsMixedTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsMixedTypes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains Mixed Data Types.Represents the following attribute in the schema: containsMixedTypes</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsNonDate">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsNonDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsNonDate" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsNonDate" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsNonDate As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsNonDate : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsNonDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsNonDate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains Non Date.Represents the following attribute in the schema: containsNonDate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsNumber">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsNumber { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsNumber" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsNumber" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsNumber As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsNumber : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsNumber")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains Numbers.Represents the following attribute in the schema: containsNumber</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsSemiMixedTypes">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsSemiMixedTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsSemiMixedTypes" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsSemiMixedTypes" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsSemiMixedTypes As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsSemiMixedTypes : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsSemiMixedTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsSemiMixedTypes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains Semi Mixed Data Types.Represents the following attribute in the schema: containsSemiMixedTypes</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsString">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ContainsString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ContainsString" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsString" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContainsString As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ContainsString : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.ContainsString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "containsString")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Contains String.Represents the following attribute in the schema: containsString</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value Count { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value Count" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.Count" />
+      <MemberSignature Language="VB.NET" Value="Public Property Count As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.Count : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "count")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shared Items Count.Represents the following attribute in the schema: count</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LongText">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue LongText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue LongText" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.LongText" />
+      <MemberSignature Language="VB.NET" Value="Public Property LongText As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.LongText : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.LongText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "longText")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Long Text.Represents the following attribute in the schema: longText</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDate">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DateTimeValue MaxDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DateTimeValue MaxDate" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.MaxDate" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxDate As DateTimeValue" />
+      <MemberSignature Language="F#" Value="member this.MaxDate : DocumentFormat.OpenXml.DateTimeValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.MaxDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "maxDate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Maximum Date Time Value.Represents the following attribute in the schema: maxDate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DateTimeValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue MaxValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue MaxValue" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.MaxValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxValue As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.MaxValue : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.MaxValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "maxValue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Maximum Numeric Value.Represents the following attribute in the schema: maxValue</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinDate">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DateTimeValue MinDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DateTimeValue MinDate" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.MinDate" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinDate As DateTimeValue" />
+      <MemberSignature Language="F#" Value="member this.MinDate : DocumentFormat.OpenXml.DateTimeValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.MinDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minDate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DateTimeValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Minimum Date Time.Represents the following attribute in the schema: minDate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DateTimeValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue MinValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue MinValue" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.SharedItems.MinValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinValue As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.MinValue : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.SharedItems.MinValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minValue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Minimum Numeric Value.Represents the following attribute in the schema: minValue</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

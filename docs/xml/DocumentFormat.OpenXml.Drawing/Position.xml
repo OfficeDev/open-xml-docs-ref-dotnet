@@ -1,0 +1,154 @@
+﻿<Type Name="Position" FullName="DocumentFormat.OpenXml.Drawing.Position">
+  <TypeSignature Language="C#" Value="public class Position : DocumentFormat.OpenXml.Drawing.AdjustPoint2DType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Position extends DocumentFormat.OpenXml.Drawing.AdjustPoint2DType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Drawing.Position" />
+  <TypeSignature Language="VB.NET" Value="Public Class Position&#xA;Inherits AdjustPoint2DType" />
+  <TypeSignature Language="F#" Value="type Position = class&#xA;    inherit AdjustPoint2DType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Drawing.AdjustPoint2DType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Position. When the object is serialized out as xml, its qualified name is a:pos.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `pos (Shape Position Coordinate)`  
+  
+ Specifies a position coordinate within the shape bounding box. It should be noted that this coordinate is placed within the shape bounding box using the transform coordinate system which is also called the shape coordinate system, as it encompasses the entire shape. The width and height for this coordinate system are specified within the ext transform element.  
+  
+ [*Note*: When specifying a point coordinate in path coordinate space it should be noted that the top left of the coordinate space is x=0, y=0 and the coordinate points for x grow to the right and for y grow down. This is illustrated in the diagram below.  
+  
+ 09078f07-b90b-4cf9-91b8-523c670e3187  
+  
+ *end note*]  
+  
+ [*Example*: To highlight the differences in the coordinate systems consider the drawing of the following triangle. Notice that the dimensions of the triangle are specified using the shape coordinate system with EMUs as the units via the ext transform element. Thus we see this shape is 1705233 EMUs wide by 679622 EMUs tall. However when looking at how the path for this shape is drawn we see that the x and y values fall between 0 and 2. This is because the path coordinate system has the arbitrary dimensions of 2 for the width and 2 for the height. Thus we see that a y coordinate of 2 within the path coordinate system specifies a y coordinate of 679622 within the shape coordinate system for this particular case.  
+  
+ 4f1f20cf-dcdf-46fc-8e4b-cd5d6f54291b  
+  
+```xml  
+<a:xfrm>  
+  <a:off x="3200400" y="1600200"/>  
+  <a:ext cx="1705233" cy="679622"/>  
+</a:xfrm>  
+<a:custGeom>  
+  <a:avLst/>  
+    <a:gdLst/>  
+  <a:ahLst/>  
+  <a:cxnLst/>  
+  <a:rect l="0" t="0" r="0" b="0"/>  
+  <a:pathLst>  
+    <a:path w="2" h="2">  
+      <a:moveTo>  
+        <a:pt x="0" y="2"/>  
+      </a:moveTo>  
+      <a:lnTo>  
+        <a:pt x="2" y="2"/>  
+      </a:lnTo>  
+      <a:lnTo>  
+        <a:pt x="1" y="0"/>  
+      </a:lnTo>  
+      <a:close/>  
+    </a:path>  
+  </a:pathLst>  
+</a:custGeom>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|ahPolar (§20.1.9.2); ahXY (§20.1.9.3); cxn (§20.1.9.9)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|x (X-Coordinate)|Specifies the x coordinate for this position coordinate. The units for this coordinate space are defined by the width of the path coordinate system. This coordinate system is overlayed on top of the shape coordinate system thus occupying the entire shape bounding box. Because the units for within this coordinate space are determined by the path width and height an exact measurement unit cannot be specified here.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+|y (Y-Coordinate)|Specifies the y coordinate for this position coordinate. The units for this coordinate space are defined by the height of the path coordinate system. This coordinate system is overlayed on top of the shape coordinate system thus occupying the entire shape bounding box. Because the units for within this coordinate space are determined by the path width and height an exact measurement unit cannot be specified here.<br /><br /> The possible values for this attribute are defined by the *ST_AdjCoordinate* simple type (§20.1.10.2).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_AdjPoint2D) is located in §A.4.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Position ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Drawing.Position.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the Position class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Drawing.Position.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="position.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Drawing.Position.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Drawing.Position.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

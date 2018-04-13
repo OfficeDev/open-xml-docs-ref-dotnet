@@ -1,0 +1,1773 @@
+﻿<Type Name="Shapetype" FullName="DocumentFormat.OpenXml.Vml.Shapetype">
+  <TypeSignature Language="C#" Value="public class Shapetype : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Shapetype extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Vml.Shapetype" />
+  <TypeSignature Language="VB.NET" Value="Public Class Shapetype&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type Shapetype = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Path))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Formulas))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.ShapeHandles))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Fill))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Stroke))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Shadow))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.TextBox))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.TextPath))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.ImageData))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Office.Skew))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Office.Extrusion))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Office.Callout))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Office.Lock))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Office.ClipPath))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Office.SignatureLine))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.TextWrap))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.AnchorLock))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.TopBorder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.BottomBorder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.LeftBorder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.RightBorder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Spreadsheet.ClientData))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Presentation.TextData))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Vml.Office.Complex))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Shape Template. When the object is serialized out as xml, its qualified name is v:shapetype.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `shapetype (Shape Template)`  
+  
+ This element defines a shape template that can be used to create other shapes.  Shapetype is identical to the shape element (§14.1.2.19) except it cannot reference another shapetype element.  The type attribute shall not be used with shapetype.  Attributes defined in the shape override any that appear in the shapetype.   positioning attributes (such as *top*, *width*, *z-index*, *rotation*, *flip*) are not passed to a shape from a shapetype.  To use this element, create a shapetype with a specific id attribute.  Then create a shape and reference the shapetype's id using the type attribute.  
+  
+ [*Example*:  
+  
+```xml  
+<v:shapetype id="mytype" fillcolor="silver" strokecolor="blue">  
+  <v:path v="m  0,1000, 1000,1000, 1000,0 x e"/>  
+  <v:fill on="true" type="gradient" color2="navy" angle="-45"/>  
+</v:shapetype>  
+<v:shape type="#mytype"  
+  style="position:absolute;top:10;left:10;width:50;height:50"/>  
+<v:shape type="#mytype" fillcolor="teal"  
+  style="position:absolute;top:10;left:75;width:75;height:50"/>  
+<v:shape type="#mytype"  
+  style="position:absolute;top:10;left:165;width:50;height:50">  
+  <v:fill type="solid"/>  
+</v:shape>  
+<v:shape type="#mytype" path="m  1000,1000 0,1000 x e" style="position:absolute;top:10;left:230;width:50;height:50"/>  
+```  
+  
+ d4d73aa8-0f18-493c-9979-1dcbb33b12f4  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|background (Part 1, §17.2.1); group (§14.1.2.7); object (Part 1, §17.3.3.19); pict (§9.2.2.2); pict (§9.5.1)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|anchorlock (Anchor Location Is Locked)|§14.3.2.1|  
+|borderbottom (Bottom Border)|§14.3.2.2|  
+|borderleft (Left Border)|§14.3.2.3|  
+|borderright (Right Border)|§14.3.2.4|  
+|bordertop (Top Border)|§14.3.2.5|  
+|callout (Callout)|§14.2.2.2|  
+|ClientData (Attached Object Data)|§14.4.2.12|  
+|clippath (Shape Clipping Path)|§14.2.2.3|  
+|complex (Complex)|§14.2.2.7|  
+|extrusion (3D Extrusion)|§14.2.2.11|  
+|fill (Shape Fill Properties)|§14.1.2.5|  
+|formulas (Set of Formulas)|§14.1.2.6|  
+|handles (Set of Handles)|§14.1.2.9|  
+|imagedata (Image Data)|§14.1.2.11|  
+|lock (Shape Protections)|§14.2.2.18|  
+|path (Shape Path)|§14.1.2.14|  
+|shadow (Shadow Effect)|§14.1.2.18|  
+|signatureline (Digital Signature Line)|§14.2.2.30|  
+|skew (Skew Transform)|§14.2.2.31|  
+|stroke (Line Stroke Settings)|§14.1.2.21|  
+|textbox (Text Box)|§14.1.2.22|  
+|textdata (VML Diagram Text)|§14.5.2.2|  
+|textpath (Text Layout Path)|§14.1.2.23|  
+|wrap (Text Wrapping)|§14.3.2.6|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Shapetype) is located in §A.6.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Shapetype ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Vml.Shapetype.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the Shapetype class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Shapetype (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Vml.Shapetype.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Vml.Shapetype : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Vml.Shapetype" Usage="new DocumentFormat.OpenXml.Vml.Shapetype childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the Shapetype class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Shapetype (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Vml.Shapetype.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Vml.Shapetype : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Vml.Shapetype" Usage="new DocumentFormat.OpenXml.Vml.Shapetype childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the Shapetype class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Shapetype (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Vml.Shapetype.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Vml.Shapetype : string -&gt; DocumentFormat.OpenXml.Vml.Shapetype" Usage="new DocumentFormat.OpenXml.Vml.Shapetype outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the Shapetype class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Adjustment">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Adjustment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Adjustment" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Adjustment" />
+      <MemberSignature Language="VB.NET" Value="Public Property Adjustment As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Adjustment : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Adjustment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "adj")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Adjustment Parameters.Represents the following attribute in the schema: adj</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInCell">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue AllowInCell { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue AllowInCell" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.AllowInCell" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowInCell As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.AllowInCell : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.AllowInCell" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "allowincell")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Allow in Table Cell.Represents the following attribute in the schema: o:allowincell</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowOverlap">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue AllowOverlap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue AllowOverlap" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.AllowOverlap" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowOverlap As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.AllowOverlap : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.AllowOverlap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "allowoverlap")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Allow Shape Overlap.Represents the following attribute in the schema: o:allowoverlap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Alternate">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Alternate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Alternate" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Alternate" />
+      <MemberSignature Language="VB.NET" Value="Public Property Alternate As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Alternate : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Alternate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "alt")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Alternate Text.Represents the following attribute in the schema: alt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlackWhiteMode">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; BlackWhiteMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; BlackWhiteMode" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.BlackWhiteMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property BlackWhiteMode As EnumValue(Of BlackAndWhiteModeValues)" />
+      <MemberSignature Language="F#" Value="member this.BlackWhiteMode : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.BlackWhiteMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "bwmode")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Black-and-White Mode.Represents the following attribute in the schema: o:bwmode</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderBottomColor">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue BorderBottomColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue BorderBottomColor" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.BorderBottomColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property BorderBottomColor As StringValue" />
+      <MemberSignature Language="F#" Value="member this.BorderBottomColor : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.BorderBottomColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "borderbottomcolor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Bottom Border Color.Represents the following attribute in the schema: o:borderbottomcolor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderLeftColor">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue BorderLeftColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue BorderLeftColor" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.BorderLeftColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property BorderLeftColor As StringValue" />
+      <MemberSignature Language="F#" Value="member this.BorderLeftColor : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.BorderLeftColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "borderleftcolor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Border Left Color.Represents the following attribute in the schema: o:borderleftcolor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderRightColor">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue BorderRightColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue BorderRightColor" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.BorderRightColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property BorderRightColor As StringValue" />
+      <MemberSignature Language="F#" Value="member this.BorderRightColor : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.BorderRightColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "borderrightcolor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Border Right Color.Represents the following attribute in the schema: o:borderrightcolor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderTopColor">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue BorderTopColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue BorderTopColor" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.BorderTopColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property BorderTopColor As StringValue" />
+      <MemberSignature Language="F#" Value="member this.BorderTopColor : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.BorderTopColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "bordertopcolor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Border Top Color.Represents the following attribute in the schema: o:bordertopcolor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Bullet">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Bullet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Bullet" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Bullet" />
+      <MemberSignature Language="VB.NET" Value="Public Property Bullet As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Bullet : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Bullet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "bullet")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Graphical Bullet.Represents the following attribute in the schema: o:bullet</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Button">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Button { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Button" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Button" />
+      <MemberSignature Language="VB.NET" Value="Public Property Button As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Button : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Button" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "button")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Button Behavior Toggle.Represents the following attribute in the schema: o:button</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Class">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Class { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Class" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Class" />
+      <MemberSignature Language="VB.NET" Value="Public Property Class As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Class : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Class" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "class")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CSS Reference.Represents the following attribute in the schema: class</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clip">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Clip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Clip" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Clip" />
+      <MemberSignature Language="VB.NET" Value="Public Property Clip As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Clip : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Clip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "clip")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Clipping Toggle.Represents the following attribute in the schema: o:clip</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="ClipToWrap">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue ClipToWrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue ClipToWrap" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.ClipToWrap" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClipToWrap As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.ClipToWrap : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.ClipToWrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "cliptowrap")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Clip to Wrapping Polygon.Represents the following attribute in the schema: o:cliptowrap</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Vml.Shapetype.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="shapetype.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.ConnectorValues&gt; ConnectorType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Vml.Office.ConnectorValues&gt; ConnectorType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.ConnectorType" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectorType As EnumValue(Of ConnectorValues)" />
+      <MemberSignature Language="F#" Value="member this.ConnectorType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.ConnectorValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.ConnectorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "connectortype")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.ConnectorValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Connector Type.Represents the following attribute in the schema: o:connectortype</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CoordinateOrigin">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue CoordinateOrigin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue CoordinateOrigin" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.CoordinateOrigin" />
+      <MemberSignature Language="VB.NET" Value="Public Property CoordinateOrigin As StringValue" />
+      <MemberSignature Language="F#" Value="member this.CoordinateOrigin : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.CoordinateOrigin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "coordorigin")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Coordinate Space Origin.Represents the following attribute in the schema: coordorigin</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CoordinateSize">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue CoordinateSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue CoordinateSize" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.CoordinateSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property CoordinateSize As StringValue" />
+      <MemberSignature Language="F#" Value="member this.CoordinateSize : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.CoordinateSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "coordsize")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Coordinate Space Size.Represents the following attribute in the schema: coordsize</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramLayout">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.IntegerValue DiagramLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.IntegerValue DiagramLayout" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.DiagramLayout" />
+      <MemberSignature Language="VB.NET" Value="Public Property DiagramLayout As IntegerValue" />
+      <MemberSignature Language="F#" Value="member this.DiagramLayout : DocumentFormat.OpenXml.IntegerValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.DiagramLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "dgmlayout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Diagram Node Layout Identifier.Represents the following attribute in the schema: o:dgmlayout</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramLayoutMostRecentUsed">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.IntegerValue DiagramLayoutMostRecentUsed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.IntegerValue DiagramLayoutMostRecentUsed" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.DiagramLayoutMostRecentUsed" />
+      <MemberSignature Language="VB.NET" Value="Public Property DiagramLayoutMostRecentUsed As IntegerValue" />
+      <MemberSignature Language="F#" Value="member this.DiagramLayoutMostRecentUsed : DocumentFormat.OpenXml.IntegerValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.DiagramLayoutMostRecentUsed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "dgmlayoutmru")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Diagram Node Recent Layout Identifier.Represents the following attribute in the schema: o:dgmlayoutmru</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramNodeKind">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.IntegerValue DiagramNodeKind { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.IntegerValue DiagramNodeKind" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.DiagramNodeKind" />
+      <MemberSignature Language="VB.NET" Value="Public Property DiagramNodeKind As IntegerValue" />
+      <MemberSignature Language="F#" Value="member this.DiagramNodeKind : DocumentFormat.OpenXml.IntegerValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.DiagramNodeKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "dgmnodekind")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Diagram Node Identifier.Represents the following attribute in the schema: o:dgmnodekind</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleClickNotify">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue DoubleClickNotify { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue DoubleClickNotify" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.DoubleClickNotify" />
+      <MemberSignature Language="VB.NET" Value="Public Property DoubleClickNotify As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.DoubleClickNotify : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.DoubleClickNotify" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "doubleclicknotify")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Double-click Notification Toggle.Represents the following attribute in the schema: o:doubleclicknotify</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="EdgePath">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue EdgePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue EdgePath" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.EdgePath" />
+      <MemberSignature Language="VB.NET" Value="Public Property EdgePath As StringValue" />
+      <MemberSignature Language="F#" Value="member this.EdgePath : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.EdgePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "path")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Edge Path.Represents the following attribute in the schema: path</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillColor">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue FillColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue FillColor" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.FillColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property FillColor As StringValue" />
+      <MemberSignature Language="F#" Value="member this.FillColor : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.FillColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "fillcolor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Fill Color.Represents the following attribute in the schema: fillcolor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filled">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Filled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Filled" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Filled" />
+      <MemberSignature Language="VB.NET" Value="Public Property Filled As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Filled : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Filled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "filled")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Fill Toggle.Represents the following attribute in the schema: filled</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceDash">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue ForceDash { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue ForceDash" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.ForceDash" />
+      <MemberSignature Language="VB.NET" Value="Public Property ForceDash As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.ForceDash : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.ForceDash" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "forcedash")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Force Dashed Outline.Represents the following attribute in the schema: o:forcedash</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Horizontal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Horizontal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Horizontal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Horizontal" />
+      <MemberSignature Language="VB.NET" Value="Public Property Horizontal As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Horizontal : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Horizontal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "hr")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Horizontal Rule Toggle.Represents the following attribute in the schema: o:hr</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlignment">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues&gt; HorizontalAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues&gt; HorizontalAlignment" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.HorizontalAlignment" />
+      <MemberSignature Language="VB.NET" Value="Public Property HorizontalAlignment As EnumValue(Of HorizontalRuleAlignmentValues)" />
+      <MemberSignature Language="F#" Value="member this.HorizontalAlignment : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.HorizontalAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "hralign")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Horizontal Rule Alignment.Represents the following attribute in the schema: o:hralign</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalNoShade">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue HorizontalNoShade { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue HorizontalNoShade" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.HorizontalNoShade" />
+      <MemberSignature Language="VB.NET" Value="Public Property HorizontalNoShade As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.HorizontalNoShade : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.HorizontalNoShade" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "hrnoshade")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Horizontal Rule 3D Shading Toggle.Represents the following attribute in the schema: o:hrnoshade</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalPercentage">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.SingleValue HorizontalPercentage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.SingleValue HorizontalPercentage" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.HorizontalPercentage" />
+      <MemberSignature Language="VB.NET" Value="Public Property HorizontalPercentage As SingleValue" />
+      <MemberSignature Language="F#" Value="member this.HorizontalPercentage : DocumentFormat.OpenXml.SingleValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.HorizontalPercentage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "hrpct")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.SingleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Horizontal Rule Length Percentage.Represents the following attribute in the schema: o:hrpct</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.SingleValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalStandard">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue HorizontalStandard { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue HorizontalStandard" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.HorizontalStandard" />
+      <MemberSignature Language="VB.NET" Value="Public Property HorizontalStandard As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.HorizontalStandard : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.HorizontalStandard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "hrstd")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Horizontal Rule Standard Display Toggle.Represents the following attribute in the schema: o:hrstd</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Href">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Href { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Href" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Href" />
+      <MemberSignature Language="VB.NET" Value="Public Property Href As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Href : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Href" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "href")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hyperlink Target.Represents the following attribute in the schema: href</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Id" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Id : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "id")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unique Identifier.Represents the following attribute in the schema: id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsetMode">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.InsetMarginValues&gt; InsetMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Vml.Office.InsetMarginValues&gt; InsetMode" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.InsetMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property InsetMode As EnumValue(Of InsetMarginValues)" />
+      <MemberSignature Language="F#" Value="member this.InsetMode : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.InsetMarginValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.InsetMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "insetmode")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.InsetMarginValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Text Inset Mode.Represents the following attribute in the schema: o:insetmode</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="InsetPen">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue InsetPen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue InsetPen" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.InsetPen" />
+      <MemberSignature Language="VB.NET" Value="Public Property InsetPen As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.InsetPen : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.InsetPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "insetpen")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Inset Border From Path.Represents the following attribute in the schema: insetpen</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Vml.Shapetype.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Master">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Master { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Master" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Master" />
+      <MemberSignature Language="VB.NET" Value="Public Property Master As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Master : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Master" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "master")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Master Element Toggle.Represents the following attribute in the schema: o:master</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="NormalBlackWhiteMode">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; NormalBlackWhiteMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; NormalBlackWhiteMode" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.NormalBlackWhiteMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property NormalBlackWhiteMode As EnumValue(Of BlackAndWhiteModeValues)" />
+      <MemberSignature Language="F#" Value="member this.NormalBlackWhiteMode : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.NormalBlackWhiteMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "bwnormal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Normal Black-and-White Mode.Represents the following attribute in the schema: o:bwnormal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Ole">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseBlankValue Ole { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseBlankValue Ole" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Ole" />
+      <MemberSignature Language="VB.NET" Value="Public Property Ole As TrueFalseBlankValue" />
+      <MemberSignature Language="F#" Value="member this.Ole : DocumentFormat.OpenXml.TrueFalseBlankValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Ole" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "ole")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseBlankValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Embedded Object Toggle.Represents the following attribute in the schema: o:ole</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="OleIcon">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue OleIcon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue OleIcon" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.OleIcon" />
+      <MemberSignature Language="VB.NET" Value="Public Property OleIcon As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.OleIcon : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.OleIcon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "oleicon")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Embedded Object Icon Toggle.Represents the following attribute in the schema: o:oleicon</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Oned">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Oned { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Oned" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Oned" />
+      <MemberSignature Language="VB.NET" Value="Public Property Oned As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Oned : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Oned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "oned")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Handle Toggle.Represents the following attribute in the schema: o:oned</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="OptionalNumber">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value OptionalNumber { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value OptionalNumber" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.OptionalNumber" />
+      <MemberSignature Language="VB.NET" Value="Public Property OptionalNumber As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.OptionalNumber : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.OptionalNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "spt")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Optional Number.Represents the following attribute in the schema: o:spt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.SingleValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="OptionalString">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue OptionalString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue OptionalString" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.OptionalString" />
+      <MemberSignature Language="VB.NET" Value="Public Property OptionalString As StringValue" />
+      <MemberSignature Language="F#" Value="member this.OptionalString : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.OptionalString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "spid")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Optional String.Represents the following attribute in the schema: o:spid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferRelative">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue PreferRelative { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue PreferRelative" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.PreferRelative" />
+      <MemberSignature Language="VB.NET" Value="Public Property PreferRelative As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.PreferRelative : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.PreferRelative" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "preferrelative")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Relative Resize Toggle.Represents the following attribute in the schema: o:preferrelative</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Print">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Print { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Print" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Print" />
+      <MemberSignature Language="VB.NET" Value="Public Property Print As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Print : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Print" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "print")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Print Toggle.Represents the following attribute in the schema: print</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PureBlackWhiteMode">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; PureBlackWhiteMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; PureBlackWhiteMode" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.PureBlackWhiteMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property PureBlackWhiteMode As EnumValue(Of BlackAndWhiteModeValues)" />
+      <MemberSignature Language="F#" Value="member this.PureBlackWhiteMode : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.PureBlackWhiteMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "bwpure")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Pure Black-and-White Mode.Represents the following attribute in the schema: o:bwpure</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="RegroupId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.IntegerValue RegroupId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.IntegerValue RegroupId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.RegroupId" />
+      <MemberSignature Language="VB.NET" Value="Public Property RegroupId As IntegerValue" />
+      <MemberSignature Language="F#" Value="member this.RegroupId : DocumentFormat.OpenXml.IntegerValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.RegroupId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "regroupid")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Regroup ID.Represents the following attribute in the schema: o:regroupid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeColor">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue StrokeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue StrokeColor" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.StrokeColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property StrokeColor As StringValue" />
+      <MemberSignature Language="F#" Value="member this.StrokeColor : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.StrokeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "strokecolor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Stroke Color.Represents the following attribute in the schema: strokecolor</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stroked">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue Stroked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue Stroked" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Stroked" />
+      <MemberSignature Language="VB.NET" Value="Public Property Stroked As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.Stroked : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Stroked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "stroked")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Stroke Toggle.Represents the following attribute in the schema: stroked</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeWeight">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue StrokeWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue StrokeWeight" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.StrokeWeight" />
+      <MemberSignature Language="VB.NET" Value="Public Property StrokeWeight As StringValue" />
+      <MemberSignature Language="F#" Value="member this.StrokeWeight : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.StrokeWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "strokeweight")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Stroke Weight.Represents the following attribute in the schema: strokeweight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Style" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Style" />
+      <MemberSignature Language="VB.NET" Value="Public Property Style As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Style : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "style")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Styling Properties.Represents the following attribute in the schema: style</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Target" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Target" />
+      <MemberSignature Language="VB.NET" Value="Public Property Target As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Target : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "target")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hyperlink Display Target.Represents the following attribute in the schema: target</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Title" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Property Title As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Title : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "title")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Title.Represents the following attribute in the schema: title</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserDrawn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue UserDrawn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue UserDrawn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.UserDrawn" />
+      <MemberSignature Language="VB.NET" Value="Public Property UserDrawn As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.UserDrawn : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.UserDrawn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "userdrawn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Exists In Master Slide.Represents the following attribute in the schema: o:userdrawn</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="UserHidden">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.TrueFalseValue UserHidden { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.TrueFalseValue UserHidden" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.UserHidden" />
+      <MemberSignature Language="VB.NET" Value="Public Property UserHidden As TrueFalseValue" />
+      <MemberSignature Language="F#" Value="member this.UserHidden : DocumentFormat.OpenXml.TrueFalseValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.UserHidden" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(27, "userhidden")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.TrueFalseValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hide Script Anchors.Represents the following attribute in the schema: o:userhidden</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:o=urn:schemas-microsoft-com:office:office
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapCoordinates">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue WrapCoordinates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue WrapCoordinates" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Vml.Shapetype.WrapCoordinates" />
+      <MemberSignature Language="VB.NET" Value="Public Property WrapCoordinates As StringValue" />
+      <MemberSignature Language="F#" Value="member this.WrapCoordinates : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Vml.Shapetype.WrapCoordinates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "wrapcoords")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shape Bounding Polygon.Represents the following attribute in the schema: wrapcoords</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

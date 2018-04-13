@@ -1,0 +1,139 @@
+﻿<Type Name="DataSourceReference" FullName="DocumentFormat.OpenXml.Wordprocessing.DataSourceReference">
+  <TypeSignature Language="C#" Value="public class DataSourceReference : DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataSourceReference extends DocumentFormat.OpenXml.Wordprocessing.RelationshipType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.DataSourceReference" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataSourceReference&#xA;Inherits RelationshipType" />
+  <TypeSignature Language="F#" Value="type DataSourceReference = class&#xA;    inherit RelationshipType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.RelationshipType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Data Source File Path. When the object is serialized out as xml, its qualified name is w:dataSource.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **dataSource (Data Source File Path)**  
+  
+ This element specifies the relationship whose target is the location of the external data source to be connected to a given WordprocessingML document to perform the mail merge (for a source document) or to find the associated field data (for a merged document).  
+  
+ If this element is omitted, then no file location is specified for the data source for the current mail merge. If no relationship exists with the given relationship ID, or this relationship is not of type *http://schemas.openxmlformat.org/officeDocument/2006/relationships/mailMergeSource* then this document shall be considered non-conformant.  
+  
+ The data source location can also be ignored under the following conditions:  
+  
+-   The src element (§17.14.30) is present within the mail merge data  
+  
+-   The dataType element (§17.14.10) is set to *native*  
+  
+-   The current application is able to use the information contained in the odso element (§17.14.25) to access the data source  
+  
+ [*Guidance*: In this case, using the data source file path in the src element provides an equal or greater amount of information for the mail merge data source for clients which can consume it. *end guidance*]  
+  
+ [*Example*: Consider a WordprocessingML source document containing the following mail merge data:  
+  
+```xml  
+<w:mailMerge>  
+  …  <w:dataSource r:id="rId1" />  
+  …</w:mailMerge>  
+```  
+  
+ This mail merge's dataSource element specifies via its r:id attribute value of *rId1* that the external data source to be connected to the given WordprocessingML document is the data source targeted by the relationship whose Id attribute is equal to *rId1*. If we examine the corresponding relationship part item for the setting part, as follows:  
+  
+```xml  
+<Relationships>  
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/mailMergeSource" Target="file:///c:/example_file.mdb" TargetMode="External" />  
+</Relationships>  
+```  
+  
+ Since the relationship whose Id attribute value is *rId1* specifies the source file path for the data source, that data source effectively specifies a file path of *c:\example_file.mdb*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|mailMerge (§17.14.20)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Rel) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSourceReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.DataSourceReference.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the DataSourceReference class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.DataSourceReference.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="dataSourceReference.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.DataSourceReference.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.DataSourceReference.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,920 @@
+﻿<Type Name="WriteProtection" FullName="DocumentFormat.OpenXml.Wordprocessing.WriteProtection">
+  <TypeSignature Language="C#" Value="public class WriteProtection : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WriteProtection extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.WriteProtection" />
+  <TypeSignature Language="VB.NET" Value="Public Class WriteProtection&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type WriteProtection = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Write Protection. When the object is serialized out as xml, its qualified name is w:writeProtection.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **writeProtection (Write Protection)**  
+  
+ This element specifies the write protection settings which have been applied to a WordprocessingML document. *Write protection* refers to a mode in which the document's contents cannot be edited, and the document cannot be resaved using the same file name. This setting is independent of the documentProtection (§17.15.1.29) element, but like document protection, this setting is not intended as a security feature and can be ignored.  
+  
+ When present, the write protection shall result in one of two write protection behaviors:  
+  
+-   If the password attribute is present, or both attributes are omitted, then the application shall prompt for a password to exit write protection. If the supplied password does not match the hash value in this attribute, then write protection shall be enabled.  
+  
+-   If only the recommended attribute is present, the application should provide user interface recommending that the user open this document in write protected state. If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.  
+  
+ If this element is omitted, then no write protection shall be applied to the current document.  
+  
+ [*Example*: Consider a WordprocessingML document that can be opened but only in a write protected state unless a password is provided, in which case the file would be opened in an editable state. This requirement would be specified using the following WordprocessingML in the document settings:  
+  
+```xml  
+<w:writeProtection w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />   
+```  
+  
+ The writeProtection element is present which specifies that write protection must be turned on for this document. Since the password attribute is equal to  *9oN7nWkCAyEZib1RomSJTjmPpCY=* the given WordprocessingML document can only be opened in a write protected state unless a password which matches the hash value *9oN7nWkCAyEZib1RomSJTjmPpCY=*is provided; in which case the file would be opened in an editable state. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|settings (§17.15.1.78)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_WriteProtection) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WriteProtection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the WriteProtection class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmIdExtensibility">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.HexBinaryValue AlgorithmIdExtensibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.HexBinaryValue AlgorithmIdExtensibility" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.AlgorithmIdExtensibility" />
+      <MemberSignature Language="VB.NET" Value="Public Property AlgorithmIdExtensibility As HexBinaryValue" />
+      <MemberSignature Language="F#" Value="member this.AlgorithmIdExtensibility : DocumentFormat.OpenXml.HexBinaryValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.AlgorithmIdExtensibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "algIdExt")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cryptographic Algorithm Extensibility.Represents the following attribute in the schema: w:algIdExt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that a cryptographic algorithm which was not defined by the Office Open XML Standard has been used to generate the hash value stored with this document.  
+  
+ This value, when present, shall be interpreted based on the value of the `algIdExtSource` attribute in order to determine the algorithm used, which shall be application defined. This extensibility affords the fact that with exponentially increasing computing power, documents created in the future will likely need to use as yet undefined hashing algorithms in order to remain secure.  
+  
+ If this value is present, the `cryptAlgorithmClass`, `cryptAlgorithmType`, and `cryptAlgorithmSid` attribute values shall be ignored in favor of the algorithm defined by this attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:algIdExt="0000000A"   
+  w:algIdExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `algIdExt` attribute value of `0000000A` specifies that the algorithm with hex code `A` shall be used as defined by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmIdExtensibilitySource">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue AlgorithmIdExtensibilitySource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue AlgorithmIdExtensibilitySource" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.AlgorithmIdExtensibilitySource" />
+      <MemberSignature Language="VB.NET" Value="Public Property AlgorithmIdExtensibilitySource As StringValue" />
+      <MemberSignature Language="F#" Value="member this.AlgorithmIdExtensibilitySource : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.AlgorithmIdExtensibilitySource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "algIdExtSource")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Algorithm Extensibility Source.Represents the following attribute in the schema: w:algIdExtSource</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the application which defined the algorithm value specified by the `algIdExt` attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:algIdExt="0000000A"   
+  w:algIdExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `algIdExtSource` attribute value of `Contoso` specifies that the algorithm used here was published by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmName">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue AlgorithmName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue AlgorithmName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.AlgorithmName" />
+      <MemberSignature Language="VB.NET" Value="Public Property AlgorithmName As StringValue" />
+      <MemberSignature Language="F#" Value="member this.AlgorithmName : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.AlgorithmName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "algorithmName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>algorithmName, this property is only available in Office2010.Represents the following attribute in the schema: w:algorithmName</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="writeProtection.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicAlgorithmClass">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues&gt; CryptographicAlgorithmClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues&gt; CryptographicAlgorithmClass" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicAlgorithmClass" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicAlgorithmClass As EnumValue(Of CryptAlgorithmClassValues)" />
+      <MemberSignature Language="F#" Value="member this.CryptographicAlgorithmClass : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicAlgorithmClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptAlgorithmClass")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cryptographic Algorithm Class.Represents the following attribute in the schema: w:cryptAlgorithmClass</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the class of cryptographic algorithm used by this protection. The initial version of the Office Open XML Standard only supports a single version - `hash` - but future versions may expand this as necessary.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptAlgorithmClass` attribute value of `hash` specifies that the algorithm used for the password is a hashing algorithm.  
+  
+ The possible values for this attribute are defined by the `ST_AlgClass` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicAlgorithmSid">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value CryptographicAlgorithmSid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value CryptographicAlgorithmSid" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicAlgorithmSid" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicAlgorithmSid As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.CryptographicAlgorithmSid : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicAlgorithmSid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptAlgorithmSid")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cryptographic Hashing Algorithm.Represents the following attribute in the schema: w:cryptAlgorithmSid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the specific cryptographic hashing algorithm which shall be used along with the `salt` attribute and user-supplied password in order to compute a hash value for comparison.  
+  
+ The possible values for this attribute shall be interpreted as follows:  
+  
+|Value|Algorithm|  
+|-----------|---------------|  
+|`1`|MD2|  
+|`2`|MD4|  
+|`3`|MD5|  
+|`4`|SHA-1|  
+|`5`|MAC|  
+|`6`|RIPEMD|  
+|`7`|RIPEMD-160|  
+|`8`|Undefined. Shall not be used.|  
+|`9`|HMAC|  
+|`10`|Undefined. Shall not be used.|  
+|`11`|Undefined. Shall not be used.|  
+|`12`|SHA-256|  
+|`13`|SHA-384|  
+|`14`|SHA-512|  
+|Any other value|Undefined. Shall not be used.|  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptAlgorithmSid` attribute value of `1` specifies that the SHA-1 hashing algorithm shall be used to generate a hash from the user-defined password.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicAlgorithmType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues&gt; CryptographicAlgorithmType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues&gt; CryptographicAlgorithmType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicAlgorithmType" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicAlgorithmType As EnumValue(Of CryptAlgorithmValues)" />
+      <MemberSignature Language="F#" Value="member this.CryptographicAlgorithmType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicAlgorithmType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptAlgorithmType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cryptographic Algorithm Type.Represents the following attribute in the schema: w:cryptAlgorithmType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of cryptographic algorithm used by this protection. The initial version of the Office Open XML Standard only supports a single type - `typeAny` - but future versions may expand this as necessary.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptAlgorithmType` attribute value of `typeAny` specifies that any type of algorithm may have been used for the password.  
+  
+ The possible values for this attribute are defined by the `ST_AlgType` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicProvider">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue CryptographicProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue CryptographicProvider" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProvider" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicProvider As StringValue" />
+      <MemberSignature Language="F#" Value="member this.CryptographicProvider : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptProvider")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cryptographic Provider.Represents the following attribute in the schema: w:cryptProvider</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the cryptographic provider which was used to generate the hash value stored in this document. If the user provided a cryptographic provider which was not the system's built-in provider, then that provider shall be stored here so it can subsequently be used if available.  
+  
+ If this attribute is omitted, then the built-in cryptographic provider on the system shall be used.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProvider="Samantha'sProvider"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProvider` attribute value of `Samantha'sProvider` specifies that the cryptographic provider with name Samantha's Provider shall be used if available.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicProviderType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues&gt; CryptographicProviderType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues&gt; CryptographicProviderType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProviderType" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicProviderType As EnumValue(Of CryptProviderValues)" />
+      <MemberSignature Language="F#" Value="member this.CryptographicProviderType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProviderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptProviderType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cryptographic Provider Type.Represents the following attribute in the schema: w:cryptProviderType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the type of cryptographic provider to be used.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProviderType="rsaAES"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProviderType` attribute value of `rsaAES` specifies that the cryptographic provider type shall be an Advanced Encryption Standard provider.  
+  
+ The possible values for this attribute are defined by the `ST_CryptProv` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicProviderTypeExtensibility">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.HexBinaryValue CryptographicProviderTypeExtensibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.HexBinaryValue CryptographicProviderTypeExtensibility" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProviderTypeExtensibility" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicProviderTypeExtensibility As HexBinaryValue" />
+      <MemberSignature Language="F#" Value="member this.CryptographicProviderTypeExtensibility : DocumentFormat.OpenXml.HexBinaryValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProviderTypeExtensibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptProviderTypeExt")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cryptographic Provider Type Extensibility.Represents the following attribute in the schema: w:cryptProviderTypeExt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that a cryptographic provider type which was not defined by the Office Open XML Standard has been used to generate the hash value stored with this document.  
+  
+ This value, when present, shall be interpreted based on the value of the `cryptProviderTypeExtSource` attribute in order to determine the provider type used, which shall be application defined. This extensibility affords the fact that with exponentially increasing computing power, documents created in the future will likely need to use as yet undefined cryptographic provider types in order to remain secure.  
+  
+ If this value is present, the `cryptProviderType` attribute value shall be ignored in favor of the provider type defined by this attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProviderTypeExt="00A5691D"   
+  w:cryptProvideTypeExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProviderTypeExt` attribute value of `00A5691D` specifies that the provider type associated with hex code `A5691D` shall be used as defined by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_LongHexNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicProviderTypeExtSource">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue CryptographicProviderTypeExtSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue CryptographicProviderTypeExtSource" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProviderTypeExtSource" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicProviderTypeExtSource As StringValue" />
+      <MemberSignature Language="F#" Value="member this.CryptographicProviderTypeExtSource : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProviderTypeExtSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptProviderTypeExtSource")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Provider Type Extensibility Source.Represents the following attribute in the schema: w:cryptProviderTypeExtSource</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the application which defined the provider type value specified by the `cryptProviderTypeExt` attribute.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptProviderTypeExt="00A5691D"   
+  w:cryptProvideTypeExtSource="Contoso"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptProvideTypeExtSource` attribute value of `Contoso` specifies that the provider type used here was published by the Contoso application.  
+  
+ The possible values for this attribute are defined by the `ST_String` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptographicSpinCount">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value CryptographicSpinCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value CryptographicSpinCount" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicSpinCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property CryptographicSpinCount As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.CryptographicSpinCount : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicSpinCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "cryptSpinCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Iterations to Run Hashing Algorithm.Represents the following attribute in the schema: w:cryptSpinCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the number of times the hashing function shall be iteratively run (using each iteration's result as the input for the next iteration) when attempting to compare a user-supplied password with the value stored in the `hash` attribute. Running the algorithm many times increases the cost of exhaustive search attacks correspondingly. Storing this value allows for the number of iterations to be increased over time to accommodate faster hardware (and hence the ability to run more iterations in less time).  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptSpinCount="100000"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `cryptSpinCount` attribute value of `100000` specifies that the hashing function shall be run one hundred thousand times to generate a hash value for comparison with the `hash` attribute.  
+  
+ The possible values for this attribute are defined by the `ST_DecimalNumber` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Hash">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Base64BinaryValue Hash { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Base64BinaryValue Hash" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.Hash" />
+      <MemberSignature Language="VB.NET" Value="Public Property Hash As Base64BinaryValue" />
+      <MemberSignature Language="F#" Value="member this.Hash : DocumentFormat.OpenXml.Base64BinaryValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.Hash" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "hash")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Password Hash.Represents the following attribute in the schema: w:hash</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the hash value for the password stored with this document. This value shall be compared with the resulting hash value after hashing the user-supplied password using the algorithm specified by the preceding attributes and parent XML element, and if the two values match, the protection shall no longer be enforced.  
+  
+ If this value is omitted, then no password shall be associated with the protection, and it may be turned off without supplying any password.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:cryptAlgorithmClass="hash"   
+  w:cryptAlgorithmType="typeAny"   
+  w:cryptAlgorithmSid="1"  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `hash` attribute value of `9oN7nWkCAyEZib1RomSJTjmPpCY=` specifies that the user-supplied password shall be hashed using the pre-processing defined by the parent element (if any) followed by the SHA-1 algorithm (specified via the `cryptAlgorithmSid` attribute value of `1`) and that the resulting has value must be `9oN7nWkCAyEZib1RomSJTjmPpCY=` for the protection to be disabled.  
+  
+ The possible values for this attribute are defined by the XML Schema `base64Binary` data type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="HashValue">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Base64BinaryValue HashValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Base64BinaryValue HashValue" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.HashValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property HashValue As Base64BinaryValue" />
+      <MemberSignature Language="F#" Value="member this.HashValue : DocumentFormat.OpenXml.Base64BinaryValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.HashValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "hashValue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>hashValue, this property is only available in Office2010.Represents the following attribute in the schema: w:hashValue</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recommended">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.OnOffValue Recommended { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.OnOffValue Recommended" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.Recommended" />
+      <MemberSignature Language="VB.NET" Value="Public Property Recommended As OnOffValue" />
+      <MemberSignature Language="F#" Value="member this.Recommended : DocumentFormat.OpenXml.OnOffValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.Recommended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "recommended")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OnOffValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Recommend Write Protection in User Interface.Represents the following attribute in the schema: w:recommended</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies that applications should provide user interface recommending that the user open this document in write protected state. If the user chooses to do so, the document shall be write protected, otherwise, it shall be opened fully editable.  
+  
+ If this attribute is omitted, then user interface recommending that the user open this document in write protected state should not be provided. If the `password` attribute is also specified, then this setting shall be ignored.  
+  
+ Consider a WordprocessingML document which specifies that applications shall recommend write protection to this document. This requirement would be specified using the following WordprocessingML in the document settings:  
+  
+```  
+<w:writeProtection w:recommended="true" />  
+```  
+  
+ The `recommended` attribute has a value of `true` specifying that the applications shall hash any password provided, and if it matches this hash value, may only then halt enforcement of write protection.  
+  
+ The possible values for this attribute are defined by the `ST_OnOff` simple type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Salt">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Base64BinaryValue Salt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Base64BinaryValue Salt" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.Salt" />
+      <MemberSignature Language="VB.NET" Value="Public Property Salt As Base64BinaryValue" />
+      <MemberSignature Language="F#" Value="member this.Salt : DocumentFormat.OpenXml.Base64BinaryValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.Salt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "salt")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Salt for Password Verifier.Represents the following attribute in the schema: w:salt</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The following information from the ECMA International [Standard ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm) can be useful when working with this class.  
+  
+ Specifies the salt which was prepended to the user-supplied password before it was hashed using the hashing algorithm defined by the preceding attribute values to generate the `hash` attribute, and which shall also be prepended to the user-supplied password before attempting to generate a hash value for comparison. A *salt* is a random string which is added to a user-supplied password before it is hashed in order to prevent a malicious party from pre-calculating all possible password/hash combinations and simply using those precalculated values (often referred to as a *dictionary attack*).  
+  
+ If this attribute is omitted, then no salt shall be prepended to the user-supplied password before it is hashed for comparison with the stored hash value.  
+  
+ Consider a WordprocessingML document with the following information stored in one of its protection elements:  
+  
+```  
+<w:… w:salt="ZUdHa+D8F/OAKP3I7ssUnQ=="  
+  w:hash="9oN7nWkCAyEZib1RomSJTjmPpCY=" />  
+```  
+  
+ The `salt` attribute value of `ZUdHa+D8F/OAKP3I7ssUnQ==` specifies that the user-supplied password shall have this value prepended before it is run through the specified hashing algorithm to generate a resulting hash value for comparison.  
+  
+ The possible values for this attribute are defined by the XML Schema `base64Binary` data type.  
+  
+ ]]></format>
+        </remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="SaltValue">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Base64BinaryValue SaltValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Base64BinaryValue SaltValue" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.SaltValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property SaltValue As Base64BinaryValue" />
+      <MemberSignature Language="F#" Value="member this.SaltValue : DocumentFormat.OpenXml.Base64BinaryValue with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.SaltValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "saltValue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Base64BinaryValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>saltValue, this property is only available in Office2010.Represents the following attribute in the schema: w:saltValue</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="SpinCount">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value SpinCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value SpinCount" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.WriteProtection.SpinCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property SpinCount As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.SpinCount : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Wordprocessing.WriteProtection.SpinCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(23, "spinCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>spinCount, this property is only available in Office2010.Represents the following attribute in the schema: w:spinCount</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,412 @@
+﻿<Type Name="CategoryFilterException" FullName="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException">
+  <TypeSignature Language="C#" Value="public class CategoryFilterException : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CategoryFilterException extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException" />
+  <TypeSignature Language="VB.NET" Value="Public Class CategoryFilterException&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type CategoryFilterException = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the CategoryFilterException Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is c15:categoryFilterException.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.5.100   CT_CategoryFilterException*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/drawing/2012/chart  
+  
+ *Referenced by:* CT_CategoryFilterExceptions  
+  
+ *CT_CategoryFilterException* is a complex type that contains information about special formatting properties associated with a single data point in a chart series ([ISO/IEC-29500-1] section 21.2).\<161> This complex type is used to save special data point properties of points that are filtered out of the chart series ([ISO/IEC-29500-1] section 21.2). An entry of this type MUST contain exactly one *sqref* element followed by one or more child elements.  
+  
+ *Child Elements:*  
+  
+ *sqref:* A *string* element ([XMLSCHEMA2] section 3.2.1) that specifies the cell reference of the data corresponding to this data point in the chart series ([ISO/IEC-29500-1] section 21.2). This element is required. This reference MUST follow the ABNF grammar rules defined in the Formulas section ([MS-XLSX] section 2.2.2) with the following restrictions:  
+  
+ *MUST follow the single-sheet-reference rule.*  
+  
+ *MUST NOT use the A1-area, A1-relative-column and A1-relative-row rules. MUST use ONLY A1-cell, A1-absolute-column and A1-absolute-row (since a data point in a series can correspond to only one cell, it should not use area references).*  
+  
+ An application can adjust this cell reference when the worksheet layout changes, even when the containing *ext* element ([ISO/IEC-29500-1] section 18.2.7) is not recognized by the application.  
+  
+ *spPr:* A CT_ShapeProperties element ([ISO/IEC-29500-1] section A.4.1) that specifies the formatting (like fill or line properties) to be shown on this data point.  
+  
+ *explosion:* A CT_UnsignedInt element ([ISO/IEC-29500-1] section A.5.1) that specifies the amount this data point shall be moved from the center of the pie in a pie chart series.  
+  
+ *invertIfNegative:* A *CT_Boolean* element (section 2.5.80) that specifies if the invert color should be shown when this data point has a negative value.  
+  
+ *bubble3D:* A *CT_Boolean* element that specifies if this data point has a 3D bubble.  
+  
+ *marker:* A CT_Marker element ([ISO/IEC-29500-1] section A.5.1) that specifies the properties of the line marker associated with this data point.  
+  
+ *dLbl:* A CT_DLbl element ([ISO/IEC-29500-1] section A.5.1) that specifies the properties of the *Datalabel* (section 2.2.1.3) associated with this data point.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_CategoryFilterException">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="sqref" type="xsd:string" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="spPr" type="a:CT_ShapeProperties" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="explosion" type="c:CT_UnsignedInt" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="invertIfNegative" type="c:CT_Boolean" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="bubble3D" type="c:CT_Boolean" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="marker" type="c:CT_Marker" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="dLbl" type="c:CT_DLbl" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.13 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CategoryFilterException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the CategoryFilterException class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CategoryFilterException (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException" Usage="new DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the CategoryFilterException class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CategoryFilterException (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException" Usage="new DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the CategoryFilterException class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CategoryFilterException (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException : string -&gt; DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException" Usage="new DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the CategoryFilterException class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bubble3D">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D Bubble3D { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D Bubble3D" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.Bubble3D" />
+      <MemberSignature Language="VB.NET" Value="Public Property Bubble3D As Bubble3D" />
+      <MemberSignature Language="F#" Value="member this.Bubble3D : DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D with get, set" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.Bubble3D" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Bubble3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Bubble3D. Represents the following element tag in the schema: c15:bubble3D</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:c15 = http://schemas.microsoft.com/office/drawing/2012/chart
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="categoryFilterException.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataLabel">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel DataLabel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel DataLabel" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.DataLabel" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataLabel As DataLabel" />
+      <MemberSignature Language="F#" Value="member this.DataLabel : DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel with get, set" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.DataLabel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.DataLabel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DataLabel. Represents the following element tag in the schema: c15:dLbl</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:c15 = http://schemas.microsoft.com/office/drawing/2012/chart
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Explosion">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion Explosion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion Explosion" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.Explosion" />
+      <MemberSignature Language="VB.NET" Value="Public Property Explosion As Explosion" />
+      <MemberSignature Language="F#" Value="member this.Explosion : DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion with get, set" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.Explosion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Explosion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Explosion. Represents the following element tag in the schema: c15:explosion</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:c15 = http://schemas.microsoft.com/office/drawing/2012/chart
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="InvertIfNegativeBoolean">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean InvertIfNegativeBoolean { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean InvertIfNegativeBoolean" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.InvertIfNegativeBoolean" />
+      <MemberSignature Language="VB.NET" Value="Public Property InvertIfNegativeBoolean As InvertIfNegativeBoolean" />
+      <MemberSignature Language="F#" Value="member this.InvertIfNegativeBoolean : DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean with get, set" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.InvertIfNegativeBoolean" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.InvertIfNegativeBoolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>InvertIfNegativeBoolean. Represents the following element tag in the schema: c15:invertIfNegative</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:c15 = http://schemas.microsoft.com/office/drawing/2012/chart
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Marker">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker Marker { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker Marker" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.Marker" />
+      <MemberSignature Language="VB.NET" Value="Public Property Marker As Marker" />
+      <MemberSignature Language="F#" Value="member this.Marker : DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker with get, set" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.Marker" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.Marker</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Marker. Represents the following element tag in the schema: c15:marker</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:c15 = http://schemas.microsoft.com/office/drawing/2012/chart
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="SequenceOfReferences">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences SequenceOfReferences { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences SequenceOfReferences" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.SequenceOfReferences" />
+      <MemberSignature Language="VB.NET" Value="Public Property SequenceOfReferences As SequenceOfReferences" />
+      <MemberSignature Language="F#" Value="member this.SequenceOfReferences : DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences with get, set" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.SequenceOfReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.SequenceOfReferences</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SequenceOfReferences. Represents the following element tag in the schema: c15:sqref</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:c15 = http://schemas.microsoft.com/office/drawing/2012/chart
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="ShapeProperties">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties ShapeProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties ShapeProperties" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.ShapeProperties" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShapeProperties As ShapeProperties" />
+      <MemberSignature Language="F#" Value="member this.ShapeProperties : DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties with get, set" Usage="DocumentFormat.OpenXml.Office2013.Drawing.Chart.CategoryFilterException.ShapeProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Drawing.Chart.ShapeProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ShapeProperties. Represents the following element tag in the schema: c15:spPr</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:c15 = http://schemas.microsoft.com/office/drawing/2012/chart
+            </remark>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

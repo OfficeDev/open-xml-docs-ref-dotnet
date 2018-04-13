@@ -1,0 +1,636 @@
+﻿<Type Name="WorkbookProperties" FullName="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties">
+  <TypeSignature Language="C#" Value="public class WorkbookProperties : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkbookProperties extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties" />
+  <TypeSignature Language="VB.NET" Value="Public Class WorkbookProperties&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type WorkbookProperties = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the WorkbookProperties Class. When the object is serialized out as xml, its qualified name is x:workbookPr.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **workbookPr (Workbook Properties)**  
+  
+ This element defines a collection of workbook properties.  
+  
+ *[Example:*  
+  
+```xml  
+<workbookPr dateCompatibility="false" showObjects="none" saveExternalLinkValues="0"  defaultThemeVersion="123820"/>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|workbook (§18.2.27)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|allowRefreshQuery (Allow Refresh Query)|Specifies a boolean value that indicates whether the application will refresh query tables in this workbook.<br /><br /> A value of *1* or *true* indicates the application will refresh query tables when the workbook is loaded.<br /><br /> A value of *0* or *false* indicates the application will not refresh query tables.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|autoCompressPictures (Auto Compress Pictures)|Specifies a boolean value that indicates the application automatically compressed pictures in the workbook.<br /><br /> A value of *1* or *true* indicates the application automatically compresses pictures of the workbook. When a picture is compressed, the application:<br /><br /> -   Reduces resolution (to 96 dots per inch (dpi) for Web and 200 dpi for print), and unnecessary information is discarded.<br />-   Discards extra information. [*Example*: When a picture has been cropped or resized, the "hidden" parts of the picture are stored in the file. *end example*]<br />-   Compress the picture, if possible.<br /><br /> A value of *0* or *false* indicates the application does not compress pictures in this workbook.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|backupFile (Create Backup File)|Specifies a boolean value that indicates whether the application creates a backup of the workbook on save.<br /><br /> A value of *1* or *true* indicates the application creates a backup of the workbook on save.<br /><br /> A value of *0* or *false* indicates the application does not create a backup.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|checkCompatibility (Check Compatibility On Save)|Specifies a boolean value that indicates whether the application checks for compatibility when saving this workbook to older file formats.<br /><br /> A value of *1* or *true* indicates the application performs a compatibility check when saving to legacy binary formats.<br /><br /> A value of *0* or *false* indicates the application does not perform a compatibility check when saving to legacy binary formats.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|codeName (Code Name)|Specifies the codename of the application that created this workbook. Use this attribute to track file content in incremental releases of the application.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
+|date1904 (Date 1904)|Value that indicates whether to use a 1900 or 1904 date base when converting serial values in the workbook to dates. [*Note*: If the dateCompatibility attribute is *0* or *false*, this attribute is ignored. *end note*]<br /><br /> A value of *1* or *true* indicates the workbook uses the 1904 backward compatibility date system.<br /><br /> A value of *0* or *false* indicates the workbook uses a date system based in 1900, as specified by the value of the dateCompatibility attribute.<br /><br /> (See §18.17.4.1 for the definition of the date bases.)<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dateCompatibility (Date Compatibility)|Specifies whether the date base should be treated as a compatibility date base or should support the full  8601 date range.<br /><br /> A value of 1 or true indicates that the date system in use is either the 1900 backward compatibility date base or the 1904 backward compatibility date base, as specified by the value of the date1904 attribute.<br /><br /> A value of 0 or false indicates that the date system is the 1900 date base, based on the  8601 date range.<br /><br /> (See §18.17.4.1 for the definition of the date bases.)<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultThemeVersion (Default Theme Version)|Specifies the default version of themes to apply in the workbook.<br /><br /> The value for defaultThemeVersion depends on the application. SpreadsheetML defaults to the form [version][build], where [version] refers to the version of the application, and [build] refers to the build of the application when the themes in the user interface changed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|filterPrivacy (Filter Privacy)|Specifies a boolean value that indicates whether the application has inspected the workbook for personally identifying information (). If this flag is set, the application warns the user any time the user performs an action that will insert  into the document. [*Example*: Inserting a comment might insert the user's name. *end example*]<br /><br /> A value of *1* or *true* indicates the application will warn the user when they insert  into the workbook.<br /><br /> A value of *0* or *false* indicates the application will not warn the user when they insert  into the workbook; the workbook has not been inspected for .<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hidePivotFieldList (Hide Pivot Field List)|Specifies a boolean value that indicates whether a list of fields is shown for pivot tables in the application user interface.<br /><br /> A value of *1* or *true* indicates a list of fields is show for pivot tables.<br /><br /> A value of *0* or *false* indicates a list of fields is not shown for pivot tables.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|promptedSolutions (Prompted Solutions)|Specifies a boolean value that indicates whether the user has received an alert to load Smart Document components.<br /><br /> A value of *1* or *true* indicates the user received an alert to load SmartDoc.<br /><br /> A value of *0* or *false* indicates the user did not receive an alert.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|publishItems (Publish Items)|Specifies a boolean value that indicates whether the publish the workbook or workbook items to the application server.<br /><br /> A value of *1* or *true* indicates that workbook items are published.<br /><br /> A value of *0* or *false* indicates that the workbook is published.<br /><br /> The default value for this attribute is *false*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|refreshAllConnections (Refresh all Connections on Open)|Specifies a boolean value that indicates whether the workbok shall refresh all the connections to data sources during load.<br /><br /> The default value for this attribute is *false*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|saveExternalLinkValues (Save External Link Values)|Specifies a boolean value that indicates whether the application will cache values retrieved from other workbooks via an externally linking formula. Data is cached at save.<br /><br /> A value of *1* or *true* indicates data from externally linked formulas is cached. A supporting part is written out containing a cached cell table from the external workbook.<br /><br /> A value of *0* or *false* indicates data from externally linked formulas is not cached.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showBorderUnselectedTables (Show Border Unselected Table)|Specifies a boolean value that indicates whether a border is drawn around unselected tables in the workbook.<br /><br /> A value of *1* or *true* indicates borders are drawn around unselected tables.<br /><br /> A value of *0* or *false* indicates borders are not drawn around unselected tables.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showInkAnnotation (Show Ink Annotations)|Specifies a boolean value that indicates whether the book shows ink annotations.<br /><br /> A value of *1* or *true* indicates that ink annotations are shown in the workbook.<br /><br /> A value of *0* or *false* indicates that ink annotations are not shown in the workbook.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showObjects (Show Objects)|Specifies how the application shows embedded objects in the workbook.<br /><br /> This attribute it optional.<br /><br /> The default value for this attribute is "all."<br /><br /> The possible values for this attribute are defined by the *ST_Objects* simple type (§18.18.48).|  
+|showPivotChartFilter (Show Pivot Chart Filter)|Specifies a boolean value that indicates whether filtering options are shown for pivot charts in the workbook.<br /><br /> A value of *1* or *true* indicates filtering options shall be shown for pivot charts.<br /><br /> A value of *0* or *false* indicates filtering options shall not be shown.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|updateLinks (Update Links Behavior)|Specifies how the application updates external links when the workbook is opened.<br /><br /> The default value for this attribute is userSet.<br /><br /> The possible values for this attribute are defined by the *ST_UpdateLinks* simple type (§18.18.87).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_WorkbookPr) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkbookProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the WorkbookProperties class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowRefreshQuery">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AllowRefreshQuery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AllowRefreshQuery" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.AllowRefreshQuery" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowRefreshQuery As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AllowRefreshQuery : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.AllowRefreshQuery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "allowRefreshQuery")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Allow Refresh Query.Represents the following attribute in the schema: allowRefreshQuery</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoCompressPictures">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AutoCompressPictures { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AutoCompressPictures" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.AutoCompressPictures" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoCompressPictures As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AutoCompressPictures : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.AutoCompressPictures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "autoCompressPictures")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Auto Compress Pictures.Represents the following attribute in the schema: autoCompressPictures</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackupFile">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue BackupFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue BackupFile" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.BackupFile" />
+      <MemberSignature Language="VB.NET" Value="Public Property BackupFile As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.BackupFile : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.BackupFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "backupFile")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Create Backup File.Represents the following attribute in the schema: backupFile</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckCompatibility">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue CheckCompatibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue CheckCompatibility" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.CheckCompatibility" />
+      <MemberSignature Language="VB.NET" Value="Public Property CheckCompatibility As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.CheckCompatibility : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.CheckCompatibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "checkCompatibility")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Check Compatibility On Save.Represents the following attribute in the schema: checkCompatibility</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="workbookProperties.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeName">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue CodeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue CodeName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.CodeName" />
+      <MemberSignature Language="VB.NET" Value="Public Property CodeName As StringValue" />
+      <MemberSignature Language="F#" Value="member this.CodeName : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.CodeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "codeName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Code Name.Represents the following attribute in the schema: codeName</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Date1904">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Date1904 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Date1904" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.Date1904" />
+      <MemberSignature Language="VB.NET" Value="Public Property Date1904 As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Date1904 : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.Date1904" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "date1904")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Date 1904.Represents the following attribute in the schema: date1904</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DateCompatibility">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DateCompatibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DateCompatibility" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.DateCompatibility" />
+      <MemberSignature Language="VB.NET" Value="Public Property DateCompatibility As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DateCompatibility : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.DateCompatibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dateCompatibility")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>dateCompatibility, this property is only available in Office2010.Represents the following attribute in the schema: dateCompatibility</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultThemeVersion">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value DefaultThemeVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value DefaultThemeVersion" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.DefaultThemeVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultThemeVersion As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.DefaultThemeVersion : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.DefaultThemeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "defaultThemeVersion")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Default Theme Version.Represents the following attribute in the schema: defaultThemeVersion</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterPrivacy">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue FilterPrivacy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue FilterPrivacy" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.FilterPrivacy" />
+      <MemberSignature Language="VB.NET" Value="Public Property FilterPrivacy As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.FilterPrivacy : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.FilterPrivacy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "filterPrivacy")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Filter Privacy.Represents the following attribute in the schema: filterPrivacy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HidePivotFieldList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue HidePivotFieldList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue HidePivotFieldList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.HidePivotFieldList" />
+      <MemberSignature Language="VB.NET" Value="Public Property HidePivotFieldList As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.HidePivotFieldList : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.HidePivotFieldList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "hidePivotFieldList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hide Pivot Field List.Represents the following attribute in the schema: hidePivotFieldList</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PromptedSolutions">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PromptedSolutions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PromptedSolutions" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.PromptedSolutions" />
+      <MemberSignature Language="VB.NET" Value="Public Property PromptedSolutions As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PromptedSolutions : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.PromptedSolutions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "promptedSolutions")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Prompted Solutions.Represents the following attribute in the schema: promptedSolutions</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublishItems">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PublishItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PublishItems" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.PublishItems" />
+      <MemberSignature Language="VB.NET" Value="Public Property PublishItems As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PublishItems : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.PublishItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "publishItems")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Publish Items.Represents the following attribute in the schema: publishItems</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshAllConnections">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue RefreshAllConnections { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue RefreshAllConnections" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.RefreshAllConnections" />
+      <MemberSignature Language="VB.NET" Value="Public Property RefreshAllConnections As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.RefreshAllConnections : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.RefreshAllConnections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "refreshAllConnections")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Refresh all Connections on Open.Represents the following attribute in the schema: refreshAllConnections</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveExternalLinkValues">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SaveExternalLinkValues { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SaveExternalLinkValues" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.SaveExternalLinkValues" />
+      <MemberSignature Language="VB.NET" Value="Public Property SaveExternalLinkValues As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SaveExternalLinkValues : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.SaveExternalLinkValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "saveExternalLinkValues")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Save External Link Values.Represents the following attribute in the schema: saveExternalLinkValues</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowBorderUnselectedTables">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowBorderUnselectedTables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowBorderUnselectedTables" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowBorderUnselectedTables" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowBorderUnselectedTables As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowBorderUnselectedTables : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowBorderUnselectedTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showBorderUnselectedTables")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Border Unselected Table.Represents the following attribute in the schema: showBorderUnselectedTables</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowInkAnnotation">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowInkAnnotation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowInkAnnotation" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowInkAnnotation" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowInkAnnotation As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowInkAnnotation : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowInkAnnotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showInkAnnotation")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Ink Annotations.Represents the following attribute in the schema: showInkAnnotation</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowObjects">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt; ShowObjects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt; ShowObjects" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowObjects" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowObjects As EnumValue(Of ObjectDisplayValues)" />
+      <MemberSignature Language="F#" Value="member this.ShowObjects : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowObjects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showObjects")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Objects.Represents the following attribute in the schema: showObjects</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPivotChartFilter">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowPivotChartFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowPivotChartFilter" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowPivotChartFilter" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowPivotChartFilter As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowPivotChartFilter : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.ShowPivotChartFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showPivotChartFilter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Pivot Chart Filter.Represents the following attribute in the schema: showPivotChartFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateLinks">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.UpdateLinksBehaviorValues&gt; UpdateLinks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.UpdateLinksBehaviorValues&gt; UpdateLinks" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.UpdateLinks" />
+      <MemberSignature Language="VB.NET" Value="Public Property UpdateLinks As EnumValue(Of UpdateLinksBehaviorValues)" />
+      <MemberSignature Language="F#" Value="member this.UpdateLinks : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.UpdateLinksBehaviorValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.WorkbookProperties.UpdateLinks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "updateLinks")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.UpdateLinksBehaviorValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Update Links Behavior.Represents the following attribute in the schema: updateLinks</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

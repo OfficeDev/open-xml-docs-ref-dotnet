@@ -1,0 +1,1595 @@
+﻿<Type Name="PivotField" FullName="DocumentFormat.OpenXml.Spreadsheet.PivotField">
+  <TypeSignature Language="C#" Value="public class PivotField : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotField extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.PivotField" />
+  <TypeSignature Language="VB.NET" Value="Public Class PivotField&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type PivotField = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.Items))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.AutoSortScope))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.PivotFieldExtensionList))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>PivotTable Field. When the object is serialized out as xml, its qualified name is x:pivotField.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **pivotField (PivotTable Field)**  
+  
+ Represents a single field in the PivotTable. This element contains information about the field, including the collection of items in the field.  
+  
+ [*Example*:  
+  
+```xml  
+<pivotField axis="axisRow" allDrilled="1" showAll="0" measureFilter="1"  sortType="descending">  
+  <items count="8">  
+    <item s="1" c="1" x="0"/>  
+    <item s="1" c="1" x="1"/>  
+    <item c="1" x="2"/>  
+    <item c="1" x="3"/>  
+    <item c="1" x="4"/>  
+    <item c="1" x="5"/>  
+    <item c="1" x="6"/>  
+    <item t="default"/>  
+  </items>  
+  <autoSortScope>  
+    <pivotArea dataOnly="0" outline="0" fieldPosition="0">  
+      <references count="2">  
+        <reference field="4294967294" count="1" selected="0">  
+          <x v="0"/>  
+        </reference>  
+        <reference field="25" count="1" selected="0">  
+          <x v="0"/>  
+        </reference>  
+      </references>  
+    </pivotArea>  
+  </autoSortScope>  
+</pivotField>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pivotFields (§18.10.1.70)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|autoSortScope (AutoSort Scope)|§18.10.1.1|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+|items (Field Items)|§18.10.1.46|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|allDrilled (All Items Expanded)|Specifies a boolean value that indicates whether all items in the field are expanded. Applies only to OLAP PivotTables.<br /><br /> A value of *1* or *true* indicates all items in the field are expanded.<br /><br /> A value of *0* or *false* indicates all items are not expanded. However some items might be expanded.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|autoShow (Auto Show)|Specifies a boolean value that indicates whether an "AutoShow" filter is applied to this field. This attribute depends on the implementation of filtering in the application.<br /><br /> A value of *1* or *true* indicates an "AutoShow" filter is applied to the field.<br /><br /> A value of *0* or *false* indicates an "AutoShow" filter is not applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|avgSubtotal (Average)|Specifies a boolean value that indicates whether to apply the 'Average' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the subtotal for this field is 'Average.'<br /><br /> A value of *0* or *false* indicates a different aggregation function is applied to the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|axis (Axis)|Specifies the region of the PivotTable that this field is displayed.<br /><br /> The possible values for this attribute are defined by the *ST_Axis* simple type (§18.18.1).|  
+|compact (Compact)|Specifies a boolean value that indicates whether the application will display fields compactly in the sheet on which this PivotTable resides.<br /><br /> A value of *1* or *true* indicates the next field should be displayed in the same column of the sheet.<br /><br /> A value of *0* or *false* indicates each pivot field will display in its own column in the sheet.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|countASubtotal (CountA)|Specifies a boolean value that indicates whether to apply the 'countA' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the subtotal for this field is 'countA.'<br /><br /> A value of *0* or *false* indicates a different aggregation function is applied to the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|countSubtotal (Count)|Specifies a boolean value that indicates whether to apply the 'count' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the subtotal for this field is 'count.'<br /><br /> A value of *0* or *false* indicates a different aggregation vfunction is applied to the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dataField (Data Field)|Specifies a boolean value that indicates whether this field appears in the data region of the PivotTable.<br /><br /> A value of *1* or *true* indicates this field appears in the data region of the PivotTable.<br /><br /> A value of *0* or *false* indicates this field appears in another region of the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dataSourceSort (Data Source Sort)|Specifies a boolean value that indicates whether sort is applied to this field in the data source.<br /><br /> A value of *1* or *true* indicates this field is sorted in the data source.<br /><br /> A value of *0* or *false* indicates this field is not sorted in the data source.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultAttributeDrillState (Drill State)|Specifies a boolean value that indicates the drill state of the attribute hierarchy in an OLAP-based PivotTable.<br /><br /> A value of *1* or *true* indicates the attribute hierarchy is expanded.<br /><br /> A value of *0* or *false* indicates the attribute hierarchy is collapsed.<br /><br /> This attribute is designed to allow the application to issue more optimized queries when all items of each field have the same drill state.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|defaultSubtotal (Show Default Subtotal)|Specifies a boolean value that indicates whether the default subtotal aggregation function is displayed for this field.<br /><br /> A value of *1* or *true* indicates the default subtotal aggregation function is displayed for this field.<br /><br /> A value of *0* or *false* indicates the default aggregation function is not displayed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragOff (Drag Off)|Specifies a boolean value that indicates whether the field can be removed from the PivotTable.<br /><br /> A value of *1* or *true* indicates the field can be removed from the PivotTable.<br /><br /> A value of *0* or *false* indicates the field cannot be removed from the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToCol (Drag To Column)|Specifies a boolean value that indicates whether the field can be dragged to the column axis.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the column axis.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the column axis.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToData (Field Can Drag to Data)|Specifies a boolean value that indicates whether the field can be dragged to the data region.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the data region.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the data region.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToPage (Drag Field to Page)|Specifies a boolean value that indicates whether the field can be dragged to the page region.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the page region.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the page region.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|dragToRow (Drag To Row)|Specifies a boolean value that indicates whether the field can be dragged to the row axis.<br /><br /> A value of *1* or *true* indicates the field can be dragged to the row axis.<br /><br /> A value of *0* or *false* indicates the field cannot be dragged to the row axis.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hiddenLevel (Hidden Level)|Specifies a boolean value that indicates whether there is a hidden level in the PivotTable. This attribute applies to OLAP-based PivotTables only.<br /><br /> A value of *1* or *true* indicates the OLAP PivotTable contains a hidden level.<br /><br /> A value of *0* or *false* indicates the OLAP PivotTable does not contain any hidden levels.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|hideNewItems (Hide New Items)|Specifies a boolean value that indicates whether new items that appear after a refresh should be hidden by default.<br /><br /> A value of *1* or *true* indicates that items that appear after a refresh should be hidden by default.<br /><br /> A value of *0* or *false* indicates that items that appear after a refresh should be shown by default.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|includeNewItemsInFilter (Inclusive Manual Filter)|Specifies a boolean value that indicates whether manual filter is in inclusive mode.<br /><br /> A value of *1* or *true* indicates the manual filter is inclusive.<br /><br /> A value of *0* or *false* indicates the manual filter is not inclusive.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|insertBlankRow (Insert Blank Row)|Specifies a boolean value that indicates whether to insert a blank row after each item.<br /><br /> A value of *1* or *true* indicates that a blank row is inserted after each item.<br /><br /> A value of *0* or *false* indicates no additional rows are inserted after each item.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|insertPageBreak (Insert Item Page Break)|Specifies a boolean value that indicates whether to insert a page break after each item.<br /><br /> A value of *1* or *true* indicates that a page break is inserted after each item.<br /><br /> A value of *0* or *false* indicates no page breaks are inserted after items.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|itemPageCount (Items Per Page Count)|Specifies the number of items showed per page in the PivotTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|maxSubtotal (Max Subtotal)|Specifies a boolean value that indicates whether to apply the  'max' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'max' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|measureFilter (Measure Filter)|Specifies a boolean value that indicates whether field has a measure based filter.<br /><br /> A value of *1* or *true* indicates the field has a measure-based filter.<br /><br /> A value of *0* or *false* indicates does not have a measure-based filter.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|minSubtotal (Min Subtotal)|Specifies a boolean value that indicates whether to apply the 'min' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'min' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|multipleItemSelectionAllowed (Multiple Field Filters)|Specifies a boolean value that indicates whether the field can have multiple items selected in the page field.<br /><br /> A value of *1* or *true* indicates the PivotTable can have multiple items selected in the page field.<br /><br /> A value of *0* or *false* indicates the PivotTable cannot have multiple items selected in the page field. This attribute depends on the application support for selecting multiple items in page fields.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|name (Field Name)|Specifies the name of the field.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|nonAutoSortDefault (Auto Sort)|Specifies a boolean value that indicates whether sort operation that is applied to field should be AutoSort operation or simple data sort operation.<br /><br /> A value of *1* or *true* indicates that an AutoSort operation is applied to the field.<br /><br /> A value of *0* or *false* indicates a simple data sort operation is applied to the field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|numFmtId (Number Format Id)|Specifies the identifier of the number format to apply to this field. Number formats are written to the styles part. See the Styles section (§18.8)  for more information on number formats.<br /><br /> Formatting information provided by cell table and by PivotTable need not agree. If the two formats differ, the cell-level formatting takes precedence. If you change the  layout the PivotTable, the PivotTable formatting will then take precedence.<br /><br /> The possible values for this attribute are defined by the *ST_NumFmtId* simple type (§18.18.47).|  
+|outline (Outline Items)|Specifies a boolean value that indicates whether the items in this field should be shown in Outline form.<br /><br /> A value of *1* or *true* indicates the items in this field is shown in Outline form.<br /><br /> A value of *0* or *false* indicates the items in this field will not be shown in Outline form. This attribute depends on the application support for displaying items in Outline form.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|productSubtotal (Product Subtotal)|Specifies a boolean value that indicates whether to apply 'product' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'product' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|rankBy (Auto Show Rank By)|Specifies the index of the data field by which AutoShow will rank.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|serverField (Server-based Page Field)|Specifies a boolean value that indicates whether this is a server-based page field.<br /><br /> A value of *1* or *true* indicates this is a server-based page field.<br /><br /> A value of *0* or *false* indicates this is a local page field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showAll (Show All Items)|Specifies a boolean value that indicates whether to show all items for this field.<br /><br /> A value of *1* or *true* indicates that all items be shown.<br /><br /> A value of *0* or *false* indicates items be shown according to user specified criteria.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showDropDowns (Show PivotField Header Drop Downs)|Specifies a boolean value that indicates whether to hide drop down buttons on PivotField headers.  This attribute depends on the application implementation for filtering in the user interface.<br /><br /> A value of *1* or *true* indicates the application will display some mechanism for selecting and applying filters – [*Example*:  A dropdown menu  *end example*] – in the user interface.<br /><br /> A value of *0* or *false* indicates for mechanism for applying a filter is displayed in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showPropAsCaption (Show As Caption)|Specifies a boolean value that indicates whether to show the property as a member caption.<br /><br /> A value of *1* or *true* indicates the property is shown as a member caption.<br /><br /> A value of *0* or *false* indicates the property will not be shown as a member caption.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showPropCell (Show Member Property in Cell)|Specifies a boolean value that indicates whether to show the member property value in a PivotTable cell.<br /><br /> A value of *1* or *true* indicates the property value is shown in a PivotTable cell.<br /><br /> A value of *0* or *false* indicates the property value will not be shown in a PivotTable cell.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showPropTip (Show Member Property ToolTip)|Specifies a boolean value that indicates whether to show the member property value in a tooltip on the appropriate PivotTable cells.<br /><br /> A value of *1* or *true* indicates the property value is shown in a tooltip in the user interface.<br /><br /> A value of *0* or *false* indicates the property will not be shown in a tooltip. This attribute depends on whether the application employs tooltips or similar mechanism in the user interface.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sortType (Auto Sort Type)|Specifies the type of sort that is applied to this field.<br /><br /> The possible values for this attribute are defined by the *ST_FieldSortType* simple type (§18.18.28).|  
+|stdDevPSubtotal (StdDevP Subtotal)|Specifies a boolean value that indicates whether to apply the 'stdDevP' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'stdDevP' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|stdDevSubtotal (StdDev Subtotal)|Specifies a boolean value that indicates whether to use 'stdDev' in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates that the 'stdDev' aggregation function is applied in the subtotal for this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal for this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|subtotalCaption (Custom Subtotal Caption)|Specifies the custom text that is displayed for the subtotals label.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|subtotalTop (Subtotals At Top)|Specifies a boolean value that indicates whether to display subtotals at the top of the group. Applies only when *Outline* its *true*.<br /><br /> A value of *1* or *true* indicates a subtotal is display at the top of the group.<br /><br /> A value of *0* or *false* indicates subtotal will not be displayed at the top of the group.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|sumSubtotal (Sum Subtotal)|Specifies a boolean value that indicates whether apply the 'sum' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the 'sum' aggregation function is applied in the subtotal of this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal of this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|topAutoShow (Top Auto Show)|Specifies a boolean value that indicates whether an AutoShow filter applied to this field is set to show the top ranked values.<br /><br /> A value of *1* or *true* indicates whether an AutoShow filter will show top values for this field.<br /><br /> A value of *0* or *false* indicates bottom ranked values are shown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|uniqueMemberProperty (Unique Member Property)|Specifies the unique name of the member property to be used as a caption for the field and field items.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|varPSubtotal (VarP Subtotal)|Specifies a boolean value that indicates whether to apply the 'varP' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the 'varP' aggregation function is applied in the subtotal of this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal of this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|varSubtotal (Variance Subtotal)|Specifies a boolean value that indicates whether to apply the 'variance' aggregation function in the subtotal of this field.<br /><br /> A value of *1* or *true* indicates the 'variance' aggregation function is applied in the subtotal of this field.<br /><br /> A value of *0* or *false* indicates another aggregation function is applied in the subtotal of this field.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_PivotField) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotField.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the PivotField class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotField (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotField.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.PivotField : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.PivotField" Usage="new DocumentFormat.OpenXml.Spreadsheet.PivotField childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the PivotField class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotField (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotField.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.PivotField : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.PivotField" Usage="new DocumentFormat.OpenXml.Spreadsheet.PivotField childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the PivotField class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotField (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotField.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.PivotField : string -&gt; DocumentFormat.OpenXml.Spreadsheet.PivotField" Usage="new DocumentFormat.OpenXml.Spreadsheet.PivotField outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the PivotField class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllDrilled">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AllDrilled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AllDrilled" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.AllDrilled" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllDrilled As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AllDrilled : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.AllDrilled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "allDrilled")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>All Items Expanded.Represents the following attribute in the schema: allDrilled</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyProductInSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyProductInSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyProductInSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyProductInSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyProductInSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyProductInSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyProductInSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "productSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Product Subtotal.Represents the following attribute in the schema: productSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyStandardDeviationInSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyStandardDeviationInSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyStandardDeviationInSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyStandardDeviationInSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyStandardDeviationInSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyStandardDeviationInSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyStandardDeviationInSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "stdDevSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>StdDev Subtotal.Represents the following attribute in the schema: stdDevSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyStandardDeviationPInSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyStandardDeviationPInSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyStandardDeviationPInSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyStandardDeviationPInSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyStandardDeviationPInSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyStandardDeviationPInSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyStandardDeviationPInSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "stdDevPSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>StdDevP Subtotal.Represents the following attribute in the schema: stdDevPSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyVarianceInSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyVarianceInSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyVarianceInSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyVarianceInSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyVarianceInSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyVarianceInSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyVarianceInSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "varSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Variance Subtotal.Represents the following attribute in the schema: varSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyVariancePInSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ApplyVariancePInSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ApplyVariancePInSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyVariancePInSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplyVariancePInSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ApplyVariancePInSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ApplyVariancePInSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "varPSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>VarP Subtotal.Represents the following attribute in the schema: varPSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoShow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AutoShow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AutoShow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.AutoShow" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoShow As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AutoShow : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.AutoShow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "autoShow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Auto Show.Represents the following attribute in the schema: autoShow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSortScope">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.AutoSortScope AutoSortScope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.AutoSortScope AutoSortScope" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.AutoSortScope" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoSortScope As AutoSortScope" />
+      <MemberSignature Language="F#" Value="member this.AutoSortScope : DocumentFormat.OpenXml.Spreadsheet.AutoSortScope with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.AutoSortScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.AutoSortScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>AutoSort Scope. Represents the following element tag in the schema: x:autoSortScope</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.AutoSortScope" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="AverageSubTotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AverageSubTotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AverageSubTotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.AverageSubTotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property AverageSubTotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AverageSubTotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.AverageSubTotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "avgSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Average.Represents the following attribute in the schema: avgSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axis">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt; Axis { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt; Axis" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.Axis" />
+      <MemberSignature Language="VB.NET" Value="Public Property Axis As EnumValue(Of PivotTableAxisValues)" />
+      <MemberSignature Language="F#" Value="member this.Axis : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.Axis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "axis")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Axis.Represents the following attribute in the schema: axis</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.PivotField.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="pivotField.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compact">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Compact { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Compact" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.Compact" />
+      <MemberSignature Language="VB.NET" Value="Public Property Compact As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Compact : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.Compact" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "compact")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Compact.Represents the following attribute in the schema: compact</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CountASubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue CountASubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue CountASubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.CountASubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property CountASubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.CountASubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.CountASubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "countASubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CountA.Represents the following attribute in the schema: countASubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CountSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue CountSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue CountSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.CountSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property CountSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.CountSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.CountSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "countSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Count.Represents the following attribute in the schema: countSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DataField" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DataField" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataField As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DataField : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dataField")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Data Field.Represents the following attribute in the schema: dataField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceSort">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DataSourceSort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DataSourceSort" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DataSourceSort" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataSourceSort As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DataSourceSort : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DataSourceSort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dataSourceSort")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Data Source Sort.Represents the following attribute in the schema: dataSourceSort</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAttributeDrillState">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DefaultAttributeDrillState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DefaultAttributeDrillState" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DefaultAttributeDrillState" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultAttributeDrillState As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DefaultAttributeDrillState : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DefaultAttributeDrillState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "defaultAttributeDrillState")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Drill State.Represents the following attribute in the schema: defaultAttributeDrillState</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DefaultSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DefaultSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DefaultSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DefaultSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DefaultSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "defaultSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Default Subtotal.Represents the following attribute in the schema: defaultSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragOff">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DragOff { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DragOff" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DragOff" />
+      <MemberSignature Language="VB.NET" Value="Public Property DragOff As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DragOff : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DragOff" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dragOff")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Drag Off.Represents the following attribute in the schema: dragOff</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragToColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DragToColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DragToColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property DragToColumn As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DragToColumn : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dragToCol")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Drag To Column.Represents the following attribute in the schema: dragToCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragToData">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DragToData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DragToData" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToData" />
+      <MemberSignature Language="VB.NET" Value="Public Property DragToData As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DragToData : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dragToData")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Field Can Drag to Data.Represents the following attribute in the schema: dragToData</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragToPage">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DragToPage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DragToPage" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToPage" />
+      <MemberSignature Language="VB.NET" Value="Public Property DragToPage As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DragToPage : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dragToPage")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Drag Field to Page.Represents the following attribute in the schema: dragToPage</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragToRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue DragToRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue DragToRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property DragToRow As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.DragToRow : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.DragToRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "dragToRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Drag To Row.Represents the following attribute in the schema: dragToRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HiddenLevel">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue HiddenLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue HiddenLevel" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.HiddenLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Property HiddenLevel As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.HiddenLevel : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.HiddenLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "hiddenLevel")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hidden Level.Represents the following attribute in the schema: hiddenLevel</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideNewItems">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue HideNewItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue HideNewItems" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.HideNewItems" />
+      <MemberSignature Language="VB.NET" Value="Public Property HideNewItems As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.HideNewItems : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.HideNewItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "hideNewItems")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Hide New Items.Represents the following attribute in the schema: hideNewItems</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeNewItemsInFilter">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue IncludeNewItemsInFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue IncludeNewItemsInFilter" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.IncludeNewItemsInFilter" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeNewItemsInFilter As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.IncludeNewItemsInFilter : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.IncludeNewItemsInFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "includeNewItemsInFilter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Inclusive Manual Filter.Represents the following attribute in the schema: includeNewItemsInFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertBlankRow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue InsertBlankRow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue InsertBlankRow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.InsertBlankRow" />
+      <MemberSignature Language="VB.NET" Value="Public Property InsertBlankRow As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.InsertBlankRow : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.InsertBlankRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "insertBlankRow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Insert Blank Row.Represents the following attribute in the schema: insertBlankRow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertPageBreak">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue InsertPageBreak { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue InsertPageBreak" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.InsertPageBreak" />
+      <MemberSignature Language="VB.NET" Value="Public Property InsertPageBreak As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.InsertPageBreak : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.InsertPageBreak" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "insertPageBreak")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Insert Item Page Break.Represents the following attribute in the schema: insertPageBreak</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemPageCount">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ItemPageCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ItemPageCount" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ItemPageCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property ItemPageCount As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ItemPageCount : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ItemPageCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "itemPageCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Items Per Page Count.Represents the following attribute in the schema: itemPageCount</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.Items Items { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.Items Items" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.Items" />
+      <MemberSignature Language="VB.NET" Value="Public Property Items As Items" />
+      <MemberSignature Language="F#" Value="member this.Items : DocumentFormat.OpenXml.Spreadsheet.Items with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Items</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Field Items. Represents the following element tag in the schema: x:items</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Items" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue MaxSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue MaxSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.MaxSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.MaxSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.MaxSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "maxSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Max Subtotal.Represents the following attribute in the schema: maxSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureFilter">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue MeasureFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue MeasureFilter" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.MeasureFilter" />
+      <MemberSignature Language="VB.NET" Value="Public Property MeasureFilter As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.MeasureFilter : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.MeasureFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "measureFilter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Measure Filter.Represents the following attribute in the schema: measureFilter</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue MinSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue MinSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.MinSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.MinSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.MinSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Min Subtotal.Represents the following attribute in the schema: minSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultipleItemSelectionAllowed">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue MultipleItemSelectionAllowed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue MultipleItemSelectionAllowed" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.MultipleItemSelectionAllowed" />
+      <MemberSignature Language="VB.NET" Value="Public Property MultipleItemSelectionAllowed As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.MultipleItemSelectionAllowed : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.MultipleItemSelectionAllowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "multipleItemSelectionAllowed")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Multiple Field Filters.Represents the following attribute in the schema: multipleItemSelectionAllowed</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Name" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Name : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Field Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NonAutoSortDefault">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue NonAutoSortDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue NonAutoSortDefault" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.NonAutoSortDefault" />
+      <MemberSignature Language="VB.NET" Value="Public Property NonAutoSortDefault As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.NonAutoSortDefault : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.NonAutoSortDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "nonAutoSortDefault")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Auto Sort.Represents the following attribute in the schema: nonAutoSortDefault</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberFormatId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value NumberFormatId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value NumberFormatId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.NumberFormatId" />
+      <MemberSignature Language="VB.NET" Value="Public Property NumberFormatId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.NumberFormatId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.NumberFormatId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "numFmtId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Number Format Id.Represents the following attribute in the schema: numFmtId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Outline">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Outline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Outline" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.Outline" />
+      <MemberSignature Language="VB.NET" Value="Public Property Outline As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Outline : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.Outline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "outline")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Outline Items.Represents the following attribute in the schema: outline</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PivotFieldExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.PivotFieldExtensionList PivotFieldExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.PivotFieldExtensionList PivotFieldExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.PivotFieldExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property PivotFieldExtensionList As PivotFieldExtensionList" />
+      <MemberSignature Language="F#" Value="member this.PivotFieldExtensionList : DocumentFormat.OpenXml.Spreadsheet.PivotFieldExtensionList with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.PivotFieldExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.PivotFieldExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Future Feature Data Storage Area. Represents the following element tag in the schema: x:extLst</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="RankBy">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value RankBy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value RankBy" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.RankBy" />
+      <MemberSignature Language="VB.NET" Value="Public Property RankBy As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.RankBy : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.RankBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "rankBy")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Auto Show Rank By.Represents the following attribute in the schema: rankBy</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerField">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ServerField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ServerField" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ServerField" />
+      <MemberSignature Language="VB.NET" Value="Public Property ServerField As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ServerField : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ServerField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "serverField")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Server-based Page Field.Represents the following attribute in the schema: serverField</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowAll">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowAll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowAll" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowAll" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowAll As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowAll : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showAll")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show All Items.Represents the following attribute in the schema: showAll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDropDowns">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowDropDowns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowDropDowns" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowDropDowns" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowDropDowns As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowDropDowns : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowDropDowns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showDropDowns")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show PivotField Header Drop Downs.Represents the following attribute in the schema: showDropDowns</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPropAsCaption">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowPropAsCaption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowPropAsCaption" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowPropAsCaption" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowPropAsCaption As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowPropAsCaption : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowPropAsCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showPropAsCaption")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show As Caption.Represents the following attribute in the schema: showPropAsCaption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPropCell">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowPropCell { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowPropCell" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowPropCell" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowPropCell As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowPropCell : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowPropCell" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showPropCell")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Member Property in Cell.Represents the following attribute in the schema: showPropCell</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPropertyTooltip">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowPropertyTooltip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowPropertyTooltip" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowPropertyTooltip" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowPropertyTooltip As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowPropertyTooltip : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.ShowPropertyTooltip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showPropTip")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Member Property ToolTip.Represents the following attribute in the schema: showPropTip</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.FieldSortValues&gt; SortType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.FieldSortValues&gt; SortType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.SortType" />
+      <MemberSignature Language="VB.NET" Value="Public Property SortType As EnumValue(Of FieldSortValues)" />
+      <MemberSignature Language="F#" Value="member this.SortType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.FieldSortValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.SortType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "sortType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.FieldSortValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Auto Sort Type.Represents the following attribute in the schema: sortType</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubtotalCaption">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue SubtotalCaption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue SubtotalCaption" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.SubtotalCaption" />
+      <MemberSignature Language="VB.NET" Value="Public Property SubtotalCaption As StringValue" />
+      <MemberSignature Language="F#" Value="member this.SubtotalCaption : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.SubtotalCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "subtotalCaption")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Custom Subtotal Caption.Represents the following attribute in the schema: subtotalCaption</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubtotalTop">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SubtotalTop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SubtotalTop" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.SubtotalTop" />
+      <MemberSignature Language="VB.NET" Value="Public Property SubtotalTop As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SubtotalTop : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.SubtotalTop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "subtotalTop")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Subtotals At Top.Represents the following attribute in the schema: subtotalTop</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SumSubtotal">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SumSubtotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SumSubtotal" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.SumSubtotal" />
+      <MemberSignature Language="VB.NET" Value="Public Property SumSubtotal As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SumSubtotal : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.SumSubtotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "sumSubtotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Sum Subtotal.Represents the following attribute in the schema: sumSubtotal</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopAutoShow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue TopAutoShow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue TopAutoShow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.TopAutoShow" />
+      <MemberSignature Language="VB.NET" Value="Public Property TopAutoShow As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.TopAutoShow : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.TopAutoShow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "topAutoShow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Top Auto Show.Represents the following attribute in the schema: topAutoShow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UniqueMemberProperty">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue UniqueMemberProperty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue UniqueMemberProperty" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.PivotField.UniqueMemberProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Property UniqueMemberProperty As StringValue" />
+      <MemberSignature Language="F#" Value="member this.UniqueMemberProperty : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.PivotField.UniqueMemberProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "uniqueMemberProperty")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unique Member Property.Represents the following attribute in the schema: uniqueMemberProperty</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

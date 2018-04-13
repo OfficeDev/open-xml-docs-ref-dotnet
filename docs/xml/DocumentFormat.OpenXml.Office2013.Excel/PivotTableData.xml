@@ -1,0 +1,304 @@
+﻿<Type Name="PivotTableData" FullName="DocumentFormat.OpenXml.Office2013.Excel.PivotTableData">
+  <TypeSignature Language="C#" Value="public class PivotTableData : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PivotTableData extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData" />
+  <TypeSignature Language="VB.NET" Value="Public Class PivotTableData&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type PivotTableData = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Excel.PivotRow), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the PivotTableData Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is x15:pivotTableData.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.4.63   pivotTableData*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ A *pivotTableData* element\<40> is a CT_PivotTableData element that specifies the PivotValues of a PivotTable ([ISO/IEC-29500-1] section 18.10), specified by the pivotTableReference element in the extension of a workbook. See section 2.2.4.4 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1]. If the PivotTable ([ISO/IEC-29500-1] section 18.10) is not a Non-Worksheet PivotTable, MUST NOT be specified.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
+  
+ *\<xsd:element name="pivotTableData" type="CT_PivotTableData"/>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ *2.6.133   CT_PivotTableData*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ *Referenced by:* pivotTableData  
+  
+ The *CT_PivotTableData* complex type specifies the *PivotValues* (section 2.3.4) of the *PivotTable* ([ISO/IEC-29500-1] section 18.10) that is specified by the *pivotTableReference* (section 2.4.1) element in the extension of a workbook (section 2.2.4.10).\<109>  
+  
+ *Child Elements:*  
+  
+ *pivotRow:* A *CT_PivotRow* (section 2.6.134) element that specifies a single row of *PivotValueCells* (section 2.3.4.1) in an element of this type in the *PivotTable* ([ISO/IEC-29500-1] section 18.10) that is specified by the *pivotTableReference* (section 2.4.1) element in the extension of a workbook (section 2.2.4.10).  
+  
+ *Attributes:*  
+  
+ *rowCount:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the number of *pivotRow* child elements in an element of this type. This value MUST be equal to the value of the *count* attribute of the *rowItems* element, as specified in [ISO/IEC-29500-1] section 18.10.1.84.  
+  
+ *columnCount:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute specifying the number of *PivotValueCells* (section 2.3.4.1) that are specified by the *CT_PivotValueCell* (section 2.6.135) complex type in each of the *pivotRow* child elements of this type. This value MUST be equal to the value of the *count* attribute in the *pivotRow* element, as specified by the *CT_PivotRow* (section 2.6.134) complex type. This value MUST be equal to the value of the *count* attribute of the *colItems*, ([ISO/IEC-29500-1] section 18.10.1.17) element.  
+  
+ *cacheId:* An *unsignedInt* ([XMLSCHEMA2] section 3.3.22) attribute that specifies the associated OLAP PivotTable ([ISO/IEC-29500-1] section 18.10) PivotCache.  
+  
+ The OLAP PivotTable PivotCache that is specified by this attribute MUST be extended by an *ext* ([ISO/IEC-29500-1] section 18.2.7) element that has a structure specified by a *CT_PivotCacheDefinition* (section 2.6.33) element. The *pivotCacheId* attribute of such a *CT_PivotCacheDefinition* element MUST be equal to this attribute.  
+  
+ The OLAP PivotTable PivotCache that is specified by this attribute MUST also be extended by an *ext* element that has structure specified by a *CT_PivotCacheIdVersion* (section 2.6.139) element.  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_PivotTableData">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="pivotRow" type="CT_PivotRow" minOccurs="1" maxOccurs="unbounded"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="rowCount" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="columnCount" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="cacheId" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotTableData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the PivotTableData class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotTableData (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Excel.PivotTableData : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Office2013.Excel.PivotTableData" Usage="new DocumentFormat.OpenXml.Office2013.Excel.PivotTableData childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the PivotTableData class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotTableData (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Excel.PivotTableData : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Office2013.Excel.PivotTableData" Usage="new DocumentFormat.OpenXml.Office2013.Excel.PivotTableData childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the PivotTableData class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PivotTableData (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Excel.PivotTableData : string -&gt; DocumentFormat.OpenXml.Office2013.Excel.PivotTableData" Usage="new DocumentFormat.OpenXml.Office2013.Excel.PivotTableData outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the PivotTableData class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value CacheId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value CacheId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.CacheId" />
+      <MemberSignature Language="VB.NET" Value="Public Property CacheId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.CacheId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.CacheId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "cacheId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>cacheId.Represents the following attribute in the schema: cacheId</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="pivotTableData.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnCount">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ColumnCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ColumnCount" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.ColumnCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property ColumnCount As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ColumnCount : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.ColumnCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "columnCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>columnCount.Represents the following attribute in the schema: columnCount</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowCount">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value RowCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value RowCount" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.RowCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property RowCount As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.RowCount : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.PivotTableData.RowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "rowCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>rowCount.Represents the following attribute in the schema: rowCount</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

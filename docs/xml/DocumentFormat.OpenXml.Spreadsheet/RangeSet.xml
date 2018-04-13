@@ -1,0 +1,384 @@
+﻿<Type Name="RangeSet" FullName="DocumentFormat.OpenXml.Spreadsheet.RangeSet">
+  <TypeSignature Language="C#" Value="public class RangeSet : DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RangeSet extends DocumentFormat.OpenXml.OpenXmlLeafElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.RangeSet" />
+  <TypeSignature Language="VB.NET" Value="Public Class RangeSet&#xA;Inherits OpenXmlLeafElement" />
+  <TypeSignature Language="F#" Value="type RangeSet = class&#xA;    inherit OpenXmlLeafElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlLeafElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Range Set. When the object is serialized out as xml, its qualified name is x:rangeSet.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `rangeSet (Range Set)`  
+  
+ Represents a single range in the rangeSets collection. element is intended to facilitate creating a PivotTable report by consolidating SpreadsheetML ranges that have similar categories of data to be summarized. The simplest layout for the data source is for each rangeSets of data to be in list-like format, with column labels in the first row, row labels in the first column, the rest of the rows having similar items in the same row and column, and no blank rows or columns within the range. A particular rangeSet can consist of a built-in named range that is provided by the application,  a user defined named range, a range reference, or a reference to an external workbook.  
+  
+ When multiple ranges are consolidated using this functionality, up to 4 custom report filters (also known as page fields) can be created to help filter the PivotTable report, by specifically enabling one or more of the individual ranges to be selected in the report filter. For each custom page field created, a custom label can be specified and assigned to each range participating in the consolidation range, so that the PivotTable can be filtered by one or more of the ranges being summarized.  
+  
+ [*Example*:Consider a workbook with 6 worksheets. On Sheet1 we have:  
+  
+ 00cfa900-e26c-47f7-af92-700036912181  
+  
+ On Sheet2 we have:  
+  
+ c6bee0fb-5844-4b3e-b9ed-403edbfcee23  
+  
+ … and so on up through Sheet5.  
+  
+ On Sheet6, we have the consolidated ranges being summarized by a PivotTable, and two page filters exist for the PivotTable.  
+  
+ 8a269c06-dfb2-4f3a-8061-b81d3d1f02af  
+  
+ Notice that for the second page filter, the items have been assigned a custom label, "one", "two", …, "five", for each of Sheet1, Sheet2, …, Sheet5 data sources, respectively. Similarly, the items have been assigned a custom label, "1", "2", …, "5" for each of Sheet1, Sheet2, …, Shet5 data sources, respectively.  
+  
+ The XML representing these custom page filters must be like the following:  
+  
+```xml  
+<cacheSource type="consolidation">  
+  <consolidation autoPage="0">  
+    <pages count="2">  
+      <page count="5">  
+        <pageItem name="1"/>  
+        <pageItem name="2"/>  
+        <pageItem name="3"/>  
+        <pageItem name="4"/>  
+        <pageItem name="5"/>  
+      </page>  
+      <page count="5">  
+        <pageItem name="one"/>  
+        <pageItem name="two"/>  
+        <pageItem name="three"/>  
+        <pageItem name="four"/>  
+        <pageItem name="five"/>  
+      </page>  
+    </pages>  
+    <rangeSets count="5">  
+      <rangeSet i1="0" i2="0" ref="A1:B3" sheet="Sheet1"/>  
+      <rangeSet i1="1" i2="1" ref="A1:B3" sheet="Sheet2"/>  
+      <rangeSet i1="2" i2="2" ref="A1:B3" sheet="Sheet3"/>  
+      <rangeSet i1="3" i2="3" ref="A1:B3" sheet="Sheet4"/>  
+      <rangeSet i1="4" i2="4" ref="A1:B3" sheet="Sheet5"/>  
+    </rangeSets>  
+  </consolidation>  
+</cacheSource>  
+```  
+  
+ *end example*]  
+  
+ [*Note*: Attributes i1, i2, i3, and i4 correspond to custom page fields created in the user interface. Spreadsheet ML only supports 4 custom page fields. *end note*]  
+  
+|Parent Elements|  
+|---------------------|  
+|rangeSets (§18.10.1.80)|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|i1 (Field Item Index Page 1)|Specifies the index of a page field item in page filter one.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|i2 (Field Item Index Page 2)|Specifies the index of a page field item in page filter two.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|i3 (Field Item index Page 3)|Specifies the index of a page field item in page filter three.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|i4 (Field Item Index Page 4)|Specifies the index of a page field item in page filter four.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|id (Relationship Id)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Specifies the unique identifier of the Workbook part where the range set is stored. See Workbook (§18.2) for more information.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
+|name (Named Range)|Specifies the named range.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|ref (Reference)|Specifies the cell range.<br /><br /> The possible values for this attribute are defined by the *ST_Ref* simple type (§18.18.62).|  
+|sheet (Sheet Name)|Specifies the sheet name.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_RangeSet) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RangeSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.RangeSet.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the RangeSet class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.RangeSet.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="rangeSet.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldItemIndexPage1">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage1 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage1" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage1" />
+      <MemberSignature Language="VB.NET" Value="Public Property FieldItemIndexPage1 As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.FieldItemIndexPage1 : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "i1")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Field Item Index Page 1.Represents the following attribute in the schema: i1</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldItemIndexPage2">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage2" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage2" />
+      <MemberSignature Language="VB.NET" Value="Public Property FieldItemIndexPage2 As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.FieldItemIndexPage2 : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "i2")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Field Item Index Page 2.Represents the following attribute in the schema: i2</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldItemIndexPage3">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage3 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage3" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage3" />
+      <MemberSignature Language="VB.NET" Value="Public Property FieldItemIndexPage3 As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.FieldItemIndexPage3 : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage3" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "i3")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Field Item index Page 3.Represents the following attribute in the schema: i3</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldItemIndexPage4">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage4 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value FieldItemIndexPage4" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage4" />
+      <MemberSignature Language="VB.NET" Value="Public Property FieldItemIndexPage4 As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.FieldItemIndexPage4 : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.FieldItemIndexPage4" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "i4")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Field Item Index Page 4.Represents the following attribute in the schema: i4</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Id" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.Id" />
+      <MemberSignature Language="VB.NET" Value="Public Property Id As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Id : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(19, "id")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Relationship Id.Represents the following attribute in the schema: r:id</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+        <remark> xmlns:r=http://schemas.openxmlformats.org/officeDocument/2006/relationships
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Name" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Name : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Named Range.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reference">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Reference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Reference" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.Reference" />
+      <MemberSignature Language="VB.NET" Value="Public Property Reference As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Reference : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.Reference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "ref")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Reference.Represents the following attribute in the schema: ref</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sheet">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Sheet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Sheet" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.RangeSet.Sheet" />
+      <MemberSignature Language="VB.NET" Value="Public Property Sheet As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Sheet : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.RangeSet.Sheet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "sheet")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Sheet Name.Represents the following attribute in the schema: sheet</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

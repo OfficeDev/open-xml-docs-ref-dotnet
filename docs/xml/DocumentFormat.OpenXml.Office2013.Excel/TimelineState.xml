@@ -1,0 +1,545 @@
+﻿<Type Name="TimelineState" FullName="DocumentFormat.OpenXml.Office2013.Excel.TimelineState">
+  <TypeSignature Language="C#" Value="public class TimelineState : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TimelineState extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Office2013.Excel.TimelineState" />
+  <TypeSignature Language="VB.NET" Value="Public Class TimelineState&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type TimelineState = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Excel.SelectionTimelineRange), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Excel.BoundsTimelineRange), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Office2013.Excel.ExtensionList), DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2013)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the TimelineState Class.This class is only available in Office2013. When the object is serialized out as xml, its qualified name is x15:state.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *2.6.116   CT_TimelineState*  
+  
+ *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2010/11/main  
+  
+ *Referenced by:* CT_TimelineCacheDefinition  
+  
+ The *CT_TimelineState* complex type specifies the *Timeline state* (section 2.3.5.1.4) of the *Timeline cache* (section 2.3.5.1).\<92>  
+  
+ *Child Elements:*  
+  
+ *selection:* A *CT_TimelineRange* element (section 2.6.115) that specifies the start and end dates that are selected in the *Timeline view* (section 2.3.5.2). The start and end dates in the selection element MUST be interpreted as *dateTime* values ([XMLSCHEMA2] section 3.2.7).  
+  
+ *bounds:* A *CT_TimelineRange* element that specifies the minimum and maximum dates available for display in the *Timeline view*. The minimum and maximum dates in the bounds element MUST be interpreted as *dateTime* values ([XMLSCHEMA2] section 3.2.7).  
+  
+ *movingPeriodState:* A *CT_MovingPeriodState* element (section 2.6.140) that specifies the current state of the moving period associated with the *Timeline state* of the *Timeline cache* specified by this element.  
+  
+ This element MUST exist only if the *singleRangeFilterState* attribute of this element is TRUE. It MUST exist only if the *CT_TimelineRange* element exists within the parent element of this type.  
+  
+ *extLst:* A *CT_ExtensionList* element ([ISO/IEC-29500-4] section A.2) that specifies future extensibility for this element.  
+  
+ *Attributes:*  
+  
+ *singleRangeFilterState:* A *Boolean* attribute ([XMLSCHEMA2] section 3.2.2) that specifies whether the filtering state of the *Timeline* (section 2.3.5) is a contiguous date range.  
+  
+ *minimalRefreshVersion:* An *unsignedInt* attribute ([XMLSCHEMA2] section 3.3.22) that specifies the minimum application version required to refresh the *Timeline cache.*  
+  
+ *lastRefreshVersion:* An *unsignedInt* attribute that specifies the application version that last refreshed the *Timeline cache.*  
+  
+ *pivotCacheId:* An *unsignedInt* attribute that specifies the associated OLAP PivotTable ([ISO/IEC-29500-1] section 18.10) PivotCache. This element MUST be equal to the *pivotCacheId* attribute of an existing *CT_PivotCacheDefiniton* element (section 2.6.33).  
+  
+ *filterType:* An *ST_PivotFilterType* attribute ([ISO/IEC-29500-1] section 18.18.59) that specifies type of the *filter* ([ISO/IEC-29500-1] section 18.10.1.33) used in the *Timeline.*  
+  
+ The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
+  
+ *\<xsd:complexType name="CT_TimelineState">*  
+  
+ *\<xsd:sequence>*  
+  
+ *\<xsd:element name="selection" type="CT_TimelineRange" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="bounds" type="CT_TimelineRange" minOccurs="1" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="movingPeriodState" type="CT_MovingPeriodState" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\<xsd:element name="extLst" type="x:CT_ExtensionList" minOccurs="0" maxOccurs="1"/>*  
+  
+ *\</xsd:sequence>*  
+  
+ *\<xsd:attribute name="singleRangeFilterState" type="xsd:boolean" use="optional" default="true"/>*  
+  
+ *\<xsd:attribute name="minimalRefreshVersion" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="lastRefreshVersion" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="pivotCacheId" type="xsd:unsignedInt" use="required"/>*  
+  
+ *\<xsd:attribute name="filterType" use="required" type="x:ST_PivotFilterType"/>*  
+  
+ *\</xsd:complexType>*  
+  
+ See section 5.3 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimelineState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the TimelineState class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimelineState (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Excel.TimelineState : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Office2013.Excel.TimelineState" Usage="new DocumentFormat.OpenXml.Office2013.Excel.TimelineState childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the TimelineState class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimelineState (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Excel.TimelineState : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Office2013.Excel.TimelineState" Usage="new DocumentFormat.OpenXml.Office2013.Excel.TimelineState childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the TimelineState class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimelineState (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Office2013.Excel.TimelineState : string -&gt; DocumentFormat.OpenXml.Office2013.Excel.TimelineState" Usage="new DocumentFormat.OpenXml.Office2013.Excel.TimelineState outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the TimelineState class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BoundsTimelineRange">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Excel.BoundsTimelineRange BoundsTimelineRange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Excel.BoundsTimelineRange BoundsTimelineRange" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.BoundsTimelineRange" />
+      <MemberSignature Language="VB.NET" Value="Public Property BoundsTimelineRange As BoundsTimelineRange" />
+      <MemberSignature Language="F#" Value="member this.BoundsTimelineRange : DocumentFormat.OpenXml.Office2013.Excel.BoundsTimelineRange with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.BoundsTimelineRange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.BoundsTimelineRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>BoundsTimelineRange. Represents the following element tag in the schema: x15:bounds</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x15 = http://schemas.microsoft.com/office/spreadsheetml/2010/11/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="timelineState.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Excel.ExtensionList ExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Excel.ExtensionList ExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.ExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtensionList As ExtensionList" />
+      <MemberSignature Language="F#" Value="member this.ExtensionList : DocumentFormat.OpenXml.Office2013.Excel.ExtensionList with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.ExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.ExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ExtensionList. Represents the following element tag in the schema: x15:extLst</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x15 = http://schemas.microsoft.com/office/spreadsheetml/2010/11/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value FilterId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value FilterId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterId" />
+      <MemberSignature Language="VB.NET" Value="Public Property FilterId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.FilterId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "filterId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>filterId.Represents the following attribute in the schema: filterId</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterPivotName">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue FilterPivotName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue FilterPivotName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterPivotName" />
+      <MemberSignature Language="VB.NET" Value="Public Property FilterPivotName As StringValue" />
+      <MemberSignature Language="F#" Value="member this.FilterPivotName : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterPivotName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "filterPivotName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>filterPivotName.Represents the following attribute in the schema: filterPivotName</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTabId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value FilterTabId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value FilterTabId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterTabId" />
+      <MemberSignature Language="VB.NET" Value="Public Property FilterTabId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.FilterTabId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterTabId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "filterTabId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>filterTabId.Represents the following attribute in the schema: filterTabId</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterType">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotFilterValues&gt; FilterType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.PivotFilterValues&gt; FilterType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterType" />
+      <MemberSignature Language="VB.NET" Value="Public Property FilterType As EnumValue(Of PivotFilterValues)" />
+      <MemberSignature Language="F#" Value="member this.FilterType : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotFilterValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.FilterType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "filterType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.PivotFilterValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>filterType.Represents the following attribute in the schema: filterType</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastRefreshVersion">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value LastRefreshVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value LastRefreshVersion" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.LastRefreshVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property LastRefreshVersion As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.LastRefreshVersion : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.LastRefreshVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "lastRefreshVersion")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>lastRefreshVersion.Represents the following attribute in the schema: lastRefreshVersion</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimalRefreshVersion">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value MinimalRefreshVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value MinimalRefreshVersion" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.MinimalRefreshVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinimalRefreshVersion As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.MinimalRefreshVersion : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.MinimalRefreshVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minimalRefreshVersion")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>minimalRefreshVersion.Represents the following attribute in the schema: minimalRefreshVersion</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MovingPeriodState">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState MovingPeriodState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState MovingPeriodState" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.MovingPeriodState" />
+      <MemberSignature Language="VB.NET" Value="Public Property MovingPeriodState As MovingPeriodState" />
+      <MemberSignature Language="F#" Value="member this.MovingPeriodState : DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.MovingPeriodState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MovingPeriodState. Represents the following element tag in the schema: x15:movingPeriodState</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x15 = http://schemas.microsoft.com/office/spreadsheetml/2010/11/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="PivotCacheId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value PivotCacheId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value PivotCacheId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.PivotCacheId" />
+      <MemberSignature Language="VB.NET" Value="Public Property PivotCacheId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.PivotCacheId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.PivotCacheId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "pivotCacheId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>pivotCacheId.Represents the following attribute in the schema: pivotCacheId</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionTimelineRange">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Office2013.Excel.SelectionTimelineRange SelectionTimelineRange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Office2013.Excel.SelectionTimelineRange SelectionTimelineRange" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.SelectionTimelineRange" />
+      <MemberSignature Language="VB.NET" Value="Public Property SelectionTimelineRange As SelectionTimelineRange" />
+      <MemberSignature Language="F#" Value="member this.SelectionTimelineRange : DocumentFormat.OpenXml.Office2013.Excel.SelectionTimelineRange with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.SelectionTimelineRange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Office2013.Excel.SelectionTimelineRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SelectionTimelineRange. Represents the following element tag in the schema: x15:selection</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x15 = http://schemas.microsoft.com/office/spreadsheetml/2010/11/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleRangeFilterState">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue SingleRangeFilterState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue SingleRangeFilterState" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Office2013.Excel.TimelineState.SingleRangeFilterState" />
+      <MemberSignature Language="VB.NET" Value="Public Property SingleRangeFilterState As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.SingleRangeFilterState : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Office2013.Excel.TimelineState.SingleRangeFilterState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "singleRangeFilterState")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>singleRangeFilterState.Represents the following attribute in the schema: singleRangeFilterState</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

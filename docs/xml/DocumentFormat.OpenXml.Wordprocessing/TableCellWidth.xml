@@ -1,0 +1,155 @@
+﻿<Type Name="TableCellWidth" FullName="DocumentFormat.OpenXml.Wordprocessing.TableCellWidth">
+  <TypeSignature Language="C#" Value="public class TableCellWidth : DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableCellWidth extends DocumentFormat.OpenXml.Wordprocessing.TableWidthType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.TableCellWidth" />
+  <TypeSignature Language="VB.NET" Value="Public Class TableCellWidth&#xA;Inherits TableWidthType" />
+  <TypeSignature Language="F#" Value="type TableCellWidth = class&#xA;    inherit TableWidthType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.TableWidthType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Defines the TableCellWidth Class. When the object is serialized out as xml, its qualified name is w:tcW.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **tcW (Preferred Table Cell Width)**  
+  
+ This element specifies the preferred width for this table cell. This preferred width is used as part of the table layout algorithm specified by the tblLayout element (§17.4.53; §17.4.54) - full description of the algorithm in the ST_TblLayout simple type (§17.18.87).  
+  
+ All widths in a table are considered preferred because:  
+  
+-   The table shall satisfy the shared columns as specified by the tblGrid element (§17.4.49)  
+  
+-   Two or more widths can have conflicting values for the width of the same grid column  
+  
+-   The table layout algorithm (§17.18.87) can require a preference to be overridden  
+  
+ This value is specified in the units applied via its type attribute. Any width value of type *pct* for this element shall be calculated relative to the overall width of the table.  
+  
+ If this element is omitted, then the cell width shall be of type *auto*.  
+  
+ [*Example*: Consider a WordprocessingML table defined as follows:  
+  
+```xml  
+<w:tbl>  
+  <w:tr>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:tcW w:type="pct" w:w="33.3%"/>  
+      </w:tcPr>  
+      …    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:tcW w:type="pct" w:w="33.3%"/>  
+      </w:tcPr>  
+      …    </w:tc>  
+    <w:tc>  
+      <w:tcPr>  
+        <w:tcW w:type="pct" w:w="33.3%"/>  
+      </w:tcPr>  
+      …    </w:tc>  
+  </w:tr>  
+</w:tbl>  
+```  
+  
+ This table specifies that it has no preferred table width, but each cell must be exactly 33.3 percent of the overall table width. The resulting table would therefore be sized such that all columns are of the width of the maximum column, as follows:  
+  
+ Hello world  
+  
+ The text *Hello world* makes the middle cell larger, and the other two cells are increased in size to maintain the preferred widths of one-third of the overall table width. However, when the middle table cell requires a larger size to accommodate non-breaking text, that preference can be overridden as needed:  
+  
+ Hello worlddddddddddddddddddddddddddddddddddd  
+  
+ In this case, the middle cell's long non breaking string caused the table to reach the text margins on the page, and therefore to override the preferred widths on the empty cells. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tcPr (§17.7.6.8); tcPr (§17.7.6.9); tcPr (§17.4.70); tcPr (§17.4.71)|  
+  
+ This element’s content model is defined by the common table measurement definition in §17.4.88.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TableCellWidth ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.TableCellWidth.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the TableCellWidth class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.TableCellWidth.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="tableCellWidth.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.TableCellWidth.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.TableCellWidth.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

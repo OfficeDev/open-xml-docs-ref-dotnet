@@ -1,0 +1,1433 @@
+﻿<Type Name="MainDocumentPart" FullName="DocumentFormat.OpenXml.Packaging.MainDocumentPart">
+  <TypeSignature Language="C#" Value="public class MainDocumentPart : DocumentFormat.OpenXml.Packaging.OpenXmlPart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MainDocumentPart extends DocumentFormat.OpenXml.Packaging.OpenXmlPart" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Packaging.MainDocumentPart" />
+  <TypeSignature Language="VB.NET" Value="Public Class MainDocumentPart&#xA;Inherits OpenXmlPart" />
+  <TypeSignature Language="F#" Value="type MainDocumentPart = class&#xA;    inherit OpenXmlPart" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Packaging.OpenXmlPart</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Defines the MainDocumentPart.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ The following code example opens a word-processing document, instantiates the document main part, reads the comments from the comment part, and displays them.  
+  
+```csharp  
+using System;  
+using System.IO;  
+using DocumentFormat.OpenXml.Packaging;  
+  
+namespace MainDocumentPartEx  
+{  
+    class Program  
+    {  
+        // Get the contents of a document part.  
+        static void Main(string[] args)  
+        {  
+            string document = @"C:\Users\Public\Documents\MainDocumentPartEx.docx";  
+            string comments = null;  
+  
+            // Open the file read-only.  
+            using (WordprocessingDocument wordprocessingDocument =   
+                WordprocessingDocument.Open(document, false))  
+            {  
+                MainDocumentPart mainPart = wordprocessingDocument.MainDocumentPart;  
+                WordprocessingCommentsPart WordprocessingCommentsPart =   
+                    mainPart.WordprocessingCommentsPart;  
+  
+                // Read the comments using a stream reader.  
+                using (StreamReader streamReader =   
+                    new StreamReader(WordprocessingCommentsPart.GetStream()))  
+                {  
+                    comments = streamReader.ReadToEnd();  
+                }  
+            }  
+            Console.WriteLine(comments);  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+  
+```  
+  
+```vb  
+Imports System.IO  
+Imports DocumentFormat.OpenXml.Packaging  
+  
+Module Module1  
+    ' Get the contents of a document part.  
+    Sub Main(ByVal args As String())  
+        Dim document As String = "C:\Users\Public\Documents\MainDocumentPartEx.docx"  
+        Dim comments As String = Nothing  
+  
+        ' Open the file read-only.  
+        Using wordprocessingDocument As WordprocessingDocument = wordprocessingDocument.Open(document, False)  
+            Dim mainPart As MainDocumentPart = wordprocessingDocument.MainDocumentPart  
+            Dim WordprocessingCommentsPart As WordprocessingCommentsPart = mainPart.WordprocessingCommentsPart  
+  
+            ' Read the comments using a stream reader.  
+            Using streamReader As New StreamReader(WordprocessingCommentsPart.GetStream())  
+                comments = streamReader.ReadToEnd()  
+            End Using  
+        End Using  
+        Console.WriteLine(comments)  
+        Console.ReadKey()  
+    End Sub  
+End Module  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected internal MainDocumentPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Construtor of MainDocumentPart</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAlternativeFormatImportPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart (DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType partType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart(valuetype DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType partType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddAlternativeFormatImportPart(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddAlternativeFormatImportPart (partType As AlternativeFormatImportPartType) As AlternativeFormatImportPart" />
+      <MemberSignature Language="F#" Value="member this.AddAlternativeFormatImportPart : DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType -&gt; DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart" Usage="mainDocumentPart.AddAlternativeFormatImportPart partType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the AlternativeFormatImportPart</param>
+        <summary>Adds a AlternativeFormatImportPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAlternativeFormatImportPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddAlternativeFormatImportPart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddAlternativeFormatImportPart (contentType As String) As AlternativeFormatImportPart" />
+      <MemberSignature Language="F#" Value="member this.AddAlternativeFormatImportPart : string -&gt; DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart" Usage="mainDocumentPart.AddAlternativeFormatImportPart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the AlternativeFormatImportPart</param>
+        <summary>Adds a AlternativeFormatImportPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAlternativeFormatImportPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart (DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType partType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart(valuetype DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType partType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddAlternativeFormatImportPart(DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddAlternativeFormatImportPart (partType As AlternativeFormatImportPartType, id As String) As AlternativeFormatImportPart" />
+      <MemberSignature Language="F#" Value="member this.AddAlternativeFormatImportPart : DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType * string -&gt; DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart" Usage="mainDocumentPart.AddAlternativeFormatImportPart (partType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPartType" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the AlternativeFormatImportPart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a AlternativeFormatImportPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAlternativeFormatImportPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart (string contentType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart AddAlternativeFormatImportPart(string contentType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddAlternativeFormatImportPart(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddAlternativeFormatImportPart (contentType As String, id As String) As AlternativeFormatImportPart" />
+      <MemberSignature Language="F#" Value="member this.AddAlternativeFormatImportPart : string * string -&gt; DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart" Usage="mainDocumentPart.AddAlternativeFormatImportPart (contentType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the AlternativeFormatImportPart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a AlternativeFormatImportPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomXmlPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart (DocumentFormat.OpenXml.Packaging.CustomXmlPartType partType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart(valuetype DocumentFormat.OpenXml.Packaging.CustomXmlPartType partType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddCustomXmlPart(DocumentFormat.OpenXml.Packaging.CustomXmlPartType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddCustomXmlPart (partType As CustomXmlPartType) As CustomXmlPart" />
+      <MemberSignature Language="F#" Value="member this.AddCustomXmlPart : DocumentFormat.OpenXml.Packaging.CustomXmlPartType -&gt; DocumentFormat.OpenXml.Packaging.CustomXmlPart" Usage="mainDocumentPart.AddCustomXmlPart partType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CustomXmlPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.CustomXmlPartType" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the CustomXmlPart.</param>
+        <summary>Adds a CustomXmlPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomXmlPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddCustomXmlPart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddCustomXmlPart (contentType As String) As CustomXmlPart" />
+      <MemberSignature Language="F#" Value="member this.AddCustomXmlPart : string -&gt; DocumentFormat.OpenXml.Packaging.CustomXmlPart" Usage="mainDocumentPart.AddCustomXmlPart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CustomXmlPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the CustomXmlPart.</param>
+        <summary>Adds a CustomXmlPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomXmlPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart (DocumentFormat.OpenXml.Packaging.CustomXmlPartType partType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart(valuetype DocumentFormat.OpenXml.Packaging.CustomXmlPartType partType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddCustomXmlPart(DocumentFormat.OpenXml.Packaging.CustomXmlPartType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddCustomXmlPart (partType As CustomXmlPartType, id As String) As CustomXmlPart" />
+      <MemberSignature Language="F#" Value="member this.AddCustomXmlPart : DocumentFormat.OpenXml.Packaging.CustomXmlPartType * string -&gt; DocumentFormat.OpenXml.Packaging.CustomXmlPart" Usage="mainDocumentPart.AddCustomXmlPart (partType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CustomXmlPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.CustomXmlPartType" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the CustomXmlPart.</param>
+        <param name="id">The relationship id.</param>
+        <summary>Adds a CustomXmlPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomXmlPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart (string contentType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.CustomXmlPart AddCustomXmlPart(string contentType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddCustomXmlPart(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddCustomXmlPart (contentType As String, id As String) As CustomXmlPart" />
+      <MemberSignature Language="F#" Value="member this.AddCustomXmlPart : string * string -&gt; DocumentFormat.OpenXml.Packaging.CustomXmlPart" Usage="mainDocumentPart.AddCustomXmlPart (contentType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CustomXmlPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the CustomXmlPart.</param>
+        <param name="id">The relationship id.</param>
+        <summary>Adds a CustomXmlPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEmbeddedControlPersistencePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart (DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType partType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart(valuetype DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType partType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddEmbeddedControlPersistencePart(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddEmbeddedControlPersistencePart (partType As EmbeddedControlPersistencePartType) As EmbeddedControlPersistencePart" />
+      <MemberSignature Language="F#" Value="member this.AddEmbeddedControlPersistencePart : DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType -&gt; DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart" Usage="mainDocumentPart.AddEmbeddedControlPersistencePart partType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the EmbeddedControlPersistencePart</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEmbeddedControlPersistencePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddEmbeddedControlPersistencePart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddEmbeddedControlPersistencePart (contentType As String) As EmbeddedControlPersistencePart" />
+      <MemberSignature Language="F#" Value="member this.AddEmbeddedControlPersistencePart : string -&gt; DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart" Usage="mainDocumentPart.AddEmbeddedControlPersistencePart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the EmbeddedControlPersistencePart</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEmbeddedControlPersistencePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart (DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType partType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart(valuetype DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType partType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddEmbeddedControlPersistencePart(DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddEmbeddedControlPersistencePart (partType As EmbeddedControlPersistencePartType, id As String) As EmbeddedControlPersistencePart" />
+      <MemberSignature Language="F#" Value="member this.AddEmbeddedControlPersistencePart : DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType * string -&gt; DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart" Usage="mainDocumentPart.AddEmbeddedControlPersistencePart (partType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePartType" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the EmbeddedControlPersistencePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEmbeddedControlPersistencePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart (string contentType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart AddEmbeddedControlPersistencePart(string contentType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddEmbeddedControlPersistencePart(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddEmbeddedControlPersistencePart (contentType As String, id As String) As EmbeddedControlPersistencePart" />
+      <MemberSignature Language="F#" Value="member this.AddEmbeddedControlPersistencePart : string * string -&gt; DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart" Usage="mainDocumentPart.AddEmbeddedControlPersistencePart (contentType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the EmbeddedControlPersistencePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a EmbeddedControlPersistencePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEmbeddedObjectPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart AddEmbeddedObjectPart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart AddEmbeddedObjectPart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddEmbeddedObjectPart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddEmbeddedObjectPart (contentType As String) As EmbeddedObjectPart" />
+      <MemberSignature Language="F#" Value="member this.AddEmbeddedObjectPart : string -&gt; DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart" Usage="mainDocumentPart.AddEmbeddedObjectPart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the EmbeddedObjectPart</param>
+        <summary>Adds a EmbeddedObjectPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEmbeddedPackagePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart AddEmbeddedPackagePart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart AddEmbeddedPackagePart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddEmbeddedPackagePart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddEmbeddedPackagePart (contentType As String) As EmbeddedPackagePart" />
+      <MemberSignature Language="F#" Value="member this.AddEmbeddedPackagePart : string -&gt; DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart" Usage="mainDocumentPart.AddEmbeddedPackagePart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the EmbeddedPackagePart</param>
+        <summary>Adds a EmbeddedPackagePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImagePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart (DocumentFormat.OpenXml.Packaging.ImagePartType partType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart(valuetype DocumentFormat.OpenXml.Packaging.ImagePartType partType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddImagePart(DocumentFormat.OpenXml.Packaging.ImagePartType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddImagePart (partType As ImagePartType) As ImagePart" />
+      <MemberSignature Language="F#" Value="member this.AddImagePart : DocumentFormat.OpenXml.Packaging.ImagePartType -&gt; DocumentFormat.OpenXml.Packaging.ImagePart" Usage="mainDocumentPart.AddImagePart partType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ImagePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ImagePartType" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the ImagePart</param>
+        <summary>Adds a ImagePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImagePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddImagePart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddImagePart (contentType As String) As ImagePart" />
+      <MemberSignature Language="F#" Value="member this.AddImagePart : string -&gt; DocumentFormat.OpenXml.Packaging.ImagePart" Usage="mainDocumentPart.AddImagePart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ImagePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the ImagePart</param>
+        <summary>Adds a ImagePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImagePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart (DocumentFormat.OpenXml.Packaging.ImagePartType partType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart(valuetype DocumentFormat.OpenXml.Packaging.ImagePartType partType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddImagePart(DocumentFormat.OpenXml.Packaging.ImagePartType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddImagePart (partType As ImagePartType, id As String) As ImagePart" />
+      <MemberSignature Language="F#" Value="member this.AddImagePart : DocumentFormat.OpenXml.Packaging.ImagePartType * string -&gt; DocumentFormat.OpenXml.Packaging.ImagePart" Usage="mainDocumentPart.AddImagePart (partType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ImagePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ImagePartType" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the ImagePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a ImagePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImagePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart (string contentType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ImagePart AddImagePart(string contentType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddImagePart(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddImagePart (contentType As String, id As String) As ImagePart" />
+      <MemberSignature Language="F#" Value="member this.AddImagePart : string * string -&gt; DocumentFormat.OpenXml.Packaging.ImagePart" Usage="mainDocumentPart.AddImagePart (contentType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ImagePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the ImagePart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a ImagePart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart (DocumentFormat.OpenXml.Packaging.ThumbnailPartType partType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart(valuetype DocumentFormat.OpenXml.Packaging.ThumbnailPartType partType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddThumbnailPart(DocumentFormat.OpenXml.Packaging.ThumbnailPartType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddThumbnailPart (partType As ThumbnailPartType) As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.AddThumbnailPart : DocumentFormat.OpenXml.Packaging.ThumbnailPartType -&gt; DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="mainDocumentPart.AddThumbnailPart partType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ThumbnailPartType" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the ThumbnailPart</param>
+        <summary>Adds a ThumbnailPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddThumbnailPart(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddThumbnailPart (contentType As String) As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.AddThumbnailPart : string -&gt; DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="mainDocumentPart.AddThumbnailPart contentType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the ThumbnailPart</param>
+        <summary>Adds a ThumbnailPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart (DocumentFormat.OpenXml.Packaging.ThumbnailPartType partType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart(valuetype DocumentFormat.OpenXml.Packaging.ThumbnailPartType partType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddThumbnailPart(DocumentFormat.OpenXml.Packaging.ThumbnailPartType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddThumbnailPart (partType As ThumbnailPartType, id As String) As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.AddThumbnailPart : DocumentFormat.OpenXml.Packaging.ThumbnailPartType * string -&gt; DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="mainDocumentPart.AddThumbnailPart (partType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partType" Type="DocumentFormat.OpenXml.Packaging.ThumbnailPartType" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partType">The part type of the ThumbnailPart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a ThumbnailPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart (string contentType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart AddThumbnailPart(string contentType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddThumbnailPart(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddThumbnailPart (contentType As String, id As String) As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.AddThumbnailPart : string * string -&gt; DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="mainDocumentPart.AddThumbnailPart (contentType, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">the content type of the ThumbnailPart</param>
+        <param name="id">The relationship id</param>
+        <summary>Adds a ThumbnailPart to the MainDocumentPart.</summary>
+        <returns>The newly added part.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddVideoReferenceRelationship">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship AddVideoReferenceRelationship (DocumentFormat.OpenXml.Packaging.MediaDataPart mediaDataPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship AddVideoReferenceRelationship(class DocumentFormat.OpenXml.Packaging.MediaDataPart mediaDataPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddVideoReferenceRelationship(DocumentFormat.OpenXml.Packaging.MediaDataPart)" />
+      <MemberSignature Language="F#" Value="member this.AddVideoReferenceRelationship : DocumentFormat.OpenXml.Packaging.MediaDataPart -&gt; DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship" Usage="mainDocumentPart.AddVideoReferenceRelationship mediaDataPart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mediaDataPart" Type="DocumentFormat.OpenXml.Packaging.MediaDataPart" />
+      </Parameters>
+      <Docs>
+        <param name="mediaDataPart">The specified target <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" />.</param>
+        <summary>Adds a new <see cref="T:DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship" /> to the specified <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" />.</summary>
+        <returns>The new <see cref="T:DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship" />.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="mediaDataPart" /> is null.</exception>
+        <exception cref="T:System.InvalidOperationException">Thrown when the specified <paramref name="mediaDataPart" /> is not in this document.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddVideoReferenceRelationship">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship AddVideoReferenceRelationship (DocumentFormat.OpenXml.Packaging.MediaDataPart mediaDataPart, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship AddVideoReferenceRelationship(class DocumentFormat.OpenXml.Packaging.MediaDataPart mediaDataPart, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AddVideoReferenceRelationship(DocumentFormat.OpenXml.Packaging.MediaDataPart,System.String)" />
+      <MemberSignature Language="F#" Value="member this.AddVideoReferenceRelationship : DocumentFormat.OpenXml.Packaging.MediaDataPart * string -&gt; DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship" Usage="mainDocumentPart.AddVideoReferenceRelationship (mediaDataPart, id)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mediaDataPart" Type="DocumentFormat.OpenXml.Packaging.MediaDataPart" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mediaDataPart">The specified target <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" />.</param>
+        <param name="id">The desired relationship ID.</param>
+        <summary>Adds a new <see cref="T:DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship" /> to the specified <see cref="T:DocumentFormat.OpenXml.Packaging.MediaDataPart" />.</summary>
+        <returns>The new <see cref="T:DocumentFormat.OpenXml.Packaging.VideoReferenceRelationship" />.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="id" /> is null.</exception>
+        <exception cref="T:System.InvalidOperationException">Thrown when the specified <paramref name="mediaDataPart" /> is not in this document.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternativeFormatImportParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart&gt; AlternativeFormatImportParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart&gt; AlternativeFormatImportParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.AlternativeFormatImportParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AlternativeFormatImportParts As IEnumerable(Of AlternativeFormatImportPart)" />
+      <MemberSignature Language="F#" Value="member this.AlternativeFormatImportParts : seq&lt;DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.AlternativeFormatImportParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.AlternativeFormatImportPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the AlternativeFormatImportParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.ChartPart&gt; ChartParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.ChartPart&gt; ChartParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.ChartParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ChartParts As IEnumerable(Of ChartPart)" />
+      <MemberSignature Language="F#" Value="member this.ChartParts : seq&lt;DocumentFormat.OpenXml.Packaging.ChartPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.ChartParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.ChartPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the ChartParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomizationPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.CustomizationPart CustomizationPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.CustomizationPart CustomizationPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.CustomizationPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CustomizationPart As CustomizationPart" />
+      <MemberSignature Language="F#" Value="member this.CustomizationPart : DocumentFormat.OpenXml.Packaging.CustomizationPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.CustomizationPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.CustomizationPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the CustomizationPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomXmlParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.CustomXmlPart&gt; CustomXmlParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.CustomXmlPart&gt; CustomXmlParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.CustomXmlParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CustomXmlParts As IEnumerable(Of CustomXmlPart)" />
+      <MemberSignature Language="F#" Value="member this.CustomXmlParts : seq&lt;DocumentFormat.OpenXml.Packaging.CustomXmlPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.CustomXmlParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.CustomXmlPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the CustomXmlParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramColorsParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramColorsPart&gt; DiagramColorsParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.DiagramColorsPart&gt; DiagramColorsParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramColorsParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DiagramColorsParts As IEnumerable(Of DiagramColorsPart)" />
+      <MemberSignature Language="F#" Value="member this.DiagramColorsParts : seq&lt;DocumentFormat.OpenXml.Packaging.DiagramColorsPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramColorsParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramColorsPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the DiagramColorsParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramDataParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramDataPart&gt; DiagramDataParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.DiagramDataPart&gt; DiagramDataParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramDataParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DiagramDataParts As IEnumerable(Of DiagramDataPart)" />
+      <MemberSignature Language="F#" Value="member this.DiagramDataParts : seq&lt;DocumentFormat.OpenXml.Packaging.DiagramDataPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramDataParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramDataPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the DiagramDataParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramLayoutDefinitionParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart&gt; DiagramLayoutDefinitionParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart&gt; DiagramLayoutDefinitionParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramLayoutDefinitionParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DiagramLayoutDefinitionParts As IEnumerable(Of DiagramLayoutDefinitionPart)" />
+      <MemberSignature Language="F#" Value="member this.DiagramLayoutDefinitionParts : seq&lt;DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramLayoutDefinitionParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramLayoutDefinitionPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the DiagramLayoutDefinitionParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramPersistLayoutParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart&gt; DiagramPersistLayoutParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart&gt; DiagramPersistLayoutParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramPersistLayoutParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DiagramPersistLayoutParts As IEnumerable(Of DiagramPersistLayoutPart)" />
+      <MemberSignature Language="F#" Value="member this.DiagramPersistLayoutParts : seq&lt;DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramPersistLayoutParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramPersistLayoutPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the DiagramPersistLayoutParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiagramStyleParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramStylePart&gt; DiagramStyleParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.DiagramStylePart&gt; DiagramStyleParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramStyleParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DiagramStyleParts As IEnumerable(Of DiagramStylePart)" />
+      <MemberSignature Language="F#" Value="member this.DiagramStyleParts : seq&lt;DocumentFormat.OpenXml.Packaging.DiagramStylePart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.DiagramStyleParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.DiagramStylePart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the DiagramStyleParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Wordprocessing.Document Document { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Wordprocessing.Document Document" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.Document" />
+      <MemberSignature Language="VB.NET" Value="Public Property Document As Document" />
+      <MemberSignature Language="F#" Value="member this.Document : DocumentFormat.OpenXml.Wordprocessing.Document with get, set" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Document</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets/Sets the root element of this part.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentSettingsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.DocumentSettingsPart DocumentSettingsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.DocumentSettingsPart DocumentSettingsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.DocumentSettingsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DocumentSettingsPart As DocumentSettingsPart" />
+      <MemberSignature Language="F#" Value="member this.DocumentSettingsPart : DocumentFormat.OpenXml.Packaging.DocumentSettingsPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.DocumentSettingsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.DocumentSettingsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the DocumentSettingsPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmbeddedControlPersistenceParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart&gt; EmbeddedControlPersistenceParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart&gt; EmbeddedControlPersistenceParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.EmbeddedControlPersistenceParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EmbeddedControlPersistenceParts As IEnumerable(Of EmbeddedControlPersistencePart)" />
+      <MemberSignature Language="F#" Value="member this.EmbeddedControlPersistenceParts : seq&lt;DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.EmbeddedControlPersistenceParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedControlPersistencePart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the EmbeddedControlPersistenceParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmbeddedObjectParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart&gt; EmbeddedObjectParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart&gt; EmbeddedObjectParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.EmbeddedObjectParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EmbeddedObjectParts As IEnumerable(Of EmbeddedObjectPart)" />
+      <MemberSignature Language="F#" Value="member this.EmbeddedObjectParts : seq&lt;DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.EmbeddedObjectParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedObjectPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the EmbeddedObjectParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmbeddedPackageParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart&gt; EmbeddedPackageParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart&gt; EmbeddedPackageParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.EmbeddedPackageParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EmbeddedPackageParts As IEnumerable(Of EmbeddedPackagePart)" />
+      <MemberSignature Language="F#" Value="member this.EmbeddedPackageParts : seq&lt;DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.EmbeddedPackageParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.EmbeddedPackagePart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the EmbeddedPackageParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndnotesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.EndnotesPart EndnotesPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.EndnotesPart EndnotesPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.EndnotesPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EndnotesPart As EndnotesPart" />
+      <MemberSignature Language="F#" Value="member this.EndnotesPart : DocumentFormat.OpenXml.Packaging.EndnotesPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.EndnotesPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.EndnotesPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the EndnotesPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontTablePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.FontTablePart FontTablePart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.FontTablePart FontTablePart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.FontTablePart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FontTablePart As FontTablePart" />
+      <MemberSignature Language="F#" Value="member this.FontTablePart : DocumentFormat.OpenXml.Packaging.FontTablePart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.FontTablePart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.FontTablePart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the FontTablePart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.FooterPart&gt; FooterParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.FooterPart&gt; FooterParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.FooterParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FooterParts As IEnumerable(Of FooterPart)" />
+      <MemberSignature Language="F#" Value="member this.FooterParts : seq&lt;DocumentFormat.OpenXml.Packaging.FooterPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.FooterParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.FooterPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the FooterParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FootnotesPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.FootnotesPart FootnotesPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.FootnotesPart FootnotesPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.FootnotesPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FootnotesPart As FootnotesPart" />
+      <MemberSignature Language="F#" Value="member this.FootnotesPart : DocumentFormat.OpenXml.Packaging.FootnotesPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.FootnotesPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.FootnotesPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the FootnotesPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlossaryDocumentPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart GlossaryDocumentPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart GlossaryDocumentPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.GlossaryDocumentPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property GlossaryDocumentPart As GlossaryDocumentPart" />
+      <MemberSignature Language="F#" Value="member this.GlossaryDocumentPart : DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.GlossaryDocumentPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.GlossaryDocumentPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the GlossaryDocumentPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.HeaderPart&gt; HeaderParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.HeaderPart&gt; HeaderParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.HeaderParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HeaderParts As IEnumerable(Of HeaderPart)" />
+      <MemberSignature Language="F#" Value="member this.HeaderParts : seq&lt;DocumentFormat.OpenXml.Packaging.HeaderPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.HeaderParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.HeaderPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the HeaderParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.ImagePart&gt; ImageParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.ImagePart&gt; ImageParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.ImageParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ImageParts As IEnumerable(Of ImagePart)" />
+      <MemberSignature Language="F#" Value="member this.ImageParts : seq&lt;DocumentFormat.OpenXml.Packaging.ImagePart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.ImageParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.ImagePart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the ImageParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberingDefinitionsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart NumberingDefinitionsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart NumberingDefinitionsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.NumberingDefinitionsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property NumberingDefinitionsPart As NumberingDefinitionsPart" />
+      <MemberSignature Language="F#" Value="member this.NumberingDefinitionsPart : DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.NumberingDefinitionsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.NumberingDefinitionsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the NumberingDefinitionsPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipType">
+      <MemberSignature Language="C#" Value="public override sealed string RelationshipType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipType" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.RelationshipType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable ReadOnly Property RelationshipType As String" />
+      <MemberSignature Language="F#" Value="member this.RelationshipType : string" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.RelationshipType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the RelationshipType.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StyleDefinitionsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart StyleDefinitionsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart StyleDefinitionsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.StyleDefinitionsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StyleDefinitionsPart As StyleDefinitionsPart" />
+      <MemberSignature Language="F#" Value="member this.StyleDefinitionsPart : DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.StyleDefinitionsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.StyleDefinitionsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the StyleDefinitionsPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylesWithEffectsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart StylesWithEffectsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart StylesWithEffectsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.StylesWithEffectsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StylesWithEffectsPart As StylesWithEffectsPart" />
+      <MemberSignature Language="F#" Value="member this.StylesWithEffectsPart : DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.StylesWithEffectsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.OfficeAvailability(DocumentFormat.OpenXml.FileFormatVersions.Office2010)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.StylesWithEffectsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the StylesWithEffectsPart of the MainDocumentPart., only available in Office2010</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThemePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThemePart ThemePart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.ThemePart ThemePart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.ThemePart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ThemePart As ThemePart" />
+      <MemberSignature Language="F#" Value="member this.ThemePart : DocumentFormat.OpenXml.Packaging.ThemePart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.ThemePart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThemePart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the ThemePart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbnailPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.ThumbnailPart ThumbnailPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.ThumbnailPart ThumbnailPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.ThumbnailPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ThumbnailPart As ThumbnailPart" />
+      <MemberSignature Language="F#" Value="member this.ThumbnailPart : DocumentFormat.OpenXml.Packaging.ThumbnailPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.ThumbnailPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.ThumbnailPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the ThumbnailPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VbaProjectPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.VbaProjectPart VbaProjectPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.VbaProjectPart VbaProjectPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.VbaProjectPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property VbaProjectPart As VbaProjectPart" />
+      <MemberSignature Language="F#" Value="member this.VbaProjectPart : DocumentFormat.OpenXml.Packaging.VbaProjectPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.VbaProjectPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.VbaProjectPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the VbaProjectPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebSettingsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WebSettingsPart WebSettingsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.WebSettingsPart WebSettingsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.WebSettingsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WebSettingsPart As WebSettingsPart" />
+      <MemberSignature Language="F#" Value="member this.WebSettingsPart : DocumentFormat.OpenXml.Packaging.WebSettingsPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.WebSettingsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WebSettingsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WebSettingsPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WordprocessingCommentsExPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart WordprocessingCommentsExPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart WordprocessingCommentsExPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingCommentsExPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WordprocessingCommentsExPart As WordprocessingCommentsExPart" />
+      <MemberSignature Language="F#" Value="member this.WordprocessingCommentsExPart : DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingCommentsExPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WordprocessingCommentsExPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WordprocessingCommentsExPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WordprocessingCommentsPart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart WordprocessingCommentsPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart WordprocessingCommentsPart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingCommentsPart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WordprocessingCommentsPart As WordprocessingCommentsPart" />
+      <MemberSignature Language="F#" Value="member this.WordprocessingCommentsPart : DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingCommentsPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WordprocessingCommentsPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WordprocessingCommentsPart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WordprocessingPeoplePart">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart WordprocessingPeoplePart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart WordprocessingPeoplePart" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingPeoplePart" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WordprocessingPeoplePart As WordprocessingPeoplePart" />
+      <MemberSignature Language="F#" Value="member this.WordprocessingPeoplePart : DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingPeoplePart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Packaging.WordprocessingPeoplePart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WordprocessingPeoplePart of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WordprocessingPrinterSettingsParts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart&gt; WordprocessingPrinterSettingsParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart&gt; WordprocessingPrinterSettingsParts" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingPrinterSettingsParts" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WordprocessingPrinterSettingsParts As IEnumerable(Of WordprocessingPrinterSettingsPart)" />
+      <MemberSignature Language="F#" Value="member this.WordprocessingPrinterSettingsParts : seq&lt;DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart&gt;" Usage="DocumentFormat.OpenXml.Packaging.MainDocumentPart.WordprocessingPrinterSettingsParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.Packaging.WordprocessingPrinterSettingsPart&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the WordprocessingPrinterSettingsParts of the MainDocumentPart.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

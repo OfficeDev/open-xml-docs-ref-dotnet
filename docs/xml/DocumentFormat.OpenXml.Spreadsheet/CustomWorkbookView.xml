@@ -1,0 +1,868 @@
+﻿<Type Name="CustomWorkbookView" FullName="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView">
+  <TypeSignature Language="C#" Value="public class CustomWorkbookView : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomWorkbookView extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView" />
+  <TypeSignature Language="VB.NET" Value="Public Class CustomWorkbookView&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type CustomWorkbookView = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.ExtensionList))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Custom Workbook View. When the object is serialized out as xml, its qualified name is x:customWorkbookView.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ **customWorkbookView (Custom Workbook View)**  
+  
+ This element specifies a single custom workbook view. A custom workbook view consists of a set of display and print settings that you can name and apply to a workbook. You can create more than one custom workbook view of the same workbook.  Custom Workbook Views are not required in order to construct a valid SpreadsheetML document, and are not necessary if the document is never displayed by a spreadsheet application, or if the spreadsheet application has a fixed display for workbooks.  However, if a spreadsheet application chooses to implement configurable display modes, the customWorkbookView element should be used to persist the settings for those display modes.  The settings fall into the following categories, and individual settings are detailed in the table following:  
+  
+ Window settings - these include size and positioning of the spreadsheet window as well as which window features should be displayed (scrollbars, sheet tabs, etc.).  
+  
+ Workbook content display and print settings - specifies whether features in the workbook should be included or ignored by a spreadsheet application when a custom workbook view is displayed or printed. [*Example*: Whether comments in the workbook should be displayed and how objects such as images should be displayed can be controlled by a Custom Workbook View. *end example*]  
+  
+ Persistence settings - these include settings that describe how a spreadsheet application should update persisted SpreadsheetML content if multiple spreadsheet applications are accessing a common instance of the SpreadsheetML document at the same time.  
+  
+ When a Custom Workbook View is present, there should also be corresponding customSheetView (§18.3.1.25) elements for each sheet (§18.2.19) in the workbook.  The guid attribute of these customSheetView elements associates the customSheetView with the appropriate customWorkbookView. Attributes on the customWorkbookView element should be used to determine which settings within the Custom Sheet View should be respected by a spreadsheet application if the Custom Workbook View is displayed.  
+  
+|Parent Elements|  
+|---------------------|  
+|customWorkbookViews (§18.2.4)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|extLst (Future Feature Data Storage Area)|§18.2.10|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|activeSheetId (Active Sheet in Book View)|Specifies the sheetId of a sheet in the workbook that identifies to a consuming application the default sheet to display. Corresponds to a sheetId of a sheet in the sheets collection.<br /><br /> This attribute is required.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|autoUpdate (Auto Update)|Specifies a boolean value that is an instruction that if the workbook is loaded by a spreadsheet application, that spreadsheet application should automatically update changes at the interval specified by the *mergeInterval* attribute. This is only applicable for shared workbooks (§18.11).<br /><br /> A value of *1* or *true* is an instruction to the spreadsheet application to  update changes at the interval specified in the *mergeInterval* attribute.<br /><br /> A value of *0* or *false* is an instruction to the spreadsheet applicationto update changes whenever the spreadsheet application generates SpreadsheetML representing the workbook.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|changesSavedWin (Changes Saved Win)|Specifies a boolean value that instructs a spreadsheet application to overwrite the persisted version of the document with the updated version being persisted. This is only applicable for shared workbooks in automatic update mode.<br /><br /> A value of *1* or *true* instructs a spreadsheet application to overwrite changes in the persisted version of a shared workbook when conflicts in data are found.<br /><br /> A value of *0* or *false* instructs a spreadsheet application to not overwrite changes in the persisted version of a shared workbook when conflicts are found.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|guid (Custom View GUID)|Specifies a globally unique identifier (GUID) for this custom view<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
+|includeHiddenRowCol (Include Hidden Rows & Columns)|Specifies a boolean value that indicates whether to include hidden rows, columns, and filter settings in this custom view.<br /><br /> A value of *1* or *true* indicates that hidden rows, columns, and filter settings are included in this custom view.<br /><br /> A value of *0* or *false* indicates that hidden rows, columns, and filter settings are not included.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|includePrintSettings (Include Print Settings)|Specifies a boolean value that indicates whether to include print settings in this custom view.<br /><br /> A value of *1* or *true* indicates that print settings are included in this custom view.<br /><br /> A value of *0* or *false* indicates print settings are not included in this custom view.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|maximized (Maximized)|Specifies a boolean value that indicates whether the workbook window is maximized.<br /><br /> A value of *1* or *true* indicates the workbook window is maximized.<br /><br /> A value of *0* or *false* indicates the workbook window is not maximized.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|mergeInterval (Merge Interval)|Automatic update interval (in minutes). Only applicable for shared workbooks in automatic update mode.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|minimized (Minimized)|Specifies a boolean value that indicates whether the workbook window is minimized.<br /><br /> A value of *1* or *true* indicates the workbook window is minimized.<br /><br /> A value of *0* or *false* indicates the workbook window is not minimized.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|name (Custom View Name)|Specifies the name of the custom view.<br /><br /> This attribute is required.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
+|onlySync (Only Synch)|Specifies a boolean value that indicates, during automatic update, the current user's changes are not saved.  The workbook is only updated with other users' changes. Only applicable for shared workbooks in automatic update mode.<br /><br /> A value of *1* or *true* indicates the current user's changes is not saved during automatic update.<br /><br /> A value of *0* or *false* indicates the current user's is saved during automatic update.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|personalView (Personal View)|Specifies a boolean value that indicates that this custom view is a personal view for a shared workbook user. Only applicable for shared workbooks. Personal views allow each user of a shared workbook to store their individual print and filter settings.<br /><br /> A value of *1* or *true* indicates this custom view is a personal view for a shared workbook user.<br /><br /> A value of *0* or *false* indicates this view is not a personal view.<br /><br /> The default value for this attribute is false.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showComments (Show Comments)|Specifies how comments are displayed in this custom view<br /><br /> The possible values for this attribute are defined by the *ST_Comments* simple type (§18.18.14).|  
+|showFormulaBar (Show Formula Bar)|Specifies a boolean value that indicates whether to display the formula bar in the application user interface.<br /><br /> A value of *1* or *true* indicates the formula bar is shown in the user interface.<br /><br /> A value of *0* or *false* indicates the formula bar is not shown in the user interface.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showHorizontalScroll (Show Horizontal Scroll)|Specifies a boolean value that indicates whether to display the horizontal scroll bar in the user interface.<br /><br /> A value of *1* or *true* indicates that the horizontal scrollbar is shown.<br /><br /> A value of *0* or *false* indicates that the horizontal scrollbar is not shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showObjects (Show Objects)|Specifies how objects are displayed in this custom view.<br /><br /> The default value for this attribute is "all."<br /><br /> The possible values for this attribute are defined by the *ST_Objects* simple type (§18.18.48).|  
+|showSheetTabs (Show Sheet Tabs)|Specifies a boolean value that indicates whether to display the sheet tabs in the user interface.<br /><br /> A value of *1* or *true* indicates that sheet tabs shall be shown.<br /><br /> A value of *0* or *false* indicates that sheet tabs shall not be shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showStatusbar (Show Status Bar)|Specifies a boolean value that indicates whether to display the status bar in the user interface.<br /><br /> A value of *1* or *true* indicates that the status bar is shown.<br /><br /> A value of *0* or *false* indicates the status bar is not shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|showVerticalScroll (Show Vertical Scroll)|Specifies a boolean value that indicates whether to display the vertical scroll bar.<br /><br /> A value of *1* or *true* indicates the vertical scrollbar shall be shown.<br /><br /> A value of *0* or *false* indicates the vertical scrollbar shall not be shown.<br /><br /> The default value for this attribute is true.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
+|tabRatio (Sheet Tab Ratio)|Specifies the ratio between the workbook tabs bar and the horizontal scroll bar. *tabRatio* is assumed to be out of 1000 of the horizontal window width.<br /><br /> The default value for this attribute is 600.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|windowHeight (Window Height)|Specifies the height of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|windowWidth (Window Width)|Specifies the width of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
+|xWindow (Top Left Corner (X Coordinate))|Specifies the X coordinate for the upper left corner of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+|yWindow (Top Left Corner (Y Coordinate))|Specifies the Y coordinate for the upper left corner of the workbook window. The unit of measurement for this value is twips.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *int* datatype.|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_CustomWorkbookView) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomWorkbookView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the CustomWorkbookView class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomWorkbookView (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView" Usage="new DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the CustomWorkbookView class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomWorkbookView (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView" Usage="new DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the CustomWorkbookView class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomWorkbookView (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView : string -&gt; DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView" Usage="new DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the CustomWorkbookView class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveSheetId">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value ActiveSheetId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value ActiveSheetId" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ActiveSheetId" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActiveSheetId As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.ActiveSheetId : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ActiveSheetId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "activeSheetId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Sheet in Book View.Represents the following attribute in the schema: activeSheetId</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoUpdate">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue AutoUpdate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue AutoUpdate" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.AutoUpdate" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoUpdate As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.AutoUpdate : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.AutoUpdate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "autoUpdate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Auto Update.Represents the following attribute in the schema: autoUpdate</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangesSavedWin">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ChangesSavedWin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ChangesSavedWin" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ChangesSavedWin" />
+      <MemberSignature Language="VB.NET" Value="Public Property ChangesSavedWin As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ChangesSavedWin : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ChangesSavedWin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "changesSavedWin")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Changes Saved Win.Represents the following attribute in the schema: changesSavedWin</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="customWorkbookView.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionList">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Spreadsheet.ExtensionList ExtensionList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Spreadsheet.ExtensionList ExtensionList" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ExtensionList" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtensionList As ExtensionList" />
+      <MemberSignature Language="F#" Value="member this.ExtensionList : DocumentFormat.OpenXml.Spreadsheet.ExtensionList with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ExtensionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ExtensionList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.ExtensionList" />.</value>
+        <remarks>To be added.</remarks>
+        <remark>
+            xmlns:x = http://schemas.openxmlformats.org/spreadsheetml/2006/main
+            </remark>
+      </Docs>
+    </Member>
+    <Member MemberName="Guid">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Guid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Guid" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Guid" />
+      <MemberSignature Language="VB.NET" Value="Public Property Guid As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Guid : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Guid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "guid")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Custom View GUID.Represents the following attribute in the schema: guid</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeHiddenRowColumn">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue IncludeHiddenRowColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue IncludeHiddenRowColumn" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.IncludeHiddenRowColumn" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeHiddenRowColumn As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.IncludeHiddenRowColumn : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.IncludeHiddenRowColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "includeHiddenRowCol")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Include Hidden Rows and Columns.Represents the following attribute in the schema: includeHiddenRowCol</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludePrintSettings">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue IncludePrintSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue IncludePrintSettings" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.IncludePrintSettings" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludePrintSettings As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.IncludePrintSettings : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.IncludePrintSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "includePrintSettings")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Include Print Settings.Represents the following attribute in the schema: includePrintSettings</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximized">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Maximized { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Maximized" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Maximized" />
+      <MemberSignature Language="VB.NET" Value="Public Property Maximized As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Maximized : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Maximized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "maximized")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Maximized.Represents the following attribute in the schema: maximized</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeInterval">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value MergeInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value MergeInterval" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.MergeInterval" />
+      <MemberSignature Language="VB.NET" Value="Public Property MergeInterval As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.MergeInterval : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.MergeInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "mergeInterval")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Merge Interval.Represents the following attribute in the schema: mergeInterval</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimized">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue Minimized { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue Minimized" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Minimized" />
+      <MemberSignature Language="VB.NET" Value="Public Property Minimized As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.Minimized : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Minimized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "minimized")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Minimized.Represents the following attribute in the schema: minimized</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.StringValue Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.StringValue Name" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As StringValue" />
+      <MemberSignature Language="F#" Value="member this.Name : DocumentFormat.OpenXml.StringValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Custom View Name.Represents the following attribute in the schema: name</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlySync">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue OnlySync { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue OnlySync" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.OnlySync" />
+      <MemberSignature Language="VB.NET" Value="Public Property OnlySync As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.OnlySync : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.OnlySync" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "onlySync")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Only Synch.Represents the following attribute in the schema: onlySync</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersonalView">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue PersonalView { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue PersonalView" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.PersonalView" />
+      <MemberSignature Language="VB.NET" Value="Public Property PersonalView As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.PersonalView : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.PersonalView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "personalView")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Personal View.Represents the following attribute in the schema: personalView</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowComments">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CommentsValues&gt; ShowComments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.CommentsValues&gt; ShowComments" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowComments" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowComments As EnumValue(Of CommentsValues)" />
+      <MemberSignature Language="F#" Value="member this.ShowComments : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CommentsValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowComments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showComments")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CommentsValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Comments.Represents the following attribute in the schema: showComments</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowFormulaBar">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowFormulaBar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowFormulaBar" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowFormulaBar" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowFormulaBar As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowFormulaBar : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowFormulaBar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showFormulaBar")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Formula Bar.Represents the following attribute in the schema: showFormulaBar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHorizontalScroll">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowHorizontalScroll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowHorizontalScroll" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowHorizontalScroll" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowHorizontalScroll As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowHorizontalScroll : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowHorizontalScroll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showHorizontalScroll")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Horizontal Scroll.Represents the following attribute in the schema: showHorizontalScroll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowObjects">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt; ShowObjects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt; ShowObjects" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowObjects" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowObjects As EnumValue(Of ObjectDisplayValues)" />
+      <MemberSignature Language="F#" Value="member this.ShowObjects : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowObjects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showObjects")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Objects.Represents the following attribute in the schema: showObjects</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSheetTabs">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowSheetTabs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowSheetTabs" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowSheetTabs" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowSheetTabs As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowSheetTabs : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowSheetTabs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showSheetTabs")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Sheet Tabs.Represents the following attribute in the schema: showSheetTabs</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowStatusbar">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowStatusbar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowStatusbar" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowStatusbar" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowStatusbar As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowStatusbar : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowStatusbar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showStatusbar")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Status Bar.Represents the following attribute in the schema: showStatusbar</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowVerticalScroll">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.BooleanValue ShowVerticalScroll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.BooleanValue ShowVerticalScroll" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowVerticalScroll" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowVerticalScroll As BooleanValue" />
+      <MemberSignature Language="F#" Value="member this.ShowVerticalScroll : DocumentFormat.OpenXml.BooleanValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.ShowVerticalScroll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "showVerticalScroll")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Show Vertical Scroll.Represents the following attribute in the schema: showVerticalScroll</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabRatio">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value TabRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value TabRatio" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.TabRatio" />
+      <MemberSignature Language="VB.NET" Value="Public Property TabRatio As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.TabRatio : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.TabRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "tabRatio")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Sheet Tab Ratio.Represents the following attribute in the schema: tabRatio</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowHeight">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value WindowHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value WindowHeight" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.WindowHeight" />
+      <MemberSignature Language="VB.NET" Value="Public Property WindowHeight As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.WindowHeight : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.WindowHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "windowHeight")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Window Height.Represents the following attribute in the schema: windowHeight</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowWidth">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.UInt32Value WindowWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.UInt32Value WindowWidth" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.WindowWidth" />
+      <MemberSignature Language="VB.NET" Value="Public Property WindowWidth As UInt32Value" />
+      <MemberSignature Language="F#" Value="member this.WindowWidth : DocumentFormat.OpenXml.UInt32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.WindowWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "windowWidth")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Window Width.Represents the following attribute in the schema: windowWidth</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XWindow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value XWindow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value XWindow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.XWindow" />
+      <MemberSignature Language="VB.NET" Value="Public Property XWindow As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.XWindow : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.XWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "xWindow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Top Left Corner (X Coordinate).Represents the following attribute in the schema: xWindow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YWindow">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.Int32Value YWindow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.Int32Value YWindow" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.YWindow" />
+      <MemberSignature Language="VB.NET" Value="Public Property YWindow As Int32Value" />
+      <MemberSignature Language="F#" Value="member this.YWindow : DocumentFormat.OpenXml.Int32Value with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.CustomWorkbookView.YWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "yWindow")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Top Left Corner (Y Coordinate).Represents the following attribute in the schema: yWindow</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

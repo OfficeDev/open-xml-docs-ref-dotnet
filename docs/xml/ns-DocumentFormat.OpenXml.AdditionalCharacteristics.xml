@@ -1,0 +1,55 @@
+<Namespace Name="DocumentFormat.OpenXml.AdditionalCharacteristics">
+  <Docs>
+    <summary>To be added.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DocumentFormat.OpenXml.AdditionalCharacteristics namespace  
+  
+ characteristic (Single Characteristic)  
+  
+ This element specifies a single characteristic. The type of characteristic is defined by the name attribute.  
+  
+ [Example: A producer can inform the consumer that the computations used to calculate the stored numbers in the formulas belong to a value space expressed by ranges of the binary mantissa and exponent. A consumer can optionally check those characteristics to determine whether, for example, the values should be recalculated. The XML for this would be:  
+  
+```  
+<additionalCharacteristics>  
+  <characteristic name='precisionMantissa' relation='gt'   
+     val='-9007199254740992'/>  
+  <characteristic name='precisionMantissa' relation='lt'   
+     val='9007199254740992'/>  
+  <characteristic name='precisionExponent' relation='ge' val='-1075'/>  
+  <characteristic name='precisionExponent' relation='le' val='970'/>  
+</additionalCharacteristics>  
+```  
+  
+ end example]  
+  
+|Parent Elements|  
+|---------------------|  
+|additionalCharacteristics (§7.7.2.1)|  
+  
+|||  
+|-|-|  
+|val (Characteristic Value)|Specifies the value of the characteristic.<br /><br /> The possible values for this attribute are defined by the XML Schema string datatype.|  
+  
+|||  
+|-|-|  
+|vocabulary (Characteristic Grammar)|Specifies a URI defining the characteristic grammar with which the name attribute value shall be interpreted.<br /><br /> If this attribute is omitted, then the default grammar (as defined above) shall be used.<br /><br /> The possible values for this attribute are defined by the XML Schema anyURI datatype.|  
+  
+ The following XML Schema fragment defines the contents of this element:  
+  
+```  
+<complexType name="CT_Characteristic">  
+   <attribute name="name" type="xsd:string" use="required"/>  
+   <attribute name="relation" type="ST_Relation" use="required"/>  
+   <attribute name="val" type="xsd:string" use="required"/>  
+   <attribute name="vocabulary" type="xsd:anyURI" use="optional"/>  
+</complexType>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

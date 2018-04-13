@@ -1,0 +1,390 @@
+﻿<Type Name="GradientFill" FullName="DocumentFormat.OpenXml.Spreadsheet.GradientFill">
+  <TypeSignature Language="C#" Value="public class GradientFill : DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GradientFill extends DocumentFormat.OpenXml.OpenXmlCompositeElement" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Spreadsheet.GradientFill" />
+  <TypeSignature Language="VB.NET" Value="Public Class GradientFill&#xA;Inherits OpenXmlCompositeElement" />
+  <TypeSignature Language="F#" Value="type GradientFill = class&#xA;    inherit OpenXmlCompositeElement" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.OpenXmlCompositeElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>DocumentFormat.OpenXml.ChildElementInfo(typeof(DocumentFormat.OpenXml.Spreadsheet.GradientStop))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Gradient. When the object is serialized out as xml, its qualified name is x:gradientFill.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `gradientFill (Gradient)`  
+  
+ This element defines a gradient-style cell fill. Gradient cell fills can use one or two colors as the end points of color interpolation.  
+  
+ [*Example*:  
+  
+ This example shows a gradient cell fill, with color green at the top transitioning into blue at the bottom.  
+  
+ 31f059aa-15c7-4efe-9340-7e699f1a829c  
+  
+ This is the XML:  
+  
+```xml  
+<fill>  
+  <gradientFill degree="90">  
+    <stop position="0">  
+      <color rgb="FF92D050"/>  
+    </stop>  
+    <stop position="1">  
+      <color rgb="FF0070C0"/>  
+    </stop>  
+  </gradientFill>  
+</fill>  
+```  
+  
+ This example shows a gradient cell fill, from the center. Note the left, right, top, and bottom values (and see explanation in the attribute section):  
+  
+ 1bf7ccb1-2ee4-429f-8e3f-187d0445b49d  
+  
+```xml  
+<fill>  
+  <gradientFill type="path" left="0.2" right="0.8" top="0.2" bottom="0.8">  
+    <stop position="0">  
+      <color theme="0"/>  
+    </stop>  
+    <stop position="1">  
+      <color theme="4"/>  
+    </stop>  
+  </gradientFill>  
+</fill>  
+```  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|fill (§18.8.20)|  
+  
+|Child Elements|Subclause|  
+|--------------------|---------------|  
+|stop (Gradient Stop)|§18.8.38|  
+  
+|Attributes|Description|  
+|----------------|-----------------|  
+|bottom (Bottom Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the top to the bottom) the position of the bottom edge of the inner rectangle (color 1). For bottom, 0 means the bottom edge of the inner rectangle is on the top edge of the cell, and 1 means it is on the bottom edge of the cell.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|degree (Linear Gradient Degree)|Angle of the linear gradient - vertical, horizontal, diagonal.<br /><br /> [*Example*:<br /><br /> In these examples, color 1 is white and color 2 is blue.<br /><br /> 90 = Horizontal & color 1 to color 2<br /><br /> 6fade633-9673-4234-ba5e-b6c96943cbad<br /><br /> 270 = Horizontal & color 1 to color 2<br /><br /> 5e0953dd-6545-4ebd-8f85-69d78592831c<br /><br /> 0 = Vertical & color 1 to color 2<br /><br /> 64e89be5-c2a1-4334-b91d-9063f47ab57a<br /><br /> 180 = Vertical & color 1 to color 2<br /><br /> ade8885d-3c6e-4a4a-b20b-524740404555<br /><br /> 45 = Diagonal Up & top to bottom (color 1 to color 2)<br /><br /> 225 = Diagonal Up & bottom to top (color 1 to color 2)<br /><br /> 135 = Diagonal Down & top to bottom (color 1 to color 2)<br /><br /> 315 = Diagonal Down & bottom to top (color 1 to color 2)<br /><br /> *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|left (Left Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the left to the right) the position of the left edge of the inner rectangle (color 1). For left, 0 means the left edge of the inner rectangle is on the left edge of the cell, and 1 means it is on the right edge of the cell. (applies to From Corner and From Center gradients).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|right (Right Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the left to the right) the position of the right edge of the inner rectangle (color 1). For right, 0 means the right edge of the inner rectangle is on the left edge of the cell, and 1 means it is on the right edge of the cell. (applies to From Corner and From Center gradients).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|top (Top Gradient Convergence)|This attribute is restricted to values ranging from 0 to 1. Specifies in percentage format (from the top to the bottom) the position of the top edge of the inner rectangle (color 1). For top, 0 means the top edge of the inner rectangle is on the top edge of the cell, and 1 means it is on the bottom edge of the cell. (applies to From Corner and From Center gradients).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *double* datatype.|  
+|type (Gradient Fill Type)|Type of this gradient fill.<br /><br /> The possible values for this attribute are defined by the *ST_GradientType* simple type (§18.18.37).|  
+  
+ [*Note*: The W3C XML Schema definition of this element’s content model (CT_GradientFill) is located in §A.2. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GradientFill ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.GradientFill.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the GradientFill class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GradientFill (params DocumentFormat.OpenXml.OpenXmlElement[] childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.OpenXmlElement[] childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.GradientFill.#ctor(DocumentFormat.OpenXml.OpenXmlElement[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ParamArray childElements As OpenXmlElement())" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.GradientFill : DocumentFormat.OpenXml.OpenXmlElement[] -&gt; DocumentFormat.OpenXml.Spreadsheet.GradientFill" Usage="new DocumentFormat.OpenXml.Spreadsheet.GradientFill childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="DocumentFormat.OpenXml.OpenXmlElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the GradientFill class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GradientFill (System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; childElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class DocumentFormat.OpenXml.OpenXmlElement&gt; childElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.GradientFill.#ctor(System.Collections.Generic.IEnumerable{DocumentFormat.OpenXml.OpenXmlElement})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (childElements As IEnumerable(Of OpenXmlElement))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.GradientFill : seq&lt;DocumentFormat.OpenXml.OpenXmlElement&gt; -&gt; DocumentFormat.OpenXml.Spreadsheet.GradientFill" Usage="new DocumentFormat.OpenXml.Spreadsheet.GradientFill childElements" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childElements" Type="System.Collections.Generic.IEnumerable&lt;DocumentFormat.OpenXml.OpenXmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="childElements">Specifies the child elements.</param>
+        <summary>Initializes a new instance of the GradientFill class with the specified child elements.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GradientFill (string outerXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.GradientFill.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (outerXml As String)" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.Spreadsheet.GradientFill : string -&gt; DocumentFormat.OpenXml.Spreadsheet.GradientFill" Usage="new DocumentFormat.OpenXml.Spreadsheet.GradientFill outerXml" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outerXml">Specifies the outer XML of the element.</param>
+        <summary>Initializes a new instance of the GradientFill class from outer XML.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue Bottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue Bottom" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.GradientFill.Bottom" />
+      <MemberSignature Language="VB.NET" Value="Public Property Bottom As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.Bottom : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.GradientFill.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "bottom")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Bottom Convergence.Represents the following attribute in the schema: bottom</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Spreadsheet.GradientFill.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="gradientFill.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Degree">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue Degree { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue Degree" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.GradientFill.Degree" />
+      <MemberSignature Language="VB.NET" Value="Public Property Degree As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.Degree : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.GradientFill.Degree" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "degree")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Linear Gradient Degree.Represents the following attribute in the schema: degree</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue Left" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.GradientFill.Left" />
+      <MemberSignature Language="VB.NET" Value="Public Property Left As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.Left : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.GradientFill.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "left")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Left Convergence.Represents the following attribute in the schema: left</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.GradientFill.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Spreadsheet.GradientFill.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue Right" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.GradientFill.Right" />
+      <MemberSignature Language="VB.NET" Value="Public Property Right As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.Right : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.GradientFill.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "right")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Right Convergence.Represents the following attribute in the schema: right</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.DoubleValue Top { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.DoubleValue Top" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.GradientFill.Top" />
+      <MemberSignature Language="VB.NET" Value="Public Property Top As DoubleValue" />
+      <MemberSignature Language="F#" Value="member this.Top : DocumentFormat.OpenXml.DoubleValue with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.GradientFill.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "top")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.DoubleValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Top Gradient Convergence.Represents the following attribute in the schema: top</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.DoubleValue" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GradientValues&gt; Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class DocumentFormat.OpenXml.EnumValue`1&lt;valuetype DocumentFormat.OpenXml.Spreadsheet.GradientValues&gt; Type" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Spreadsheet.GradientFill.Type" />
+      <MemberSignature Language="VB.NET" Value="Public Property Type As EnumValue(Of GradientValues)" />
+      <MemberSignature Language="F#" Value="member this.Type : DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GradientValues&gt; with get, set" Usage="DocumentFormat.OpenXml.Spreadsheet.GradientFill.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>DocumentFormat.OpenXml.SchemaAttr(0, "type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GradientValues&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gradient Fill Type.Represents the following attribute in the schema: type</summary>
+        <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

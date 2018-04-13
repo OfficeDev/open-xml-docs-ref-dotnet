@@ -1,0 +1,279 @@
+﻿<Type Name="BottomBorder" FullName="DocumentFormat.OpenXml.Wordprocessing.BottomBorder">
+  <TypeSignature Language="C#" Value="public class BottomBorder : DocumentFormat.OpenXml.Wordprocessing.BorderType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BottomBorder extends DocumentFormat.OpenXml.Wordprocessing.BorderType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.BottomBorder" />
+  <TypeSignature Language="VB.NET" Value="Public Class BottomBorder&#xA;Inherits BorderType" />
+  <TypeSignature Language="F#" Value="type BottomBorder = class&#xA;    inherit BorderType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.BorderType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Paragraph Border Between Identical Paragraphs. When the object is serialized out as xml, its qualified name is w:bottom.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `bottom (Paragraph Border Below Identical Paragraphs)`  
+  
+ This element specifies the border which shall be displayed below a set of paragraphs which have the same paragraph border settings.  
+  
+ To determine if any two adjoining paragraphs shall have an individual top and bottom border or a between border, the set of borders on the two adjoining paragraphs are compared. If the border information on those two paragraphs is different, then the first paragraph shall use its bottom border and the following paragraph shall use its top border. Otherwise, the between border is used. If this border specifies a space attribute, that value determines the space after the bottom of the text (ignoring any space below) which should be left before this border is drawn, specified in points.  
+  
+ If this element is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then no between border shall be applied below identical paragraphs.  
+  
+ [*Example*: Consider the following two paragraphs' WordprocessingML definition:  
+  
+```xml  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>First paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+<w:p>  
+  <w:pPr>  
+    <w:pBdr>  
+      <w:top w:val="single" w:sz="24" w:space="1" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="B97034" w:themeColor="accent6" w:themeShade="BF" />   
+      <w:bottom w:val="single" w:sz="24" w:space="0" w:color="F2DCDB" w:themeColor="accent2" w:themeTint="33" />   
+      <w:right w:val="single" w:sz="24" w:space="4" w:color="C3D69B" w:themeColor="accent3" w:themeTint="99" />   
+      <w:between w:val="single" w:sz="24" w:space="1" w:color="4F81BD" w:themeColor="accent1" />   
+    </w:pBdr>  
+  </w:pPr>  
+  <w:r>  
+    <w:t>Second paragraph.</w:t>   
+  </w:r>  
+</w:p>  
+```  
+  
+ Since the paragraph border is different between the two paragraphs (the bottom space value goes from *1* to *0*), paragraph one uses its bottom border, which is located one point below the text in that paragraph. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|pBdr (§17.3.1.24)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `bottom (Table Bottom Border)`  
+  
+ This element specifies the border which shall be displayed at the bottom of the current table. The appearance of this table border in the document shall be determined by the following settings:  
+  
+-   The display of the border is subject to the conflict resolution algorithm defined by the tcBorders element (§17.4.67) and the tblBorders element (§17.4.40;§17.4.39)  
+  
+ If this element is omitted, then the bottom of this table shall have the border specified by the associated table style. If no bottom border is specified in the style hierarchy, then this table shall not have a bottom border.  
+  
+ [*Example*: Consider a table in which the table properties specifies a bottom table border, as follows:  
+  
+ R1C1  
+  
+ R1C2  
+  
+ R2C1  
+  
+ R2C2  
+  
+ This bottom table border is specified using the following WordprocessingML:  
+  
+```xml  
+<w:tbl>  
+  <w:tblPr>  
+    <w:tblBorders>  
+      <w:bottom w:val="thinThickThinMediumGap" w:sz="24" w:space="0" w:color="D0D0D0" w:themeColor="accent3" w:themeTint="99"/>  
+    </w:tblBorders>  
+  </w:tblPr>  
+  …</w:tbl>  
+```  
+  
+ The bottom element specifies a three point bottom table border of type *thinThinThickMediumGap*. *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|tblBorders (§17.4.39); tblBorders (§17.4.40)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `bottom (Bottom Border)`  
+  
+ This element specifies the presentation and display of the page border displayed at the bottom of each page in this section.  
+  
+ [*Example*: Consider a section in which all pages must have a bottom border consisting of a repeated image of an apple, like this:  
+  
+ a84b34ea-0739-46c3-a230-98f91da97369  
+  
+ This border would result in the following WordprocessingML:  
+  
+```xml  
+<w:sectPr>  
+  …  <w:pgBorders>  
+    <w:bottom w:val="apples" …/>  
+  </w:pgBorders>  
+  …</w:sectPr>  
+```  
+  
+ Because the page only has a border at the bottom, only the bottom element is specified within the set of page borders. *end example*]  
+  
+ When a document has a bottom border that is relative to the page edges (using the offsetFrom attribute on pgBorders), it shall span the bottom edge of the page at the location defined by its properties, stopping when:  
+  
+-   It intersects with the corresponding left or right page border (if one is specified).  
+  
+-   It reaches the edge of the page.  
+  
+ [*Example*: In the example above, no left or right border was specified in the WordprocessingML, so a consumer must draw the border from one edge of the page to the other. *end example*]  
+  
+ When a document has a bottom border that is relative to the text (using the offsetFrom attribute on pgBorders), it shall span only the necessary width to satisfy the requirement of spanning the width of the text.  
+  
+ When a document has custom border art specified by the bottomLeft, bottomRight, and/or id attributes, it shall use the corresponding relationship part item as an image for the bottom left corner, bottom right corner, and/or bottom border, respectively. If the corresponding relationship part item cannot be located, the consumer shall use the border specified by the value of the val attribute. If the corresponding value of the val attribute cannot be resolved no bottom left corner, bottom right corner, or bottom border is present when the page is displayed.  
+  
+ When a document has a custom border art specified by the id attribute without specifying the bottomRight and/or bottomLeft attributes, the bottom border as resolved by the corresponding relationship part item of the id attribute shall span to the corners not specified by bottomRight and/or bottomLeft attributes.  
+  
+|Parent Elements|  
+|---------------------|  
+|pgBorders (§17.6.10)|  
+  
+  [*Note*: The W3C XML Schema definition of this element’s content model (CT_BottomPageBorder) is located in §A.1. *end note*]  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `bottom (Bottom Border for HTML div)`  
+  
+ This element specifies the border which shall be displayed at the bottom of the boundaries of the current HTML *div* object.  
+  
+ If this element is omitted, then this HTML *div* object shall not have a bottom border.  
+  
+ [*Example*: Consider a simple HTML document defined as follows:  
+  
+```xml  
+<html>  
+  <body>  
+    <div style=" border-left-style:solid; border-right-style:groove; border-right-width:1px; border-top-style:dashed; border-top-width:3px; border-bottom-style:outset; border-bottom-width:3px">  
+      <p>paragraph of text</p>  
+    </div>  
+  </body>  
+</html>  
+```  
+  
+ This HTML would therefore normally appear as follows (image scaled appropriately):  
+  
+ 53964913-13b8-4ead-bfd4-3fda05e53dc7  
+  
+ Now, when this document is saved in the WordprocessingML format, the information stored on the *div* elements is stored in the web setting part as follows:  
+  
+```xml  
+<w:divs>  
+  <w:div w:id="1785730240">  
+    …    <w:divBdr>  
+      <w:top w:val="dashed" w:sz="18" w:space="7" w:color="auto" />  
+      <w:left w:val="single" w:sz="24" w:space="4" w:color="auto" />  
+      <w:bottom w:val="outset" w:sz="18" w:color="auto" />  
+      <w:right w:val="threeDEngrave" w:sz="6" w:color="auto" />  
+    </w:divBdr>  
+  </w:div>  
+</w:divs>  
+```  
+  
+ The bottom element specifies border information about the bottom border for the single HTML *div* structure in the document; in this case, a 2.25 point bottom border of type *outset*. The initial 3 pixel border was converted to 2.25 points using the following logic:  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|divBdr (§17.15.2.7)|  
+  
+ This element’s content model is defined by the common border properties definition in §17.3.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BottomBorder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.BottomBorder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the BottomBorder class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.BottomBorder.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="bottomBorder.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.BottomBorder.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.BottomBorder.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

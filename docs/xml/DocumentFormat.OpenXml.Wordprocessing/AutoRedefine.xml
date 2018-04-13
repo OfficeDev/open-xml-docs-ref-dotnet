@@ -1,0 +1,152 @@
+﻿<Type Name="AutoRedefine" FullName="DocumentFormat.OpenXml.Wordprocessing.AutoRedefine">
+  <TypeSignature Language="C#" Value="public class AutoRedefine : DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutoRedefine extends DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Wordprocessing.AutoRedefine" />
+  <TypeSignature Language="VB.NET" Value="Public Class AutoRedefine&#xA;Inherits OnOffOnlyType" />
+  <TypeSignature Language="F#" Value="type AutoRedefine = class&#xA;    inherit OnOffOnlyType" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.7.2.0</AssemblyVersion>
+    <AssemblyVersion>2.8.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CodeDom.Compiler.GeneratedCode("DomGen", "2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Automatically Merge User Formatting Into Style Definition. When the object is serialized out as xml, its qualified name is w:autoRedefine.</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
+  
+ `autoRedefine (Automatically Merge User Formatting Into Style Definition)`  
+  
+ This element specifies whether an application shall automatically modify this style when the contents of an entire paragraph in the document with this style applied are modified, ensuring that although only a single instance of text with this style was modified, that change is stored on the style and therefore propagated to all locations where the style is in use.  
+  
+ If this element is omitted, then formatting shall not automatically be merged back into the style definition.  
+  
+ [*Example*: Consider a style defined as follows in a WordprocessingML document:  
+  
+```xml  
+<w:style w:styleId="Normal" … >  
+  <w:name w:val="Normal"/>  
+  <w:autoRedefine/>  
+  <w:rPr>  
+    <w:b/>  
+  </w:rPr>  
+  …</w:style>  
+```  
+  
+ This style specifies via the use of the autoRedefine element that any formatting applied to text which uses this style must be merged back into the style definition (assuming, of course, that this is a paragraph style).  
+  
+ For example, consider a document which uses the *Normal* style as defined above:  
+  
+ 63da8aa6-89ae-480d-9e81-269253e78371  
+  
+ The first and third paragraphs use the *Normal* style, and hence have the bold property applied. If an application were to add the underline formatting to the entire first paragraph, as follows:  
+  
+ 3faca1fc-765e-469a-98b9-351788d5d3d5  
+  
+ That property, rather than being saved as direct formatting, must be used to update the associated *Normal* style to add this property, specified using the u element (§17.3.2.40).  
+  
+```xml  
+<w:style w:styleId="Normal" … >  
+  <w:name w:val="Normal"/>  
+  <w:autoRedefine/>  
+  <w:rPr>  
+    <w:b/>  
+    <w:u/>  
+  </w:rPr>  
+  …</w:style>  
+```  
+  
+ Since this property is automatically merged into the style, it would also appear on the third paragraph (note that the step above would normally be automatically modified into the state shown below, and not discrete as shown above).  
+  
+ 0ccef15c-d6b4-4659-909a-db5f6b1a0ee1  
+  
+ *end example*]  
+  
+|Parent Elements|  
+|---------------------|  
+|style (§17.7.4.17)|  
+  
+ This element’s content model is defined by the common boolean property definition in §17.17.4.  
+  
+ [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AutoRedefine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.AutoRedefine.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>Initializes a new instance of the AutoRedefine class.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override DocumentFormat.OpenXml.OpenXmlElement CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class DocumentFormat.OpenXml.OpenXmlElement CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Wordprocessing.AutoRedefine.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As OpenXmlElement" />
+      <MemberSignature Language="F#" Value="override this.CloneNode : bool -&gt; DocumentFormat.OpenXml.OpenXmlElement" Usage="autoRedefine.CloneNode deep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>DocumentFormat.OpenXml.OpenXmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
+        <summary>Creates a duplicate of this node.</summary>
+        <returns>Returns the cloned node.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:DocumentFormat.OpenXml.Wordprocessing.AutoRedefine.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="F#" Value="member this.LocalName : string" Usage="DocumentFormat.OpenXml.Wordprocessing.AutoRedefine.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.7.2.0</AssemblyVersion>
+        <AssemblyVersion>2.8.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gets the local name of the element.</summary>
+        <value>Returns <see cref="T:System.String" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
