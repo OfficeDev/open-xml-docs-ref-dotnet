@@ -31,93 +31,14 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Defines the SplitButtonRegular Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is mso14:splitButton.</summary>
+    <summary>
+      <para>Defines the SplitButtonRegular Class.</para>
+      <para>This class is available in Office2010 or above.</para>
+      <para> When the object is serialized out as xml, its qualified name is mso14:splitButton.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- *2.3.69   CT_SplitButtonRegular*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/2009/07/customui  
-  
- *Referenced by:* CT_MenuRegular, CT_Menu, CT_SplitButton, CT_ButtonGroup, CT_ContextMenu  
-  
- Specifies a split button control that is of fixed size because of its location. It is otherwise identical to the *CT_SplitButton* complex type.  
-  
- *Child Elements:*  
-  
- *button:* A *CT_VisibleButton* element, as specified in section 2.3.83.  
-  
- *toggleButton:* A *CT_VisibleToggleButton* element, as specified in section 2.3.84.  
-  
- *menu:* A *CT_MenuRegular* element, as specified in section 2.3.56.  
-  
- *Attributes:*  
-  
- *enabled:* A *Boolean* attribute that specifies the enabled state of this control. The *enabled* and *getEnabled* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being enabled.  
-  
- *getEnabled:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the enabled state of this control. The *enabled* and *getEnabled* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being enabled.  
-  
- *id:* An *ST_UniqueID* attribute, as specified in section 2.4.22, that specifies the identifier of a custom control. All custom controls MUST have unique identifiers. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
-  
- *idQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control. This attribute is used to reference controls or containers created by other Custom UI documents. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
-  
- *tag:* An *ST_String* attribute, as specified in section 2.4.19, that specifies an arbitrary *string* that provides additional information about this control during callback function calls. If this attribute is omitted, the value defaults to an empty string.  
-  
- *idMso:* An *ST_ID* attribute, as specified in section 2.4.12, that specifies the identifier of a built-in control. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified.  
-  
- *insertAfterMso:* An *ST_ID* attribute that specifies the identifier of a built-in control after which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *insertBeforeMso:* An *ST_ID* attribute that specifies the identifier of a built-in control before which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *insertAfterQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control after which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *insertBeforeQ:* An *ST_QID* attribute that specifies the qualified identifier of a control before which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *visible:* A *Boolean* attribute that specifies the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
-  
- *getVisible:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
-  
- *keytip:* An *ST_Keytip* attribute, as specified in section 2.4.14, that specifies a *string* that is displayed as the KeyTip for this control. The *keytip* and *getKeytip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a KeyTip is not displayed.  
-  
- *getKeytip:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the KeyTip for this control. The *keytip* and *getKeytip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a KeyTip is not displayed.  
-  
- *showLabel:* A *Boolean* attribute that specifies whether the label for this control will be displayed. The *showLabel* and *getShowLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the label of the control will be displayed.  
-  
- *getShowLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine whether to display the label of this control. The *showLabel* and *getShowLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the label of the control will be displayed.  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
-  
- *\<xsd:complexType name="CT_SplitButtonRegular">*  
-  
- *\<xsd:complexContent>*  
-  
- *\<xsd:extension base="CT_SplitButtonRestricted">*  
-  
- *\<xsd:sequence minOccurs="0">*  
-  
- *\<xsd:choice minOccurs="0">*  
-  
- *\<xsd:element name="button" type="CT_VisibleButton"/>*  
-  
- *\<xsd:element name="toggleButton" type="CT_VisibleToggleButton"/>*  
-  
- *\</xsd:choice>*  
-  
- *\<xsd:element name="menu" type="CT_MenuRegular"/>*  
-  
- *\</xsd:sequence>*  
-  
- *\</xsd:extension>*  
-  
- *\</xsd:complexContent>*  
-  
- *\</xsd:complexType>*  
-  
- See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>VisibleButton &lt;mso14:button&gt;</description></item><item><description>VisibleToggleButton &lt;mso14:toggleButton&gt;</description></item><item><description>MenuRegular &lt;mso14:menu&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -133,7 +54,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the SplitButtonRegular class.</summary>
+        <summary>
+            Initializes a new instance of the SplitButtonRegular class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -160,7 +83,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the SplitButtonRegular class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the SplitButtonRegular class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -181,7 +106,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the SplitButtonRegular class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the SplitButtonRegular class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -202,7 +129,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the SplitButtonRegular class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the SplitButtonRegular class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -225,9 +154,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -252,7 +183,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>enabled.Represents the following attribute in the schema: enabled</summary>
+        <summary>
+          <para> enabled.</para>
+          <para>Represents the following attribute in the schema: enabled </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -278,7 +212,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getEnabled.Represents the following attribute in the schema: getEnabled</summary>
+        <summary>
+          <para> getEnabled.</para>
+          <para>Represents the following attribute in the schema: getEnabled </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -304,7 +241,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getKeytip.Represents the following attribute in the schema: getKeytip</summary>
+        <summary>
+          <para> getKeytip.</para>
+          <para>Represents the following attribute in the schema: getKeytip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -330,7 +270,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getShowLabel.Represents the following attribute in the schema: getShowLabel</summary>
+        <summary>
+          <para> getShowLabel.</para>
+          <para>Represents the following attribute in the schema: getShowLabel </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -356,7 +299,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getVisible.Represents the following attribute in the schema: getVisible</summary>
+        <summary>
+          <para> getVisible.</para>
+          <para>Represents the following attribute in the schema: getVisible </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -382,7 +328,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>id.Represents the following attribute in the schema: id</summary>
+        <summary>
+          <para> id.</para>
+          <para>Represents the following attribute in the schema: id </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -408,7 +357,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>idMso.Represents the following attribute in the schema: idMso</summary>
+        <summary>
+          <para> idMso.</para>
+          <para>Represents the following attribute in the schema: idMso </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -434,7 +386,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertAfterMso.Represents the following attribute in the schema: insertAfterMso</summary>
+        <summary>
+          <para> insertAfterMso.</para>
+          <para>Represents the following attribute in the schema: insertAfterMso </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -460,7 +415,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertAfterQ.Represents the following attribute in the schema: insertAfterQ</summary>
+        <summary>
+          <para> insertAfterQ.</para>
+          <para>Represents the following attribute in the schema: insertAfterQ </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -486,7 +444,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertBeforeMso.Represents the following attribute in the schema: insertBeforeMso</summary>
+        <summary>
+          <para> insertBeforeMso.</para>
+          <para>Represents the following attribute in the schema: insertBeforeMso </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -512,7 +473,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertBeforeQ.Represents the following attribute in the schema: insertBeforeQ</summary>
+        <summary>
+          <para> insertBeforeQ.</para>
+          <para>Represents the following attribute in the schema: insertBeforeQ </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -538,7 +502,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>keytip.Represents the following attribute in the schema: keytip</summary>
+        <summary>
+          <para> keytip.</para>
+          <para>Represents the following attribute in the schema: keytip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -559,7 +526,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -585,7 +554,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>idQ.Represents the following attribute in the schema: idQ</summary>
+        <summary>
+          <para> idQ.</para>
+          <para>Represents the following attribute in the schema: idQ </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -611,7 +583,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>showLabel.Represents the following attribute in the schema: showLabel</summary>
+        <summary>
+          <para> showLabel.</para>
+          <para>Represents the following attribute in the schema: showLabel </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -637,7 +612,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>tag.Represents the following attribute in the schema: tag</summary>
+        <summary>
+          <para> tag.</para>
+          <para>Represents the following attribute in the schema: tag </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -663,7 +641,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>visible.Represents the following attribute in the schema: visible</summary>
+        <summary>
+          <para> visible.</para>
+          <para>Represents the following attribute in the schema: visible </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

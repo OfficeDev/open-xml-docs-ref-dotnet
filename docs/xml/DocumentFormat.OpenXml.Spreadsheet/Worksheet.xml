@@ -133,159 +133,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Worksheet. The root element of WorksheetPart. When the object is serialized out as xml, its qualified name is x:worksheet.</summary>
+    <summary>
+      <para>Worksheet. The root element of WorksheetPart.</para>
+      <para> When the object is serialized out as xml, its qualified name is x:worksheet.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **worksheet (Worksheet)**  
-  
- This is the root element of Worksheet parts within a SpreadsheetML document.  
-  
-|Parent Elements|  
-|---------------------|  
-|Root element of SpreadsheetML Worksheet part|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|autoFilter (AutoFilter Settings)|§18.3.1.2|  
-|cellWatches (Cell Watch Items)|§18.3.1.9|  
-|colBreaks (Vertical Page Breaks)|§18.3.1.14|  
-|cols (Column Information)|§18.3.1.17|  
-|conditionalFormatting (Conditional Formatting)|§18.3.1.18|  
-|controls (Embedded Controls)|§18.3.1.21|  
-|customProperties (Custom Properties)|§18.3.1.23|  
-|customSheetViews (Custom Sheet Views)|§18.3.1.27|  
-|dataConsolidate (Data Consolidate)|§18.3.1.29|  
-|dataValidations (Data Validations)|§18.3.1.33|  
-|dimension (Worksheet Dimensions)|§18.3.1.35|  
-|drawing (Drawing)|§18.3.1.36|  
-|drawingHF (Drawing Reference in Header Footer)|§18.3.1.37|  
-|extLst (Future Feature Data Storage Area)|§18.2.10|  
-|headerFooter (Header Footer Settings)|§18.3.1.46|  
-|hyperlinks (Hyperlinks)|§18.3.1.48|  
-|ignoredErrors (Ignored Errors)|§18.3.1.51|  
-|mergeCells (Merge Cells)|§18.3.1.55|  
-|oleObjects (Embedded Objects)|§18.3.1.60|  
-|pageMargins (Page Margins)|§18.3.1.62|  
-|pageSetup (Page Setup Settings)|§18.3.1.63|  
-|phoneticPr (Phonetic Properties)|§18.4.3|  
-|picture (Background Image)|§18.3.1.67|  
-|printOptions (Print Options)|§18.3.1.70|  
-|protectedRanges (Protected Ranges)|§18.3.1.72|  
-|rowBreaks (Horizontal Page Breaks (Row))|§18.3.1.74|  
-|scenarios (Scenarios)|§18.3.1.76|  
-|sheetCalcPr (Sheet Calculation Properties)|§18.3.1.79|  
-|sheetData (Sheet Data)|§18.3.1.80|  
-|sheetFormatPr (Sheet Format Properties)|§18.3.1.81|  
-|sheetPr (Sheet Properties)|§18.3.1.82|  
-|sheetProtection (Sheet Protection Options)|§18.3.1.85|  
-|sheetViews (Sheet Views)|§18.3.1.88|  
-|smartTags (Smart Tags)|§18.3.1.90|  
-|sortState (Sort State)|§18.3.1.92|  
-|tableParts (Table Parts)|§18.3.1.95|  
-|webPublishItems (Web Publishing Items)|§18.3.1.98|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_Worksheet) is located in §A.2. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
-   
-  
-## Examples  
- The following code example inserts a new worksheet into a spreadsheet document by providing its file name. After you run the code example, examine the test file “WorksheetEx.xlsx” and notice the new worksheet named “mySheet.”  
-  
-```csharp  
-using System;  
-using System.Linq;  
-using DocumentFormat.OpenXml.Packaging;  
-using DocumentFormat.OpenXml.Spreadsheet;  
-  
-namespace WorkSheetEx  
-{  
-    class Program  
-    {  
-        static void Main(string[] args)  
-        {  
-            string fileName = @"C:\Users\Public\Documents\WorksheetEx.xlsx";  
-  
-            using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(fileName, true))  
-            {  
-                // Add a WorksheetPart.  
-                WorksheetPart newWorksheetPart = spreadSheet.WorkbookPart.AddNewPart<WorksheetPart>();  
-                newWorksheetPart.Worksheet = new Worksheet(new SheetData());  
-  
-                // Create Sheets object.  
-                Sheets sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild<Sheets>();  
-                string relationshipId = spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart);  
-  
-                // Create a unique ID for the new worksheet.  
-                uint sheetId = 1;  
-                if (sheets.Elements<Sheet>().Count() > 0)  
-                {  
-                    sheetId = sheets.Elements<Sheet>().Select(s => s.SheetId.Value).Max() + 1;  
-                }  
-  
-                // Give the new worksheet a name.  
-                string sheetName = "mySheet" + sheetId;  
-  
-                // Append the new worksheet and associate it with the workbook.  
-                Sheet sheet = new Sheet() { Id = relationshipId, SheetId = sheetId, Name = sheetName };  
-                sheets.Append(sheet);  
-            }  
-            Console.WriteLine("All done.");  
-            Console.ReadKey();  
-        }  
-    }  
-}  
-  
-```  
-  
-```vb  
-Imports System.Linq  
-Imports DocumentFormat.OpenXml.Packaging  
-Imports DocumentFormat.OpenXml.Spreadsheet  
-Module Module1  
-    Sub Main()  
-        Dim fileName As String = "C:\Users\Public\Documents\WorksheetEx.xlsx"  
-        Dim spreadSheet As SpreadsheetDocument = SpreadsheetDocument.Open(fileName, True)  
-  
-        Using (spreadSheet)  
-            ' Add a WorksheetPart.  
-            Dim newWorksheetPart As WorksheetPart = spreadSheet.WorkbookPart.AddNewPart(Of WorksheetPart)()  
-            newWorksheetPart.Worksheet = New Worksheet(New SheetData())  
-  
-            ' Create a Sheets object.  
-            Dim sheets As Sheets = spreadSheet.WorkbookPart.Workbook.GetFirstChild(Of Sheets)()  
-            Dim relationshipId As String = spreadSheet.WorkbookPart.GetIdOfPart(newWorksheetPart)  
-  
-            ' Get a unique ID for the new worksheet.  
-            Dim sheetId As UInteger = 1  
-            If (sheets.Elements(Of Sheet).Count > 0) Then  
-                sheetId = sheets.Elements(Of Sheet).Select(Function(s) s.SheetId.Value).Max + 1  
-            End If  
-  
-            ' Give the new worksheet a name.  
-            Dim sheetName As String = ("mySheet" + sheetId.ToString())  
-  
-            ' Append the new worksheet and associate it with the workbook.  
-            Dim sheet As Sheet = New Sheet  
-            sheet.Id = relationshipId  
-            sheet.SheetId = sheetId  
-            sheet.Name = sheetName  
-            sheets.Append(sheet)  
-        End Using  
-        Console.WriteLine("All done.")  
-        Console.ReadKey()  
-    End Sub  
-End Module  
-  
-```  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>SheetProperties &lt;x:sheetPr&gt;</description></item><item><description>SheetDimension &lt;x:dimension&gt;</description></item><item><description>SheetViews &lt;x:sheetViews&gt;</description></item><item><description>SheetFormatProperties &lt;x:sheetFormatPr&gt;</description></item><item><description>Columns &lt;x:cols&gt;</description></item><item><description>SheetData &lt;x:sheetData&gt;</description></item><item><description>SheetCalculationProperties &lt;x:sheetCalcPr&gt;</description></item><item><description>SheetProtection &lt;x:sheetProtection&gt;</description></item><item><description>ProtectedRanges &lt;x:protectedRanges&gt;</description></item><item><description>Scenarios &lt;x:scenarios&gt;</description></item><item><description>AutoFilter &lt;x:autoFilter&gt;</description></item><item><description>SortState &lt;x:sortState&gt;</description></item><item><description>DataConsolidate &lt;x:dataConsolidate&gt;</description></item><item><description>CustomSheetViews &lt;x:customSheetViews&gt;</description></item><item><description>MergeCells &lt;x:mergeCells&gt;</description></item><item><description>PhoneticProperties &lt;x:phoneticPr&gt;</description></item><item><description>ConditionalFormatting &lt;x:conditionalFormatting&gt;</description></item><item><description>DataValidations &lt;x:dataValidations&gt;</description></item><item><description>Hyperlinks &lt;x:hyperlinks&gt;</description></item><item><description>PrintOptions &lt;x:printOptions&gt;</description></item><item><description>PageMargins &lt;x:pageMargins&gt;</description></item><item><description>PageSetup &lt;x:pageSetup&gt;</description></item><item><description>HeaderFooter &lt;x:headerFooter&gt;</description></item><item><description>RowBreaks &lt;x:rowBreaks&gt;</description></item><item><description>ColumnBreaks &lt;x:colBreaks&gt;</description></item><item><description>CustomProperties &lt;x:customProperties&gt;</description></item><item><description>CellWatches &lt;x:cellWatches&gt;</description></item><item><description>IgnoredErrors &lt;x:ignoredErrors&gt;</description></item><item><description>Drawing &lt;x:drawing&gt;</description></item><item><description>LegacyDrawing &lt;x:legacyDrawing&gt;</description></item><item><description>LegacyDrawingHeaderFooter &lt;x:legacyDrawingHF&gt;</description></item><item><description>DrawingHeaderFooter &lt;x:drawingHF&gt;</description></item><item><description>Picture &lt;x:picture&gt;</description></item><item><description>OleObjects &lt;x:oleObjects&gt;</description></item><item><description>Controls &lt;x:controls&gt;</description></item><item><description>WebPublishItems &lt;x:webPublishItems&gt;</description></item><item><description>TableParts &lt;x:tableParts&gt;</description></item><item><description>WorksheetExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -301,7 +155,9 @@ End Module
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the Worksheet class.</summary>
+        <summary>
+            Initializes a new instance of the Worksheet class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -328,7 +184,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Worksheet class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Worksheet class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -349,7 +207,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Worksheet class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Worksheet class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -370,7 +230,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the Worksheet class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the Worksheet class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -393,9 +255,11 @@ End Module
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -419,7 +283,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>Loads the DOM from the WorksheetPart.</summary>
+        <summary>
+            Loads the DOM from the WorksheetPart.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -439,7 +305,9 @@ End Module
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -464,7 +332,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>Saves the DOM into the WorksheetPart.</summary>
+        <summary>
+            Saves the DOM into the WorksheetPart.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -484,7 +354,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.SheetDimension</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>SheetDimension. Represents the following element tag in the schema: x:dimension</summary>
+        <summary>
+          <para> SheetDimension.</para>
+          <para> Represents the following element tag in the schema: x:dimension </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -508,7 +381,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.SheetFormatProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>SheetFormatProperties. Represents the following element tag in the schema: x:sheetFormatPr</summary>
+        <summary>
+          <para> SheetFormatProperties.</para>
+          <para> Represents the following element tag in the schema: x:sheetFormatPr </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -532,7 +408,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.SheetProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>SheetProperties. Represents the following element tag in the schema: x:sheetPr</summary>
+        <summary>
+          <para> SheetProperties.</para>
+          <para> Represents the following element tag in the schema: x:sheetPr </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -556,7 +435,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.SheetViews</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>SheetViews. Represents the following element tag in the schema: x:sheetViews</summary>
+        <summary>
+          <para> SheetViews.</para>
+          <para> Represents the following element tag in the schema: x:sheetViews </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -580,7 +462,9 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.Packaging.WorksheetPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the WorksheetPart associated with this element.</summary>
+        <summary>
+            Gets the WorksheetPart associated with this element.
+            </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.WorksheetPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>

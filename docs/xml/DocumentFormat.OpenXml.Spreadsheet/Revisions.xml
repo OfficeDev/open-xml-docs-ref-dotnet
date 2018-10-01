@@ -55,88 +55,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Revisions. The root element of WorkbookRevisionLogPart. When the object is serialized out as xml, its qualified name is x:revisions.</summary>
+    <summary>
+      <para>Revisions. The root element of WorkbookRevisionLogPart.</para>
+      <para> When the object is serialized out as xml, its qualified name is x:revisions.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **revisions (Revisions)**  
-  
- This element represents the root node of a list of revisions made in this shared workbook.  This root node shows up at the beginning of every log file that contains specific revisions made to the workbook.  
-  
- When multiple users are sharing, and editing, a workbook at the same time, there can be conflicting changes. The spreadsheet application should have logic to resolve such conflicts, and the file format should only contain enough information so that the spreadsheet application can restore the workbook to the correct state after conflict resolution.  Revisions can also be tracked by the spreadsheet application for review by the user at a later time (as opposed to only dealing with conflicts on a save event.)  Some edits to workbooks are made as a result of this conflict resolution.  So, there are cases where a revision is effectively undone by another user, and as a result that undoing is itself a revision that adds or changes data in the file.  These operations are tracked by the *ua* and *ra* attributes of many different elements.  
-  
- *[Example:*  
-  
- Step 1:  
-  
- User 1 inserts Column A.  So the XML in the revision log would look like this:  
-  
-```xml  
-<revisions xmlns="…" xmlns:r="…">  
-  <rrc rId="1" sId="1" ref="A1:A1048576" action="insertCol"/>  
-</revisions>  
-```  
-  
- Step 2:  
-  
- User 2 synchronizes the file to pick up that change, but then activates the Track Changes feature, and rejects that change.  This effectively performs an undo on User 1's insertion.  This is denoted in the file with the *ua* attribute meaning that this change happened as the result of an undo.  The XML for the revision log would look like this:  
-  
-```xml  
-<revisions xmlns="…" xmlns:r="…">  
-  <rrc rId="2" ua="1" sId="1" ref="A1:A1048576" action="deleteCol"/>  
-  <rcft rId="1" ua="1" sheetId="1"/>  
-</revisions>  
-```  
-  
- Step 3:  
-  
- User 1 enters "foo" in A1, and saves the file.  A conflict resolution dialog is shown since User 2's version of the file removed the inserted Column A.  User 1 chooses to accept their own changes.  This undoes the change that User 2 made.  So, in effect, it performed an undo on a previous undo operation.  This is denoted in the file format by the *ra* attribute meaning that a the change occurred because a previous undo was undone.  So the resulting XML for the newest log file looks like this:  
-  
-```xml  
-<revisions xmlns="…" xmlns:r="…">  
-  <rrc rId="3" ua="1" ra="1" sId="1" ref="A1:A1048576" action="insertCol"/>  
-  <rcft rId="2" ua="1" sheetId="1"/>  
-  <rcc rId="4" sId="1">  
-    <nc r="A1" t="inlineStr">  
-      <is>  
-        <t>foo</t>  
-      </is>  
-    </nc>  
-  </rcc>  
-  <rcft rId="2" sheetId="1"/>  
-</revisions>  
-```  
-  
- *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|Root element of SpreadsheetML Shared Workbook Revision Log part|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|raf (Revision AutoFormat)|§18.11.1.8|  
-|rcc (Revision Cell Change)|§18.11.1.9|  
-|rcft (Revision Merge Conflict)|§18.11.1.10|  
-|rcmt (Revision Cell Comment)|§18.11.1.11|  
-|rcv (Revision Custom View)|§18.11.1.12|  
-|rdn (Revision Defined Name)|§18.11.1.13|  
-|rfmt (Revision Format)|§18.11.1.17|  
-|ris (Revision Insert Sheet)|§18.11.1.18|  
-|rm (Revision Cell Move)|§18.11.1.19|  
-|rqt (Revision Query Table)|§18.11.1.20|  
-|rrc (Revision Row Column Insert Delete)|§18.11.1.21|  
-|rsnm (Revision Sheet Name)|§18.11.1.22|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_Revisions) is located in §A.2. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>RevisionRowColumn &lt;x:rrc&gt;</description></item><item><description>RevisionMove &lt;x:rm&gt;</description></item><item><description>RevisionCustomView &lt;x:rcv&gt;</description></item><item><description>RevisionSheetName &lt;x:rsnm&gt;</description></item><item><description>RevisionInsertSheet &lt;x:ris&gt;</description></item><item><description>RevisionCellChange &lt;x:rcc&gt;</description></item><item><description>RevisionFormat &lt;x:rfmt&gt;</description></item><item><description>RevisionAutoFormat &lt;x:raf&gt;</description></item><item><description>RevisionDefinedName &lt;x:rdn&gt;</description></item><item><description>RevisionComment &lt;x:rcmt&gt;</description></item><item><description>RevisionQueryTable &lt;x:rqt&gt;</description></item><item><description>RevisionConflict &lt;x:rcft&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -152,7 +77,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the Revisions class.</summary>
+        <summary>
+            Initializes a new instance of the Revisions class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -179,7 +106,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Revisions class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Revisions class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -200,7 +129,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Revisions class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Revisions class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -221,7 +152,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the Revisions class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the Revisions class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -244,9 +177,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,7 +205,9 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>Loads the DOM from the WorkbookRevisionLogPart.</summary>
+        <summary>
+            Loads the DOM from the WorkbookRevisionLogPart.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -290,7 +227,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -315,7 +254,9 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>Saves the DOM into the WorkbookRevisionLogPart.</summary>
+        <summary>
+            Saves the DOM into the WorkbookRevisionLogPart.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -335,7 +276,9 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.WorkbookRevisionLogPart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the WorkbookRevisionLogPart associated with this element.</summary>
+        <summary>
+            Gets the WorkbookRevisionLogPart associated with this element.
+            </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.WorkbookRevisionLogPart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>

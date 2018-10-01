@@ -127,86 +127,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Table Cell. When the object is serialized out as xml, its qualified name is w:tc.</summary>
+    <summary>
+      <para>Table Cell.</para>
+      <para> When the object is serialized out as xml, its qualified name is w:tc.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **tc (Table Cell)**  
-  
- This element specifies a single cell in a table row, which contains the table’s content. Table cells in WordprocessingML are analogous to HTML *td* elements.  
-  
- A tc element has one formatting child element, tcPr (§17.4.70), which defines the properties for the cell. Each unique property on the table cell is specified by a child element of this element. As well, a table cell can contain any block-level content, which allows for the nesting of paragraphs and tables within table cells.  
-  
- If a table cell does not include at least one block-level element, then this document shall be considered corrupt.  
-  
- [*Example*: Consider a table consisting of a single table cell, which contains the text *Hello World*:  
-  
- Hello World  
-  
- This table cell's content is represented by the following WordprocessingML:  
-  
-```xml  
-<w:tc>  
-  <w:tcPr>  
-    <w:tcW w:w="0" w:type="auto"/>  
-  </w:tcPr>  
-  <w:p>  
-    <w:r>  
-      <w:t>Hello, World</w:t>  
-    </w:r>  
-  </w:p>  
-</w:tc>  
-```  
-  
- The tc element contains a set of cell-level properties defined using the tcPr element, and a single block-level element - in this case, a paragraph. *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|customXml (§17.5.1.4); sdtContent (§17.5.2.33); tr (§17.4.79)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|altChunk (Anchor for Imported External Content)|§17.17.2.1|  
-|bookmarkEnd (Bookmark End)|§17.13.6.1|  
-|bookmarkStart (Bookmark Start)|§17.13.6.2|  
-|commentRangeEnd (Comment Anchor Range End)|§17.13.4.3|  
-|commentRangeStart (Comment Anchor Range Start)|§17.13.4.4|  
-|customXml (Block-Level Custom XML Element)|§17.5.1.6|  
-|customXmlDelRangeEnd (Custom XML Markup Deletion End)|§17.13.5.4|  
-|customXmlDelRangeStart (Custom XML Markup Deletion Start)|§17.13.5.5|  
-|customXmlInsRangeEnd (Custom XML Markup Insertion End)|§17.13.5.6|  
-|customXmlInsRangeStart (Custom XML Markup Insertion Start)|§17.13.5.7|  
-|customXmlMoveFromRangeEnd (Custom XML Markup Move Source End)|§17.13.5.8|  
-|customXmlMoveFromRangeStart (Custom XML Markup Move Source Start)|§17.13.5.9|  
-|customXmlMoveToRangeEnd (Custom XML Markup Move Destination Location End)|§17.13.5.10|  
-|customXmlMoveToRangeStart (Custom XML Markup Move Destination Location Start)|§17.13.5.11|  
-|del (Deleted Run Content)|§17.13.5.14|  
-|ins (Inserted Run Content)|§17.13.5.18|  
-|moveFrom (Move Source Run Content)|§17.13.5.22|  
-|moveFromRangeEnd (Move Source Location Container - End)|§17.13.5.23|  
-|moveFromRangeStart (Move Source Location Container - Start)|§17.13.5.24|  
-|moveTo (Move Destination Run Content)|§17.13.5.25|  
-|moveToRangeEnd (Move Destination Location Container - End)|§17.13.5.27|  
-|moveToRangeStart (Move Destination Location Container - Start)|§17.13.5.28|  
-|oMath (Office Math)|§22.1.2.77|  
-|oMathPara (Office Math Paragraph)|§22.1.2.78|  
-|p (Paragraph)|§17.3.1.22|  
-|permEnd (Range Permission End)|§17.13.7.1|  
-|permStart (Range Permission Start)|§17.13.7.2|  
-|proofErr (Proofing Error Anchor)|§17.13.8.1|  
-|sdt (Block-Level Structured Document Tag)|§17.5.2.29|  
-|tbl (Table)|§17.4.38|  
-|tcPr (Table Cell Properties)|§17.4.70|  
-  
-  [*Note*: The W3C XML Schema definition of this element’s content model (CT_Tc) is located in §A.1. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>TableCellProperties &lt;w:tcPr&gt;</description></item><item><description>AltChunk &lt;w:altChunk&gt;</description></item><item><description>CustomXmlBlock &lt;w:customXml&gt;</description></item><item><description>SdtBlock &lt;w:sdt&gt;</description></item><item><description>Paragraph &lt;w:p&gt;</description></item><item><description>Table &lt;w:tbl&gt;</description></item><item><description>ProofError &lt;w:proofErr&gt;</description></item><item><description>PermStart &lt;w:permStart&gt;</description></item><item><description>PermEnd &lt;w:permEnd&gt;</description></item><item><description>BookmarkStart &lt;w:bookmarkStart&gt;</description></item><item><description>BookmarkEnd &lt;w:bookmarkEnd&gt;</description></item><item><description>CommentRangeStart &lt;w:commentRangeStart&gt;</description></item><item><description>CommentRangeEnd &lt;w:commentRangeEnd&gt;</description></item><item><description>MoveFromRangeStart &lt;w:moveFromRangeStart&gt;</description></item><item><description>MoveFromRangeEnd &lt;w:moveFromRangeEnd&gt;</description></item><item><description>MoveToRangeStart &lt;w:moveToRangeStart&gt;</description></item><item><description>MoveToRangeEnd &lt;w:moveToRangeEnd&gt;</description></item><item><description>CustomXmlInsRangeStart &lt;w:customXmlInsRangeStart&gt;</description></item><item><description>CustomXmlInsRangeEnd &lt;w:customXmlInsRangeEnd&gt;</description></item><item><description>CustomXmlDelRangeStart &lt;w:customXmlDelRangeStart&gt;</description></item><item><description>CustomXmlDelRangeEnd &lt;w:customXmlDelRangeEnd&gt;</description></item><item><description>CustomXmlMoveFromRangeStart &lt;w:customXmlMoveFromRangeStart&gt;</description></item><item><description>CustomXmlMoveFromRangeEnd &lt;w:customXmlMoveFromRangeEnd&gt;</description></item><item><description>CustomXmlMoveToRangeStart &lt;w:customXmlMoveToRangeStart&gt;</description></item><item><description>CustomXmlMoveToRangeEnd &lt;w:customXmlMoveToRangeEnd&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeStart &lt;w14:customXmlConflictInsRangeStart&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictInsertionRangeEnd &lt;w14:customXmlConflictInsRangeEnd&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeStart &lt;w14:customXmlConflictDelRangeStart&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.CustomXmlConflictDeletionRangeEnd &lt;w14:customXmlConflictDelRangeEnd&gt;</description></item><item><description>InsertedRun &lt;w:ins&gt;</description></item><item><description>DeletedRun &lt;w:del&gt;</description></item><item><description>MoveFromRun &lt;w:moveFrom&gt;</description></item><item><description>MoveToRun &lt;w:moveTo&gt;</description></item><item><description>ContentPart &lt;w:contentPart&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.RunConflictInsertion &lt;w14:conflictIns&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2010.Word.RunConflictDeletion &lt;w14:conflictDel&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -222,7 +149,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the TableCell class.</summary>
+        <summary>
+            Initializes a new instance of the TableCell class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -249,7 +178,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the TableCell class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the TableCell class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -270,7 +201,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the TableCell class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the TableCell class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -291,7 +224,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the TableCell class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the TableCell class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -314,9 +249,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -336,7 +273,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -357,7 +296,10 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TableCellProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Table Cell Properties. Represents the following element tag in the schema: w:tcPr</summary>
+        <summary>
+          <para> Table Cell Properties.</para>
+          <para> Represents the following element tag in the schema: w:tcPr </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

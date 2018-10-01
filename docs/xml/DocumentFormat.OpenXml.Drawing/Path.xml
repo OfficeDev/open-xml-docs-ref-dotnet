@@ -37,72 +37,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Shape Path. When the object is serialized out as xml, its qualified name is a:path.</summary>
+    <summary>
+      <para>Shape Path.</para>
+      <para> When the object is serialized out as xml, its qualified name is a:path.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **path (Shape Path)**  
-  
- This element specifies a creation path consisting of a series of moves, lines and curves that when combined forms a geometric shape. This element is only utilized if a custom geometry is specified.  
-  
- [*Note*: Since multiple paths are allowed the rules for drawing are that the path specified later in the pathLst is drawn on top of all previous paths. *end note*]  
-  
- [*Example*: Consider the following DrawingML.  
-  
-```xml  
-<a:custGeom>  
-  <a:pathLst>  
-    <a:path w="2824222" h="590309">  
-      <a:moveTo>  
-        <a:pt x="0" y="428263"/>  
-      </a:moveTo>  
-      <a:lnTo>  
-        <a:pt x="1620455" y="590309"/>  
-      </a:lnTo>  
-      <a:lnTo>  
-        <a:pt x="2824222" y="173620"/>  
-      </a:lnTo>  
-      <a:lnTo>  
-        <a:pt x="1562582" y="0"/>  
-      </a:lnTo>  
-      <a:close/>  
-    </a:path>  
-  </a:pathLst>  
-</a:custGeom>  
-```  
-  
- In the above example there is specified a four sided geometric shape that has all straight sides. While we only see three lines being drawn via the lnTo element there are actually four sides because the last point of (x=1562585, y=0) is connected to the first point in the creation path via a lnTo element. *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|pathLst (§20.1.9.16)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|arcTo (Draw Arc To)|§20.1.9.4|  
-|close (Close Shape Path)|§20.1.9.6|  
-|cubicBezTo (Draw Cubic Bezier Curve To)|§20.1.9.7|  
-|lnTo (Draw Line To)|§20.1.9.13|  
-|moveTo (Move Path To)|§20.1.9.14|  
-|quadBezTo (Draw Quadratic Bezier Curve To)|§20.1.9.21|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|extrusionOk (3D Extrusion Allowed)|Specifies that the use of 3D extrusions are possible on this path. This allows the generating application to know whether 3D extrusion can be applied in any form. If this attribute is omitted then a value of 0, or false is assumed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|fill (Path Fill)|Specifies how the corresponding path should be filled. If this attribute is omitted, a value of "norm" is assumed.<br /><br /> The possible values for this attribute are defined by the *ST_PathFillMode* simple type (§20.1.10.37).|  
-|h (Path Height)|Specifies the height, or maximum y coordinate that should be used for within the path coordinate system. This value determines the vertical placement of all points within the corresponding path as they are all calculated using this height attribute as the max y coordinate.<br /><br /> The possible values for this attribute are defined by the *ST_PositiveCoordinate* simple type (§20.1.10.42).|  
-|stroke (Path Stroke)|Specifies if the corresponding path should have a path stroke shown. This is a boolean value that affect the outline of the path. If this attribute is omitted, a value of true is assumed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|w (Path Width)|Specifies the width, or maximum x coordinate that should be used for within the path coordinate system. This value determines the horizontal placement of all points within the corresponding path as they are all calculated using this width attribute as the max x coordinate.<br /><br /> The possible values for this attribute are defined by the *ST_PositiveCoordinate* simple type (§20.1.10.42).|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_Path2D) is located in §A.4.1. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>CloseShapePath &lt;a:close&gt;</description></item><item><description>MoveTo &lt;a:moveTo&gt;</description></item><item><description>LineTo &lt;a:lnTo&gt;</description></item><item><description>ArcTo &lt;a:arcTo&gt;</description></item><item><description>QuadraticBezierCurveTo &lt;a:quadBezTo&gt;</description></item><item><description>CubicBezierCurveTo &lt;a:cubicBezTo&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -118,7 +59,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the Path class.</summary>
+        <summary>
+            Initializes a new instance of the Path class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -145,7 +88,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Path class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Path class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -166,7 +111,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Path class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Path class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -187,7 +134,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the Path class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the Path class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -210,9 +159,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -237,7 +188,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>3D Extrusion Allowed.Represents the following attribute in the schema: extrusionOk</summary>
+        <summary>
+          <para> 3D Extrusion Allowed.</para>
+          <para>Represents the following attribute in the schema: extrusionOk </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -263,7 +217,10 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Drawing.PathFillModeValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Path Fill.Represents the following attribute in the schema: fill</summary>
+        <summary>
+          <para> Path Fill.</para>
+          <para>Represents the following attribute in the schema: fill </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -289,7 +246,10 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Path Height.Represents the following attribute in the schema: h</summary>
+        <summary>
+          <para> Path Height.</para>
+          <para>Represents the following attribute in the schema: h </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Int64Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -310,7 +270,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -336,7 +298,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Path Stroke.Represents the following attribute in the schema: stroke</summary>
+        <summary>
+          <para> Path Stroke.</para>
+          <para>Represents the following attribute in the schema: stroke </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -362,7 +327,10 @@
         <ReturnType>DocumentFormat.OpenXml.Int64Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Path Width.Represents the following attribute in the schema: w</summary>
+        <summary>
+          <para> Path Width.</para>
+          <para>Represents the following attribute in the schema: w </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Int64Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>

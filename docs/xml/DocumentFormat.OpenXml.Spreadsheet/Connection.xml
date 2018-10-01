@@ -37,59 +37,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Connection. When the object is serialized out as xml, its qualified name is x:connection.</summary>
+    <summary>
+      <para>Connection.</para>
+      <para> When the object is serialized out as xml, its qualified name is x:connection.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **connection (Connection)**  
-  
- This element contains both the definition of how to get at an external data source as well as information describing how the connection is used within the workbook.  Specific constructs in a worksheet, such as OLAP formulas, QueryTables, or PivotTables make use of information in the connection to retrieve or refresh data based on default events or the user's explicit request.  
-  
-|Parent Elements|  
-|---------------------|  
-|connections (§18.13.2)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|dbPr (Database Properties)|§18.13.3|  
-|extLst (Future Feature Data Storage Area)|§18.2.10|  
-|olapPr (OLAP Properties)|§18.13.5|  
-|parameters (Query Parameters)|§18.13.7|  
-|textPr (Text Import Settings)|§18.13.12|  
-|webPr (Web Query Properties)|§18.13.13|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|background (Background Refresh)|Indicates whether the connection can be refreshed in the background (asynchronously).  *true* if preferred usage of the connection is to refresh asynchronously in the background; *false* if preferred usage of the connection is to refresh synchronously in the foreground.<br /><br /> This flag should be intentionally ignored in specific cases.<br /><br /> [*Example*: An example of when the flag would be ignored is in the case of a connection to OLAP data on Microsoft SQL Server Analysis Services, where the connection is used by both a PivotTable and also by CUBE functions within the workbook.  That connection will always be refreshed synchronously by the PivotTable and will always be refreshed asynchronously by the CUBE functions. *end example*]<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|credentials (Reconnection Method)|Specifies the authentication method to be used when establishing (or re-establishing) the connection.<br /><br /> The possible values for this attribute are defined by the *ST_CredMethod* simple type (§18.18.16).|  
-|deleted (Deleted Connection)|Indicates whether the associated workbook connection has been deleted.  *true* if the connection has been deleted; otherwise, *false*.<br /><br /> Deleted connections contain only the attributes name and deleted=*true*, all other information is removed from the SpreadsheetML file.<br /><br /> If a new connection is created with the same name as a deleted connection, then the deleted connection is overwritten by the new connection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|description (Connection Description)|Specifies the user description for this connection.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
-|id (Connection Id)|Specifies The unique identifier of this connection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|interval (Automatic Refresh Interval)|Specifies the number of minutes between automatic refreshes of the connection.  When this attribute is not present, the connection is not automatically refreshed.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|keepAlive (Keep Connection Open)|*true* when the spreadsheet application should make efforts to keep the connection open.  When *false*, the application should close the connection after retrieving the information.  This corresponds to the MaintainConnection property of a PivotCache object.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|minRefreshableVersion (Minimum Version Required for Refresh)|For compatibility with legacy spreadsheet applications.  This represents the minimum version # that is required to be able to correctly refresh the data connection.  This attribute applies to connections that are used by a QueryTable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
-|name (Connection Name)|Specifies the name of the connection.  Each connection shall have a unique name.<br /><br /> When a connection has been marked as deleted and then a new connection is added with the same name, the deleted connection is replaced with the new connection.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
-|new (New Connection)|*true* if the connection has not been refreshed for the first time; otherwise, *false*.  This state can happen when the user saves the file before a query has finished returning.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|odcFile (Connection File)|Specifies the full path to external connection file from which this connection was created.  If a connection fails during an attempt to refresh data, and reconnectionMethod=*1*, then the spreadsheet application will try again using information from the external connection file instead of the connection object embedded within the workbook.<br /><br /> This is a benefit for data source and spreadsheetML document manageability.  If the definition in the external connection file is changed (e.g., because of a database server name change), then the workbooks that made use of that connection will fail to connect with their internal connection information, and reload the new connection information from this file.<br /><br /> This attribute is cleared by the spreadsheet application when the user manually edits the connection definition within the workbook. Can be expressed in  or system-specific file path notation.<br /><br /> [*Note*: Applications can decide what forms of  they support, and whether system-specific file path notations are supported. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
-|onlyUseConnectionFile (Only Use Connection File)|Indicates whether the spreadsheet application should always and only use the connection information in the external connection file indicated by the odcFile attribute when the connection is refreshed.<br /><br /> If *false*, then the spreadsheet application should follow the procedure indicated by the reconnectionMethod attribute described below.<br /><br /> Applies only to OLE DB and ODBC connections, this attribute is  ignored for other types of connections.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|reconnectionMethod (Reconnection Method)|Specifies what the spreadsheet application should do when a connection fails.<br /><br /> The values are as follows:<br /><br /> *1 = As required*: On refresh use the existing connection information. If the existing information cannot be used to establish a connection, get updated connection information, if available from the external connection file.<br /><br /> *2 = Always*: On every refresh get updated connection information from the external connection file, if available, and use that instead of the existing connection information.  In this case the data refresh will fail if the external connection file is unavailable.<br /><br /> *3 = Never*: Never get updated connection information from the external connection file even if it is available and even if the existing connection information cannot be used.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|refreshedVersion (Last Refresh Version)|For backward compatibility purposes, this attribute indicates the version of the spreadsheet application that last refreshed the connection.<br /><br /> This attribute applies to connections that are used by a query table.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedByte* datatype.|  
-|refreshOnLoad (Refresh on Open)|*true* if this connection should be refreshed when opening the file; otherwise, *false*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|saveData (Save Data)|*true* if the external data fetched over the connection to populate a table is to be saved with the workbook; otherwise, *false*.<br /><br /> This exists for data security purposes - if no external data is saved in (or "cached") in the workbook, then current user credentials can be required every time to retrieve the relevant data, and people won't see the data the workbook author had last been using before saving the file.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|savePassword (Save Password)|*true* if the password is to be saved as part of the connection string; otherwise, False.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|singleSignOnId (SSO Id)|Identifier for Single Sign On (SSO) used for authentication between an intermediate spreadsheetML server and the external data source.<br /><br /> [*Note*: Data connectivity can use a number of different technologies. One example of potential values stored in this attribute can be found at: http://msdn.microsoft.com/library/default.asp?url=/library/en-us/spptsdk/html/cSSOReturnCodes_SV01001109.asp *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
-|sourceFile (Source Database File)|Used when the external data source is file-based. When a connection to such a data source fails, the spreadsheet application attempts to connect directly to this file. Can be expressed in  or system-specific file path notation.<br /><br /> [*Note*: Applications can decide what forms of  they support, and whether system-specific file path notations are supported. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
-|type (Database Source Type)|Specifies the data source type.<br /><br /> Values are as follows:<br /><br /> 1. ODBC-based source<br /><br /> 2. DAO-based source<br /><br /> 3. File based database source<br /><br /> 4. Web query<br /><br /> 5. OLE DB-based source<br /><br /> 6. Text-based source<br /><br /> 7.  record set<br /><br /> 8. DSP<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_Connection) is located in §A.2. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>DatabaseProperties &lt;x:dbPr&gt;</description></item><item><description>OlapProperties &lt;x:olapPr&gt;</description></item><item><description>WebQueryProperties &lt;x:webPr&gt;</description></item><item><description>TextProperties &lt;x:textPr&gt;</description></item><item><description>Parameters &lt;x:parameters&gt;</description></item><item><description>ConnectionExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -105,7 +59,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the Connection class.</summary>
+        <summary>
+            Initializes a new instance of the Connection class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -132,7 +88,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Connection class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Connection class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -153,7 +111,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Connection class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Connection class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -174,7 +134,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the Connection class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the Connection class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -199,7 +161,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>background.Represents the following attribute in the schema: background</summary>
+        <summary>
+          <para> background.</para>
+          <para>Represents the following attribute in the schema: background </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -223,9 +188,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -245,7 +212,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.ConnectionExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>ConnectionExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <summary>
+          <para> ConnectionExtensionList.</para>
+          <para> Represents the following element tag in the schema: x:extLst </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -274,7 +244,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>odcFile.Represents the following attribute in the schema: odcFile</summary>
+        <summary>
+          <para> odcFile.</para>
+          <para>Represents the following attribute in the schema: odcFile </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -300,7 +273,10 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.CredentialsMethodValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>credentials.Represents the following attribute in the schema: credentials</summary>
+        <summary>
+          <para> credentials.</para>
+          <para>Represents the following attribute in the schema: credentials </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -321,7 +297,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>DatabaseProperties. Represents the following element tag in the schema: x:dbPr</summary>
+        <summary>
+          <para> DatabaseProperties.</para>
+          <para> Represents the following element tag in the schema: x:dbPr </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.DatabaseProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -350,7 +329,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>deleted.Represents the following attribute in the schema: deleted</summary>
+        <summary>
+          <para> deleted.</para>
+          <para>Represents the following attribute in the schema: deleted </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -376,7 +358,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>description.Represents the following attribute in the schema: description</summary>
+        <summary>
+          <para> description.</para>
+          <para>Represents the following attribute in the schema: description </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -402,7 +387,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>id.Represents the following attribute in the schema: id</summary>
+        <summary>
+          <para> id.</para>
+          <para>Represents the following attribute in the schema: id </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -428,7 +416,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>interval.Represents the following attribute in the schema: interval</summary>
+        <summary>
+          <para> interval.</para>
+          <para>Represents the following attribute in the schema: interval </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -454,7 +445,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>keepAlive.Represents the following attribute in the schema: keepAlive</summary>
+        <summary>
+          <para> keepAlive.</para>
+          <para>Represents the following attribute in the schema: keepAlive </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -475,7 +469,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -501,7 +497,10 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>minRefreshableVersion.Represents the following attribute in the schema: minRefreshableVersion</summary>
+        <summary>
+          <para> minRefreshableVersion.</para>
+          <para>Represents the following attribute in the schema: minRefreshableVersion </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -527,7 +526,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>name.Represents the following attribute in the schema: name</summary>
+        <summary>
+          <para> name.</para>
+          <para>Represents the following attribute in the schema: name </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -553,7 +555,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>new.Represents the following attribute in the schema: new</summary>
+        <summary>
+          <para> new.</para>
+          <para>Represents the following attribute in the schema: new </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -574,7 +579,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.OlapProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>OlapProperties. Represents the following element tag in the schema: x:olapPr</summary>
+        <summary>
+          <para> OlapProperties.</para>
+          <para> Represents the following element tag in the schema: x:olapPr </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.OlapProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -603,7 +611,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>onlyUseConnectionFile.Represents the following attribute in the schema: onlyUseConnectionFile</summary>
+        <summary>
+          <para> onlyUseConnectionFile.</para>
+          <para>Represents the following attribute in the schema: onlyUseConnectionFile </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -624,7 +635,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Parameters</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Parameters. Represents the following element tag in the schema: x:parameters</summary>
+        <summary>
+          <para> Parameters.</para>
+          <para> Represents the following element tag in the schema: x:parameters </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.Parameters" />.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -653,7 +667,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>reconnectionMethod.Represents the following attribute in the schema: reconnectionMethod</summary>
+        <summary>
+          <para> reconnectionMethod.</para>
+          <para>Represents the following attribute in the schema: reconnectionMethod </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -679,7 +696,10 @@
         <ReturnType>DocumentFormat.OpenXml.ByteValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>refreshedVersion.Represents the following attribute in the schema: refreshedVersion</summary>
+        <summary>
+          <para> refreshedVersion.</para>
+          <para>Represents the following attribute in the schema: refreshedVersion </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.ByteValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -705,7 +725,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>refreshOnLoad.Represents the following attribute in the schema: refreshOnLoad</summary>
+        <summary>
+          <para> refreshOnLoad.</para>
+          <para>Represents the following attribute in the schema: refreshOnLoad </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -731,7 +754,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>saveData.Represents the following attribute in the schema: saveData</summary>
+        <summary>
+          <para> saveData.</para>
+          <para>Represents the following attribute in the schema: saveData </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -757,7 +783,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>savePassword.Represents the following attribute in the schema: savePassword</summary>
+        <summary>
+          <para> savePassword.</para>
+          <para>Represents the following attribute in the schema: savePassword </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -783,7 +812,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>singleSignOnId.Represents the following attribute in the schema: singleSignOnId</summary>
+        <summary>
+          <para> singleSignOnId.</para>
+          <para>Represents the following attribute in the schema: singleSignOnId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -809,7 +841,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>sourceFile.Represents the following attribute in the schema: sourceFile</summary>
+        <summary>
+          <para> sourceFile.</para>
+          <para>Represents the following attribute in the schema: sourceFile </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -830,7 +865,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.TextProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>TextProperties. Represents the following element tag in the schema: x:textPr</summary>
+        <summary>
+          <para> TextProperties.</para>
+          <para> Represents the following element tag in the schema: x:textPr </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.TextProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -859,7 +897,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>type.Represents the following attribute in the schema: type</summary>
+        <summary>
+          <para> type.</para>
+          <para>Represents the following attribute in the schema: type </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -880,7 +921,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>WebQueryProperties. Represents the following element tag in the schema: x:webPr</summary>
+        <summary>
+          <para> WebQueryProperties.</para>
+          <para> Represents the following element tag in the schema: x:webPr </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.WebQueryProperties" />.</value>
         <remarks>To be added.</remarks>
         <remark>

@@ -31,125 +31,14 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Defines the PivotTableDefinition Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:pivotTableDefinition.</summary>
+    <summary>
+      <para>Defines the PivotTableDefinition Class.</para>
+      <para>This class is available in Office2010 or above.</para>
+      <para> When the object is serialized out as xml, its qualified name is x14:pivotTableDefinition.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- *2.4.19   pivotTableDefinition*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
-  
- A *pivotTableDefinition* element is a *CT_PivotTableDefinition* type element, as specified in section 2.6.32, that specifies additional properties of the PivotTable, as specified in [ISO/IEC-29500-1] section 18.10, view. See section 2.2.4.4 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1].  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
-  
- *\<xsd:element name="pivotTableDefinition" type="CT_PivotTableDefinition"/>*  
-  
- See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- *2.6.32   CT_PivotTableDefinition*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
-  
- *Referenced by:* pivotTableDefinition  
-  
- This element specifies additional properties of a PivotTable ([ISO/IEC-29500-1] section 18.10) view.  
-  
- *Child Elements:*  
-  
- *pivotEdits:* A CT_PivotEdits element that specifies a collection of PivotTable What-if Analysis edits.  
-  
- *pivotChanges:* A CT_PivotChanges element that specifies a collection of PivotTable What-if Analysis changes.  
-  
- *conditionalFormats:* A CT_ConditionalFormats element that specifies a collection of conditional formats applied to the PivotTable ([ISO/IEC-29500-1] section 18.10) view.  
-  
- *Attributes:*  
-  
- *fillDownLabelsDefault:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies the behavior of *PivotTable* ([ISO/IEC-29500-1] section 18.10) fields (1) that are not a part of the PivotTable ([ISO/IEC-29500-1] section 18.10) view if they are later added to a PivotTable ([ISO/IEC-29500-1] section 18.10) view. MUST be a value from the following table.  
-  
-|||  
-|-|-|  
-|*Value*|*Meaning*|  
-|*"false"*|*Specifies that PivotTable ([ISO/IEC-29500-1] section 18.10) fields (1) added to the PivotTable ([ISO/IEC-29500-1] section 18.10) view behave as if the fillDownLabels attribute of the CT_PivotField elements associated with those PivotTable ([ISO/IEC-29500-1] section 18.10) fields (1) are set to "false".*|  
-|*"true"*|*Specifies that PivotTable ([ISO/IEC-29500-1] section 18.10) fields (1) added to the PivotTable ([ISO/IEC-29500-1] section 18.10) view behave as if the fillDownLabels attribute of the CT_PivotField elements associated with those PivotTable ([ISO/IEC-29500-1] section 18.10) fields (1) are set to "true".*|  
-  
- *visualTotalsForSets:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether hidden PivotTable ([ISO/IEC-29500-1] section 18.10) items will be included when calculating totals for *PivotTable* ([ISO/IEC-29500-1] section 18.10) named sets. MUST be a value from the following table.  
-  
-|||  
-|-|-|  
-|*Value*|*Meaning*|  
-|*"false"*|*Include hidden PivotTable ([ISO/IEC-29500-1] section 18.10) items in the set totals.*|  
-|*"true"*|*Do not include hidden PivotTable ([ISO/IEC-29500-1] section 18.10) items in the set totals.*|  
-  
- *calculatedMembersInFilters:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether PivotTable ([ISO/IEC-29500-1] section 18.10) OLAP-calculated members participate in PivotTable ([ISO/IEC-29500-1] section 18.10) manual filters and PivotTable ([ISO/IEC-29500-1] section 18.10) advanced filters.  
-  
-|||  
-|-|-|  
-|*Value*|*Meaning*|  
-|*"false"*|*PivotTable ([ISO/IEC-29500-1] section 18.10) OLAP-calculated members do not participate in PivotTable ([ISO/IEC-29500-1] section 18.10) manual filters and PivotTable ([ISO/IEC-29500-1] section 18.10) advanced filters.*|  
-|*"true"*|*PivotTable ([ISO/IEC-29500-1] section 18.10) OLAP-calculated members participate in PivotTable ([ISO/IEC-29500-1] section 18.10) manual filters and PivotTable ([ISO/IEC-29500-1] section 18.10) advanced filters as do other PivotTable ([ISO/IEC-29500-1] section 18.10) items.*|  
-  
- *altText:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies the alternate text for the PivotTable ([ISO/IEC-29500-1] section 18.10) view. The string MUST be less than or equal to 2,000 characters in length.  
-  
- *altTextSummary:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies the alternate text summary for the PivotTable ([ISO/IEC-29500-1] section 18.10) view. This string MUST be less than or equal to 2,000 characters in length.  
-  
- *enableEdit:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether PivotTable what-if analysis is enabled for the current PivotTable ([ISO/IEC-29500-1] section 18.10) view.  
-  
- *autoApply:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether PivotTable what-if analysis values are automatically allocated.  
-  
- *allocationMethod:* An ST_AllocationMethod attribute that specifies the allocation method to use for PivotTable what-if analysis.  
-  
- *weightExpression:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies the multidimensional expression (MDX) of the weight expression for weighted allocations of PivotTable what-if analysis values. This string MUST be less than or equal to 65,535 characters in length.  
-  
- *hideValuesRow:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether the values row (2) in the PivotTable ([ISO/IEC-29500-1] section 18.10) report is visible.  
-  
-|||  
-|-|-|  
-|*Value*|*Meaning*|  
-|*"false"*|*The values row (2) in the PivotTable ([ISO/IEC-29500-1] section 18.10) report is visible.*|  
-|*"true"*|*The values row (2) in the PivotTable ([ISO/IEC-29500-1] section 18.10) report is not visible.*|  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
-  
- *\<xsd:complexType name="CT_PivotTableDefinition">*  
-  
- *\<xsd:sequence>*  
-  
- *\<xsd:element name="pivotEdits" type="CT_PivotEdits" minOccurs="0" maxOccurs="1"/>*  
-  
- *\<xsd:element name="pivotChanges" type="CT_PivotChanges" minOccurs="0" maxOccurs="1"/>*  
-  
- *\<xsd:element name="conditionalFormats" type="CT_ConditionalFormats" minOccurs="0"/>*  
-  
- *\</xsd:sequence>*  
-  
- *\<xsd:attribute name="fillDownLabelsDefault" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\<xsd:attribute name="visualTotalsForSets" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\<xsd:attribute name="calculatedMembersInFilters" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\<xsd:attribute name="altText" type="x:ST_Xstring" use="optional"/>*  
-  
- *\<xsd:attribute name="altTextSummary" type="x:ST_Xstring" use="optional"/>*  
-  
- *\<xsd:attribute name="enableEdit" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\<xsd:attribute name="autoApply" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\<xsd:attribute name="allocationMethod" type="ST_AllocationMethod" use="optional" default="equalAllocation"/>*  
-  
- *\<xsd:attribute name="weightExpression" type="x:ST_Xstring" use="optional"/>*  
-  
- *\<xsd:attribute name="hideValuesRow" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\</xsd:complexType>*  
-  
- See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>PivotEdits &lt;x14:pivotEdits&gt;</description></item><item><description>PivotChanges &lt;x14:pivotChanges&gt;</description></item><item><description>ConditionalFormats &lt;x14:conditionalFormats&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -165,7 +54,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the PivotTableDefinition class.</summary>
+        <summary>
+            Initializes a new instance of the PivotTableDefinition class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -192,7 +83,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the PivotTableDefinition class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the PivotTableDefinition class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -213,7 +106,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the PivotTableDefinition class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the PivotTableDefinition class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -234,7 +129,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the PivotTableDefinition class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the PivotTableDefinition class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -259,7 +156,10 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.Excel.AllocationMethodValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>allocationMethod.Represents the following attribute in the schema: allocationMethod</summary>
+        <summary>
+          <para> allocationMethod.</para>
+          <para>Represents the following attribute in the schema: allocationMethod </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -285,7 +185,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>altText.Represents the following attribute in the schema: altText</summary>
+        <summary>
+          <para> altText.</para>
+          <para>Represents the following attribute in the schema: altText </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -311,7 +214,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>altTextSummary.Represents the following attribute in the schema: altTextSummary</summary>
+        <summary>
+          <para> altTextSummary.</para>
+          <para>Represents the following attribute in the schema: altTextSummary </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -337,7 +243,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>autoApply.Represents the following attribute in the schema: autoApply</summary>
+        <summary>
+          <para> autoApply.</para>
+          <para>Represents the following attribute in the schema: autoApply </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -363,7 +272,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>calculatedMembersInFilters.Represents the following attribute in the schema: calculatedMembersInFilters</summary>
+        <summary>
+          <para> calculatedMembersInFilters.</para>
+          <para>Represents the following attribute in the schema: calculatedMembersInFilters </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -387,9 +299,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -409,7 +323,10 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.ConditionalFormats</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>ConditionalFormats. Represents the following element tag in the schema: x14:conditionalFormats</summary>
+        <summary>
+          <para> ConditionalFormats.</para>
+          <para> Represents the following element tag in the schema: x14:conditionalFormats </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -438,7 +355,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>enableEdit.Represents the following attribute in the schema: enableEdit</summary>
+        <summary>
+          <para> enableEdit.</para>
+          <para>Represents the following attribute in the schema: enableEdit </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -464,7 +384,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>fillDownLabelsDefault.Represents the following attribute in the schema: fillDownLabelsDefault</summary>
+        <summary>
+          <para> fillDownLabelsDefault.</para>
+          <para>Represents the following attribute in the schema: fillDownLabelsDefault </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -490,7 +413,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>hideValuesRow.Represents the following attribute in the schema: hideValuesRow</summary>
+        <summary>
+          <para> hideValuesRow.</para>
+          <para>Represents the following attribute in the schema: hideValuesRow </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -511,7 +437,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -532,7 +460,10 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.PivotChanges</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>PivotChanges. Represents the following element tag in the schema: x14:pivotChanges</summary>
+        <summary>
+          <para> PivotChanges.</para>
+          <para> Represents the following element tag in the schema: x14:pivotChanges </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -556,7 +487,10 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.PivotEdits</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>PivotEdits. Represents the following element tag in the schema: x14:pivotEdits</summary>
+        <summary>
+          <para> PivotEdits.</para>
+          <para> Represents the following element tag in the schema: x14:pivotEdits </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -585,7 +519,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>visualTotalsForSets.Represents the following attribute in the schema: visualTotalsForSets</summary>
+        <summary>
+          <para> visualTotalsForSets.</para>
+          <para>Represents the following attribute in the schema: visualTotalsForSets </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -611,7 +548,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>weightExpression.Represents the following attribute in the schema: weightExpression</summary>
+        <summary>
+          <para> weightExpression.</para>
+          <para>Represents the following attribute in the schema: weightExpression </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

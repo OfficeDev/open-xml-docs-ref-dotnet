@@ -118,194 +118,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Phonetic Guide Text Run. When the object is serialized out as xml, its qualified name is w:r.</summary>
+    <summary>
+      <para>Phonetic Guide Text Run.</para>
+      <para> When the object is serialized out as xml, its qualified name is w:r.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **r (Text Run)**  
-  
- This element specifies a run of content in the parent field, hyperlink, custom XML element, structured document tag, smart tag, or paragraph.  
-  
- The contents of a run in a WordprocessingML document shall consist of any combination of run content.  
-  
- [*Example*: Consider a basic WordprocessingML paragraph with a pair of runs. This run would be expressed as follows:  
-  
-```xml  
-<w:document>  
-  <w:body>  
-    <w:p>  
-      <w:r>  
-        <w:t>Text</w:t>  
-      </w:r>  
-      <w:fldSimple w:instr="AUTHOR">  
-        <w:r>  
-          <w:t>Author Name</w:t>  
-        </w:r>  
-      </w:fldSimple>  
-    </w:p>  
-  </w:body>  
-</w:document>  
-```  
-  
- The r element is the container for all of the content in the run, which in this example includes both a run in the paragraph and a run within a simple field. *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|bdo (§17.3.2.3); customXml (§17.5.1.3); del (§17.13.5.14); dir (§17.3.2.8); fldSimple (§17.16.19); hyperlink (§17.16.22); ins (§17.13.5.18); moveFrom (§17.13.5.22); moveTo (§17.13.5.25); p (§17.3.1.22); rt (§17.3.3.24); rubyBase (§17.3.3.27); sdtContent (§17.5.2.36); smartTag (§17.5.1.9)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|annotationRef (Comment Information Block)|§17.13.4.1|  
-|br (Break)|§17.3.3.1|  
-|commentReference (Comment Content Reference Mark)|§17.13.4.5|  
-|contentPart (Content Part)|§17.3.3.2|  
-|continuationSeparator (Continuation Separator Mark)|§17.11.1|  
-|cr (Carriage Return)|§17.3.3.4|  
-|dayLong (Date Block - Long Day Format)|§17.3.3.5|  
-|dayShort (Date Block - Short Day Format)|§17.3.3.6|  
-|delInstrText (Deleted Field Code)|§17.16.13|  
-|delText (Deleted Text)|§17.3.3.7|  
-|drawing (DrawingML Object)|§17.3.3.9|  
-|endnoteRef (Endnote Reference Mark)|§17.11.6|  
-|endnoteReference (Endnote Reference)|§17.11.7|  
-|fldChar (Complex Field Character)|§17.16.18|  
-|footnoteRef (Footnote Reference Mark)|§17.11.13|  
-|footnoteReference (Footnote Reference)|§17.11.14|  
-|instrText (Field Code)|§17.16.23|  
-|lastRenderedPageBreak (Position of Last Calculated Page Break)|§17.3.3.13|  
-|monthLong (Date Block - Long Month Format)|§17.3.3.15|  
-|monthShort (Date Block - Short Month Format)|§17.3.3.16|  
-|noBreakHyphen (Non Breaking Hyphen Character)|§17.3.3.18|  
-|object (Embedded Object)|§17.3.3.19|  
-|pgNum (Page Number Block)|§17.3.3.22|  
-|ptab (Absolute Position Tab Character)|§17.3.3.23|  
-|rPr (Run Properties)|§17.3.2.28|  
-|ruby (Phonetic Guide)|§17.3.3.25|  
-|separator (Footnote/Endnote Separator Mark)|§17.11.23|  
-|softHyphen (Optional Hyphen Character)|§17.3.3.29|  
-|sym (Symbol Character)|§17.3.3.30|  
-|t (Text)|§17.3.3.31|  
-|tab (Tab Character)|§17.3.3.32|  
-|yearLong (Date Block - Long Year Format)|§17.3.3.33|  
-|yearShort (Date Block - Short Year Format)|§17.3.3.34|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|rsidDel (Revision Identifier for Run Deletion)|Specifies a unique identifier used to track the editing session when the run was deleted from the main document.<br /><br /> All rsid* attributes throughout this document with the same value, if present, shall indicate that those regions were modified during the same editing session (time between subsequent save actions).<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions to indicate the order of the modifications relative to other modifications in this document.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidR (Revision Identifier for Run)|Specifies a unique identifier used to track the editing session when the run was added to the main document.<br /><br /> All rsid* attributes throughout this document with the same value, if present, shall indicate that those regions were modified during the same editing session (time between subsequent save actions).<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions to indicate the order of the modifications relative to other modifications in this document.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidRPr (Revision Identifier for Run Properties)|Specifies a unique identifier used to track the editing session when the run properties were last modified in the main document.<br /><br /> All rsid* attributes throughout this document with the same value, if present, shall indicate that those regions were modified during the same editing session (time between subsequent save actions).<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions to indicate the order of the modifications relative to other modifications in this document.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_R) is located in §A.1. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
-   
-  
-## Examples  
- The following example creates a word processing document and writes the text, “Hello, World!” into it.  
-  
-```csharp  
-using System;  
-using DocumentFormat.OpenXml;  
-using DocumentFormat.OpenXml.Packaging;          
-using DocumentFormat.OpenXml.Wordprocessing;  
-  
-namespace RunEx  
-{  
-    class Program  
-    {  
-        static void Main(string[] args)  
-        {  
-            // Create a document by path, and write some text in it.  
-            string fileName = @"C:\Users\Public\Documents\RunEx.docx";  
-            string txt = "Hello, world!";  
-  
-            // Create the Word document.   
-            WordprocessingDocument wordprocessingDocument =  
-                WordprocessingDocument.Create(fileName,   
-                    WordprocessingDocumentType.Document);  
-  
-            // Create a MainDocumentPart instance.  
-            MainDocumentPart mainDocumentPart =   
-                wordprocessingDocument.AddMainDocumentPart();  
-            mainDocumentPart.Document = new Document();  
-  
-            // Create a Document instance.  
-            Document document = mainDocumentPart.Document;  
-  
-            // Create a Body instance.  
-            Body body = document.AppendChild(new Body());  
-  
-            // Create a Paragraph instance.  
-            Paragraph para = body.AppendChild(new Paragraph());  
-  
-            // Create a Run instance.  
-            Run run = para.AppendChild(new Run());  
-  
-            // Add Text to the Run element.  
-            run.AppendChild(new Text(txt));  
-  
-            // Close the document handle  
-            wordprocessingDocument.Close();  
-  
-            Console.WriteLine("The document has been created. Press any key.");  
-            Console.ReadKey();  
-        }  
-    }     
-}  
-  
-```  
-  
-```vb  
-Imports DocumentFormat.OpenXml  
-Imports DocumentFormat.OpenXml.Packaging  
-Imports DocumentFormat.OpenXml.Wordprocessing  
-  
-Module Module1  
-    Sub Main(ByVal args As String())  
-        ' Create a document by path, and write some text in it.  
-        Dim fileName As String = "C:\Users\Public\Documents\RunEx.docx"  
-        Dim txt As String = "Hello, world!"  
-  
-        ' Create the Word document.   
-        Dim wordprocessingDocument As WordprocessingDocument = _  
-            wordprocessingDocument.Create(fileName, WordprocessingDocumentType.Document)  
-  
-        ' Create a MainDocumentPart instance.  
-        Dim mainDocumentPart As MainDocumentPart = _  
-        wordprocessingDocument.AddMainDocumentPart()  
-        mainDocumentPart.Document = New Document()  
-  
-        ' Create a Document instance.  
-        Dim document As Document = mainDocumentPart.Document  
-  
-        ' Create a Body instance.  
-        Dim body As Body = document.AppendChild(New Body())  
-  
-        ' Create a Paragraph instance.  
-        Dim para As Paragraph = body.AppendChild(New Paragraph())  
-  
-        ' Create a Run instance.  
-        Dim run As Run = para.AppendChild(New Run())  
-  
-        ' Add Text to the Run element.  
-        run.AppendChild(New Text(txt))  
-  
-        ' Close the document handle  
-        wordprocessingDocument.Close()  
-  
-        Console.WriteLine("The document has been created. Press any key.")  
-        Console.ReadKey()  
-    End Sub  
-End Module  
-  
-```  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>RunProperties &lt;w:rPr&gt;</description></item><item><description>Break &lt;w:br&gt;</description></item><item><description>Text &lt;w:t&gt;</description></item><item><description>DeletedText &lt;w:delText&gt;</description></item><item><description>FieldCode &lt;w:instrText&gt;</description></item><item><description>DeletedFieldCode &lt;w:delInstrText&gt;</description></item><item><description>NoBreakHyphen &lt;w:noBreakHyphen&gt;</description></item><item><description>SoftHyphen &lt;w:softHyphen&gt;</description></item><item><description>DayShort &lt;w:dayShort&gt;</description></item><item><description>MonthShort &lt;w:monthShort&gt;</description></item><item><description>YearShort &lt;w:yearShort&gt;</description></item><item><description>DayLong &lt;w:dayLong&gt;</description></item><item><description>MonthLong &lt;w:monthLong&gt;</description></item><item><description>YearLong &lt;w:yearLong&gt;</description></item><item><description>AnnotationReferenceMark &lt;w:annotationRef&gt;</description></item><item><description>FootnoteReferenceMark &lt;w:footnoteRef&gt;</description></item><item><description>EndnoteReferenceMark &lt;w:endnoteRef&gt;</description></item><item><description>SeparatorMark &lt;w:separator&gt;</description></item><item><description>ContinuationSeparatorMark &lt;w:continuationSeparator&gt;</description></item><item><description>SymbolChar &lt;w:sym&gt;</description></item><item><description>PageNumber &lt;w:pgNum&gt;</description></item><item><description>CarriageReturn &lt;w:cr&gt;</description></item><item><description>TabChar &lt;w:tab&gt;</description></item><item><description>EmbeddedObject &lt;w:object&gt;</description></item><item><description>Picture &lt;w:pict&gt;</description></item><item><description>FieldChar &lt;w:fldChar&gt;</description></item><item><description>Ruby &lt;w:ruby&gt;</description></item><item><description>FootnoteReference &lt;w:footnoteReference&gt;</description></item><item><description>EndnoteReference &lt;w:endnoteReference&gt;</description></item><item><description>CommentReference &lt;w:commentReference&gt;</description></item><item><description>Drawing &lt;w:drawing&gt;</description></item><item><description>PositionalTab &lt;w:ptab&gt;</description></item><item><description>LastRenderedPageBreak &lt;w:lastRenderedPageBreak&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -321,7 +140,9 @@ End Module
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the Run class.</summary>
+        <summary>
+            Initializes a new instance of the Run class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -348,7 +169,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Run class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Run class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -369,7 +192,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the Run class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the Run class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -390,7 +215,9 @@ End Module
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the Run class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the Run class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -413,9 +240,11 @@ End Module
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -435,7 +264,9 @@ End Module
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -461,7 +292,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Revision Identifier for Run.Represents the following attribute in the schema: w:rsidR</summary>
+        <summary>
+          <para> Revision Identifier for Run.</para>
+          <para>Represents the following attribute in the schema: w:rsidR </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -489,7 +323,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Revision Identifier for Run Deletion.Represents the following attribute in the schema: w:rsidDel</summary>
+        <summary>
+          <para> Revision Identifier for Run Deletion.</para>
+          <para>Represents the following attribute in the schema: w:rsidDel </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -517,7 +354,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Revision Identifier for Run Properties.Represents the following attribute in the schema: w:rsidRPr</summary>
+        <summary>
+          <para> Revision Identifier for Run Properties.</para>
+          <para>Represents the following attribute in the schema: w:rsidRPr </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -540,7 +380,10 @@ End Module
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.RunProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Run Properties. Represents the following element tag in the schema: w:rPr</summary>
+        <summary>
+          <para> Run Properties.</para>
+          <para> Represents the following element tag in the schema: w:rPr </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

@@ -31,56 +31,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Worksheet View. When the object is serialized out as xml, its qualified name is x:sheetView.</summary>
+    <summary>
+      <para>Worksheet View.</para>
+      <para> When the object is serialized out as xml, its qualified name is x:sheetView.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **sheetView (Worksheet View)**  
-  
- A single sheet view definition. When more than one sheet view is defined in the file, it means that when opening the workbook, each sheet view corresponds to a separate window within the spreadsheet application, where each window is showing the particular sheet containing the same workbookViewId value, the last sheetView definition is loaded, and the others are discarded. When multiple windows are viewing the same sheet, multiple sheetView elements (with corresponding workbookView entries) are saved.  
-  
-|Parent Elements|  
-|---------------------|  
-|sheetViews (§18.3.1.88)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|extLst (Future Feature Data Storage Area)|§18.2.10|  
-|pane (View Pane)|§18.3.1.66|  
-|pivotSelection (PivotTable Selection)|§18.3.1.69|  
-|selection (Selection)|§18.3.1.78|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|colorId (Color Id)|Index to the color value for row/column text headings and gridlines. This is an 'index color value' (ICV) rather than rgb value.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|defaultGridColor (Default Grid Color)|Flag indicating that the consuming application should use the default grid lines color (system dependent). Overrides any color specified in colorId.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|rightToLeft (Right To Left)|Flag indicating whether the sheet is in 'right to left' display mode. When in this mode, Column A is on the far right, Column B ;is one column left of Column A, and so on. Also, information in cells is displayed in the Right to Left format.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|showFormulas (Show Formulas)|Flag indicating whether this sheet should display formulas.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|showGridLines (Show Grid Lines)|Flag indicating whether this sheet should display gridlines.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|showOutlineSymbols (Show Outline Symbols)|Flag indicating whether the sheet has outline symbols visible. This flag shall always override SheetPr element's outlinePr child element whose attribute is named showOutlineSymbols when there is a conflict.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|showRowColHeaders (Show Headers)|Flag indicating whether the sheet should display row and column headings.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|showRuler (Show Ruler)|Show the ruler in Page Layout View.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|showWhiteSpace (Show White Space)|Flag indicating whether page layout view shall display margins. False means do not display left, right, top (header), and bottom (footer) margins (even when there is data in the header or footer).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|showZeros (Show Zero Values)|Flag indicating whether the window should show 0 (zero) in cells containing zero value. When false, cells with zero value appear blank instead of showing the number zero.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|tabSelected (Sheet Tab Selected)|Flag indicating whether this sheet is selected. When only 1 sheet is selected and active, this value should be in synch with the activeTab value. In case of a conflict, the Start Part setting wins and sets the active sheet tab.<br /><br /> Multiple sheets can be selected, but only one sheet shall be active at one time.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|topLeftCell (Top Left Visible Cell)|Location of the top left visible cell Location of the top left visible cell in the bottom right pane (when in Left-to-Right mode).<br /><br /> The possible values for this attribute are defined by the *ST_CellRef* simple type (§18.18.7).|  
-|view (View Type)|Indicates the view type.<br /><br /> The possible values for this attribute are defined by the *ST_SheetViewType* simple type (§18.18.69).|  
-|windowProtection (Window Protection)|Flag indicating whether the panes in the window are locked due to workbook protection. This is an option when the workbook structure is protected.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|workbookViewId (Workbook View Index)|Zero-based index of this workbook view, pointing to a workbookView element in the bookViews collection.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|zoomScale (Zoom Scale)|Window zoom magnification for current view representing percent values. This attribute is restricted to values ranging from 10 to 400. Horizontal & Vertical scale together.<br /><br /> [*Example*:<br /><br /> 10 - 10%<br /><br /> 20 - 20%<br /><br /> …<br /><br /> 100 - 100%<br /><br /> …<br /><br /> 400 - 400%<br /><br /> *end example*]<br /><br /> Current view can be Normal, Page Layout, or Page Break Preview.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|zoomScaleNormal (Zoom Scale Normal View)|Zoom magnification to use when in normal view, representing percent values. This attribute is restricted to values ranging from 10 to 400. Horizontal & Vertical scale together.<br /><br /> [*Example*:<br /><br /> 10 - 10%<br /><br /> 20 - 20%<br /><br /> …<br /><br /> 100 - 100%<br /><br /> …<br /><br /> 400 - 400%<br /><br /> *end example*]<br /><br /> Applies for worksheets only; zero implies the automatic setting.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|zoomScalePageLayoutView (Zoom Scale Page Layout View)|Zoom magnification to use when in page layout view, representing percent values. This attribute is restricted to values ranging from 10 to 400. Horizontal & Vertical scale together.<br /><br /> [*Example*:<br /><br /> 10 - 10%<br /><br /> 20 - 20%<br /><br /> …<br /><br /> 100 - 100%<br /><br /> …<br /><br /> 400 - 400%<br /><br /> *end example*]<br /><br /> Applies for worksheets only; zero implies the automatic setting.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|zoomScaleSheetLayoutView (Zoom Scale Page Break Preview)|Zoom magnification to use when in page break preview, representing percent values. This attribute is restricted to values ranging from 10 to 400. Horizontal & Vertical scale together.<br /><br /> [*Example*:<br /><br /> 10 - 10%<br /><br /> 20 - 20%<br /><br /> …<br /><br /> 100 - 100%<br /><br /> …<br /><br /> 400 - 400%<br /><br /> *end example*]<br /><br /> Applies for worksheet only; zero implies the automatic setting.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_SheetView) is located in §A.2. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>Pane &lt;x:pane&gt;</description></item><item><description>Selection &lt;x:selection&gt;</description></item><item><description>PivotSelection &lt;x:pivotSelection&gt;</description></item><item><description>ExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -96,7 +53,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the SheetView class.</summary>
+        <summary>
+            Initializes a new instance of the SheetView class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -123,7 +82,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the SheetView class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the SheetView class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -144,7 +105,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the SheetView class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the SheetView class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,7 +128,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the SheetView class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the SheetView class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -188,9 +153,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -215,7 +182,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Color Id.Represents the following attribute in the schema: colorId</summary>
+        <summary>
+          <para> Color Id.</para>
+          <para>Represents the following attribute in the schema: colorId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -241,7 +211,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Default Grid Color.Represents the following attribute in the schema: defaultGridColor</summary>
+        <summary>
+          <para> Default Grid Color.</para>
+          <para>Represents the following attribute in the schema: defaultGridColor </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -262,7 +235,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -283,7 +258,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.Pane</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>View Pane. Represents the following element tag in the schema: x:pane</summary>
+        <summary>
+          <para> View Pane.</para>
+          <para> Represents the following element tag in the schema: x:pane </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -312,7 +290,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Right To Left.Represents the following attribute in the schema: rightToLeft</summary>
+        <summary>
+          <para> Right To Left.</para>
+          <para>Represents the following attribute in the schema: rightToLeft </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -338,7 +319,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Show Formulas.Represents the following attribute in the schema: showFormulas</summary>
+        <summary>
+          <para> Show Formulas.</para>
+          <para>Represents the following attribute in the schema: showFormulas </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -364,7 +348,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Show Grid Lines.Represents the following attribute in the schema: showGridLines</summary>
+        <summary>
+          <para> Show Grid Lines.</para>
+          <para>Represents the following attribute in the schema: showGridLines </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -390,7 +377,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Show Outline Symbols.Represents the following attribute in the schema: showOutlineSymbols</summary>
+        <summary>
+          <para> Show Outline Symbols.</para>
+          <para>Represents the following attribute in the schema: showOutlineSymbols </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -416,7 +406,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Show Headers.Represents the following attribute in the schema: showRowColHeaders</summary>
+        <summary>
+          <para> Show Headers.</para>
+          <para>Represents the following attribute in the schema: showRowColHeaders </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -442,7 +435,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Show Ruler.Represents the following attribute in the schema: showRuler</summary>
+        <summary>
+          <para> Show Ruler.</para>
+          <para>Represents the following attribute in the schema: showRuler </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -468,7 +464,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Show White Space.Represents the following attribute in the schema: showWhiteSpace</summary>
+        <summary>
+          <para> Show White Space.</para>
+          <para>Represents the following attribute in the schema: showWhiteSpace </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -494,7 +493,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Show Zero Values.Represents the following attribute in the schema: showZeros</summary>
+        <summary>
+          <para> Show Zero Values.</para>
+          <para>Represents the following attribute in the schema: showZeros </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -520,7 +522,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Sheet Tab Selected.Represents the following attribute in the schema: tabSelected</summary>
+        <summary>
+          <para> Sheet Tab Selected.</para>
+          <para>Represents the following attribute in the schema: tabSelected </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -546,7 +551,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Top Left Visible Cell.Represents the following attribute in the schema: topLeftCell</summary>
+        <summary>
+          <para> Top Left Visible Cell.</para>
+          <para>Represents the following attribute in the schema: topLeftCell </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -572,7 +580,10 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.SheetViewValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>View Type.Represents the following attribute in the schema: view</summary>
+        <summary>
+          <para> View Type.</para>
+          <para>Represents the following attribute in the schema: view </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -598,7 +609,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Window Protection.Represents the following attribute in the schema: windowProtection</summary>
+        <summary>
+          <para> Window Protection.</para>
+          <para>Represents the following attribute in the schema: windowProtection </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -624,7 +638,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Workbook View Index.Represents the following attribute in the schema: workbookViewId</summary>
+        <summary>
+          <para> Workbook View Index.</para>
+          <para>Represents the following attribute in the schema: workbookViewId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -650,7 +667,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Zoom Scale.Represents the following attribute in the schema: zoomScale</summary>
+        <summary>
+          <para> Zoom Scale.</para>
+          <para>Represents the following attribute in the schema: zoomScale </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -676,7 +696,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Zoom Scale Normal View.Represents the following attribute in the schema: zoomScaleNormal</summary>
+        <summary>
+          <para> Zoom Scale Normal View.</para>
+          <para>Represents the following attribute in the schema: zoomScaleNormal </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -702,7 +725,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Zoom Scale Page Layout View.Represents the following attribute in the schema: zoomScalePageLayoutView</summary>
+        <summary>
+          <para> Zoom Scale Page Layout View.</para>
+          <para>Represents the following attribute in the schema: zoomScalePageLayoutView </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -728,7 +754,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Zoom Scale Page Break Preview.Represents the following attribute in the schema: zoomScaleSheetLayoutView</summary>
+        <summary>
+          <para> Zoom Scale Page Break Preview.</para>
+          <para>Represents the following attribute in the schema: zoomScaleSheetLayoutView </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>

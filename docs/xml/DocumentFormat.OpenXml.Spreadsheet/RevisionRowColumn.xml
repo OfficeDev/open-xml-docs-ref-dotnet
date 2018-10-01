@@ -28,44 +28,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Revision Row Column Insert Delete. When the object is serialized out as xml, its qualified name is x:rrc.</summary>
+    <summary>
+      <para>Revision Row Column Insert Delete.</para>
+      <para> When the object is serialized out as xml, its qualified name is x:rrc.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **rrc (Revision Row Column Insert Delete)**  
-  
- This element represents a revision record of a row/column insert/delete action.  
-  
-|Parent Elements|  
-|---------------------|  
-|revisions (§18.11.1.16)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|rcc (Revision Cell Change)|§18.11.1.9|  
-|rfmt (Revision Format)|§18.11.1.17|  
-|undo (Undo)|§18.11.1.25|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|action (User Action)|Indicates the action most recently performed on the row or column.<br /><br /> The possible values for this attribute are defined by the *ST_rwColActionType* simple type (§18.18.66).|  
-|edge (Edge Deleted)|A Boolean flag indicating that a row or column is being deleted at the edge of a sorted range (only applicable to a Delete Row/Column revision types).<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|eol (End Of List)|A Boolean flag indicating that a row or a column is being inserted at the end of a list of data.<br /><br /> List in this context does not mean table, rather it refers to the feature where the spreadsheet application automatically creates an internal structure for making data input more consistent on adjacent rows or columns.  For instance, if 3 cells in a row are entered with the same format, then when entering data into the 4th adjacent cell, the spreadsheet application might automatically apply that same format. In this case, those cells are treated as a list.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|ra (Revision Undo Rejected)|A Boolean flag which indicates that this revision was due to a previous undo (*ua*) revision being rejected.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|ref (Reference)|A reference to the location of the rows/columns that were inserted or deleted.<br /><br /> [*Note*: A reference to a whole column or row must include both the column and row components. For example, column A is referenced by "A1:A1048576", and row 1 is referenced by "A1:XFD1". However, because this attribute value is occurring in the context of an entire row or column insert, the column component of a row reference can be ignored, and the row component of a column reference can be ignored. *end note*]<br /><br /> The possible values for this attribute are defined by the *ST_Ref* simple type (§18.18.62).|  
-|rId (Revision Id)|An integer representing the number of this revision.  This id shall apply to reviewable revision types only.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|sId (Sheet Id)|An integer representing the internal id of the sheet on which the revision occurred.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|ua (Revision From Rejection)|A Boolean flag indicating that this revision occurred because another revision was rejected and therefore undone.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_RevisionRowColumn) is located in §A.2. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>Undo &lt;x:undo&gt;</description></item><item><description>RevisionCellChange &lt;x:rcc&gt;</description></item><item><description>RevisionFormat &lt;x:rfmt&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -81,7 +50,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the RevisionRowColumn class.</summary>
+        <summary>
+            Initializes a new instance of the RevisionRowColumn class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -108,7 +79,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the RevisionRowColumn class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the RevisionRowColumn class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -129,7 +102,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the RevisionRowColumn class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the RevisionRowColumn class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -150,7 +125,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the RevisionRowColumn class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the RevisionRowColumn class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -175,7 +152,10 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.RowColumnActionValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>User Action.Represents the following attribute in the schema: action</summary>
+        <summary>
+          <para> User Action.</para>
+          <para>Represents the following attribute in the schema: action </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -199,9 +179,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -226,7 +208,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Edge Deleted.Represents the following attribute in the schema: edge</summary>
+        <summary>
+          <para> Edge Deleted.</para>
+          <para>Represents the following attribute in the schema: edge </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -252,7 +237,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>End Of List.Represents the following attribute in the schema: eol</summary>
+        <summary>
+          <para> End Of List.</para>
+          <para>Represents the following attribute in the schema: eol </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -273,7 +261,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -299,7 +289,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Revision Undo Rejected.Represents the following attribute in the schema: ra</summary>
+        <summary>
+          <para> Revision Undo Rejected.</para>
+          <para>Represents the following attribute in the schema: ra </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -325,7 +318,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Reference.Represents the following attribute in the schema: ref</summary>
+        <summary>
+          <para> Reference.</para>
+          <para>Represents the following attribute in the schema: ref </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -351,7 +347,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Revision Id.Represents the following attribute in the schema: rId</summary>
+        <summary>
+          <para> Revision Id.</para>
+          <para>Represents the following attribute in the schema: rId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -377,7 +376,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Sheet Id.Represents the following attribute in the schema: sId</summary>
+        <summary>
+          <para> Sheet Id.</para>
+          <para>Represents the following attribute in the schema: sId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -403,7 +405,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Revision From Rejection.Represents the following attribute in the schema: ua</summary>
+        <summary>
+          <para> Revision From Rejection.</para>
+          <para>Represents the following attribute in the schema: ua </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>

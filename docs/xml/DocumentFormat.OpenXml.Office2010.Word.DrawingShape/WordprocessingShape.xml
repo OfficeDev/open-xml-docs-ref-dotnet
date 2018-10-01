@@ -49,99 +49,14 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Defines the WordprocessingShape Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is wps:wsp.</summary>
+    <summary>
+      <para>Defines the WordprocessingShape Class.</para>
+      <para>This class is available in Office2010 or above.</para>
+      <para> When the object is serialized out as xml, its qualified name is wps:wsp.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- *2.3.27   wsp*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/word/2010/wordprocessingShape  
-  
- *Referenced by:* CT_WordprocessingGroup, CT_WordprocessingCanvas  
-  
- A CT_WordprocessingShape element that specifies a shape in WordprocessingML. See 2.2.7 for more details about how this element is integrated with the Open XML file formats as specified in [ISO/IEC-29500-1].  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
-  
- *\<xsd:element name="wsp" type="CT_WordprocessingShape"/>*  
-  
- See section 5.2 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- *2.5.76   CT_WordprocessingShape*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/word/2010/wordprocessingShape  
-  
- *Referenced by:* wsp, CT_WordprocessingGroup, CT_WordprocessingCanvas  
-  
- This type defines a shape in a WordprocessingML document.  
-  
- *Child Elements:*  
-  
- *cNvPr:* A *CT_NonVisualDrawingProps* element ([ISO/IEC-29500-1] section A.4.1) that specifies non-visual properties. This element MUST NOT be present when the *CT_WordprocessingShape* is contained directly by a *graphicData* (Graphic Object Data) element as specified in [ISO/IEC-29500-1] section 20.1.2.2.17. This element MUST be present when the *CT_WordprocessingShape* is not contained directly by a *graphicData* element as specified in [ISO/IEC-29500-1] section 20.1.2.2.17.\<139>  
-  
- *cNvSpPr:* A *CT_NonVisualDrawingShapeProps* element ([ISO/IEC-29500-1] section A.4.1) that specifies non-visual shape properties.  
-  
- *cNvCnPr:* A *CT_NonVisualConnectorProperties* element ([ISO/IEC-29500-1] section A.4.1) that specifies non-visual connector properties.  
-  
- *spPr:* A *CT_ShapeProperties* element ([ISO/IEC-29500-1] section A.4.1) that specifies the visual shape properties that can be applied to a shape.\<140>  
-  
- *style:* A *CT_ShapeStyle* element ([ISO/IEC-29500-1] section A.4.1) that specifies the style information for a shape.  
-  
- *extLst:* A *CT_OfficeArtExtensionList* element ([ISO/IEC-29500-1] section A.4.1) to hold future extensions to the parent element of this *extLst* element.  
-  
- *txbx:* A CT_TextboxInfo element that specifies the textual contents of the shape if the shape is the first in the series of shapes for the same text box story.  
-  
- *linkedTxbx:* A CT_LinkedTextboxInformation element that specifies the textual contents of the shape if the shape is not the first in the series of shapes for the indicated text box story.  
-  
- *bodyPr:* A *CT_TextBodyProperties* element ([ISO/IEC-29500-1] section A.4.1) that specifies the body properties for the text body in a shape.  
-  
- *Attributes:*  
-  
- *normalEastAsianFlow:* A Boolean attribute that specifies whether the text flow of the text contents of the shape ignores the text flow value specified by the *vert* attribute of the *bodyPr* element. If this flag is set to TRUE, the value of the *vert* attribute of the *bodyPr* element on this *CT_WordprocessingShape* MUST be ignored, and text flows in the manner specified by the value "tbV" for an *ST_TextDirection* (Text Flow Direction) type as specified in [ISO/IEC-29500-1] section17.18.93.  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
-  
- *\<xsd:complexType name="CT_WordprocessingShape">*  
-  
- *\<xsd:sequence minOccurs="1" maxOccurs="1">*  
-  
- *\<xsd:element name="cNvPr" type="a:CT_NonVisualDrawingProps" minOccurs="0" maxOccurs="1"/>*  
-  
- *\<xsd:choice minOccurs="1" maxOccurs="1">*  
-  
- *\<xsd:element name="cNvSpPr" type="a:CT_NonVisualDrawingShapeProps" minOccurs="1" maxOccurs="1"/>*  
-  
- *\<xsd:element name="cNvCnPr" type="a:CT_NonVisualConnectorProperties" minOccurs="1" maxOccurs="1"/>*  
-  
- *\</xsd:choice>*  
-  
- *\<xsd:element name="spPr" type="a:CT_ShapeProperties" minOccurs="1" maxOccurs="1"/>*  
-  
- *\<xsd:element name="style" type="a:CT_ShapeStyle" minOccurs="0" maxOccurs="1"/>*  
-  
- *\<xsd:element name="extLst" type="a:CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>*  
-  
- *\<xsd:choice minOccurs="0" maxOccurs="1">*  
-  
- *\<xsd:element name="txbx" type="CT_TextboxInfo" minOccurs="1" maxOccurs="1"/>*  
-  
- *\<xsd:element name="linkedTxbx" type="CT_LinkedTextboxInformation" minOccurs="1" maxOccurs="1"/>*  
-  
- *\</xsd:choice>*  
-  
- *\<xsd:element name="bodyPr" type="a:CT_TextBodyProperties" minOccurs="1" maxOccurs="1"/>*  
-  
- *\</xsd:sequence>*  
-  
- *\<xsd:attribute name="normalEastAsianFlow" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\</xsd:complexType>*  
-  
- See section 5.2 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>NonVisualDrawingProperties &lt;wps:cNvPr&gt;</description></item><item><description>NonVisualDrawingShapeProperties &lt;wps:cNvSpPr&gt;</description></item><item><description>NonVisualConnectorProperties &lt;wps:cNvCnPr&gt;</description></item><item><description>ShapeProperties &lt;wps:spPr&gt;</description></item><item><description>ShapeStyle &lt;wps:style&gt;</description></item><item><description>OfficeArtExtensionList &lt;wps:extLst&gt;</description></item><item><description>TextBoxInfo2 &lt;wps:txbx&gt;</description></item><item><description>LinkedTextBox &lt;wps:linkedTxbx&gt;</description></item><item><description>TextBodyProperties &lt;wps:bodyPr&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -157,7 +72,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the WordprocessingShape class.</summary>
+        <summary>
+            Initializes a new instance of the WordprocessingShape class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -184,7 +101,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the WordprocessingShape class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the WordprocessingShape class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -205,7 +124,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the WordprocessingShape class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the WordprocessingShape class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -226,7 +147,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the WordprocessingShape class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the WordprocessingShape class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -249,9 +172,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -271,7 +196,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -292,7 +219,10 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Word.DrawingShape.NonVisualDrawingProperties</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>NonVisualDrawingProperties. Represents the following element tag in the schema: wps:cNvPr</summary>
+        <summary>
+          <para> NonVisualDrawingProperties.</para>
+          <para> Represents the following element tag in the schema: wps:cNvPr </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -321,7 +251,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>normalEastAsianFlow.Represents the following attribute in the schema: normalEastAsianFlow</summary>
+        <summary>
+          <para> normalEastAsianFlow.</para>
+          <para>Represents the following attribute in the schema: normalEastAsianFlow </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

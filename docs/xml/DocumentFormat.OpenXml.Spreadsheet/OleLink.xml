@@ -22,69 +22,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>OLE Link. When the object is serialized out as xml, its qualified name is x:oleLink.</summary>
+    <summary>
+      <para>OLE Link.</para>
+      <para> When the object is serialized out as xml, its qualified name is x:oleLink.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **oleLink (Generic Object Link Connection)**  
-  
- This element represents an external link to an embedded object, specified by a progID/object pair. The type of object link is determined by reading the target of the id attribute.  
-  
- [*Example*: The following markup defines a reference to a linked object using Bonobo. The progId attribute contains the shared library that contains the widget. The r:id identifies the referenced Bonobo object.  
-  
-```xml  
-<oleLink r:id="rb1" progId="OAFIID:Bonobo_Sample_Calculator">  
-  …   
-</oleLink>  
-```  
-  
- The target of the relationship with ID *rb1*, defines the Bonobo object itself. This example shows a link to a sample Bonobo widget taken from the following article, which also provides an introduction to Bonobo –  http://www.ibm.com/developerworks/webservices/library/co-bnbo2.html. *end example*]  
-  
- [*Example*: The following markup defines a reference to a linked object using KParts. The progId attribute contains the shared library that contains the plugin. The r:id identifies the referenced KParts object.  
-  
-```xml  
-<oleLink r:id="rKp1" progId="libhtmlvalidatorplugin">  
-  …  
-</oleLink>  
-```  
-  
- The following XML, contained in the target of the relationship with ID *rKp1*, defines the KPart object, and will follow the kpartgui DTD:  
-  
-```xml  
-<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">  
-<kpartgui library="libhtmlvalidatorplugin" name="htmlvalidatorplugin" version="1" >  
-  <MenuBar>  
-    <Menu name="tools"><Text>&amp;Tools</Text>  
-      <Action name="validatewebpage"/>  
-    </Menu>  
-  </MenuBar>  
-</kpartgui>  
-```  
-  
- This example is taken from the kde.org web site, and contains a tutorial on building the plugin referenced by the above markup – http://developer.kde.org/documentation/tutorials/dot/writing-plugins.html. *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|externalLink (§18.14.8)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|oleItems (Object Link Items)|§18.14.10|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|id (Object Link Relationship)<br /><br /> Namespace: *.../officeDocument/2006/relationships*|Relationship ID that references a link in the relationships collection.  The target attribute in the associated relationship will specify the external file name used for this oleLink.<br /><br /> The possible values for this attribute are defined by the *ST_RelationshipId* simple type (§22.8.2.1).|  
-|progId (Object Link Identifier)|The ID for the object link connection. [*Example*: For a KParts link, this would store the name of the appropriate KParts library. For an OLE link, this would store the ProgID of the appropriate OLE object. *end example*]<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_OleLink) is located in §A.2. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>OleItems &lt;x:oleItems&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -100,7 +44,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the OleLink class.</summary>
+        <summary>
+            Initializes a new instance of the OleLink class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -127,7 +73,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the OleLink class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the OleLink class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -148,7 +96,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the OleLink class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the OleLink class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -169,7 +119,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the OleLink class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the OleLink class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -192,9 +144,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -219,7 +173,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>OLE Link Relationship.Represents the following attribute in the schema: r:id</summary>
+        <summary>
+          <para> OLE Link Relationship.</para>
+          <para>Represents the following attribute in the schema: r:id </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -253,7 +210,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -274,7 +233,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.OleItems</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>OLE Link Items. Represents the following element tag in the schema: x:oleItems</summary>
+        <summary>
+          <para> OLE Link Items.</para>
+          <para> Represents the following element tag in the schema: x:oleItems </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.OleItems" />.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -303,7 +265,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>OLE Link ProgID.Represents the following attribute in the schema: progId</summary>
+        <summary>
+          <para> OLE Link ProgID.</para>
+          <para>Represents the following attribute in the schema: progId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  

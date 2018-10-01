@@ -40,61 +40,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Abstract Numbering Definition. When the object is serialized out as xml, its qualified name is w:abstractNum.</summary>
+    <summary>
+      <para>Abstract Numbering Definition.</para>
+      <para> When the object is serialized out as xml, its qualified name is w:abstractNum.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **abstractNum (Abstract Numbering Definition)**  
-  
- This element specifies a set of properties which shall dictate the appearance and behavior of a set of numbered paragraphs in a WordprocessingML document. These properties are collectively called an *abstract numbering definition*, and are the basis for all numbering information in a WordprocessingML document.  
-  
- Although an abstract numbering definition contains a complete set of numbering, it shall not be directly referenced by content (hence the use of *abstract*). Instead, these properties shall be inherited by a numbering definition instance using the num element (§17.9.16), which can then itself be referenced by content.  
-  
- [*Example*: Consider the following example of an abstractNum in a WordprocessingML document:  
-  
-```xml  
-<w:abstractNum w:abstractNumId="4">  
-  <w:nsid w:val="FFFFFF7F" />  
-  <w:multiLevelType w:val="singleLevel" />  
-  <w:lvl w:ilvl="0">  
-    <w:start w:val="1" />  
-    <w:lvlText w:val="%1." />  
-    <w:lvlJc w:val="left" />  
-    <w:pPr>  
-      <w:tabs>  
-        <w:tab w:val="num" w:pos="720" />  
-      </w:tabs>  
-      <w:ind w:left="720" w:hanging="360" />  
-    </w:pPr>  
-  </w:lvl>  
-</w:abstractNum>  
-```  
-  
- This abstractNum element defines an abstract numbering definition which must be inherited by any numbering definition instance which inherits from abstract numbering definition with an abstractNumId equal to *4*. *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|numbering (§17.9.17)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|lvl (Numbering Level Definition)|§17.9.7|  
-|multiLevelType (Abstract Numbering Definition Type)|§17.9.13|  
-|name (Abstract Numbering Definition Name)|§17.9.14|  
-|nsid (Abstract Numbering Definition Identifier)|§17.9.15|  
-|numStyleLink (Numbering Style Reference)|§17.9.22|  
-|styleLink (Numbering Style Definition)|§17.9.28|  
-|tmpl (Numbering Template Code)|§17.9.30|  
-  
-  [*Note*: The W3C XML Schema definition of this element’s content model (CT_AbstractNum) is located in §A.1. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>Nsid &lt;w:nsid&gt;</description></item><item><description>MultiLevelType &lt;w:multiLevelType&gt;</description></item><item><description>TemplateCode &lt;w:tmpl&gt;</description></item><item><description>AbstractNumDefinitionName &lt;w:name&gt;</description></item><item><description>StyleLink &lt;w:styleLink&gt;</description></item><item><description>NumberingStyleLink &lt;w:numStyleLink&gt;</description></item><item><description>Level &lt;w:lvl&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -110,7 +62,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the AbstractNum class.</summary>
+        <summary>
+            Initializes a new instance of the AbstractNum class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -137,7 +91,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the AbstractNum class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the AbstractNum class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -158,7 +114,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the AbstractNum class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the AbstractNum class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -179,7 +137,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the AbstractNum class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the AbstractNum class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -204,7 +164,10 @@
         <ReturnType>DocumentFormat.OpenXml.Int32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Abstract Numbering Definition ID.Represents the following attribute in the schema: w:abstractNumId</summary>
+        <summary>
+          <para> Abstract Numbering Definition ID.</para>
+          <para>Represents the following attribute in the schema: w:abstractNumId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Int32Value" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -227,7 +190,10 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.AbstractNumDefinitionName</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Abstract Numbering Definition Name. Represents the following element tag in the schema: w:name</summary>
+        <summary>
+          <para> Abstract Numbering Definition Name.</para>
+          <para> Represents the following element tag in the schema: w:name </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -254,9 +220,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -276,7 +244,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -297,7 +267,10 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.MultiLevelType</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Abstract Numbering Definition Type. Represents the following element tag in the schema: w:multiLevelType</summary>
+        <summary>
+          <para> Abstract Numbering Definition Type.</para>
+          <para> Represents the following element tag in the schema: w:multiLevelType </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -321,7 +294,10 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.Nsid</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Abstract Numbering Definition Identifier. Represents the following element tag in the schema: w:nsid</summary>
+        <summary>
+          <para> Abstract Numbering Definition Identifier.</para>
+          <para> Represents the following element tag in the schema: w:nsid </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -345,7 +321,10 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.NumberingStyleLink</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Numbering Style Reference. Represents the following element tag in the schema: w:numStyleLink</summary>
+        <summary>
+          <para> Numbering Style Reference.</para>
+          <para> Represents the following element tag in the schema: w:numStyleLink </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -369,7 +348,10 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.StyleLink</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Numbering Style Definition. Represents the following element tag in the schema: w:styleLink</summary>
+        <summary>
+          <para> Numbering Style Definition.</para>
+          <para> Represents the following element tag in the schema: w:styleLink </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -393,7 +375,10 @@
         <ReturnType>DocumentFormat.OpenXml.Wordprocessing.TemplateCode</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Numbering Template Code. Represents the following element tag in the schema: w:tmpl</summary>
+        <summary>
+          <para> Numbering Template Code.</para>
+          <para> Represents the following element tag in the schema: w:tmpl </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

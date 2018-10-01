@@ -19,110 +19,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Table Style. When the object is serialized out as xml, its qualified name is a:tableStyle.</summary>
+    <summary>
+      <para>Table Style.</para>
+      <para> When the object is serialized out as xml, its qualified name is a:tableStyle.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **tableStyle (Table Style)**  
-  
- This element specifies a particular table style.  Fourteen elements make up the styling information of a given table style.  These fourteen elements work together to provide visual formatting options for on/off states of the following toggles:  
-  
--   First row on/off - Associated element: firstRow  
-  
--   Last row on/off - Associated element: lastRow  
-  
--   First column on/off - Associated element: firstCol  
-  
--   Last column on/off - Associated element: lastCol  
-  
--   Row banding on/off - Associated elements: band1H, band2H  
-  
--   Column banding on/off - Associated elements: band1V, band2V  
-  
- The formatting associated with the wholeTbl element defines the table formatting when all options are off.  When an option is turned on, the formatting for that particular option is applied to the table.  The four cell specific formatting options are enabled when overlapping options are toggled on.  For example, when the first row, and first column formatting options are enabled, any formatting within the northwest cell is also be applied since that is the overlapping table cell when both first column and first row formatting options are on.  
-  
- [*Example*:  Consider the following partial example of a tblStyle within DrawingML:  
-  
-```xml  
-<a:tblStyle styleId="{5940675A-B579-460E-94D1-54222C63F5DA}"  styleName="No Style, Table Grid">  
-  <a:wholeTbl>  
-    <a:tcTxStyle>  
-      <a:fontRef idx="minor">  
-        <a:scrgbClr r="0" g="0" b="0"/>  
-      </a:fontRef>  
-      <a:schemeClr val="tx1"/>  
-    </a:tcTxStyle>  
-    <a:tcStyle>  
-      <a:tcBdr>  
-        <a:left>  
-          <a:ln w="12700" cmpd="sng">  
-            <a:solidFill>  
-              <a:schemeClr val="tx1"/>  
-            </a:solidFill>  
-          </a:ln>  
-        </a:left>  
-```  
-  
- …right, top, bottom, insideH, insideV border information is defined just as the 'left' tag…  
-  
-```xml  
-    </a:tcBdr>  
-    <a:fill>  
-      <a:noFill/>  
-    </a:fill>  
-  </a:tcStyle>  
-</a:wholeTbl>  
-<a:band1H>  
-  <a:tcStyle>  
-    <a:tcBdr/>  
-  </a:tcStyle>  
-</a:band1H>  
-```  
-  
- …band2H, band1V, band2V, firstCol, firstRow, lastCol, lastRow, neCell, nwCell, seCell, swCell tags are all defined just as the 'band1H' tag  
-  
-```xml  
-</a:tblStyle>  
-```  
-  
- In this example, one can get an idea for the definition of a table style in its entirety.  The above defined table style creates a style with only 1pt line formatting applied to all of the cells in a table.  Notice that the on/off toggle formatting (band1H, band2H, firstCol, etc) do not define any formatting and therefore have no effect to the table when toggled.   *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|tblPr (§21.1.3.15)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|band1H (Band 1 Horizontal)|§20.1.4.2.1|  
-|band1V (Band 1 Vertical)|§20.1.4.2.2|  
-|band2H (Band 2 Horizontal)|§20.1.4.2.3|  
-|band2V (Band 2 Vertical)|§20.1.4.2.4|  
-|extLst (Extension List)|§20.1.2.2.15|  
-|firstCol (First Column)|§20.1.4.2.11|  
-|firstRow (First Row)|§20.1.4.2.12|  
-|lastCol (Last Column)|§20.1.4.2.16|  
-|lastRow (Last Row)|§20.1.4.2.17|  
-|neCell (Northeast Cell)|§20.1.4.2.20|  
-|nwCell (Northwest Cell)|§20.1.4.2.21|  
-|seCell (Southeast Cell)|§20.1.4.2.23|  
-|swCell (Southwest Cell)|§20.1.4.2.24|  
-|tblBg (Table Background)|§20.1.4.2.25|  
-|wholeTbl (Whole Table)|§20.1.4.2.34|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|styleId (Style ID)|Specifies a GUID identifying the table style in a unique manner.<br /><br /> The possible values for this attribute are defined by the *ST_Guid* simple type (§22.9.2.4).|  
-|styleName (Name)|Specifies the name of the table style which can show up in the user interface identifying the style to a user.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *string* datatype.|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_TableStyle) is located in §A.4.1. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>TableBackground &lt;a:tblBg&gt;</description></item><item><description>WholeTable &lt;a:wholeTbl&gt;</description></item><item><description>Band1Horizontal &lt;a:band1H&gt;</description></item><item><description>Band2Horizontal &lt;a:band2H&gt;</description></item><item><description>Band1Vertical &lt;a:band1V&gt;</description></item><item><description>Band2Vertical &lt;a:band2V&gt;</description></item><item><description>LastColumn &lt;a:lastCol&gt;</description></item><item><description>FirstColumn &lt;a:firstCol&gt;</description></item><item><description>LastRow &lt;a:lastRow&gt;</description></item><item><description>SoutheastCell &lt;a:seCell&gt;</description></item><item><description>SouthwestCell &lt;a:swCell&gt;</description></item><item><description>FirstRow &lt;a:firstRow&gt;</description></item><item><description>NortheastCell &lt;a:neCell&gt;</description></item><item><description>NorthwestCell &lt;a:nwCell&gt;</description></item><item><description>ExtensionList &lt;a:extLst&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -138,7 +41,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the TableStyle class.</summary>
+        <summary>
+            Initializes a new instance of the TableStyle class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -165,7 +70,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the TableStyle class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the TableStyle class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -186,7 +93,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the TableStyle class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the TableStyle class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -207,7 +116,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the TableStyle class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the TableStyle class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -230,9 +141,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -252,7 +165,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>

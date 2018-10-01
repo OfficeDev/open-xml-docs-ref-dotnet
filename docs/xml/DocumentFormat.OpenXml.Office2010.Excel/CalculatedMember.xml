@@ -25,91 +25,14 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Defines the CalculatedMember Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is x14:calculatedMember.</summary>
+    <summary>
+      <para>Defines the CalculatedMember Class.</para>
+      <para>This class is available in Office2010 or above.</para>
+      <para> When the object is serialized out as xml, its qualified name is x14:calculatedMember.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- *2.4.15   calculatedMember*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
-  
- A *calculatedMember* element is a *CT_CalculatedMember* type element, as specified in section 2.6.15, that specifies extended properties of a PivotTable, as specified in [ISO/IEC-29500-1] section 18.10, OLAP *calculated* member. See section 2.2.4.5 for how this element integrates with the Office Open XML file formats specified in [ISO/IEC-29500-1].  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this element.  
-  
- *\<xsd:element name="calculatedMember" type="CT_CalculatedMember"/>*  
-  
- See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- *2.6.15   CT_CalculatedMember*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/spreadsheetml/2009/9/main  
-  
- *Referenced by:* calculatedMember  
-  
- A complex type that specifies extended properties of a PivotTable ([ISO/IEC-29500-1] section 18.10) OLAP calculated member.  
-  
- *Child Elements:*  
-  
- *tupleSet:* A *CT_TupleSet* element (section 2.6.16) that specifies OLAP tuples within this *OLAP named set*.  
-  
- *Attributes:*  
-  
- *displayFolder:* An *ST_Xstring* ([ISO/IEC-29500-1] section 22.9.2.19) attribute that specifies the display folder of this *PivotTable* ([ISO/IEC-29500-1] section 18.10) named set. The length of this value MUST be less than 65,536 characters. This attribute MUST NOT exist if the *set* attribute in the ancestor *CT_CalculatedMember* ([ISO/IEC-29500-4] section A.2) element is zero ("0").  
-  
- *flattenHierarchies:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether to display members from different OLAP levels of the same PivotTable cache hierarchy of this *PivotTable* named set in the same *PivotTable* field (1). This attribute MUST NOT exist if the *set* attribute in the ancestor *CT_CalculatedMember* element is zero ("0").  
-  
-|||  
-|-|-|  
-|*Value*|*Meaning*|  
-|*"0"*|*Each member from a different level of the same PivotTable cache hierarchy of this PivotTable named set is displayed in a separate PivotTable field (1).*|  
-|*"1"*|*All members from different levels of the same PivotTable cache hierarchy of this PivotTable named set are displayed in the same PivotTable field (1).*|  
-  
- *dynamicSet:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether this *PivotTable* named set is a dynamic OLAP named set. This attribute MUST NOT exist if the *set* attribute in the ancestor *CT_CalculatedMember* element is zero ("0").  
-  
-|||  
-|-|-|  
-|*Value*|*Meaning*|  
-|*"0"*|*This PivotTable named set is a static OLAP named set.*|  
-|*"1"*|*This PivotTable named set is a dynamic OLAP named set.*|  
-  
- *hierarchizeDistinct:* A *Boolean* ([XMLSCHEMA2] section 3.2.2) attribute that specifies whether to automatically order and remove duplicates from this *PivotTable* named set. This attribute MUST NOT exist if the *set* attribute in the ancestor *CT_CalculatedMember* element is zero ("0").  
-  
-|||  
-|-|-|  
-|*Value*|*Meaning*|  
-|*"0"*|*Do not automatically order and remove duplicates from this PivotTable named set.*|  
-|*"1"*|*Automatically order and remove duplicates from this PivotTable named set.*|  
-  
- *mdxLong:* An *ST_Xstring* attribute that specifies *multidimensional expression (MDX)* of the PivotTable OLAP calculated member. The length of this attribute MUST be zero or it MUST be greater than 32,767 characters and less than 1,073,741,823 characters. If this value is greater than 32,767 characters, the length of the *mdx* attribute in the ancestor *CT_CalculatedMember* element MUST be "1" and the first character of the *mdx* attribute MUST be equal to " ", the space character (0x0020).  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
-  
- *\<xsd:complexType name="CT_CalculatedMember">*  
-  
- *\<xsd:sequence>*  
-  
- *\<xsd:element name="tupleSet" minOccurs="0" maxOccurs="1" type="CT_TupleSet"/>*  
-  
- *\</xsd:sequence>*  
-  
- *\<xsd:attribute name="displayFolder" type="x:ST_Xstring" use="optional"/>*  
-  
- *\<xsd:attribute name="flattenHierarchies" type="xsd:boolean" use="optional" default="true"/>*  
-  
- *\<xsd:attribute name="dynamicSet" type="xsd:boolean" use="optional" default="false"/>*  
-  
- *\<xsd:attribute name="hierarchizeDistinct" type="xsd:boolean" use="optional" default="true"/>*  
-  
- *\<xsd:attribute name="mdxLong" type="x:ST_Xstring" use="optional"/>*  
-  
- *\</xsd:complexType>*  
-  
- See section 5.4 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>TupleSet &lt;x14:tupleSet&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -125,7 +48,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the CalculatedMember class.</summary>
+        <summary>
+            Initializes a new instance of the CalculatedMember class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -152,7 +77,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the CalculatedMember class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the CalculatedMember class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,7 +100,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the CalculatedMember class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the CalculatedMember class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -194,7 +123,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the CalculatedMember class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the CalculatedMember class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -217,9 +148,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -244,7 +177,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>displayFolder.Represents the following attribute in the schema: displayFolder</summary>
+        <summary>
+          <para> displayFolder.</para>
+          <para>Represents the following attribute in the schema: displayFolder </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -270,7 +206,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>dynamicSet.Represents the following attribute in the schema: dynamicSet</summary>
+        <summary>
+          <para> dynamicSet.</para>
+          <para>Represents the following attribute in the schema: dynamicSet </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -296,7 +235,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>flattenHierarchies.Represents the following attribute in the schema: flattenHierarchies</summary>
+        <summary>
+          <para> flattenHierarchies.</para>
+          <para>Represents the following attribute in the schema: flattenHierarchies </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -322,7 +264,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>hierarchizeDistinct.Represents the following attribute in the schema: hierarchizeDistinct</summary>
+        <summary>
+          <para> hierarchizeDistinct.</para>
+          <para>Represents the following attribute in the schema: hierarchizeDistinct </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -343,7 +288,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -369,7 +316,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>mdxLong.Represents the following attribute in the schema: mdxLong</summary>
+        <summary>
+          <para> mdxLong.</para>
+          <para>Represents the following attribute in the schema: mdxLong </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -390,7 +340,10 @@
         <ReturnType>DocumentFormat.OpenXml.Office2010.Excel.TupleSet</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>TupleSet. Represents the following element tag in the schema: x14:tupleSet</summary>
+        <summary>
+          <para> TupleSet.</para>
+          <para> Represents the following element tag in the schema: x14:tupleSet </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>

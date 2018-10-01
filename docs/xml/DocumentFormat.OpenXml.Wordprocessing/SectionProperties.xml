@@ -88,133 +88,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Section Properties. When the object is serialized out as xml, its qualified name is w:sectPr.</summary>
+    <summary>
+      <para>Section Properties.</para>
+      <para> When the object is serialized out as xml, its qualified name is w:sectPr.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **sectPr (Document Final Section Properties)**  
-  
- This element defines the section properties for the final section of the document. [*Note*: For any other section the properties are stored as a child element of the paragraph element corresponding to the last paragraph in the given section. *end note*]  
-  
- [*Example*: Consider a document with multiple sections. For all sections except the final section, the sectPr element is stored as a child element of the last paragraph in the section. For the final section, this information is stored as the last child element of the body element, as follows:  
-  
-```xml  
-<w:body>  
-  <w:p>  
-  …  </w:p>  
-  …  <w:sectPr>  
-    (final section's properties)  </w:sectPr>  
-</w:body>  
-```  
-  
- *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|body (§17.2.2); docPartBody (§17.12.6)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|bidi (Right to Left Section Layout)|§17.6.1|  
-|cols (Column Definitions)|§17.6.4|  
-|docGrid (Document Grid)|§17.6.5|  
-|endnotePr (Section-Wide Endnote Properties)|§17.11.5|  
-|footerReference (Footer Reference)|§17.10.2|  
-|footnotePr (Section-Wide Footnote Properties)|§17.11.11|  
-|formProt (Only Allow Editing of Form Fields)|§17.6.6|  
-|headerReference (Header Reference)|§17.10.5|  
-|lnNumType (Line Numbering Settings)|§17.6.8|  
-|noEndnote (Suppress Endnotes In Document)|§17.11.16|  
-|paperSrc (Paper Source Information)|§17.6.9|  
-|pgBorders (Page Borders)|§17.6.10|  
-|pgMar (Page Margins)|§17.6.11|  
-|pgNumType (Page Numbering Settings)|§17.6.12|  
-|pgSz (Page Size)|§17.6.13|  
-|printerSettings (Reference to Printer Settings Data)|§17.6.14|  
-|rtlGutter (Gutter on Right Side of Page)|§17.6.16|  
-|sectPrChange (Revision Information for Section Properties)|§17.13.5.32|  
-|textDirection (Text Flow Direction)|§17.6.20|  
-|titlePg (Different First Page Headers and Footers)|§17.10.6|  
-|type (Section Type)|§17.6.22|  
-|vAlign (Vertical Text Alignment on Page)|§17.6.23|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|rsidDel (Section Deletion Revision ID)|Specifies a unique identifier used to track the *editing session* when the section mark for this section was deleted from the document.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidR (Section Addition Revision ID)|Specifies a unique identifier used to track the *editing session* when the section mark for this section was added to the document.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidRPr (Physical Section Mark Character Revision ID)|Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidSect (Section Properties Revision ID)|Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_SectPr) is located in §A.1. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **sectPr (Section Properties)**  
-  
- This element defines the section properties for the a section of the document. [*Note*: For the last section in the document, the section properties are stored as a child element of the body element. *end note*]  
-  
- [*Example*: Consider a document with multiple sections. For all sections except the final section, the sectPr element is stored as a child element of the last paragraph in the section, as follows:  
-  
-```xml  
-<w:body>  
-  <w:p>  
-    <w:pPr>  
-      <w:sectPr>  
-        (final section's properties)      </w:sectPr>  
-    </w:pPr>  
-  …  </w:p>  
-  …  <w:sectPr>  
-    (final section's properties)  </w:sectPr>  
-</w:body>  
-```  
-  
- *end example*]  
-  
-|Parent Elements|  
-|---------------------|  
-|pPr (§17.3.1.26)|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|bidi (Right to Left Section Layout)|§17.6.1|  
-|cols (Column Definitions)|§17.6.4|  
-|docGrid (Document Grid)|§17.6.5|  
-|endnotePr (Section-Wide Endnote Properties)|§17.11.5|  
-|footerReference (Footer Reference)|§17.10.2|  
-|footnotePr (Section-Wide Footnote Properties)|§17.11.11|  
-|formProt (Only Allow Editing of Form Fields)|§17.6.6|  
-|headerReference (Header Reference)|§17.10.5|  
-|lnNumType (Line Numbering Settings)|§17.6.8|  
-|noEndnote (Suppress Endnotes In Document)|§17.11.16|  
-|paperSrc (Paper Source Information)|§17.6.9|  
-|pgBorders (Page Borders)|§17.6.10|  
-|pgMar (Page Margins)|§17.6.11|  
-|pgNumType (Page Numbering Settings)|§17.6.12|  
-|pgSz (Page Size)|§17.6.13|  
-|printerSettings (Reference to Printer Settings Data)|§17.6.14|  
-|rtlGutter (Gutter on Right Side of Page)|§17.6.16|  
-|sectPrChange (Revision Information for Section Properties)|§17.13.5.32|  
-|textDirection (Text Flow Direction)|§17.6.20|  
-|titlePg (Different First Page Headers and Footers)|§17.10.6|  
-|type (Section Type)|§17.6.22|  
-|vAlign (Vertical Text Alignment on Page)|§17.6.23|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|rsidDel (Section Deletion Revision ID)|Specifies a unique identifier used to track the *editing session* when the section mark for this section was deleted from the document.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidR (Section Addition Revision ID)|Specifies a unique identifier used to track the *editing session* when the section mark for this section was added to the document.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidRPr (Physical Section Mark Character Revision ID)|Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-|rsidSect (Section Properties Revision ID)|Specifies a unique identifier used to track the editing session when the physical character representing this section mark was last formatted.<br /><br /> All rsid* attributes throughout this document of an equal value, if present, shall indicate that those regions were modified during the same editing session.<br /><br /> A producer can choose to increment the revision save ID value to indicate subsequent editing sessions (editing between save actions) to indicate the order of the saves performed.<br /><br /> The possible values for this attribute are defined by the *ST_LongHexNumber* simple type (§17.18.50).|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_SectPr) is located in §A.1. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>HeaderReference &lt;w:headerReference&gt;</description></item><item><description>FooterReference &lt;w:footerReference&gt;</description></item><item><description>FootnoteProperties &lt;w:footnotePr&gt;</description></item><item><description>EndnoteProperties &lt;w:endnotePr&gt;</description></item><item><description>SectionType &lt;w:type&gt;</description></item><item><description>PageSize &lt;w:pgSz&gt;</description></item><item><description>PageMargin &lt;w:pgMar&gt;</description></item><item><description>PaperSource &lt;w:paperSrc&gt;</description></item><item><description>PageBorders &lt;w:pgBorders&gt;</description></item><item><description>LineNumberType &lt;w:lnNumType&gt;</description></item><item><description>PageNumberType &lt;w:pgNumType&gt;</description></item><item><description>Columns &lt;w:cols&gt;</description></item><item><description>FormProtection &lt;w:formProt&gt;</description></item><item><description>VerticalTextAlignmentOnPage &lt;w:vAlign&gt;</description></item><item><description>NoEndnote &lt;w:noEndnote&gt;</description></item><item><description>TitlePage &lt;w:titlePg&gt;</description></item><item><description>TextDirection &lt;w:textDirection&gt;</description></item><item><description>BiDi &lt;w:bidi&gt;</description></item><item><description>GutterOnRight &lt;w:rtlGutter&gt;</description></item><item><description>DocGrid &lt;w:docGrid&gt;</description></item><item><description>PrinterSettingsReference &lt;w:printerSettings&gt;</description></item><item><description>DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns &lt;w15:footnoteColumns&gt;</description></item><item><description>SectionPropertiesChange &lt;w:sectPrChange&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -230,7 +110,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the SectionProperties class.</summary>
+        <summary>
+            Initializes a new instance of the SectionProperties class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -257,7 +139,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the SectionProperties class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the SectionProperties class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -278,7 +162,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the SectionProperties class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the SectionProperties class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -299,7 +185,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the SectionProperties class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the SectionProperties class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -322,9 +210,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -344,7 +234,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -370,7 +262,10 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Section Deletion Revision ID.Represents the following attribute in the schema: w:rsidDel</summary>
+        <summary>
+          <para> Section Deletion Revision ID.</para>
+          <para>Represents the following attribute in the schema: w:rsidDel </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -398,7 +293,10 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Section Addition Revision ID.Represents the following attribute in the schema: w:rsidR</summary>
+        <summary>
+          <para> Section Addition Revision ID.</para>
+          <para>Represents the following attribute in the schema: w:rsidR </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -426,7 +324,10 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Physical Section Mark Character Revision ID.Represents the following attribute in the schema: w:rsidRPr</summary>
+        <summary>
+          <para> Physical Section Mark Character Revision ID.</para>
+          <para>Represents the following attribute in the schema: w:rsidRPr </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
@@ -454,7 +355,10 @@
         <ReturnType>DocumentFormat.OpenXml.HexBinaryValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Section Properties Revision ID.Represents the following attribute in the schema: w:rsidSect</summary>
+        <summary>
+          <para> Section Properties Revision ID.</para>
+          <para>Represents the following attribute in the schema: w:rsidSect </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
         <remark> xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main

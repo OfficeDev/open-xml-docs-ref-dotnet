@@ -28,159 +28,14 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Defines the GalleryRegular Class.This class is available in Office2010 or above. When the object is serialized out as xml, its qualified name is mso14:gallery.</summary>
+    <summary>
+      <para>Defines the GalleryRegular Class.</para>
+      <para>This class is available in Office2010 or above.</para>
+      <para> When the object is serialized out as xml, its qualified name is mso14:gallery.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- *2.3.46   CT_GalleryRegular*  
-  
- *Target namespace:* http://schemas.microsoft.com/office/2009/07/customui  
-  
- *Referenced by:* CT_Gallery, CT_MenuRegular, CT_MenuWithTitle, CT_Menu, CT_ButtonGroup, CT_ContextMenu  
-  
- Specifies a gallery (2) control that is of fixed size because of its location. It is otherwise identical to the *CT_Gallery* complex type.  
-  
- *Child Elements:*  
-  
- *item:* A *CT_Item* element, as specified in section 2.3.52.  
-  
- *button:* A *CT_ButtonRegular* element, as specified in section 2.3.26.  
-  
- *Attributes:*  
-  
- *description:* An *ST_LongString* attribute, as specified in section 2.4.16, that specifies a string that is displayed as the description of the control in detailed views. The *description* and *getDescription* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a detailed description is not displayed.  
-  
- *getDescription:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the detailed description of this control. The *description* and *getDescription* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a detailed description is not displayed.  
-  
- *invalidateContentOnDrop:* A *Boolean* attribute that specifies whether this control invalidates its contents and requeries for them each time the user opens its drop-down menu.  
-  
- *columns:* An *ST_GalleryRowColumnCount* attribute, as specified in section 2.4.10, that specifies the number of columns displayed in this gallery (2) control. If this attribute is omitted, the number of columns is chosen automatically based on the total number of items.  
-  
- *rows:* An *ST_GalleryRowColumnCount* attribute that specifies the number of rows displayed in this gallery (2) control. If this attribute is omitted, the number of rows is chosen automatically based on the total number of items.  
-  
- *itemWidth:* An *ST_GalleryItemWidthHeight* attribute, as specified in section 2.4.9, that specifies the width, in pixels, of the selection items in this control. The *itemWidth* and *getItemWidth* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the size of the first item’s contents determines the width of all the items in the control.  
-  
- *itemHeight:* An *ST_GalleryItemWidthHeight* attribute that specifies the height, in pixels, of the selection items in this control. The *itemHeight* and *getItemHeight* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the items will all take the height of the first item, based on its contents.  
-  
- *getItemWidth:* An *ST_Delegate* attribute, as specified in section 2.4.7, that specifies the name of a callback function that is called to determine the width, in pixels, of the selection items in this control. The *itemWidth* and *getItemWidth* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the items will all take the width of the first item, based on its contents.  
-  
- *getItemHeight:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the height, in pixels, of the selection items in this control. The *itemHeight* and *getItemHeight* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the items will all take the height of the first item, based on its contents.  
-  
- *showItemLabel:* A *Boolean* attribute that specifies whether the selection items in this control display labels. If this attribute is omitted, the selection items display labels.  
-  
- *onAction:* An *ST_Delegate* attribute, as specified in section 2.4.7, that specifies the name of a callback function that is called when this control is invoked by the user.  
-  
- *enabled:* A *Boolean* attribute that specifies the enabled state of this control. The *enabled* and *getEnabled* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being enabled.  
-  
- *getEnabled:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the enabled state of this control. The *enabled* and *getEnabled* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being enabled.  
-  
- *image:* An *ST_Uri* attribute, as specified in section 2.4.23, that specifies the relationship identifier of an image file that is used as the icon for this control. The *image*, *getImage*, and *imageMso* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes are specified, an icon is not displayed.  
-  
- *imageMso:* An *ST_ID* attribute, as specified in section 2.4.12, that specifies the identifier of a built-in image that is used as the icon for this control. The *image*, *getImage*, and *imageMso* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes are specified, an icon is not displayed.  
-  
- *getImage:* An *ST_Delegate* attribute, as specified in section 2.4.7, that specifies the name of a callback function that is called to determine the icon of this control. The *image*, *getImage*, and *imageMso* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes are specified, an icon is not displayed.  
-  
- *showItemImage:* A *Boolean* attribute that specifies whether this control displays icons on its selection items.  
-  
- *getItemCount:* An *ST_Delegate* attribute, as specified in section 2.4.7, that specifies the name of a callback function that is called to determine the number of dynamically created selection items in this control. If this attribute is omitted, the control displays the selection items that are specified as child elements. If this attribute is omitted and no child items are specified, the control is empty. If both this attribute and child items are specified, the child items are ignored.  
-  
- *getItemLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the labels of dynamically created selection items in this control. If this attribute is omitted, dynamically created selection items do not display labels.  
-  
- *getItemScreentip:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the tooltips of dynamically created selection items in this control. If this attribute is omitted, dynamically created selection items do not display tooltips.  
-  
- *getItemSupertip:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the Enhanced ScreenTips of dynamically created selection items in this control. If this attribute is omitted, dynamically created selection items do not display Enhanced ScreenTips.  
-  
- *getItemImage:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the icons of dynamically created selection items in this control. If this attribute is omitted, dynamically created selection items do not display icons.  
-  
- *getItemID:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the identifiers of dynamically created selection items in this control. If this attribute is omitted, dynamically created selection items have empty identifiers.  
-  
- *sizeString:* An *ST_String* attribute, as specified in section 2.4.19, that specifies a *string* of which the size is used to determine the width of the text input area of this control. If this attribute is omitted, the application determines the width of the text input area automatically.  
-  
- *getSelectedItemID:* An *ST_Delegate* attribute, as specified in section 2.4.7, that specifies the name of a callback function that is called to determine the identifier of the item that is selected in this control. The *getSelectedItemID* and *getSelectedItemIndex* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control does not display a selected item.  
-  
- *getSelectedItemIndex:* An *ST_Delegate* attribute, as specified in section 2.4.7, that specifies the name of a callback function that is called to determine the index of the item that is selected in this control. The *getSelectedItemID* and *getSelectedItemIndex* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control does not display a selected item.  
-  
- *id:* An *ST_UniqueID* attribute, as specified in section 2.4.22, that specifies the identifier of a custom control. All custom controls MUST have unique identifiers. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
-  
- *idQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control. This attribute is used to reference controls or containers created by other Custom UI documents. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified on all controls.  
-  
- *tag:* An *ST_String* attribute, as specified in section 2.4.19, that specifies an arbitrary *string* that provides additional information about this control during callback function calls. If this attribute is omitted, the value defaults to an empty string.  
-  
- *idMso:* An *ST_ID* attribute, as specified in section 2.4.12, that specifies the identifier of a built-in control. The *id*, *idQ*, and *idMso* attributes are mutually exclusive. Exactly one of these attributes MUST be specified.  
-  
- *screentip:* An *ST_String* attribute, as specified in section 2.4.19, that specifies a string that is displayed as the tooltip for this control. The *screentip* and *getScreentip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a tooltip is not displayed.  
-  
- *getScreentip:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the tooltip of this control. The *screentip* and *getScreentip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a tooltip is not displayed.  
-  
- *supertip:* An *ST_String* attribute that specifies a string that is displayed as the Enhanced ScreenTip of this control. The *supertip* and *getSupertip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, an Enhanced ScreenTip is not displayed.  
-  
- *getSupertip:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the Enhanced ScreenTip of this control. The *supertip* and *getSupertip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, an Enhanced ScreenTip is not displayed.  
-  
- *label:* An *ST_String* attribute that specifies a string that is displayed as the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
-  
- *getLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the label of this control. The *label* and *getLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a label is not displayed.  
-  
- *insertAfterMso:* An *ST_ID* attribute that specifies the identifier of a built-in control after which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *insertBeforeMso:* An *ST_ID* attribute that specifies the identifier of a built-in control before which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *insertAfterQ:* An *ST_QID* attribute, as specified in section 2.4.17, that specifies the qualified identifier of a control after which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *insertBeforeQ:* An *ST_QID* attribute that specifies the qualified identifier of a control before which this control will be inserted. The *insertAfterMso*, *insertAfterQ*, *insertBeforeMso*, and *insertBeforeQ* attributes are mutually exclusive. They MUST NOT be used together. If none of these attributes is specified, the controls will be appended to the existing set of controls, in the order they are defined in the XML.  
-  
- *visible:* A *Boolean* attribute that specifies the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
-  
- *getVisible:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the visibility state of this control. The *visible* and *getVisible* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the control defaults to being visible.  
-  
- *keytip:* An *ST_Keytip* attribute, as specified in section 2.4.14, that specifies a *string* that is displayed as the KeyTip for this control. The *keytip* and *getKeytip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a KeyTip is not displayed.  
-  
- *getKeytip:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine the KeyTip for this control. The *keytip* and *getKeytip* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, a KeyTip is not displayed.  
-  
- *showLabel:* A *Boolean* attribute that specifies whether the label for this control will be displayed. The *showLabel* and *getShowLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the label of the control will be displayed.  
-  
- *getShowLabel:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine whether to display the label of this control. The *showLabel* and *getShowLabel* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the label of the control will be displayed.  
-  
- *showImage:* A *Boolean* attribute that specifies whether the icon for this control will be displayed. The *showImage* and *getShowImage* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the icon of the control will be displayed.  
-  
- *getShowImage:* An *ST_Delegate* attribute that specifies the name of a callback function that is called to determine whether to display the icon of this control. The *showImage* and *getShowImage* attributes are mutually exclusive. They MUST NOT be used together. If neither attribute is specified, the icon of the control will be displayed.  
-  
- The following W3C XML Schema ([XMLSCHEMA1] section 2.1) fragment specifies the contents of this complex type.  
-  
- *\<xsd:complexType name="CT_GalleryRegular">*  
-  
- *\<xsd:complexContent>*  
-  
- *\<xsd:extension base="CT_DropDownRegular">*  
-  
- *\<xsd:attributeGroup ref="AG_Description"/>*  
-  
- *\<xsd:attributeGroup ref="AG_DynamicContentAttributes"/>*  
-  
- *\<xsd:attribute name="columns" type="ST_GalleryRowColumnCount" use="optional"/>*  
-  
- *\<xsd:attribute name="rows" type="ST_GalleryRowColumnCount" use="optional"/>*  
-  
- *\<xsd:attribute name="itemWidth" type="ST_GalleryItemWidthHeight" use="optional"/>*  
-  
- *\<xsd:attribute name="itemHeight" type="ST_GalleryItemWidthHeight" use="optional"/>*  
-  
- *\<xsd:attribute name="getItemWidth" type="ST_Delegate" use="optional"/>*  
-  
- *\<xsd:attribute name="getItemHeight" type="ST_Delegate" use="optional"/>*  
-  
- *\<xsd:attribute name="showItemLabel" type="xsd:boolean" use="optional"/>*  
-  
- *\</xsd:extension>*  
-  
- *\</xsd:complexContent>*  
-  
- *\</xsd:complexType>*  
-  
- See section 5.1 for the full W3C XML Schema ([XMLSCHEMA1] section 2.1).  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>Item &lt;mso14:item&gt;</description></item><item><description>ButtonRegular &lt;mso14:button&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -196,7 +51,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the GalleryRegular class.</summary>
+        <summary>
+            Initializes a new instance of the GalleryRegular class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -223,7 +80,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the GalleryRegular class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the GalleryRegular class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -244,7 +103,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the GalleryRegular class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the GalleryRegular class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -265,7 +126,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the GalleryRegular class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the GalleryRegular class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -288,9 +151,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -315,7 +180,10 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>columns.Represents the following attribute in the schema: columns</summary>
+        <summary>
+          <para> columns.</para>
+          <para>Represents the following attribute in the schema: columns </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -341,7 +209,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>description.Represents the following attribute in the schema: description</summary>
+        <summary>
+          <para> description.</para>
+          <para>Represents the following attribute in the schema: description </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -367,7 +238,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>enabled.Represents the following attribute in the schema: enabled</summary>
+        <summary>
+          <para> enabled.</para>
+          <para>Represents the following attribute in the schema: enabled </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -393,7 +267,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getDescription.Represents the following attribute in the schema: getDescription</summary>
+        <summary>
+          <para> getDescription.</para>
+          <para>Represents the following attribute in the schema: getDescription </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -419,7 +296,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getEnabled.Represents the following attribute in the schema: getEnabled</summary>
+        <summary>
+          <para> getEnabled.</para>
+          <para>Represents the following attribute in the schema: getEnabled </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -445,7 +325,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getImage.Represents the following attribute in the schema: getImage</summary>
+        <summary>
+          <para> getImage.</para>
+          <para>Represents the following attribute in the schema: getImage </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -471,7 +354,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemCount.Represents the following attribute in the schema: getItemCount</summary>
+        <summary>
+          <para> getItemCount.</para>
+          <para>Represents the following attribute in the schema: getItemCount </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -497,7 +383,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemHeight.Represents the following attribute in the schema: getItemHeight</summary>
+        <summary>
+          <para> getItemHeight.</para>
+          <para>Represents the following attribute in the schema: getItemHeight </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -523,7 +412,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemID.Represents the following attribute in the schema: getItemID</summary>
+        <summary>
+          <para> getItemID.</para>
+          <para>Represents the following attribute in the schema: getItemID </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -549,7 +441,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemImage.Represents the following attribute in the schema: getItemImage</summary>
+        <summary>
+          <para> getItemImage.</para>
+          <para>Represents the following attribute in the schema: getItemImage </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -575,7 +470,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemLabel.Represents the following attribute in the schema: getItemLabel</summary>
+        <summary>
+          <para> getItemLabel.</para>
+          <para>Represents the following attribute in the schema: getItemLabel </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -601,7 +499,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemScreentip.Represents the following attribute in the schema: getItemScreentip</summary>
+        <summary>
+          <para> getItemScreentip.</para>
+          <para>Represents the following attribute in the schema: getItemScreentip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -627,7 +528,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemSupertip.Represents the following attribute in the schema: getItemSupertip</summary>
+        <summary>
+          <para> getItemSupertip.</para>
+          <para>Represents the following attribute in the schema: getItemSupertip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -653,7 +557,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getItemWidth.Represents the following attribute in the schema: getItemWidth</summary>
+        <summary>
+          <para> getItemWidth.</para>
+          <para>Represents the following attribute in the schema: getItemWidth </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -679,7 +586,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getKeytip.Represents the following attribute in the schema: getKeytip</summary>
+        <summary>
+          <para> getKeytip.</para>
+          <para>Represents the following attribute in the schema: getKeytip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -705,7 +615,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getLabel.Represents the following attribute in the schema: getLabel</summary>
+        <summary>
+          <para> getLabel.</para>
+          <para>Represents the following attribute in the schema: getLabel </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -731,7 +644,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getScreentip.Represents the following attribute in the schema: getScreentip</summary>
+        <summary>
+          <para> getScreentip.</para>
+          <para>Represents the following attribute in the schema: getScreentip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -757,7 +673,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getSelectedItemID.Represents the following attribute in the schema: getSelectedItemID</summary>
+        <summary>
+          <para> getSelectedItemID.</para>
+          <para>Represents the following attribute in the schema: getSelectedItemID </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -783,7 +702,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getSelectedItemIndex.Represents the following attribute in the schema: getSelectedItemIndex</summary>
+        <summary>
+          <para> getSelectedItemIndex.</para>
+          <para>Represents the following attribute in the schema: getSelectedItemIndex </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -809,7 +731,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getShowImage.Represents the following attribute in the schema: getShowImage</summary>
+        <summary>
+          <para> getShowImage.</para>
+          <para>Represents the following attribute in the schema: getShowImage </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -835,7 +760,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getShowLabel.Represents the following attribute in the schema: getShowLabel</summary>
+        <summary>
+          <para> getShowLabel.</para>
+          <para>Represents the following attribute in the schema: getShowLabel </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -861,7 +789,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getSupertip.Represents the following attribute in the schema: getSupertip</summary>
+        <summary>
+          <para> getSupertip.</para>
+          <para>Represents the following attribute in the schema: getSupertip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -887,7 +818,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>getVisible.Represents the following attribute in the schema: getVisible</summary>
+        <summary>
+          <para> getVisible.</para>
+          <para>Represents the following attribute in the schema: getVisible </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -913,7 +847,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>id.Represents the following attribute in the schema: id</summary>
+        <summary>
+          <para> id.</para>
+          <para>Represents the following attribute in the schema: id </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -939,7 +876,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>idMso.Represents the following attribute in the schema: idMso</summary>
+        <summary>
+          <para> idMso.</para>
+          <para>Represents the following attribute in the schema: idMso </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -965,7 +905,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>image.Represents the following attribute in the schema: image</summary>
+        <summary>
+          <para> image.</para>
+          <para>Represents the following attribute in the schema: image </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -991,7 +934,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>imageMso.Represents the following attribute in the schema: imageMso</summary>
+        <summary>
+          <para> imageMso.</para>
+          <para>Represents the following attribute in the schema: imageMso </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1017,7 +963,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertAfterMso.Represents the following attribute in the schema: insertAfterMso</summary>
+        <summary>
+          <para> insertAfterMso.</para>
+          <para>Represents the following attribute in the schema: insertAfterMso </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1043,7 +992,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertAfterQ.Represents the following attribute in the schema: insertAfterQ</summary>
+        <summary>
+          <para> insertAfterQ.</para>
+          <para>Represents the following attribute in the schema: insertAfterQ </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1069,7 +1021,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertBeforeMso.Represents the following attribute in the schema: insertBeforeMso</summary>
+        <summary>
+          <para> insertBeforeMso.</para>
+          <para>Represents the following attribute in the schema: insertBeforeMso </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1095,7 +1050,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>insertBeforeQ.Represents the following attribute in the schema: insertBeforeQ</summary>
+        <summary>
+          <para> insertBeforeQ.</para>
+          <para>Represents the following attribute in the schema: insertBeforeQ </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1121,7 +1079,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>invalidateContentOnDrop.Represents the following attribute in the schema: invalidateContentOnDrop</summary>
+        <summary>
+          <para> invalidateContentOnDrop.</para>
+          <para>Represents the following attribute in the schema: invalidateContentOnDrop </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1147,7 +1108,10 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>itemHeight.Represents the following attribute in the schema: itemHeight</summary>
+        <summary>
+          <para> itemHeight.</para>
+          <para>Represents the following attribute in the schema: itemHeight </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1173,7 +1137,10 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>itemWidth.Represents the following attribute in the schema: itemWidth</summary>
+        <summary>
+          <para> itemWidth.</para>
+          <para>Represents the following attribute in the schema: itemWidth </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1199,7 +1166,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>keytip.Represents the following attribute in the schema: keytip</summary>
+        <summary>
+          <para> keytip.</para>
+          <para>Represents the following attribute in the schema: keytip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1225,7 +1195,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>label.Represents the following attribute in the schema: label</summary>
+        <summary>
+          <para> label.</para>
+          <para>Represents the following attribute in the schema: label </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1246,7 +1219,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1272,7 +1247,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>onAction.Represents the following attribute in the schema: onAction</summary>
+        <summary>
+          <para> onAction.</para>
+          <para>Represents the following attribute in the schema: onAction </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1298,7 +1276,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>idQ.Represents the following attribute in the schema: idQ</summary>
+        <summary>
+          <para> idQ.</para>
+          <para>Represents the following attribute in the schema: idQ </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1324,7 +1305,10 @@
         <ReturnType>DocumentFormat.OpenXml.IntegerValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>rows.Represents the following attribute in the schema: rows</summary>
+        <summary>
+          <para> rows.</para>
+          <para>Represents the following attribute in the schema: rows </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1350,7 +1334,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>screentip.Represents the following attribute in the schema: screentip</summary>
+        <summary>
+          <para> screentip.</para>
+          <para>Represents the following attribute in the schema: screentip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1376,7 +1363,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>showImage.Represents the following attribute in the schema: showImage</summary>
+        <summary>
+          <para> showImage.</para>
+          <para>Represents the following attribute in the schema: showImage </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1402,7 +1392,10 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>showInRibbon.Represents the following attribute in the schema: showInRibbon</summary>
+        <summary>
+          <para> showInRibbon.</para>
+          <para>Represents the following attribute in the schema: showInRibbon </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1428,7 +1421,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>showItemImage.Represents the following attribute in the schema: showItemImage</summary>
+        <summary>
+          <para> showItemImage.</para>
+          <para>Represents the following attribute in the schema: showItemImage </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1454,7 +1450,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>showItemLabel.Represents the following attribute in the schema: showItemLabel</summary>
+        <summary>
+          <para> showItemLabel.</para>
+          <para>Represents the following attribute in the schema: showItemLabel </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1480,7 +1479,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>showLabel.Represents the following attribute in the schema: showLabel</summary>
+        <summary>
+          <para> showLabel.</para>
+          <para>Represents the following attribute in the schema: showLabel </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1506,7 +1508,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>sizeString.Represents the following attribute in the schema: sizeString</summary>
+        <summary>
+          <para> sizeString.</para>
+          <para>Represents the following attribute in the schema: sizeString </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1532,7 +1537,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>supertip.Represents the following attribute in the schema: supertip</summary>
+        <summary>
+          <para> supertip.</para>
+          <para>Represents the following attribute in the schema: supertip </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1558,7 +1566,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>tag.Represents the following attribute in the schema: tag</summary>
+        <summary>
+          <para> tag.</para>
+          <para>Represents the following attribute in the schema: tag </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1584,7 +1595,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>visible.Represents the following attribute in the schema: visible</summary>
+        <summary>
+          <para> visible.</para>
+          <para>Represents the following attribute in the schema: visible </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

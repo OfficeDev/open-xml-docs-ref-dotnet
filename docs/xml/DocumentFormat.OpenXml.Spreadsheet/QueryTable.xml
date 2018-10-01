@@ -25,57 +25,13 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Query Table. The root element of QueryTablePart. When the object is serialized out as xml, its qualified name is x:queryTable.</summary>
+    <summary>
+      <para>Query Table. The root element of QueryTablePart.</para>
+      <para> When the object is serialized out as xml, its qualified name is x:queryTable.</para>
+    </summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlnoticeiso.md)] 
-  
- **queryTable (Query Table)**  
-  
- This element specifies all the relevant properties for a query table, one query table element is stored for each query table object in the spreadsheetML document.  
-  
-|Parent Elements|  
-|---------------------|  
-|Root element of SpreadsheetML Query Table part|  
-  
-|Child Elements|Subclause|  
-|--------------------|---------------|  
-|extLst (Future Feature Data Storage Area)|§18.2.10|  
-|queryTableRefresh (QueryTable Refresh Information)|§18.12.6|  
-  
-|Attributes|Description|  
-|----------------|-----------------|  
-|adjustColumnWidth (Adjust Column Width On Refresh)|Specifies whether to automatically adjust column widths on refresh to fit the data retrieved.  *true* if column widths should be adjusted.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|applyAlignmentFormats (Apply Alignment Formats)|If *true* apply legacy table autoformat alignment properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|applyBorderFormats (Apply Border Formats)|If *true* apply legacy table autoformat border properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|applyFontFormats (Apply Font Formats)|If *true* apply legacy table autoformat font properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|applyNumberFormats (Apply Number Formats)|If *true* apply legacy table autoformat number format properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|applyPatternFormats (Apply Pattern Formats)|If *true* apply legacy table autoformat pattern properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|applyWidthHeightFormats (Apply Width / Height Formats)|If *true* apply legacy table autoformat width/height properties.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|autoFormatId (Auto Format Id)|Identifies which legacy table autoformat to apply.<br /><br /> Annex D contains a listing of the supported PivotTable AutoFormats, example formatting, and a sample workbook with each of those AutoFormats applied.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|backgroundRefresh (Background Refresh)|Specifies whether or not the query table shall try to refresh data in the background.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|connectionId (Connection Id)|Specifies the ID number of the external data connection to use to refresh data in the query table.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *unsignedInt* datatype.|  
-|disableEdit (Disable Edit)|Specifies whether the connection element  used with this query table shall be editable.  If *true*, then the connection is not editable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|disableRefresh (Disable Refresh)|Specifies whether the query table shall be refreshable.  If *true*, then then query table is not refreshable.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|fillFormulas (Fill Adjacent Formulas)|Specifies whether or not formulas in columns adjacent to the query table should be filled down whenever the query table is refreshed.  This is helpful since the number of rows returned by a query table refresh operation can vary.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|firstBackgroundRefresh (First Background Refresh)|Specifies whether or not data has ever been refreshed for this query table.  If the very first background data refresh had not completed at the time the file was saved, this attribute is set to *true*.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|growShrinkType (Grow Shrink Type)|Specifies the type of behavior expected for dealing with a variable number of rows of data in the query table between refresh operations.<br /><br /> The meaning of the possible values of this attribute {*insertClear*, *insertDelete*, *overwriteClear*} are explained in detail in the definition of the simple type.<br /><br /> The possible values for this attribute are defined by the *ST_GrowShrinkType* simple type (§18.18.39).|  
-|headers (First Row Column Titles)|Specifies whether or not the query table has first row with column titles.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|intermediate (Intermediate)|Specifies whether this query table is in an intermediate state, having been defined but not fully formed and populated with data.<br /><br /> In this state, fields and ranges of the query table can be unknown.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|name (QueryTable Name)|Specifies the name of the query table.<br /><br /> The possible values for this attribute are defined by the *ST_Xstring* simple type (§22.9.2.19).|  
-|preserveFormatting (Preserve Formatting On Refresh)|Specifies whether the application should try to preserve formatting in the query table and copy this formatting to any new rows of data.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|refreshOnLoad (Refresh On Load)|Specifies whether the query table shall refresh its data automatically when the spreadsheetML document is loaded or opened.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|removeDataOnSave (Remove Data On Save)|Specifies whether the query table shall remove all data from the worksheet before the spreadsheetML document is saved.<br /><br /> This is very helpful for situations where people who have different permissions to view data want to share the same spreadsheetML document.  All data from the last user is removed, and new users re-query the external data sources with their own credentials.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-|rowNumbers (Row Numbers)|Specifies whether the query table shall include a first column of row numbers.<br /><br /> The possible values for this attribute are defined by the W3C XML Schema *boolean* datatype.|  
-  
- [*Note*: The W3C XML Schema definition of this element’s content model (CT_QueryTable) is located in §A.2. *end note*]  
-  
- [!INCLUDE[openxmlnoticeiso](~/includes/openxmlcopyrightiso.md)]  
-  
- ]]></format>
-    </remarks>
+             The following table lists the possible child types:
+             <list type="bullet"><item><description>QueryTableRefresh &lt;x:queryTableRefresh&gt;</description></item><item><description>QueryTableExtensionList &lt;x:extLst&gt;</description></item></list></remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -91,7 +47,9 @@
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the QueryTable class.</summary>
+        <summary>
+            Initializes a new instance of the QueryTable class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -118,7 +76,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the QueryTable class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the QueryTable class with the specified child elements.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -139,7 +99,9 @@
       </Parameters>
       <Docs>
         <param name="childElements">Specifies the child elements.</param>
-        <summary>Initializes a new instance of the QueryTable class with the specified child elements.</summary>
+        <summary>
+            Initializes a new instance of the QueryTable class with the specified child elements.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -160,7 +122,9 @@
       </Parameters>
       <Docs>
         <param name="outerXml">Specifies the outer XML of the element.</param>
-        <summary>Initializes a new instance of the QueryTable class from outer XML.</summary>
+        <summary>
+            Initializes a new instance of the QueryTable class from outer XML.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -185,7 +149,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>adjustColumnWidth.Represents the following attribute in the schema: adjustColumnWidth</summary>
+        <summary>
+          <para> adjustColumnWidth.</para>
+          <para>Represents the following attribute in the schema: adjustColumnWidth </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -211,7 +178,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Apply Alignment Formats.Represents the following attribute in the schema: applyAlignmentFormats</summary>
+        <summary>
+          <para> Apply Alignment Formats.</para>
+          <para>Represents the following attribute in the schema: applyAlignmentFormats </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -237,7 +207,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Apply Border Formats.Represents the following attribute in the schema: applyBorderFormats</summary>
+        <summary>
+          <para> Apply Border Formats.</para>
+          <para>Represents the following attribute in the schema: applyBorderFormats </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -263,7 +236,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Apply Font Formats.Represents the following attribute in the schema: applyFontFormats</summary>
+        <summary>
+          <para> Apply Font Formats.</para>
+          <para>Represents the following attribute in the schema: applyFontFormats </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -289,7 +265,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Apply Number Formats.Represents the following attribute in the schema: applyNumberFormats</summary>
+        <summary>
+          <para> Apply Number Formats.</para>
+          <para>Represents the following attribute in the schema: applyNumberFormats </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -315,7 +294,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Apply Pattern Formats.Represents the following attribute in the schema: applyPatternFormats</summary>
+        <summary>
+          <para> Apply Pattern Formats.</para>
+          <para>Represents the following attribute in the schema: applyPatternFormats </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -341,7 +323,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Apply Width / Height Formats.Represents the following attribute in the schema: applyWidthHeightFormats</summary>
+        <summary>
+          <para> Apply Width / Height Formats.</para>
+          <para>Represents the following attribute in the schema: applyWidthHeightFormats </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -367,7 +352,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Auto Format Id.Represents the following attribute in the schema: autoFormatId</summary>
+        <summary>
+          <para> Auto Format Id.</para>
+          <para>Represents the following attribute in the schema: autoFormatId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -393,7 +381,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>backgroundRefresh.Represents the following attribute in the schema: backgroundRefresh</summary>
+        <summary>
+          <para> backgroundRefresh.</para>
+          <para>Represents the following attribute in the schema: backgroundRefresh </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -417,9 +408,11 @@
         <Parameter Name="deep" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="deep">true to recursively clone the subtree under the specified node; false to clone only the node itself.</param>
-        <summary>Creates a duplicate of this node.</summary>
-        <returns>Returns the cloned node.</returns>
+        <param name="deep">True to recursively clone the subtree under the specified node; false to clone only the node itself. </param>
+        <summary>
+            Creates a duplicate of this node.  
+            </summary>
+        <returns>Returns the cloned node. </returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -444,7 +437,10 @@
         <ReturnType>DocumentFormat.OpenXml.UInt32Value</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>connectionId.Represents the following attribute in the schema: connectionId</summary>
+        <summary>
+          <para> connectionId.</para>
+          <para>Represents the following attribute in the schema: connectionId </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.UInt32Value" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -470,7 +466,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>disableEdit.Represents the following attribute in the schema: disableEdit</summary>
+        <summary>
+          <para> disableEdit.</para>
+          <para>Represents the following attribute in the schema: disableEdit </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -496,7 +495,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>disableRefresh.Represents the following attribute in the schema: disableRefresh</summary>
+        <summary>
+          <para> disableRefresh.</para>
+          <para>Represents the following attribute in the schema: disableRefresh </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -522,7 +524,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>fillFormulas.Represents the following attribute in the schema: fillFormulas</summary>
+        <summary>
+          <para> fillFormulas.</para>
+          <para>Represents the following attribute in the schema: fillFormulas </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -548,7 +553,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>firstBackgroundRefresh.Represents the following attribute in the schema: firstBackgroundRefresh</summary>
+        <summary>
+          <para> firstBackgroundRefresh.</para>
+          <para>Represents the following attribute in the schema: firstBackgroundRefresh </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -574,7 +582,10 @@
         <ReturnType>DocumentFormat.OpenXml.EnumValue&lt;DocumentFormat.OpenXml.Spreadsheet.GrowShrinkValues&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>growShrinkType.Represents the following attribute in the schema: growShrinkType</summary>
+        <summary>
+          <para> growShrinkType.</para>
+          <para>Represents the following attribute in the schema: growShrinkType </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.EnumValue`1" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -600,7 +611,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>headers.Represents the following attribute in the schema: headers</summary>
+        <summary>
+          <para> headers.</para>
+          <para>Represents the following attribute in the schema: headers </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -626,7 +640,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>intermediate.Represents the following attribute in the schema: intermediate</summary>
+        <summary>
+          <para> intermediate.</para>
+          <para>Represents the following attribute in the schema: intermediate </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -651,7 +668,9 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to be loaded.</param>
-        <summary>Loads the DOM from the QueryTablePart.</summary>
+        <summary>
+            Loads the DOM from the QueryTablePart.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -671,7 +690,9 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the local name of the element.</summary>
+        <summary>
+            Gets the local name of the element.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -697,7 +718,10 @@
         <ReturnType>DocumentFormat.OpenXml.StringValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>name.Represents the following attribute in the schema: name</summary>
+        <summary>
+          <para> name.</para>
+          <para>Represents the following attribute in the schema: name </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.StringValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -723,7 +747,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>preserveFormatting.Represents the following attribute in the schema: preserveFormatting</summary>
+        <summary>
+          <para> preserveFormatting.</para>
+          <para>Represents the following attribute in the schema: preserveFormatting </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -744,7 +771,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.QueryTableExtensionList</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>QueryTableExtensionList. Represents the following element tag in the schema: x:extLst</summary>
+        <summary>
+          <para> QueryTableExtensionList.</para>
+          <para> Represents the following element tag in the schema: x:extLst </para>
+        </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -768,7 +798,9 @@
         <ReturnType>DocumentFormat.OpenXml.Packaging.QueryTablePart</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the QueryTablePart associated with this element.</summary>
+        <summary>
+            Gets the QueryTablePart associated with this element.
+            </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Packaging.QueryTablePart" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -789,7 +821,10 @@
         <ReturnType>DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>QueryTableRefresh. Represents the following element tag in the schema: x:queryTableRefresh</summary>
+        <summary>
+          <para> QueryTableRefresh.</para>
+          <para> Represents the following element tag in the schema: x:queryTableRefresh </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.Spreadsheet.QueryTableRefresh" />.</value>
         <remarks>To be added.</remarks>
         <remark>
@@ -818,7 +853,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>refreshOnLoad.Represents the following attribute in the schema: refreshOnLoad</summary>
+        <summary>
+          <para> refreshOnLoad.</para>
+          <para>Represents the following attribute in the schema: refreshOnLoad </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -844,7 +882,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>removeDataOnSave.Represents the following attribute in the schema: removeDataOnSave</summary>
+        <summary>
+          <para> removeDataOnSave.</para>
+          <para>Represents the following attribute in the schema: removeDataOnSave </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -870,7 +911,10 @@
         <ReturnType>DocumentFormat.OpenXml.BooleanValue</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>rowNumbers.Represents the following attribute in the schema: rowNumbers</summary>
+        <summary>
+          <para> rowNumbers.</para>
+          <para>Represents the following attribute in the schema: rowNumbers </para>
+        </summary>
         <value>Returns <see cref="T:DocumentFormat.OpenXml.BooleanValue" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -895,7 +939,9 @@
       </Parameters>
       <Docs>
         <param name="openXmlPart">Specifies the part to save to.</param>
-        <summary>Saves the DOM into the QueryTablePart.</summary>
+        <summary>
+            Saves the DOM into the QueryTablePart.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
