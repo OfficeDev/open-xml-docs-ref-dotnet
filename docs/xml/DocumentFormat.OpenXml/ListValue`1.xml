@@ -1,13 +1,14 @@
-﻿<Type Name="ListValue&lt;T&gt;" FullName="DocumentFormat.OpenXml.ListValue&lt;T&gt;">
-  <TypeSignature Language="C#" Value="public class ListValue&lt;T&gt; : DocumentFormat.OpenXml.OpenXmlSimpleType where T : OpenXmlSimpleTypenew()" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListValue`1&lt;.ctor (class DocumentFormat.OpenXml.OpenXmlSimpleType) T&gt; extends DocumentFormat.OpenXml.OpenXmlSimpleType" />
+<Type Name="ListValue&lt;T&gt;" FullName="DocumentFormat.OpenXml.ListValue&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class ListValue&lt;T&gt; : DocumentFormat.OpenXml.OpenXmlSimpleType, System.Collections.Generic.IEnumerable&lt;T&gt; where T : OpenXmlSimpleTypenew()" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListValue`1&lt;.ctor (class DocumentFormat.OpenXml.OpenXmlSimpleType) T&gt; extends DocumentFormat.OpenXml.OpenXmlSimpleType implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.ListValue`1" />
-  <TypeSignature Language="VB.NET" Value="Public Class ListValue(Of T)&#xA;Inherits OpenXmlSimpleType" />
-  <TypeSignature Language="F#" Value="type ListValue&lt;'T (requires 'T :&gt; OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; = class&#xA;    inherit OpenXmlSimpleType" />
+  <TypeSignature Language="VB.NET" Value="Public Class ListValue(Of T)&#xA;Inherits OpenXmlSimpleType&#xA;Implements IEnumerable(Of T)" />
+  <TypeSignature Language="F#" Value="type ListValue&lt;'T (requires 'T :&gt; OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; = class&#xA;    inherit OpenXmlSimpleType&#xA;    interface seq&lt;'T (requires 'T :&gt; OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt;&#xA;    interface IEnumerable" />
   <AssemblyInfo>
     <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
     <AssemblyVersion>2.7.2.0</AssemblyVersion>
     <AssemblyVersion>2.8.1.0</AssemblyVersion>
+    <AssemblyVersion>2.12.0.0</AssemblyVersion>
   </AssemblyInfo>
   <TypeParameters>
     <TypeParameter Name="T">
@@ -20,15 +21,25 @@
   <Base>
     <BaseTypeName>DocumentFormat.OpenXml.OpenXmlSimpleType</BaseTypeName>
   </Base>
-  <Interfaces />
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
   <Attributes>
     <Attribute>
-      <AttributeName>System.Diagnostics.DebuggerDisplay("{InnerText}")</AttributeName>
+      <AttributeName Language="C#">[System.Diagnostics.DebuggerDisplay("{InnerText}")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Diagnostics.DebuggerDisplay("{InnerText}")&gt;]</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
     <typeparam name="T">To be added.</typeparam>
-    <summary>Represents the list value attributes (xsd:list).</summary>
+    <summary>
+            Represents the list value attributes (xsd:list).
+            </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -42,31 +53,37 @@
         <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
         <AssemblyVersion>2.7.2.0</AssemblyVersion>
         <AssemblyVersion>2.8.1.0</AssemblyVersion>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
-        <summary>Initializes a new instance of the ListValue class.</summary>
+        <summary>
+            Initializes a new instance of the ListValue class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ListValue (DocumentFormat.OpenXml.ListValue&lt;T&gt; source);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.ListValue`1&lt;!T&gt; source) cil managed" />
+      <MemberSignature Language="C#" Value="public ListValue (DocumentFormat.OpenXml.ListValue&lt;T&gt; list);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class DocumentFormat.OpenXml.ListValue`1&lt;!T&gt; list) cil managed" />
       <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.ListValue`1.#ctor(DocumentFormat.OpenXml.ListValue{`0})" />
-      <MemberSignature Language="VB.NET" Value="Public Sub New (source As ListValue(Of T))" />
-      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; : DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; -&gt; DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt;" Usage="new DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; source" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (list As ListValue(Of T))" />
+      <MemberSignature Language="F#" Value="new DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; : DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; -&gt; DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt;" Usage="new DocumentFormat.OpenXml.ListValue&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt; list" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
         <AssemblyVersion>2.7.2.0</AssemblyVersion>
         <AssemblyVersion>2.8.1.0</AssemblyVersion>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
-        <Parameter Name="source" Type="DocumentFormat.OpenXml.ListValue&lt;T&gt;" />
+        <Parameter Name="list" Type="DocumentFormat.OpenXml.ListValue&lt;T&gt;" />
       </Parameters>
       <Docs>
-        <param name="source">The source ListValue class.</param>
-        <summary>Initializes a new instance of the ListValue class by deep copying the supplied ListValue class.</summary>
+        <param name="list">The source ListValue class.</param>
+        <summary>
+            Initializes a new instance of the ListValue class by deep copying the supplied ListValue class.
+            </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -81,14 +98,42 @@
         <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
         <AssemblyVersion>2.7.2.0</AssemblyVersion>
         <AssemblyVersion>2.8.1.0</AssemblyVersion>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="list" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
       </Parameters>
       <Docs>
         <param name="list">The list of the values.</param>
-        <summary>Initializes a new instance of the ListValue class using the supplied list of values.</summary>
+        <summary>
+            Initializes a new instance of the ListValue class using the supplied list of values.
+            </summary>
         <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;T&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!T&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.ListValue`1.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IEnumerator(Of T)" />
+      <MemberSignature Language="F#" Value="abstract member GetEnumerator : unit -&gt; System.Collections.Generic.IEnumerator&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt;&#xA;override this.GetEnumerator : unit -&gt; System.Collections.Generic.IEnumerator&lt;'T (requires 'T :&gt; DocumentFormat.OpenXml.OpenXmlSimpleType and 'T : (new : unit -&gt; 'T))&gt;" Usage="listValue.GetEnumerator " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.Generic.IEnumerable`1.GetEnumerator</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <inheritdoc />
       </Docs>
     </Member>
     <Member MemberName="HasValue">
@@ -102,6 +147,7 @@
         <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
         <AssemblyVersion>2.7.2.0</AssemblyVersion>
         <AssemblyVersion>2.8.1.0</AssemblyVersion>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -124,12 +170,15 @@
         <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
         <AssemblyVersion>2.7.2.0</AssemblyVersion>
         <AssemblyVersion>2.8.1.0</AssemblyVersion>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets or sets the inner XML text.</summary>
+        <summary>
+            Gets or sets the inner XML text.
+            </summary>
         <value>Returns <see cref="T:System.String" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -145,13 +194,40 @@
         <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
         <AssemblyVersion>2.7.2.0</AssemblyVersion>
         <AssemblyVersion>2.8.1.0</AssemblyVersion>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.ICollection&lt;T&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the values.</summary>
+        <summary>
+            Gets the values.
+            </summary>
         <value>Returns <see cref="T:System.Collections.Generic.ICollection`1" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.ListValue`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator Implements IEnumerable.GetEnumerator" />
+      <MemberSignature Language="F#" Value="abstract member System.Collections.IEnumerable.GetEnumerator : unit -&gt; System.Collections.IEnumerator&#xA;override this.System.Collections.IEnumerable.GetEnumerator : unit -&gt; System.Collections.IEnumerator" Usage="listValue.System.Collections.IEnumerable.GetEnumerator " />
+      <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
