@@ -13,15 +13,18 @@
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
-        "RestApi": "Content"
+        "NetEnum": "Content",
+        "NetDelegate": "Content",
+        "NetNamespace": "Content",
+        "NetMember": "Content",
+        "NetType": "Content",
+        "RestApi": "Content",
+        "ReferenceContainer": "Content"
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "base_path": "dotnet",
       "site_name": "Docs",
-      "customized_template_paths": [
-        "_dependentPackages/memberpage.plugins/content"
-      ],
       "customized_tasks": {
         "docset_prebuild": [
           "_dependentPackages/ECMA2Yaml/tools/Run.ps1",
@@ -37,7 +40,8 @@
         "SourceXmlFolder": "docs/xml",
         "OutputYamlFolder": "docs/api",
         "SourceMetadataFolder": "docs/add/metadata",
-        "Flatten": true
+        "Flatten": true,
+        "SDPMode": true
       },
       "SplitTOC": [
         "docs/api/toc.yml"
@@ -53,7 +57,8 @@
       "ReferenceTOC": "docs/api/toc.yml",
       "ReferenceTOCUrl": "/dotnet/openxml_ref_toc/toc.json",
       "ConceptualTOCUrl": "/office/open-xml/toc.json",
-      "OutputFolder": "docs/api/overview/openxml"
+      "OutputFolder": "docs/api/overview/openxml",
+      "ContainerPageChildrenType": "Namespace"
     }
   ],
   "notification_subscribers": [],
@@ -87,13 +92,9 @@
       "path_to_root": "_dependentPackages/ECMA2Yaml",
       "target_framework": "net45",
       "version": "latest"
-    },
-    {
-      "id": "memberpage.plugins",
-      "nuget_feed": "https://www.myget.org/F/docfx/api/v2",
-      "path_to_root": "_dependentPackages/memberpage.plugins",
-      "target_framework": "net45",
-      "version": "latest"
     }
-  ]
+  ],
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }
