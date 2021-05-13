@@ -1,0 +1,117 @@
+<Type Name="RelationshipErrorHandler" FullName="DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler">
+  <TypeSignature Language="C#" Value="public abstract class RelationshipErrorHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RelationshipErrorHandler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class RelationshipErrorHandler" />
+  <TypeSignature Language="F#" Value="type RelationshipErrorHandler = class" />
+  <AssemblyInfo>
+    <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+    <AssemblyVersion>2.12.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            A class that holds information about invalid relationships in <see cref="T:System.IO.Packaging.PackagePart" /> instances.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RelationshipErrorHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRewriterFactory">
+      <MemberSignature Language="C#" Value="public static Func&lt;DocumentFormat.OpenXml.Packaging.OpenXmlPackage,DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler&gt; CreateRewriterFactory (DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.Rewriter rewriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Func`2&lt;class DocumentFormat.OpenXml.Packaging.OpenXmlPackage, class DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler&gt; CreateRewriterFactory(class DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler/Rewriter rewriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.CreateRewriterFactory(DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.Rewriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateRewriterFactory (rewriter As RelationshipErrorHandler.Rewriter) As Func(Of OpenXmlPackage, RelationshipErrorHandler)" />
+      <MemberSignature Language="F#" Value="static member CreateRewriterFactory : DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.Rewriter -&gt; Func&lt;DocumentFormat.OpenXml.Packaging.OpenXmlPackage, DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler&gt;" Usage="DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.CreateRewriterFactory rewriter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;DocumentFormat.OpenXml.Packaging.OpenXmlPackage,DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rewriter" Type="DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler+Rewriter" />
+      </Parameters>
+      <Docs>
+        <param name="rewriter">The delegate used to rewrite the Uri.</param>
+        <summary>
+            Create a <see cref="T:DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler" /> that simply rewrites the invalid target Uri.
+            </summary>
+        <returns>A factory function for use in <see cref="P:DocumentFormat.OpenXml.Packaging.OpenSettings.RelationshipErrorHandlerFactory" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPackageLoaded">
+      <MemberSignature Language="C#" Value="public virtual void OnPackageLoaded ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnPackageLoaded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.OnPackageLoaded" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub OnPackageLoaded ()" />
+      <MemberSignature Language="F#" Value="abstract member OnPackageLoaded : unit -&gt; unit&#xA;override this.OnPackageLoaded : unit -&gt; unit" Usage="relationshipErrorHandler.OnPackageLoaded " />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Callback for after a package has been completely loaded and all rewritting has occurred.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rewrite">
+      <MemberSignature Language="C#" Value="public abstract string Rewrite (Uri partUri, string id, string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Rewrite(class System.Uri partUri, string id, string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:DocumentFormat.OpenXml.Packaging.RelationshipErrorHandler.Rewrite(System.Uri,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Rewrite (partUri As Uri, id As String, uri As String) As String" />
+      <MemberSignature Language="F#" Value="abstract member Rewrite : Uri * string * string -&gt; string" Usage="relationshipErrorHandler.Rewrite (partUri, id, uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>DocumentFormat.OpenXml</AssemblyName>
+        <AssemblyVersion>2.12.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partUri" Type="System.Uri" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partUri">Uri of the part with the invalid relationship.</param>
+        <param name="id">Id of relationship</param>
+        <param name="uri">Invalid <see cref="T:System.Uri" /></param>
+        <summary>
+            Rewrites an invalid URI with a valid one in order to correctly open a package.
+            </summary>
+        <returns>Rewritten string if available, otherwise <c>null</c>.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
