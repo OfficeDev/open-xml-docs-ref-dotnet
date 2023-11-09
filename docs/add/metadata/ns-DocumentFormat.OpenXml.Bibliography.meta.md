@@ -1,3 +1,0 @@
----
-uid: DocumentFormat.OpenXml.Bibliography
----
